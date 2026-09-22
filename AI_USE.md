@@ -22,3 +22,6 @@ Neil writes the final ACM disclosure statement from this log.
 | 2026-09-22 | 3 (prep) | Added tree-sitter extraction and 4-builder comparison (`src/depgraphs/graph/compare.py`) on 2 rule-picked repos plus 2 mistakenly picked ones (kept, labelled) | code, data | no — D9 |
 | 2026-09-22 | 0–3 | Found and fixed 4 bugs in its own tooling (line counting, licence check, builder crash, uncounted skipped files); logged in `POSTHOC.md` | code | no |
 | 2026-09-22 | 0–2 | Wrote check-in `reports/01-step0-1-2.md` and decision cards | text (Neil voice) | — |
+| 2026-09-22 | 3–9 | Built 1,872 import graphs; Table 1; static and execution answer keys; features, co-change, method driver, scoring, statistics; ran everything on a rented server (151.185.58.54) | code, data | no |
+| 2026-09-22 | 5 | Assigned domain labels to 113 repos from their GitHub descriptions (`data/domain_labels.csv`) | data (AI annotation) | no — spot-check advised |
+| 2026-09-22 | 8–12 | Wrote analysis, RQ4 summary, and the findings page (`reports/findings.html`, published privately as an Artifact) | code, text | no |

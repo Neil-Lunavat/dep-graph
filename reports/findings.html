@@ -1,0 +1,226 @@
+<title>Reading Order Findings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#f6f7f4; --panel:#ffffff; --ink:#15201b; --ink-2:#4f5b55; --ink-3:#7c8781;
+  --rule:#dfe3de; --grid:#e8ebe7; --accent:#2a78d6; --s1:#2a78d6; --s2:#eb6834; --s3:#7c8781; --s4:#1baf7a;
+  --ref:#a9b1ac; --band:rgba(42,120,214,.10); --hi:#fff4d6;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#121614; --panel:#1a1f1c; --ink:#eef2ef; --ink-2:#b3bdb7; --ink-3:#8b958f;
+    --rule:#2c332f; --grid:#262c29; --accent:#3987e5; --s1:#3987e5; --s2:#d95926; --s3:#8b958f; --s4:#199e70;
+    --ref:#5d6661; --band:rgba(57,135,229,.16); --hi:#3a3220; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#121614; --panel:#1a1f1c; --ink:#eef2ef; --ink-2:#b3bdb7; --ink-3:#8b958f;
+  --rule:#2c332f; --grid:#262c29; --accent:#3987e5; --s1:#3987e5; --s2:#d95926; --s3:#8b958f; --s4:#199e70;
+  --ref:#5d6661; --band:rgba(57,135,229,.16); --hi:#3a3220; color-scheme: dark;
+}
+body{background:var(--ground);color:var(--ink);font:15px/1.6 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:40px 80px;display:grid;gap:44px}
+h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:650;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.12}
+h2{font-size:22px;line-height:1.25}
+p{margin:0;max-width:68ch}
+section{display:grid;gap:14px}
+.eyebrow{font:500 12px/1.4 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lede{color:var(--ink-2);font-size:16.5px}
+.mono,.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.fact{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:grid;gap:6px;align-content:start}
+.fact b{font-family:"Source Serif 4",Georgia,serif;font-size:17px;font-weight:650;line-height:1.3}
+.fact span{color:var(--ink-2);font-size:14px}
+.callout{border-left:3px solid var(--s2);background:var(--panel);padding:14px 18px;border-radius:0 10px 10px 0}
+figure{margin:0;background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:18px 18px 12px;display:grid;gap:10px}
+figcaption{color:var(--ink-2);font-size:13.5px}
+.chart{position:relative;width:100%}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{fill:var(--ink-2);font:12px "IBM Plex Sans",system-ui,sans-serif}
+.chart .lab{fill:var(--ink);font-size:12px}
+.chart .reflab{fill:var(--ink-3)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink-2)}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--ground);font:12.5px/1.45 "IBM Plex Sans",sans-serif;padding:8px 10px;border-radius:8px;max-width:280px;transform:translate(-50%,-100%);margin-top:-10px;white-space:normal;z-index:2}
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:12px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font:500 12px/1.3 "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.pending{display:grid;gap:8px}
+.pill{display:inline-block;font:500 11.5px/1 "IBM Plex Mono",monospace;padding:4px 8px;border-radius:99px;border:1px solid var(--rule);color:var(--ink-2);margin-right:6px}
+footer{color:var(--ink-3);font-size:13px}
+@media (max-width:560px){ .wrap{padding-block:24px 56px} }
+</style>
+
+<div class="wrap">
+<header style="display:grid;gap:14px">
+  <div class="eyebrow">Python import graphs · structure-only reading order · 22 Sep 2026</div>
+  <h1>Which files should you read, and in what order, before changing one file?</h1>
+  <p class="lede">We ran 30 ordering methods (plus 4 simple references) on 3,123 tasks (one per starting file) from 1,873 real bug-fix PRs in 113 Python repositories, and measured how much code each method's list made you read before you had seen the files the change needed. No language model is used anywhere.</p>
+</header>
+
+<section>
+  <h2>What was measured</h2>
+  <div class="facts">
+    <div class="fact"><b>Graph-walking methods cover the key faster than random, by a wide margin</b><span>Best overall: Personalised PageRank (undirected), area under the curve 0.44 (95% CI 0.41–0.46) vs 0.25 for random order. Vargha–Delaney A12 vs random = 0.75 (0.5 = no difference).</span></div>
+    <div class="fact"><b>But which method leads depends on the evidence used as the answer key</b><span>With the co-edited-files key (independent of imports), text search (BM25) and co-change history rank near the top. With the symbol key, which overlaps the import graph by construction, graph methods lead.</span></div>
+    <div class="fact"><b>Needed files sit close to the starting file</b><span>Most answer-key files are 1–2 import hops away (ignoring direction). Few have no path at all. Following imports in one direction only misses about a third.</span></div>
+    <div class="fact"><b>There is a large gap to the ceiling</b><span>A cheat ceiling that already knows the answer reaches 0.78. The best real method reaches 0.44, so there is room for better orderings.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>How much of the needed code you've seen, by reading budget</h2>
+  <figure>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="curve"></div>
+    <figcaption>Share of the answer key (union of co-edited, symbol and, where run, executed files) seen after reading the first N lines of each method's list. Mean over 1,180 PRs with a non-empty key (each PR weighted once). Log scale on the budget.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>RQ1 · Every method, one number each</h2>
+  <p>Area under the coverage curve over budgets of 250 to 32,000 lines (1 = the whole key read within 250 lines). Grey rows are references, not methods. Bars show a 95% bootstrap interval that resamples whole repositories.</p>
+  <figure>
+    <div class="chart" id="dots"></div>
+    <figcaption>Friedman test across 31 methods over 112 repos: χ² = 1893, p &lt; 0.001; Nemenyi critical difference in average rank = 4.57. "BFS (imports)" and "forward closure, near first" are the same rule by construction; only one is shown.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>The answer key changes the ranking</h2>
+  <p class="callout">This is the most important caution. The symbol key comes from resolving names in the new code, and a file that defines a name you use is usually one you import. So it favours import-graph methods by construction. The co-edited key has no such link, and on it text similarity and history do as well as or better than graph walks.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Answer key from</th><th class="num">PRs</th><th>Top 3 methods (AUC)</th><th class="num">Random</th><th class="num">Ceiling</th><th class="num">Rank of PPR (und)</th><th class="num">Rank of BM25</th></tr></thead>
+    <tbody><tr><th scope=row>Co-edited files</th><td class=num>708</td><td>BM25 on identifiers <span class=mono>0.40</span><br>Robillard specificity×reinforcement <span class=mono>0.38</span><br>Co-change history <span class=mono>0.37</span></td><td class=num>0.25</td><td class=num>0.77</td><td class=num>6</td><td class=num>1</td></tr><tr><th scope=row>Symbol definitions</th><td class=num>1156</td><td>Personalised PageRank (undirected) <span class=mono>0.44</span><br>LocAgent-style BFS (adapted) <span class=mono>0.43</span><br>Personalised PageRank (imports) <span class=mono>0.43</span></td><td class=num>0.25</td><td class=num>0.79</td><td class=num>1</td><td class=num>13</td></tr><tr><th scope=row>Executed by fixing tests</th><td class=num>49</td><td>Personalised PageRank (imports) <span class=mono>0.36</span><br>Robillard specificity×reinforcement <span class=mono>0.34</span><br>LocAgent-style BFS (adapted) <span class=mono>0.33</span></td><td class=num>0.19</td><td class=num>0.66</td><td class=num>5</td><td class=num>15</td></tr></tbody>
+  </table></div>
+  <p>Single-file changes (462 PRs): top is Personalised PageRank (imports) (0.55). Multi-file changes (718 PRs): top is Personalised PageRank (undirected) (0.39). Reported separately, as decided up front.</p>
+</section>
+
+<section>
+  <h2>RQ3 · How far are the needed files?</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Key source</th><th class="num">Pairs</th><th class="num">1 hop</th><th class="num">2 hops</th><th class="num">3+ hops</th><th class="num">No path</th><th class="num">No path following imports only</th></tr></thead>
+    <tbody><tr><th scope=row>Co-edited</th><td class=num>4,458</td><td class=num>39%</td><td class=num>49%</td><td class=num>9%</td><td class=num>2.8%</td><td class=num>39%</td></tr><tr><th scope=row>Symbol</th><td class=num>7,675</td><td class=num>45%</td><td class=num>41%</td><td class=num>9%</td><td class=num>4.2%</td><td class=num>27%</td></tr><tr><th scope=row>Execution (B)</th><td class=num>2,003</td><td class=num>16%</td><td class=num>56%</td><td class=num>22%</td><td class=num>6.5%</td><td class=num>32%</td></tr></tbody>
+  </table></div>
+  <p>Distance is the shortest path in the import graph, ignoring direction, from the starting file to each answer-key file.</p>
+</section>
+
+<section>
+  <h2>RQ2 · Does repository shape predict which method helps?</h2>
+  <p>We correlated every Table 1 property with every method's gain over random, across repositories: 990 pairs, Benjamini–Hochberg corrected. 326 pairs are significant at 0.05. The strongest are mostly about <em>size</em>. In bigger repositories the random floor drops, so every method's gain grows. This is exploratory and size is a likely confounder; we have not separated it out yet.</p>
+  <ul><li><span class=mono>closure_rev</span> × <span class=mono>loc_total</span>: ρ = 0.69</li><li><span class=mono>closure_rev</span> × <span class=mono>largest_loop</span>: ρ = 0.64</li><li><span class=mono>bfs_rev</span> × <span class=mono>loc_total</span>: ρ = 0.64</li><li><span class=mono>bfs_rev</span> × <span class=mono>largest_loop</span>: ρ = 0.63</li><li><span class=mono>closure_fwd_trim</span> × <span class=mono>import_edges</span>: ρ = 0.63</li></ul>
+  <p>Which method was best per repository varies: Personalised PageRank (imports) (20), Personalised PageRank (undirected) (15), PageRank (global) (12), Robillard specificity×reinforcement (10), Aider repo-map (adapted) (8).</p>
+</section>
+
+
+<section>
+  <h2>RQ4 · A wrong starting file</h2>
+  <p>Same methods, but started from a file 1 hop away, 2 hops away, or chosen at random (rule D26).
+  The answer key stays the true one. Mean area under the curve, union key. Tasks with no file at
+  exactly 1 hop (51) or 2 hops (66) are left out of those columns.</p>
+  <p>PageRank and in-degree don't use the starting file at all, so they barely move. Methods that
+  walk out from the starting file lose a lot. With a random start, BFS and iterative deepening fall to
+  about the random floor, while personalised PageRank keeps part of its lead.</p>
+  <div class=tablewrap><table>
+    <thead><tr><th>Method</th><th class=num>Correct start</th><th class=num>1 hop off</th><th class=num>2 hops off</th><th class=num>Random start</th></tr></thead>
+    <tbody><tr><td>Personalised PageRank (undirected)</td><td class=num>0.44</td><td class=num>0.35</td><td class=num>0.35</td><td class=num>0.34</td></tr><tr><td>LocAgent-style BFS (adapted)</td><td class=num>0.42</td><td class=num>0.29</td><td class=num>0.31</td><td class=num>0.27</td></tr><tr><td>Personalised PageRank (imports)</td><td class=num>0.42</td><td class=num>0.32</td><td class=num>0.34</td><td class=num>0.32</td></tr><tr><td>Iterative deepening (undirected)</td><td class=num>0.41</td><td class=num>0.30</td><td class=num>0.31</td><td class=num>0.25</td></tr><tr><td>BFS (undirected)</td><td class=num>0.41</td><td class=num>0.29</td><td class=num>0.30</td><td class=num>0.25</td></tr><tr><td>PageRank (global)</td><td class=num>0.40</td><td class=num>0.36</td><td class=num>0.40</td><td class=num>0.40</td></tr><tr><td>In-degree (hubs)</td><td class=num>0.39</td><td class=num>0.35</td><td class=num>0.39</td><td class=num>0.39</td></tr><tr><td>Robillard specificity×reinforcement</td><td class=num>0.39</td><td class=num>0.30</td><td class=num>0.29</td><td class=num>0.23</td></tr><tr><td>Random order (floor)</td><td class=num>0.25</td><td class=num>0.22</td><td class=num>0.25</td><td class=num>0.24</td></tr></tbody></table></div>
+</section>
+
+<section>
+  <h2>Do the three kinds of evidence agree?</h2>
+  <p>On the 100 tasks with an execution run so far: the static key (co-edited + symbol) has 3.2 files on average, and the execution key (lines inside functions that ran during the fixing tests) has 20.0. 55% of static-key files also ran; only 9% of executed files are in the static key. Mean overlap (Jaccard) = 0.18. So running the tests touches far more code than the static evidence points to. That's a result about the limits of static analysis, not a bug.</p>
+</section>
+
+<section class="pending">
+  <h2>What's not done yet</h2>
+  <p><span class="pill">running</span>Execution answer key: 49 of the PRs so far. It needs one Docker test box per PR, and the full set takes about 14 hours. The PRs are processed in seeded random order, so the finished part is a random subset.</p>
+  <p><span class="pill">pending</span>Embedding-based retrieval (one method): skipped for time. It needs about 9 hours of CPU, or minutes on a GPU.</p>
+  <p><span class="pill">not started</span>RQ5 (does order change what a language model needs?) needs an API budget. RQ6 (formal analysis) is deferred.</p>
+</section>
+
+<section>
+  <h2>How to read these numbers</h2>
+  <ul>
+    <li>The answer key is a <em>floor</em>. It contains files with evidence attached and misses files a developer only read. Methods are never penalised for listing extra files, only charged for the reading.</li>
+    <li>Published approaches (Aider, RepoGraph, LocAgent, CoSIL) appear as <em>structure-only adaptations</em>, with no issue text and no model. These numbers must never be compared with the published ones.</li>
+    <li>Unit of analysis: the PR (a PR's tasks are averaged). Ties inside any method are broken randomly, averaged over 5 seeds.</li>
+    <li>Every rule was written down before any method ran (git tag <span class="mono">freeze-1</span>). Every change is logged.</li>
+  </ul>
+</section>
+
+<footer>Generated by <span class="mono">src/depgraphs/report_page.py</span> from <span class="mono">results/analysis/</span>. Sample: 113 repos from SWE-bench, SWE-bench-Live and SWE-rebench, at most 20 PRs each, drawn by seed 20260922.</footer>
+</div>
+
+<script>
+const D = {"dots": [{"m": "oracle", "label": "Cheat ceiling (uses the key)", "mean": 0.7833946603314119, "lo": 0.7614465859219948, "hi": 0.8031409333595151, "ref": true, "a12": 0.9877901465096236, "n": 1180}, {"m": "ppr_und", "label": "Personalised PageRank (undirected)", "mean": 0.4357481726437126, "lo": 0.4096965757832025, "hi": 0.462947904851783, "ref": false, "a12": 0.7547583309393853, "n": 1180}, {"m": "locagent_bfs", "label": "LocAgent-style BFS (adapted)", "mean": 0.4209804612250873, "lo": 0.3933708146246279, "hi": 0.4479982172275003, "ref": false, "a12": 0.7409185578856651, "n": 1180}, {"m": "ppr_fwd", "label": "Personalised PageRank (imports)", "mean": 0.4172858495175891, "lo": 0.3936093355535845, "hi": 0.4433180310527523, "ref": false, "a12": 0.7242900746911807, "n": 1180}, {"m": "ids_und", "label": "Iterative deepening (undirected)", "mean": 0.413224365877622, "lo": 0.3866377065085293, "hi": 0.4386394168784387, "ref": false, "a12": 0.7270457483481758, "n": 1180}, {"m": "bfs_und", "label": "BFS (undirected)", "mean": 0.4083311374608257, "lo": 0.3808471280119668, "hi": 0.4345933551048174, "ref": false, "a12": 0.7194929617925884, "n": 1180}, {"m": "pagerank", "label": "PageRank (global)", "mean": 0.4028695669491965, "lo": 0.3763118490957985, "hi": 0.4312415423683129, "ref": false, "a12": 0.7109932490663602, "n": 1180}, {"m": "indegree", "label": "In-degree (hubs)", "mean": 0.3911916948333083, "lo": 0.3660697729198555, "hi": 0.416782979975533, "ref": false, "a12": 0.7036584314852053, "n": 1180}, {"m": "robillard", "label": "Robillard specificity\u00d7reinforcement", "mean": 0.3907868776637984, "lo": 0.3615990075626296, "hi": 0.417405379354553, "ref": false, "a12": 0.6802133007756391, "n": 1180}, {"m": "aider_repomap", "label": "Aider repo-map (adapted)", "mean": 0.3830671607542876, "lo": 0.355650895700624, "hi": 0.4110375484485061, "ref": false, "a12": 0.6814209278942832, "n": 1180}, {"m": "hits_auth", "label": "HITS authority", "mean": 0.3830031360376926, "lo": 0.3569850843132709, "hi": 0.4093383592517567, "ref": false, "a12": 0.6901001867279517, "n": 1180}, {"m": "bfs_fwd", "label": "BFS (imports)", "mean": 0.3828988696759586, "lo": 0.3608193930197989, "hi": 0.4066574553248579, "ref": false, "a12": 0.6788738868141339, "n": 1180}, {"m": "directory", "label": "Directory proximity", "mean": 0.3524754991001795, "lo": 0.3224925205404324, "hi": 0.3810543243507033, "ref": false, "a12": 0.6407113616776788, "n": 1180}, {"m": "bm25", "label": "BM25 on identifiers", "mean": 0.3425895708360054, "lo": 0.3131717248212182, "hi": 0.3705717980500317, "ref": false, "a12": 0.6238821459350762, "n": 1180}, {"m": "closeness", "label": "Closeness centrality", "mean": 0.3411556134377609, "lo": 0.3149699697646112, "hi": 0.3677321160673914, "ref": false, "a12": 0.633518026429187, "n": 1180}, {"m": "cochange", "label": "Co-change history", "mean": 0.3293025789231067, "lo": 0.3015703502586309, "hi": 0.3572036608847879, "ref": false, "a12": 0.5924903045101982, "n": 1180}, {"m": "khop1_und", "label": "1-hop neighbours", "mean": 0.3265653298702398, "lo": 0.3026783858381294, "hi": 0.3499518735857555, "ref": false, "a12": 0.5777966101694915, "n": 1180}, {"m": "repograph_k2", "label": "RepoGraph 2-hop (adapted)", "mean": 0.3257231619177393, "lo": 0.2975579585901911, "hi": 0.3526227805310578, "ref": false, "a12": 0.6163110456765297, "n": 1180}, {"m": "betweenness", "label": "Betweenness", "mean": 0.3156555044879789, "lo": 0.2900390531240731, "hi": 0.3412204079244375, "ref": false, "a12": 0.6041421286986498, "n": 1180}, {"m": "cosil_bfs", "label": "CoSIL-style call-graph BFS (adapted)", "mean": 0.3149941483068857, "lo": 0.2880164746483489, "hi": 0.3411391719388156, "ref": false, "a12": 0.5935219764435506, "n": 1180}, {"m": "topo_fwd", "label": "Topological (dependencies first)", "mean": 0.2979054291312196, "lo": 0.273454246529777, "hi": 0.3246953550414684, "ref": false, "a12": 0.5491880925021545, "n": 1180}, {"m": "repograph_k1", "label": "RepoGraph 1-hop (adapted)", "mean": 0.297053397449263, "lo": 0.2718714289248514, "hi": 0.3209804803763696, "ref": false, "a12": 0.5661149813272048, "n": 1180}, {"m": "closure_fwd", "label": "Forward closure", "mean": 0.28187397144163, "lo": 0.2560517754995334, "hi": 0.3068070951905869, "ref": false, "a12": 0.5375140045963803, "n": 1180}, {"m": "closure_comb", "label": "Both-direction closure", "mean": 0.2767371626526806, "lo": 0.2500396457919078, "hi": 0.3030697673961331, "ref": false, "a12": 0.5355881930479747, "n": 1180}, {"m": "khop2_und", "label": "2-hop neighbours", "mean": 0.2700324050533451, "lo": 0.2431545392558549, "hi": 0.2959811616511727, "ref": false, "a12": 0.5340304510198219, "n": 1180}, {"m": "whole_repo", "label": "Whole repo, path order", "mean": 0.2635872113964128, "lo": 0.2344520099325922, "hi": 0.2931594099171585, "ref": true, "a12": 0.513924518816432, "n": 1180}, {"m": "labelprop", "label": "Label-propagation cluster", "mean": 0.2557108583198741, "lo": 0.2308281234119887, "hi": 0.2806852728388094, "ref": false, "a12": 0.4955267882792301, "n": 1180}, {"m": "dfs_und", "label": "DFS (undirected)", "mean": 0.2469367812368525, "lo": 0.2206809699296449, "hi": 0.2727530725416073, "ref": false, "a12": 0.4900355501292732, "n": 1180}, {"m": "random", "label": "Random order (floor)", "mean": 0.2455405465371017, "lo": 0.2180106608302553, "hi": 0.2747669593203192, "ref": true, "a12": 0.5, "n": 1180}, {"m": "louvain", "label": "Louvain cluster", "mean": 0.2260989882535874, "lo": 0.2051662384704464, "hi": 0.2469357506300069, "ref": false, "a12": 0.4182623527721918, "n": 1180}, {"m": "same_dir", "label": "Same directory", "mean": 0.1976834220918037, "lo": 0.1766162430954163, "hi": 0.2181561402884319, "ref": true, "a12": 0.361451809824763, "n": 1180}, {"m": "bfs_rev", "label": "BFS (importers)", "mean": 0.1543857126372563, "lo": 0.134798375177641, "hi": 0.1742863923259854, "ref": false, "a12": 0.3153827923010629, "n": 1180}, {"m": "closure_rev", "label": "Reverse closure (importers)", "mean": 0.1260014866092136, "lo": 0.1070953918298792, "hi": 0.1440865266873321, "ref": false, "a12": 0.2686268313702959, "n": 1180}, {"m": "seed_alone", "label": "Starting file alone", "mean": 0.0, "lo": 0.0, "hi": 0.0, "ref": true, "a12": 0.0101694915254237, "n": 1180}], "curves": {"ppr_und": [[125.0, 0.0332629907595635], [250.0, 0.056288506660963], [500.0, 0.1079608068865876], [1000.0, 0.1976571450538856], [2000.0, 0.3176805337326421], [4000.0, 0.4761461754069848], [8000.0, 0.6465278459026655], [16000.0, 0.790244102877169], [32000.0, 0.8934802646288029], [64000.0, 0.9449811547789412]], "bm25": [[125.0, 0.0080402746186644], [250.0, 0.0257253288535068], [500.0, 0.0572791233240608], [1000.0, 0.1122852220816649], [2000.0, 0.2137339330204418], [4000.0, 0.3454832804133195], [8000.0, 0.5044257429243146], [16000.0, 0.6709030488464044], [32000.0, 0.8108808872243297], [64000.0, 0.8867634822529152]], "random": [[125.0, 0.0038006509227199], [250.0, 0.0082727567780104], [500.0, 0.0184529438471654], [1000.0, 0.0414124618231621], [2000.0, 0.0913609117996938], [4000.0, 0.1857926010104051], [8000.0, 0.3427163853393935], [16000.0, 0.5423270884042597], [32000.0, 0.7339892232947233], [64000.0, 0.8734428449201846]], "oracle": [[125.0, 0.1994393722635563], [250.0, 0.3305455547254367], [500.0, 0.4951790779389283], [1000.0, 0.6867799714461679], [2000.0, 0.8381539312307331], [4000.0, 0.9410023367800676], [8000.0, 0.9805151021209614], [16000.0, 0.9957349024042058], [32000.0, 0.9992464060047946], [64000.0, 0.9999521705154806]]}, "labels": {"ppr_und": "Personalised PageRank (undirected)", "bm25": "BM25 on identifiers", "random": "Random order (floor)", "oracle": "Cheat ceiling (uses the key)"}};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a={}, p) => { const e=document.createElementNS(NS,t); for (const k in a) e.setAttribute(k,a[k]); if(p) p.appendChild(e); return e; };
+function tip(host){ const t=document.createElement("div"); t.className="tip"; t.hidden=true; host.appendChild(t); return t; }
+
+function drawCurves(){
+  const host=document.getElementById("curve"); host.innerHTML="";
+  const W=800,H=360,m={l:48,r:150,t:12,b:40};
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Coverage by reading budget"},host);
+  const order=["ppr_und","bm25","random","oracle"], col={ppr_und:"--s1",bm25:"--s2",random:"--s3",oracle:"--s4"};
+  const xs=D.curves[order[0]].map(d=>d[0]);
+  const lx=v=>m.l+(Math.log(v)-Math.log(xs[0]))/(Math.log(xs[xs.length-1])-Math.log(xs[0]))*(W-m.l-m.r);
+  const ly=v=>m.t+(1-v)*(H-m.t-m.b);
+  for (const g of [0,.25,.5,.75,1]){ el("line",{x1:m.l,x2:W-m.r,y1:ly(g),y2:ly(g),stroke:css("--grid")},svg);
+    el("text",{x:m.l-8,y:ly(g)+4,"text-anchor":"end"},svg).textContent=Math.round(g*100)+"%"; }
+  for (const x of xs){ el("text",{x:lx(x),y:H-m.b+18,"text-anchor":"middle"},svg).textContent=x>=1000?(x/1000)+"k":x; }
+  el("text",{x:(m.l+W-m.r)/2,y:H-4,"text-anchor":"middle"},svg).textContent="lines read";
+  const leg=document.getElementById("legend"); leg.innerHTML="";
+  const ends=[];
+  for (const k of order){ const pts=D.curves[k]; const c=css(col[k]);
+    el("path",{d:pts.map((p,i)=>(i?"L":"M")+lx(p[0])+","+ly(p[1])).join(""),fill:"none",stroke:c,"stroke-width":2,"stroke-dasharray":k==="oracle"?"5 4":"none"},svg);
+    const s=document.createElement("span"); s.innerHTML=`<i style="background:${c}"></i>${D.labels[k]}`; leg.appendChild(s);
+    const last=pts[pts.length-1]; ends.push({k,y:ly(last[1]),c}); }
+  ends.sort((a,b)=>a.y-b.y); for (let i=1;i<ends.length;i++) if (ends[i].y-ends[i-1].y<15) ends[i].y=ends[i-1].y+15;
+  for (const e of ends){ el("text",{x:W-m.r+8,y:e.y+4,class:"lab"},svg).textContent=D.labels[e.k].replace(/ \(.*\)/,""); }
+  const cross=el("line",{y1:m.t,y2:H-m.b,stroke:css("--ink-3"),"stroke-dasharray":"2 3",visibility:"hidden"},svg);
+  const t=tip(host);
+  const hit=el("rect",{x:m.l,y:m.t,width:W-m.l-m.r,height:H-m.t-m.b,fill:"transparent"},svg);
+  hit.addEventListener("mousemove",ev=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)*W/r.width;
+    let i=0,best=1e9; xs.forEach((x,j)=>{const d=Math.abs(lx(x)-px); if(d<best){best=d;i=j;}});
+    cross.setAttribute("x1",lx(xs[i])); cross.setAttribute("x2",lx(xs[i])); cross.setAttribute("visibility","visible");
+    t.innerHTML=`<b>${xs[i].toLocaleString()} lines read</b><br>`+order.map(k=>`${D.labels[k]}: ${(D.curves[k][i][1]*100).toFixed(1)}%`).join("<br>");
+    t.style.left=(lx(xs[i])/W*100)+"%"; t.style.top=(m.t/H*100+10)+"%"; t.hidden=false; });
+  hit.addEventListener("mouseleave",()=>{t.hidden=true; cross.setAttribute("visibility","hidden");});
+}
+
+function drawDots(){
+  const host=document.getElementById("dots"); host.innerHTML="";
+  const rows=D.dots, rowH=22, m={l:270,r:56,t:20,b:30}, W=800, H=m.t+m.b+rows.length*rowH;
+  const svg=el("svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Area under the curve per method"},host);
+  const max=Math.max(...rows.map(r=>r.hi)); const hiX=Math.ceil(max*10)/10;
+  const x=v=>m.l+v/hiX*(W-m.l-m.r);
+  for (let g=0; g<=hiX+1e-9; g+=0.1){ el("line",{x1:x(g),x2:x(g),y1:m.t-6,y2:H-m.b,stroke:css("--grid")},svg);
+    el("text",{x:x(g),y:H-m.b+18,"text-anchor":"middle"},svg).textContent=g.toFixed(1); }
+  const rnd=rows.find(r=>r.m==="random");
+  el("line",{x1:x(rnd.mean),x2:x(rnd.mean),y1:m.t-6,y2:H-m.b,stroke:css("--ink-3"),"stroke-dasharray":"3 3"},svg);
+  el("text",{x:x(rnd.mean)+4,y:m.t-8},svg).textContent="random floor";
+  const t=tip(host);
+  rows.forEach((r,i)=>{ const y=m.t+i*rowH+rowH/2; const c=r.ref?css("--ref"):css("--s1");
+    el("text",{x:m.l-10,y:y+4,"text-anchor":"end",class:r.ref?"reflab":"lab"},svg).textContent=r.label;
+    el("line",{x1:x(r.lo),x2:x(r.hi),y1:y,y2:y,stroke:c,"stroke-width":2,"stroke-linecap":"round"},svg);
+    el("circle",{cx:x(r.mean),cy:y,r:4.5,fill:c,stroke:css("--panel"),"stroke-width":2},svg);
+    el("text",{x:W-m.r+8,y:y+4,class:"mono"},svg).textContent=r.mean.toFixed(3);
+    const hit=el("rect",{x:0,y:y-rowH/2,width:W,height:rowH,fill:"transparent"},svg);
+    hit.addEventListener("mouseenter",()=>{ t.innerHTML=`<b>${r.label}</b><br>AUC ${r.mean.toFixed(3)} (95% CI ${r.lo.toFixed(3)}–${r.hi.toFixed(3)})<br>`+(r.m==="random"?"":`A12 vs random: ${r.a12.toFixed(2)}<br>`)+`${r.n} PRs`;
+      t.style.left=(x(r.mean)/W*100)+"%"; t.style.top=((y-6)/H*100)+"%"; t.hidden=false; });
+    hit.addEventListener("mouseleave",()=>t.hidden=true);
+  });
+}
+function draw(){ drawCurves(); drawDots(); }
+draw();
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
+</script>
