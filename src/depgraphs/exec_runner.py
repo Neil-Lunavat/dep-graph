@@ -100,8 +100,9 @@ def container_script(rec: dict) -> str:
     cmd, self_applies = test_command(rec)
     prefix = runner_prefix(cmd) if rec["dataset"] != "swebench_full" else ""
     py = f"{prefix}python"
-    install = ("uv pip install -q coverage" if prefix.startswith("uv run")
-               else f"{py} -m pip install -q coverage")
+    # coverage >= 5.5 is needed for per-test contexts; old environments may ship 4.x
+    install = ("uv pip install -q -U 'coverage>=5.5'" if prefix.startswith("uv run")
+               else f"{py} -m pip install -q -U 'coverage>=5.5'")
     noop = ""
     if "pytest" in cmd or rec["dataset"] == "swebench_full":
         noop_runner = (f"{prefix}python -m pytest" if rec["dataset"] != "swebench_full"
@@ -220,6 +221,10 @@ def main():
     recs = [json.loads(l) for l in open(a.bundle, encoding="utf-8")]
     if a.only:
         recs = [r for r in recs if r["instance_id"] in set(a.only)]
+    # Seeded random order (seed 20260922, as for the sample), so stopping early at any point
+    # leaves a random subset rather than an alphabetical one.
+    import hashlib
+    recs.sort(key=lambda r: hashlib.sha256(f"20260922{r['instance_id']}".encode()).hexdigest())
     recs = [r for r in recs if not (out / f"{r['instance_id']}.json").exists()]
     if a.limit:
         recs = recs[: a.limit]
