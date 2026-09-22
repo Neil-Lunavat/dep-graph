@@ -16,7 +16,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
 
-from depgraphs.patches import is_test_path_9_2
+from depgraphs.patches import is_test_path
 
 STDLIB = set(sys.stdlib_module_names)
 
@@ -28,7 +28,7 @@ class Options:
     from_target: str = "module"       # "module": `from pkg import name` -> pkg/__init__ if name is not a submodule
                                       # "defining": follow __init__ re-exports to the defining file
     weighted: bool = False            # edges carry the number of import statements (else weight 1)
-    include_tests: bool = True        # test files (9.2 path rule) are nodes
+    include_tests: bool = True        # test files (study rule, D18) are nodes
     type_checking: bool = True        # keep imports under `if TYPE_CHECKING:`
     function_level: bool = True       # keep imports inside functions/methods
 
@@ -91,7 +91,7 @@ def discover(repo: Path, include_tests: bool = True,
         if any(part.startswith(".") for part in rel.parts) or ".git" in rel.parts:
             skipped["skipped_hidden_path"] += 1
             continue
-        if not include_tests and is_test_path_9_2(str(rel)):
+        if not include_tests and is_test_path(str(rel)):
             skipped["skipped_test_file"] += 1
             continue
         root = next(r for r in roots if p.is_relative_to(r))

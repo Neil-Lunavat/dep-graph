@@ -11,3 +11,4 @@ logs/*.log
 # Pre-existing files unrelated to this project (left untouched)
 AI Poster*.html
 logs/progress.json
+data/graphs/

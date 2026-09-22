@@ -65,6 +65,12 @@ def sample():
 
 
 @stage
+def graphs():
+    from depgraphs import graphs as g
+    g.main()
+
+
+@stage
 def builders_prep():
     from depgraphs.graph import compare
     compare.main(compare.rule_repos() + compare.EXTRA_REPOS)
