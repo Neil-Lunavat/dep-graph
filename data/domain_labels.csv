@@ -1,0 +1,114 @@
+repo_key,domain
+aiogram/aiogram,web/API
+astropy/astropy,scientific/numeric
+astropy/astroquery,scientific/numeric
+astropy/photutils,scientific/numeric
+aws-cloudformation/cfn-lint,developer tools/testing
+azure/azure-cli,CLI/infrastructure
+beeware/briefcase,developer tools/testing
+borgbackup/borg,CLI/infrastructure
+bridgecrewio/checkov,developer tools/testing
+canonical/charmcraft,CLI/infrastructure
+cloud-custodian/cloud-custodian,CLI/infrastructure
+conan-io/conan,developer tools/testing
+dask/dask,data/ML
+deepset-ai/haystack,data/ML
+django-json-api/django-rest-framework-json-api,web/API
+django/django,web/API
+docker/docker-py,CLI/infrastructure
+dpkp/kafka-python,CLI/infrastructure
+dwavesystems/dimod,scientific/numeric
+elastic/rally,developer tools/testing
+ethereum/web3.py,web/API
+facelessuser/pymdown-extensions,other
+falconry/falcon,web/API
+fatal1ty/mashumaro,other
+fitbenchmarking/fitbenchmarking,scientific/numeric
+fonttools/fonttools,other
+frictionlessdata/frictionless-py,data/ML
+genericmappingtools/pygmt,scientific/numeric
+getsentry/sentry-python,developer tools/testing
+google/flax,data/ML
+google/mobly,developer tools/testing
+googleapis/python-storage,web/API
+hgrecco/pint,scientific/numeric
+ibis-project/ibis,data/ML
+instructlab/instructlab,data/ML
+ipython/ipython,developer tools/testing
+iterative/dvc,data/ML
+jackdewinter/pymarkdown,developer tools/testing
+jlowin/fastmcp,web/API
+joke2k/faker,other
+kedro-org/kedro,data/ML
+keras-team/keras,data/ML
+kozea/weasyprint,other
+linkml/linkml,other
+marcosschroh/dataclasses-avroschema,other
+materials-consortia/optimade-python-tools,scientific/numeric
+matplotlib/matplotlib,scientific/numeric
+matrix-org/synapse,web/API
+mikedh/trimesh,scientific/numeric
+missionpinball/mpf,other
+mne-tools/mne-python,scientific/numeric
+mwaskom/seaborn,scientific/numeric
+narwhals-dev/narwhals,data/ML
+networkx/networkx,scientific/numeric
+nilearn/nilearn,scientific/numeric
+nipy/nipype,scientific/numeric
+nltk/nltk,data/ML
+numba/numba,scientific/numeric
+nvidia/hpc-container-maker,CLI/infrastructure
+oasis-open/cti-python-stix2,other
+openai/openai-agents-python,data/ML
+pandas-dev/pandas,data/ML
+patroni/patroni,CLI/infrastructure
+pdm-project/pdm,developer tools/testing
+pennylaneai/pennylane,scientific/numeric
+pre-commit/pre-commit,developer tools/testing
+projectmesa/mesa,scientific/numeric
+psf/black,developer tools/testing
+pvlib/pvlib-python,scientific/numeric
+pydata/xarray,data/ML
+pylint-dev/pylint,developer tools/testing
+pypsa/pypsa,scientific/numeric
+pytest-dev/pytest,developer tools/testing
+python-cmd2/cmd2,CLI/infrastructure
+python-control/python-control,scientific/numeric
+python-telegram-bot/python-telegram-bot,web/API
+python/mypy,developer tools/testing
+pytorch/ignite,data/ML
+pytorch/torchtune,data/ML
+pyvista/pyvista,scientific/numeric
+rdflib/rdflib,other
+reflex-dev/reflex,web/API
+reframe-hpc/reframe,developer tools/testing
+repobee/repobee,CLI/infrastructure
+scikit-learn/scikit-learn,data/ML
+scipp/plopp,scientific/numeric
+scrapy/scrapy,web/API
+sdv-dev/sdv,data/ML
+sissbruecker/linkding,web/API
+spacetelescope/jwst,scientific/numeric
+spdx/tools-python,other
+sphinx-doc/sphinx,developer tools/testing
+spikeinterface/spikeinterface,scientific/numeric
+sqlfluff/sqlfluff,developer tools/testing
+stanfordnlp/dspy,data/ML
+statsmodels/statsmodels,scientific/numeric
+streamlink/streamlink,CLI/infrastructure
+sunpy/sunpy,scientific/numeric
+sympy/sympy,scientific/numeric
+tefra/xsdata,other
+terrapower/armi,scientific/numeric
+textualize/textual,other
+tobymao/sqlglot,developer tools/testing
+tornadoweb/tornado,web/API
+tox-dev/tox,developer tools/testing
+twisted/twisted,web/API
+ucfopen/canvasapi,web/API
+vertexproject/synapse,other
+wemake-services/wemake-python-styleguide,developer tools/testing
+xonsh/xonsh,CLI/infrastructure
+yt-dlp/yt-dlp,CLI/infrastructure
+yukinarit/pyserde,other
+zarr-developers/zarr-python,data/ML

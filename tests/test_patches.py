@@ -58,3 +58,9 @@ def test_test_path_rule():
     assert not is_test_path_9_2("pkg/testsuite.py")
     assert not is_test_path_9_2("pkg/contest.py")
     assert not is_test_path_9_2("pytest/main.py")
+
+
+def test_study_test_rule_adds_test_dir():
+    from depgraphs.patches import is_test_path
+    assert is_test_path("test/fixtures/a.py") and not is_test_path_9_2("test/fixtures/a.py")
+    assert is_test_path("tests/x.py") and not is_test_path("pkg/testing_utils.py")

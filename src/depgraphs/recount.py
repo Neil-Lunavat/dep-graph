@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 from depgraphs.datasets import DATASETS, ROOT, load
-from depgraphs.patches import is_py, is_test_path_9_2, parse
+from depgraphs.patches import is_py, is_test_path, is_test_path_9_2, parse
 
 OUT = ROOT / "results" / "step2"
 LINE_CAPS = [50, 100, 200, 300, 500, None]
@@ -69,6 +69,7 @@ def task_rows(name: str, df: pd.DataFrame) -> list[dict]:
         files = parse(r["patch"])
         py = [f for f in files if is_py(f.path)]
         src = [f for f in py if not is_test_path_9_2(f.path)]
+        src_s = [f for f in py if not is_test_path(f.path)]   # study rule (D18)
         f2p_col = "fail_to_pass" if name == "swebench_pro" else "FAIL_TO_PASS"
         f2p = _as_list(r[f2p_col]) if f2p_col in r else None
         issues = _as_list(r["issue_numbers"]) if "issue_numbers" in r else None
@@ -87,6 +88,10 @@ def task_rows(name: str, df: pd.DataFrame) -> list[dict]:
             "n_nonpy_files": len(files) - len(py),
             "src_changed_lines": sum(f.changed for f in src),
             "n_new_src_py": sum(f.is_new for f in src),
+            "n_src_py_files_study": len(src_s),
+            "src_changed_lines_study": sum(f.changed for f in src_s),
+            "n_new_src_py_study": sum(f.is_new for f in src_s),
+            "src_files_study": [f.path for f in src_s],
             "n_deleted_src_py": sum(f.is_deleted for f in src),
             "n_f2p": len(f2p) if f2p is not None else np.nan,
             "n_issues": len(issues) if issues is not None else np.nan,
@@ -96,10 +101,12 @@ def task_rows(name: str, df: pd.DataFrame) -> list[dict]:
 
 
 def eligible(t: pd.DataFrame, lo: int, hi: int = 10, cap: int | None = MAIN_CAP,
-             need_f2p: bool = True) -> pd.Series:
-    m = t.n_src_py_files.between(lo, hi)
+             need_f2p: bool = True, study: bool = False) -> pd.Series:
+    """study=True uses the study's test rule (9.2 + `test/`); False reproduces 9.2."""
+    sfx = "_study" if study else ""
+    m = t[f"n_src_py_files{sfx}"].between(lo, hi)
     if cap is not None:
-        m &= t.src_changed_lines <= cap
+        m &= t[f"src_changed_lines{sfx}"] <= cap
     if need_f2p:
         m &= t.n_f2p.fillna(0) >= 1
     return m

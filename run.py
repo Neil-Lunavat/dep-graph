@@ -59,6 +59,12 @@ def gate_a():
 
 
 @stage
+def sample():
+    from depgraphs import sample as s
+    s.main()
+
+
+@stage
 def builders_prep():
     from depgraphs.graph import compare
     compare.main(compare.rule_repos() + compare.EXTRA_REPOS)

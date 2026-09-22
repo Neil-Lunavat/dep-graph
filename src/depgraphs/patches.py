@@ -86,5 +86,16 @@ def is_test_path_9_2(path: str) -> bool:
     return name.startswith("test_") or name.endswith("_test.py") or name == "conftest.py"
 
 
+# The study's test rule (D10b/D18): 9.2 plus directories named `test`.
+STUDY_TEST_DIRS = TEST_DIRS | {"test"}
+
+
+def is_test_path(path: str) -> bool:
+    p = PurePosixPath(path)
+    if any(part in STUDY_TEST_DIRS for part in p.parts[:-1]):
+        return True
+    return is_test_path_9_2(path)
+
+
 def is_py(path: str) -> bool:
     return path.endswith(".py")
