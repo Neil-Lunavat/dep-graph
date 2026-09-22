@@ -12,3 +12,5 @@ logs/*.log
 AI Poster*.html
 logs/progress.json
 data/graphs/
+data/lexfeat/
+data/issue_bags.json

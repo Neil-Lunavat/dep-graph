@@ -89,6 +89,36 @@ def exec_bundle():
 
 
 @stage
+def lexfeat():
+    from depgraphs import lexfeat as l
+    l.main()
+
+
+@stage
+def issues():
+    from depgraphs import issues as i
+    i.main()
+
+
+@stage
+def study2():
+    from depgraphs import study2 as s
+    s.main()
+
+
+@stage
+def ball():
+    from depgraphs import ball as b
+    b.main()
+
+
+@stage
+def analysis2():
+    from depgraphs import analysis2 as a
+    a.main()
+
+
+@stage
 def builders_prep():
     from depgraphs.graph import compare
     compare.main(compare.rule_repos() + compare.EXTRA_REPOS)

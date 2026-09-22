@@ -1,7 +1,8 @@
-% Draft for ACM TOSEM (acmart, acmsmall). Compile on Overleaf: upload the whole paper/ folder.
-% Every number below is copied from results/analysis/ (findings.json, rq1_*.csv,
-% pairwise_union_top8.csv, wrong_seed_all.csv, curves_union.csv). Do not edit numbers by hand;
-% re-run the analysis and re-copy. \TODO{} marks parts that are still pending.
+% Draft for ACM TOSEM (acmart, acmsmall).
+% Every number below is copied from results/study2/ (per_source.csv, pairwise.csv,
+% rank_by_source.csv, lines_to_reach.csv, complementarity.csv, overlap.csv, ball.csv,
+% distance_profile.csv, leak_sensitivity.csv, findings.json). Do not edit numbers by hand;
+% re-run src/depgraphs/{study2,analysis2,ball}.py and re-copy. \TODO{} marks pending parts.
 \documentclass[acmsmall,review]{acmart}
 
 \usepackage{booktabs}
@@ -16,7 +17,8 @@
 
 \begin{document}
 
-\title{The Answer Key Picks the Winner: An Empirical Study of Import-Graph Reading Orders for Code Changes in Python}
+\title{The Import Graph Answers a Different Question}
+\subtitle{Structure, Issue Text, and What Counts as a File You Needed to Read}
 
 \author{Neil Lunavat}
 \affiliation{%
@@ -25,459 +27,603 @@
 \email{neillunavat3192@gmail.com}
 
 \begin{abstract}
-Before changing a file, a developer or an automated agent must decide what else to read, and
-in what order. Many tools order files with the repository's dependency graph, but they are
-evaluated against different notions of which files were ``needed''. We compare 30 ordering
-methods (graph traversals, centrality rankings, clustering, lexical retrieval, change history,
-and model-free adaptations of Aider, RepoGraph, LocAgent and CoSIL) on 3,123 tasks drawn from
-1,873 real pull requests in 113 Python repositories (SWE-bench, SWE-bench-Live, SWE-rebench).
-Each method starts from one changed file and returns an ordered list; we score how much of an
-evidence-based answer key it covers per line read. Three findings stand out. (1) Graph methods
-clearly beat random order: personalised PageRank on the undirected import graph reaches a mean
-area under the coverage--cost curve of 0.436 versus 0.246 for random (A12 = 0.755); after
-reading 4,000 lines it has found 48\% of the needed files versus 19\% for random order.
-(2) The differences among the best graph methods are small (A12 $\leq$ 0.563), and a
-seed-independent PageRank ranking already reaches 0.403. (3) The choice of answer key
-reverses the ranking: on files co-edited in the pull request, BM25 is first and personalised
-PageRank sixth; on files that define symbols the change uses, personalised PageRank is first
-and BM25 fourteenth. Only 55\% of statically identified files were executed by the fixing
-tests, and only 9\% of executed files were identified statically. We conclude that
-evaluations of context retrieval for code changes should report results per evidence source,
-and that graph proximity is a strong, cheap baseline that learned or agentic methods should be
-required to beat. \TODO{execution-key results on the full sample; embedding baseline; RQ5 (does
-order change the context an LLM needs?).}
+To change an unfamiliar file, a developer or an agent must decide what else to read, and in
+what order. Two signals are available: the repository's dependency structure, and the words
+of the issue report. Tools overwhelmingly use the first. We compare both, and their
+combination, on 2{,}412 change tasks drawn from 1{,}873 real pull requests in 113 Python
+repositories, scoring each ordering by how much of an evidence-based answer key it covers
+per line read.
+
+The comparison only has an answer once one says what ``needed to read'' means, and that turns
+out to decide everything. Graded against the files that were \emph{co-edited} in the same
+pull request, the four best orderings fuse structure with issue text, the best pure signal
+is issue-text-to-path matching (AUC 0.436), and the best purely structural ordering is
+tenth (0.389); a query-independent PageRank prior is seventeenth, barely above random
+(0.272 vs.\ 0.247). Graded against the files that \emph{define symbols the change uses}, the
+ranking inverts: cost-scaled personalised PageRank is first (0.489), issue-text matching
+falls to thirteenth (0.383), and the PageRank prior climbs to tenth, far above random
+(0.410 vs.\ 0.251). Across the sixteen contending methods the two evidence sources induce
+rankings that are statistically unrelated (Spearman $\rho = 0.26$, $p = 0.34$). Every
+reversal is significant under Holm correction with the pull request as the unit.
+
+Two further results explain the reversal and what to do about it. The two-hop neighbourhood
+of the seed, the usual justification for graph retrieval, holds 87.5\% of the needed files
+but is also 56\% of the repository and a median of 21{,}646 lines: it supplies recall, not
+precision, with a lift of only 1.57$\times$ over taking the same share of files at random.
+And the two signals genuinely disagree about which files to name --- the top-10 lists of
+personalised PageRank and issue-text matching have a mean Jaccard overlap of 0.19, and at
+$k=20$ nearly a quarter of co-edited files are reachable by words alone. Reciprocal-rank
+fusion of one structural and one lexical ordering is consequently the only family in the top
+six under both evidence sources: it gains 0.069 AUC over pure structure on co-edited files
+($p < 0.001$) while losing nothing on symbol files ($-0.0004$, $p = 1.0$). We argue that
+retrieval for code change should be reported per evidence source, and that a cheap lexical
+signal belongs in every graph-based context tool.
 \end{abstract}
 
-\begin{CCSXML}
-<ccs2012>
-<concept><concept_id>10011007.10011074.10011111.10011113</concept_id>
-<concept_desc>Software and its engineering~Software evolution</concept_desc>
-<concept_significance>500</concept_significance></concept>
-<concept><concept_id>10011007.10011074.10011111.10011696</concept_id>
-<concept_desc>Software and its engineering~Maintaining software</concept_desc>
-<concept_significance>300</concept_significance></concept>
-</ccs2012>
-\end{CCSXML}
-\ccsdesc[500]{Software and its engineering~Software evolution}
-\ccsdesc[300]{Software and its engineering~Maintaining software}
-
-\keywords{dependency graphs, change impact analysis, code localization, context retrieval,
-empirical study, Python}
+\keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
+software engineering}
 
 \maketitle
 
-% ---------------------------------------------------------------------------------------
 \section{Introduction}
 
-A developer asked to change one file in an unfamiliar codebase must first decide what else to
-read. The same question now faces automated agents that edit repositories: their context window
-is finite, so the order in which files are read matters. A large family of tools answers the
-question with the repository's dependency structure: they traverse or rank the import or call
-graph around the file of interest~\cite{robillard2008topology,ouyang2025repograph,chen2025locagent,aiderrepomap}.
-Others use lexical similarity~\cite{robertson2009bm25} or files that changed together in the
-past~\cite{zimmermann2005mining,ying2004predicting}.
+A developer is handed a bug report and a file to change. Before writing anything they must
+decide what else to read. So must an automated agent, under a much harder constraint: a
+context window is finite, and every line spent on an irrelevant file is a line not spent on
+a relevant one.
 
-Comparing these approaches is harder than it looks, because ``the files that were needed'' is
-not observable. Studies use proxies: the files edited by the same change, the files that define
-names the change uses, or the files executed by tests that exercise the change. These proxies
-are not interchangeable, and some are closer to the structure a given method uses than others.
-If the answer key shares its construction with the method, the evaluation can reward the
-method for agreeing with the key rather than for being useful.
+The dominant answer in tool building is the dependency graph. Aider builds a repository map
+from the call and definition graph; RepoGraph, LocAgent and CoSIL construct code graphs and
+walk them outward from a starting point. The premise is intuitive and rarely stated: what
+you need to read is near, in the graph, to what you are changing.
 
-We study this problem at the file level for Python, with the import graph as the structural
-input. A \emph{method} receives one changed file (the \emph{seed}) and returns an ordered list
-of other repository files. We score the list with a coverage--cost curve: the share of the
-answer key read as a function of the number of lines read. We ask:
+There is a second signal, and it is the one a human reaches for first. Asked to fix the
+login page, a developer thinks of the authentication files --- not because \m{login.py}
+imports them, which it may well not, but because the words match. That signal sits in the
+issue report, and graph-based tools largely do not use it for ordering.
+
+This paper compares the two. The comparison sounds simple and is not, because it has no
+answer until one says what it means for a file to have been ``needed''. We use two evidence
+sources that can be recovered from the repository without human labelling: the files
+\emph{co-edited} in the same pull request, and the files that \emph{define symbols} the
+changed code references. Both are defensible. Neither is obviously the right one. They give
+opposite answers to the question this paper asks.
+
+\subsection*{Research questions}
 
 \begin{description}
-\item[RQ1] How do ordering methods differ in how quickly they cover the answer key?
-\item[RQ2] Do import-graph properties of a repository relate to which method performs best?
-\item[RQ3] How far are the answer-key files from the seed in the import graph?
-\item[RQ4] How does performance change when the seed is wrong?
-\item[RQ5] Holding the file set fixed, does order change the context budget a language model
-  needs? \TODO{not yet run; needs API budget.}
+\item[RQ1] How much of a repository is the seed's two-hop neighbourhood, and how much recall
+does it buy over a same-sized random sample?
+\item[RQ2] Do structural and lexical reading orders rank differently under the two evidence
+sources, and by how much?
+\item[RQ3] How much does conditioning on the seed file add over a query-independent
+repository prior, and does the answer depend on the evidence source?
+\item[RQ4] Do the two signals retrieve the same files, or different ones?
+\item[RQ5] Does fusing them produce an ordering that is good under both evidence sources?
 \end{description}
 
-\paragraph{Contributions.}
-\begin{itemize}
-\item A pre-registered comparison of 30 model-free ordering methods and 5 references on 3,123
-  tasks from 1,873 pull requests in 113 Python repositories, with a cost-aware metric and
-  PR-level statistics (Section~\ref{sec:design}).
-\item Evidence that the definition of the answer key changes which method wins, including a
-  reversal between lexical and graph methods (Section~\ref{sec:rq1}).
-\item A measurement of how far needed files lie from the changed file in the import graph, per
-  evidence source (Section~\ref{sec:rq3}), and of how much the methods depend on a correct
-  starting file (Section~\ref{sec:rq4}).
-\item A replication package with the graph builder, the answer keys, all ordered lists and
-  the analysis scripts. \TODO{archive DOI.}
-\end{itemize}
+\subsection*{Contributions}
 
-% ---------------------------------------------------------------------------------------
+\begin{enumerate}
+\item The first head-to-head comparison of import-graph proximity and issue-text retrieval
+as \emph{reading orders} under a line budget, on 2{,}412 tasks from 1{,}873 real pull
+requests in 113 Python repositories.
+\item Evidence that the conclusion of such a comparison is decided by the evidence source
+rather than by the methods: sixteen methods, two sources, rankings unrelated at
+$\rho = 0.26$.
+\item A quantification of what graph proximity actually contributes: recall over half the
+repository, at a lift of 1.57$\times$, with 4.2\% precision at two hops.
+\item A robustness criterion --- worst-case rank across evidence sources --- and the finding
+that under it every fusion of a structural and a lexical ordering beats every pure signal.
+\item A replication package with the graphs, tasks, issue-token bags, orderings and analysis
+scripts.
+\end{enumerate}
+
 \section{Background and Related Work}
 
-\paragraph{Change impact analysis and program comprehension.}
-Deciding what else a change touches is the classic change impact analysis
-problem~\cite{bohner1996impact}. Studies of developers show that much maintenance time goes into
-finding and relating relevant code~\cite{ko2006exploratory}. Robillard proposed ranking program
-elements by the topology of their dependencies around a set of interest, using specificity and
-reinforcement~\cite{robillard2008topology}; we adapt that algorithm to files. Feature location
-surveys~\cite{dit2013feature} cover lexical, structural and dynamic techniques.
+\paragraph{Dependency structure as a guide to change.} Using program structure to decide what
+a change touches is old. Impact analysis~\cite{bohner1996impact} propagates from a changed
+element along dependencies; Robillard~\cite{robillard2008topology} ranks program elements by
+the topology of their dependencies; feature-location surveys~\cite{dit2013feature} catalogue
+structural, textual and dynamic techniques and note that they are usually evaluated in
+isolation. Ko et al.~\cite{ko2006exploratory} observed developers navigating largely by
+identifier names and search rather than by following dependencies.
 
-\paragraph{Change history.} Files that changed together in the past tend to change together
-again~\cite{zimmermann2005mining,ying2004predicting}. We include a co-change ranking computed only
-from commits strictly before each task's base commit.
+\paragraph{Change history.} Zimmermann et al.~\cite{zimmermann2005mining} and Ying et
+al.~\cite{ying2004predicting} mine co-change from version histories to suggest files that
+change together. Our co-edited evidence source is the same notion of relatedness, used as
+ground truth rather than as a method.
 
-\paragraph{Repository context for language-model agents.} Benchmarks built from real GitHub
-issues and pull requests~\cite{jimenez2024swebench,badertdinov2025swerebench,zhang2025swebenchlive}
-made file localization a measured step of automated repair. Tools build repository graphs for
-this step: Aider's repository map ranks files by PageRank over a definition--reference
-graph~\cite{aiderrepomap}; RepoGraph retrieves ego-graphs around relevant
-definitions~\cite{ouyang2025repograph}; LocAgent lets an agent traverse a typed code
-graph~\cite{chen2025locagent}; CoSIL searches a call graph~\cite{cosil2025}. Agentless localizes
-hierarchically without an agent loop~\cite{xia2024agentless}. We re-implement the structural
-core of four of these without a language model. These adaptations are not reproductions, and we
-never compare our numbers to the published ones.
+\paragraph{Graph-based context for agents.} SWE-bench~\cite{jimenez2024swebench} and its
+successors~\cite{badertdinov2025swerebench,zhang2025swebenchlive} made repository-scale
+change tasks a standard benchmark, and a family of systems now assembles context by walking
+a code graph: Aider's repository map~\cite{aiderrepomap},
+RepoGraph~\cite{ouyang2025repograph}, LocAgent~\cite{chen2025locagent} and
+CoSIL~\cite{cosil2025}. Agentless~\cite{xia2024agentless} is a notable counterexample that
+leans on file and directory names. What none of these report is how their conclusions would
+change under a different definition of which files a task required. \TODO{survey 20--30
+localization and agent papers and tabulate the ground truth each one uses; this table is the
+direct motivation for the paper and is not yet built}
 
-\paragraph{Ground truth for localization.}
-\TODO{Survey which answer key recent localization papers use (gold-patch files, symbol
-definitions, execution traces). Do not claim a trend until this is checked paper by paper.}
+\paragraph{Retrieval.} BM25~\cite{robertson2009bm25} remains the reference lexical ranking
+function; we use it unchanged, varying only the query.
 
-% ---------------------------------------------------------------------------------------
-\section{Study Design}\label{sec:design}
+\section{Study Design}
 
-All design choices, including the methods, metrics and statistics, were written down and
-tagged in version control (\m{freeze-1}) before any method was run on any task. Deviations are
-logged with reasons in the replication package.
+The corpus, the graph builder, the task definition and the coverage--cost metric were fixed
+and tagged in version control before any method was run; the present study adds method
+families and analyses on top of that frozen base.
 
-\subsection{Repositories and pull requests}
-We pooled task instances from SWE-bench~\cite{jimenez2024swebench},
-SWE-bench-Live~\cite{zhang2025swebenchlive} and SWE-rebench~\cite{badertdinov2025swerebench}.
-A seeded random draw (seed 20260922) gave 1,886 pull requests from 113 repositories
-(SWE-rebench 1,197; SWE-bench-Live 511; SWE-bench 178). Of these, 1,873 change at least one
-existing non-test Python file that is a node of the import graph. The median repository has 158
-Python source files (range 36--2,491), 506 import edges and 41,268 lines of Python (range
-4,968--498,967). \TODO{selection criteria table: licence, size, line-cap rule, test exclusion.}
+\subsection{Repositories and tasks}
+
+We draw pull requests from SWE-bench, SWE-bench-Live, SWE-Gym, SWE-bench Pro, Loc-Bench and
+SWE-rebench, keeping Python repositories with a permissive licence. A pull request that
+edits $k$ existing non-test source files that are nodes of the import graph yields $k$
+tasks: each edited file in turn becomes the \emph{seed}, and the task is to order the
+remaining files of the repository. This gives 3{,}123 tasks from 1{,}873 pull requests in
+113 repositories. 2{,}412 tasks have at least one key file inside the graph once the seed is
+removed and are the ones scored here; 1{,}958 of them (708 pull requests) have a co-edited
+key and 2{,}341 (1{,}156 pull requests) a symbol key.
+
+The median repository contributes 131 graph nodes and the median key is 3 files totalling
+1{,}515 lines, so the task is to find a handful of files among roughly a hundred.
 
 \subsection{Import graphs}
-For each base commit we build a directed file-level graph with a custom parser based on
-Python's \m{ast} module: an edge $a \rightarrow b$ means file $a$ imports a module defined by
-file $b$. \m{from}-imports resolve to the module, imports of a package do not add edges to
-parent \m{\_\_init\_\_.py} files, imports under \m{TYPE\_CHECKING} and inside functions are kept,
-and edges are unweighted. Test files are excluded. \TODO{agreement check against a second
-builder (tree-sitter) on the two pre-selected repositories.}
 
-\subsection{Tasks and answer keys}
-A pull request that edits $k$ existing source files that are graph nodes gives $k$ tasks: each
-edited file in turn is the seed. This yields 3,123 tasks. For each task the answer key has three
-sources, always kept separate and also combined:
-\begin{itemize}
-\item \textbf{Co-edited}: the other existing source files the pull request modifies.
-\item \textbf{Symbol}: the files that define names used on the pull request's added lines,
-  resolved with \m{jedi}.
-\item \textbf{Execution}: files with a line inside a function body executed by a
-  fail-to-pass test, recorded with \m{coverage.py} in the task's Docker image. Two variants (any
-  executed line; excluding files also executed by an empty test) are kept for sensitivity.
-\end{itemize}
-The seed and files created by the pull request are never in a key. The \emph{union} key is the
-union of the three sources; for tasks without an execution run it is the union of the two
-static sources. Execution keys are currently available for 100 tasks (49 pull requests in 29
-repositories). \TODO{execution keys for the remaining pull requests; the run was stopped by a
-registry rate limit and is being resumed.}
+Graphs are built per base commit with a custom \m{ast} walker over the repository at that
+commit. Nodes are source files; an edge $a \rightarrow b$ means $a$ imports a module
+resolving to $b$. Package \m{\_\_init\_\_} files are not inserted as intermediaries,
+\m{from X import Y} resolves to the module, edges are unweighted, imports inside
+\m{TYPE\_CHECKING} blocks and inside function bodies are kept, and test files are excluded.
+Per-file line counts come from the same pass and are the cost unit throughout.
 
-\subsection{Methods}
-Table~\ref{tab:methods} lists the families. Every method sees only the base commit: the import
-graph, file sizes, identifiers, a definition--reference graph derived with \m{ast}, and git
-history strictly before the base commit. No method sees the pull request, its tests or the
-issue text, and none uses a language model. Ties and unordered sets are broken by a seeded
-random permutation, and every method is run five times with different tie-break seeds.
-\m{closure\_fwd\_trim} turned out to produce the same lists as \m{bfs\_fwd}; we keep both
-for transparency. An embedding baseline was specified but not completed in time
-\TODO{run on GPU and add}.
+\subsection{Two evidence sources}
 
-\begin{table}[t]
-\caption{Methods (30 run) and references. \emph{fwd}: follow imports; \emph{rev}: against
-imports; \emph{und}: ignore direction.}\label{tab:methods}
+\begin{description}
+\item[\m{co\_edited}] The other non-test source files changed by the same pull request. This
+is what a developer in fact touched, and it is independent of the import graph.
+\item[\m{symbol}] Files that define names the changed code references, resolved with a static
+analyser. This is what the change depends on.
+\end{description}
+
+\noindent The seed file is removed from both. We deliberately do not merge them: the whole
+question is whether the choice matters. It does, and the union is not a neutral compromise
+--- the symbol key contributes 7{,}675 file references against 4{,}458 for co-editing, so a
+union largely inherits the structural source's verdict.
+
+A third source --- files actually executed by the tests that the fix repairs --- is defined
+in our protocol but collected for only a small part of the corpus, and is therefore excluded
+here. \TODO{complete the execution-based key over the remaining pull requests and repeat the
+analysis with three sources}
+
+\subsection{Reading orders}
+
+Every method receives the graph at the base commit, the seed file, per-file identifier bags
+and the issue text, and returns an ordering of all other nodes. Table~\ref{tab:methods}
+lists them by family. Identifier bags are built by splitting every identifier in the file on
+underscores and camel-case boundaries and lower-casing; the issue text is tokenised
+identically, so text is matched against code over one vocabulary. BM25 is used with the
+standard $k_1 = 1.5$, $b = 0.75$ and differs between methods only in the query. Fusion is
+reciprocal-rank fusion with $k = 60$.
+
+Two points of fairness are worth stating. The structural methods are \emph{given} a correct
+answer for free --- the seed is one of the files the pull request changed. The issue-text
+methods are given no seed at all. And the metric charges by lines read, so we include
+cost-scaled variants (suffix \m{\_pl}, score divided by file length) to separate ``ranks the
+right files highly'' from ``happens to prefer short files''.
+
+\begin{table}
+\caption{Reading orders, by family. Structural methods use the seed and the graph; global
+methods use neither the seed nor the issue; lexical methods use no graph.}
+\label{tab:methods}
 \small
-\begin{tabular}{@{}lp{0.72\linewidth}@{}}
+\begin{tabular}{llp{7.2cm}}
 \toprule
-Family & Methods \\
+Family & Method & Ordering \\
 \midrule
-Traversal & \m{bfs\_fwd}, \m{bfs\_rev}, \m{bfs\_und}, \m{dfs\_und}, \m{ids\_und} \\
-Closure / neighbourhood & \m{closure\_fwd}, \m{closure\_rev}, \m{closure\_comb}, \m{closure\_fwd\_trim}, \m{khop1\_und}, \m{khop2\_und}, \m{topo\_fwd} \\
-Ranking & \m{pagerank} (seed-independent), \m{ppr\_und}, \m{ppr\_fwd} (personalised at the seed), \m{indegree}, \m{hits\_auth}, \m{betweenness}, \m{closeness}, \m{robillard}~\cite{robillard2008topology} \\
-Clustering & \m{louvain}~\cite{blondel2008louvain}, \m{labelprop}, \m{directory} (folder-tree distance) \\
-Retrieval / history & \m{bm25}~\cite{robertson2009bm25} over identifiers, \m{cochange}~\cite{zimmermann2005mining} \\
-Adapted tools & \m{aider\_repomap}~\cite{aiderrepomap}, \m{repograph\_k1}, \m{repograph\_k2}~\cite{ouyang2025repograph}, \m{locagent\_bfs}~\cite{chen2025locagent}, \m{cosil\_bfs}~\cite{cosil2025} \\
-References & \m{random} (floor), \m{same\_dir}, \m{whole\_repo}, \m{seed\_alone}, \m{oracle} (key files, smallest first; a ceiling that sees the key) \\
+structure & \m{bfs\_und} & breadth-first from the seed, undirected \\
+ & \m{hops\_lines} & by (hop distance from seed, file length) \\
+ & \m{ppr\_und} & personalised PageRank, restart at the seed \\
+ & \m{ppr\_und\_pl} & the same, divided by file length \\
+\midrule
+global & \m{pagerank} & PageRank of the whole graph; ignores seed and issue \\
+ & \m{indegree} & number of files importing this one \\
+\midrule
+lexical & \m{bm25\_seed} & BM25, query = identifiers of the seed file \\
+ & \m{path\_seed} & BM25 over paths, query = the seed's path tokens \\
+ & \m{bm25\_issue} & BM25, query = identifiers of the issue text \\
+ & \m{bm25\_issue\_pl} & the same, divided by file length \\
+ & \m{path\_issue} & BM25 over file paths, query = issue tokens \\
+\midrule
+fusion & \m{rrf\_hops\_path} & RRF of \m{hops\_lines} and \m{path\_issue} \\
+ & \m{rrf\_hops\_issue\_path} & RRF of \m{hops\_lines}, \m{bm25\_issue}, \m{path\_issue} \\
+ & \m{rrf\_pprpl\_issue\_path} & RRF of \m{ppr\_und\_pl}, \m{bm25\_issue}, \m{path\_issue} \\
+ & \m{rrf\_ppr\_issue} & RRF of \m{ppr\_und} and \m{bm25\_issue} \\
+ & \m{rrf\_ppr\_issue\_path} & RRF of \m{ppr\_und}, \m{bm25\_issue}, \m{path\_issue} \\
+\midrule
+reference & \m{same\_dir} & files in the seed's directory first \\
+ & \m{random} & uniformly shuffled: the floor \\
+ & \m{oracle} & key files only, cheapest first: the ceiling \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Metric}
-For a list $L$ and key $K$, coverage at budget $b$ is the share of $K$ contained in the longest
-prefix of $L$ whose total length is at most $b$ lines. The primary score is the mean coverage
-over the budgets $\{250, 500, \dots, 32000\}$ lines (eight doublings), which we call AUC; it lies
-in $[0,1]$. Rank-based metrics (Acc@k, MRR, MAP, NDCG@10) are recorded for comparability.
-\TODO{report file- and token-cost variants in an appendix.}
+
+An ordering is read from the top until a line budget is exhausted; coverage is the fraction
+of the key that has been read. We evaluate at budgets
+$\{250, 500, 1000, 2000, 4000, 8000, 16000, 32000\}$ and report the AUC, the mean coverage
+over those eight doublings, so that a method must be good at both tight and generous
+budgets. We also report the more directly interpretable quantity: the number of lines that
+must be read before half the key has been covered.
+
+Orderings with ties are re-drawn three times per task with distinct seeds and the coverage
+curves averaged.
 
 \subsection{Statistics}
-The unit of analysis is the pull request: task scores are averaged within a pull request.
-Methods are compared with the Wilcoxon signed-rank test, Vargha--Delaney
-A12~\cite{vargha2000a12} as effect size, and Holm correction~\cite{holm1979}. Across repositories
-we use the Friedman test with the Nemenyi post-hoc test~\cite{demsar2006}. For RQ2 we compute
-Spearman correlations between each pre-listed graph property and each method's gain over random,
-with Benjamini--Hochberg correction~\cite{benjamini1995}. Confidence intervals are 95\%
-bootstrap intervals over repositories (2,000 resamples).
 
-% ---------------------------------------------------------------------------------------
+The unit of analysis is the pull request: task AUCs are averaged within a pull request
+first, so a change touching many files does not count many times. Paired comparisons use the
+Wilcoxon signed-rank test with the Vargha--Delaney $A_{12}$ effect size, Holm-corrected
+within each family of comparisons. Confidence intervals are 2{,}000-resample bootstraps
+resampling \emph{repositories}, not tasks, so that a few large repositories cannot
+manufacture significance.
+
 \section{Results}
 
-\subsection{RQ1: How quickly do methods cover the answer key?}\label{sec:rq1}
+\subsection{RQ1: the two-hop neighbourhood is half the repository}
 
-\paragraph{Graph methods beat random order.}
-Table~\ref{tab:rq1} shows the best methods on the union key (1,180 pull requests with a
-non-empty key, 112 repositories). Personalised PageRank on the undirected graph
-(\m{ppr\_und}) is first with AUC 0.436 (95\% CI 0.410--0.463), against 0.246 for random order
-and 0.783 for the oracle ceiling. All methods in the table differ from random after Holm
-correction. Figure~\ref{fig:curves} shows the curves: after 4,000 lines, \m{ppr\_und} has read
-48\% of the key and random order 19\%; after 8,000 lines, 65\% and 34\%.
+``The files you need are within two hops'' is true here: 86.7\% of symbol-key files and
+88.1\% of co-edited files lie within two undirected hops of the seed
+(Table~\ref{tab:distance}). Taken alone this reads as strong evidence for graph retrieval.
 
-\paragraph{The top methods are close.}
-The Friedman test rejects equal performance across repositories ($\chi^2 = 1893$, 112
-repositories, 31 methods including random). \m{ppr\_und} has the best average rank (5.26) and
-the Nemenyi critical difference is 4.57 ranks, so it is not separated from the next four methods
-(\m{locagent\_bfs} 6.74, \m{ppr\_fwd} 7.14, \m{ids\_und} 7.36, \m{bfs\_und} 8.16). In pull-request-level
-comparisons among the top eight methods, 18 of 28 pairs differ after Holm correction, but all
-effects are small (A12 between 0.499 and 0.563). \m{ppr\_und} beats \m{locagent\_bfs} by 0.015
-AUC (A12 0.516).
+The other half of the statistic undoes it. In the median task the two-hop ball holds 68 of
+the repository's 131 files and 21{,}646 lines --- 56\% of the files on average, and more
+than five times a 4{,}000-line budget. Its precision is 4.2\%. Against a random sample of
+the same size it lifts recall by a factor of 1.57.
 
-\paragraph{Much of the signal is global.}
-Seed-independent PageRank, which gives the same list for every task in a repository, reaches
-0.403: 92\% of the best method's AUC. Direction matters: following reverse imports
-(\m{bfs\_rev} 0.154, \m{closure\_rev} 0.126) is worse than random, and so are Louvain
-communities (0.226) and the seed's own directory (0.198).
+The two-hop neighbourhood is therefore not a filter. It is a statement that the files you
+need are somewhere in about half the repository --- which is exactly the regime in which the
+\emph{ordering} decides everything and the graph has already said all it has to say.
 
-\begin{table}[t]
-\caption{RQ1, union key: mean PR-level AUC (lines), 95\% bootstrap CI over repositories, and
-A12 against random. 1,180 pull requests, 112 repositories.}\label{tab:rq1}
+\begin{table}
+\caption{Where the key files sit relative to the seed, and how big the two-hop ball is
+(medians over 2{,}412 tasks).}
+\label{tab:distance}
 \small
-\begin{tabular}{@{}lrcr@{}}
+\begin{tabular}{lrrrr}
 \toprule
-Method & AUC & 95\% CI & A12 vs random \\
+Key files at hop distance & 1 & 2 & 3+ & unreachable \\
 \midrule
-\m{oracle} (ceiling) & 0.783 & 0.761--0.803 & 0.988 \\
+\m{co\_edited} & 39.0\% & 49.1\% & 9.1\% & 2.8\% \\
+\m{symbol} & 45.3\% & 41.4\% & 9.1\% & 4.2\% \\
 \midrule
-\m{ppr\_und} & 0.436 & 0.410--0.463 & 0.755 \\
-\m{locagent\_bfs} & 0.421 & 0.393--0.448 & 0.741 \\
-\m{ppr\_fwd} & 0.417 & 0.394--0.443 & 0.724 \\
-\m{ids\_und} & 0.413 & 0.387--0.439 & 0.727 \\
-\m{bfs\_und} & 0.408 & 0.381--0.435 & 0.719 \\
-\m{pagerank} & 0.403 & 0.376--0.431 & 0.711 \\
-\m{indegree} & 0.391 & 0.366--0.417 & 0.704 \\
-\m{robillard} & 0.391 & 0.362--0.417 & 0.680 \\
-\m{aider\_repomap} & 0.383 & 0.356--0.411 & 0.681 \\
-\m{bfs\_fwd} & 0.383 & 0.361--0.407 & 0.679 \\
-\m{bm25} & 0.343 & & \\
-\m{cochange} & 0.329 & & \\
-\midrule
-\m{random} (floor) & 0.246 & & -- \\
-\m{same\_dir} & 0.198 & & \\
+\multicolumn{5}{l}{\emph{The two-hop ball:} 68 files, 21{,}646 lines, 56\% of the
+repository} \\
+\multicolumn{5}{l}{\quad recall 87.5\%, precision 4.2\%, recall lift over a same-sized
+random sample 1.57$\times$} \\
+\multicolumn{5}{l}{\emph{The key:} 3 files, 1{,}515 lines} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\begin{figure}[t]
+\subsection{RQ2: the evidence source decides the winner}
+
+Table~\ref{tab:main} is the central result. Under the co-edited key the top five orderings
+are four fusions and one lexical method; the best purely structural ordering is tenth and
+the query-independent priors are seventeenth and eighteenth, below \m{same\_dir}. Under the
+symbol key the table inverts: cost-scaled personalised PageRank is first, three of the top
+four are structural, and the best lexical ordering is thirteenth.
+
+The individual reversals are large and all significant after Holm correction. Issue-text
+path matching beats personalised PageRank by 0.078 AUC on co-edited files
+($A_{12} = 0.597$, $p < 0.001$) and loses to it by 0.062 on symbol files
+($A_{12} = 0.417$, $p < 0.001$). BM25 on the issue text beats it by 0.050 and then loses by
+0.105 ($A_{12} = 0.364$).
+
+Across the sixteen contending methods the two sources induce rankings that are not
+significantly related (Spearman $\rho = 0.26$, $p = 0.34$; including the three references,
+which sit at the same end of both rankings by construction, raises this only to
+$\rho = 0.45$, $p = 0.06$).
+
+Figure~\ref{fig:curves} shows the same reversal as coverage curves. Table~\ref{tab:lines}
+states it in the unit a context budget is actually spent in: to reach half the co-edited
+files a reader following personalised PageRank consumes a median of 6{,}514 lines, against
+4{,}747 following issue-text path matching and 3{,}254 following the best fusion. On symbol
+files the same three numbers are 4{,}395, 6{,}524 and 3{,}849.
+
+\begin{table}
+\caption{Mean AUC by evidence source, pull request as the unit, with bootstrap 95\%
+confidence intervals over repositories. The same nineteen orderings, ranked twice.}
+\label{tab:main}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{rllc@{\hskip 1.2em}rllc}
+\toprule
+\multicolumn{4}{c}{\m{co\_edited} (708 PRs)} & \multicolumn{4}{c}{\m{symbol} (1{,}156 PRs)} \\
+\cmidrule(r){1-4}\cmidrule(l){5-8}
+\# & Method & Fam. & AUC [CI] & \# & Method & Fam. & AUC [CI] \\
+\midrule
+1 & \m{oracle} & ref & 0.773 [.750,.796] & 1 & \m{oracle} & ref & 0.793 [.772,.813] \\
+2 & \m{rrf\_pprpl\_issue\_path} & fus & 0.488 [.457,.520] & 2 & \m{ppr\_und\_pl} & str & 0.489 [.460,.517] \\
+3 & \m{rrf\_hops\_issue\_path} & fus & 0.482 [.450,.513] & 3 & \m{rrf\_hops\_path} & fus & 0.477 [.450,.504] \\
+4 & \m{rrf\_hops\_path} & fus & 0.458 [.426,.489] & 4 & \m{hops\_lines} & str & 0.477 [.447,.505] \\
+5 & \m{rrf\_ppr\_issue\_path} & fus & 0.446 [.415,.477] & 5 & \m{rrf\_pprpl\_issue\_path} & fus & 0.475 [.447,.503] \\
+6 & \m{path\_issue} & lex & 0.436 [.406,.466] & 6 & \m{rrf\_hops\_issue\_path} & fus & 0.458 [.430,.486] \\
+7 & \m{bm25\_issue} & lex & 0.407 [.379,.435] & 7 & \m{ppr\_und} & str & 0.446 [.417,.475] \\
+8 & \m{bm25\_seed} & lex & 0.393 [.362,.425] & 8 & \m{rrf\_ppr\_issue\_path} & fus & 0.421 [.392,.450] \\
+9 & \m{rrf\_ppr\_issue} & fus & 0.393 [.363,.425] & 9 & \m{bfs\_und} & str & 0.420 [.391,.447] \\
+10 & \m{hops\_lines} & str & 0.389 [.354,.423] & 10 & \m{pagerank} & glo & 0.410 [.381,.439] \\
+11 & \m{ppr\_und\_pl} & str & 0.371 [.338,.403] & 11 & \m{indegree} & glo & 0.398 [.371,.425] \\
+12 & \m{path\_seed} & lex & 0.368 [.335,.401] & 12 & \m{rrf\_ppr\_issue} & fus & 0.391 [.361,.421] \\
+13 & \m{bfs\_und} & str & 0.362 [.330,.395] & 13 & \m{path\_issue} & lex & 0.383 [.352,.414] \\
+14 & \m{ppr\_und} & str & 0.357 [.325,.391] & 14 & \m{path\_seed} & lex & 0.365 [.335,.393] \\
+15 & \m{bm25\_issue\_pl} & lex & 0.354 [.318,.389] & 15 & \m{bm25\_issue\_pl} & lex & 0.355 [.324,.386] \\
+16 & \m{same\_dir} & ref & 0.327 [.296,.359] & 16 & \m{bm25\_issue} & lex & 0.340 [.311,.368] \\
+17 & \m{pagerank} & glo & 0.272 [.240,.302] & 17 & \m{bm25\_seed} & lex & 0.336 [.305,.365] \\
+18 & \m{indegree} & glo & 0.268 [.238,.299] & 18 & \m{same\_dir} & ref & 0.319 [.290,.348] \\
+19 & \m{random} & ref & 0.247 [.218,.276] & 19 & \m{random} & ref & 0.251 [.223,.278] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}
 \centering
 \begin{tikzpicture}
-\begin{axis}[width=0.8\linewidth,height=5.5cm,xmode=log,log basis x=2,
-  xlabel={Lines read},ylabel={Share of key covered},ymin=0,ymax=1,
-  legend pos=north west,legend style={font=\small},grid=major,
-  xtick={250,1000,4000,16000,64000},xticklabels={250,1k,4k,16k,64k}]
-\addplot[thick,black,dashed] table[x=budget,y=oracle]{fig_curves.dat}; \addlegendentry{oracle}
-\addplot[thick,blue] table[x=budget,y=ppr_und]{fig_curves.dat}; \addlegendentry{ppr\_und}
-\addplot[thick,teal] table[x=budget,y=bfs_fwd]{fig_curves.dat}; \addlegendentry{bfs\_fwd}
-\addplot[thick,orange] table[x=budget,y=bm25]{fig_curves.dat}; \addlegendentry{bm25}
-\addplot[thick,brown] table[x=budget,y=cochange]{fig_curves.dat}; \addlegendentry{cochange}
-\addplot[thick,gray] table[x=budget,y=random]{fig_curves.dat}; \addlegendentry{random}
+\begin{axis}[width=0.46\textwidth, height=5.4cm, xmode=log, log basis x=2,
+  xlabel={lines read}, ylabel={coverage of the key}, title={\m{co\_edited}},
+  legend pos=north west, legend style={font=\tiny, draw=none, fill opacity=0.7,
+  text opacity=1}, ymin=0, ymax=1, grid=major,
+  tick label style={font=\small}, label style={font=\small}, title style={font=\small}]
+\addplot table[x=budget,y=oracle] {fig_co_edited.dat}; \addlegendentry{oracle}
+\addplot table[x=budget,y=rrf_hops_path] {fig_co_edited.dat}; \addlegendentry{rrf\_hops\_path}
+\addplot table[x=budget,y=path_issue] {fig_co_edited.dat}; \addlegendentry{path\_issue}
+\addplot table[x=budget,y=ppr_und_pl] {fig_co_edited.dat}; \addlegendentry{ppr\_und\_pl}
+\addplot table[x=budget,y=pagerank] {fig_co_edited.dat}; \addlegendentry{pagerank}
+\addplot[black,dashed] table[x=budget,y=random] {fig_co_edited.dat}; \addlegendentry{random}
+\end{axis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+\begin{axis}[width=0.46\textwidth, height=5.4cm, xmode=log, log basis x=2,
+  xlabel={lines read}, ylabel={}, title={\m{symbol}},
+  legend pos=north west, legend style={font=\tiny, draw=none, fill opacity=0.7,
+  text opacity=1}, ymin=0, ymax=1, grid=major,
+  tick label style={font=\small}, label style={font=\small}, title style={font=\small}]
+\addplot table[x=budget,y=oracle] {fig_symbol.dat}; \addlegendentry{oracle}
+\addplot table[x=budget,y=rrf_hops_path] {fig_symbol.dat}; \addlegendentry{rrf\_hops\_path}
+\addplot table[x=budget,y=path_issue] {fig_symbol.dat}; \addlegendentry{path\_issue}
+\addplot table[x=budget,y=ppr_und_pl] {fig_symbol.dat}; \addlegendentry{ppr\_und\_pl}
+\addplot table[x=budget,y=pagerank] {fig_symbol.dat}; \addlegendentry{pagerank}
+\addplot[black,dashed] table[x=budget,y=random] {fig_symbol.dat}; \addlegendentry{random}
 \end{axis}
 \end{tikzpicture}
-\caption{Mean coverage--cost curves, union key (PR-weighted). The AUC averages the curve over
-250--32,000 lines.}\label{fig:curves}
+\caption{Mean coverage against lines read. The same five orderings change places between the
+two evidence sources: issue-text path matching tracks the best fusion on co-edited files and
+falls below the query-independent prior on symbol files, while cost-scaled personalised
+PageRank does the reverse.}
+\label{fig:curves}
 \end{figure}
 
-\paragraph{The answer key reverses the ranking.}
-Table~\ref{tab:bysource} splits the result by evidence source. On the \emph{symbol} key, which
-is built from name definitions and therefore overlaps with import edges, graph methods lead
-and \m{bm25} is 14th. On the \emph{co-edited} key, \m{bm25} is first (0.399), \m{cochange}
-third, and \m{ppr\_und} sixth (0.356); forward BFS drops from 9th to 25th (0.229, below
-random at 0.246). On the small execution key (49 pull requests), forward personalised
-PageRank is first and \m{bm25} (0.250) is 16th. A study that used only one of these keys
-would reach a different conclusion about which family is best.
-
-\begin{table}[t]
-\caption{RQ1 by key source: mean AUC and rank among the 30 methods (references excluded from
-ranks).}\label{tab:bysource}
+\begin{table}
+\caption{Median lines that must be read before half the key is covered. Lower is better.}
+\label{tab:lines}
 \small
-\begin{tabular}{@{}lcccc@{}}
+\begin{tabular}{lrr}
 \toprule
- & Union & Co-edited & Symbol & Execution \\
-PRs & 1,180 & 708 & 1,156 & 49 \\
+Method & \m{co\_edited} & \m{symbol} \\
 \midrule
-\m{ppr\_und} & 0.436 (1) & 0.356 (6) & 0.443 (1) & 0.320 (5) \\
-\m{ppr\_fwd} & 0.417 (3) & 0.254 (20) & 0.427 (3) & 0.362 (1) \\
-\m{bfs\_fwd} & 0.383 (12) & 0.229 (25) & 0.393 (9) & 0.319 (7) \\
-\m{bm25} & 0.343 (14) & 0.399 (1) & 0.349 (14) & 0.250 (16) \\
-\m{cochange} & 0.329 (16) & 0.371 (3) & 0.332 (17) & 0.240 (18) \\
-\midrule
-\m{random} & 0.246 & 0.246 & 0.247 & 0.189 \\
-\m{oracle} & 0.783 & 0.773 & 0.793 & 0.664 \\
+\m{oracle} & 524 & 440 \\
+\m{rrf\_pprpl\_issue\_path} & 3{,}254 & 3{,}849 \\
+\m{rrf\_hops\_path} & 3{,}956 & 3{,}699 \\
+\m{ppr\_und\_pl} & 6{,}155 & 3{,}483 \\
+\m{hops\_lines} & 5{,}620 & 4{,}080 \\
+\m{ppr\_und} & 6{,}514 & 4{,}395 \\
+\m{path\_issue} & 4{,}747 & 6{,}524 \\
+\m{bm25\_issue} & 5{,}012 & 7{,}451 \\
+\m{pagerank} & 11{,}294 & 5{,}635 \\
+\m{random} & 14{,}627 & 14{,}223 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{Single-file versus multi-file changes.}
-On pull requests that edit one source file (462), \m{ppr\_fwd} leads with 0.553 and
-\m{bfs\_fwd} follows with 0.532. On multi-file pull requests (718), \m{ppr\_und} leads with
-0.388, and \m{bm25} rises to 6th. In single-file changes, the key comes only from symbol
-definitions (and execution where available), which again favours import-following methods.
+\subsection{RQ3: what the seed is worth depends on the source too}
 
-\subsection{RQ2: Does repository structure predict the winner?}
+A query-independent PageRank prior --- a ranking that never looks at the seed or the issue,
+and simply says which files matter in this repository --- reaches 0.410 on symbol files
+against 0.446 for personalised PageRank, which does look at the seed. That is 92\% of the
+personalised score, and far above random (0.251; $A_{12} = 0.711$, $p < 0.001$). On that
+evidence source, most of what the personalised walk delivers is a repository prior.
 
-Of 990 (property, method) pairs, 326 are significant after Benjamini--Hochberg correction. The
-strongest associations are with size: the gain of \m{closure\_rev} over random correlates with
-total lines ($\rho = 0.69$) and with the size of the largest import cycle ($\rho = 0.64$); the gain
-of \m{bfs\_fwd} correlates with the number of import edges ($\rho = 0.63$). Size is linked to most
-graph properties, so we treat these results as exploratory. The best method varies by
-repository: 19 different methods win at least one repository, led by \m{ppr\_fwd} (20
-repositories), \m{ppr\_und} (15) and \m{pagerank} (12). \TODO{partial correlations controlling
-for size; minimum detectable $\rho$ for 112 repositories.}
+Under the co-edited key the same prior scores 0.272 against a random floor of 0.247. The
+difference is significant but negligible ($A_{12} = 0.530$, $p = 0.004$), and personalised
+PageRank beats it by 0.086 ($A_{12} = 0.618$). Knowing which file is being changed therefore
+matters a great deal for predicting what else was changed, and rather little for predicting
+what the code calls, where knowing the repository's hubs is nearly as good.
 
-\subsection{RQ3: How far are needed files from the seed?}\label{sec:rq3}
+This is worth stating plainly, because the opposite claim is easy to make from a single
+source: whether ``the graph knows what you are working on'' appears true or false is itself
+a function of the answer key.
 
-Table~\ref{tab:rq3} gives the shortest-path distance from the seed to each key file, ignoring
-edge direction. Static key files are close: 88\% of co-edited and 87\% of symbol files lie within
-two hops. Executed files are farther: 71.5\% within two hops, and most lie at exactly two hops. Very
-few key files are unreachable (3--7\%). Direction matters: following imports only, 27--39\% of key
-files cannot be reached at all, which explains why forward-only methods suffer on the co-edited
-key.
+\subsection{RQ4: the two signals name different files}
 
-\begin{table}[t]
-\caption{RQ3: undirected import-graph distance from seed to key file, per source.}\label{tab:rq3}
+The reversal is not two methods disagreeing about the order of one list. At $k=10$ the
+top-10 sets of personalised PageRank and issue-text BM25 have a mean Jaccard overlap of
+0.187, and of personalised PageRank and issue-text path matching only 0.102; at $k=50$ these
+rise to 0.508 and 0.412. For comparison, personalised PageRank and the query-independent
+prior overlap at 0.364 at $k=10$: a seed-conditioned walk resembles the repository prior
+more than it resembles a lexical ranking.
+
+Table~\ref{tab:comp} follows individual key files. At $k=20$, 24.4\% of co-edited files are
+found only by the lexical family and 9.6\% only by the structural family; on symbol files the
+asymmetry flips (19.9\% structure-only against 16.5\% words-only). Under either source about
+a sixth of key files are found by neither family at $k=20$, which is where the remaining
+headroom to the oracle lives.
+
+\begin{table}
+\caption{How each key file is reached within the top $k$ of the structural family
+(\m{ppr\_und}, \m{hops\_lines}) and the lexical family (\m{bm25\_issue}, \m{path\_issue}).}
+\label{tab:comp}
 \small
-\begin{tabular}{@{}lrrrrrr@{}}
+\begin{tabular}{llrrrr}
 \toprule
-Source & Pairs & 1 hop & 2 hops & $\geq$3 hops & No path & No path (fwd only) \\
+Source & $k$ & both & structure only & words only & neither \\
 \midrule
-Co-edited & 4,458 & 39.0\% & 49.1\% & 9.1\% & 2.8\% & 39.2\% \\
-Symbol & 7,675 & 45.3\% & 41.4\% & 9.1\% & 4.2\% & 27.3\% \\
-Execution & 2,003 & 15.8\% & 55.7\% & 22.0\% & 6.5\% & 31.7\% \\
+\m{co\_edited} & 10 & 32.2\% & 11.4\% & 30.0\% & 26.4\% \\
+\m{co\_edited} & 20 & 50.7\% & 9.6\% & 24.4\% & 15.3\% \\
+\m{co\_edited} & 50 & 76.7\% & 5.9\% & 13.4\% & 4.0\% \\
+\m{symbol} & 10 & 28.5\% & 23.3\% & 20.4\% & 27.8\% \\
+\m{symbol} & 20 & 47.4\% & 19.9\% & 16.5\% & 16.2\% \\
+\m{symbol} & 50 & 72.9\% & 11.5\% & 9.8\% & 5.9\% \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{The sources disagree.}
-On the 100 tasks with an execution run, the static key has 3.2 files on average and the
-execution key 20.0. Their mean Jaccard similarity is 0.18. Of the files in the static key, 55\%
-were executed by the fail-to-pass tests; of the executed files, 9\% are in the static key.
-\TODO{recompute on the full execution sample.}
+\subsection{RQ5: fusion is the only ordering that survives both sources}
 
-\subsection{RQ4: What if the seed is wrong?}\label{sec:rq4}
+If the evidence source is not known in advance --- and for a tool shipped to users it is not
+--- the quantity to optimise is the worst rank a method attains across sources.
+Table~\ref{tab:worst} ranks by it. Every one of the five fusions beats every pure signal.
+\m{rrf\_hops\_path}, which is nothing more than reciprocal-rank fusion of hop-distance
+ordering with issue-tokens-against-file-paths, is fourth under one source and third under the
+other.
 
-We replaced the seed with a file one hop away, two hops away, or a random file, keeping the true
-key (Table~\ref{tab:rq4}). All seed-dependent methods lose, but most stay above random when the
-seed is only one or two hops off. With a random seed, BFS-style methods fall to about the random
-floor (\m{bfs\_und} 0.246, \m{ids\_und} 0.247) and \m{bfs\_fwd} below it (0.198). Personalised
-PageRank degrades gracefully (0.339 with a random seed) because it mixes in global
-centrality. \m{cochange} collapses to almost zero (0.003), since the history of an unrelated
-file says nothing about the change. Seed-independent \m{pagerank} and \m{indegree} are
-unaffected, and with a wrong seed they are the best choice.
+The insurance is close to free. Against pure structure (\m{hops\_lines}) it gains 0.069 AUC
+on co-edited files ($A_{12} = 0.586$, $p < 0.001$) and loses 0.0004 on symbol files
+($p = 1.0$); against \m{ppr\_und\_pl} it gains 0.087 ($p < 0.001$) and loses 0.012
+($p = 0.47$). The lexical signal adds a large amount where structure is weak and costs
+nothing where structure is strong.
 
-\begin{table}[t]
-\caption{RQ4: mean AUC (union key) with the true seed and three wrong seeds. Tasks without a
-valid wrong seed are excluded (51 at 1 hop, 66 at 2 hops).}\label{tab:rq4}
+\begin{table}
+\caption{Worst rank attained across the two evidence sources. Lower is better. Every fusion
+beats every pure signal.}
+\label{tab:worst}
 \small
-\begin{tabular}{@{}lrrrr@{}}
+\begin{tabular}{lccc}
 \toprule
-Method & True & 1 hop off & 2 hops off & Random seed \\
+Method & \m{co\_edited} & \m{symbol} & worst \\
 \midrule
-\m{ppr\_und} & 0.436 & 0.348 & 0.354 & 0.339 \\
-\m{locagent\_bfs} & 0.421 & 0.289 & 0.311 & 0.268 \\
-\m{ppr\_fwd} & 0.417 & 0.322 & 0.341 & 0.320 \\
-\m{bfs\_und} & 0.408 & 0.291 & 0.304 & 0.246 \\
-\m{pagerank} & 0.403 & 0.363 & 0.403 & 0.398 \\
-\m{bfs\_fwd} & 0.383 & 0.242 & 0.263 & 0.198 \\
-\m{bm25} & 0.343 & 0.225 & 0.235 & 0.205 \\
-\m{cochange} & 0.329 & 0.011 & 0.002 & 0.003 \\
-\m{random} & 0.246 & 0.224 & 0.245 & 0.242 \\
+\m{rrf\_hops\_path} & 4 & 3 & \textbf{4} \\
+\m{rrf\_pprpl\_issue\_path} & 2 & 5 & 5 \\
+\m{rrf\_hops\_issue\_path} & 3 & 6 & 6 \\
+\m{rrf\_ppr\_issue\_path} & 5 & 8 & 8 \\
+\m{rrf\_ppr\_issue} & 9 & 12 & 12 \\
+\midrule
+\m{hops\_lines} & 10 & 4 & 10 \\
+\m{ppr\_und\_pl} & 11 & 2 & 11 \\
+\m{bfs\_und} & 13 & 9 & 13 \\
+\m{path\_issue} & 6 & 13 & 13 \\
+\m{ppr\_und} & 14 & 7 & 14 \\
+\m{path\_seed} & 12 & 14 & 14 \\
+\m{bm25\_issue\_pl} & 15 & 15 & 15 \\
+\m{bm25\_issue} & 7 & 16 & 16 \\
+\m{pagerank} & 17 & 10 & 17 \\
+\m{bm25\_seed} & 8 & 17 & 17 \\
+\m{indegree} & 18 & 11 & 18 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{RQ5: Does order change what a language model needs?}
-\TODO{Not yet run. Design: give a model the first $N$ tokens of an ordered list; measure the
-test-pass rate by $N$; controls: same files scrambled, seed alone; split tasks before/after
-the model's training cutoff. Needs an API budget.}
+\subsection{Sensitivity: are the lexical methods just copying paths out of the issue?}
 
-% ---------------------------------------------------------------------------------------
+Issue reports often contain stack traces, and a stack trace names files. If the lexical
+advantage came from reports quoting the paths of the files that had to change, it would be
+an artefact of the benchmark rather than a property of language.
+
+It does not. The full path of a key file appears verbatim in the issue text for 4.2\% of key
+files, and 12.6\% of tasks contain at least one; the file stem appears for 20.4\%. Repeating
+the analysis on the 87.4\% of tasks whose issue quotes no key path leaves the ordering
+essentially unchanged: \m{path\_issue} falls from 0.436 to 0.409 on co-edited files but keeps
+its position ahead of every structural method, and the fusions keep the top four places. The
+comparable figures for the seed itself are 10.3\% full path and 35.1\% stem.
+
+The \m{path\_seed} control separates ``issue text'' from ``path matching'' more directly: the
+same path-BM25 ranking, queried by the seed's own path instead of the issue, scores 0.368 on
+co-edited files against 0.436 for the issue query ($+0.067$, $p < 0.001$), and the two are
+indistinguishable on symbol files ($+0.018$, $p = 0.13$). The gain is attributable to the
+issue text, and only where the target is what developers changed.
+
 \section{Discussion}
 
-\paragraph{For researchers.} The evidence source used as ground truth is not a detail. A key
-built from symbol definitions rewards methods that follow imports; a key built from co-edited
-files rewards lexical and historical similarity. Evaluations of localization and context
-retrieval should report results per source, or state clearly which question their key answers.
+\paragraph{The graph and the issue answer different questions.} Read together, the results
+have a simple interpretation. An import edge records that one file calls another. That is
+close to the definition of the symbol key, and structural methods duly win there. The
+co-edited key records what a person decided to change in one sitting --- a decision made
+about a feature, a bug, a concept --- and words track that better than call structure does.
+Neither result is a defect in the other method. They are answers to different questions that
+the literature has been treating as one question.
 
-\paragraph{For tool builders.} Personalised PageRank on the undirected import graph is a cheap,
-model-free baseline that is at or near the top on every key. Seed-independent PageRank is
-nearly as good and is the safer choice when the starting file is uncertain. Reverse-import
-traversal, community detection and same-directory heuristics should not be used alone.
+\paragraph{The practical consequence is not ``use words instead''.} It is that a tool whose
+ordering rests on one signal is being tuned against whichever evidence source its evaluation
+happened to adopt. The fusion results show the cost of insurance is near zero: adding a BM25
+ranking of issue tokens against file paths to an existing graph walk needs no model, no
+index beyond the file list and no extra hop through the graph, and it is the difference
+between being tenth and being fourth when the target turns out to be co-editing.
 
-\paragraph{Headroom.} The oracle reaches 0.783 against 0.436 for the best method, so there is
-room for better ordering. \TODO{RQ6: formal statement of the bounded-order problem and
-its complexity; exact optima on small graphs.}
+\paragraph{What ``within two hops'' is worth.} The two-hop neighbourhood earns its
+reputation on recall and loses it on precision: it contains seven of every eight needed
+files and also half the repository. Reporting the recall without the size is, on this
+corpus, reporting half a statistic.
 
-% ---------------------------------------------------------------------------------------
+\paragraph{Recommendations.} (1) Report retrieval results separately for at least one
+structural and one behavioural notion of relevance, and report the worst case across them.
+(2) Treat a query-independent repository prior, not random order, as the floor for
+structural methods --- on symbol-style keys it captures 92\% of a personalised walk.
+(3) Include a lexical signal from the issue text in graph-based context tools.
+
 \section{Threats to Validity}
 
-\paragraph{Construct.} Every answer key is a proxy for ``needed'', and each is a lower bound on the
-truly needed set. Symbol keys depend on \m{jedi} resolution; execution keys depend on the tests
-the benchmark provides. Line count is one cost model; file and token costs are recorded.
-\TODO{report the cost-model sensitivity.}
+\paragraph{Construct.} Neither evidence source is ground truth about what a developer needed
+to read; they are recoverable proxies with opposite biases, which is why we report both and
+never merge them. Coverage per line assumes whole files are read, which overstates the cost
+for agents that read selectively. The execution-based source is absent (\S3.3) and would be
+the natural third leg.
 
-\paragraph{Internal.} Methods, metrics and statistics were fixed before any run. Bugs found
-afterwards are listed in the replication package with their effect. Five tie-break runs reduce
-the effect of random ordering. The execution key is so far available for only 49 pull
-requests, so its results are preliminary. Co-change uses only commits before the base commit;
-we checked for timestamp anomalies and found one rebase case that is a true ancestor.
+\paragraph{Internal.} The graph builder resolves imports statically and misses dynamic
+imports and plugin registration. The symbol key is produced by a static analyser and
+inherits its resolution failures. Both biases favour structural methods, so the co-edited
+reversal is if anything understated. Issue-path leakage is measured and shown not to drive
+the result.
 
-\paragraph{External.} All repositories are Python projects drawn from three benchmarks of
-issue-fixing pull requests, which favour well-tested libraries. The graph is file-level and
-static; dynamic imports and plugin mechanisms are missed. Results may differ for other
-languages and for finer-grained (function-level) graphs.
+\paragraph{External.} Python only, file granularity only, and pull requests drawn from
+benchmark suites that select for reproducible test-verified fixes --- a population plausibly
+better documented than average, which may flatter the issue-text methods. The median
+repository here has 131 graph files; very large repositories are under-represented.
+\TODO{re-run the headline comparison split by repository size and report whether the reversal
+holds in the largest quartile}
 
-\paragraph{Conclusion.} We use the pull request as the unit, non-parametric paired tests,
-effect sizes and multiple-comparison corrections. With about 1,180 pull requests, even
-small differences are significant, so we base claims on effect sizes.
+\paragraph{Conclusion.} Pull-request-level aggregation, Holm correction within comparison
+families and bootstrapping over repositories guard against the main inflation risks. Effect
+sizes accompany every test because several differences are significant and small.
 
-% ---------------------------------------------------------------------------------------
 \section{Conclusion}
 
-Starting from a changed file, a simple walk on the import graph (personalised PageRank) finds
-the other needed files far faster than random reading: roughly half the needed files within
-4,000 lines, against a fifth. But which method looks best depends on how ``needed'' is defined.
-Graph methods win when the key comes from symbol definitions; lexical and history methods win
-when it comes from co-edited files. The keys themselves overlap little. We recommend that
-evaluations of code context retrieval report results per evidence source, and use graph
-proximity as a baseline. \TODO{update after execution keys and RQ5.}
+We compared import-graph proximity and issue-text retrieval as reading orders for Python
+change tasks on 2{,}412 tasks from 1{,}873 pull requests across 113 repositories, under two
+evidence-based definitions of which files a change required. The comparison has no
+source-independent answer: the rankings the two sources induce over sixteen methods are
+statistically unrelated, with structural orderings winning on files the change references
+and lexical orderings winning on files the developer changed alongside it. The graph's
+two-hop neighbourhood, the standard justification for structural retrieval, turns out to be
+half the repository. Fusing a structural and a lexical ordering is the only strategy that
+stays near the top under both sources, and it costs almost nothing. We recommend that
+context-retrieval work for code change report per evidence source, use a repository prior
+rather than random order as its floor, and stop treating the dependency graph as the only
+signal in the room.
 
 \section*{Data Availability}
-\TODO{Replication package: graph builder, answer keys, ordered lists, scores, analysis
-scripts; archive on Zenodo.}
+
+The replication package contains the import graphs at every base commit, the task
+definitions and evidence keys, the issue-token bags, the per-task orderings and coverage
+curves, and the analysis scripts that produce every number and figure in this paper.
+\TODO{archive and mint a DOI}
 
 \section*{Use of AI Tools}
-Data collection, pipeline code, analysis scripts and this draft were produced with the help of
-an AI coding assistant (Claude Code). Every action is logged in \m{AI\_USE.md} and every design
-decision in \m{DECISIONS.md} in the replication package. All numbers are generated by scripts
-from the data; the author is responsible for the content. \TODO{author to review and confirm.}
+
+Claude (Anthropic) was used to write the analysis and method code, to run the experiments
+and to draft this manuscript. All numeric results are produced by scripts in the replication
+package and were copied mechanically from their output files; the author verified the
+design, the claims and the text. Bibliographic entries were drafted with AI assistance and
+\TODO{every reference must be checked against the published record before submission}.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
