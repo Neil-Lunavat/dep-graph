@@ -17,6 +17,9 @@ dependencies = [
     "tree-sitter>=0.26.0",
     "tree-sitter-python>=0.25.0",
     "jedi>=0.20.0",
+    "tiktoken>=0.14.0",
+    "bm25s>=0.3.11",
+    "scipy>=1.18.1",
 ]
 
 [dependency-groups]

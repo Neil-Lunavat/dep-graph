@@ -31,8 +31,10 @@ Rank r(f) = position of f in L (1-based); ∞ if absent. R_K = sorted ranks of k
 - AP: (1/|K|) Σ_{f ∈ K, r(f) < ∞} precision@r(f).
 - NDCG@10: binary gains, log2 discount, ideal = all key files first.
 - Empty rate: share of tasks where L = ∅.
-- Odds ratio vs random: odds that a top-10 file is a key file, divided by the same odds for
-  a uniformly random 10 files (expected value from the hypergeometric distribution).
+- Odds ratio vs random: m = min(10, n) top files, h = key files among them,
+  E = m·|K|/N the expected hits for m uniformly random files (N = graph files minus the seed).
+  OR = [(h + 0.5)/(m − h + 0.5)] / [(E + 0.5)/(m − E + 0.5)] (Haldane +0.5 correction so it is
+  defined at h = 0 and h = m). Undefined (not reported) when n = 0.
 
 ## Ordering checks
 

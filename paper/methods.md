@@ -58,9 +58,9 @@ that import the seed), *und* = ignore direction.
 | 20 | `robillard` | ranking | greedy set expansion on G und. S = {seed}; repeatedly add the file x ∉ S maximising specificity(x) × reinforcement(x), where specificity = \|N(x)∩S\|/\|N(x)\| and reinforcement = \|N(x)∩S\|/\|S\| (Robillard 2008, adapted to files); stop when no x has a neighbour in S |
 | 21 | `louvain` | clustering | files in the seed's Louvain community on G und (resolution 1, seed 0); random order |
 | 22 | `labelprop` | clustering | files in the seed's label-propagation community on G und (networkx asynchronous LPA, seed 0); random order |
-| 23 | `directory` | clustering | all files by directory proximity: longest common path prefix with the seed, descending; ties random |
+| 23 | `directory` | clustering | all files by folder-tree distance from the seed's folder (steps up to the common ancestor + steps down), nearest first; ties random. (Pre-run correction: a common-prefix rule could not separate same-folder files from others for seeds in the repo root.) |
 | 24 | `bm25` | retrieval | BM25 (k1 = 1.5, b = 0.75) over identifier bags; query = seed's identifier bag; corpus = all other files; files with score > 0 |
-| 25 | `embedding` | retrieval | cosine similarity of D23 embeddings, seed vs every file; all files |
+| 25 | `embedding` | retrieval | cosine similarity of D23 embeddings (first 512 tokens of each file), seed vs every file; all files |
 | 26 | `cochange` | history | score(x) = Σ over prior commits touching seed and x of 1/(files in commit − 1); files with score > 0 |
 | 27 | `aider_repomap` | published (adapted) | Aider `repomap.py` idea with the seed as the only "chat file": personalised PageRank on R with personalisation on the seed, edge weight = √(identifier count) × 10 for identifiers ≥ 8 chars containing `_` or camelCase, × 0.1 for identifiers starting with `_`; files ranked by PageRank |
 | 28 | `repograph_k1` | published (adapted) | RepoGraph ego-graph: search terms = the seed's definitions; files within 1 hop of the seed in R und; random order |

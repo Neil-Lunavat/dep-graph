@@ -32,17 +32,60 @@ from pathlib import Path
 TEST_TIMEOUT = 1800
 PULL_TIMEOUT = 1800
 
-# Runs inside the container with the container's own python (3.6+): compact coverage output.
-POST = r'''
+# Runs inside the container with the container's own python (3.5+). Reads coverage's data file
+# directly (no giant JSON report) and keeps: all executed lines, lines run by each fail-to-pass
+# test's context, and the lines inside function bodies.
+POST = r"""
 import ast, json, sys
-cov = json.load(open(sys.argv[1]))
+from coverage import CoverageData
+data_file, out_file, f2p_file = sys.argv[1], sys.argv[2], sys.argv[3]
+f2p = json.load(open(f2p_file))
+# Django lists some tests by docstring. Its verbose log prints "test_x (module.Class)" and, on
+# the next line, the docstring followed by " ... ok"; use that to translate.
+import re
+doc2name = {}
+try:
+    log = open("/work/tests.log", encoding="utf-8", errors="replace").read().splitlines()
+    for i, line in enumerate(log[:-1]):
+        m = re.match(r"^(test\w*) \(([\w.]+)\)$", line.strip())
+        if m:
+            doc = re.split(r" \.\.\. ", log[i + 1].strip())[0]
+            doc2name[doc] = "%s (%s)" % (m.group(1), m.group(2))
+except Exception:
+    pass
+f2p = [doc2name.get(t, t) for t in f2p]
+want = set()
+for t in f2p:
+    t = t.split("[")[0]
+    if " (" in t and t.endswith(")"):            # django: test_x (module.Class)
+        fn, cls = t.split(" (")[0], t[:-1].split(" (")[1].split(".")[-1]
+    elif "::" in t:                              # pytest: path::Class::test_x
+        parts = t.split("::")
+        fn, cls = parts[-1], (parts[-2] if len(parts) > 2 else None)
+    else:                                        # sympy and others: test_x
+        fn, cls = t.strip(), None
+    want.add((fn, cls))
+def is_f2p(ctx):
+    segs = ctx.split("|")[0].split(".")
+    if not segs or not segs[-1]:
+        return False
+    fn = segs[-1].split("[")[0]
+    cls = segs[-2] if len(segs) > 1 else None
+    return (fn, cls) in want or (fn, None) in want
+d = CoverageData(basename=data_file)
+d.read()
 out = {}
-for path, d in cov.get("files", {}).items():
+for path in d.measured_files():
     rel = path[len("/testbed/"):] if path.startswith("/testbed/") else path
-    ctx = {}
-    for line, cs in (d.get("contexts") or {}).items():
-        for c in cs:
-            ctx.setdefault(c, []).append(int(line))
+    lines = sorted(d.lines(path) or [])
+    f2p_lines = set()
+    try:
+        by = d.contexts_by_lineno(path)
+        for ln, cs in by.items():
+            if any(is_f2p(c) for c in cs):
+                f2p_lines.add(int(ln))
+    except Exception:
+        by = None
     fn = set()
     try:
         tree = ast.parse(open(path, encoding="utf-8", errors="replace").read())
@@ -53,13 +96,13 @@ for path, d in cov.get("files", {}).items():
                     for n in ast.walk(stmt):
                         if hasattr(n, "lineno"):
                             fn.add(n.lineno)
-    except Exception as e:
+    except Exception:
         fn = None
-    out[rel] = {"executed": sorted(map(int, d.get("executed_lines", []))),
-                "ctx": {k: sorted(v) for k, v in ctx.items()},
+    out[rel] = {"executed": lines, "f2p_lines": sorted(f2p_lines),
                 "fn_lines": sorted(fn) if fn is not None else None}
-json.dump(out, open(sys.argv[2], "w"))
-'''
+json.dump({"files": out, "n_contexts": len(d.measured_contexts()) if hasattr(d, "measured_contexts") else None,
+           "f2p_wanted": sorted(str(w) for w in want)}, open(out_file, "w"))
+"""
 
 RC = """[run]
 parallel = True
@@ -85,15 +128,41 @@ def runner_prefix(cmd: str) -> str:
     return ""
 
 
+VALUE_OPTS = {"-n", "--numprocesses", "--dist", "-p", "-W", "-k", "-m", "-c", "--rootdir",
+              "--timeout", "--maxfail", "-o", "--durations", "--color", "--tb"}
+
+
+def strip_pytest_paths(cmd: str) -> str:
+    """Drop positional path arguments after `pytest` (e.g. `pytest -rA keras`), so only the
+    PR's test files run. Options and their values are kept."""
+    toks = shlex.split(cmd)
+    idx = next((i for i, t in enumerate(toks) if t.endswith("pytest")), None)
+    if idx is None:
+        return cmd
+    keep, i = toks[: idx + 1], idx + 1
+    while i < len(toks):
+        t = toks[i]
+        if t in ("&&", "||", ";", "|"):
+            keep += toks[i:]
+            break
+        if t.startswith("-"):
+            keep.append(t)
+            if t in VALUE_OPTS and i + 1 < len(toks):
+                keep.append(toks[i + 1])
+                i += 1
+        i += 1
+    return " ".join(shlex.quote(t) if (" " in t or not t) else t for t in keep)
+
+
 def test_command(rec: dict) -> tuple[str, bool]:
     """(bash command that runs the PR's tests, whether it applies the test patch itself)."""
     files = " ".join(shlex.quote(f) for f in rec["test_files"])
     if rec["dataset"] == "swebench_full":
         return "bash /work/eval.sh", True
     if rec["dataset"] == "swerebench_filtered":
-        return f"{rec['test_cmd']} {files}", False
+        return f"{strip_pytest_paths(rec['test_cmd'])} {files}", False
     cmds = [c for c in rec["test_cmds"] if "pytest" in c or "test" in c] or rec["test_cmds"]
-    return f"{cmds[-1]} {files}", False
+    return f"{strip_pytest_paths(cmds[-1])} {files}", False
 
 
 def container_script(rec: dict) -> str:
@@ -127,18 +196,19 @@ git apply --whitespace=nowarn /work/gold.diff || {{ echo STAGE=gold_patch; exit 
 SITE=$({py} -c "import sysconfig; print(sysconfig.get_paths()['purelib'])")
 echo "import coverage; coverage.process_startup()" > "$SITE/zz_coverage_startup.pth" || {{ echo STAGE=pth; exit 23; }}
 mkdir -p /work/main /work/noop
+# a repo's own pytest-cov would take the tracer away from ours
+if {py} -c "import pytest_cov" >/dev/null 2>&1; then export PYTEST_ADDOPTS="--no-cov"; fi
 export COVERAGE_PROCESS_START=/work/main.rc
 echo '== tests'
-( timeout {TEST_TIMEOUT} {cmd} ) > /work/tests.log 2>&1
+( timeout {TEST_TIMEOUT} bash -c {shlex.quote(cmd)} ) > /work/tests.log 2>&1
 echo "tests_exit=$?"
 {noop}
 unset COVERAGE_PROCESS_START
 rm -f "$SITE/zz_coverage_startup.pth"
 for n in main noop; do
   if ls /work/$n/.coverage* >/dev/null 2>&1; then
-    {py} -m coverage combine --rcfile=/work/$n.rc -q /work/$n >>/work/post.log 2>&1
-    {py} -m coverage json --rcfile=/work/$n.rc --show-contexts -q -o /work/$n.json >>/work/post.log 2>&1
-    {py} /work/post.py /work/$n.json /work/$n.compact.json >>/work/post.log 2>&1 || echo "post_failed_$n"
+    {py} -m coverage combine --rcfile=/work/$n.rc /work/$n >>/work/post.log 2>&1
+    {py} /work/post.py /work/$n/.coverage /work/$n.compact.json /work/f2p.json >>/work/post.log 2>&1 || echo "post_failed_$n"
   else
     echo "no_coverage_$n"
   fi
@@ -164,6 +234,7 @@ def run_one(rec: dict, out: Path, keep_image: bool = False) -> dict:
         (work / "main.rc").write_text(RC.format(name="main"))
         (work / "noop.rc").write_text(RC.format(name="noop"))
         (work / "zz_noop_test.py").write_text(NOOP)
+        (work / "f2p.json").write_text(json.dumps(rec["f2p"]))
         (work / "run.sh").write_text(container_script(rec))
 
         p = sh(["docker", "pull", "-q", rec["image"]], timeout=PULL_TIMEOUT)
@@ -172,11 +243,13 @@ def run_one(rec: dict, out: Path, keep_image: bool = False) -> dict:
             res.update(status="pull_failed", error=p.stderr[-500:])
             return res
         t1 = time.time()
+        sh(["docker", "rm", "-f", name])      # a leftover container from a stopped run
         r = sh(["docker", "run", "--rm", "--name", name, "--memory", "7g", "--cpus", "2",
                 "-v", f"{work}:/work", "--entrypoint", "bash", rec["image"], "/work/run.sh"],
                timeout=TEST_TIMEOUT + 900)
         res["stages"]["run_s"] = round(time.time() - t1, 1)
         res["run_stdout"] = r.stdout[-3000:]
+        res["run_stderr"] = r.stderr[-1500:]
         res["exit_code"] = r.returncode
         for line in r.stdout.splitlines():
             if line.startswith("STAGE="):
@@ -190,6 +263,8 @@ def run_one(rec: dict, out: Path, keep_image: bool = False) -> dict:
             res[n] = json.loads(f.read_text()) if f.exists() else None
         if res["status"] == "ok" and res["main"] is None:
             res["status"] = "no_coverage"
+        elif res["status"] == "ok" and not any(v["f2p_lines"] for v in res["main"]["files"].values()):
+            res["status"] = "no_f2p_lines"     # tests ran, but no line was attributed to a F2P test
         for n in ("tests", "noop"):
             f = work / f"{n}.log"
             if f.exists():
