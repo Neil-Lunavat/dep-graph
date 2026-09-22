@@ -19,6 +19,7 @@ from pathlib import Path, PurePosixPath
 from depgraphs.patches import is_test_path
 
 STDLIB = set(sys.stdlib_module_names)
+sys.setrecursionlimit(max(sys.getrecursionlimit(), 20000))   # deeply nested generated code
 
 
 @dataclass(frozen=True)
@@ -268,12 +269,13 @@ def build(repo: str | Path, opts: Options = Options(), parser: str = "ast") -> G
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore", SyntaxWarning)
                 trees[f] = ast.parse(src, filename=f)
-        except (SyntaxError, ValueError) as e:
+            c = _Collector(f, counts)
+            c.visit(trees[f])
+        except (SyntaxError, ValueError, RecursionError, MemoryError) as e:
             parse_failures.append(f"{f}: {type(e).__name__}")
             counts["parse_failure"] += 1
+            trees.pop(f, None)
             continue
-        c = _Collector(f, counts)
-        c.visit(trees[f])
         records += c.records
 
     reexports = _reexport_table(mods, trees) if opts.from_target == "defining" else {}
