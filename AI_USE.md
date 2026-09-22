@@ -1,0 +1,20 @@
+# AI_USE — what Claude Code did, when, with which model (G15)
+
+Model for every row unless stated: Claude Opus 5 (`claude-opus-5`), via Claude Code CLI.
+Neil writes the final ACM disclosure statement from this log.
+
+| Date | Step | What Claude Code did | Kind of content | Checked by Neil? |
+|---|---|---|---|---|
+| 2026-09-22 | 0 | Created repo skeleton, `pyproject.toml` + `uv.lock`, `run.py`, `Makefile`, `.gitignore` | code | no |
+| 2026-09-22 | 0 | Ran machine check (disk, RAM, CPU, Docker, accounts); started Docker Desktop and ran `hello-world` | environment | no |
+| 2026-09-22 | 0 | Wrote `src/depgraphs/datasets.py`; downloaded 9 datasets from Hugging Face at pinned revisions with SHA-256 checksums | code, data | no |
+| 2026-09-22 | 0 | Wrote `DECISIONS.md`, `GLOSSARY.md`, `POSTHOC.md`, this file | text | no |
+| 2026-09-22 | 1 | Drafted `paper/rqs.md` (problem statement, RQ1–RQ6 with measurement and negative outcome) | text (paper voice) | no — D16 |
+| 2026-09-22 | 2 | Wrote patch parser `src/depgraphs/patches.py` + unit tests | code | no |
+| 2026-09-22 | 2 | Wrote and ran `src/depgraphs/recount.py`: recounted RUNBOOK 9.2; found how the original numbers were computed (line cap over all files) | code, data | no |
+| 2026-09-22 | 2 | Wrote and ran `src/depgraphs/envs.py`: checked each task's Docker image exists on Docker Hub (no pulls) | code, data | no |
+| 2026-09-22 | 2 | Wrote and ran `src/depgraphs/candidates.py`: G18 dedup; shallow-fetched 181 candidate repos at a provisional commit; measured R2/R3 inputs with pygount | code, data | no |
+| 2026-09-22 | 2 | Wrote and ran `src/depgraphs/ghmeta.py`: GitHub metadata (fork, licence, description) for candidates | code, data | no |
+| 2026-09-22 | 2 | Wrote `src/depgraphs/sampling.py` (9.4 hash draw) + tests. Not run: needs Neil's seed and rules | code | no |
+| 2026-09-22 | 3 (prep) | Wrote custom `ast` import-graph builder with every Appendix A rule as a switch, SCC condensation, toy-repo tests (G13). No real-repo graphs built for results | code | no |
+| 2026-09-22 | 0–2 | Wrote check-in `reports/01-step0-1-2.md` and decision cards | text (Neil voice) | — |

@@ -1,0 +1,106 @@
+{
+  "swebench_full": {
+    "repo": "SWE-bench/SWE-bench",
+    "revision": "c6fe717fd7a4c3ac1daa4055a4fd082c6a1d28a2",
+    "files": [
+      {
+        "path": "data/datasets/SWE-bench__SWE-bench/data/test-00000-of-00001.parquet",
+        "bytes": 33293897,
+        "sha256": "d4f5a245c75319fa8240c540674958c4d491e82edf274b144d43836bdcbc4567"
+      }
+    ]
+  },
+  "swebench_verified": {
+    "repo": "SWE-bench/SWE-bench_Verified",
+    "revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+    "files": [
+      {
+        "path": "data/datasets/SWE-bench__SWE-bench_Verified/data/test-00000-of-00001.parquet",
+        "bytes": 6304616,
+        "sha256": "030cfd7f2a704c4c0226e7f104c725a3b41230b1d3517f9c915ad7ea5be3fa25"
+      }
+    ]
+  },
+  "swebench_lite": {
+    "repo": "SWE-bench/SWE-bench_Lite",
+    "revision": "b0dde1093fe417d83b7184254edf8199c1f0dff5",
+    "files": [
+      {
+        "path": "data/datasets/SWE-bench__SWE-bench_Lite/data/test-00000-of-00001.parquet",
+        "bytes": 2702170,
+        "sha256": "438e281d80587aa7be470896ce410557002fde02d2ceee3e099331d308f62dd3"
+      }
+    ]
+  },
+  "swegym": {
+    "repo": "SWE-Gym/SWE-Gym",
+    "revision": "bb94ed9e39bbeb96a7fcbfb533b80f25a7fd59cb",
+    "files": [
+      {
+        "path": "data/datasets/SWE-Gym__SWE-Gym/data/train-00000-of-00001.parquet",
+        "bytes": 43644473,
+        "sha256": "60569cea74bb281f7a5579467436a2bc1932c6e0c5f2f7fa0d084392abd9ad97"
+      }
+    ]
+  },
+  "swebench_live_full": {
+    "repo": "SWE-bench-Live/SWE-bench-Live",
+    "revision": "b51a86422e10cfd403beb4773e5a2947953e36ec",
+    "files": [
+      {
+        "path": "data/datasets/SWE-bench-Live__SWE-bench-Live/data/full-00000-of-00002.parquet",
+        "bytes": 48133221,
+        "sha256": "9371afaef65bb6e21417fb76e5cbd89a5bc5241e197db3ead4eb0353007e740c"
+      },
+      {
+        "path": "data/datasets/SWE-bench-Live__SWE-bench-Live/data/full-00001-of-00002.parquet",
+        "bytes": 50103053,
+        "sha256": "12e4956a1761efaeb121afe13a5371d8d439a7708b4638397d0b3d6cce1e8407"
+      }
+    ]
+  },
+  "swerebench_filtered": {
+    "repo": "nebius/SWE-rebench",
+    "revision": "89cdfbab4ab1bd8f5a658bb212d1b63624f4f881",
+    "files": [
+      {
+        "path": "data/datasets/nebius__SWE-rebench/data/filtered-00000-of-00001.parquet",
+        "bytes": 33886640,
+        "sha256": "b2f037217a849732bf2e9b9d2b59d11561d03b4191a55c3142e1e58248817cfa"
+      }
+    ]
+  },
+  "swebench_pro": {
+    "repo": "ScaleAI/SWE-bench_Pro",
+    "revision": "7ab5114912baf22bb098818e604c02fe7ad2c11f",
+    "files": [
+      {
+        "path": "data/datasets/ScaleAI__SWE-bench_Pro/data/test-00000-of-00001.parquet",
+        "bytes": 7816820,
+        "sha256": "c8cd7115496ad4e9a8b21d088cef576a65bf821bb542b24336f13f714cef13f8"
+      }
+    ]
+  },
+  "locbench_v1": {
+    "repo": "czlll/Loc-Bench_V1",
+    "revision": "c44cf3b74e07ca642cec841b471a9939907c12a7",
+    "files": [
+      {
+        "path": "data/datasets/czlll__Loc-Bench_V1/data/test-00000-of-00001.parquet",
+        "bytes": 3084430,
+        "sha256": "8df0833c2c1276c5837aab923d489ab97d7654529abe759d0f59242c4978a662"
+      }
+    ]
+  },
+  "swerebench_leaderboard": {
+    "repo": "nebius/SWE-rebench-leaderboard",
+    "revision": "34d5a58864acf91613740a09ec5d205228dcfa39",
+    "files": [
+      {
+        "path": "data/datasets/nebius__SWE-rebench-leaderboard/data/test-00000-of-00001.parquet",
+        "bytes": 4864925,
+        "sha256": "1497b218db0a8259d22471812f0de12b779c699daf741b930d68bc717636f0bf"
+      }
+    ]
+  }
+}

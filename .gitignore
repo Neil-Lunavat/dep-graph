@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+data/repos/
+data/datasets/**/*.parquet
+data/datasets/**/.cache/
+data/dockerhub/
+data/candidates_measure.jsonl
+logs/*.log
+
+# Pre-existing files unrelated to this project (left untouched)
+AI Poster*.html
+logs/progress.json
