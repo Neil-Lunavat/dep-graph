@@ -81,8 +81,12 @@ def test_switches(flat):
     no_tests = build(flat, Options(include_tests=False))
     assert "tests/test_app.py" not in no_tests.nodes
     parents = E(build(flat, Options(parent_inits=True)))
-    assert parents - base == {("app.py", "pkg/sub/__init__.py"),
-                              ("pkg/sub/deep.py", "pkg/__init__.py")}
+    assert parents - base == {("app.py", "pkg/sub/__init__.py"),        # import pkg.sub.deep
+                              ("pkg/sub/deep.py", "pkg/__init__.py"),   # import pkg.fast
+                              ("pkg/core.py", "pkg/__init__.py"),       # from . import util
+                              ("pkg/core.py", "pkg/sub/__init__.py"),   # from .sub.deep import
+                              ("pkg/util.py", "pkg/__init__.py")}       # from pkg.core import
+    # pkg/__init__ doing `from .core import` would point at itself: no self-edge.
     defining = E(build(flat, Options(from_target="defining")))
     # `from pkg import Engine` now points at core.py; app -> pkg/__init__ remains because
     # `import pkg.missing` partially resolves to the package.
@@ -122,3 +126,47 @@ def test_condense(flat):
     import networkx as nx
     assert nx.is_directed_acyclic_graph(dag)
     assert member["pkg/core.py"] == member["pkg/util.py"]
+
+
+def test_treesitter_matches_ast_on_parseable_files(flat):
+    a = build(flat)
+    t = build(flat, parser="treesitter")
+    assert set(t.edges) == set(a.edges)
+    ra = {(r.src, r.lineno, r.module, r.names, r.level, r.in_function, r.in_type_checking,
+           r.in_try_importerror) for r in a.records}
+    rt = {(r.src, r.lineno, r.module, r.names, r.level, r.in_function, r.in_type_checking,
+           r.in_try_importerror) for r in t.records}
+    assert ra == rt
+
+
+def test_treesitter_keeps_imports_from_broken_file(tmp_path):
+    r = make(tmp_path, {"a.py": "import b\ndef (:\n", "b.py": ""})
+    assert build(r).edges == {}
+    assert build(r, parser="treesitter").edges == {("a.py", "b.py"): 1}
+
+
+def test_unreadable_file_is_counted_not_fatal(tmp_path, monkeypatch):
+    r = make(tmp_path, {"a.py": "import b\n", "b.py": ""})
+    real = Path.read_text
+
+    def fake(self, *a, **k):
+        if self.name == "a.py":
+            raise PermissionError("denied")
+        return real(self, *a, **k)
+    monkeypatch.setattr(Path, "read_text", fake)
+    g = build(r)
+    assert g.counts["read_failure"] == 1 and g.parse_failures == ["a.py: unreadable (PermissionError)"]
+
+
+def test_directory_named_like_py_file_is_not_a_node(tmp_path):
+    r = make(tmp_path, {"a.py": "import b\n", "b.py": "", "weird.py/inner.txt": "x"})
+    assert build(r).nodes == ["a.py", "b.py"]
+
+
+def test_skipped_files_are_counted(tmp_path):
+    r = make(tmp_path, {"a.py": "", "docs/my-example/x.py": "", ".hidden/y.py": "",
+                        "tests/test_a.py": ""})
+    g = build(r, Options(include_tests=False))
+    assert g.nodes == ["a.py"]
+    assert (g.counts["skipped_non_identifier_path"], g.counts["skipped_hidden_path"],
+            g.counts["skipped_test_file"]) == (1, 1, 1)

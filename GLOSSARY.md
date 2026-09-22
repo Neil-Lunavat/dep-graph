@@ -32,3 +32,6 @@ Neil voice uses the left column, always the same word. Paper voice uses the righ
 | duplicate task | the same PR appearing in two benchmarks |
 | group (for sampling) | stratum |
 | how much the RQ2 test can see | statistical power; minimum detectable effect |
+| parent package edge | import of a package's `__init__` module implied by a submodule import |
+| monorepo flag | repository with several packaging roots (5+ `setup.py`/`pyproject.toml`) |
+| tasks per repo cap | per-repository instance cap, drawn by seed |

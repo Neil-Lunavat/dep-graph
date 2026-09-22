@@ -1,0 +1,193 @@
+option,filter,K,size,source,repos
+A_swebench,1-10,10,large,swebench,3.0
+A_swebench,1-10,10,medium,swebench,3.0
+A_swebench,1-10,10,small,swebench,3.0
+A_swebench,1-10,10,tercile_cuts,192/806 files,
+A_swebench,1-10,15,large,swebench,3.0
+A_swebench,1-10,15,medium,swebench,3.0
+A_swebench,1-10,15,small,swebench,3.0
+A_swebench,1-10,15,tercile_cuts,192/806 files,
+A_swebench,1-10,20,large,swebench,3.0
+A_swebench,1-10,20,medium,swebench,3.0
+A_swebench,1-10,20,small,swebench,3.0
+A_swebench,1-10,20,tercile_cuts,192/806 files,
+A_swebench,2-10,10,large,swebench,3.0
+A_swebench,2-10,10,medium,swebench,3.0
+A_swebench,2-10,10,small,swebench,3.0
+A_swebench,2-10,10,tercile_cuts,192/806 files,
+A_swebench,2-10,15,large,swebench,3.0
+A_swebench,2-10,15,medium,swebench,2.0
+A_swebench,2-10,15,small,swebench,3.0
+A_swebench,2-10,15,tercile_cuts,351/838 files,
+A_swebench,2-10,20,large,swebench,3.0
+A_swebench,2-10,20,medium,swebench,2.0
+A_swebench,2-10,20,small,swebench,3.0
+A_swebench,2-10,20,tercile_cuts,351/838 files,
+B_swebench+gym,1-10,10,large,other,1.0
+B_swebench+gym,1-10,10,large,swebench,5.0
+B_swebench+gym,1-10,10,medium,other,5.0
+B_swebench+gym,1-10,10,medium,swebench,0.0
+B_swebench+gym,1-10,10,small,other,2.0
+B_swebench+gym,1-10,10,small,swebench,4.0
+B_swebench+gym,1-10,10,tercile_cuts,221/584 files,
+B_swebench+gym,1-10,15,large,other,1.0
+B_swebench+gym,1-10,15,large,swebench,5.0
+B_swebench+gym,1-10,15,medium,other,5.0
+B_swebench+gym,1-10,15,medium,swebench,0.0
+B_swebench+gym,1-10,15,small,other,2.0
+B_swebench+gym,1-10,15,small,swebench,4.0
+B_swebench+gym,1-10,15,tercile_cuts,221/584 files,
+B_swebench+gym,1-10,20,large,other,1.0
+B_swebench+gym,1-10,20,large,swebench,5.0
+B_swebench+gym,1-10,20,medium,other,5.0
+B_swebench+gym,1-10,20,medium,swebench,0.0
+B_swebench+gym,1-10,20,small,other,2.0
+B_swebench+gym,1-10,20,small,swebench,4.0
+B_swebench+gym,1-10,20,tercile_cuts,221/584 files,
+B_swebench+gym,2-10,10,large,other,1.0
+B_swebench+gym,2-10,10,large,swebench,5.0
+B_swebench+gym,2-10,10,medium,other,5.0
+B_swebench+gym,2-10,10,medium,swebench,0.0
+B_swebench+gym,2-10,10,small,other,2.0
+B_swebench+gym,2-10,10,small,swebench,4.0
+B_swebench+gym,2-10,10,tercile_cuts,221/584 files,
+B_swebench+gym,2-10,15,large,other,1.0
+B_swebench+gym,2-10,15,large,swebench,4.0
+B_swebench+gym,2-10,15,medium,other,4.0
+B_swebench+gym,2-10,15,medium,swebench,1.0
+B_swebench+gym,2-10,15,small,other,3.0
+B_swebench+gym,2-10,15,small,swebench,3.0
+B_swebench+gym,2-10,15,tercile_cuts,232/622 files,
+B_swebench+gym,2-10,20,large,other,1.0
+B_swebench+gym,2-10,20,large,swebench,4.0
+B_swebench+gym,2-10,20,medium,other,4.0
+B_swebench+gym,2-10,20,medium,swebench,1.0
+B_swebench+gym,2-10,20,small,other,2.0
+B_swebench+gym,2-10,20,small,swebench,3.0
+B_swebench+gym,2-10,20,tercile_cuts,226/673 files,
+C_fresh,1-10,10,large,other,32.0
+C_fresh,1-10,10,large,swebench,3.0
+C_fresh,1-10,10,medium,other,33.0
+C_fresh,1-10,10,medium,swebench,2.0
+C_fresh,1-10,10,small,other,35.0
+C_fresh,1-10,10,small,swebench,0.0
+C_fresh,1-10,10,tercile_cuts,115/249 files,
+C_fresh,1-10,15,large,other,21.0
+C_fresh,1-10,15,large,swebench,2.0
+C_fresh,1-10,15,medium,other,20.0
+C_fresh,1-10,15,medium,swebench,2.0
+C_fresh,1-10,15,small,other,23.0
+C_fresh,1-10,15,small,swebench,0.0
+C_fresh,1-10,15,tercile_cuts,111/247 files,
+C_fresh,1-10,20,large,other,14.0
+C_fresh,1-10,20,large,swebench,2.0
+C_fresh,1-10,20,medium,other,14.0
+C_fresh,1-10,20,medium,swebench,2.0
+C_fresh,1-10,20,small,other,17.0
+C_fresh,1-10,20,small,swebench,0.0
+C_fresh,1-10,20,tercile_cuts,121/249 files,
+C_fresh,2-10,10,large,other,12.0
+C_fresh,2-10,10,large,swebench,2.0
+C_fresh,2-10,10,medium,other,13.0
+C_fresh,2-10,10,medium,swebench,1.0
+C_fresh,2-10,10,small,other,15.0
+C_fresh,2-10,10,small,swebench,0.0
+C_fresh,2-10,10,tercile_cuts,134/262 files,
+C_fresh,2-10,15,large,other,5.0
+C_fresh,2-10,15,large,swebench,2.0
+C_fresh,2-10,15,medium,other,6.0
+C_fresh,2-10,15,medium,swebench,1.0
+C_fresh,2-10,15,small,other,8.0
+C_fresh,2-10,15,small,swebench,0.0
+C_fresh,2-10,15,tercile_cuts,134/265 files,
+C_fresh,2-10,20,large,other,3.0
+C_fresh,2-10,20,large,swebench,1.0
+C_fresh,2-10,20,medium,other,3.0
+C_fresh,2-10,20,medium,swebench,0.0
+C_fresh,2-10,20,small,other,4.0
+C_fresh,2-10,20,small,swebench,0.0
+C_fresh,2-10,20,tercile_cuts,153/427 files,
+D+gym+pro,1-10,10,large,other,34.0
+D+gym+pro,1-10,10,large,swebench,5.0
+D+gym+pro,1-10,10,medium,other,36.0
+D+gym+pro,1-10,10,medium,swebench,2.0
+D+gym+pro,1-10,10,small,other,37.0
+D+gym+pro,1-10,10,small,swebench,2.0
+D+gym+pro,1-10,10,tercile_cuts,116/260 files,
+D+gym+pro,1-10,15,large,other,22.0
+D+gym+pro,1-10,15,large,swebench,5.0
+D+gym+pro,1-10,15,medium,other,24.0
+D+gym+pro,1-10,15,medium,swebench,2.0
+D+gym+pro,1-10,15,small,other,25.0
+D+gym+pro,1-10,15,small,swebench,2.0
+D+gym+pro,1-10,15,tercile_cuts,115/260 files,
+D+gym+pro,1-10,20,large,other,15.0
+D+gym+pro,1-10,20,large,swebench,5.0
+D+gym+pro,1-10,20,medium,other,18.0
+D+gym+pro,1-10,20,medium,swebench,2.0
+D+gym+pro,1-10,20,small,other,19.0
+D+gym+pro,1-10,20,small,swebench,2.0
+D+gym+pro,1-10,20,tercile_cuts,127/265 files,
+D+gym+pro,2-10,10,large,other,14.0
+D+gym+pro,2-10,10,large,swebench,5.0
+D+gym+pro,2-10,10,medium,other,16.0
+D+gym+pro,2-10,10,medium,swebench,2.0
+D+gym+pro,2-10,10,small,other,17.0
+D+gym+pro,2-10,10,small,swebench,2.0
+D+gym+pro,2-10,10,tercile_cuts,140/285 files,
+D+gym+pro,2-10,15,large,other,6.0
+D+gym+pro,2-10,15,large,swebench,5.0
+D+gym+pro,2-10,15,medium,other,10.0
+D+gym+pro,2-10,15,medium,swebench,1.0
+D+gym+pro,2-10,15,small,other,10.0
+D+gym+pro,2-10,15,small,swebench,2.0
+D+gym+pro,2-10,15,tercile_cuts,145/398 files,
+D+gym+pro,2-10,20,large,other,3.0
+D+gym+pro,2-10,20,large,swebench,5.0
+D+gym+pro,2-10,20,medium,other,8.0
+D+gym+pro,2-10,20,medium,swebench,0.0
+D+gym+pro,2-10,20,small,other,6.0
+D+gym+pro,2-10,20,small,swebench,3.0
+D+gym+pro,2-10,20,tercile_cuts,215/528 files,
+D_mixed,1-10,10,large,other,31.0
+D_mixed,1-10,10,large,swebench,5.0
+D_mixed,1-10,10,medium,other,34.0
+D_mixed,1-10,10,medium,swebench,2.0
+D_mixed,1-10,10,small,other,35.0
+D_mixed,1-10,10,small,swebench,2.0
+D_mixed,1-10,10,tercile_cuts,115/249 files,
+D_mixed,1-10,15,large,other,19.0
+D_mixed,1-10,15,large,swebench,5.0
+D_mixed,1-10,15,medium,other,22.0
+D_mixed,1-10,15,medium,swebench,2.0
+D_mixed,1-10,15,small,other,23.0
+D_mixed,1-10,15,small,swebench,2.0
+D_mixed,1-10,15,tercile_cuts,109/249 files,
+D_mixed,1-10,20,large,other,13.0
+D_mixed,1-10,20,large,swebench,5.0
+D_mixed,1-10,20,medium,other,16.0
+D_mixed,1-10,20,medium,swebench,2.0
+D_mixed,1-10,20,small,other,16.0
+D_mixed,1-10,20,small,swebench,2.0
+D_mixed,1-10,20,tercile_cuts,119/259 files,
+D_mixed,2-10,10,large,other,11.0
+D_mixed,2-10,10,large,swebench,5.0
+D_mixed,2-10,10,medium,other,14.0
+D_mixed,2-10,10,medium,swebench,2.0
+D_mixed,2-10,10,small,other,15.0
+D_mixed,2-10,10,small,swebench,2.0
+D_mixed,2-10,10,tercile_cuts,134/265 files,
+D_mixed,2-10,15,large,other,4.0
+D_mixed,2-10,15,large,swebench,5.0
+D_mixed,2-10,15,medium,other,7.0
+D_mixed,2-10,15,medium,swebench,2.0
+D_mixed,2-10,15,small,other,8.0
+D_mixed,2-10,15,small,swebench,1.0
+D_mixed,2-10,15,tercile_cuts,137/348 files,
+D_mixed,2-10,20,large,other,1.0
+D_mixed,2-10,20,large,swebench,5.0
+D_mixed,2-10,20,medium,other,5.0
+D_mixed,2-10,20,medium,swebench,1.0
+D_mixed,2-10,20,small,other,4.0
+D_mixed,2-10,20,small,swebench,2.0
+D_mixed,2-10,20,tercile_cuts,170/559 files,

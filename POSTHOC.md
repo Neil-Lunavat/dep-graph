@@ -1,6 +1,10 @@
 # POSTHOC — changes made after results existed, and every bug fix
 
-No main results exist yet. Nothing logged.
+No main results exist yet. Only pre-results bug fixes are logged so far.
 
 | Date | What changed | Why | Post-hoc or bug fix | What was re-run | Must the paper mention it? |
 |---|---|---|---|---|---|
+| 2026-09-22 | Line counting for rule R2: read files as UTF-8 first, then pygount's automatic detection; record pygount's per-file state | pygount's automatic mode fell back to the Windows code page (cp1252) on 879 UTF-8 files, logged a warning, and scored them as 0 lines instead of raising. The error counter read 0, so the failure was silent | Bug fix (before any sampling or results) | All 181 candidate measurements (`data/candidates.csv`); first run kept as `data/candidates_measure_run1.jsonl`. Effect: 5 repos' Python share moved by >0.01; one R2 outcome flipped (aio-libs/yarl 0.72 → 0.84, fail → pass) | No (pre-sampling tooling), but it is in the release log |
+| 2026-09-22 | Docker Hub image check: per-image lookups at a steady 170/min instead of namespace listings | Docker Hub refuses anonymous listings past 100 items (HTTP 403) | Tooling fix | Image check restarted from cache | No |
+| 2026-09-22 | Licence check (R5) also looks inside a top-level `LICENSE/` or `LICENSES/` folder | matplotlib keeps its licence in `LICENSE/LICENSE`; the root-only check marked it "no licence" | Bug fix (pre-sampling) | `results/step2/gate_a_*.csv`. Effect: matplotlib R5 fail → pass; repos passing all rules 115 → 116 | No |
+| 2026-09-22 | Graph builder: skip directories whose names end in `.py`; log unreadable files instead of crashing; count every skipped `.py` file by reason | bridgecrewio/checkov has folders named `*.py`; the builder crashed on them. A code comment claimed skipped files were counted when they were not | Bug fix (Gate B prep; no graph used for results yet) | Cost-per-repo timing; builder comparison | No |

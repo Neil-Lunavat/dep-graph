@@ -1,0 +1,8 @@
+dataset,tasks,with_image,pct
+swebench_full,2294,2294,100.0
+swebench_lite,300,300,100.0
+swebench_live_full,1888,1887,99.9
+swebench_pro,266,266,100.0
+swebench_verified,500,500,100.0
+swegym,2438,2401,98.5
+swerebench_filtered,6542,6542,100.0

@@ -24,6 +24,7 @@ from pathlib import Path, PurePosixPath
 
 import pandas as pd
 
+from depgraphs import progress
 from depgraphs.datasets import ROOT
 from depgraphs.patches import is_test_path_9_2
 from depgraphs.recount import eligible
@@ -86,13 +87,39 @@ def fetch_snapshot(repo: str, shas: list[str]) -> tuple[Path, str, float]:
 
 
 def _analyse(args):
+    """Code lines for one file. UTF-8 first (pygount's automatic mode falls back to the
+    Windows code page and then silently scores the file as 0 lines), then automatic.
+    Files pygount still cannot read are returned with None and counted."""
+    import logging
+
     import pygount
+    logging.getLogger("pygount").setLevel(logging.ERROR)
     path, rel = args
-    try:
-        a = pygount.SourceAnalysis.from_file(path, "g", encoding="automatic")
-        return rel, a.code_count, a.language
-    except Exception as e:  # counted, not dropped
-        return rel, None, f"ERROR:{type(e).__name__}"
+    for enc in ("utf-8", "automatic"):
+        try:
+            a = pygount.SourceAnalysis.from_file(path, "g", encoding=enc)
+        except Exception:
+            continue
+        state = a.state.name
+        if state == "error":
+            continue
+        return rel, a.code_count, state
+    return rel, None, "error"
+
+
+LICENCE_PREFIXES = ("LICENSE", "LICENCE", "COPYING")
+
+
+def licence_files(repo_dir: Path) -> list[str]:
+    """Licence files at the repo root, or inside a top-level LICENSE/ or LICENSES/ folder."""
+    out = []
+    for p in sorted(repo_dir.iterdir()):
+        if p.name.upper().startswith(LICENCE_PREFIXES):
+            if p.is_file():
+                out.append(p.name)
+            elif p.is_dir():
+                out += [f"{p.name}/{q.name}" for q in sorted(p.iterdir()) if q.is_file()]
+    return out
 
 
 def measure(repo_dir: Path, pool: ProcessPoolExecutor) -> dict:
@@ -123,8 +150,7 @@ def measure(repo_dir: Path, pool: ProcessPoolExecutor) -> dict:
         except OSError:
             pass
     total_code = lines(code)
-    lic = sorted(str(rel[p]) for p in files if len(rel[p].parts) == 1
-                 and rel[p].name.upper().startswith(("LICENSE", "LICENCE", "COPYING")))
+    lic = licence_files(repo_dir)
     packaging = [str(rel[p]) for p in files if rel[p].name in ("setup.py", "pyproject.toml")
                  and not is_test[p] and not is_vendor[p]]
     return {
@@ -144,6 +170,8 @@ def measure(repo_dir: Path, pool: ProcessPoolExecutor) -> dict:
         "packaging_paths": ";".join(sorted(packaging)[:10]),
         "licence_files": ";".join(lic),
         "count_errors": sum(1 for v in results.values() if v[0] is None),
+        "pygount_generated_files": sum(1 for v in results.values() if v[1] == "generated"),
+        "pygount_binary_files": sum(1 for v in results.values() if v[1] == "binary"),
         "checkout_mb": round(sum(p.stat().st_size for p in files) / 1e6, 1),
     }
 
@@ -199,8 +227,7 @@ def main(workers: int = 6):
             except Exception as e:
                 failures.append({"repo_key": rk, "error": f"{type(e).__name__}: "
                                  f"{getattr(e, 'stderr', '') or e}"[:500]})
-            (ROOT / "logs" / "progress.json").write_text(json.dumps(
-                {"stage": "candidates", "done": i, "total": len(todo), "failed": len(failures)}))
+            progress.update("candidates", done=i, total=len(todo), failed=len(failures))
     pd.DataFrame(failures, columns=["repo_key", "error"]).to_csv(
         ROOT / "logs" / "candidates_failures.csv", index=False)
     m = pd.DataFrame(list(done.values())).set_index("repo_key") if done else pd.DataFrame()

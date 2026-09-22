@@ -1,0 +1,1327 @@
+{
+ "repo": "django-json-api__django-rest-framework-json-api",
+ "packages": [
+  "rest_framework_json_api"
+ ],
+ "nodes": 16,
+ "edges": {
+  "ast": 25,
+  "ast_parent_inits": 35,
+  "ast_defining": 25,
+  "ast_no_type_checking": 25,
+  "ast_no_function_level": 21,
+  "treesitter": 25,
+  "grimp": 25,
+  "pydeps": 34
+ },
+ "timings_s": {
+  "ast": 0.17,
+  "ast_parent_inits": 0.17,
+  "ast_defining": 0.22,
+  "ast_no_type_checking": 0.19,
+  "ast_no_function_level": 0.17,
+  "treesitter": 0.23,
+  "grimp": 0.15,
+  "pydeps": 2.11
+ },
+ "errors": {},
+ "pairs": [
+  {
+   "a": "ast",
+   "b": "ast_parent_inits",
+   "a_edges": 25,
+   "b_edges": 35,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 10,
+   "jaccard": 0.7143
+  },
+  {
+   "a": "ast",
+   "b": "ast_defining",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast",
+   "b": "ast_no_type_checking",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast",
+   "b": "ast_no_function_level",
+   "a_edges": 25,
+   "b_edges": 21,
+   "both": 21,
+   "only_a": 4,
+   "only_b": 0,
+   "jaccard": 0.84
+  },
+  {
+   "a": "ast",
+   "b": "treesitter",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast",
+   "b": "grimp",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast",
+   "b": "pydeps",
+   "a_edges": 25,
+   "b_edges": 34,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 9,
+   "jaccard": 0.7353
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "ast_defining",
+   "a_edges": 35,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 10,
+   "only_b": 0,
+   "jaccard": 0.7143
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "ast_no_type_checking",
+   "a_edges": 35,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 10,
+   "only_b": 0,
+   "jaccard": 0.7143
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "ast_no_function_level",
+   "a_edges": 35,
+   "b_edges": 21,
+   "both": 21,
+   "only_a": 14,
+   "only_b": 0,
+   "jaccard": 0.6
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "treesitter",
+   "a_edges": 35,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 10,
+   "only_b": 0,
+   "jaccard": 0.7143
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "grimp",
+   "a_edges": 35,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 10,
+   "only_b": 0,
+   "jaccard": 0.7143
+  },
+  {
+   "a": "ast_parent_inits",
+   "b": "pydeps",
+   "a_edges": 35,
+   "b_edges": 34,
+   "both": 34,
+   "only_a": 1,
+   "only_b": 0,
+   "jaccard": 0.9714
+  },
+  {
+   "a": "ast_defining",
+   "b": "ast_no_type_checking",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast_defining",
+   "b": "ast_no_function_level",
+   "a_edges": 25,
+   "b_edges": 21,
+   "both": 21,
+   "only_a": 4,
+   "only_b": 0,
+   "jaccard": 0.84
+  },
+  {
+   "a": "ast_defining",
+   "b": "treesitter",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast_defining",
+   "b": "grimp",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast_defining",
+   "b": "pydeps",
+   "a_edges": 25,
+   "b_edges": 34,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 9,
+   "jaccard": 0.7353
+  },
+  {
+   "a": "ast_no_type_checking",
+   "b": "ast_no_function_level",
+   "a_edges": 25,
+   "b_edges": 21,
+   "both": 21,
+   "only_a": 4,
+   "only_b": 0,
+   "jaccard": 0.84
+  },
+  {
+   "a": "ast_no_type_checking",
+   "b": "treesitter",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast_no_type_checking",
+   "b": "grimp",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "ast_no_type_checking",
+   "b": "pydeps",
+   "a_edges": 25,
+   "b_edges": 34,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 9,
+   "jaccard": 0.7353
+  },
+  {
+   "a": "ast_no_function_level",
+   "b": "treesitter",
+   "a_edges": 21,
+   "b_edges": 25,
+   "both": 21,
+   "only_a": 0,
+   "only_b": 4,
+   "jaccard": 0.84
+  },
+  {
+   "a": "ast_no_function_level",
+   "b": "grimp",
+   "a_edges": 21,
+   "b_edges": 25,
+   "both": 21,
+   "only_a": 0,
+   "only_b": 4,
+   "jaccard": 0.84
+  },
+  {
+   "a": "ast_no_function_level",
+   "b": "pydeps",
+   "a_edges": 21,
+   "b_edges": 34,
+   "both": 21,
+   "only_a": 0,
+   "only_b": 13,
+   "jaccard": 0.6176
+  },
+  {
+   "a": "treesitter",
+   "b": "grimp",
+   "a_edges": 25,
+   "b_edges": 25,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 0,
+   "jaccard": 1.0
+  },
+  {
+   "a": "treesitter",
+   "b": "pydeps",
+   "a_edges": 25,
+   "b_edges": 34,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 9,
+   "jaccard": 0.7353
+  },
+  {
+   "a": "grimp",
+   "b": "pydeps",
+   "a_edges": 25,
+   "b_edges": 34,
+   "both": 25,
+   "only_a": 0,
+   "only_b": 9,
+   "jaccard": 0.7353
+  }
+ ],
+ "examples": {
+  "ast_parent_inits": {
+   "only_ast": [],
+   "only_ast_parent_inits": [
+    [
+     "rest_framework_json_api/django_filters/__init__.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/django_filters/backends.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/exceptions.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/filters.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/metadata.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/parsers.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/relations.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/serializers.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/utils.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/views.py",
+     "rest_framework_json_api/__init__.py"
+    ]
+   ]
+  },
+  "ast_defining": {
+   "only_ast": [],
+   "only_ast_defining": []
+  },
+  "ast_no_type_checking": {
+   "only_ast": [],
+   "only_ast_no_type_checking": []
+  },
+  "ast_no_function_level": {
+   "only_ast": [
+    [
+     "rest_framework_json_api/exceptions.py",
+     "rest_framework_json_api/renderers.py"
+    ],
+    [
+     "rest_framework_json_api/parsers.py",
+     "rest_framework_json_api/views.py"
+    ],
+    [
+     "rest_framework_json_api/renderers.py",
+     "rest_framework_json_api/views.py"
+    ],
+    [
+     "rest_framework_json_api/utils.py",
+     "rest_framework_json_api/serializers.py"
+    ]
+   ],
+   "only_ast_no_function_level": []
+  },
+  "treesitter": {
+   "only_ast": [],
+   "only_treesitter": []
+  },
+  "grimp": {
+   "only_ast": [],
+   "only_grimp": []
+  },
+  "pydeps": {
+   "only_ast": [],
+   "only_pydeps": [
+    [
+     "rest_framework_json_api/django_filters/backends.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/exceptions.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/filters.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/metadata.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/parsers.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/relations.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/serializers.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/utils.py",
+     "rest_framework_json_api/__init__.py"
+    ],
+    [
+     "rest_framework_json_api/views.py",
+     "rest_framework_json_api/__init__.py"
+    ]
+   ]
+  }
+ },
+ "ast_counts": {
+  "skipped_non_identifier_path": 14,
+  "import": 52,
+  "from_import": 295,
+  "sys_path_edit": 1,
+  "aliased": 14,
+  "relative": 6,
+  "star": 3,
+  "module_getattr": 1,
+  "external_stdlib": 35,
+  "external_thirdparty": 196
+ },
+ "ast_unresolved": 0,
+ "ast_parse_failures": [],
+ "edge_lists": {
+  "ast": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "ast_parent_inits": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "ast_defining": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "ast_no_type_checking": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "ast_no_function_level": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "treesitter": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "grimp": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ],
+  "pydeps": [
+   [
+    "rest_framework_json_api/django_filters/__init__.py",
+    "rest_framework_json_api/django_filters/backends.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/django_filters/backends.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/exceptions.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/filters.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/metadata.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/renderers.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/parsers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/relations.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/renderers.py",
+    "rest_framework_json_api/views.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/relations.py"
+   ],
+   [
+    "rest_framework_json_api/serializers.py",
+    "rest_framework_json_api/utils.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/utils.py",
+    "rest_framework_json_api/settings.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/__init__.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/exceptions.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/serializers.py"
+   ],
+   [
+    "rest_framework_json_api/views.py",
+    "rest_framework_json_api/utils.py"
+   ]
+  ]
+ }
+}

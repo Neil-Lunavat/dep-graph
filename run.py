@@ -27,9 +27,41 @@ def recount():
 
 
 @stage
+def envs():
+    from depgraphs import envs as e
+    e.main()
+
+
+@stage
 def candidates():
     from depgraphs import candidates as c
     c.main()
+
+
+@stage
+def ghmeta():
+    from depgraphs import ghmeta as g
+    g.main()
+
+
+@stage
+def r2_variant():
+    from depgraphs import r2_variant as r
+    r.main()
+
+
+@stage
+def gate_a():
+    from depgraphs import gate_a as g, gate_a_extra as x
+    g.main()
+    x.strata()
+    x.cost()
+
+
+@stage
+def builders_prep():
+    from depgraphs.graph import compare
+    compare.main(compare.rule_repos() + compare.EXTRA_REPOS)
 
 
 def main(argv):

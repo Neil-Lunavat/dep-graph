@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import ast
 import sys
+import warnings
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
@@ -22,7 +23,8 @@ STDLIB = set(sys.stdlib_module_names)
 
 @dataclass(frozen=True)
 class Options:
-    parent_inits: bool = False        # `import a.b.c` also adds edges to a/__init__, a/b/__init__
+    parent_inits: bool = False        # `import a.b.c` / `from a.b.c import x` also add edges to
+                                      # a/__init__ and a/b/__init__ (Python runs them first)
     from_target: str = "module"       # "module": `from pkg import name` -> pkg/__init__ if name is not a submodule
                                       # "defining": follow __init__ re-exports to the defining file
     weighted: bool = False            # edges carry the number of import statements (else weight 1)
@@ -73,26 +75,38 @@ def source_roots(repo: Path) -> list[Path]:
     return roots
 
 
-def discover(repo: Path, include_tests: bool = True) -> dict[str, str]:
-    """Map dotted module name -> file path (relative, POSIX)."""
+def discover(repo: Path, include_tests: bool = True,
+             skipped: Counter | None = None) -> dict[str, str]:
+    """Map dotted module name -> file path (relative, POSIX).
+
+    `.py` files that cannot be imported by name are not nodes; if `skipped` is given, they
+    are counted in it by reason."""
     mods: dict[str, str] = {}
+    skipped = skipped if skipped is not None else Counter()
     roots = source_roots(repo)
     for p in sorted(repo.rglob("*.py")):
+        if not p.is_file():   # some repos have directories named like `x.py`
+            continue
         rel = PurePosixPath(p.relative_to(repo).as_posix())
         if any(part.startswith(".") for part in rel.parts) or ".git" in rel.parts:
+            skipped["skipped_hidden_path"] += 1
             continue
         if not include_tests and is_test_path_9_2(str(rel)):
+            skipped["skipped_test_file"] += 1
             continue
         root = next(r for r in roots if p.is_relative_to(r))
         parts = list(PurePosixPath(p.relative_to(root).as_posix()).with_suffix("").parts)
         if not all(x.isidentifier() for x in parts):
-            continue  # not importable by name (e.g. `my-script.py`); still counted below
+            skipped["skipped_non_identifier_path"] += 1   # e.g. docs/my-example/x.py
+            continue
         if parts[-1] == "__init__":
             parts = parts[:-1]
             if not parts:
                 continue
         name = ".".join(parts)
         # Inner root (src/) wins over the repo root for the same name.
+        if name in mods:
+            skipped["skipped_duplicate_module_name"] += 1
         mods.setdefault(name, str(rel))
     return mods
 
@@ -220,19 +234,40 @@ def _absolute(rec: ImportRecord, module: str, is_init: bool) -> str | None:
     return ".".join([*base, *( [rec.module] if rec.module else [])])
 
 
-def build(repo: str | Path, opts: Options = Options()) -> Graph:
+def build(repo: str | Path, opts: Options = Options(), parser: str = "ast") -> Graph:
+    """parser="ast" (stdlib) or "treesitter" (tolerant of files that fail to parse).
+    Both share discovery and resolution, so differences come from parsing alone."""
     repo = Path(repo)
-    mods = discover(repo, include_tests=opts.include_tests)
+    counts: Counter = Counter()
+    mods = discover(repo, include_tests=opts.include_tests, skipped=counts)
     file_to_mod = {f: m for m, f in mods.items()}
     tops = {m.split(".")[0] for m in mods}
-    counts: Counter = Counter()
     records: list[ImportRecord] = []
     parse_failures = []
     trees: dict[str, ast.Module] = {}
     for f in sorted(set(mods.values())):
         try:
             src = (repo / f).read_text(encoding="utf-8", errors="replace")
-            trees[f] = ast.parse(src, filename=f)
+        except OSError as e:   # e.g. over-long paths or broken symlinks on Windows
+            parse_failures.append(f"{f}: unreadable ({type(e).__name__})")
+            counts["read_failure"] += 1
+            continue
+        if parser == "treesitter":
+            from depgraphs.graph.ts_extract import extract
+            recs, had_errors = extract(f, src)
+            records += recs
+            if had_errors:
+                parse_failures.append(f"{f}: tree-sitter error nodes")
+                counts["parse_failure"] += 1
+            try:
+                trees[f] = ast.parse(src, filename=f)   # only for the re-export table
+            except (SyntaxError, ValueError):
+                pass
+            continue
+        try:
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore", SyntaxWarning)
+                trees[f] = ast.parse(src, filename=f)
         except (SyntaxError, ValueError) as e:
             parse_failures.append(f"{f}: {type(e).__name__}")
             counts["parse_failure"] += 1
@@ -290,9 +325,16 @@ def build(repo: str | Path, opts: Options = Options()) -> Graph:
             targets.append(found or "")
             if found and found != target:
                 counts["import_partially_resolved"] += 1
-            if opts.parent_inits and found:
-                fp = found.split(".")
-                targets += [".".join(fp[:i]) for i in range(1, len(fp))]
+
+        if opts.parent_inits:
+            # Python runs every parent package's __init__ before a submodule, for both
+            # `import a.b.c` and `from a.b.c import x`.
+            parents = []
+            for t in targets:
+                tp = t.split(".") if t else []
+                parents += [".".join(tp[:i]) for i in range(1, len(tp))
+                            if ".".join(tp[:i]) in mods]
+            targets += [p for p in dict.fromkeys(parents) if p not in targets]
 
         for t in targets:
             if not t or not add(r.src, t):

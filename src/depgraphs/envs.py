@@ -17,6 +17,7 @@ import time
 import pandas as pd
 import requests
 
+from depgraphs import progress
 from depgraphs.datasets import ROOT, load
 
 CACHE = ROOT / "data" / "dockerhub"
@@ -24,7 +25,21 @@ OUT = ROOT / "results" / "step2"
 HUB = "https://hub.docker.com/v2"
 
 
+_PACE = 60 / 170          # Docker Hub allows 180 calls/min anonymously; stay under it
+_next_slot = [0.0]
+_lock = __import__("threading").Lock()
+
+
+def _wait_turn():
+    with _lock:
+        now = time.monotonic()
+        slot = max(now, _next_slot[0])
+        _next_slot[0] = slot + _PACE
+    time.sleep(max(0.0, slot - now))
+
+
 def _exists(image: str) -> bool:
+    _wait_turn()
     repo, _, tag = image.partition(":")
     url = (f"{HUB}/repositories/{repo}/tags/{tag}" if tag and repo == "jefzda/sweap-images"
            else f"{HUB}/repositories/{repo}/")
@@ -50,10 +65,9 @@ def check_all(images: list[str], workers: int = 4) -> dict[str, bool]:
     with ThreadPoolExecutor(workers) as ex:
         for i, (img, ok) in enumerate(zip(todo, ex.map(_exists, todo)), 1):
             done[img] = ok
-            if i % 200 == 0 or i == len(todo):
+            if i % 100 == 0 or i == len(todo):
                 f.write_text(json.dumps(done))
-                (ROOT / "logs" / "progress.json").write_text(json.dumps(
-                    {"stage": "envs", "done": i, "total": len(todo)}))
+                progress.update("envs", done=i, total=len(todo), missing=sum(not v for v in done.values()))
     return done
 
 
