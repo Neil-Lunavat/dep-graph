@@ -17,16 +17,16 @@ Claude Code's working choices are listed separately so Neil can overrule any of 
 | D7 | LLM role | Settled | Evaluation only, never inside the method | (roadmap) | |
 | D8 | Human study | Settled | Out of scope | (roadmap) | |
 | D9 | Graph builder + Appendix A rules | Open — Gate B | | | |
-| D10 | Repository sample (rules R1–R5, K, strata, n, seed) | Open — Gate A | | | |
-| D11 | Task source | Open — Gate A | | | |
+| D10 | Repository sample (rules R1–R5, K, strata, n, seed) | **Decided (delegated)** | K=10; R2/R3 variant b; take every repo that passes (no draw of repos); at most 20 tasks (PRs) per repo, drawn by seed; domain list as proposed; archived and monorepo-flagged repos kept (no rule excludes them) | 2026-09-22 | RQ2 needs as many repos as possible (power table); variant b counts stubs/Cython as Python and `test/` as a test folder, which is what the rules are for; the 20-task cap keeps every repo but cuts test-box downloads by ~65% |
+| D11 | Task source | **Decided (delegated)** | D: SWE-bench as a fixed comparability block + SWE-bench-Live + SWE-rebench | 2026-09-22 | Only option giving RQ2 ~100 repos while keeping a SWE-bench block; newer tasks usable in Step 10 |
 | D12 | Primary vs validation key sources | Open — Gate C | | | |
 | D13 | Cost unit, budget grid, seed cost | Open — Gate E | | | |
 | D14 | Statistical tests, effect sizes, correction | Open — Gate E | | | |
 | D15 | Model, repetitions, budget, spend (Step 10) | Open — Gate G | | | |
-| D16 | Which RQs are in this paper | Open — Gate A | | | |
+| D16 | Which RQs are in this paper | **Decided (delegated)** | RQ1–RQ4 in; RQ5 in if the Gate G budget is approved; RQ6 deferred | 2026-09-22 | RQ1–RQ4 stand alone and cost nothing; RQ5 is the practical check; RQ6 needs separate proof checking |
 | D17 | Graph per task commit vs one pinned commit | Open — Gate B | | | |
 | D18 | Role of test files | Open — Gate B | | | |
-| D19 | File-count filter (2–10 vs 1–10), line cap, what the cap counts | Open — Gate A | | | |
+| D19 | File-count filter (2–10 vs 1–10), line cap, what the cap counts | **Decided (delegated)** | 1–10 non-test `.py` files; single-file and multi-file tasks reported separately everywhere; cap 200 changed lines, counted on non-test `.py` files only | 2026-09-22 | 66% of usable tasks are single-file and still have symbol + execution keys (G4); the cap changes counts by only 1–4%; counts the cap as 9.2 is written |
 | D20 | What counts as "executed" | Open — Gate C | | | |
 | D21 | Tie-breaking and within-clump order | Open — Gate E | | | |
 | D22 | Adaptation spec for BM25, co-change, published approaches | Open — Gate E | | | |
@@ -34,7 +34,9 @@ Claude Code's working choices are listed separately so Neil can overrule any of 
 | D24 | Freeze by git tag only, or also OSF pre-registration | Open — Gate E | | | |
 | D26 | Wrong-seed sampling rule | Open — Gate E | | | |
 
-Sampling seed for D10 (Neil writes it here): **(not yet set)**
+Sampling seed for D10: **20260922**. Set mechanically as today's date (YYYYMMDD), committed *before* the draw ran, so it was not chosen by looking at outcomes.
+
+**Delegation (2026-09-22).** Neil: "I think you can go ahead and make the decisions … only on cases that are just straight up obscure ambiguous" ask. From here Claude Code decides, marks each "Decided (delegated)" with its reason, and asks only on genuinely ambiguous calls. Neil can overrule any of them; an overrule after results exist goes in `POSTHOC.md`.
 
 ## Gap applications (RUNBOOK section 6)
 
