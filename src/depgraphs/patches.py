@@ -9,6 +9,7 @@ from dataclasses import dataclass, field
 from pathlib import PurePosixPath
 
 _DIFF_HEADER = re.compile(r"^diff --git a/(.*) b/(.*)$")
+_HUNK = re.compile(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,\d+)? @@")
 
 
 @dataclass
@@ -18,6 +19,7 @@ class FileChange:
     added: int = 0
     removed: int = 0
     added_lines: list[str] = field(default_factory=list)
+    added_linenos: list[int] = field(default_factory=list)   # line numbers in the new file
 
     @property
     def path(self) -> str:
@@ -40,6 +42,7 @@ def parse(diff: str) -> list[FileChange]:
     files: list[FileChange] = []
     cur: FileChange | None = None
     in_hunk = False
+    new_no = 0
     for line in diff.splitlines():
         m = _DIFF_HEADER.match(line)
         if m:
@@ -64,13 +67,19 @@ def parse(diff: str) -> list[FileChange]:
                 cur.new_path = None
         if line.startswith("@@"):
             in_hunk = True
+            h = _HUNK.match(line)
+            new_no = int(h.group(1)) if h else 0
             continue
         if in_hunk:
             if line.startswith("+"):
                 cur.added += 1
                 cur.added_lines.append(line[1:])
+                cur.added_linenos.append(new_no)
+                new_no += 1
             elif line.startswith("-"):
                 cur.removed += 1
+            elif not line.startswith("\\"):
+                new_no += 1
     return files
 
 

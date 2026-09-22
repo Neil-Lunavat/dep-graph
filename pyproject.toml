@@ -16,6 +16,7 @@ dependencies = [
     "pydeps>=3.0.8",
     "tree-sitter>=0.26.0",
     "tree-sitter-python>=0.25.0",
+    "jedi>=0.20.0",
 ]
 
 [dependency-groups]

@@ -64,3 +64,12 @@ def test_study_test_rule_adds_test_dir():
     from depgraphs.patches import is_test_path
     assert is_test_path("test/fixtures/a.py") and not is_test_path_9_2("test/fixtures/a.py")
     assert is_test_path("tests/x.py") and not is_test_path("pkg/testing_utils.py")
+
+
+def test_added_line_numbers():
+    d = ("diff --git a/m.py b/m.py\n--- a/m.py\n+++ b/m.py\n"
+         "@@ -10,3 +10,4 @@\n ctx\n-old\n+new1\n+new2\n ctx2\n"
+         "@@ -40 +41,2 @@\n+tail\n ctx3\n\ No newline at end of file\n")
+    f = parse(d)[0]
+    assert f.added_linenos == [11, 12, 41]
+    assert f.added_lines == ["new1", "new2", "tail"]
