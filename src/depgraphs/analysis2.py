@@ -189,6 +189,40 @@ def rank_agreement(per_source: pd.DataFrame) -> dict:
     return out
 
 
+def corpus_counts() -> dict:
+    """Size of the whole task corpus, before tasks with an empty key are dropped."""
+    import json as _json
+    tasks = [_json.loads(l) for l in
+             open(ROOT / "data" / "tasks.jsonl", encoding="utf-8")]
+    return {"tasks": len(tasks),
+            "pull_requests": len({t["instance_id"] for t in tasks}),
+            "repositories": len({t["repo_key"] for t in tasks})}
+
+
+def by_size(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
+    """Repeat the per-source ranking within quartiles of repository size.
+
+    The corpus skews small (median 131 graph nodes), so the reversal has to be shown to
+    survive in the largest repositories rather than being an artefact of small ones.
+    """
+    q = rows.groupby("task_id")["n_nodes"].first()
+    rows = rows.assign(size_q=rows["task_id"].map(
+        pd.qcut(q, 4, labels=["Q1", "Q2", "Q3", "Q4"])))
+    recs = []
+    for src in SOURCES:
+        d = rows[(rows["source"] == src) & (rows["method"].isin(methods))]
+        t = d.pivot_table(index="method", columns="size_q", values="auc",
+                          aggfunc="mean", observed=True)
+        rk = t.rank(ascending=False)
+        for m in t.index:
+            for col in t.columns:
+                recs.append({"source": src, "size_q": str(col), "method": m,
+                             "auc": float(t.loc[m, col]), "rank": int(rk.loc[m, col])})
+    out = pd.DataFrame(recs)
+    out.attrs["bounds"] = q.quantile([0, .25, .5, .75, 1]).astype(int).to_dict()
+    return out
+
+
 def lines_table(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
     """Median lines that must be read to reach half, then all, of the key files."""
     recs = []
@@ -236,16 +270,24 @@ def main():
     lines_table(rows, contenders + ["oracle"]).to_csv(OUT / "lines_to_reach.csv",
                                                       index=False)
 
+    sz = by_size(rows, contenders)
+    sz.to_csv(OUT / "by_size.csv", index=False)
+    size_bounds = sz.attrs["bounds"]
+
     findings = {
         "rank_agreement": rank_agreement(per_source),
-        "n_tasks": int(rows["task_id"].nunique()),
-        "n_prs": int(rows["instance_id"].nunique()),
-        "n_repos": int(rows["repo_key"].nunique()),
+        # scored = tasks with a non-empty key under at least one source; the corpus
+        # figures below are larger because 711 tasks have no key file in the graph
+        "n_tasks_scored": int(rows["task_id"].nunique()),
+        "n_prs_scored": int(rows["instance_id"].nunique()),
+        "n_repos_scored": int(rows["repo_key"].nunique()),
+        "corpus": corpus_counts(),
         "budgets": BUDGETS,
         "per_source_top5": {s: per_source[per_source.source == s]
                             .nsmallest(6, "rank")[["method", "auc", "rank"]]
                             .to_dict("records") for s in SOURCES},
         "rank_reversal": piv.to_dict("index"),
+        "repo_size_quartile_bounds": {str(k): int(v) for k, v in size_bounds.items()},
     }
     (OUT / "findings.json").write_text(json.dumps(findings, indent=1))
     print(per_source[per_source.source == "union_static"]

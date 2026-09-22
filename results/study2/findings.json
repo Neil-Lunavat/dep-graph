@@ -11,9 +11,14 @@
    "n_methods": 16
   }
  },
- "n_tasks": 2412,
- "n_prs": 1162,
- "n_repos": 112,
+ "n_tasks_scored": 2412,
+ "n_prs_scored": 1162,
+ "n_repos_scored": 112,
+ "corpus": {
+  "tasks": 3123,
+  "pull_requests": 1873,
+  "repositories": 113
+ },
  "budgets": [
   250,
   500,
@@ -237,5 +242,12 @@
    "union_static": 18,
    "worst_case": 18
   }
+ },
+ "repo_size_quartile_bounds": {
+  "0.0": 11,
+  "0.25": 73,
+  "0.5": 131,
+  "0.75": 246,
+  "1.0": 2487
  }
 }

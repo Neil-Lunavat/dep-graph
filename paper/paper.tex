@@ -30,7 +30,7 @@
 To change an unfamiliar file, a developer or an agent must decide what else to read, and in
 what order. Two signals are available: the repository's dependency structure, and the words
 of the issue report. Tools overwhelmingly use the first. We compare both, and their
-combination, on 2{,}412 change tasks drawn from 1{,}873 real pull requests in 113 Python
+combination, on 2{,}412 change tasks from 1{,}162 real pull requests in 112 Python
 repositories, scoring each ordering by how much of an evidence-based answer key it covers
 per line read.
 
@@ -105,9 +105,9 @@ repository prior, and does the answer depend on the evidence source?
 \subsection*{Contributions}
 
 \begin{enumerate}
-\item The first head-to-head comparison of import-graph proximity and issue-text retrieval
-as \emph{reading orders} under a line budget, on 2{,}412 tasks from 1{,}873 real pull
-requests in 113 Python repositories.
+\item A head-to-head comparison of import-graph proximity and issue-text retrieval as
+\emph{reading orders} under a line budget, on 2{,}412 tasks from 1{,}162 real pull requests
+in 112 Python repositories, with both signals scored against the same two evidence sources.
 \item Evidence that the conclusion of such a comparison is decided by the evidence source
 rather than by the methods: sixteen methods, two sources, rankings unrelated at
 $\rho = 0.26$.
@@ -140,10 +140,37 @@ change tasks a standard benchmark, and a family of systems now assembles context
 a code graph: Aider's repository map~\cite{aiderrepomap},
 RepoGraph~\cite{ouyang2025repograph}, LocAgent~\cite{chen2025locagent} and
 CoSIL~\cite{cosil2025}. Agentless~\cite{xia2024agentless} is a notable counterexample that
-leans on file and directory names. What none of these report is how their conclusions would
-change under a different definition of which files a task required. \TODO{survey 20--30
-localization and agent papers and tabulate the ground truth each one uses; this table is the
-direct motivation for the paper and is not yet built}
+leans on file and directory names.
+
+What these systems share is the ground truth they are judged against.
+Table~\ref{tab:priorkeys} records it for the four systems we could check directly. Where
+localization accuracy is reported at all, the target is the set of files or functions
+touched by the gold patch --- the SWE-bench convention, and exactly our \m{co\_edited}
+source. That is the evidence source on which, in our results, structural proximity is the
+weaker of the two signals. \TODO{extend this to 20--30 papers; four verified entries are not
+a survey, and the claim that the patch-based key is the field default should rest on a
+systematic sample}
+
+\begin{table}
+\caption{What graph-based localization systems are graded against. Verified from the
+published papers on 2026-09-23.}
+\label{tab:priorkeys}
+\small
+\begin{tabular}{llp{6.1cm}}
+\toprule
+System & Venue & Ground truth used for evaluation \\
+\midrule
+LocAgent~\cite{chen2025locagent} & ACL 2025 & Files and functions modified by the patch, on
+SWE-bench-Lite; Acc@$k$ over the top-$k$ predicted locations \\
+CoSIL~\cite{cosil2025} & ASE 2025 & File- and function-level localization accuracy on
+SWE-bench Lite and Verified, i.e.\ the patched locations \\
+Agentless~\cite{xia2024agentless} & FSE 2025 & Localization then repair on SWE-bench Lite;
+localization is scored against the patched files \\
+RepoGraph~\cite{ouyang2025repograph} & ICLR 2025 & Not localization accuracy: a plug-in
+scored by end-to-end issue resolution rate \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \paragraph{Retrieval.} BM25~\cite{robertson2009bm25} remains the reference lexical ranking
 function; we use it unchanged, varying only the query.
@@ -161,8 +188,10 @@ SWE-rebench, keeping Python repositories with a permissive licence. A pull reque
 edits $k$ existing non-test source files that are nodes of the import graph yields $k$
 tasks: each edited file in turn becomes the \emph{seed}, and the task is to order the
 remaining files of the repository. This gives 3{,}123 tasks from 1{,}873 pull requests in
-113 repositories. 2{,}412 tasks have at least one key file inside the graph once the seed is
-removed and are the ones scored here; 1{,}958 of them (708 pull requests) have a co-edited
+113 repositories. Of these, 2{,}412 tasks --- 1{,}162 pull requests in 112 repositories ---
+have at least one key file inside the graph once the seed is removed, and they are the ones
+scored here; the remaining 711 tasks have an empty key under both sources and are reported
+but not scored. Within the scored set, 1{,}958 tasks (708 pull requests) have a co-edited
 key and 2{,}341 (1{,}156 pull requests) a symbol key.
 
 The median repository contributes 131 graph nodes and the median key is 3 files totalling
@@ -542,6 +571,44 @@ co-edited files against 0.436 for the issue query ($+0.067$, $p < 0.001$), and t
 indistinguishable on symbol files ($+0.018$, $p = 0.13$). The gain is attributable to the
 issue text, and only where the target is what developers changed.
 
+\subsection{Sensitivity: does the reversal survive in large repositories?}
+
+The corpus skews small --- the median repository contributes 131 graph nodes --- so the
+reversal has to be shown not to be an artefact of repositories one can almost read whole.
+Table~\ref{tab:size} repeats the ranking within quartiles of repository size (quartile
+boundaries 73, 131 and 246 nodes; the largest repository has 2{,}487).
+
+The reversal holds in every quartile and widens with size. In the largest quartile,
+issue-text path matching is fifth on co-edited files and tenth on symbol files, while
+cost-scaled personalised PageRank is eleventh and first respectively. The
+query-independent prior degrades fastest of all: on co-edited files in the largest
+quartile it scores 0.113 against a random floor of 0.089, which is to say that in the
+repositories where retrieval matters most, knowing only which files are central is worth
+almost nothing. \m{rrf\_hops\_path} is third or better in all eight cells.
+
+\begin{table}
+\caption{Mean AUC (rank among the sixteen contenders) by quartile of repository size in
+graph nodes. Q1 $\leq 73$, Q2 $\leq 131$, Q3 $\leq 246$, Q4 up to 2{,}487.}
+\label{tab:size}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lcccc@{\hskip 1.5em}cccc}
+\toprule
+& \multicolumn{4}{c}{\m{co\_edited}} & \multicolumn{4}{c}{\m{symbol}} \\
+\cmidrule(r){2-5}\cmidrule(l){6-9}
+Method & Q1 & Q2 & Q3 & Q4 & Q1 & Q2 & Q3 & Q4 \\
+\midrule
+\m{rrf\_hops\_path} & .554 (3) & .466 (3) & .396 (3) & .332 (3) & .563 (4) & .476 (2) & .408 (2) & .363 (3) \\
+\m{ppr\_und\_pl} & .497 (11) & .399 (8) & .316 (10) & .241 (11) & .568 (3) & .467 (3) & .423 (1) & .387 (1) \\
+\m{hops\_lines} & .517 (6) & .412 (6) & .329 (8) & .244 (10) & .569 (2) & .454 (5) & .402 (4) & .343 (6) \\
+\m{ppr\_und} & .485 (13) & .373 (13) & .293 (13) & .231 (12) & .521 (7) & .418 (8) & .375 (6) & .344 (5) \\
+\m{path\_issue} & .538 (5) & .439 (5) & .374 (5) & .304 (5) & .516 (10) & .419 (7) & .324 (9) & .256 (10) \\
+\m{bm25\_issue} & .516 (7) & .402 (7) & .334 (6) & .287 (6) & .476 (13) & .367 (13) & .273 (13) & .233 (12) \\
+\m{pagerank} & .442 (15) & .299 (15) & .200 (15) & .113 (15) & .520 (8) & .371 (12) & .334 (8) & .286 (9) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Discussion}
 
 \paragraph{The graph and the issue answer different questions.} Read together, the results
@@ -551,6 +618,16 @@ co-edited key records what a person decided to change in one sitting --- a decis
 about a feature, a bug, a concept --- and words track that better than call structure does.
 Neither result is a defect in the other method. They are answers to different questions that
 the literature has been treating as one question.
+
+\paragraph{The field's default key is the one structure is worst at.} Every graph-based
+localization system we could check (Table~\ref{tab:priorkeys}) is graded against the files
+the gold patch touched --- our \m{co\_edited} source. On that source, in our measurements,
+the best purely structural ordering is tenth of sixteen and is beaten by matching issue
+words against file paths, a method with no graph, no model and no seed. This does not
+mean those systems are wrong; they are LLM agents that also read the issue, and the graph
+is one component among several. It does mean that the component they advertise is, on their
+own choice of ground truth, not the component doing the work, and that nobody has reported
+the comparison.
 
 \paragraph{The practical consequence is not ``use words instead''.} It is that a tool whose
 ordering rests on one signal is being tuned against whichever evidence source its evaluation
@@ -587,9 +664,9 @@ the result.
 \paragraph{External.} Python only, file granularity only, and pull requests drawn from
 benchmark suites that select for reproducible test-verified fixes --- a population plausibly
 better documented than average, which may flatter the issue-text methods. The median
-repository here has 131 graph files; very large repositories are under-represented.
-\TODO{re-run the headline comparison split by repository size and report whether the reversal
-holds in the largest quartile}
+repository here has 131 graph files and very large repositories are under-represented, but
+the size split in \S4.7 shows the reversal widening rather than narrowing with repository
+size, so the bias does not run in the direction that would explain it away.
 
 \paragraph{Conclusion.} Pull-request-level aggregation, Holm correction within comparison
 families and bootstrapping over repositories guard against the main inflation risks. Effect
@@ -598,7 +675,7 @@ sizes accompany every test because several differences are significant and small
 \section{Conclusion}
 
 We compared import-graph proximity and issue-text retrieval as reading orders for Python
-change tasks on 2{,}412 tasks from 1{,}873 pull requests across 113 repositories, under two
+change tasks on 2{,}412 tasks from 1{,}162 pull requests across 112 repositories, under two
 evidence-based definitions of which files a change required. The comparison has no
 source-independent answer: the rankings the two sources induce over sixteen methods are
 statistically unrelated, with structural orderings winning on files the change references
@@ -622,8 +699,12 @@ curves, and the analysis scripts that produce every number and figure in this pa
 Claude (Anthropic) was used to write the analysis and method code, to run the experiments
 and to draft this manuscript. All numeric results are produced by scripts in the replication
 package and were copied mechanically from their output files; the author verified the
-design, the claims and the text. Bibliographic entries were drafted with AI assistance and
-\TODO{every reference must be checked against the published record before submission}.
+design, the claims and the text. Bibliographic entries were drafted with AI assistance; the
+seven entries for recent systems and benchmarks were checked online against arXiv, the ACL
+Anthology and the publisher listings on 2026-09-23, and the entries in
+Table~\ref{tab:priorkeys} were read from the papers themselves. \TODO{the remaining
+entries, all older and written from memory, still need checking against the published
+record.}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
