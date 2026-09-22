@@ -1,0 +1,32 @@
+{
+ "instance_id": "spdx__tools-python-757",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "44196efd14de18aa1363a6ffd6c8c332433e1056",
+ "status": "ok",
+ "co_edited": [
+  "src/spdx_tools/spdx/writer/tagvalue/package_writer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spdx_tools/spdx/model/package.py": [
+   "files_analyzed"
+  ],
+  "src/spdx_tools/spdx/writer/tagvalue/package_writer.py": [
+   "package",
+   "text_output"
+  ],
+  "src/spdx_tools/spdx/writer/tagvalue/tagvalue_writer_helper_functions.py": [
+   "write_value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

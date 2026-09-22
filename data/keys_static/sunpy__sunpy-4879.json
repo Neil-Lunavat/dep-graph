@@ -1,0 +1,27 @@
+{
+ "instance_id": "sunpy__sunpy-4879",
+ "repo_key": "sunpy/sunpy",
+ "base_commit": "c1b32b80b8e589ab38c7a3bb4497a1c8a6673590",
+ "status": "ok",
+ "co_edited": [
+  "sunpy/coordinates/sun.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sunpy/coordinates/sun.py": [
+   "carrington_rotation_time",
+   "crot",
+   "longitude"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 139,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

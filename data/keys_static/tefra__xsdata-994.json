@@ -1,0 +1,39 @@
+{
+ "instance_id": "tefra__xsdata-994",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "e652e08c2fc312f85cc35e4f6b0c8c3948b9d071",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/codegen/handlers/create_compound_fields.py",
+  "xsdata/formats/dataclass/filters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/codegen/handlers/create_compound_fields.py": [
+   "attr",
+   "restrictions"
+  ],
+  "xsdata/codegen/models.py": [
+   "clone",
+   "is_tokens",
+   "restrictions"
+  ],
+  "xsdata/formats/dataclass/filters.py": [
+   "FACTORY_KEY",
+   "choice",
+   "field_default_value",
+   "metadata",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

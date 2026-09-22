@@ -1,0 +1,26 @@
+{
+ "instance_id": "pvlib__pvlib-python-2347",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "6caa903b7bdb6db5b1c83523edbbfc2c8204002a",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/irradiance.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/irradiance.py": [
+   "_gti_dirint_check_input",
+   "aoi"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

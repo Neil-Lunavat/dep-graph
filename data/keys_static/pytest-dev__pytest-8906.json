@@ -1,0 +1,21 @@
+{
+ "instance_id": "pytest-dev__pytest-8906",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "69356d20cfee9a81972dcbf93d8caf9eabe113e8",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/python.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

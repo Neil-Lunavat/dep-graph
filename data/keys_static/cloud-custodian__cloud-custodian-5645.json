@@ -1,0 +1,69 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5645",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "b3f4660c3b1104e00f1a63fc6142aa0b3589e199",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/emr.py",
+  "c7n/resources/resource_map.py",
+  "c7n/resources/vpc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/actions/core.py": [
+   "BaseAction",
+   "data",
+   "manager",
+   "permissions",
+   "process",
+   "schema"
+  ],
+  "c7n/manager.py": [
+   "resources"
+  ],
+  "c7n/query.py": [
+   "QueryResourceManager",
+   "TypeInfo"
+  ],
+  "c7n/registry.py": [
+   "register"
+  ],
+  "c7n/resources/emr.py": [
+   "DeleteEMRSecurityConfiguration",
+   "EMRSecurityConfiguration",
+   "arn_type",
+   "augment",
+   "client",
+   "detail_spec",
+   "enum_spec",
+   "id",
+   "name",
+   "permission_prefix",
+   "r",
+   "resource_type",
+   "resources",
+   "self",
+   "service"
+  ],
+  "c7n/resources/vpc.py": [
+   "client",
+   "logroup",
+   "process_log_group",
+   "self"
+  ],
+  "c7n/utils.py": [
+   "local_session",
+   "type_schema"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 79,
+  "names_resolved_in_repo": 59,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.4
+}

@@ -1,0 +1,38 @@
+{
+ "instance_id": "sunpy__sunpy-6499",
+ "repo_key": "sunpy/sunpy",
+ "base_commit": "0980fd6d4d3d846e87536faefb7e1ce69d721625",
+ "status": "ok",
+ "co_edited": [
+  "sunpy/map/header_helper.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sunpy/__init__.py": [
+   "log",
+   "sunpy"
+  ],
+  "sunpy/map/header_helper.py": [
+   "_set_instrument_meta",
+   "data",
+   "exposure",
+   "instrument",
+   "meta_wcs",
+   "observatory",
+   "projection_code",
+   "telescope",
+   "unit",
+   "wavelength"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 80,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

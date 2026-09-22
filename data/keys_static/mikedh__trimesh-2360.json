@@ -1,0 +1,60 @@
+{
+ "instance_id": "mikedh__trimesh-2360",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "efca179db885d4ed34d08c5f050c57dc07330e7e",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/exchange/gltf.py",
+  "trimesh/path/path.py",
+  "trimesh/visual/color.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/exchange/gltf.py": [
+   "_build_accessor",
+   "a",
+   "acc",
+   "access",
+   "attr",
+   "attrib",
+   "blob",
+   "buff",
+   "buffer_items",
+   "custom",
+   "data",
+   "key",
+   "kwargs",
+   "path",
+   "tree"
+  ],
+  "trimesh/path/path.py": [
+   "key",
+   "self",
+   "unique",
+   "value",
+   "vertex_attributes"
+  ],
+  "trimesh/typed.py": [
+   "Dict"
+  ],
+  "trimesh/util.py": [
+   "stack_lines",
+   "util"
+  ],
+  "trimesh/visual/color.py": [
+   "DEFAULT_MAT",
+   "colors",
+   "count"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 89,
+  "names_resolved_in_repo": 62,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

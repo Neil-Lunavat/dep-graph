@@ -1,0 +1,21 @@
+{
+ "instance_id": "scrapy__scrapy-6671",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "00167edca0677fd9657a8c5995d30600dd37fe37",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/spiders/sitemap.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

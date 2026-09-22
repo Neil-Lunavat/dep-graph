@@ -1,0 +1,31 @@
+{
+ "instance_id": "instructlab__instructlab-969",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "a9f4f60b3974a0d1611427412d32656876c8fd80",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/utils.py": [
+   "DEFAULT_CHUNK_OVERLAP",
+   "chunk_word_count",
+   "no_tokens_per_doc",
+   "num_chars_from_tokens",
+   "num_tokens",
+   "num_tokens_from_words",
+   "num_words"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

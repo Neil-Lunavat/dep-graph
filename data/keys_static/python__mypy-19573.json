@@ -1,0 +1,40 @@
+{
+ "instance_id": "python__mypy-19573",
+ "repo_key": "python/mypy",
+ "base_commit": "e8147f2bdcd8899109fe1a9cffc770c436de95dc",
+ "status": "ok",
+ "co_edited": [
+  "mypy/semanal.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/nodes.py": [
+   "TempNode",
+   "rvalue",
+   "type"
+  ],
+  "mypy/options.py": [
+   "disallow_any_generics"
+  ],
+  "mypy/semanal.py": [
+   "code",
+   "fail",
+   "options",
+   "s",
+   "self"
+  ],
+  "mypy/types.py": [
+   "UnboundType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

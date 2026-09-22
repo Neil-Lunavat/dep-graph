@@ -1,0 +1,92 @@
+{
+ "instance_id": "kozea__weasyprint-2143",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "d5d7ce369aef035712cf73446f9085a32105846f",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/anchors.py",
+  "weasyprint/document.py",
+  "weasyprint/formatting_structure/boxes.py",
+  "weasyprint/pdf/__init__.py",
+  "weasyprint/pdf/anchors.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/anchors.py": [
+   "anchors",
+   "bookmarks",
+   "box",
+   "child",
+   "forms",
+   "gather_anchors",
+   "links",
+   "parent_form",
+   "rectangle"
+  ],
+  "weasyprint/document.py": [
+   "anchors",
+   "bookmarks",
+   "forms",
+   "links",
+   "page_box",
+   "self"
+  ],
+  "weasyprint/formatting_structure/boxes.py": [
+   "element",
+   "is_form",
+   "self"
+  ],
+  "weasyprint/pdf/__init__.py": [
+   "matrix",
+   "page",
+   "pdf",
+   "pdf_page",
+   "resources",
+   "stream"
+  ],
+  "weasyprint/pdf/anchors.py": [
+   "add_annotations",
+   "add_forms",
+   "add_links",
+   "add_outlines",
+   "character",
+   "checked",
+   "checked_stream",
+   "compress",
+   "element",
+   "field",
+   "font_size",
+   "form",
+   "forms",
+   "group",
+   "height",
+   "i",
+   "input_name",
+   "input_type",
+   "input_value",
+   "inputs",
+   "inputs_with_forms",
+   "key",
+   "option",
+   "pdf",
+   "radio_groups",
+   "rectangle",
+   "resolve_links",
+   "style",
+   "text",
+   "width",
+   "x",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 179,
+  "names_resolved_in_repo": 140,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

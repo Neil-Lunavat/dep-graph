@@ -1,0 +1,40 @@
+{
+ "instance_id": "terrapower__armi-1117",
+ "repo_key": "terrapower/armi",
+ "base_commit": "4699c867e6b6fb7c1308a879e03c241f1d946b75",
+ "status": "ok",
+ "co_edited": [
+  "armi/materials/b4c.py",
+  "armi/physics/neutronics/crossSectionGroupManager.py",
+  "armi/physics/neutronics/parameters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/interfaces.py": [
+   "r"
+  ],
+  "armi/physics/neutronics/crossSectionGroupManager.py": [
+   "cycle",
+   "interactBOC",
+   "self"
+  ],
+  "armi/reactor/parameters/__init__.py": [
+   "parameters"
+  ],
+  "armi/reactor/parameters/parameterDefinitions.py": [
+   "Category",
+   "detailedAxialExpansion",
+   "neutronics"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 130,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

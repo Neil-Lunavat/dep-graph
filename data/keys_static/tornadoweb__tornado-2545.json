@@ -1,0 +1,58 @@
+{
+ "instance_id": "tornadoweb__tornado-2545",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "940fd87fe9145d1154c8457221f86d56ea063c65",
+ "status": "ok",
+ "co_edited": [
+  "tornado/concurrent.py",
+  "tornado/httpclient.py",
+  "tornado/iostream.py",
+  "tornado/process.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/__init__.py": [
+   "tornado"
+  ],
+  "tornado/concurrent.py": [
+   "Future",
+   "exc",
+   "exc_info",
+   "future",
+   "future_set_exception_unless_cancelled",
+   "future_set_result_unless_cancelled"
+  ],
+  "tornado/httpclient.py": [
+   "error",
+   "future",
+   "response"
+  ],
+  "tornado/iostream.py": [
+   "StreamClosedError",
+   "_ssl_connect_future",
+   "error",
+   "future",
+   "real_error",
+   "self"
+  ],
+  "tornado/log.py": [
+   "app_log",
+   "log"
+  ],
+  "tornado/process.py": [
+   "CalledProcessError",
+   "future",
+   "ret"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 131,
+  "names_resolved_in_repo": 61,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

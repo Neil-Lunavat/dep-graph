@@ -1,0 +1,48 @@
+{
+ "instance_id": "tobymao__sqlglot-2047",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "0746b6f96d9b8fad0d8fbea3e23170e8d56eb3ee",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/tsql.py",
+  "sqlglot/expressions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/tsql.py": [
+   "DATE_FMT_RE",
+   "TRANSPILE_SAFE_NUMBER_FMT",
+   "args",
+   "culture",
+   "expression",
+   "fmt",
+   "number_fmt",
+   "self",
+   "this"
+  ],
+  "sqlglot/expressions.py": [
+   "NumberToStr",
+   "TimeToStr",
+   "arg_types",
+   "args",
+   "exp",
+   "this"
+  ],
+  "sqlglot/generator.py": [
+   "func"
+  ],
+  "sqlglot/helper.py": [
+   "seq_get"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

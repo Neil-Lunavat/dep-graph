@@ -1,0 +1,31 @@
+{
+ "instance_id": "python-cmd2__cmd2-987",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "e3a07c59b541b4a0b937c62ef38be6d8c011c0a3",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/decorators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/decorators.py": [
+   "_arg_swap",
+   "_parse_positionals",
+   "args",
+   "args_list",
+   "cmd2_app",
+   "new_args",
+   "statement_arg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

@@ -1,0 +1,41 @@
+{
+ "instance_id": "nltk__nltk-2564",
+ "repo_key": "nltk/nltk",
+ "base_commit": "0a88301f9362d1c0bf546705826b52ab2dd5add5",
+ "status": "ok",
+ "co_edited": [
+  "nltk/lm/__init__.py",
+  "nltk/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/util.py": [
+   "_",
+   "everygrams",
+   "history",
+   "i",
+   "iterables",
+   "kwargs",
+   "max_len",
+   "min_len",
+   "n",
+   "ngram_len",
+   "ngrams",
+   "pad_left",
+   "pad_right",
+   "pad_sequence",
+   "sequence",
+   "sub_iterable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 125,
+  "names_resolved_in_repo": 56,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

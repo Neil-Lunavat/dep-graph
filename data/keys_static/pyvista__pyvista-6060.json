@@ -1,0 +1,33 @@
+{
+ "instance_id": "pyvista__pyvista-6060",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "3e9a19df9185814aee05ba06412e789408cfb1f7",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/filters/data_set.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/dataset.py": [
+   "cell_data"
+  ],
+  "pyvista/core/filters/data_set.py": [
+   "a",
+   "b",
+   "extract_cells",
+   "self",
+   "set_a",
+   "set_b"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

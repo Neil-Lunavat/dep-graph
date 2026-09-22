@@ -1,0 +1,28 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-3890",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "700563cda182416a6c99af4bcaa96077c2412465",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/rules/resources/lmbd/SnapStartSupported.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/cfnlint/rules/resources/lmbd/SnapStartSupported.py": [
+   "_is_runtime_valid",
+   "r",
+   "runtime",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

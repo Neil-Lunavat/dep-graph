@@ -1,0 +1,21 @@
+{
+ "instance_id": "networkx__networkx-8196",
+ "repo_key": "networkx/networkx",
+ "base_commit": "36e8a1ee85ca0ab4195a486451ca7d72153e2e00",
+ "status": "ok",
+ "co_edited": [
+  "networkx/readwrite/gexf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

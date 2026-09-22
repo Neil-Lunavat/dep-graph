@@ -1,0 +1,47 @@
+{
+ "instance_id": "fonttools__fonttools-3559",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "5e6b12d12fa08abafbeb7570f47707fbedf69a45",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/feaLib/builder.py",
+  "Lib/fontTools/otlLib/builder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/feaLib/builder.py": [
+   "add_multi_subst_chained_",
+   "chain",
+   "get_chained_lookup_",
+   "get_lookup_",
+   "glyph",
+   "location",
+   "mapping",
+   "prefix",
+   "replacements",
+   "self",
+   "sub",
+   "suffix"
+  ],
+  "Lib/fontTools/otlLib/builder.py": [
+   "builder_class",
+   "classRuleAttr",
+   "classSet",
+   "classSets",
+   "find_chainable_subst",
+   "i",
+   "mapping",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 66,
+  "names_resolved_in_repo": 52,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

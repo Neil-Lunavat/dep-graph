@@ -1,0 +1,51 @@
+{
+ "instance_id": "instructlab__instructlab-1443",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "5398229da51147b24458d661a8c9820967ec5b10",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/configuration.py",
+  "src/instructlab/lab.py",
+  "src/instructlab/log.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/configuration.py": [
+   "after_debug_level",
+   "cfg",
+   "config_file",
+   "config_obj",
+   "ctx",
+   "debug_level",
+   "general",
+   "init",
+   "log_level",
+   "self"
+  ],
+  "src/instructlab/lab.py": [
+   "config_file",
+   "ctx",
+   "debug_level",
+   "ilab"
+  ],
+  "src/instructlab/log.py": [
+   "debug_level",
+   "httpx_lgr",
+   "instructlab_lgr",
+   "lgr",
+   "log_level",
+   "openai_lgr",
+   "root"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 101,
+  "names_resolved_in_repo": 78,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

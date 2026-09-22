@@ -1,0 +1,25 @@
+{
+ "instance_id": "ibis-project__ibis-10260",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "0a86e3c82ac9fcaf39da2c0c49d6c922208a09d5",
+ "status": "ok",
+ "co_edited": [
+  "ibis/formats/polars.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ibis/formats/polars.py": [
+   "base_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

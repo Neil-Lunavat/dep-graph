@@ -1,0 +1,90 @@
+{
+ "instance_id": "sympy__sympy-13878",
+ "repo_key": "sympy/sympy",
+ "base_commit": "7b127bdf71a36d85216315f80c1b54d22b060818",
+ "status": "ok",
+ "co_edited": [
+  "sympy/stats/crv_types.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/basic.py": [
+   "Basic"
+  ],
+  "sympy/core/function.py": [
+   "Lambda"
+  ],
+  "sympy/core/numbers.py": [
+   "I",
+   "pi"
+  ],
+  "sympy/core/singleton.py": [
+   "S"
+  ],
+  "sympy/core/symbol.py": [
+   "Dummy"
+  ],
+  "sympy/functions/elementary/exponential.py": [
+   "exp",
+   "log"
+  ],
+  "sympy/functions/elementary/integers.py": [
+   "floor"
+  ],
+  "sympy/functions/elementary/miscellaneous.py": [
+   "sqrt"
+  ],
+  "sympy/functions/elementary/trigonometric.py": [
+   "asin"
+  ],
+  "sympy/functions/special/error_functions.py": [
+   "erf",
+   "erfc"
+  ],
+  "sympy/functions/special/gamma_functions.py": [
+   "gamma",
+   "lowergamma",
+   "uppergamma"
+  ],
+  "sympy/functions/special/hyper.py": [
+   "hyper"
+  ],
+  "sympy/stats/crv.py": [
+   "_cdf"
+  ],
+  "sympy/stats/crv_types.py": [
+   "GammaDistribution",
+   "a",
+   "b",
+   "k",
+   "l",
+   "m",
+   "mean",
+   "mu",
+   "n",
+   "name",
+   "nu",
+   "omega",
+   "p",
+   "rv",
+   "s",
+   "self",
+   "std",
+   "theta",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 404,
+  "names_resolved_in_repo": 193,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.3
+}

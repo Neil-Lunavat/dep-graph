@@ -1,0 +1,40 @@
+{
+ "instance_id": "falconry__falcon-2477",
+ "repo_key": "falconry/falcon",
+ "base_commit": "50b652584825883132e1c2eb98a6e3e12cf4e5ff",
+ "status": "ok",
+ "co_edited": [
+  "examples/recipes/msgspec_main.py",
+  "falcon/media/json.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/recipes/msgspec_main.py": [
+   "Note",
+   "_store",
+   "self"
+  ],
+  "falcon/errors.py": [
+   "MediaMalformedError",
+   "errors"
+  ],
+  "falcon/media/json.py": [
+   "_deserialization_errors",
+   "_loads",
+   "error_cls",
+   "ex",
+   "loads",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,35 @@
+{
+ "instance_id": "repobee__repobee-509",
+ "repo_key": "repobee/repobee",
+ "base_commit": "cbfc528f133d099530a7ad51975843226c4336b8",
+ "status": "ok",
+ "co_edited": [
+  "src/repobee_plug/_pluginmeta.py",
+  "src/repobee_plug/cli.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/repobee_plug/_pluginmeta.py": [
+   "args",
+   "attrdict",
+   "configured_value",
+   "kwargs",
+   "name",
+   "opt"
+  ],
+  "src/repobee_plug/cli.py": [
+   "Option",
+   "Positional"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 96,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

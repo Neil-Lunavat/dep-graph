@@ -1,0 +1,41 @@
+{
+ "instance_id": "docker__docker-py-2917",
+ "repo_key": "docker/docker-py",
+ "base_commit": "b2a18d7209f827d83cc33acb80aa31bf404ffd4b",
+ "status": "ok",
+ "co_edited": [
+  "docker/api/plugin.py",
+  "docker/models/plugins.py",
+  "docker/models/services.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/api/plugin.py": [
+   "disable_plugin",
+   "force",
+   "name",
+   "res",
+   "self",
+   "url"
+  ],
+  "docker/models/plugins.py": [
+   "disable",
+   "force",
+   "name",
+   "self"
+  ],
+  "docker/models/resource.py": [
+   "client"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

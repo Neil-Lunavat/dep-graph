@@ -1,0 +1,21 @@
+{
+ "instance_id": "spdx__tools-python-746",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "ee95e603c9c774e696edd544131b801ee9bebaea",
+ "status": "ok",
+ "co_edited": [
+  "src/spdx_tools/spdx/validation/uri_validators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

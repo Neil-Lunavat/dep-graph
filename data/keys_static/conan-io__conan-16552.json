@@ -1,0 +1,31 @@
+{
+ "instance_id": "conan-io__conan-16552",
+ "repo_key": "conan-io/conan",
+ "base_commit": "2035d2848ea3ba4dd2533a602d9a2f88487f942e",
+ "status": "ok",
+ "co_edited": [
+  "conan/api/subapi/install.py",
+  "conan/tools/gnu/pkgconfigdeps.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/api/subapi/install.py": [
+   "conanfile"
+  ],
+  "conan/tools/gnu/pkgconfigdeps.py": [
+   "directory",
+   "prefix",
+   "prefix_path_"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.0
+}

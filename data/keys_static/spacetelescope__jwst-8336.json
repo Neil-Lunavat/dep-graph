@@ -1,0 +1,38 @@
+{
+ "instance_id": "spacetelescope__jwst-8336",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "f7cf0676d234070eeaca670bf794b6fd19494d2a",
+ "status": "ok",
+ "co_edited": [
+  "jwst/charge_migration/charge_migration.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/charge_migration/charge_migration.py": [
+   "CHLO_DNU",
+   "DNU",
+   "chargeloss_pix",
+   "col",
+   "data",
+   "gdq",
+   "group",
+   "integ",
+   "k",
+   "n_cols",
+   "n_rows",
+   "new_gdq",
+   "row",
+   "signal_threshold"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 63,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

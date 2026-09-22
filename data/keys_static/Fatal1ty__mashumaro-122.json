@@ -1,0 +1,32 @@
+{
+ "instance_id": "Fatal1ty__mashumaro-122",
+ "repo_key": "fatal1ty/mashumaro",
+ "base_commit": "41b90d2a0505c2a5d463150d880df8cf917227a8",
+ "status": "ok",
+ "co_edited": [
+  "mashumaro/jsonschema/schema.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mashumaro/jsonschema/schema.py": [
+   "f",
+   "f_default",
+   "f_name",
+   "f_type",
+   "fields",
+   "has_default",
+   "instance",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

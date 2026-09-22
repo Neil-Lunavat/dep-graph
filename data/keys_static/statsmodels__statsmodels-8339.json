@@ -1,0 +1,32 @@
+{
+ "instance_id": "statsmodels__statsmodels-8339",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "35b803767bd7803ca5f9fc35d4546aa8cb7be844",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/stats/diagnostic.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/stats/diagnostic.py": [
+   "boxpierce",
+   "lags",
+   "maxlag",
+   "nobs",
+   "q_sacf",
+   "sacf",
+   "threshold",
+   "threshold_metric"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

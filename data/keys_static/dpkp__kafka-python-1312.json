@@ -1,0 +1,79 @@
+{
+ "instance_id": "dpkp__kafka-python-1312",
+ "repo_key": "dpkp/kafka-python",
+ "base_commit": "141b6b29609f9594ad9d3d3302a0123d1b831261",
+ "status": "ok",
+ "co_edited": [
+  "kafka/client_async.py",
+  "kafka/conn.py",
+  "kafka/producer/kafka.py",
+  "kafka/producer/sender.py",
+  "kafka/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kafka/conn.py": [
+   "ConnectionStates",
+   "DISCONNECTED",
+   "DISCONNECTING",
+   "_",
+   "__",
+   "___",
+   "_gai",
+   "_init_afi",
+   "_init_host",
+   "_init_port",
+   "_next_afi_host_port",
+   "_sock",
+   "afi",
+   "close",
+   "config",
+   "dns_lookup",
+   "ex",
+   "gai",
+   "host",
+   "i",
+   "is_inet_4_or_6",
+   "last_attempt",
+   "log",
+   "next_lookup",
+   "port",
+   "response",
+   "responses",
+   "self",
+   "sockaddr",
+   "state"
+  ],
+  "kafka/errors.py": [
+   "ConnectionError",
+   "Errors"
+  ],
+  "kafka/producer/kafka.py": [
+   "timeout"
+  ],
+  "kafka/producer/sender.py": [
+   "not_ready_timeout"
+  ],
+  "kafka/util.py": [
+   "MAX_INT",
+   "TO_SIGNED",
+   "crc",
+   "crc32",
+   "data"
+  ],
+  "kafka/vendor/six.py": [
+   "PY3",
+   "six"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 129,
+  "names_resolved_in_repo": 131,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

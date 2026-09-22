@@ -1,0 +1,29 @@
+{
+ "instance_id": "pyvista__pyvista-5767",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "c292624166385b4986e3ca85284a31eeac36bee6",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/utilities/fileio.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/utilities/fileio.py": [
+   "c",
+   "cell_type",
+   "data",
+   "fill_values",
+   "numnodes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

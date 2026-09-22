@@ -1,0 +1,25 @@
+{
+ "instance_id": "kozea__weasyprint-2051",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "6e835e2729c24fac40e2f908c33bed9be5f6042d",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/formatting_structure/build.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/formatting_structure/build.py": [
+   "table"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

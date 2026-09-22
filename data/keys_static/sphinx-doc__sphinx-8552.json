@@ -1,0 +1,36 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8552",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "57ed10c68057c96491acbd3e62254ccfaf9e3861",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/ext/napoleon/docstring.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/ext/napoleon/docstring.py": [
+   "_config",
+   "_consume_fields",
+   "_format_docutils_params",
+   "_format_fields",
+   "_parse_receives_section",
+   "fields",
+   "multiple",
+   "section",
+   "self"
+  ],
+  "sphinx/locale/__init__.py": [
+   "_"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

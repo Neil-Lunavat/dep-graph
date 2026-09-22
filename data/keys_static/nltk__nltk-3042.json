@@ -1,0 +1,29 @@
+{
+ "instance_id": "nltk__nltk-3042",
+ "repo_key": "nltk/nltk",
+ "base_commit": "13cea29c3f99db93296b10c6333368f88be4135d",
+ "status": "ok",
+ "co_edited": [
+  "nltk/tokenize/sonority_sequencing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/tokenize/sonority_sequencing.py": [
+   "c",
+   "self",
+   "syllable",
+   "vowel_pattern",
+   "vowels"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.4
+}

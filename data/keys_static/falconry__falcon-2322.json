@@ -1,0 +1,35 @@
+{
+ "instance_id": "falconry__falcon-2322",
+ "repo_key": "falconry/falcon",
+ "base_commit": "1f914c5143250c1113089868f30eed67697dc40d",
+ "status": "ok",
+ "co_edited": [
+  "falcon/media/handlers.py",
+  "falcon/media/multipart.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/media/handlers.py": [
+   "Handlers",
+   "copy",
+   "data",
+   "handlers_cls",
+   "self"
+  ],
+  "falcon/media/multipart.py": [
+   "_DEFAULT_HANDLERS",
+   "media_handlers",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

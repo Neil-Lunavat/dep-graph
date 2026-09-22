@@ -1,0 +1,39 @@
+{
+ "instance_id": "statsmodels__statsmodels-9468",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "831e26ca5dfb087658500f08236a30b99b3f4501",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/tsa/vector_ar/svar_model.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/base/model.py": [
+   "disp"
+  ],
+  "statsmodels/tools/numdiff.py": [
+   "approx_fprime",
+   "epsilon"
+  ],
+  "statsmodels/tsa/vector_ar/svar_model.py": [
+   "A",
+   "AB_mask",
+   "B",
+   "grad",
+   "kwargs",
+   "loglike",
+   "retvals",
+   "solver"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

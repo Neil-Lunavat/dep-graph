@@ -1,0 +1,32 @@
+{
+ "instance_id": "reframe-hpc__reframe-3070",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "67d07ffb791312f858675e1afe302e5e7fccf5c3",
+ "status": "ok",
+ "co_edited": [
+  "reframe/frontend/cli.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reframe/core/exceptions.py": [
+   "ReframeError",
+   "errors"
+  ],
+  "reframe/frontend/cli.py": [
+   "e",
+   "logfiles_message",
+   "options",
+   "printer"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

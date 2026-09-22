@@ -1,0 +1,114 @@
+{
+ "instance_id": "statsmodels__statsmodels-9390",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "d0da572b061faf1c691b471e6ad60257b0a3ccf2",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/tools/docstring.py",
+  "statsmodels/tsa/ardl/model.py",
+  "statsmodels/tsa/arima_process.py",
+  "statsmodels/tsa/stattools.py",
+  "tools/nbgenerate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/base/data.py": [
+   "endog",
+   "orig_exog"
+  ],
+  "statsmodels/base/model.py": [
+   "data"
+  ],
+  "statsmodels/iolib/summary.py": [
+   "add_table_2cols",
+   "gleft",
+   "gright",
+   "title"
+  ],
+  "statsmodels/regression/linear_model.py": [
+   "cov_kwds",
+   "cov_type",
+   "fit",
+   "use_t"
+  ],
+  "statsmodels/tools/decorators.py": [
+   "cache_readonly"
+  ],
+  "statsmodels/tools/docstring.py": [
+   "block_name"
+  ],
+  "statsmodels/tsa/ar_model.py": [
+   "__init__",
+   "fittedvalues",
+   "model",
+   "resid",
+   "use_t"
+  ],
+  "statsmodels/tsa/ardl/model.py": [
+   "ARDL",
+   "ARDLResults",
+   "UECMResults",
+   "_aic",
+   "_bic",
+   "_endog",
+   "_endog_reg",
+   "_fixed_names",
+   "_forecasting_x",
+   "_hold_back",
+   "_maxlag",
+   "_to_dict",
+   "_x",
+   "adjusted_start",
+   "ardl",
+   "check_exog",
+   "cls",
+   "cov_kwds",
+   "cov_params",
+   "cov_type",
+   "end",
+   "exog_oos",
+   "fixed_arr",
+   "from_ardl",
+   "i",
+   "ics",
+   "k",
+   "missing",
+   "model",
+   "name",
+   "norm_cov_params",
+   "normalized_cov_params",
+   "num_oos",
+   "ols_mod",
+   "ols_res",
+   "pad",
+   "pad_x",
+   "params",
+   "res",
+   "scale",
+   "seed",
+   "self",
+   "smry",
+   "start",
+   "title",
+   "top_left",
+   "top_right",
+   "use_t",
+   "v",
+   "x"
+  ],
+  "statsmodels/tsa/tsatools.py": [
+   "lagmat",
+   "original"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 177,
+  "names_resolved_in_repo": 122,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 14,
+  "truncated": false
+ },
+ "seconds": 5.7
+}

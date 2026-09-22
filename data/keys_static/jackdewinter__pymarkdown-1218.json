@@ -1,0 +1,36 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1218",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "e479453b3d80125dde67ac5c70fde293c9dbf611",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/plugins/utils/leading_space_index_tracker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/plugins/utils/leading_space_index_tracker.py": [
+   "__end_tokens",
+   "__process_container_end_block_quote",
+   "current_stack_token",
+   "line_number_delta",
+   "self",
+   "token"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "extra_end_data",
+   "line_number",
+   "start_markdown_token"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

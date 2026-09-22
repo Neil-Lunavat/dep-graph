@@ -1,0 +1,32 @@
+{
+ "instance_id": "kedro-org__kedro-3838",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "8eff35713e7ed5ceb5c3a415c349fdcc5294a7b5",
+ "status": "ok",
+ "co_edited": [
+  "docs/source/conf.py",
+  "kedro/framework/project/__init__.py",
+  "kedro/ipython/__init__.py",
+  "kedro/logging.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/framework/project/__init__.py": [
+   "__file__"
+  ],
+  "kedro/ipython/__init__.py": [
+   "RICH_INSTALLED",
+   "cell"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

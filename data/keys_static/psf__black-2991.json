@@ -1,0 +1,52 @@
+{
+ "instance_id": "psf__black-2991",
+ "repo_key": "psf/black",
+ "base_commit": "98fcccee55acba04afdd933676f56927cfe9bbe4",
+ "status": "ok",
+ "co_edited": [
+  "src/black/linegen.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/linegen.py": [
+   "bracket_contents",
+   "closing_bracket",
+   "mode",
+   "node",
+   "opening_bracket",
+   "parent",
+   "remove_await_parens",
+   "remove_brackets_around_comma",
+   "self"
+  ],
+  "src/black/mode.py": [
+   "Preview",
+   "remove_redundant_parens"
+  ],
+  "src/black/nodes.py": [
+   "ensure_visible",
+   "syms",
+   "visible",
+   "wrap_in_parentheses"
+  ],
+  "src/blib2to3/pgen2/token.py": [
+   "token"
+  ],
+  "src/blib2to3/pytree.py": [
+   "Leaf",
+   "Node",
+   "children",
+   "type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 77,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

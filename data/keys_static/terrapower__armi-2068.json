@@ -1,0 +1,31 @@
+{
+ "instance_id": "terrapower__armi-2068",
+ "repo_key": "terrapower/armi",
+ "base_commit": "7b6693f1460d1c0d8d0a8e40edd22a07967bc6f8",
+ "status": "ok",
+ "co_edited": [
+  "armi/reactor/components/component.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/reactor/components/component.py": [
+   "getVolume",
+   "pinFluxes",
+   "self"
+  ],
+  "armi/reactor/composites.py": [
+   "p",
+   "parent"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

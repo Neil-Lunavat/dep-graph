@@ -1,0 +1,62 @@
+{
+ "instance_id": "reflex-dev__reflex-4958",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "c32f1a8f09923b8a22641755fd9e43aba35368be",
+ "status": "ok",
+ "co_edited": [
+  "reflex/istate/data.py",
+  "reflex/utils/exec.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/constants/__init__.py": [
+   "constants"
+  ],
+  "reflex/constants/route.py": [
+   "HEADERS",
+   "RouteVar"
+  ],
+  "reflex/istate/data.py": [
+   "HeaderData",
+   "_FrozenDictStrStr",
+   "_HeaderData",
+   "_data",
+   "f",
+   "fields_names",
+   "k",
+   "key",
+   "kwargs",
+   "obj",
+   "self",
+   "serialize_frozen_dict_str_str",
+   "snake_case_key",
+   "v",
+   "x"
+  ],
+  "reflex/utils/__init__.py": [
+   "utils"
+  ],
+  "reflex/utils/format.py": [
+   "format",
+   "to_snake_case"
+  ],
+  "reflex/utils/serializers.py": [
+   "serializer",
+   "serializers",
+   "to"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 125,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

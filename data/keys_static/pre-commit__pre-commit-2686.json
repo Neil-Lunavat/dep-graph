@@ -1,0 +1,37 @@
+{
+ "instance_id": "pre-commit__pre-commit-2686",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "dc667ab9fbb75e17f7b57ab1d3c8e39e017df223",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/commands/migrate_config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/__init__.py": [
+   "pre_commit"
+  ],
+  "pre_commit/clientlib.py": [
+   "InvalidConfigError",
+   "clientlib"
+  ],
+  "pre_commit/commands/migrate_config.py": [
+   "config_file",
+   "e",
+   "orig_contents"
+  ],
+  "pre_commit/yaml.py": [
+   "yaml_load"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

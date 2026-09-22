@@ -1,0 +1,78 @@
+{
+ "instance_id": "SpikeInterface__spikeinterface-2775",
+ "repo_key": "spikeinterface/spikeinterface",
+ "base_commit": "c6f8f1fae2ed8fa80b59c42cf8d1cff523b3c754",
+ "status": "ok",
+ "co_edited": [
+  "src/spikeinterface/core/sortinganalyzer.py",
+  "src/spikeinterface/core/template_tools.py",
+  "src/spikeinterface/curation/curationsorting.py",
+  "src/spikeinterface/curation/splitunitsorting.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spikeinterface/core/sortinganalyzer.py": [
+   "names"
+  ],
+  "src/spikeinterface/core/template_tools.py": [
+   "extremum_amplitudes",
+   "get_dense_templates_array",
+   "get_template_amplitudes",
+   "mode",
+   "outputs",
+   "peak_sign",
+   "peak_values",
+   "templates_array",
+   "templates_or_sorting_analyzer"
+  ],
+  "src/spikeinterface/curation/curationsorting.py": [
+   "_add_new_stage",
+   "_get_unused_id",
+   "_graphs",
+   "_make_graph",
+   "_sorting_stages",
+   "_sorting_stages_i",
+   "current_sorting",
+   "edges",
+   "indices_list",
+   "new_graph",
+   "new_sorting",
+   "new_unit_ids",
+   "renamed_unit_ids",
+   "select_units",
+   "self",
+   "split",
+   "split_unit_id",
+   "v"
+  ],
+  "src/spikeinterface/curation/splitunitsorting.py": [
+   "SplitSortingUnitSegment",
+   "indices",
+   "indices_list",
+   "indices_zero_based",
+   "new_unit_ids",
+   "parent_segment",
+   "parent_sorting",
+   "parents_unit_ids",
+   "segment_index",
+   "si",
+   "split_unit_id",
+   "split_unit_idx",
+   "split_unit_indices",
+   "sub_segment",
+   "tot_splits",
+   "v",
+   "zero_based_index"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 413,
+  "names_resolved_in_repo": 128,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

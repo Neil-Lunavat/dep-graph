@@ -1,0 +1,32 @@
+{
+ "instance_id": "dwavesystems__dimod-310",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "680b0434b77e17e211e74f84503b05a476b9ec64",
+ "status": "ok",
+ "co_edited": [
+  "dimod/binary_quadratic_model.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/binary_quadratic_model.py": [
+   "ignored_interactions",
+   "ignored_variables",
+   "quadratic",
+   "scalar",
+   "scale",
+   "self",
+   "u",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 70,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

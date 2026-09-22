@@ -1,0 +1,32 @@
+{
+ "instance_id": "pandas-dev__pandas-61158",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "9bd352d89ca27f5cfa5fdb6388221966f5108bf7",
+ "status": "ok",
+ "co_edited": [
+  "pandas/core/generic.py",
+  "pandas/core/methods/describe.py",
+  "pandas/io/formats/format.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pandas/core/methods/describe.py": [
+   "percentiles",
+   "quantiles",
+   "series"
+  ],
+  "pandas/io/formats/format.py": [
+   "percentiles"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

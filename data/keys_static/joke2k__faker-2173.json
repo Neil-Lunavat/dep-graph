@@ -1,0 +1,39 @@
+{
+ "instance_id": "joke2k__faker-2173",
+ "repo_key": "joke2k/faker",
+ "base_commit": "7186962a1607332682dc1dad4e2b0d7c97825b84",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/date_time/__init__.py",
+  "setup.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/providers/date_time/__init__.py": [
+   "_get_local_timezone",
+   "_get_next_month_start",
+   "args",
+   "convert_timestamp_to_datetime",
+   "dt",
+   "kwargs",
+   "next_month_start",
+   "pick",
+   "self",
+   "this_month_start",
+   "timestamp",
+   "timezone",
+   "ts",
+   "tzinfo"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 73,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

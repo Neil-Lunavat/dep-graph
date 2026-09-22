@@ -1,0 +1,28 @@
+{
+ "instance_id": "matplotlib__matplotlib-23174",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "d73ba9e00eddae34610bf9982876b5aa62114ad5",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/figure.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/figure.py": [
+   "_cachedRenderer",
+   "_parent",
+   "renderer",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

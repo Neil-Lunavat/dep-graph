@@ -1,0 +1,37 @@
+{
+ "instance_id": "Azure__azure-cli-2955",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "3079f47653297161fd877f994cfaa0bc202f039f",
+ "status": "ok",
+ "co_edited": [
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/_help.py",
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/_params.py",
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/commands.py",
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/custom.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/_validators.py"
+ ],
+ "symbol": {
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/_params.py": [
+   "arg",
+   "group_help_msg",
+   "member_id_help_msg"
+  ],
+  "src/command_modules/azure-cli-role/azure/cli/command_modules/role/commands.py": [
+   "__name__",
+   "get_graph_client_groups",
+   "group_path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 140,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 33,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

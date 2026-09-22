@@ -1,0 +1,51 @@
+{
+ "instance_id": "nilearn__nilearn-4256",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "af1a24c0ea1c8ab13f1dc6ba70d6a2877eaeab50",
+ "status": "ok",
+ "co_edited": [
+  "examples/01_plotting/plot_demo_glass_brain_extensive.py",
+  "nilearn/maskers/multi_nifti_labels_masker.py",
+  "nilearn/maskers/multi_nifti_maps_masker.py",
+  "nilearn/maskers/multi_nifti_masker.py",
+  "nilearn/maskers/nifti_labels_masker.py",
+  "nilearn/maskers/nifti_maps_masker.py",
+  "nilearn/maskers/nifti_masker.py",
+  "nilearn/maskers/nifti_spheres_masker.py",
+  "nilearn/plotting/displays/_slicers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/_utils/niimg.py": [
+   "ensure_finite",
+   "safe_get_data"
+  ],
+  "nilearn/image/image.py": [
+   "new_img_like"
+  ],
+  "nilearn/plotting/displays/_slicers.py": [
+   "_colorbar_width",
+   "_default_figsize",
+   "affine",
+   "axes",
+   "coords",
+   "data",
+   "img",
+   "self",
+   "threshold"
+  ],
+  "nilearn/plotting/img_plotting.py": [
+   "title"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 220,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

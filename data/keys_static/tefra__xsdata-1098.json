@@ -1,0 +1,31 @@
+{
+ "instance_id": "tefra__xsdata-1098",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "6e3f505bf9ed57d6209dad5afc4a7bdf90bc5fe8",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/formats/dataclass/filters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/codegen/models.py": [
+   "is_prohibited"
+  ],
+  "xsdata/formats/dataclass/filters.py": [
+   "DEFAULT_KEY",
+   "attr",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

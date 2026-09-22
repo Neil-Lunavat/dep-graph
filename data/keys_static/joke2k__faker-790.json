@@ -1,0 +1,48 @@
+{
+ "instance_id": "joke2k__faker-790",
+ "repo_key": "joke2k/faker",
+ "base_commit": "29dff0a0f2a31edac21a18cfa50b5bc9206304b2",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/address/en_CA/__init__.py",
+  "faker/providers/address/en_US/__init__.py",
+  "faker/providers/address/ja_JP/__init__.py",
+  "faker/providers/address/ko_KR/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/providers/address/__init__.py": [
+   "postcode"
+  ],
+  "faker/providers/address/en_CA/__init__.py": [
+   "postalcode",
+   "postcode",
+   "self"
+  ],
+  "faker/providers/address/en_US/__init__.py": [
+   "postcode",
+   "self",
+   "zipcode"
+  ],
+  "faker/providers/address/ja_JP/__init__.py": [
+   "postcode",
+   "self",
+   "zipcode"
+  ],
+  "faker/providers/address/ko_KR/__init__.py": [
+   "postal_code",
+   "postcode",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

@@ -1,0 +1,28 @@
+{
+ "instance_id": "astropy__astropy-7737",
+ "repo_key": "astropy/astropy",
+ "base_commit": "153e9447ae032d92be74e54272565f6e39c69b3c",
+ "status": "ok",
+ "co_edited": [
+  "astropy/stats/biweight.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/stats/biweight.py": [
+   "M",
+   "axis",
+   "const_mask",
+   "mad"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.3
+}

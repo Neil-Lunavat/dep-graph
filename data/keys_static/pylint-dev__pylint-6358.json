@@ -1,0 +1,50 @@
+{
+ "instance_id": "pylint-dev__pylint-6358",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "1de6da157c260c5a1398bc59c5f2b57abc4912a6",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/similar.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/__init__.py": [
+   "pylint"
+  ],
+  "pylint/checkers/base_checker.py": [
+   "BaseChecker",
+   "__init__"
+  ],
+  "pylint/checkers/similar.py": [
+   "eff_cmn_nb",
+   "effective_cmn_lines_nb",
+   "ignore_comments",
+   "ignore_docstrings",
+   "ignore_imports",
+   "ignore_signatures",
+   "lineset1",
+   "lineset2",
+   "linter",
+   "min_lines",
+   "namespace",
+   "self"
+  ],
+  "pylint/lint/pylinter.py": [
+   "PyLinter"
+  ],
+  "pylint/typing.py": [
+   "Options",
+   "typing"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

@@ -1,0 +1,65 @@
+{
+ "instance_id": "Textualize__textual-3152",
+ "repo_key": "textualize/textual",
+ "base_commit": "695e59bd3a08e901e5ad2c63ce09cd9c5307f6fc",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/widgets/_tabbed_content.py",
+  "src/textual/widgets/_tabs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/css/query.py": [
+   "NoMatches"
+  ],
+  "src/textual/message.py": [
+   "Message"
+  ],
+  "src/textual/widgets/_static.py": [
+   "__init__",
+   "classes",
+   "disabled",
+   "id"
+  ],
+  "src/textual/widgets/_tabbed_content.py": [
+   "ContentTab",
+   "Disabled",
+   "Enabled",
+   "TabPane",
+   "TabPaneMessage",
+   "_on_tab_pane_disabled",
+   "_on_tab_pane_enabled",
+   "_watch_disabled",
+   "content",
+   "content_id",
+   "control",
+   "disabled",
+   "event",
+   "label",
+   "pane_content",
+   "self",
+   "tab_id",
+   "tab_pane",
+   "tab_pane_id"
+  ],
+  "src/textual/widgets/_tabs.py": [
+   "Disabled",
+   "Enabled",
+   "Tab",
+   "__init__",
+   "classes",
+   "disabled",
+   "id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 142,
+  "names_resolved_in_repo": 83,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

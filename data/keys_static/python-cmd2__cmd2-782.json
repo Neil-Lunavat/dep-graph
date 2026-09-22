@@ -1,0 +1,35 @@
+{
+ "instance_id": "python-cmd2__cmd2-782",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "b72edb07d59d45d4006dc596218a52d54396378a",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "_current_script_dir",
+   "_in_py",
+   "_redirecting",
+   "functional_terminal",
+   "in_pyscript",
+   "in_script",
+   "self",
+   "statement_parser"
+  ],
+  "cmd2/parsing.py": [
+   "aliases"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 7,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

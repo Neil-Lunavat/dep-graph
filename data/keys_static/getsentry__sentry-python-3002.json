@@ -1,0 +1,29 @@
+{
+ "instance_id": "getsentry__sentry-python-3002",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "6a733683ebd9728bab065b6e2d9ea11687e204a4",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/tracing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/tracing.py": [
+   "sampled",
+   "self"
+  ],
+  "sentry_sdk/utils.py": [
+   "logger"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

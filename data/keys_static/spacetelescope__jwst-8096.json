@@ -1,0 +1,38 @@
+{
+ "instance_id": "spacetelescope__jwst-8096",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "2a708103b54d9e16239eb773e2aa6f6825cf59ce",
+ "status": "ok",
+ "co_edited": [
+  "jwst/photom/photom.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "jwst/photom/miri_imager.py"
+ ],
+ "symbol": {
+  "jwst/photom/photom.py": [
+   "data",
+   "fftab",
+   "filter",
+   "ftab",
+   "input",
+   "log",
+   "mid_time",
+   "photom_corr",
+   "photom_io",
+   "row",
+   "self",
+   "subarray"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 148,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 20,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

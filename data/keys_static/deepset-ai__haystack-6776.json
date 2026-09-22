@@ -1,0 +1,28 @@
+{
+ "instance_id": "deepset-ai__haystack-6776",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "bce988eab00aa21272df177070b02c8d9789515c",
+ "status": "ok",
+ "co_edited": [
+  "haystack/utils/openai_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/utils/openai_utils.py": [
+   "max_tokens_limit",
+   "model_name",
+   "model_tokenizer",
+   "tokenizer_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

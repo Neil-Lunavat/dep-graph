@@ -1,0 +1,33 @@
+{
+ "instance_id": "pylint-dev__pylint-10044",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "2e0c41f66ee7a9fddbc517a3ca75a2ce0cf2efd1",
+ "status": "ok",
+ "co_edited": [
+  "doc/data/messages/c/consider-alternative-union-syntax/bad.py",
+  "doc/data/messages/c/consider-alternative-union-syntax/good.py",
+  "pylint/extensions/typing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "doc/data/messages/c/consider-alternative-union-syntax/bad.py": [
+   "temp",
+   "unit"
+  ],
+  "doc/data/messages/c/consider-alternative-union-syntax/good.py": [
+   "forecast",
+   "temp",
+   "unit"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

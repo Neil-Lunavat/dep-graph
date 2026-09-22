@@ -1,0 +1,39 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-670",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "5fb7590db87866918745a7e9a67ecd1bdd7d7314",
+ "status": "ok",
+ "co_edited": [
+  "optimade/validator/validator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/validator/utils.py": [
+   "base_url",
+   "optional",
+   "test_case"
+  ],
+  "optimade/validator/validator.py": [
+   "_",
+   "_old_base_url",
+   "_test_versions_headers",
+   "base_url",
+   "client",
+   "content_type",
+   "expected_parameter",
+   "param",
+   "response",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 148,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

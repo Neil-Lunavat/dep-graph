@@ -1,0 +1,26 @@
+{
+ "instance_id": "missionpinball__mpf-1226",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "baa7bc960de8089abee0d917212c8f6093311f70",
+ "status": "ok",
+ "co_edited": [
+  "mpf/core/bcp/bcp_socket_client.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/core/bcp/bcp_socket_client.py": [
+   "bcp_command",
+   "kwargs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

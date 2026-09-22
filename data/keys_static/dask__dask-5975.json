@@ -1,0 +1,30 @@
+{
+ "instance_id": "dask__dask-5975",
+ "repo_key": "dask/dask",
+ "base_commit": "2b7945ed783bc1be7bb67ab78b4ca246adfa9804",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/routines.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/core.py": [
+   "ndim"
+  ],
+  "dask/array/routines.py": [
+   "axes",
+   "left_axes",
+   "lhs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

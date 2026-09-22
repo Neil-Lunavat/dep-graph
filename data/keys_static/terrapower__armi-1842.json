@@ -1,0 +1,58 @@
+{
+ "instance_id": "terrapower__armi-1842",
+ "repo_key": "terrapower/armi",
+ "base_commit": "6fd89e1b095c6290195967674758df0c64434caa",
+ "status": "ok",
+ "co_edited": [
+  "armi/cases/suite.py",
+  "armi/cli/compareCases.py",
+  "armi/reactor/composites.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/__init__.py": [
+   "armi"
+  ],
+  "armi/cases/case.py": [
+   "checkInputs"
+  ],
+  "armi/cases/suite.py": [
+   "case",
+   "ignorePatterns",
+   "patterns",
+   "recursive",
+   "rootDir",
+   "self",
+   "skipInspection"
+  ],
+  "armi/cli/compareCases.py": [
+   "self"
+  ],
+  "armi/reactor/composites.py": [
+   "flagCls",
+   "flagOrderNow",
+   "flagSetNow",
+   "k",
+   "missingFlags"
+  ],
+  "armi/utils/__init__.py": [
+   "utils"
+  ],
+  "armi/utils/flags.py": [
+   "auto",
+   "extend",
+   "flags",
+   "sortedFields"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

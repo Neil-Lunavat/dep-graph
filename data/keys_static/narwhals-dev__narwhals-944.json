@@ -1,0 +1,49 @@
+{
+ "instance_id": "narwhals-dev__narwhals-944",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "e9afffd233ed4b4df5364dc8c16ba00e16f86871",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_dask/group_by.py",
+  "narwhals/_pandas_like/group_by.py",
+  "narwhals/expr.py",
+  "narwhals/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_dask/dataframe.py": [
+   "DaskLazyFrame",
+   "select",
+   "subset",
+   "unique"
+  ],
+  "narwhals/_dask/group_by.py": [
+   "_df",
+   "df",
+   "exprs",
+   "keys",
+   "self"
+  ],
+  "narwhals/_pandas_like/dataframe.py": [
+   "__native_namespace__"
+  ],
+  "narwhals/_pandas_like/group_by.py": [
+   "_df",
+   "grouped",
+   "keys",
+   "native_namespace",
+   "result_aggs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 51,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

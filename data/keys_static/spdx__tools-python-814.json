@@ -1,0 +1,32 @@
+{
+ "instance_id": "spdx__tools-python-814",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "552940abb52cbc9cf358e429d1388e9c1b25d7a6",
+ "status": "ok",
+ "co_edited": [
+  "src/spdx_tools/spdx/parser/jsonlikedict/license_expression_parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spdx_tools/common/__init__.py": [
+   "common"
+  ],
+  "src/spdx_tools/common/spdx_licensing.py": [
+   "spdx_licensing"
+  ],
+  "src/spdx_tools/spdx/parser/jsonlikedict/license_expression_parser.py": [
+   "license_expression",
+   "license_expression_str"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-11596",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "51407623e4f491f00e3b465626dd5c4b55860bd0",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "sklearn/utils/_show_versions.py"
+ ],
+ "symbol": {
+  "sklearn/_build_utils/__init__.py": [
+   "_build_utils",
+   "get_blas_info"
+  ],
+  "sklearn/utils/__init__.py": [
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 158,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 62,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

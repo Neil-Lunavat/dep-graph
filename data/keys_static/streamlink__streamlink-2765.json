@@ -1,0 +1,27 @@
+{
+ "instance_id": "streamlink__streamlink-2765",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "f90d560511523d67c71387eb67bb91fd577ec1bb",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink_cli/output.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink_cli/output.py": [
+   "extra_args",
+   "self",
+   "title"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

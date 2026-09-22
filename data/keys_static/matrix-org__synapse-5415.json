@@ -1,0 +1,41 @@
+{
+ "instance_id": "matrix-org__synapse-5415",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "6d1e699b5c181542c686affd84ef81ea9649550a",
+ "status": "ok",
+ "co_edited": [
+  "synapse/api/auth.py",
+  "synapse/rest/client/v2_alpha/account_validity.py",
+  "synapse/storage/keys.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/api/auth.py": [
+   "_account_validity",
+   "allow_guest",
+   "get_user_by_req",
+   "request",
+   "rights",
+   "self"
+  ],
+  "synapse/rest/client/v2_alpha/account_validity.py": [
+   "auth",
+   "request",
+   "requester",
+   "self"
+  ],
+  "synapse/storage/keys.py": [
+   "ts_valid_until_ms"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.6
+}

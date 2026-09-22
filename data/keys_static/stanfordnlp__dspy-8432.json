@@ -1,0 +1,31 @@
+{
+ "instance_id": "stanfordnlp__dspy-8432",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "94299c7edbbe39cbb086cff892e3902e27cb2f1d",
+ "status": "ok",
+ "co_edited": [
+  "dspy/streaming/messages.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/streaming/messages.py": [
+   "_send",
+   "executor",
+   "future",
+   "message",
+   "new_loop",
+   "run_in_new_loop",
+   "stream"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

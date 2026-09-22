@@ -1,0 +1,26 @@
+{
+ "instance_id": "keras-team__keras-19564",
+ "repo_key": "keras-team/keras",
+ "base_commit": "29d10d1a6c58d02a4f9629ececddac6280c340cd",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/saving/serialization_lib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/saving/serialization_lib.py": [
+   "config",
+   "obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

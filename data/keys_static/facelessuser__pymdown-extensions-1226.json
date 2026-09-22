@@ -1,0 +1,62 @@
+{
+ "instance_id": "facelessuser__pymdown-extensions-1226",
+ "repo_key": "facelessuser/pymdown-extensions",
+ "base_commit": "0ad4ac32ac6f91b163fd297656d47ef249173951",
+ "status": "ok",
+ "co_edited": [
+  "pymdownx/__meta__.py",
+  "pymdownx/details.py",
+  "pymdownx/tabbed.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymdownx/__meta__.py": [
+   "Version",
+   "__version_info__"
+  ],
+  "pymdownx/details.py": [
+   "block",
+   "content_indent",
+   "detab_by_length",
+   "indent",
+   "length",
+   "line",
+   "lines",
+   "newtext",
+   "non_details",
+   "old_block",
+   "parent",
+   "parse_content",
+   "self",
+   "sibling",
+   "text"
+  ],
+  "pymdownx/tabbed.py": [
+   "block",
+   "content_indent",
+   "detab_by_length",
+   "indent",
+   "length",
+   "line",
+   "lines",
+   "newtext",
+   "non_tabs",
+   "old_block",
+   "parent",
+   "parse_content",
+   "self",
+   "sibling",
+   "text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 146,
+  "names_resolved_in_repo": 136,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "django__django-16067",
+ "repo_key": "django/django",
+ "base_commit": "c11336cd990e155371a5185cf3bd6942cad8d9da",
+ "status": "ok",
+ "co_edited": [
+  "django/core/validators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/core/validators.py": [
+   "digit_tuple",
+   "digits",
+   "exponent"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "projectmesa__mesa-2605",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "af3e6670efd11b3eef6a47aef68eb644213db056",
+ "status": "ok",
+ "co_edited": [
+  "mesa/datacollection.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mesa/datacollection.py": [
+   "_validate_model_reporter",
+   "_validated",
+   "e",
+   "model",
+   "model_reporters",
+   "name",
+   "reporter",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 122,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

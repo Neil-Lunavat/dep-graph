@@ -1,0 +1,28 @@
+{
+ "instance_id": "astropy__astropy-14528",
+ "repo_key": "astropy/astropy",
+ "base_commit": "13b1bef09be51cb875ca665bb2cb14f5e5cf68de",
+ "status": "ok",
+ "co_edited": [
+  "astropy/io/fits/hdu/image.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/io/fits/hdu/image.py": [
+   "data"
+  ],
+  "astropy/io/fits/util.py": [
+   "_is_dask_array"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

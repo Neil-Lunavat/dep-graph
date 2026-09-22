@@ -1,0 +1,67 @@
+{
+ "instance_id": "Kozea__WeasyPrint-2454",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "f2caa70a95f21c7cf661762b62b030eec231d5e8",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/formatting_structure/build.py",
+  "weasyprint/layout/flex.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/css/properties.py": [
+   "Dimension"
+  ],
+  "weasyprint/formatting_structure/boxes.py": [
+   "BlockBox",
+   "BlockReplacedBox",
+   "InlineBlockBox",
+   "InlineLevelBox",
+   "InlineReplacedBox",
+   "anonymous_from",
+   "boxes",
+   "style"
+  ],
+  "weasyprint/formatting_structure/build.py": [
+   "anonymous",
+   "blockify",
+   "box",
+   "child",
+   "flex_children",
+   "grid_children",
+   "layout",
+   "replacement"
+  ],
+  "weasyprint/layout/block.py": [
+   "block",
+   "collapse_margin"
+  ],
+  "weasyprint/layout/flex.py": [
+   "absolute_boxes",
+   "adjoining_margins",
+   "child",
+   "content_size",
+   "context",
+   "cross",
+   "fixed_boxes",
+   "intrinsic_width",
+   "new_child",
+   "new_child_width",
+   "page_is_empty"
+  ],
+  "weasyprint/layout/preferred.py": [
+   "max_content_width",
+   "outer"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 145,
+  "names_resolved_in_repo": 112,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

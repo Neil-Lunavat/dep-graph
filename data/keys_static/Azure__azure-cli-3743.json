@@ -1,0 +1,30 @@
+{
+ "instance_id": "Azure__azure-cli-3743",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "e80e204a01bf4f32c17d8f89a955c3dd49eaa7ec",
+ "status": "ok",
+ "co_edited": [
+  "src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_validators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_validators.py": [
+   "_try_load_file_object",
+   "_try_parse_json_object",
+   "_try_parse_key_value_object",
+   "item",
+   "param_obj",
+   "parameters"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

@@ -1,0 +1,43 @@
+{
+ "instance_id": "googleapis__python-storage-72",
+ "repo_key": "googleapis/python-storage",
+ "base_commit": "4c1c819539f8026e14dbe67734be1395ccb18aae",
+ "status": "ok",
+ "co_edited": [
+  "google/cloud/storage/_signing.py",
+  "google/cloud/storage/blob.py",
+  "google/cloud/storage/bucket.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "google/cloud/storage/_signing.py": [
+   "api_access_endpoint",
+   "headers"
+  ],
+  "google/cloud/storage/blob.py": [
+   "api_access_endpoint",
+   "bucket_bound_hostname",
+   "quoted_name",
+   "resource",
+   "scheme",
+   "virtual_hosted_style"
+  ],
+  "google/cloud/storage/bucket.py": [
+   "api_access_endpoint",
+   "bucket_bound_hostname",
+   "resource",
+   "scheme",
+   "virtual_hosted_style"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 234,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

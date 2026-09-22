@@ -1,0 +1,27 @@
+{
+ "instance_id": "pytorch__ignite-859",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "d48588f7972daf7d6d8e4dd91295c5f406e980d1",
+ "status": "ok",
+ "co_edited": [
+  "ignite/contrib/handlers/param_scheduler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/contrib/handlers/param_scheduler.py": [
+   "lr_scheduler",
+   "optimizer",
+   "warmup_end_value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

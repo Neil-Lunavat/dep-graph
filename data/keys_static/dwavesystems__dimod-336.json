@@ -1,0 +1,35 @@
+{
+ "instance_id": "dwavesystems__dimod-336",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "54a79d8ad74234aac298d41531c76f73ee607b1b",
+ "status": "ok",
+ "co_edited": [
+  "dimod/embedding/transforms.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/binary_quadratic_model.py": [
+   "vartype"
+  ],
+  "dimod/embedding/transforms.py": [
+   "chain_strength",
+   "smear_vartype",
+   "source_bqm"
+  ],
+  "dimod/vartypes.py": [
+   "BINARY",
+   "SPIN",
+   "Vartype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 48,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

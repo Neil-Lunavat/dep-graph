@@ -1,0 +1,28 @@
+{
+ "instance_id": "python__mypy-19648",
+ "repo_key": "python/mypy",
+ "base_commit": "5a786075d8c366ee753c62fa36857589023ed561",
+ "status": "ok",
+ "co_edited": [
+  "mypy/types.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/types.py": [
+   "UninhabitedType",
+   "ambiguous",
+   "other",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

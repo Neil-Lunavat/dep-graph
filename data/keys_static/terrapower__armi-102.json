@@ -1,0 +1,42 @@
+{
+ "instance_id": "terrapower__armi-102",
+ "repo_key": "terrapower/armi",
+ "base_commit": "a99a52c26034ef8264a8078a4b96d864ab2159f3",
+ "status": "ok",
+ "co_edited": [
+  "armi/physics/neutronics/__init__.py",
+  "armi/reactor/reactors.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/__init__.py": [
+   "armi"
+  ],
+  "armi/physics/neutronics/__init__.py": [
+   "applyEffectiveDelayedNeutronFractionToCore",
+   "beta",
+   "core",
+   "cs",
+   "decayConstants",
+   "reportTableData"
+  ],
+  "armi/plugins.py": [
+   "HOOKIMPL",
+   "onProcessCoreLoading",
+   "plugins"
+  ],
+  "armi/runLog.py": [
+   "runLog"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 81,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

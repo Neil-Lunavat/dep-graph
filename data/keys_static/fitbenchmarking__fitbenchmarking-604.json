@@ -1,0 +1,62 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-604",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "eddaae19cee2e5dc1c8d15519a2ad07bb5c58ed0",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/core/fitting_benchmarking.py",
+  "fitbenchmarking/parsing/nist_parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/core/fitting_benchmarking.py": [
+   "LOGGER",
+   "e",
+   "failed_problems",
+   "grabbed_output",
+   "i",
+   "message",
+   "options",
+   "p",
+   "parsed_problem",
+   "problem_fails",
+   "problem_group",
+   "problem_passed",
+   "problem_results",
+   "results"
+  ],
+  "fitbenchmarking/parsing/fitting_problem.py": [
+   "correct_data"
+  ],
+  "fitbenchmarking/parsing/nist_data_functions.py": [
+   "param_names"
+  ],
+  "fitbenchmarking/parsing/nist_parser.py": [
+   "_parse_jacobian",
+   "jacobian",
+   "name",
+   "self",
+   "starting_values"
+  ],
+  "fitbenchmarking/parsing/parser_factory.py": [
+   "parse_problem_file"
+  ],
+  "fitbenchmarking/utils/exceptions.py": [
+   "MissingSoftwareError",
+   "NoJacobianError",
+   "NoResultsError",
+   "UnknownMinimizerError",
+   "UnsupportedMinimizerError"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

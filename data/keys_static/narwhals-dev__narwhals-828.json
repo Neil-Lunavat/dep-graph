@@ -1,0 +1,39 @@
+{
+ "instance_id": "narwhals-dev__narwhals-828",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "cbf4bac2ccd5c89371a75ffb2c04bc92e9bae8dc",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_expression_parsing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_arrow/namespace.py": [
+   "_create_expr_from_series",
+   "col"
+  ],
+  "narwhals/_dask/namespace.py": [
+   "_create_expr_from_series",
+   "col"
+  ],
+  "narwhals/_expression_parsing.py": [
+   "into_expr",
+   "namespace",
+   "series"
+  ],
+  "narwhals/_pandas_like/namespace.py": [
+   "_create_expr_from_series",
+   "col"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

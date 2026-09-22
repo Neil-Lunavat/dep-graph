@@ -1,0 +1,42 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-3024",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "3306eddbf2822c4de958d75519d2e4a235c54dc5",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/transforms/optimization/optimization_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/transforms/optimization/optimization_utils.py": [
+   "_fuse",
+   "_quaternion_product",
+   "_regular_quat_to_zyz",
+   "_singular_quat_to_zyz",
+   "_zyz_to_quat",
+   "abstract_jax",
+   "angles_1",
+   "angles_2",
+   "qw",
+   "qx",
+   "qy",
+   "qz",
+   "y",
+   "y_arg",
+   "z1",
+   "z1_arg1",
+   "z1_arg2",
+   "z2"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 126,
+  "names_resolved_in_repo": 91,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

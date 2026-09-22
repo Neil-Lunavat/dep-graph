@@ -1,0 +1,26 @@
+{
+ "instance_id": "fonttools__fonttools-3520",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "d757bfac8a140832fcb7ebdf1bd502480d6a6911",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/feaLib/builder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/feaLib/builder.py": [
+   "l",
+   "lookups"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

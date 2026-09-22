@@ -1,0 +1,51 @@
+{
+ "instance_id": "bridgecrewio__checkov-6933",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "cb2283feaea643b822267526336ce20e67fb983e",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/azure/StorageLocalUsers.py",
+  "checkov/terraform/checks/terraform/terraform/StateLock.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/__init__.py": [
+   "checkov"
+  ],
+  "checkov/common/__init__.py": [
+   "common"
+  ],
+  "checkov/common/models/__init__.py": [
+   "models"
+  ],
+  "checkov/common/models/enums.py": [
+   "CheckCategories",
+   "CheckResult",
+   "PASSED",
+   "UNKNOWN",
+   "enums"
+  ],
+  "checkov/terraform/checks/resource/azure/StorageLocalUsers.py": [
+   "conf",
+   "hns_enabled",
+   "local_user_enabled",
+   "self"
+  ],
+  "checkov/terraform/checks/resource/base_resource_value_check.py": [
+   "scan_resource_conf"
+  ],
+  "checkov/terraform/checks/terraform/terraform/StateLock.py": [
+   "s3_config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

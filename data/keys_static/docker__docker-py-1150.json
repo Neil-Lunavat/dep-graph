@@ -1,0 +1,25 @@
+{
+ "instance_id": "docker__docker-py-1150",
+ "repo_key": "docker/docker-py",
+ "base_commit": "650cc70e934044fcb5dfd27fd27777f91c337b6c",
+ "status": "ok",
+ "co_edited": [
+  "docker/utils/decorators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/utils/decorators.py": [
+   "kwargs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

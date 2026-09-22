@@ -1,0 +1,53 @@
+{
+ "instance_id": "kedro-org__kedro-3604",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "cd026f5e1d849f047002d1c4978e5cb8e5a9f184",
+ "status": "ok",
+ "co_edited": [
+  "kedro/ipython/__init__.py",
+  "kedro/logging.py",
+  "kedro/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/__init__.py": [
+   "kedro"
+  ],
+  "kedro/framework/project/__init__.py": [
+   "pipelines"
+  ],
+  "kedro/ipython/__init__.py": [
+   "_create_cell_with_text",
+   "_guess_run_environment",
+   "_load_node",
+   "_print_cells",
+   "app",
+   "args",
+   "cell",
+   "cells",
+   "combined_cell",
+   "is_jupyter",
+   "magic_load_node",
+   "parameters",
+   "run_environment",
+   "text"
+  ],
+  "kedro/logging.py": [
+   "self"
+  ],
+  "kedro/utils.py": [
+   "_is_databricks",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

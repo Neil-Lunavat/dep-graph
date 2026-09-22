@@ -1,0 +1,25 @@
+{
+ "instance_id": "pylint-dev__pylint-7080",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "3c5eca2ded3dd2b59ebaf23eb289453b5d2930f0",
+ "status": "ok",
+ "co_edited": [
+  "pylint/lint/expand_modules.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/lint/expand_modules.py": [
+   "element"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

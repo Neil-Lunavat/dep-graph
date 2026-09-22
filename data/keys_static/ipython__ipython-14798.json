@@ -1,0 +1,36 @@
+{
+ "instance_id": "ipython__ipython-14798",
+ "repo_key": "ipython/ipython",
+ "base_commit": "801c9adb94b213fc5e8cacb0d9920a0ff7727c2e",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/magics/execution.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/magic.py": [
+   "shell"
+  ],
+  "IPython/core/magics/execution.py": [
+   "conflict_globs",
+   "glob",
+   "line",
+   "opts",
+   "quiet",
+   "return_result",
+   "save_result",
+   "self",
+   "timeit_result"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 61,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

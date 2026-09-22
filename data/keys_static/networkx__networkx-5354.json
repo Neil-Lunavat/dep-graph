@@ -1,0 +1,28 @@
+{
+ "instance_id": "networkx__networkx-5354",
+ "repo_key": "networkx/networkx",
+ "base_commit": "42985ba7d9f768c32c651e3e73d4d98b46776f54",
+ "status": "ok",
+ "co_edited": [
+  "networkx/convert_matrix.py",
+  "networkx/drawing/layout.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/drawing/layout.py": [
+   "chord",
+   "step",
+   "theta"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 101,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

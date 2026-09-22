@@ -1,0 +1,32 @@
+{
+ "instance_id": "pdm-project__pdm-1187",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "96710e62b63973dfec467c80f07d04fc51074c59",
+ "status": "ok",
+ "co_edited": [
+  "pdm/models/repositories.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pdm/models/candidates.py": [
+   "req",
+   "version"
+  ],
+  "pdm/models/repositories.py": [
+   "candidate"
+  ],
+  "pdm/models/requirements.py": [
+   "as_pinned_version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

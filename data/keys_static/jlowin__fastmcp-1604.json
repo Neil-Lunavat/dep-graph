@@ -1,0 +1,97 @@
+{
+ "instance_id": "jlowin__fastmcp-1604",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "1f3f82d245f97632b9bd9ccb63746acad9c87f71",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/client/client.py",
+  "src/fastmcp/client/transports.py",
+  "src/fastmcp/mcp_config.py",
+  "src/fastmcp/server/proxy.py",
+  "src/fastmcp/server/server.py",
+  "src/fastmcp/utilities/mcp_config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/__init__.py": [
+   "fastmcp"
+  ],
+  "src/fastmcp/client/__init__.py": [
+   "client"
+  ],
+  "src/fastmcp/client/client.py": [
+   "Client",
+   "class_name",
+   "cls",
+   "e",
+   "generate_name",
+   "logger",
+   "name",
+   "new_client",
+   "ref",
+   "self",
+   "transport",
+   "uri"
+  ],
+  "src/fastmcp/client/transports.py": [
+   "ClientTransport",
+   "SSETransport",
+   "StdioTransport",
+   "StreamableHttpTransport",
+   "_composite_server",
+   "name",
+   "self"
+  ],
+  "src/fastmcp/mcp_config.py": [
+   "client",
+   "client_name",
+   "server_name",
+   "transport"
+  ],
+  "src/fastmcp/server/__init__.py": [
+   "server"
+  ],
+  "src/fastmcp/server/proxy.py": [
+   "FastMCPProxy",
+   "ProxyClient",
+   "kwargs",
+   "proxy",
+   "self",
+   "transport"
+  ],
+  "src/fastmcp/server/server.py": [
+   "FastMCP",
+   "arguments",
+   "as_proxy",
+   "backend",
+   "class_name",
+   "cls",
+   "generate_name",
+   "key",
+   "logger",
+   "name",
+   "prefix",
+   "self",
+   "server",
+   "uri"
+  ],
+  "src/fastmcp/utilities/mcp_config.py": [
+   "client",
+   "client_name",
+   "name",
+   "server",
+   "server_name",
+   "transport"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 208,
+  "names_resolved_in_repo": 161,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 20,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

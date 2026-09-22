@@ -1,0 +1,25 @@
+{
+ "instance_id": "matrix-org__synapse-6146",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "dfe70096392b005b81aea551e629ec9aa45ca60e",
+ "status": "ok",
+ "co_edited": [
+  "synapse/util/retryutils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/util/retryutils.py": [
+   "MAX_RETRY_INTERVAL"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

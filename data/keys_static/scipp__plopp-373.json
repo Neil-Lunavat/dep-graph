@@ -1,0 +1,42 @@
+{
+ "instance_id": "scipp__plopp-373",
+ "repo_key": "scipp/plopp",
+ "base_commit": "1652b00f84f37eeb5b9c25f11378bae1bf31a41d",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/backends/matplotlib/canvas.py",
+  "src/plopp/backends/matplotlib/tiled.py",
+  "src/plopp/graphics/graphicalview.py",
+  "src/plopp/plotting/plot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/backends/matplotlib/canvas.py": [
+   "aspect",
+   "ax",
+   "self"
+  ],
+  "src/plopp/backends/matplotlib/tiled.py": [
+   "ax",
+   "fig",
+   "line",
+   "self"
+  ],
+  "src/plopp/graphics/graphicalview.py": [
+   "aspect"
+  ],
+  "src/plopp/plotting/plot.py": [
+   "aspect"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

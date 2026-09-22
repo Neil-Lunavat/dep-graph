@@ -1,0 +1,30 @@
+{
+ "instance_id": "tornadoweb__tornado-2549",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "c350dc9f4dfca5ede1002fa578cc33d6b1cea120",
+ "status": "ok",
+ "co_edited": [
+  "tornado/http1connection.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/concurrent.py": [
+   "future_add_done_callback"
+  ],
+  "tornado/http1connection.py": [
+   "_on_write_complete",
+   "_pending_write",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

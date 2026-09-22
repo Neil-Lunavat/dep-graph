@@ -1,0 +1,86 @@
+{
+ "instance_id": "falconry__falcon-2498",
+ "repo_key": "falconry/falcon",
+ "base_commit": "c8e7d1dd5af65939d30d88a0fbc6aa2f2c920935",
+ "status": "ok",
+ "co_edited": [
+  "falcon/_typing.py",
+  "falcon/app.py",
+  "falcon/asgi/app.py",
+  "falcon/routing/static.py",
+  "falcon/util/misc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/_typing.py": [
+   "kwargs",
+   "req",
+   "resp",
+   "self"
+  ],
+  "falcon/asgi/__init__.py": [
+   "asgi"
+  ],
+  "falcon/asgi/app.py": [
+   "_default_responder_bad_request",
+   "_default_responder_path_not_found",
+   "cls",
+   "err_handler",
+   "on_websocket",
+   "params",
+   "req",
+   "self",
+   "web_socket",
+   "ws"
+  ],
+  "falcon/asgi/request.py": [
+   "AsgiRequest",
+   "Request"
+  ],
+  "falcon/asgi/response.py": [
+   "AsgiResponse",
+   "Response"
+  ],
+  "falcon/asgi/ws.py": [
+   "WebSocket"
+  ],
+  "falcon/errors.py": [
+   "HTTPBadRequest"
+  ],
+  "falcon/routing/static.py": [
+   "kw",
+   "req",
+   "resp",
+   "self",
+   "ws"
+  ],
+  "falcon/util/__init__.py": [
+   "util"
+  ],
+  "falcon/util/deprecation.py": [
+   "DeprecatedWarning",
+   "deprecation"
+  ],
+  "falcon/util/misc.py": [
+   "_has_arg_name",
+   "_has_arg_name_cached",
+   "func",
+   "get_argnames",
+   "misc",
+   "name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 196,
+  "names_resolved_in_repo": 71,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

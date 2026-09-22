@@ -1,0 +1,33 @@
+{
+ "instance_id": "python-control__python-control-1104",
+ "repo_key": "python-control/python-control",
+ "base_commit": "71bd7319fe324f7b7ff14b8210420843bf06d7d2",
+ "status": "ok",
+ "co_edited": [
+  "control/freqplot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/freqplot.py": [
+   "contour",
+   "pole",
+   "sys"
+  ],
+  "control/statesp.py": [
+   "StateSpace"
+  ],
+  "control/xferfcn.py": [
+   "TransferFunction"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,48 @@
+{
+ "instance_id": "nipy__nipype-2030",
+ "repo_key": "nipy/nipype",
+ "base_commit": "cda3fdc3be231f2c9d7bdbdbadee472a0bad9e92",
+ "status": "ok",
+ "co_edited": [
+  "nipype/interfaces/spm/model.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nipype/interfaces/base.py": [
+   "inputs"
+  ],
+  "nipype/interfaces/spm/base.py": [
+   "ImageFileSPM",
+   "exists",
+   "scans_for_fnames",
+   "version"
+  ],
+  "nipype/interfaces/spm/model.py": [
+   "RPVimage",
+   "beta",
+   "betas",
+   "estimation_method",
+   "flags",
+   "labels",
+   "outputs",
+   "outtype",
+   "pth",
+   "self",
+   "spm",
+   "spm_mat_file",
+   "val",
+   "vbeta",
+   "write_residuals"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 106,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

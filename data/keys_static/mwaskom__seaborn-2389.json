@@ -1,0 +1,28 @@
+{
+ "instance_id": "mwaskom__seaborn-2389",
+ "repo_key": "mwaskom/seaborn",
+ "base_commit": "bcdac5411a1b71ff8d4a2fd12a937c129513e79e",
+ "status": "ok",
+ "co_edited": [
+  "seaborn/matrix.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "seaborn/matrix.py": [
+   "_HeatMapper",
+   "colors",
+   "l",
+   "to_rgb"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

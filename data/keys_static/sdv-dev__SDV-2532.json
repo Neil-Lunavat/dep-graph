@@ -1,0 +1,36 @@
+{
+ "instance_id": "sdv-dev__SDV-2532",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "dc443d5d9deb574ee931ed760a6225d0337a1db9",
+ "status": "ok",
+ "co_edited": [
+  "sdv/metadata/metadata.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/metadata/metadata.py": [
+   "_multi_table_updated",
+   "relationship",
+   "relationship_tables",
+   "relationships",
+   "remove_table",
+   "self",
+   "table_name",
+   "updated_relationships"
+  ],
+  "sdv/metadata/multi_table.py": [
+   "_validate_table_exists",
+   "tables"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 48,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

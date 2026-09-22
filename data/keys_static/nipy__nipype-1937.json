@@ -1,0 +1,36 @@
+{
+ "instance_id": "nipy__nipype-1937",
+ "repo_key": "nipy/nipype",
+ "base_commit": "d68b929ae1f36f2704fa7cddd029b308acf8587a",
+ "status": "ok",
+ "co_edited": [
+  "nipype/interfaces/utility/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nipype/interfaces/base.py": [
+   "__init__"
+  ],
+  "nipype/interfaces/utility/base.py": [
+   "_ravel",
+   "flat_list",
+   "in_val",
+   "inputs",
+   "numinputs",
+   "raveled_val",
+   "self",
+   "val",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 63,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

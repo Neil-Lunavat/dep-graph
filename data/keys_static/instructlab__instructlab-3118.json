@@ -1,0 +1,28 @@
+{
+ "instance_id": "instructlab__instructlab-3118",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "a060edf190c8820adb8428678fb923f184aa42a4",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/model/download.py",
+  "src/instructlab/defaults.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/defaults.py": [
+   "DEFAULTS",
+   "GRANITE_EMBEDDING_MODEL_NAME",
+   "GRANITE_EMBEDDING_REPO"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

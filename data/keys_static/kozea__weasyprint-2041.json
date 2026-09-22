@@ -1,0 +1,31 @@
+{
+ "instance_id": "kozea__weasyprint-2041",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "a4a6c7d9e904de88feaeeb509879f431b64681ac",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/urls.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/logger.py": [
+   "LOGGER"
+  ],
+  "weasyprint/urls.py": [
+   "base_url",
+   "parsed",
+   "parsed_base",
+   "uri"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

@@ -1,0 +1,55 @@
+{
+ "instance_id": "reframe-hpc__reframe-3313",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "da525c16d3a43dd8b330804c71edc359890674d2",
+ "status": "ok",
+ "co_edited": [
+  "reframe/frontend/cli.py",
+  "reframe/frontend/reporting/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reframe/core/runtime.py": [
+   "get_option"
+  ],
+  "reframe/frontend/cli.py": [
+   "data",
+   "report",
+   "rt"
+  ],
+  "reframe/frontend/reporting/__init__.py": [
+   "_",
+   "_TCProxy",
+   "__report",
+   "c",
+   "columns",
+   "compress",
+   "data",
+   "filename",
+   "is_empty",
+   "line",
+   "link_to_last",
+   "num_runs",
+   "punit",
+   "pval",
+   "pvar",
+   "reftuple",
+   "report_data",
+   "runid",
+   "runinfo",
+   "save",
+   "self",
+   "tc"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 66,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 10.6
+}

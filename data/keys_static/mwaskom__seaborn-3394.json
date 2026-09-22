@@ -1,0 +1,39 @@
+{
+ "instance_id": "mwaskom__seaborn-3394",
+ "repo_key": "mwaskom/seaborn",
+ "base_commit": "9276e22a424fe2c834eff85231d0c916e293d613",
+ "status": "ok",
+ "co_edited": [
+  "seaborn/_core/plot.py",
+  "seaborn/_core/rules.py",
+  "seaborn/_oldcore.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "seaborn/_core/plot.py": [
+   "layer_df",
+   "new_series",
+   "var"
+  ],
+  "seaborn/_core/rules.py": [
+   "boolean_vector",
+   "vector"
+  ],
+  "seaborn/_oldcore.py": [
+   "comp",
+   "converter",
+   "orig",
+   "vector"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

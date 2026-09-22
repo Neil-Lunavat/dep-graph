@@ -1,0 +1,27 @@
+{
+ "instance_id": "pre-commit__pre-commit-2154",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "a737d5fe2f083150b31425777eed0803a0ca23e0",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/clientlib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/clientlib.py": [
+   "dct",
+   "fwd_slash_re",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

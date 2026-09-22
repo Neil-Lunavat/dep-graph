@@ -1,0 +1,46 @@
+{
+ "instance_id": "ucfopen__canvasapi-277",
+ "repo_key": "ucfopen/canvasapi",
+ "base_commit": "7e5d429f4b3bf54c3dc8e7a8f0f7bd09610f43fb",
+ "status": "ok",
+ "co_edited": [
+  "canvasapi/requester.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "canvasapi/exceptions.py": [
+   "BadRequest",
+   "CanvasException",
+   "Conflict",
+   "Forbidden",
+   "InvalidAccessToken",
+   "ResourceDoesNotExist",
+   "Unauthorized"
+  ],
+  "canvasapi/requester.py": [
+   "_kwargs",
+   "_patch_request",
+   "_session",
+   "_url",
+   "data",
+   "endpoint",
+   "headers",
+   "kwargs",
+   "method",
+   "req_method",
+   "self",
+   "url",
+   "use_auth"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

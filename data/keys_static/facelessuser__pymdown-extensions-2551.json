@@ -1,0 +1,35 @@
+{
+ "instance_id": "facelessuser__pymdown-extensions-2551",
+ "repo_key": "facelessuser/pymdown-extensions",
+ "base_commit": "f6102ac0dca1756a1bd052277c44af29887edace",
+ "status": "ok",
+ "co_edited": [
+  "pymdownx/snippets.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymdownx/snippets.py": [
+   "end",
+   "entry",
+   "final_lines",
+   "m",
+   "nums",
+   "path",
+   "s_lines",
+   "section",
+   "self",
+   "span",
+   "start"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 61,
+  "names_resolved_in_repo": 49,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

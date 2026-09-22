@@ -1,0 +1,36 @@
+{
+ "instance_id": "twisted__twisted-12326",
+ "repo_key": "twisted/twisted",
+ "base_commit": "178a3e796931b941a0a5c1feb5ce3d931c6bcdc9",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/internet/endpoints.py",
+  "src/twisted/internet/tcp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/internet/_idna.py": [
+   "_idnaBytes"
+  ],
+  "src/twisted/internet/endpoints.py": [
+   "bindAddress",
+   "host",
+   "port",
+   "reactor",
+   "timeout"
+  ],
+  "src/twisted/internet/tcp.py": [
+   "bindAddress"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 115,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

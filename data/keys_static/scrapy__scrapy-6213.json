@@ -1,0 +1,32 @@
+{
+ "instance_id": "scrapy__scrapy-6213",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "4229048255639c260651ed254bed7cafc433a14b",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/settings/default_settings.py",
+  "scrapy/utils/request.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/settings/default_settings.py": [
+   "REQUEST_FINGERPRINTER_IMPLEMENTATION"
+  ],
+  "scrapy/utils/request.py": [
+   "_fingerprint",
+   "fingerprint",
+   "implementation",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

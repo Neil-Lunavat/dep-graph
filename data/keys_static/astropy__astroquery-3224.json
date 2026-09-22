@@ -1,0 +1,25 @@
+{
+ "instance_id": "astropy__astroquery-3224",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "819280102e2de055ae4680aa151290dc1ef8e4fc",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/ipac/irsa/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/ipac/irsa/core.py": [
+   "spatial"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

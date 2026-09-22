@@ -1,0 +1,68 @@
+{
+ "instance_id": "repobee__repobee-316",
+ "repo_key": "repobee/repobee",
+ "base_commit": "a755f0545212c149878c92bb49486dc6b11cff68",
+ "status": "ok",
+ "co_edited": [
+  "src/_repobee/cli.py",
+  "src/_repobee/command.py",
+  "src/_repobee/ext/github.py",
+  "src/_repobee/formatters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_repobee/cli.py": [
+   "_extract_groups",
+   "args",
+   "args_dict"
+  ],
+  "src/_repobee/command.py": [
+   "api",
+   "num_reviews",
+   "review_team_names",
+   "reviews",
+   "team",
+   "teams",
+   "title_regex"
+  ],
+  "src/_repobee/ext/github.py": [
+   "LOGGER",
+   "_extract_review_teams",
+   "_get_teams_in",
+   "m",
+   "repos",
+   "review_issue_authors",
+   "review_team_impl",
+   "review_team_impls",
+   "review_team_names",
+   "review_teams",
+   "reviewers",
+   "self",
+   "team",
+   "teams"
+  ],
+  "src/_repobee/formatters.py": [
+   "_format_reviewer",
+   "even",
+   "num_reviews",
+   "review_list",
+   "review_team",
+   "reviews",
+   "teams"
+  ],
+  "src/_repobee/util.py": [
+   "generate_review_team_name",
+   "util"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 107,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

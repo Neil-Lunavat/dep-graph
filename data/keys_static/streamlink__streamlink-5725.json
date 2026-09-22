@@ -1,0 +1,46 @@
+{
+ "instance_id": "streamlink__streamlink-5725",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "bebc2ae181ebccaf6a1b569570bb625383a1e8e2",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/gulli.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugin/api/validate/__init__.py": [
+   "validate"
+  ],
+  "src/streamlink/plugin/api/validate/_validators.py": [
+   "parse_html",
+   "xml_xpath_string"
+  ],
+  "src/streamlink/plugin/plugin.py": [
+   "match",
+   "matches",
+   "name",
+   "pattern",
+   "session"
+  ],
+  "src/streamlink/plugins/gulli.py": [
+   "VOD_PLAYER_URL",
+   "player_url",
+   "self",
+   "video_url"
+  ],
+  "src/streamlink/stream/hls/hls.py": [
+   "HLSStream",
+   "parse_variant_playlist"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "scrapy__scrapy-6347",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "4300a1d240c7c2c21a4ef0c1c60c3d844493e516",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/settings/default_settings.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/settings/default_settings.py": [
+   "METAREFRESH_IGNORE_TAGS"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "dask__dask-11698",
+ "repo_key": "dask/dask",
+ "base_commit": "d8eb38e97db5a83d893b178a2bb8ec7c34bd8f29",
+ "status": "ok",
+ "co_edited": [
+  "dask/dataframe/dask_expr/_reductions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/dataframe/dask_expr/_reductions.py": [
+   "self",
+   "shuffle_by_index",
+   "split_by"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

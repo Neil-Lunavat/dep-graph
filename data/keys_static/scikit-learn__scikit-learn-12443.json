@@ -1,0 +1,34 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-12443",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "88cdeb85a9303a7b580952b720703a4aca9dc1c0",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/preprocessing/_encoders.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/preprocessing/_encoders.py": [
+   "X",
+   "categorical_features",
+   "categories_",
+   "input_features",
+   "n_features",
+   "sel",
+   "self"
+  ],
+  "sklearn/utils/validation.py": [
+   "check_is_fitted"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

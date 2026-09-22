@@ -1,0 +1,67 @@
+{
+ "instance_id": "python__mypy-19767",
+ "repo_key": "python/mypy",
+ "base_commit": "bf70dab2d09b61048a8b720e33efae18281a3313",
+ "status": "ok",
+ "co_edited": [
+  "mypy/checker.py",
+  "mypy/errors.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/checker.py": [
+   "allow_none_func_call",
+   "alt_typ",
+   "expr",
+   "local_type_map",
+   "msg",
+   "original_messages",
+   "original_type_map",
+   "return_type",
+   "s",
+   "self",
+   "typ",
+   "type_ctx",
+   "type_map"
+  ],
+  "mypy/errors.py": [
+   "_filter_deprecated",
+   "filtered_errors",
+   "has_new_errors",
+   "self"
+  ],
+  "mypy/messages.py": [
+   "add_errors",
+   "filter_deprecated",
+   "filter_errors",
+   "save_filtered_errors"
+  ],
+  "mypy/nodes.py": [
+   "CallExpr",
+   "DictExpr",
+   "Expression",
+   "ListExpr",
+   "OpExpr",
+   "SetExpr",
+   "TupleExpr",
+   "expr"
+  ],
+  "mypy/subtypes.py": [
+   "is_subtype"
+  ],
+  "mypy/types.py": [
+   "ProperType",
+   "Type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 85,
+  "names_resolved_in_repo": 71,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 12,
+  "truncated": false
+ },
+ "seconds": 9.3
+}

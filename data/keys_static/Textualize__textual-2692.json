@@ -1,0 +1,39 @@
+{
+ "instance_id": "Textualize__textual-2692",
+ "repo_key": "textualize/textual",
+ "base_commit": "3dea4337ace9fd0727d0f1d799f62a7e6a249023",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/app.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/app.py": [
+   "_replace_screen",
+   "_screen_stack",
+   "await_mount",
+   "log",
+   "next_screen",
+   "previous_screen",
+   "screen",
+   "self"
+  ],
+  "src/textual/events.py": [
+   "ScreenResume",
+   "events"
+  ],
+  "src/textual/widget.py": [
+   "AwaitMount"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 8.5
+}

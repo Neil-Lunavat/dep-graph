@@ -1,0 +1,36 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1268",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "0b333f99a1aaf03d8934318601c7738b75212cf0",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_pandas_like/dataframe.py",
+  "narwhals/_pandas_like/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_pandas_like/dataframe.py": [
+   "_dtypes",
+   "_implementation",
+   "_native_frame",
+   "col",
+   "self"
+  ],
+  "narwhals/_pandas_like/series.py": [
+   "_dtypes",
+   "_implementation",
+   "_native_series",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,40 @@
+{
+ "instance_id": "bridgecrewio__checkov-289",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "63a441563ff271fd675bb05c77e1620dbfd865a9",
+ "status": "ok",
+ "co_edited": [
+  "checkov/cloudformation/runner.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/cloudformation/checks/resource/registry.py": [
+   "resource_registry"
+  ],
+  "checkov/cloudformation/runner.py": [
+   "COMMENT_REGEX",
+   "cf_file",
+   "entity_code_lines",
+   "line",
+   "resource",
+   "resource_name",
+   "results",
+   "runner_filter",
+   "skip_search",
+   "skipped_checks"
+  ],
+  "checkov/common/checks/base_check_registry.py": [
+   "scan"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "pvlib__pvlib-python-2400",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "171f10ca1c2a73ea41a06e4c6ecf4de1f53523e7",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/spectrum/mismatch.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/spectrum/mismatch.py": [
+   "_coefficients"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

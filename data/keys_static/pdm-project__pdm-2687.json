@@ -1,0 +1,109 @@
+{
+ "instance_id": "pdm-project__pdm-2687",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "46d006470b78de90c051f566e3fd9f69a5444907",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/builders/base.py",
+  "src/pdm/core.py",
+  "src/pdm/installers/synchronizers.py",
+  "src/pdm/models/caches.py",
+  "src/pdm/models/candidates.py",
+  "src/pdm/project/config.py",
+  "src/pdm/termui.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/builders/base.py": [
+   "_env",
+   "_overlay_envs",
+   "_shared_envs",
+   "get_overlay_env",
+   "get_shared_env",
+   "key",
+   "self"
+  ],
+  "src/pdm/cli/__init__.py": [
+   "cli"
+  ],
+  "src/pdm/cli/actions.py": [
+   "actions",
+   "check_update"
+  ],
+  "src/pdm/core.py": [
+   "_get_cli_args",
+   "arg",
+   "args",
+   "create_temp_dir",
+   "e",
+   "ensure_project",
+   "err",
+   "etype",
+   "exit_stack",
+   "handle",
+   "kwargs",
+   "obj",
+   "options",
+   "parser",
+   "project",
+   "root_script",
+   "self",
+   "should_show_tb",
+   "traceback",
+   "ui"
+  ],
+  "src/pdm/environments/base.py": [
+   "project"
+  ],
+  "src/pdm/exceptions.py": [
+   "PdmArgumentError",
+   "PdmUsageError"
+  ],
+  "src/pdm/installers/synchronizers.py": [
+   "DummyExecutor",
+   "create_executor",
+   "self"
+  ],
+  "src/pdm/models/candidates.py": [
+   "environment",
+   "metadata_parent",
+   "self"
+  ],
+  "src/pdm/project/config.py": [
+   "env_var"
+  ],
+  "src/pdm/project/core.py": [
+   "config",
+   "core",
+   "scripts"
+  ],
+  "src/pdm/termui.py": [
+   "NORMAL",
+   "UI",
+   "Verbosity",
+   "cleanup",
+   "exit_stack",
+   "handler",
+   "log_dir",
+   "log_file",
+   "logger",
+   "self",
+   "termui",
+   "type_",
+   "verbosity"
+  ],
+  "src/pdm/utils.py": [
+   "is_in_zipapp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 253,
+  "names_resolved_in_repo": 182,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 28,
+  "truncated": false
+ },
+ "seconds": 4.9
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "dpkp__kafka-python-1239",
+ "repo_key": "dpkp/kafka-python",
+ "base_commit": "cec1bdc9965b3d6729d4415e31b4dac04d603873",
+ "status": "ok",
+ "co_edited": [
+  "kafka/consumer/fetcher.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kafka/consumer/fetcher.py": [
+   "PartitionRecords",
+   "fetch_offset",
+   "i",
+   "message_idx",
+   "messages",
+   "msg",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

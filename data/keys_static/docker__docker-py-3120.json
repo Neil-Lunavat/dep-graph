@@ -1,0 +1,28 @@
+{
+ "instance_id": "docker__docker-py-3120",
+ "repo_key": "docker/docker-py",
+ "base_commit": "576e47aaacf690a3fdd6cf98c345d48ecf834b7d",
+ "status": "ok",
+ "co_edited": [
+  "docker/api/container.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/api/container.py": [
+   "decode",
+   "params",
+   "self",
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.2
+}

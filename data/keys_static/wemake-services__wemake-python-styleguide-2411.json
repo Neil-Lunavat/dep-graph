@@ -1,0 +1,22 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-2411",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "3daaea47fdc3bca4d8ea64e0c35761b7325c7479",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/violations/consistency.py",
+  "wemake_python_styleguide/visitors/ast/classes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

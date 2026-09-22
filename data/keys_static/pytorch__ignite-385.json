@@ -1,0 +1,41 @@
+{
+ "instance_id": "pytorch__ignite-385",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "0ea52729740ddd5e2da543527232ad23b0c9c97f",
+ "status": "ok",
+ "co_edited": [
+  "ignite/metrics/metrics_lambda.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/__init__.py": [
+   "ignite"
+  ],
+  "ignite/engine/__init__.py": [
+   "engine"
+  ],
+  "ignite/engine/engine.py": [
+   "EPOCH_STARTED",
+   "Events",
+   "ITERATION_COMPLETED"
+  ],
+  "ignite/metrics/metric.py": [
+   "iteration_completed",
+   "started"
+  ],
+  "ignite/metrics/metrics_lambda.py": [
+   "engine",
+   "metric"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

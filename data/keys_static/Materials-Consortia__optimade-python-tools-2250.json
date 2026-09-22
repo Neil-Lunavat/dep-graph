@@ -1,0 +1,38 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-2250",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "98cb352464082019f10b6c7b0659c53f6240fbbb",
+ "status": "ok",
+ "co_edited": [
+  "optimade/client/client.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/client/client.py": [
+   "base_url",
+   "max_requests_per_provider",
+   "max_results_per_provider",
+   "message",
+   "number_of_requests",
+   "page_limit",
+   "page_results",
+   "results",
+   "self",
+   "stopping_criteria",
+   "total_data_available"
+  ],
+  "optimade/client/utils.py": [
+   "data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 74,
+  "names_resolved_in_repo": 51,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

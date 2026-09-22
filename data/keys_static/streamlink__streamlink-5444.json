@@ -1,0 +1,69 @@
+{
+ "instance_id": "streamlink__streamlink-5444",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "d89c7967402156368b81f668c6ab4ebfac42d642",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/lrt.py",
+  "src/streamlink/plugins/rtvs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/__init__.py": [
+   "streamlink"
+  ],
+  "src/streamlink/plugin/__init__.py": [
+   "plugin"
+  ],
+  "src/streamlink/plugin/api/__init__.py": [
+   "api"
+  ],
+  "src/streamlink/plugin/api/validate/__init__.py": [
+   "validate"
+  ],
+  "src/streamlink/plugin/api/validate/_schemas.py": [
+   "get",
+   "none_or_all",
+   "transform"
+  ],
+  "src/streamlink/plugin/api/validate/_validators.py": [
+   "endswith",
+   "filter",
+   "parse_html",
+   "parse_json",
+   "startswith",
+   "url",
+   "xml_xpath_string"
+  ],
+  "src/streamlink/plugin/plugin.py": [
+   "session"
+  ],
+  "src/streamlink/plugins/lrt.py": [
+   "hls_url",
+   "self",
+   "token_url",
+   "url"
+  ],
+  "src/streamlink/plugins/rtvs.py": [
+   "channel",
+   "embed",
+   "n",
+   "self",
+   "video"
+  ],
+  "src/streamlink/stream/hls.py": [
+   "HLSStream",
+   "parse_variant_playlist"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 68,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

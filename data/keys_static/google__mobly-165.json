@@ -1,0 +1,39 @@
+{
+ "instance_id": "google__mobly-165",
+ "repo_key": "google/mobly",
+ "base_commit": "464a16aee403100025085846f0b6a5e29620e5b6",
+ "status": "ok",
+ "co_edited": [
+  "mobly/controllers/sniffer_lib/local/local_base.py",
+  "mobly/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mobly/controllers/sniffer.py": [
+   "CONFIG_KEY_CHANNEL",
+   "Sniffer",
+   "sniffer"
+  ],
+  "mobly/controllers/sniffer_lib/local/local_base.py": [
+   "_interface",
+   "final_configs",
+   "self"
+  ],
+  "mobly/utils.py": [
+   "child",
+   "children",
+   "proc",
+   "process"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

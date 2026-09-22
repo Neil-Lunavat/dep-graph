@@ -1,0 +1,27 @@
+{
+ "instance_id": "pytorch__ignite-461",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "81ba5b36de92453422a43252b604a335059fcedd",
+ "status": "ok",
+ "co_edited": [
+  "ignite/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/utils.py": [
+   "indices",
+   "num_classes",
+   "onehot"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

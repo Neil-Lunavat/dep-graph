@@ -1,0 +1,61 @@
+{
+ "instance_id": "python-cmd2__cmd2-784",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "b3408bcb9328cc1eb2cae1be4afbbef0b0e18c0c",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/argparse_completer.py",
+  "cmd2/cmd2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/ansi.py": [
+   "ansi",
+   "ansi_aware_write",
+   "ansi_safe_wcswidth",
+   "style_error"
+  ],
+  "cmd2/argparse_completer.py": [
+   "_flag_to_action",
+   "_flags",
+   "_parser",
+   "_positional_actions",
+   "_print_message",
+   "_subcommand_action",
+   "action",
+   "arg_action",
+   "completed_mutex_groups",
+   "completer_action",
+   "completion_error",
+   "count",
+   "error",
+   "flag_arg_state",
+   "formatter",
+   "group",
+   "group_action",
+   "matched_flags",
+   "max",
+   "min",
+   "msg",
+   "out_str",
+   "pos_arg_state",
+   "remaining_positionals",
+   "self",
+   "suppress_hint",
+   "update_mutex_groups"
+  ],
+  "cmd2/argparse_custom.py": [
+   "generate_range_error"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 183,
+  "names_resolved_in_repo": 115,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

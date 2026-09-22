@@ -1,0 +1,46 @@
+{
+ "instance_id": "hgrecco__pint-2194",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "a0264aa4aa3a74f84930e320b1ca69f13b29609d",
+ "status": "ok",
+ "co_edited": [
+  "pint/facets/nonmultiplicative/objects.py",
+  "pint/facets/plain/quantity.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/facets/nonmultiplicative/objects.py": [
+   "self"
+  ],
+  "pint/facets/plain/definitions.py": [
+   "is_logarithmic"
+  ],
+  "pint/facets/plain/quantity.py": [
+   "_get_non_multiplicative_units",
+   "_get_unit_definition",
+   "_is_logarithmic",
+   "_magnitude",
+   "_units",
+   "dimensionality",
+   "dimensionless",
+   "is_other_multiplicative",
+   "magnitude",
+   "op",
+   "other",
+   "other_non_mul_units",
+   "self",
+   "self_non_mul_units",
+   "units"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 92,
+  "names_resolved_in_repo": 268,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

@@ -1,0 +1,66 @@
+{
+ "instance_id": "python-control__python-control-869",
+ "repo_key": "python-control/python-control",
+ "base_commit": "08dcc951e1152706643146624b6b75912128cf2a",
+ "status": "ok",
+ "co_edited": [
+  "control/xferfcn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/config.py": [
+   "config",
+   "defaults"
+  ],
+  "control/lti.py": [
+   "ninputs",
+   "noutputs"
+  ],
+  "control/namedio.py": [
+   "dt",
+   "isctime",
+   "isdtime",
+   "issiso",
+   "strict"
+  ],
+  "control/xferfcn.py": [
+   "_float2str",
+   "_num_format",
+   "_tf_factorized_polynomial_to_string",
+   "_tf_polynomial_to_string",
+   "coeffs",
+   "coefstr",
+   "den",
+   "denstr",
+   "display_format",
+   "factor",
+   "factors",
+   "gain",
+   "k",
+   "mimo",
+   "multiplier",
+   "ni",
+   "no",
+   "num",
+   "numstr",
+   "outstr",
+   "p",
+   "root",
+   "roots",
+   "self",
+   "value",
+   "var",
+   "z"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 339,
+  "names_resolved_in_repo": 219,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

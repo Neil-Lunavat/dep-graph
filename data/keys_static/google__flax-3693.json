@@ -1,0 +1,50 @@
+{
+ "instance_id": "google__flax-3693",
+ "repo_key": "google/flax",
+ "base_commit": "c25f546ff4c72c6c85e5225fe8467331720034be",
+ "status": "ok",
+ "co_edited": [
+  "flax/experimental/nnx/nnx/nn/normalization.py",
+  "flax/linen/normalization.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/experimental/nnx/nnx/nn/normalization.py": [
+   "_abs_sq",
+   "_canonicalize_axes",
+   "axes",
+   "axis_index_groups",
+   "axis_name",
+   "i",
+   "mask",
+   "maybe_distributed_mean",
+   "mu",
+   "mu2",
+   "mus",
+   "reduced_mus",
+   "self",
+   "use_fast_variance",
+   "var",
+   "x",
+   "xs"
+  ],
+  "flax/linen/normalization.py": [
+   "self",
+   "use_fast_variance"
+  ],
+  "flax/typing.py": [
+   "Array",
+   "Axes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 337,
+  "names_resolved_in_repo": 109,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

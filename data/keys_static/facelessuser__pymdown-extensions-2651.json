@@ -1,0 +1,39 @@
+{
+ "instance_id": "facelessuser__pymdown-extensions-2651",
+ "repo_key": "facelessuser/pymdown-extensions",
+ "base_commit": "f655468301b9372c1619a40c2f4b08e4d936b5d7",
+ "status": "ok",
+ "co_edited": [
+  "pymdownx/blocks/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymdownx/blocks/__init__.py": [
+   "a",
+   "b",
+   "blocks",
+   "c",
+   "cached_parent",
+   "current_parent",
+   "detab_by_length",
+   "li",
+   "p",
+   "parent",
+   "parent_map",
+   "parse_blocks",
+   "self",
+   "stack",
+   "temp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 58,
+  "names_resolved_in_repo": 51,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

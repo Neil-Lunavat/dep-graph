@@ -1,0 +1,32 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4365",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "71e4015e2271964ca9d2353adfa85928f4241d11",
+ "status": "ok",
+ "co_edited": [
+  "telegram/_message.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/_message.py": [
+   "attachment_type"
+  ],
+  "telegram/_utils/warnings.py": [
+   "stacklevel"
+  ],
+  "telegram/constants.py": [
+   "MessageAttachmentType",
+   "SUCCESSFUL_PAYMENT"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

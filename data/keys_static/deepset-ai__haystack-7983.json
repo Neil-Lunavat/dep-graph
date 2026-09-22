@@ -1,0 +1,27 @@
+{
+ "instance_id": "deepset-ai__haystack-7983",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "e92a0e4bebe14352f4d540278a77a8e34021c62f",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/generators/azure.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/components/generators/azure.py": [
+   "max_retries",
+   "self",
+   "timeout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

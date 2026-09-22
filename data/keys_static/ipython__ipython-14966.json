@@ -1,0 +1,45 @@
+{
+ "instance_id": "ipython__ipython-14966",
+ "repo_key": "ipython/ipython",
+ "base_commit": "ad948680afaefee8cf530052807e2367db3826b3",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/completer.py",
+  "IPython/core/guarded_eval.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/completer.py": [
+   "_change",
+   "_evaluation_changed",
+   "_policy_overrides_changed",
+   "evaluation",
+   "policy_overrides",
+   "self"
+  ],
+  "IPython/core/guarded_eval.py": [
+   "EVALUATION_POLICIES",
+   "EvaluationContext",
+   "EvaluationPolicyName",
+   "_validate_policy_overrides",
+   "all_good",
+   "evaluation",
+   "guarded_eval",
+   "key",
+   "policy",
+   "policy_name",
+   "policy_overrides",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 50,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

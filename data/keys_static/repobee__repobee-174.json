@@ -1,0 +1,29 @@
+{
+ "instance_id": "repobee__repobee-174",
+ "repo_key": "repobee/repobee",
+ "base_commit": "9f90b85a1ff502c64c6dadc8152d792ed95072fa",
+ "status": "ok",
+ "co_edited": [
+  "repobee/__version.py",
+  "repobee/command.py",
+  "repobee/git.py",
+  "repobee/github_api.py",
+  "repobee/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "repobee/__version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

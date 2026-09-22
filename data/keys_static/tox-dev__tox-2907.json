@@ -1,0 +1,21 @@
+{
+ "instance_id": "tox-dev__tox-2907",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "4408cff65d72d5662e85da632e74154dfc030ef2",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/tox_env/api.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

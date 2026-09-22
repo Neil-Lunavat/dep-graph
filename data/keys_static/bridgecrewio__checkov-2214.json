@@ -1,0 +1,21 @@
+{
+ "instance_id": "bridgecrewio__checkov-2214",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "9f448d714432d3118a00a453c76dd8762aa284ab",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/azure/AppServiceDotnetFrameworkVersion.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

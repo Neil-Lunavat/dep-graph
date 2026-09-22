@@ -1,0 +1,59 @@
+{
+ "instance_id": "pdm-project__pdm-3435",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "73b91d5803c44e6f12bec495651be802615b3826",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/cli/commands/use.py",
+  "src/pdm/cli/commands/venv/backends.py",
+  "src/pdm/project/config.py",
+  "src/pdm/project/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/cli/commands/use.py": [
+   "project",
+   "version_file"
+  ],
+  "src/pdm/cli/commands/venv/backends.py": [
+   "match_func",
+   "project",
+   "python",
+   "respect_version_file",
+   "self"
+  ],
+  "src/pdm/project/config.py": [
+   "coerce",
+   "ensure_boolean",
+   "env_var"
+  ],
+  "src/pdm/project/core.py": [
+   "cl",
+   "config",
+   "content",
+   "content_lines",
+   "filter_func",
+   "match_version",
+   "python_requires",
+   "python_spec",
+   "python_version_file",
+   "read_version_from_version_file",
+   "requested",
+   "respect_version_file",
+   "root",
+   "search_venv",
+   "self",
+   "version_file"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 60,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

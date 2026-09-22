@@ -1,0 +1,44 @@
+{
+ "instance_id": "patroni__patroni-3112",
+ "repo_key": "patroni/patroni",
+ "base_commit": "4456e267ebecdbc27f7c7ddc174b1997355a496e",
+ "status": "ok",
+ "co_edited": [
+  "patroni/ha.py",
+  "patroni/postgresql/sync.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/collections.py": [
+   "CaseInsensitiveDict"
+  ],
+  "patroni/ha.py": [
+   "is_leader",
+   "is_synchronous_mode",
+   "patroni",
+   "self"
+  ],
+  "patroni/postgresql/__init__.py": [
+   "name"
+  ],
+  "patroni/postgresql/sync.py": [
+   "cluster",
+   "m",
+   "members",
+   "postgresql"
+  ],
+  "patroni/tags.py": [
+   "nosync"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

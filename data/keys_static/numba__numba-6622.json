@@ -1,0 +1,108 @@
+{
+ "instance_id": "numba__numba-6622",
+ "repo_key": "numba/numba",
+ "base_commit": "77a5b6333d91635bd16911225dca52a2f3d78425",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/byteflow.py",
+  "numba/core/dataflow.py",
+  "numba/core/interpreter.py",
+  "numba/cpython/unsafe/tuple.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/__init__.py": [
+   "numba"
+  ],
+  "numba/core/__init__.py": [
+   "core"
+  ],
+  "numba/core/byteflow.py": [
+   "inst",
+   "is_assign",
+   "state",
+   "temps",
+   "tuples"
+  ],
+  "numba/core/dataflow.py": [
+   "info",
+   "inst",
+   "is_assign",
+   "temps",
+   "tuples"
+  ],
+  "numba/core/errors.py": [
+   "UnsupportedError",
+   "errors"
+  ],
+  "numba/core/extending.py": [
+   "intrinsic"
+  ],
+  "numba/core/interpreter.py": [
+   "_build_tuple_unpack",
+   "exc",
+   "first",
+   "get",
+   "gv_fn",
+   "gv_name",
+   "inst",
+   "is_assign",
+   "loc",
+   "name",
+   "op_BUILD_TUPLE_UNPACK",
+   "op_BUILD_TUPLE_UNPACK_WITH_CALL",
+   "other",
+   "out",
+   "redefine",
+   "self",
+   "store",
+   "temps",
+   "tmp",
+   "tuples",
+   "value"
+  ],
+  "numba/core/ir.py": [
+   "Global",
+   "ir",
+   "loc"
+  ],
+  "numba/core/types/__init__.py": [
+   "types"
+  ],
+  "numba/core/types/containers.py": [
+   "BaseTuple"
+  ],
+  "numba/core/typing/__init__.py": [
+   "typing"
+  ],
+  "numba/cpython/__init__.py": [
+   "cpython"
+  ],
+  "numba/cpython/unsafe/__init__.py": [
+   "unsafe"
+  ],
+  "numba/cpython/unsafe/tuple.py": [
+   "args",
+   "builder",
+   "codegen",
+   "context",
+   "msg",
+   "sig",
+   "signature",
+   "tup",
+   "tuple",
+   "tyctx",
+   "unpack_single_tuple"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 167,
+  "names_resolved_in_repo": 131,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

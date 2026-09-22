@@ -1,0 +1,60 @@
+{
+ "instance_id": "repobee__repobee-330",
+ "repo_key": "repobee/repobee",
+ "base_commit": "d4323c801702bd37b000f62426c373b593a5ac8c",
+ "status": "ok",
+ "co_edited": [
+  "setup.py",
+  "src/_repobee/cli.py",
+  "src/_repobee/command.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_repobee/cli.py": [
+   "HOOK_RESULTS_PARSER",
+   "LOGGER",
+   "args",
+   "base_parser",
+   "base_parsers",
+   "base_student_parser",
+   "filepath",
+   "hook_results",
+   "output_file",
+   "repo_name_parser"
+  ],
+  "src/_repobee/command.py": [
+   "api",
+   "author",
+   "hook_result_mapping",
+   "issue",
+   "issues",
+   "issues_per_repo",
+   "max_repo_name_length",
+   "pers_issues_per_repo",
+   "persistent_issues_per_repo",
+   "repo_name",
+   "repo_names",
+   "show_body",
+   "state",
+   "title_regex"
+  ],
+  "src/_repobee/formatters.py": [
+   "format_hook_results_output",
+   "formatters"
+  ],
+  "src/_repobee/util.py": [
+   "atomic_write",
+   "util"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 141,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

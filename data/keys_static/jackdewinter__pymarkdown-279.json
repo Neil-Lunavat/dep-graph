@@ -1,0 +1,42 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-279",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "b77e432d9d6f5b2b46b959d253bec24781444f6f",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/plugins/rule_md_003.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/plugins/rule_md_003.py": [
+   "RuleMd003",
+   "__actual_style_type",
+   "__allow_consistent_setext_update",
+   "__atx_closed_style",
+   "__atx_style",
+   "__consistent_style",
+   "__handle_complex_styles",
+   "__handle_simple_styles",
+   "__setext_style",
+   "__setext_with_atx_closed_style",
+   "__setext_with_atx_style",
+   "__style_type",
+   "base_atx_style",
+   "expected_style_type",
+   "heading_style_type",
+   "is_heading_bad",
+   "is_heading_level_1_or_2",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 127,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

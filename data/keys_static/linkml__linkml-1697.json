@@ -1,0 +1,27 @@
+{
+ "instance_id": "linkml__linkml-1697",
+ "repo_key": "linkml/linkml",
+ "base_commit": "5c0dfa25f65b7170768b52c94f67ec609afeb745",
+ "status": "ok",
+ "co_edited": [
+  "linkml/validator/validator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/validator/validator.py": [
+   "_schema",
+   "schema",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

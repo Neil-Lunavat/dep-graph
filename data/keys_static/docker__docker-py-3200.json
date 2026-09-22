@@ -1,0 +1,32 @@
+{
+ "instance_id": "docker__docker-py-3200",
+ "repo_key": "docker/docker-py",
+ "base_commit": "6ceb08273c157cbab7b5c77bd71e7389f1a6acc5",
+ "status": "ok",
+ "co_edited": [
+  "docker/models/configs.py",
+  "docker/utils/build.py",
+  "docker/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/models/configs.py": [
+   "kwargs",
+   "obj"
+  ],
+  "docker/utils/utils.py": [
+   "delta",
+   "dt"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

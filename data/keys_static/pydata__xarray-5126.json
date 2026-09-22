@@ -1,0 +1,68 @@
+{
+ "instance_id": "pydata__xarray-5126",
+ "repo_key": "pydata/xarray",
+ "base_commit": "6bfbaede69eb73810cb63672a8161bd1fc147594",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/formatting.py",
+  "xarray/core/formatting_html.py",
+  "xarray/core/options.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/formatting.py": [
+   "_mapping_repr",
+   "arr",
+   "col_width",
+   "coords",
+   "data_repr",
+   "expand_option_name",
+   "inline_variable_array_repr",
+   "len_mapping",
+   "mapping",
+   "max_rows",
+   "short_data_repr",
+   "summarize_attr",
+   "summarize_coord",
+   "summarize_datavar",
+   "summarizer",
+   "summary",
+   "title"
+  ],
+  "xarray/core/formatting_html.py": [
+   "collapsed",
+   "details_func",
+   "enabled",
+   "expand_option_name",
+   "expanded",
+   "mapping",
+   "max_items_collapse",
+   "n_items",
+   "name"
+  ],
+  "xarray/core/options.py": [
+   "DISPLAY_EXPAND_ATTRS",
+   "DISPLAY_EXPAND_COORDS",
+   "DISPLAY_EXPAND_DATA",
+   "DISPLAY_EXPAND_DATA_VARS",
+   "OPTIONS",
+   "_get_boolean_with_default",
+   "_get_keep_attrs",
+   "choice",
+   "default",
+   "global_choice",
+   "option",
+   "options"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 216,
+  "names_resolved_in_repo": 83,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

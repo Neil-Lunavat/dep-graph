@@ -1,0 +1,42 @@
+{
+ "instance_id": "dwavesystems__dimod-266",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "67f88fd545767cf999bf86e86bf93489f3a503b9",
+ "status": "ok",
+ "co_edited": [
+  "dimod/embedding/transforms.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/__init__.py": [
+   "dimod"
+  ],
+  "dimod/embedding/__init__.py": [
+   "embedding"
+  ],
+  "dimod/embedding/chain_breaks.py": [
+   "broken_chains",
+   "chain_breaks",
+   "majority_vote"
+  ],
+  "dimod/embedding/transforms.py": [
+   "chain_break_fraction",
+   "chain_break_method",
+   "chain_idxs",
+   "data",
+   "datatypes",
+   "idxs",
+   "record"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

@@ -1,0 +1,54 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1869",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "1f94c390491374ef88a483de66e88228c3104bac",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/keywords.py",
+  "wemake_python_styleguide/visitors/ast/loops.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/__init__.py": [
+   "wemake_python_styleguide"
+  ],
+  "wemake_python_styleguide/logic/__init__.py": [
+   "logic"
+  ],
+  "wemake_python_styleguide/logic/tree/loops.py": [
+   "loops"
+  ],
+  "wemake_python_styleguide/logic/tree/operators.py": [
+   "operators"
+  ],
+  "wemake_python_styleguide/logic/walk.py": [
+   "walk"
+  ],
+  "wemake_python_styleguide/logic/walrus.py": [
+   "walrus"
+  ],
+  "wemake_python_styleguide/violations/best_practices.py": [
+   "WrongKeywordConditionViolation"
+  ],
+  "wemake_python_styleguide/visitors/ast/keywords.py": [
+   "cond",
+   "real_node",
+   "self"
+  ],
+  "wemake_python_styleguide/visitors/ast/loops.py": [
+   "evaled",
+   "node",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 51,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 19,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

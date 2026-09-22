@@ -1,0 +1,50 @@
+{
+ "instance_id": "instructlab__instructlab-756",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "ca231b189adc84caf8bb15f96162719848b765aa",
+ "status": "ok",
+ "co_edited": [
+  "cli/generator/generate_data.py",
+  "cli/lab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cli/generator/generate_data.py": [
+   "DEFAULT_YAML_RULES",
+   "e",
+   "errors",
+   "file",
+   "file_path",
+   "logger",
+   "p",
+   "read_taxonomy",
+   "warnings",
+   "yaml_config",
+   "yaml_rules"
+  ],
+  "cli/lab.py": [
+   "__name__",
+   "ctx",
+   "exc",
+   "f",
+   "logger",
+   "taxonomy_base",
+   "taxonomy_path",
+   "updated_taxonomy_files",
+   "yaml_rules"
+  ],
+  "cli/utils.py": [
+   "get_taxonomy_diff"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 95,
+  "names_resolved_in_repo": 60,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

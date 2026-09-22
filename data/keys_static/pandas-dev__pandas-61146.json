@@ -1,0 +1,48 @@
+{
+ "instance_id": "pandas-dev__pandas-61146",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "882fa9cd7005ccf2249f04f38a2f2fd661d4e62a",
+ "status": "ok",
+ "co_edited": [
+  "pandas/io/excel/_base.py",
+  "pandas/io/json/_json.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pandas/io/json/_json.py": [
+   "_combine_lines",
+   "_get_object_parser",
+   "_read_pyarrow",
+   "_read_ujson",
+   "chunksize",
+   "data",
+   "data_lines",
+   "df",
+   "dtype",
+   "dtype_backend",
+   "field",
+   "fields",
+   "lines",
+   "lines_json",
+   "nrows",
+   "obj",
+   "options",
+   "pa",
+   "pa_table",
+   "pd_dtype",
+   "pyarrow_json",
+   "schema",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 138,
+  "names_resolved_in_repo": 102,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

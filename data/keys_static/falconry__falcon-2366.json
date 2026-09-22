@@ -1,0 +1,46 @@
+{
+ "instance_id": "falconry__falcon-2366",
+ "repo_key": "falconry/falcon",
+ "base_commit": "06fdf2885d70149803dbc47324ae8c951b7e58b3",
+ "status": "ok",
+ "co_edited": [
+  "falcon/asgi/multipart.py",
+  "falcon/media/multipart.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/asgi/multipart.py": [
+   "_CRLF",
+   "stream"
+  ],
+  "falcon/asgi/reader.py": [
+   "consume_delimiter",
+   "peek",
+   "read",
+   "read_until"
+  ],
+  "falcon/media/multipart.py": [
+   "_CRLF",
+   "stream"
+  ],
+  "falcon/typing.py": [
+   "read"
+  ],
+  "falcon/util/reader.py": [
+   "consume_delimiter",
+   "peek",
+   "read",
+   "read_until"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

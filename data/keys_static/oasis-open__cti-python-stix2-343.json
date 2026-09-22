@@ -1,0 +1,54 @@
+{
+ "instance_id": "oasis-open__cti-python-stix2-343",
+ "repo_key": "oasis-open/cti-python-stix2",
+ "base_commit": "8aca39a0b037647f055ad11c85e0f289835f9f3d",
+ "status": "ok",
+ "co_edited": [
+  "stix2/datastore/filesystem.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "stix2/__init__.py": [
+   "stix2"
+  ],
+  "stix2/datastore/filesystem.py": [
+   "_is_versioned_type_dir",
+   "all_data",
+   "allow_custom",
+   "auth_ids",
+   "backcompat_results",
+   "encoding",
+   "entry",
+   "filename",
+   "id_file",
+   "id_path",
+   "id_regex",
+   "is_versioned",
+   "obj_dir",
+   "query",
+   "results",
+   "s",
+   "stix_obj",
+   "type_dir",
+   "type_is_versioned",
+   "type_name",
+   "type_path",
+   "version"
+  ],
+  "stix2/utils.py": [
+   "format_datetime",
+   "get_type_from_id",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 179,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

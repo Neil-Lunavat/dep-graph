@@ -1,0 +1,61 @@
+{
+ "instance_id": "reflex-dev__reflex-4205",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "3eab2b6e7d8dab972b9e5714a845777d664e7ecb",
+ "status": "ok",
+ "co_edited": [
+  "reflex/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/config.py": [
+   "bun_path",
+   "env_var",
+   "field",
+   "field_name",
+   "field_type",
+   "interpret_boolean_env",
+   "interpret_env_var_value",
+   "interpret_int_env",
+   "interpret_path_env",
+   "key",
+   "path",
+   "raw_value",
+   "updated_values",
+   "value",
+   "ve"
+  ],
+  "reflex/constants/__init__.py": [
+   "constants"
+  ],
+  "reflex/constants/installer.py": [
+   "Bun",
+   "DEFAULT_PATH"
+  ],
+  "reflex/utils/__init__.py": [
+   "utils"
+  ],
+  "reflex/utils/exceptions.py": [
+   "EnvironmentVarValueError"
+  ],
+  "reflex/utils/types.py": [
+   "GenericType",
+   "is_union",
+   "types",
+   "value_inside_optional"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 104,
+  "names_resolved_in_repo": 61,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

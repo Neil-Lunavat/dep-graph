@@ -1,0 +1,39 @@
+{
+ "instance_id": "matplotlib__matplotlib-30223",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "7edd74a20b59d8b61a7349b59056b8706058878b",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/projections/polar.py",
+  "lib/matplotlib/spines.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/projections/polar.py": [
+   "get_rorigin",
+   "inner_spine",
+   "rscale_tr",
+   "self",
+   "yaxis"
+  ],
+  "lib/matplotlib/spines.py": [
+   "axes",
+   "axis",
+   "rmax",
+   "rmin",
+   "rorigin",
+   "self",
+   "tr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 38,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.8
+}

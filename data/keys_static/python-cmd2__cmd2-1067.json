@@ -1,0 +1,32 @@
+{
+ "instance_id": "python-cmd2__cmd2-1067",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "6b14aa6579d9c5bdd32bf8c3d67f11db8b575bb0",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py",
+  "cmd2/exceptions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "ex"
+  ],
+  "cmd2/exceptions.py": [
+   "PassThroughException",
+   "args",
+   "self",
+   "wrapped_ex"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 57,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

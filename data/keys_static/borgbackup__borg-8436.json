@@ -1,0 +1,82 @@
+{
+ "instance_id": "borgbackup__borg-8436",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "5a87b41e370b2f18b7b9d75a3cca98e8a32768d2",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archiver/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "src/borg/archiver/analyze_cmd.py"
+ ],
+ "symbol": {
+  "src/borg/archive.py": [
+   "Archive",
+   "archive",
+   "iter_items"
+  ],
+  "src/borg/archiver/__init__.py": [
+   "common_parser",
+   "mid_common_parser",
+   "self",
+   "subparsers"
+  ],
+  "src/borg/archiver/_common.py": [
+   "_common",
+   "compatibility",
+   "define_archive_filters_group",
+   "process_epilog",
+   "with_repository"
+  ],
+  "src/borg/constants.py": [
+   "constants"
+  ],
+  "src/borg/helpers/__init__.py": [
+   "helpers"
+  ],
+  "src/borg/helpers/errors.py": [
+   "Error"
+  ],
+  "src/borg/helpers/parseformat.py": [
+   "bin_to_hex"
+  ],
+  "src/borg/helpers/progress.py": [
+   "ProgressIndicatorPercent",
+   "finish",
+   "msg",
+   "msgid",
+   "show",
+   "step",
+   "total"
+  ],
+  "src/borg/logger.py": [
+   "create_logger",
+   "info",
+   "logger"
+  ],
+  "src/borg/manifest.py": [
+   "Manifest",
+   "Operation",
+   "READ",
+   "manifest"
+  ],
+  "src/borg/remote.py": [
+   "RemoteRepository",
+   "remote"
+  ],
+  "src/borg/repository.py": [
+   "Repository",
+   "repository"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 381,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 175,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.8
+}

@@ -1,0 +1,29 @@
+{
+ "instance_id": "pypsa__pypsa-1172",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "7b02177e9bf01dc0c7734cb7af9021c952426d56",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/statistics/abstract.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/statistics/abstract.py": [
+   "idx",
+   "mask",
+   "obj",
+   "p",
+   "per_period"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

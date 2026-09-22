@@ -1,0 +1,29 @@
+{
+ "instance_id": "streamlink__streamlink-3205",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "bbd80a5c6f446652393b525a4a6ae6ed63e4c093",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/cdnbg.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugins/cdnbg.py": [
+   "iframe_url",
+   "p"
+  ],
+  "src/streamlink/utils/url.py": [
+   "update_scheme"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

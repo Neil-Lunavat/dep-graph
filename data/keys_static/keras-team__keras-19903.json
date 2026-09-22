@@ -1,0 +1,112 @@
+{
+ "instance_id": "keras-team__keras-19903",
+ "repo_key": "keras-team/keras",
+ "base_commit": "596d5ba420dd2865d576db2c5f860d9d77db8054",
+ "status": "ok",
+ "co_edited": [
+  "keras/api/_tf_keras/keras/ops/__init__.py",
+  "keras/api/ops/__init__.py",
+  "keras/src/backend/jax/core.py",
+  "keras/src/backend/numpy/core.py",
+  "keras/src/backend/tensorflow/core.py",
+  "keras/src/backend/torch/core.py",
+  "keras/src/ops/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/__init__.py": [
+   "keras"
+  ],
+  "keras/src/__init__.py": [
+   "src"
+  ],
+  "keras/src/backend/__init__.py": [
+   "backend"
+  ],
+  "keras/src/backend/common/keras_tensor.py": [
+   "any_symbolic_tensors"
+  ],
+  "keras/src/backend/jax/core.py": [
+   "f",
+   "map",
+   "xs"
+  ],
+  "keras/src/backend/numpy/core.py": [
+   "_",
+   "args",
+   "f",
+   "g",
+   "has_none_shape",
+   "kwargs",
+   "map",
+   "scan",
+   "x",
+   "xs",
+   "ys"
+  ],
+  "keras/src/backend/tensorflow/core.py": [
+   "compute_output_spec",
+   "convert_to_tensor",
+   "core",
+   "f",
+   "fn_output_signature",
+   "get_fn_output_signature",
+   "map",
+   "out",
+   "x",
+   "xs"
+  ],
+  "keras/src/backend/torch/core.py": [
+   "_",
+   "args",
+   "f",
+   "g",
+   "has_none_shape",
+   "kwargs",
+   "map",
+   "scan",
+   "x",
+   "xs",
+   "ys"
+  ],
+  "keras/src/ops/__init__.py": [
+   "ops"
+  ],
+  "keras/src/ops/core.py": [
+   "Map",
+   "append_batch_axis",
+   "core",
+   "f",
+   "map",
+   "n",
+   "self",
+   "x",
+   "xs",
+   "y"
+  ],
+  "keras/src/ops/operation.py": [
+   "Operation",
+   "__init__",
+   "call",
+   "compute_output_spec",
+   "symbolic_call"
+  ],
+  "keras/src/tree/__init__.py": [
+   "tree"
+  ],
+  "keras/src/tree/tree_api.py": [
+   "flatten",
+   "map_structure"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 267,
+  "names_resolved_in_repo": 128,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

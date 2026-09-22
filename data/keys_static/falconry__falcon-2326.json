@@ -1,0 +1,44 @@
+{
+ "instance_id": "falconry__falcon-2326",
+ "repo_key": "falconry/falcon",
+ "base_commit": "e470e62395762e52f5bf72347f40657711de04ec",
+ "status": "ok",
+ "co_edited": [
+  "falcon/app.py",
+  "falcon/middleware.py",
+  "falcon/routing/static.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/asgi/response.py": [
+   "stream"
+  ],
+  "falcon/middleware.py": [
+   "allow",
+   "allow_headers",
+   "resp"
+  ],
+  "falcon/request.py": [
+   "method"
+  ],
+  "falcon/response.py": [
+   "delete_header",
+   "set_header"
+  ],
+  "falcon/routing/static.py": [
+   "_AsyncFileReader",
+   "req",
+   "resp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 150,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

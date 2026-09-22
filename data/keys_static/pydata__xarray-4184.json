@@ -1,0 +1,53 @@
+{
+ "instance_id": "pydata__xarray-4184",
+ "repo_key": "pydata/xarray",
+ "base_commit": "65ca92a5c0a4143d00dd7a822bcb1d49738717f1",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/dataset.py",
+  "xarray/core/indexes.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "asv_bench/benchmarks/pandas.py"
+ ],
+ "symbol": {
+  "asv_bench/benchmarks/__init__.py": [
+   "parameterized"
+  ],
+  "xarray/core/dataset.py": [
+   "_set_numpy_data_from_dataframe",
+   "_set_sparse_data_from_dataframe",
+   "arrays",
+   "data",
+   "dataframe",
+   "dims",
+   "dtype",
+   "fill_value",
+   "idx",
+   "indexer",
+   "k",
+   "lev",
+   "missing_values",
+   "name",
+   "obj",
+   "self",
+   "shape",
+   "v",
+   "values"
+  ],
+  "xarray/core/indexes.py": [
+   "index",
+   "remove_unused_levels_categories"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 160,
+  "names_resolved_in_repo": 75,
+  "defined_in_new_file": 23,
+  "defined_in_test_file": 0,
+  "jedi_errors": 10,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "instructlab__instructlab-2548",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "cbd5be02c6694252263fc627a3078db8693a4f38",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/model/train.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/cli/model/train.py": [
+   "device",
+   "pipeline"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

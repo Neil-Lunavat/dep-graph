@@ -1,0 +1,55 @@
+{
+ "instance_id": "instructlab__instructlab-1923",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "d0647edd0ab7fb7fb577491203645792c64137a4",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/configuration.py",
+  "src/instructlab/data/generate.py",
+  "src/instructlab/model/backends/backends.py",
+  "src/instructlab/model/backends/llama_cpp.py",
+  "src/instructlab/model/backends/vllm.py",
+  "src/instructlab/model/evaluate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/clickext.py": [
+   "ConfigOption",
+   "clickext"
+  ],
+  "src/instructlab/configuration.py": [
+   "gpus"
+  ],
+  "src/instructlab/data/generate.py": [
+   "backend_instance",
+   "ctx",
+   "gen_cfg",
+   "gpus",
+   "model_family",
+   "model_path",
+   "tps_prefix"
+  ],
+  "src/instructlab/model/backends/backends.py": [
+   "LLAMA_CPP",
+   "VLLM",
+   "backends",
+   "cfg",
+   "get_backend_type",
+   "model_path",
+   "self"
+  ],
+  "src/instructlab/model/backends/llama_cpp.py": [
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

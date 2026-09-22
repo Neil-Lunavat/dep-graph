@@ -1,0 +1,55 @@
+{
+ "instance_id": "pylint-dev__pylint-9599",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "df5533f7d2d7bbe5092ddbbfb213c561fd263a64",
+ "status": "ok",
+ "co_edited": [
+  "doc/data/messages/s/singledispatch-method/bad.py",
+  "doc/data/messages/s/singledispatch-method/good.py",
+  "doc/data/messages/s/singledispatchmethod-function/bad.py",
+  "pylint/checkers/stdlib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "doc/data/messages/s/singledispatch-method/bad.py": [
+   "_",
+   "convert_position",
+   "position",
+   "self"
+  ],
+  "doc/data/messages/s/singledispatch-method/good.py": [
+   "_",
+   "convert_position",
+   "position",
+   "position_a",
+   "position_b"
+  ],
+  "doc/data/messages/s/singledispatchmethod-function/bad.py": [
+   "_",
+   "convert_position",
+   "position",
+   "position_a",
+   "position_b"
+  ],
+  "pylint/checkers/base_checker.py": [
+   "confidence",
+   "node"
+  ],
+  "pylint/checkers/stdlib.py": [
+   "_check_lru_cache_decorators",
+   "decorators_map",
+   "node",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 85,
+  "names_resolved_in_repo": 65,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

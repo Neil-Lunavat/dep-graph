@@ -1,0 +1,53 @@
+{
+ "instance_id": "sdv-dev__SDV-2571",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "a282bf021545be3411d0562f1e1a02ffcd63318e",
+ "status": "ok",
+ "co_edited": [
+  "sdv/_utils.py",
+  "sdv/multi_table/base.py",
+  "sdv/single_table/base.py",
+  "sdv/version/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/_utils.py": [
+   "community_mismatch",
+   "compare_operator",
+   "current_community_version",
+   "current_enterprise_version",
+   "enterprise_mismatch",
+   "fit_community_version",
+   "fitted_community_version",
+   "fitted_enterprise_version",
+   "is_community_lower",
+   "is_enterprise_lower",
+   "static_message",
+   "synth_version",
+   "synthesizer"
+  ],
+  "sdv/multi_table/base.py": [
+   "_fitted_sdv_version",
+   "self"
+  ],
+  "sdv/single_table/base.py": [
+   "_fitted_sdv_version",
+   "self"
+  ],
+  "sdv/version/__init__.py": [
+   "__all__",
+   "community",
+   "version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

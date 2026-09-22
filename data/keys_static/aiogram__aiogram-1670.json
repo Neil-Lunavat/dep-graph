@@ -1,0 +1,31 @@
+{
+ "instance_id": "aiogram__aiogram-1670",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "25e9127db9004c9c49ca46bdf5297682fac71fbb",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/dispatcher/dispatcher.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/dispatcher/dispatcher.py": [
+   "_process_with_semaphore",
+   "handle_as_tasks",
+   "handle_update",
+   "handle_update_task",
+   "self",
+   "semaphore",
+   "tasks_concurrency_limit"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 155,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

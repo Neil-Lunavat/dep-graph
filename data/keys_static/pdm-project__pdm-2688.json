@@ -1,0 +1,115 @@
+{
+ "instance_id": "pdm-project__pdm-2688",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "2343a8d3870e4ae1be04287687868d8a5216f80c",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/builders/__init__.py",
+  "src/pdm/builders/base.py",
+  "src/pdm/builders/editable.py",
+  "src/pdm/builders/sdist.py",
+  "src/pdm/builders/wheel.py",
+  "src/pdm/cli/commands/build.py",
+  "src/pdm/cli/commands/lock.py",
+  "src/pdm/cli/options.py",
+  "src/pdm/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/builders/__init__.py": [
+   "__all__"
+  ],
+  "src/pdm/builders/base.py": [
+   "_hook",
+   "build",
+   "config_settings",
+   "environment",
+   "metadata_directory",
+   "out_dir",
+   "prepare_metadata",
+   "self"
+  ],
+  "src/pdm/builders/editable.py": [
+   "build",
+   "filename",
+   "metadata_directory",
+   "out_dir",
+   "prepare_metadata",
+   "requires",
+   "self"
+  ],
+  "src/pdm/builders/sdist.py": [
+   "SdistBuilder",
+   "build",
+   "filename",
+   "metadata_directory",
+   "out_dir",
+   "requires",
+   "self"
+  ],
+  "src/pdm/builders/wheel.py": [
+   "WheelBuilder",
+   "build",
+   "filename",
+   "metadata_directory",
+   "out_dir",
+   "requires",
+   "self"
+  ],
+  "src/pdm/cli/commands/base.py": [
+   "arguments"
+  ],
+  "src/pdm/cli/commands/build.py": [
+   "config_settings",
+   "dest",
+   "loc",
+   "project"
+  ],
+  "src/pdm/cli/options.py": [
+   "ExtendMapAction",
+   "_",
+   "config_setting_option",
+   "groups_group",
+   "install_group",
+   "k",
+   "lock_strategy_group",
+   "lockfile_option",
+   "mapping",
+   "namespace",
+   "no_isolation_option",
+   "option_string",
+   "options",
+   "parser",
+   "project_option",
+   "self",
+   "skip_option",
+   "v",
+   "values",
+   "verbose_option"
+  ],
+  "src/pdm/core.py": [
+   "config_settings",
+   "exit_stack",
+   "options",
+   "self"
+  ],
+  "src/pdm/environments/base.py": [
+   "project"
+  ],
+  "src/pdm/project/core.py": [
+   "core",
+   "environment",
+   "root"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 241,
+  "names_resolved_in_repo": 181,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

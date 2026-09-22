@@ -1,0 +1,25 @@
+{
+ "instance_id": "pvlib__pvlib-python-1947",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "16017609ea2765c4651dbc13b4743578363b641a",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/modelchain.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/modelchain.py": [
+   "params"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

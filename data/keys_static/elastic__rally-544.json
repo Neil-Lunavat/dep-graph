@@ -1,0 +1,46 @@
+{
+ "instance_id": "elastic__rally-544",
+ "repo_key": "elastic/rally",
+ "base_commit": "7387ca228ec1f0f7e6dc5f4938cfc62dbc4c5cba",
+ "status": "ok",
+ "co_edited": [
+  "esrally/metrics.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/__init__.py": [
+   "esrally"
+  ],
+  "esrally/metrics.py": [
+   "_config",
+   "secure",
+   "self"
+  ],
+  "esrally/utils/__init__.py": [
+   "utils"
+  ],
+  "esrally/utils/console.py": [
+   "console"
+  ],
+  "esrally/utils/convert.py": [
+   "convert",
+   "to_bool"
+  ],
+  "esrally/utils/io.py": [
+   "io"
+  ],
+  "esrally/utils/versions.py": [
+   "versions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

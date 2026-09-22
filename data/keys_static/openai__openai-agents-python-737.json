@@ -1,0 +1,37 @@
+{
+ "instance_id": "openai__openai-agents-python-737",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "1364f4408e8e0d8bec1d6ac8337f68b3b888a4a7",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/extensions/visualization.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/agents/agent.py": [
+   "Agent",
+   "name"
+  ],
+  "src/agents/extensions/visualization.py": [
+   "agent",
+   "draw_graph",
+   "filename",
+   "get_all_edges",
+   "get_all_nodes",
+   "handoff",
+   "parent",
+   "parts",
+   "visited"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

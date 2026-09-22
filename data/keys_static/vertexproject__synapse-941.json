@@ -1,0 +1,28 @@
+{
+ "instance_id": "vertexproject__synapse-941",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "6f5fc661a88b8cc3f4befb2c9c7ddcebf0b89ba0",
+ "status": "ok",
+ "co_edited": [
+  "synapse/telepath.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/telepath.py": [
+   "conf",
+   "dynname",
+   "name",
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 93,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

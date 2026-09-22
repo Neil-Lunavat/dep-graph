@@ -1,0 +1,36 @@
+{
+ "instance_id": "ibis-project__ibis-4772",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "438eb19f261b144c4c993eaf9c8ad3a475c22827",
+ "status": "ok",
+ "co_edited": [
+  "ibis/expr/operations/relations.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ibis/__init__.py": [
+   "ibis"
+  ],
+  "ibis/expr/__init__.py": [
+   "expr"
+  ],
+  "ibis/expr/deferred.py": [
+   "Deferred",
+   "deferred"
+  ],
+  "ibis/expr/operations/relations.py": [
+   "left",
+   "pred"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

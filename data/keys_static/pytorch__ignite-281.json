@@ -1,0 +1,31 @@
+{
+ "instance_id": "pytorch__ignite-281",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "a582e2d5a1317d96889d17aa0fd11790a376e22b",
+ "status": "ok",
+ "co_edited": [
+  "ignite/metrics/loss.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/metrics/loss.py": [
+   "_loss_fn",
+   "average_loss",
+   "kwargs",
+   "output",
+   "self",
+   "y",
+   "y_pred"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 104,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

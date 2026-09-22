@@ -1,0 +1,25 @@
+{
+ "instance_id": "tefra__xsdata-879",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "0b2fe8b2256b617e1f3781d8359e7733b31ef26f",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/utils/objects.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/utils/objects.py": [
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,35 @@
+{
+ "instance_id": "dwavesystems__dimod-174",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "7b75e47ce4fec541e432f84367ba58393934b941",
+ "status": "ok",
+ "co_edited": [
+  "dimod/response.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/response.py": [
+   "data_vectors",
+   "key",
+   "n",
+   "num_samples",
+   "order",
+   "sample",
+   "samples",
+   "self",
+   "shape",
+   "sorted_by",
+   "vector"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 40,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

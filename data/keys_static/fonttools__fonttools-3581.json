@@ -1,0 +1,28 @@
+{
+ "instance_id": "fonttools__fonttools-3581",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "ee56bb0edaac43d5b7113b2a9d00ed9723ae83b2",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/misc/visitor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/misc/visitor.py": [
+   "base",
+   "celf",
+   "m",
+   "typ"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.0
+}

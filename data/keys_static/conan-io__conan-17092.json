@@ -1,0 +1,47 @@
+{
+ "instance_id": "conan-io__conan-17092",
+ "repo_key": "conan-io/conan",
+ "base_commit": "f31647f3ef2feaabc91b2875d540ae48d2a4a4c8",
+ "status": "ok",
+ "co_edited": [
+  "conan/internal/default_settings.py",
+  "conan/tools/build/flags.py",
+  "conan/tools/system/package_manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/tools/build/flags.py": [
+   "cppstd",
+   "gcc_version",
+   "v11",
+   "v14",
+   "v17",
+   "v20",
+   "v23",
+   "v26",
+   "v98",
+   "vgnu11",
+   "vgnu14",
+   "vgnu17",
+   "vgnu20",
+   "vgnu23",
+   "vgnu26",
+   "vgnu98"
+  ],
+  "conan/tools/system/package_manager.py": [
+   "_conanfile",
+   "os_name",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 87,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.0
+}

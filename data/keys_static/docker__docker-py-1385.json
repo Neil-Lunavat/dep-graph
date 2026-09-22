@@ -1,0 +1,34 @@
+{
+ "instance_id": "docker__docker-py-1385",
+ "repo_key": "docker/docker-py",
+ "base_commit": "07b20ce660f4a4b1e64ef3ede346eef9ec08635a",
+ "status": "ok",
+ "co_edited": [
+  "docker/types/services.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/constants.py": [
+   "IS_WINDOWS_PLATFORM",
+   "constants"
+  ],
+  "docker/types/services.py": [
+   "cls",
+   "mount_type",
+   "read_only",
+   "source",
+   "target",
+   "type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

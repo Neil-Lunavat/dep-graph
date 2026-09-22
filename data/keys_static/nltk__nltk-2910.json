@@ -1,0 +1,26 @@
+{
+ "instance_id": "nltk__nltk-2910",
+ "repo_key": "nltk/nltk",
+ "base_commit": "abbe86b8af660b4fdf477505b89d92dd5aa46519",
+ "status": "ok",
+ "co_edited": [
+  "nltk/downloader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/downloader.py": [
+   "download_dir",
+   "info"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.7
+}

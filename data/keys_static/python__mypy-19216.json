@@ -1,0 +1,33 @@
+{
+ "instance_id": "python__mypy-19216",
+ "repo_key": "python/mypy",
+ "base_commit": "1f339c035aaafd618ee3f78b638d0929b2f3e470",
+ "status": "ok",
+ "co_edited": [
+  "mypy/checker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/checker.py": [
+   "ctx",
+   "expr_checker",
+   "lvalue_node",
+   "rvalue",
+   "rvalue_type",
+   "self"
+  ],
+  "mypy/types.py": [
+   "PartialType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

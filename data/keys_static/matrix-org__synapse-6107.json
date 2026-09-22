@@ -1,0 +1,71 @@
+{
+ "instance_id": "matrix-org__synapse-6107",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "2cd98812ba338eefe83fee4ae2390d00f5499de9",
+ "status": "ok",
+ "co_edited": [
+  "synapse/handlers/auth.py",
+  "synapse/handlers/ui_auth/checkers.py",
+  "synapse/rest/client/v2_alpha/register.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/__init__.py": [
+   "synapse"
+  ],
+  "synapse/api/constants.py": [
+   "EMAIL_IDENTITY",
+   "LoginType",
+   "MSISDN"
+  ],
+  "synapse/config/__init__.py": [
+   "config"
+  ],
+  "synapse/config/_base.py": [
+   "ConfigError"
+  ],
+  "synapse/config/emailconfig.py": [
+   "LOCAL",
+   "REMOTE",
+   "ThreepidBehaviour"
+  ],
+  "synapse/handlers/__init__.py": [
+   "handlers"
+  ],
+  "synapse/handlers/auth.py": [
+   "AuthHandler",
+   "auth",
+   "checkers",
+   "get_enabled_auth_types",
+   "inst",
+   "self"
+  ],
+  "synapse/handlers/ui_auth/checkers.py": [
+   "AUTH_TYPE",
+   "_enabled",
+   "hs",
+   "is_enabled",
+   "self"
+  ],
+  "synapse/rest/client/v2_alpha/register.py": [
+   "auth_handler",
+   "enabled_auth_types",
+   "hs",
+   "require_email",
+   "require_msisdn",
+   "self",
+   "show_email",
+   "show_msisdn"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 82,
+  "names_resolved_in_repo": 78,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.3
+}

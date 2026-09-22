@@ -1,0 +1,29 @@
+{
+ "instance_id": "instructlab__instructlab-2004",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "e8097167e0f70e887cc7aa8b9eaeabacbff6ed6a",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/configuration.py",
+  "src/instructlab/model/train.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/configuration.py": [
+   "checkpoint_at_epoch"
+  ],
+  "src/instructlab/model/train.py": [
+   "train_args"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

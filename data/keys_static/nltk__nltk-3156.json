@@ -1,0 +1,25 @@
+{
+ "instance_id": "nltk__nltk-3156",
+ "repo_key": "nltk/nltk",
+ "base_commit": "fc53edbf6f0763971afca5855386a2a382da37ac",
+ "status": "ok",
+ "co_edited": [
+  "nltk/tokenize/simple.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/tokenize/api.py": [
+   "_string"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

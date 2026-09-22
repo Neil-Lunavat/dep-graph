@@ -1,0 +1,30 @@
+{
+ "instance_id": "deepset-ai__haystack-9336",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "e3f9da13d0df40b5898e480c725ee329ca175858",
+ "status": "ok",
+ "co_edited": [
+  "haystack/core/super_component/super_component.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/core/super_component/super_component.py": [
+   "params",
+   "path",
+   "self",
+   "server_url",
+   "show",
+   "timeout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 391,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

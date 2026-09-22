@@ -1,0 +1,27 @@
+{
+ "instance_id": "streamlink__streamlink-6328",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "f3c3546925897243edb4e3ba42210c5262ce74cf",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/stream/dash/manifest.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/stream/dash/manifest.py": [
+   "base_url",
+   "self",
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,69 @@
+{
+ "instance_id": "missionpinball__mpf-1289",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "06fc30212bbe3ed4d73dff3bdec8248e1cc7ca28",
+ "status": "ok",
+ "co_edited": [
+  "mpf/platforms/snux.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/core/delays.py": [
+   "callback",
+   "name"
+  ],
+  "mpf/core/platform.py": [
+   "machine"
+  ],
+  "mpf/platforms/interfaces/driver_platform_interface.py": [
+   "disable"
+  ],
+  "mpf/platforms/snux.py": [
+   "_a_side_enabled",
+   "_c_side_enabled",
+   "_disable_ac_relay",
+   "_disable_all_a_side_drivers",
+   "_disable_all_c_side_drivers",
+   "_enable_a_side",
+   "_enable_ac_relay",
+   "_enable_c_side",
+   "_prefer_a_side",
+   "_prefer_c_side",
+   "_service_a_side",
+   "_service_c_side",
+   "a_drivers",
+   "a_side_active",
+   "a_side_busy",
+   "a_side_done_time",
+   "a_side_enabled",
+   "a_side_queue",
+   "ac_relay_in_transition",
+   "c_drivers",
+   "c_side_active",
+   "c_side_busy",
+   "c_side_done_time",
+   "c_side_enabled",
+   "c_side_queue",
+   "driver",
+   "drivers_holding_a_side",
+   "drivers_holding_c_side",
+   "hold_settings",
+   "kwargs",
+   "log",
+   "prefer_a_side",
+   "pulse_settings",
+   "self",
+   "snux_config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 268,
+  "names_resolved_in_repo": 432,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

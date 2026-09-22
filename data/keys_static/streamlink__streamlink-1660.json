@@ -1,0 +1,30 @@
+{
+ "instance_id": "streamlink__streamlink-1660",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "e2a55461decc6856912325e8103cefb359027811",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/tf1.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugin/plugin.py": [
+   "logger"
+  ],
+  "src/streamlink/plugins/tf1.py": [
+   "channel",
+   "self",
+   "url_re"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

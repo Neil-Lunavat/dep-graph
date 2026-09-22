@@ -1,0 +1,32 @@
+{
+ "instance_id": "linkml__linkml-1343",
+ "repo_key": "linkml/linkml",
+ "base_commit": "a3bc3761821576ca02a383c8aeb518aff3d132ce",
+ "status": "ok",
+ "co_edited": [
+  "linkml/utils/ifabsent_functions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/utils/ifabsent_functions.py": [
+   "_",
+   "____",
+   "cls",
+   "default_ns_for",
+   "loader"
+  ],
+  "linkml/utils/schemaloader.py": [
+   "SchemaLoader"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

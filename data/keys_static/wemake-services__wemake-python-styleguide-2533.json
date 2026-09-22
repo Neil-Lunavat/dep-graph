@@ -1,0 +1,72 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-2533",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "3e5f5b74e5527029205c3421e55417a68555f0c5",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/function_empty_lines.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/violations/best_practices.py": [
+   "best_practices"
+  ],
+  "wemake_python_styleguide/visitors/ast/function_empty_lines.py": [
+   "WrongEmptyLinesCountVisitor",
+   "_FileFunctions",
+   "_FileTokens",
+   "_Function",
+   "__init__",
+   "_exps_for_one_empty_line",
+   "_file_functions",
+   "_file_tokens",
+   "_is_function_end",
+   "_is_function_start",
+   "_is_target_line",
+   "_tokens",
+   "analyze",
+   "args",
+   "as_list",
+   "available_empty_lines",
+   "body",
+   "empty_lines_count",
+   "exps_for_one_empty_line",
+   "file_functions",
+   "file_tokens",
+   "function",
+   "function_tokens",
+   "function_tokens_exists",
+   "functions",
+   "in_function",
+   "is_comment",
+   "is_dedent_token",
+   "is_multistring_end",
+   "is_string",
+   "kwargs",
+   "line",
+   "name_token",
+   "option",
+   "self",
+   "splitted_function_body",
+   "target_token",
+   "target_tokens",
+   "token",
+   "violation",
+   "violations",
+   "visit"
+  ],
+  "wemake_python_styleguide/visitors/base.py": [
+   "base"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 222,
+  "names_resolved_in_repo": 146,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 28,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

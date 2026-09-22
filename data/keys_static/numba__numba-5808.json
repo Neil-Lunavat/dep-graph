@@ -1,0 +1,26 @@
+{
+ "instance_id": "numba__numba-5808",
+ "repo_key": "numba/numba",
+ "base_commit": "23a5c659e1122c607deb291ff5f7dd796f2a2915",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/decorators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/decorators.py": [
+   "kws",
+   "options"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

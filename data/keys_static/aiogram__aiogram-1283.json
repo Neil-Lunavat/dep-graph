@@ -1,0 +1,37 @@
+{
+ "instance_id": "aiogram__aiogram-1283",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "b7be9c2b81c2f4312634d2e1173c8a1c04f8dbb4",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/utils/magic_filter.py",
+  "aiogram/utils/markdown.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/utils/magic_filter.py": [
+   "value"
+  ],
+  "aiogram/utils/markdown.py": [
+   "_join",
+   "content",
+   "sep"
+  ],
+  "aiogram/utils/text_decorations.py": [
+   "italic",
+   "markdown_decoration",
+   "quote",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

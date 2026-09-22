@@ -1,0 +1,49 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1475",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "87d7e668eb301e6f9cd90ef8aff9d8a0bf0d8960",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/functions.py",
+  "narwhals/stable/v1/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/__init__.py": [
+   "narwhals"
+  ],
+  "narwhals/_pandas_like/__init__.py": [
+   "_pandas_like"
+  ],
+  "narwhals/_pandas_like/utils.py": [
+   "utils",
+   "validate_column_comparand"
+  ],
+  "narwhals/functions.py": [
+   "aligned_data",
+   "compliant_series",
+   "data",
+   "key",
+   "left_most_series",
+   "native_frame",
+   "native_namespace",
+   "native_series"
+  ],
+  "narwhals/series.py": [
+   "_compliant_series"
+  ],
+  "narwhals/translate.py": [
+   "series_only"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 73,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

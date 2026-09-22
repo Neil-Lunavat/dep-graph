@@ -1,0 +1,51 @@
+{
+ "instance_id": "dask__dask-2466",
+ "repo_key": "dask/dask",
+ "base_commit": "37c3ae2e091412f5e2fdf3c957c383e89e4c8bb2",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/fft.py",
+  "dask/bag/core.py",
+  "dask/dataframe/io/csv.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/fft.py": [
+   "chunks",
+   "l",
+   "r",
+   "s",
+   "t"
+  ],
+  "dask/bag/core.py": [
+   "compute",
+   "encoding",
+   "get",
+   "storage_options"
+  ],
+  "dask/base.py": [
+   "compute"
+  ],
+  "dask/bytes/core.py": [
+   "encoding"
+  ],
+  "dask/dataframe/io/csv.py": [
+   "get",
+   "kwargs",
+   "storage_options"
+  ],
+  "dask/utils.py": [
+   "system_encoding"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 49,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

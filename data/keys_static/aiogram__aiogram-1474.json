@@ -1,0 +1,60 @@
+{
+ "instance_id": "aiogram__aiogram-1474",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "6d655330afe90a1277bcfbe3b5861b7552634f75",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/dispatcher/middlewares/user_context.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/dispatcher/middlewares/user_context.py": [
+   "chat",
+   "event",
+   "user"
+  ],
+  "aiogram/types/base.py": [
+   "TelegramObject"
+  ],
+  "aiogram/types/chat.py": [
+   "Chat"
+  ],
+  "aiogram/types/chat_boost.py": [
+   "source"
+  ],
+  "aiogram/types/chat_boost_source_gift_code.py": [
+   "user"
+  ],
+  "aiogram/types/chat_boost_source_giveaway.py": [
+   "user"
+  ],
+  "aiogram/types/chat_boost_source_premium.py": [
+   "ChatBoostSourcePremium",
+   "user"
+  ],
+  "aiogram/types/chat_boost_updated.py": [
+   "boost",
+   "chat"
+  ],
+  "aiogram/types/inaccessible_message.py": [
+   "InaccessibleMessage"
+  ],
+  "aiogram/types/update.py": [
+   "Update",
+   "chat_boost"
+  ],
+  "aiogram/types/user.py": [
+   "User"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

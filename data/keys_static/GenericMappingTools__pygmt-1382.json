@@ -1,0 +1,31 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-1382",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "b69fd0c36d872a57a3a9ca14232e366193e96fb7",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/clib/session.py",
+  "pygmt/helpers/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/session.py": [
+   "_data",
+   "data",
+   "kind"
+  ],
+  "pygmt/helpers/utils.py": [
+   "data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 79,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

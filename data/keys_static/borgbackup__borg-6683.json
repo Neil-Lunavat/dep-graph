@@ -1,0 +1,32 @@
+{
+ "instance_id": "borgbackup__borg-6683",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "ae417cccf6a2653c010a1f379f3fdef8e55d7ccd",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archive.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/archive.py": [
+   "as_dict",
+   "data",
+   "final",
+   "item",
+   "self"
+  ],
+  "src/borg/helpers/parseformat.py": [
+   "remove_surrogates"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.4
+}

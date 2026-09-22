@@ -1,0 +1,70 @@
+{
+ "instance_id": "streamlink__streamlink-3847",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "3995953c49718425db9fafd39a6088a95603dcb4",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/tv8.py",
+  "src/streamlink/plugins/youtube.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/__init__.py": [
+   "streamlink"
+  ],
+  "src/streamlink/plugin/api/validate.py": [
+   "any",
+   "get",
+   "transform",
+   "validate"
+  ],
+  "src/streamlink/plugin/plugin.py": [
+   "match",
+   "session"
+  ],
+  "src/streamlink/plugins/tv8.py": [
+   "_re_hls",
+   "hls_url",
+   "self"
+  ],
+  "src/streamlink/plugins/youtube.py": [
+   "_data_video_id",
+   "_get_data_from_regex",
+   "_get_res",
+   "_re_ytInitialData",
+   "_re_ytInitialPlayerResponse",
+   "_url_canonical",
+   "data",
+   "descr",
+   "initial",
+   "log",
+   "match",
+   "regex",
+   "res",
+   "self",
+   "url",
+   "videoId",
+   "videoRenderer",
+   "video_id"
+  ],
+  "src/streamlink/stream/hls.py": [
+   "HLSStream",
+   "parse_variant_playlist"
+  ],
+  "src/streamlink/utils/__init__.py": [
+   "parse_json",
+   "search_dict",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 98,
+  "names_resolved_in_repo": 82,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 7,
+  "truncated": false
+ },
+ "seconds": 5.6
+}

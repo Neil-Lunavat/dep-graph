@@ -1,0 +1,61 @@
+{
+ "instance_id": "repobee__repobee-336",
+ "repo_key": "repobee/repobee",
+ "base_commit": "61345a279882f22c5fd5bc8d2db56516bb08d714",
+ "status": "ok",
+ "co_edited": [
+  "src/_repobee/ext/gitlab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_repobee/exception.py": [
+   "exception"
+  ],
+  "src/_repobee/ext/gitlab.py": [
+   "_ISSUE_STATE_MAPPING",
+   "_TEAM_PERMISSION_MAPPING",
+   "_get_organization",
+   "_get_projects_and_names_by_name",
+   "_gitlab",
+   "_group",
+   "_group_name",
+   "_try_api_request",
+   "body",
+   "closed",
+   "e",
+   "issue",
+   "issues_and_project_names",
+   "lazy_project",
+   "m",
+   "member_lists",
+   "name_issues_pairs",
+   "permission",
+   "project",
+   "project_name",
+   "projects",
+   "raw_permission",
+   "raw_state",
+   "raw_teams",
+   "repo",
+   "repo_names",
+   "self",
+   "state",
+   "t",
+   "team",
+   "team_name",
+   "teams",
+   "title",
+   "title_regex"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 203,
+  "names_resolved_in_repo": 126,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,49 @@
+{
+ "instance_id": "mikedh__trimesh-2265",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "e20de7e292e57e798036ad22b38b2fb94dc33856",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/boolean.py",
+  "trimesh/creation.py",
+  "trimesh/scene/scene.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/base.py": [
+   "Trimesh",
+   "faces"
+  ],
+  "trimesh/boolean.py": [
+   "_engines",
+   "engine",
+   "kwargs",
+   "meshes",
+   "operation",
+   "result_mesh"
+  ],
+  "trimesh/creation.py": [
+   "b",
+   "polygon"
+  ],
+  "trimesh/interfaces/blender.py": [
+   "operation"
+  ],
+  "trimesh/scene/scene.py": [
+   "Scene",
+   "g",
+   "geometry",
+   "metadata"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 5.1
+}

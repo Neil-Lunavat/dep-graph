@@ -1,0 +1,26 @@
+{
+ "instance_id": "sympy__sympy-13177",
+ "repo_key": "sympy/sympy",
+ "base_commit": "662cfb818e865f580e18b59efbb3540c34232beb",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/mod.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/mod.py": [
+   "p",
+   "q"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 9.9
+}

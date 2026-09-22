@@ -1,0 +1,64 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1248",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "cee1f3f5575f73b671deb4374c6e7a263fa40df9",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/plugins/rule_md_031.py",
+  "pymarkdown/transform_markdown/transform_containers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/plugins/rule_md_031.py": [
+   "__last_end_container_tokens",
+   "context",
+   "end_container_index",
+   "first_token",
+   "new_token",
+   "replacement_tokens",
+   "self",
+   "token"
+  ],
+  "pymarkdown/tokens/block_quote_markdown_token.py": [
+   "BlockQuoteMarkdownToken",
+   "bleading_spaces"
+  ],
+  "pymarkdown/tokens/list_start_markdown_token.py": [
+   "ListStartMarkdownToken",
+   "indent_level",
+   "leading_spaces"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "is_block_quote_end",
+   "is_block_quote_start",
+   "is_list_end"
+  ],
+  "pymarkdown/transform_markdown/transform_containers.py": [
+   "container_stack",
+   "container_stack_copy",
+   "current_indent_level",
+   "i",
+   "is_only_list_starts_on_stack",
+   "list_token",
+   "possible_prefix",
+   "prefix",
+   "removed_block_quote_token",
+   "removed_token_indices",
+   "removed_tokens",
+   "split_bleading_spaces",
+   "split_leading_spaces",
+   "token_index"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 134,
+  "names_resolved_in_repo": 116,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

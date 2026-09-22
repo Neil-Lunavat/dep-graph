@@ -1,0 +1,48 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1679",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "0a67642a507699fecedcb5f945c2e05b5a0f4160",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_arrow/dataframe.py",
+  "narwhals/_dask/expr.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_arrow/dataframe.py": [
+   "_native_frame",
+   "col_token",
+   "columns",
+   "df",
+   "index_token",
+   "res",
+   "self",
+   "with_row_index"
+  ],
+  "narwhals/_arrow/series.py": [
+   "fill_null",
+   "limit",
+   "null_count",
+   "strategy"
+  ],
+  "narwhals/_dask/expr.py": [
+   "_input",
+   "_name"
+  ],
+  "narwhals/utils.py": [
+   "columns",
+   "generate_temporary_column_name",
+   "n_bytes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

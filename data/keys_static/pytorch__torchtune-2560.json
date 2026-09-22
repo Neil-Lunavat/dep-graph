@@ -1,0 +1,40 @@
+{
+ "instance_id": "pytorch__torchtune-2560",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "84aea68d90ff5f8e65af33fd004e7b84424bc712",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/modules/loss/ce_chunked_output_loss.py",
+  "torchtune/modules/loss/kd_losses.py",
+  "torchtune/modules/transformer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/modules/loss/ce_chunked_output_loss.py": [
+   "labels",
+   "num_output_chunks",
+   "self",
+   "target_chunk"
+  ],
+  "torchtune/modules/loss/kd_losses.py": [
+   "output_chunks",
+   "teacher_model"
+  ],
+  "torchtune/modules/transformer.py": [
+   "chunk",
+   "last_hidden_state",
+   "num_output_chunks",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 19,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

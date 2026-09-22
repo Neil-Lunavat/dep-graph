@@ -1,0 +1,21 @@
+{
+ "instance_id": "reframe-hpc__reframe-3058",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "20a1a5e6a9c1fcc5a7b5bcfb202e9d1d2dcdd86a",
+ "status": "ok",
+ "co_edited": [
+  "reframe/core/launchers/mpi.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

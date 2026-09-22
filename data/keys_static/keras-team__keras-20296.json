@@ -1,0 +1,32 @@
+{
+ "instance_id": "keras-team__keras-20296",
+ "repo_key": "keras-team/keras",
+ "base_commit": "ef407dbdc4b2d827a4509572904d6a6c539064e4",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/trainers/compile_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/trainers/compile_utils.py": [
+   "filtered_y_pred",
+   "filtered_y_pred_keys",
+   "filtered_y_true",
+   "filtered_y_true_keys",
+   "k",
+   "v",
+   "y_pred",
+   "y_true"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

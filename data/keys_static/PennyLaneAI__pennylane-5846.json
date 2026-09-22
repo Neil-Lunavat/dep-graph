@@ -1,0 +1,47 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-5846",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "2252d453cfeb62f8aafc454a9513a87f614db533",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/qaoa/layers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/__init__.py": [
+   "qml"
+  ],
+  "pennylane/operation.py": [
+   "Tensor"
+  ],
+  "pennylane/ops/__init__.py": [
+   "ops"
+  ],
+  "pennylane/ops/op_math/prod.py": [
+   "Prod"
+  ],
+  "pennylane/qaoa/layers.py": [
+   "alpha",
+   "gamma",
+   "hamiltonian",
+   "obs",
+   "op"
+  ],
+  "pennylane/templates/__init__.py": [
+   "templates"
+  ],
+  "pennylane/templates/subroutines/approx_time_evolution.py": [
+   "ApproxTimeEvolution"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

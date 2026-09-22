@@ -1,0 +1,44 @@
+{
+ "instance_id": "google__mobly-135",
+ "repo_key": "google/mobly",
+ "base_commit": "81f4c8854fdc7b07607efdb7f0da91b9e1b22d12",
+ "status": "ok",
+ "co_edited": [
+  "mobly/controllers/android_device_lib/callback_handler.py",
+  "mobly/controllers/android_device_lib/jsonrpc_client_base.py",
+  "mobly/controllers/android_device_lib/snippet_client.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mobly/controllers/android_device_lib/callback_handler.py": [
+   "_id",
+   "_method_name",
+   "callback_id",
+   "event_client",
+   "event_name",
+   "method_name",
+   "ret_value",
+   "self"
+  ],
+  "mobly/controllers/android_device_lib/jsonrpc_client_base.py": [
+   "_event_client",
+   "method",
+   "result",
+   "self"
+  ],
+  "mobly/controllers/android_device_lib/snippet_client.py": [
+   "package",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

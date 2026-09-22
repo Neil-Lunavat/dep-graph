@@ -1,0 +1,60 @@
+{
+ "instance_id": "projectmesa__mesa-2755",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "08ff1edaba02bd6af95c545f4312dd039fb80bb9",
+ "status": "ok",
+ "co_edited": [
+  "mesa/discrete_space/cell.py",
+  "mesa/discrete_space/discrete_space.py",
+  "mesa/discrete_space/network.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mesa/discrete_space/cell.py": [
+   "Cell",
+   "_clear_cache",
+   "_neighborhood",
+   "connect",
+   "coordinate",
+   "disconnect",
+   "get_neighborhood",
+   "neighborhood",
+   "self"
+  ],
+  "mesa/discrete_space/cell_collection.py": [
+   "cells"
+  ],
+  "mesa/discrete_space/discrete_space.py": [
+   "T",
+   "__dict__",
+   "_cells",
+   "add_cell",
+   "add_connection",
+   "cell",
+   "cell1",
+   "cell2",
+   "neighbor",
+   "neighbors",
+   "remove_cell",
+   "remove_connection",
+   "self"
+  ],
+  "mesa/discrete_space/network.py": [
+   "G",
+   "cell",
+   "cell1",
+   "cell2",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 344,
+  "names_resolved_in_repo": 117,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

@@ -1,0 +1,36 @@
+{
+ "instance_id": "vertexproject__synapse-350",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "f069d21504fad7c0acb6ac96893400b899f9589c",
+ "status": "ok",
+ "co_edited": [
+  "synapse/lib/storm.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/lib/storm.py": [
+   "_stormOperGuid",
+   "args",
+   "core",
+   "getStormCore",
+   "k",
+   "kwlist",
+   "node",
+   "oper",
+   "query",
+   "self",
+   "setOperFunc",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

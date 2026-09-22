@@ -1,0 +1,32 @@
+{
+ "instance_id": "statsmodels__statsmodels-8959",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "3b61c469ed8d4a6752b5bf01390789512f81f0c6",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/stats/weightstats.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/stats/weightstats.py": [
+   "ddof",
+   "nobs1",
+   "nobs2",
+   "std_diff",
+   "usevar",
+   "var",
+   "x1_var",
+   "x2_var"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 56,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

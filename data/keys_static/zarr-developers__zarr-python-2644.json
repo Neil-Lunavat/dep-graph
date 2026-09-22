@@ -1,0 +1,45 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2644",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "0adcbe728d5d286c160974717bddc6e4fb881e5a",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/core/_info.py",
+  "src/zarr/core/array.py",
+  "src/zarr/core/codec_pipeline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/core/_info.py": [
+   "_shard_shape",
+   "self"
+  ],
+  "src/zarr/core/array.py": [
+   "chunks",
+   "kwargs",
+   "self",
+   "shards"
+  ],
+  "src/zarr/core/buffer/core.py": [
+   "shape"
+  ],
+  "src/zarr/core/codec_pipeline.py": [
+   "batch_info",
+   "byte_setter",
+   "chunk_selection",
+   "chunk_spec",
+   "out_selection",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

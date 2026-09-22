@@ -1,0 +1,48 @@
+{
+ "instance_id": "reflex-dev__reflex-4129",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "5e3cfecdeab4182e4a405e94fb2d78f7b70eb16a",
+ "status": "ok",
+ "co_edited": [
+  "reflex/state.py",
+  "reflex/utils/types.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "reflex/istate/dynamic.py"
+ ],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/state.py": [
+   "State",
+   "_get_type_hints",
+   "_handle_local_def",
+   "annotation_value",
+   "cls",
+   "component_state",
+   "ix",
+   "known_names",
+   "localns",
+   "name",
+   "original_module",
+   "proposed_name",
+   "self",
+   "state_cls_name"
+  ],
+  "reflex/utils/types.py": [
+   "cls",
+   "hints"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 126,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 8,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

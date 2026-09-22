@@ -1,0 +1,26 @@
+{
+ "instance_id": "kedro-org__kedro-4321",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "6e3e4d1831a42d625754f3ec71bd0ded7d85be61",
+ "status": "ok",
+ "co_edited": [
+  "kedro/io/lambda_dataset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/__init__.py": [
+   "KedroDeprecationWarning",
+   "kedro"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

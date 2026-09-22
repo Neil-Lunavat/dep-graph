@@ -1,0 +1,30 @@
+{
+ "instance_id": "astropy__astropy-13462",
+ "repo_key": "astropy/astropy",
+ "base_commit": "d441bfdbb8e6dc57a52d8c1b117cadd030f0657a",
+ "status": "ok",
+ "co_edited": [
+  "astropy/time/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/time/utils.py": [
+   "check",
+   "day",
+   "err12",
+   "frac",
+   "sum12",
+   "two_sum"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.4
+}

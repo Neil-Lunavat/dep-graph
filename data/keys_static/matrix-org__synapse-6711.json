@@ -1,0 +1,35 @@
+{
+ "instance_id": "matrix-org__synapse-6711",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "608bf7d741ada8606a0ae5f4961a8aef6728dac8",
+ "status": "ok",
+ "co_edited": [
+  "synapse/rest/client/v2_alpha/auth.py",
+  "synapse/storage/purge_events.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/storage/data_stores/__init__.py": [
+   "state"
+  ],
+  "synapse/storage/data_stores/state/store.py": [
+   "purge_room_state"
+  ],
+  "synapse/storage/purge_events.py": [
+   "room_id",
+   "self",
+   "state_groups_to_delete",
+   "stores"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.9
+}

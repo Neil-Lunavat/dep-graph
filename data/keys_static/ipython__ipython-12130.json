@@ -1,0 +1,33 @@
+{
+ "instance_id": "ipython__ipython-12130",
+ "repo_key": "ipython/ipython",
+ "base_commit": "201acc865abb92a6184b3c01d21c577e1ff07139",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/completer.py",
+  "IPython/core/interactiveshell.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/completer.py": [
+   "custom_matchers",
+   "self"
+  ],
+  "IPython/core/interactiveshell.py": [
+   "Completer",
+   "newcomp",
+   "pos",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

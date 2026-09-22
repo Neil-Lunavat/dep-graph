@@ -1,0 +1,29 @@
+{
+ "instance_id": "astropy__astroquery-3105",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "0667ec801ed66f38f11fcb3eff01d5314d2c9212",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/alma/tapsql.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/alma/tapsql.py": [
+   "dec_max",
+   "dec_min",
+   "frame",
+   "ra_max",
+   "ra_min"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

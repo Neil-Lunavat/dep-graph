@@ -1,0 +1,50 @@
+{
+ "instance_id": "sympy__sympy-17394",
+ "repo_key": "sympy/sympy",
+ "base_commit": "e486f1b79432c474ad29a1d1a3d11e60b1caae88",
+ "status": "ok",
+ "co_edited": [
+  "sympy/functions/special/beta_functions.py",
+  "sympy/printing/codeprinter.py",
+  "sympy/printing/pycode.py",
+  "sympy/stats/crv_types.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/functions/special/beta_functions.py": [
+   "_eval_expand_func",
+   "_eval_rewrite_as_gamma",
+   "kwargs",
+   "self",
+   "x",
+   "y"
+  ],
+  "sympy/printing/codeprinter.py": [
+   "CodePrinter",
+   "_print_not_supported"
+  ],
+  "sympy/printing/printer.py": [
+   "_print"
+  ],
+  "sympy/printing/pycode.py": [
+   "_module_format",
+   "_print_fresnelc",
+   "_print_fresnels",
+   "_print_lowergamma",
+   "_print_uppergamma",
+   "expr",
+   "language",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 85,
+  "names_resolved_in_repo": 78,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 14.8
+}

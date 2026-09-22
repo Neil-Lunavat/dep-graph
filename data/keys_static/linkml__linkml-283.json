@@ -1,0 +1,54 @@
+{
+ "instance_id": "linkml__linkml-283",
+ "repo_key": "linkml/linkml",
+ "base_commit": "08866026f4a0ae6977cabc9de1a984079873823b",
+ "status": "ok",
+ "co_edited": [
+  "linkml/generators/jsonldcontextgen.py",
+  "linkml/generators/owlgen.py",
+  "linkml/generators/prefixmapgen.py",
+  "linkml/generators/pythongen.py",
+  "linkml/utils/generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/generators/owlgen.py": [
+   "cls",
+   "emit_prefixes",
+   "self",
+   "slot"
+  ],
+  "linkml/generators/prefixmapgen.py": [
+   "self",
+   "slot"
+  ],
+  "linkml/utils/generator.py": [
+   "add_id_prefixes",
+   "add_mappings",
+   "add_prefix",
+   "aliased_slot_name",
+   "defn",
+   "element",
+   "id_prefix",
+   "logger",
+   "mapping",
+   "mappings",
+   "mcurie",
+   "namespaces",
+   "ncname",
+   "ns",
+   "self",
+   "visit_slot"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 120,
+  "names_resolved_in_repo": 80,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.5
+}

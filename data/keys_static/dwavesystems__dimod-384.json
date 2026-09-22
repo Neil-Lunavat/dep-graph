@@ -1,0 +1,48 @@
+{
+ "instance_id": "dwavesystems__dimod-384",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "cbcea2e9809fa2016e5728cf6d170db7f02e2712",
+ "status": "ok",
+ "co_edited": [
+  "dimod/binary_quadratic_model.py",
+  "dimod/serialization/bson.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/binary_quadratic_model.py": [
+   "bytes_type",
+   "dtype",
+   "variables"
+  ],
+  "dimod/serialization/bson.py": [
+   "bias_dtype",
+   "bqm",
+   "bqm_bson_encoder",
+   "bytes_type",
+   "doc",
+   "i",
+   "ii",
+   "index_dtype",
+   "j",
+   "jj",
+   "lin",
+   "lvals",
+   "num_possible_edges",
+   "num_variables",
+   "off",
+   "qvals",
+   "vals",
+   "variable_order"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 148,
+  "names_resolved_in_repo": 54,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

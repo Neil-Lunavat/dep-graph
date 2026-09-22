@@ -1,0 +1,30 @@
+{
+ "instance_id": "matplotlib__matplotlib-28734",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "1c892c20334185294fa06ee5bf7a91ec843bbaa7",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/_constrained_layout.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/_constrained_layout.py": [
+   "_",
+   "fig",
+   "h_pad",
+   "layoutgrids",
+   "suptitle",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.9
+}

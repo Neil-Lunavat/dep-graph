@@ -1,0 +1,30 @@
+{
+ "instance_id": "instructlab__instructlab-1762",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "81c69513b447656f0ba03a7ef6debfa505e0c22a",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/configuration.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/configuration.py": [
+   "CHECKPOINTS",
+   "MODELS",
+   "STORAGE_DIR_NAMES",
+   "_cache_home",
+   "_data_dir",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

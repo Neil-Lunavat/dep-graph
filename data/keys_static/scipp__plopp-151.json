@@ -1,0 +1,57 @@
+{
+ "instance_id": "scipp__plopp-151",
+ "repo_key": "scipp/plopp",
+ "base_commit": "df3a5f224ede8bd257882417f8e4a8c90d0a8be2",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/backends/matplotlib/line.py",
+  "src/plopp/backends/plotly/line.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/backends/matplotlib/line.py": [
+   "_ax",
+   "_data",
+   "_dim",
+   "_error",
+   "_line",
+   "_mask",
+   "data",
+   "error",
+   "errorbars",
+   "hist",
+   "mask",
+   "new_values",
+   "one_mask",
+   "self",
+   "x",
+   "y"
+  ],
+  "src/plopp/backends/plotly/line.py": [
+   "_data",
+   "_dim",
+   "_error",
+   "data",
+   "error",
+   "errorbars",
+   "hist",
+   "mask",
+   "new_values",
+   "one_mask",
+   "self",
+   "update",
+   "x",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 196,
+  "names_resolved_in_repo": 160,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

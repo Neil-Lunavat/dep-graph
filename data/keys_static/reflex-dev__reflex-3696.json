@@ -1,0 +1,43 @@
+{
+ "instance_id": "reflex-dev__reflex-3696",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "ea016314b0fa7442137701bf6be9be01d0d88c35",
+ "status": "ok",
+ "co_edited": [
+  "reflex/state.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/state.py": [
+   "State",
+   "__aenter__",
+   "__aexit__",
+   "_is_mutable",
+   "_self_actx_lock",
+   "_self_actx_lock_holder",
+   "_self_mutable",
+   "_self_parent_state_proxy",
+   "_self_substate_path",
+   "current_task",
+   "exc_info",
+   "get_class_substate",
+   "get_full_name",
+   "name",
+   "parent_state_proxy",
+   "self",
+   "state_cls",
+   "state_cls_or_name",
+   "state_instance"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 129,
+  "names_resolved_in_repo": 74,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

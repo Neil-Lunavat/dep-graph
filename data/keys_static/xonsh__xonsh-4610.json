@@ -1,0 +1,107 @@
+{
+ "instance_id": "xonsh__xonsh-4610",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "c524028a78d33bbb7ea7f9cd544c5def4d6e890e",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/cli_utils.py",
+  "xonsh/commands_cache.py",
+  "xonsh/history/main.py",
+  "xonsh/tools.py",
+  "xontrib/vox.py",
+  "xontrib/voxapi.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/__init__.py": [
+   "__version__"
+  ],
+  "xonsh/built_ins.py": [
+   "XSH",
+   "aliases",
+   "commands_cache"
+  ],
+  "xonsh/cli_utils.py": [
+   "ArgParserAlias",
+   "action",
+   "add_command",
+   "cls_inst",
+   "flags",
+   "func",
+   "hook_post_add_argument",
+   "hook_pre_add_argument",
+   "kwargs",
+   "name",
+   "param",
+   "parser",
+   "self"
+  ],
+  "xonsh/commands_cache.py": [
+   "alss",
+   "key",
+   "locate_binary",
+   "self"
+  ],
+  "xonsh/history/main.py": [
+   "_",
+   "action",
+   "func",
+   "param",
+   "self"
+  ],
+  "xonsh/platform.py": [
+   "ON_WINDOWS"
+  ],
+  "xonsh/tools.py": [
+   "removed_in"
+  ],
+  "xontrib/vox.py": [
+   "_",
+   "_venv_option",
+   "action",
+   "flags",
+   "func",
+   "interpreter",
+   "kwargs",
+   "name",
+   "new",
+   "param",
+   "parser",
+   "py_interpreter_path_completer",
+   "self",
+   "symlinks",
+   "upgrade",
+   "venv",
+   "with_pip"
+  ],
+  "xontrib/voxapi.py": [
+   "VirtualEnvironment",
+   "_create",
+   "_get_vox_default_interpreter",
+   "bin",
+   "cfgfile",
+   "default",
+   "env",
+   "flags",
+   "inc",
+   "interpreter",
+   "lib",
+   "name",
+   "self",
+   "symlinks",
+   "upgrade",
+   "venv",
+   "with_pip"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 272,
+  "names_resolved_in_repo": 141,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

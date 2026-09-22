@@ -1,0 +1,32 @@
+{
+ "instance_id": "missionpinball__mpf-1236",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "1a9272de79eab757957e1aba112a59997f8f4f1a",
+ "status": "ok",
+ "co_edited": [
+  "mpf/devices/drop_target.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/core/logging.py": [
+   "info_log"
+  ],
+  "mpf/devices/drop_target.py": [
+   "complete",
+   "down",
+   "drop_target",
+   "reset_coil",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

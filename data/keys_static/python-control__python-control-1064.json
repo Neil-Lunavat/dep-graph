@@ -1,0 +1,43 @@
+{
+ "instance_id": "python-control__python-control-1064",
+ "repo_key": "python-control/python-control",
+ "base_commit": "d810d5aac00cf9a4215f601247d08f6f7904bcfe",
+ "status": "ok",
+ "co_edited": [
+  "control/frdata.py",
+  "control/xferfcn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/frdata.py": [
+   "arg_dt",
+   "args",
+   "defaults",
+   "dt",
+   "fresp",
+   "kwargs",
+   "self"
+  ],
+  "control/xferfcn.py": [
+   "TransferFunction",
+   "args",
+   "den",
+   "gain",
+   "kwargs",
+   "num",
+   "poles",
+   "zeros",
+   "zpk"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

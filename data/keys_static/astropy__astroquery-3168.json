@@ -1,0 +1,26 @@
+{
+ "instance_id": "astropy__astroquery-3168",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "aeccd83259aaa9ebdc9a48325791f89789e4324d",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/xmatch/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/xmatch/core.py": [
+   "cat",
+   "cat_index"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,51 @@
+{
+ "instance_id": "reflex-dev__reflex-2936",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "012151132e612475fc1a1298fc8aea5fbb6264fe",
+ "status": "ok",
+ "co_edited": [
+  "reflex/components/radix/themes/layout/list.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/components/__init__.py": [
+   "components"
+  ],
+  "reflex/components/component.py": [
+   "Component",
+   "tag"
+  ],
+  "reflex/components/el/__init__.py": [
+   "el"
+  ],
+  "reflex/components/el/elements/__init__.py": [
+   "elements"
+  ],
+  "reflex/components/el/elements/typography.py": [
+   "Li",
+   "Ol",
+   "Ul",
+   "typography"
+  ],
+  "reflex/components/radix/themes/layout/list.py": [
+   "BaseList",
+   "OrderedList",
+   "UnorderedList",
+   "props",
+   "tag"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

@@ -1,0 +1,29 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8362",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "8981e84779ff87f1a058939a5d678e5993d67aa8",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/ext/autodoc/__init__.py",
+  "sphinx/util/inspect.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/deprecation.py": [
+   "RemovedInSphinx50Warning"
+  ],
+  "sphinx/util/inspect.py": [
+   "follow_wrapped"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

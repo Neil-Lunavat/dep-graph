@@ -1,0 +1,25 @@
+{
+ "instance_id": "django__django-5158",
+ "repo_key": "django/django",
+ "base_commit": "f9de1972685ab5ab31ce483a297d85d3e119088b",
+ "status": "ok",
+ "co_edited": [
+  "django/core/management/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/conf/__init__.py": [
+   "settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.0
+}

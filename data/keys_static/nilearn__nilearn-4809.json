@@ -1,0 +1,60 @@
+{
+ "instance_id": "nilearn__nilearn-4809",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "9c22285597dcaf95018a224318bcf3b0bdaca3ad",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/_utils/docs.py",
+  "nilearn/_utils/param_validation.py",
+  "nilearn/maskers/nifti_labels_masker.py",
+  "nilearn/maskers/surface_labels_masker.py",
+  "nilearn/regions/signal_extraction.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/__init__.py": [
+   "nilearn"
+  ],
+  "nilearn/_utils/__init__.py": [
+   "_utils"
+  ],
+  "nilearn/_utils/param_validation.py": [
+   "available_reduction_strategies",
+   "check_reduction_strategy",
+   "param_validation",
+   "strategy"
+  ],
+  "nilearn/maskers/nifti_labels_masker.py": [
+   "self",
+   "strategy"
+  ],
+  "nilearn/maskers/surface_labels_masker.py": [
+   "img",
+   "img_data",
+   "labels",
+   "labels_data",
+   "n",
+   "n_time_points",
+   "reduction_function",
+   "region_signals",
+   "self",
+   "strategy"
+  ],
+  "nilearn/regions/signal_extraction.py": [
+   "strategy"
+  ],
+  "nilearn/surface/surface.py": [
+   "at_least_2d"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 49,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

@@ -1,0 +1,35 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-6123",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "763e453e7fbd2239f41ade47c88574bf81fc30c8",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/core/templaters/slicers/tracer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/core/templaters/base.py": [
+   "tag"
+  ],
+  "src/sqlfluff/core/templaters/slicers/tracer.py": [
+   "candidates",
+   "current_raw_slice",
+   "next_indices",
+   "next_slice_indices",
+   "program_counter",
+   "raw_slice_info",
+   "self",
+   "target_slice_idx"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

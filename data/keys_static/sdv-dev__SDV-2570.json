@@ -1,0 +1,53 @@
+{
+ "instance_id": "sdv-dev__SDV-2570",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "267b6a5976808ba858b46efc8821c3a749a14196",
+ "status": "ok",
+ "co_edited": [
+  "sdv/sequential/par.py",
+  "sdv/single_table/ctgan.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "sdv/utils/mixins.py"
+ ],
+ "symbol": {
+  "sdv/__init__.py": [
+   "sdv"
+  ],
+  "sdv/sequential/par.py": [
+   "PARModel",
+   "PARSynthesizer",
+   "assemble_sequences",
+   "e",
+   "import_error",
+   "self"
+  ],
+  "sdv/single_table/base.py": [
+   "BaseSingleTableSynthesizer",
+   "BaseSynthesizer"
+  ],
+  "sdv/single_table/ctgan.py": [
+   "CTGAN",
+   "CTGANSynthesizer",
+   "LossValuesMixin",
+   "TVAE",
+   "TVAESynthesizer",
+   "e",
+   "import_error",
+   "self"
+  ],
+  "sdv/utils/__init__.py": [
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 17,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

@@ -1,0 +1,49 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-3712",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "c944440469ccdc5cd79c825da46536997429850b",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/rules/conditions/And.py",
+  "src/cfnlint/rules/conditions/Not.py",
+  "src/cfnlint/rules/conditions/Or.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/cfnlint/__init__.py": [
+   "cfnlint"
+  ],
+  "src/cfnlint/context/context.py": [
+   "path"
+  ],
+  "src/cfnlint/helpers.py": [
+   "FUNCTION_RULES",
+   "helpers"
+  ],
+  "src/cfnlint/jsonschema/protocols.py": [
+   "context"
+  ],
+  "src/cfnlint/rules/conditions/And.py": [
+   "functions",
+   "validator"
+  ],
+  "src/cfnlint/rules/conditions/Not.py": [
+   "functions",
+   "validator"
+  ],
+  "src/cfnlint/rules/conditions/Or.py": [
+   "functions",
+   "validator"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.3
+}

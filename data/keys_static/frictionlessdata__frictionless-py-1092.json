@@ -1,0 +1,29 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-1092",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "eabcc12f8291ccf18dc4ef9fe17da7caef7e861d",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/types/number.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/type.py": [
+   "field"
+  ],
+  "frictionless/types/number.py": [
+   "cell",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

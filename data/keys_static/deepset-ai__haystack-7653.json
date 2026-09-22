@@ -1,0 +1,59 @@
+{
+ "instance_id": "deepset-ai__haystack-7653",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "af53e8430d93e1bca9a411cf162d72ad41dd6c02",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/embedders/openai_document_embedder.py",
+  "haystack/components/embedders/openai_text_embedder.py",
+  "haystack/components/generators/chat/openai.py",
+  "haystack/components/generators/openai.py",
+  "haystack/telemetry/_environment.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/components/embedders/openai_document_embedder.py": [
+   "api_base_url",
+   "api_key",
+   "max_retries",
+   "organization",
+   "timeout"
+  ],
+  "haystack/components/embedders/openai_text_embedder.py": [
+   "OPENAI_MAX_RETRIES",
+   "OPENAI_TIMEOUT",
+   "api_base_url",
+   "api_key",
+   "max_retries",
+   "organization",
+   "timeout"
+  ],
+  "haystack/components/generators/chat/openai.py": [
+   "api_base_url",
+   "api_key",
+   "max_retries",
+   "organization",
+   "timeout"
+  ],
+  "haystack/components/generators/openai.py": [
+   "api_base_url",
+   "api_key",
+   "max_retries",
+   "organization",
+   "timeout"
+  ],
+  "haystack/utils/auth.py": [
+   "resolve_value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 330,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

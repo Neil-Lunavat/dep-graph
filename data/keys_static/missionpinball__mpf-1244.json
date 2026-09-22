@@ -1,0 +1,36 @@
+{
+ "instance_id": "missionpinball__mpf-1244",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "ea714f2719e28818d07afbc52d774c79e148a4b3",
+ "status": "ok",
+ "co_edited": [
+  "mpf/modes/attract/code/attract.py",
+  "mpf/modes/game/code/game.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/core/mode.py": [
+   "add_mode_event_handler",
+   "machine"
+  ],
+  "mpf/modes/attract/code/attract.py": [
+   "kwargs",
+   "self",
+   "start_button_released"
+  ],
+  "mpf/modes/game/code/game.py": [
+   "request_player_add",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

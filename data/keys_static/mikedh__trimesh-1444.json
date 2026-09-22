@@ -1,0 +1,52 @@
+{
+ "instance_id": "mikedh__trimesh-1444",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "c6e6200fcddb4f8f00b60b1167a31499c5ee5b18",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/path/exchange/load.py",
+  "trimesh/path/exchange/misc.py",
+  "trimesh/path/polygons.py",
+  "trimesh/util.py",
+  "trimesh/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/path/exchange/load.py": [
+   "file_obj"
+  ],
+  "trimesh/path/exchange/misc.py": [
+   "boundaries",
+   "boundary",
+   "entities",
+   "polygon",
+   "vertices"
+  ],
+  "trimesh/path/polygons.py": [
+   "basic",
+   "buffered",
+   "i"
+  ],
+  "trimesh/util.py": [
+   "i",
+   "is_instance_named",
+   "name",
+   "obj",
+   "type_named",
+   "util"
+  ],
+  "trimesh/version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 50,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.8
+}

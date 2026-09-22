@@ -1,0 +1,44 @@
+{
+ "instance_id": "patroni__patroni-3026",
+ "repo_key": "patroni/patroni",
+ "base_commit": "e131065d746a94b093bdef24713a0eb28c3158d8",
+ "status": "ok",
+ "co_edited": [
+  "patroni/dcs/consul.py",
+  "patroni/dcs/etcd3.py",
+  "patroni/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/dcs/consul.py": [
+   "logger",
+   "retry"
+  ],
+  "patroni/dcs/etcd3.py": [
+   "_reauthenticate",
+   "authenticate",
+   "exc",
+   "logger",
+   "reauthenticated",
+   "retry",
+   "self"
+  ],
+  "patroni/utils.py": [
+   "Retry",
+   "ensure_deadline",
+   "self",
+   "stoptime",
+   "timeout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

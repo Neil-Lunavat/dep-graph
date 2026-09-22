@@ -1,0 +1,40 @@
+{
+ "instance_id": "repobee__repobee-281",
+ "repo_key": "repobee/repobee",
+ "base_commit": "ee949e194694542a578c122c75923d45d2b5f762",
+ "status": "ok",
+ "co_edited": [
+  "repobee/cli.py",
+  "repobee/ext/github.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "repobee/cli.py": [
+   "api_requires",
+   "base_parser",
+   "base_student_parser",
+   "configured",
+   "default",
+   "master_org_parser",
+   "repo_name_parser",
+   "subparsers"
+  ],
+  "repobee/ext/github.py": [
+   "_user",
+   "auth",
+   "self",
+   "token",
+   "user"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "tefra__xsdata-787",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "25f9bd4eea2deec734c21e36ac20015228910956",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/formats/dataclass/client.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/formats/dataclass/client.py": [
+   "config",
+   "encoding",
+   "obj",
+   "result",
+   "self",
+   "serializer"
+  ],
+  "xsdata/formats/dataclass/serializers/xml.py": [
+   "render"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

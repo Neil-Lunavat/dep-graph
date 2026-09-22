@@ -1,0 +1,50 @@
+{
+ "instance_id": "python__mypy-19718",
+ "repo_key": "python/mypy",
+ "base_commit": "116b92bae7b5dbf5e6bd36fd9b0c6804973e5554",
+ "status": "ok",
+ "co_edited": [
+  "mypy/checkexpr.py",
+  "mypy/main.py",
+  "mypy/options.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/checkexpr.py": [
+   "chk",
+   "identity_check",
+   "left",
+   "left_type",
+   "right",
+   "right_type",
+   "self"
+  ],
+  "mypy/main.py": [
+   "default",
+   "group",
+   "help",
+   "strict_flag",
+   "strictness_group"
+  ],
+  "mypy/options.py": [
+   "self",
+   "strict_equality_for_none"
+  ],
+  "mypy/typeops.py": [
+   "custom_special_method"
+  ],
+  "mypy/types.py": [
+   "NoneType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 36,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

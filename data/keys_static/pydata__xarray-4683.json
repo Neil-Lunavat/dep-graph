@@ -1,0 +1,60 @@
+{
+ "instance_id": "pydata__xarray-4683",
+ "repo_key": "pydata/xarray",
+ "base_commit": "19ebec52ef93ab8a640d04eb0edb7264823f6ba8",
+ "status": "ok",
+ "co_edited": [
+  "doc/conf.py",
+  "xarray/core/common.py",
+  "xarray/core/duck_array_ops.py",
+  "xarray/core/variable.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/common.py": [
+   "T",
+   "casting",
+   "copy",
+   "dtype",
+   "k",
+   "keep_attrs",
+   "kwargs",
+   "order",
+   "self",
+   "subok",
+   "v"
+  ],
+  "xarray/core/computation.py": [
+   "kwargs"
+  ],
+  "xarray/core/duck_array_ops.py": [
+   "astype",
+   "data",
+   "dtype",
+   "kwargs"
+  ],
+  "xarray/core/variable.py": [
+   "VariableType",
+   "casting",
+   "copy",
+   "dtype",
+   "k",
+   "keep_attrs",
+   "kwargs",
+   "order",
+   "self",
+   "subok",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 387,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 11.2
+}

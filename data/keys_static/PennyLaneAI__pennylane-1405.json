@@ -1,0 +1,50 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-1405",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "abeeae3e8e085fa2802ebb63acf0a042cccbd67f",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/grouping/group_observables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/__init__.py": [
+   "pennylane"
+  ],
+  "pennylane/grouping/__init__.py": [
+   "grouping"
+  ],
+  "pennylane/grouping/graph_colouring.py": [
+   "graph_colouring",
+   "largest_first",
+   "recursive_largest_first"
+  ],
+  "pennylane/grouping/group_observables.py": [
+   "coefficients",
+   "i",
+   "ind",
+   "j",
+   "observable",
+   "observables",
+   "partitioned_coeffs"
+  ],
+  "pennylane/grouping/utils.py": [
+   "binary_to_pauli",
+   "observables_to_binary_matrix"
+  ],
+  "pennylane/wires.py": [
+   "Wires",
+   "wires"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

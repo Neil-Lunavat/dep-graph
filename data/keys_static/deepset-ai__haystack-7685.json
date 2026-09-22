@@ -1,0 +1,29 @@
+{
+ "instance_id": "deepset-ai__haystack-7685",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "2428bc2a92c2cb97381523beb9662a14fe15e9b5",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/evaluators/context_relevance.py",
+  "haystack/components/evaluators/faithfulness.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/components/evaluators/context_relevance.py": [
+   "res"
+  ],
+  "haystack/components/evaluators/faithfulness.py": [
+   "res"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

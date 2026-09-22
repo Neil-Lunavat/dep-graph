@@ -1,0 +1,43 @@
+{
+ "instance_id": "tox-dev__tox-2786",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "ef323dfa24cc5e0e751ce1df7b4141ac399b1867",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/session/env_select.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/config/main.py": [
+   "options"
+  ],
+  "src/tox/session/env_select.py": [
+   "_parse_factors",
+   "_state",
+   "env_info",
+   "f",
+   "factor",
+   "factor_list",
+   "factor_set",
+   "factors",
+   "help_msg",
+   "is_active",
+   "name",
+   "raw_factors",
+   "self"
+  ],
+  "src/tox/session/state.py": [
+   "conf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

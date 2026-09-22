@@ -1,0 +1,35 @@
+{
+ "instance_id": "patroni__patroni-3119",
+ "repo_key": "patroni/patroni",
+ "base_commit": "ab9faf9471035f29c1cc83bbe77b4b9e7220af6c",
+ "status": "ok",
+ "co_edited": [
+  "patroni/config_generator.py",
+  "patroni/psycopg.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/config_generator.py": [
+   "cur"
+  ],
+  "patroni/psycopg.py": [
+   "__get_parameter_status",
+   "param_name",
+   "ret",
+   "self"
+  ],
+  "patroni/utils.py": [
+   "parse_bool"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

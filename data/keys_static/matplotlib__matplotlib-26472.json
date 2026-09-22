@@ -1,0 +1,30 @@
+{
+ "instance_id": "matplotlib__matplotlib-26472",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "e4905bf8ae7d2f58025442018606f59641daa226",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/backend_bases.py",
+  "lib/matplotlib/pyplot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/backend_bases.py": [
+   "canvas",
+   "self"
+  ],
+  "lib/matplotlib/pyplot.py": [
+   "get_fignums"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

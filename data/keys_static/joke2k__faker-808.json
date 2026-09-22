@@ -1,0 +1,34 @@
+{
+ "instance_id": "joke2k__faker-808",
+ "repo_key": "joke2k/faker",
+ "base_commit": "fc546bca9b4f411e8565aeb5ddd9ccee8de59494",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/lorem/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/providers/__init__.py": [
+   "length",
+   "random_sample"
+  ],
+  "faker/providers/lorem/__init__.py": [
+   "ext_word_list",
+   "nb",
+   "self",
+   "unique",
+   "word_list",
+   "words"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

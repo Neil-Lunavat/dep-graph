@@ -1,0 +1,45 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-13628",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "6a3fc959b684e2f4b2fab28b27d5fa4018acb6a3",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/calibration.py",
+  "sklearn/metrics/classification.py",
+  "sklearn/metrics/ranking.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/calibration.py": [
+   "labels",
+   "y_prob",
+   "y_true"
+  ],
+  "sklearn/metrics/classification.py": [
+   "labels",
+   "pos_label",
+   "y_prob",
+   "y_true"
+  ],
+  "sklearn/preprocessing/__init__.py": [
+   "preprocessing"
+  ],
+  "sklearn/preprocessing/label.py": [
+   "LabelBinarizer",
+   "label_binarize"
+  ],
+  "sklearn/utils/validation.py": [
+   "check_consistent_length"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 100,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

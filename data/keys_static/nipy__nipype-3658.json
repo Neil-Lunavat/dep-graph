@@ -1,0 +1,25 @@
+{
+ "instance_id": "nipy__nipype-3658",
+ "repo_key": "nipy/nipype",
+ "base_commit": "e03ab6f99f85fb54bc5f1ed2d9222af8f5bd66e0",
+ "status": "ok",
+ "co_edited": [
+  "nipype/interfaces/mrtrix3/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nipype/interfaces/base/traits_extension.py": [
+   "exists"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,39 @@
+{
+ "instance_id": "python-cmd2__cmd2-666",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "7a20c2e312513b8a84a6cfb56263cac9c67df04d",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/utils.py": [
+   "ByteBuf",
+   "NEWLINES",
+   "StdSim",
+   "_write_bytes",
+   "b",
+   "buffer",
+   "inner_stream",
+   "line_buffering",
+   "newline",
+   "self",
+   "std_sim_instance",
+   "stderr",
+   "stream",
+   "to_write",
+   "write"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 67,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

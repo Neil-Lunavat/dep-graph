@@ -1,0 +1,34 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-281",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "f87b0e2f3f20b19d69fd4dcf854d4b4c591ec232",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/plugins/rule_md_005.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/plugins/rule_md_005.py": [
+   "__list_stack",
+   "__ordered_list_starts",
+   "__report_issue",
+   "__unordered_list_indents",
+   "context",
+   "expected_indent",
+   "extra_data",
+   "list_level",
+   "self",
+   "token"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 47,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

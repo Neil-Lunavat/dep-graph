@@ -1,0 +1,73 @@
+{
+ "instance_id": "patroni__patroni-3370",
+ "repo_key": "patroni/patroni",
+ "base_commit": "2823adf747be78382dcc35c13228d9a7c12e8113",
+ "status": "ok",
+ "co_edited": [
+  "patroni/ha.py",
+  "patroni/postgresql/sync.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/collections.py": [
+   "CaseInsensitiveDict",
+   "CaseInsensitiveSet",
+   "add"
+  ],
+  "patroni/dcs/__init__.py": [
+   "Cluster",
+   "Member",
+   "dcs"
+  ],
+  "patroni/ha.py": [
+   "allow_promote",
+   "cluster",
+   "current_state",
+   "picked",
+   "self",
+   "state_handler",
+   "sync_state",
+   "voters"
+  ],
+  "patroni/postgresql/__init__.py": [
+   "name",
+   "sync_handler"
+  ],
+  "patroni/postgresql/sync.py": [
+   "_ReplicaList",
+   "_should_cascade",
+   "_ssn_data",
+   "application_name",
+   "current_state",
+   "has_star",
+   "member",
+   "members",
+   "num",
+   "numsync",
+   "postgresql",
+   "replica",
+   "replication",
+   "row",
+   "self",
+   "sort_col",
+   "sync",
+   "sync_confirmed"
+  ],
+  "patroni/quorum.py": [
+   "numsync_confirmed"
+  ],
+  "patroni/tags.py": [
+   "replicatefrom"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 183,
+  "names_resolved_in_repo": 95,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

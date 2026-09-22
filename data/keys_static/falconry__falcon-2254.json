@@ -1,0 +1,49 @@
+{
+ "instance_id": "falconry__falcon-2254",
+ "repo_key": "falconry/falcon",
+ "base_commit": "cbca63dc7739720eab856f48b32f9e782438be7a",
+ "status": "ok",
+ "co_edited": [
+  "falcon/asgi/app.py",
+  "falcon/asgi/ws.py",
+  "falcon/routing/static.py",
+  "falcon/util/sync.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/asgi/app.py": [
+   "loop",
+   "watch_disconnect",
+   "watcher"
+  ],
+  "falcon/asgi/ws.py": [
+   "_loop",
+   "_pump",
+   "_pump_task",
+   "self"
+  ],
+  "falcon/routing/static.py": [
+   "_loop",
+   "self"
+  ],
+  "falcon/util/__init__.py": [
+   "util"
+  ],
+  "falcon/util/deprecation.py": [
+   "deprecated"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

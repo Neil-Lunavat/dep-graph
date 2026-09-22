@@ -1,0 +1,25 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5616",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "80a8bbdb99472241754781a08945df9fe6bcd73c",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/aws.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/resources/aws.py": [
+   "output_dir"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

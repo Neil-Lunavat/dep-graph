@@ -1,0 +1,30 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1246",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "f6b47c9a84de8533ccb66e66b93d2c23dc393e41",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/utils.py": [
+   "_has_default_index",
+   "index",
+   "native_frame_or_series",
+   "native_namespace",
+   "native_obj",
+   "obj_any"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

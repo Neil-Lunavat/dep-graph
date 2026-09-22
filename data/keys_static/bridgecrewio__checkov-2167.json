@@ -1,0 +1,58 @@
+{
+ "instance_id": "bridgecrewio__checkov-2167",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "808f3e95d3c6de42e70de5a3789bfef386077573",
+ "status": "ok",
+ "co_edited": [
+  "checkov/common/bridgecrew/platform_integration.py",
+  "checkov/terraform/context_parsers/base_parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/common/bridgecrew/platform_integration.py": [
+   "get_checkov_mapping_metadata",
+   "get_ckv_to_bc_id_mapping",
+   "get_id_mapping",
+   "self"
+  ],
+  "checkov/terraform/context_parsers/base_parser.py": [
+   "CLOSE_CURLY",
+   "OPEN_CURLY",
+   "_",
+   "_clean_line",
+   "collect_skip_comments",
+   "context",
+   "definition_blocks",
+   "end_line",
+   "entity_context_path",
+   "file",
+   "file_lines",
+   "filtered_line_numbers",
+   "filtered_lines",
+   "i",
+   "ind",
+   "is_optional_comment_line",
+   "line",
+   "line_num",
+   "line_without_whitespace",
+   "parsed_file_lines",
+   "res",
+   "self",
+   "start_line",
+   "start_line_idx",
+   "start_line_num",
+   "tf_file",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 62,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

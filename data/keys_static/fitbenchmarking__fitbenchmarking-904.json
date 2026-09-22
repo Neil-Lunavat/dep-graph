@@ -1,0 +1,36 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-904",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "9a63e9316c755bfe24a3bbb2cd821d2bb9a45920",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/jacobian/analytic_jacobian.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/jacobian/analytic_jacobian.py": [
+   "J",
+   "kwargs",
+   "out",
+   "params",
+   "rx",
+   "self",
+   "x",
+   "y"
+  ],
+  "fitbenchmarking/jacobian/base_jacobian.py": [
+   "cost_func",
+   "problem"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

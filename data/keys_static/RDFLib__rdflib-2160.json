@@ -1,0 +1,25 @@
+{
+ "instance_id": "RDFLib__rdflib-2160",
+ "repo_key": "rdflib/rdflib",
+ "base_commit": "8213b7465783e636a394c86fd2387a44523d9c2f",
+ "status": "ok",
+ "co_edited": [
+  "rdflib/plugins/serializers/trig.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "rdflib/plugins/serializers/trig.py": [
+   "context"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.7
+}

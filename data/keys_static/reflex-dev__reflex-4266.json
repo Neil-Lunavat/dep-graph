@@ -1,0 +1,29 @@
+{
+ "instance_id": "reflex-dev__reflex-4266",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "98394ceb8ec40ee75c8f434b751316544cb81ec2",
+ "status": "ok",
+ "co_edited": [
+  "reflex/config.py",
+  "reflex/utils/prerequisites.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/config.py": [
+   "static_page_generation_timeout"
+  ],
+  "reflex/utils/prerequisites.py": [
+   "config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

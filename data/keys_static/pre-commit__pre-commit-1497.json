@@ -1,0 +1,29 @@
+{
+ "instance_id": "pre-commit__pre-commit-1497",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "2f25085d60bf953fea457a3240c91886145dbcc5",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/git.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/git.py": [
+   "env",
+   "path"
+  ],
+  "pre_commit/util.py": [
+   "cmd_output_b"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

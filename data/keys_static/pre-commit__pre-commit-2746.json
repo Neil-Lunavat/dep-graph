@@ -1,0 +1,34 @@
+{
+ "instance_id": "pre-commit__pre-commit-2746",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "0359fae2da2aadb2fbd3afae1777edd3aa856cc9",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/commands/migrate_config.py",
+  "pre_commit/repository.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/commands/migrate_config.py": [
+   "_migrate_python_venv",
+   "contents"
+  ],
+  "pre_commit/hook.py": [
+   "language",
+   "src"
+  ],
+  "pre_commit/repository.py": [
+   "hook"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

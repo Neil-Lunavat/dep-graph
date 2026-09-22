@@ -1,0 +1,52 @@
+{
+ "instance_id": "pyvista__pyvista-4311",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "db6ee8dd4a747b8864caae36c5d05883976a3ae5",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/datasetattributes.py",
+  "pyvista/core/filters/rectilinear_grid.py",
+  "pyvista/core/grid.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/dataset.py": [
+   "cell_data"
+  ],
+  "pyvista/core/datasetattributes.py": [
+   "keys",
+   "name",
+   "self"
+  ],
+  "pyvista/core/filters/__init__.py": [
+   "_get_output"
+  ],
+  "pyvista/core/filters/rectilinear_grid.py": [
+   "alg",
+   "name",
+   "out",
+   "pass_cell_data",
+   "pass_cell_ids",
+   "self"
+  ],
+  "pyvista/core/grid.py": [
+   "_from_arrays",
+   "arg0_is_arr",
+   "arg1_is_arr",
+   "arg2_is_arr",
+   "args",
+   "check_duplicates",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 137,
+  "names_resolved_in_repo": 52,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 3.4
+}

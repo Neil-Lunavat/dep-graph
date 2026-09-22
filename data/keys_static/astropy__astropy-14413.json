@@ -1,0 +1,46 @@
+{
+ "instance_id": "astropy__astropy-14413",
+ "repo_key": "astropy/astropy",
+ "base_commit": "34d79ea59b3ba25820dfe7fc9782e9014826e8b0",
+ "status": "ok",
+ "co_edited": [
+  "astropy/units/format/console.py",
+  "astropy/units/format/latex.py",
+  "astropy/units/format/unicode_format.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/units/format/console.py": [
+   "_format_mantissa",
+   "cls",
+   "console",
+   "f",
+   "fraclength",
+   "m",
+   "parts",
+   "s"
+  ],
+  "astropy/units/format/latex.py": [
+   "cls",
+   "format_exponential_notation",
+   "s",
+   "unit"
+  ],
+  "astropy/units/format/unicode_format.py": [
+   "cls",
+   "m",
+   "mapping",
+   "number"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 38,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 23.1
+}

@@ -1,0 +1,56 @@
+{
+ "instance_id": "pdm-project__pdm-3315",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "8e739451d9f106afbf91f9c50089a8cbc47fbf74",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/cli/commands/run.py",
+  "src/pdm/project/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/cli/commands/run.py": [
+   "Task",
+   "args",
+   "content",
+   "display_task",
+   "is_verbose",
+   "kind",
+   "project",
+   "self",
+   "short_description",
+   "task"
+  ],
+  "src/pdm/core.py": [
+   "ui"
+  ],
+  "src/pdm/project/config.py": [
+   "coerce",
+   "default",
+   "ensure_boolean",
+   "env_var"
+  ],
+  "src/pdm/project/core.py": [
+   "config",
+   "core"
+  ],
+  "src/pdm/termui.py": [
+   "DETAIL",
+   "NORMAL",
+   "Verbosity",
+   "err",
+   "termui",
+   "verbosity"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

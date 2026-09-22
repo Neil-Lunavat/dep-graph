@@ -1,0 +1,51 @@
+{
+ "instance_id": "psf__black-2758",
+ "repo_key": "psf/black",
+ "base_commit": "b3b341b44fde044938daa6691fa1064ea240ff96",
+ "status": "ok",
+ "co_edited": [
+  "src/black/parsing.py",
+  "src/blib2to3/pgen2/grammar.py",
+  "src/blib2to3/pygram.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/mode.py": [
+   "Feature",
+   "PATTERN_MATCHING",
+   "supports_feature"
+  ],
+  "src/black/parsing.py": [
+   "column",
+   "errors",
+   "exc",
+   "faulty_line",
+   "grammars",
+   "lineno",
+   "target_versions",
+   "te"
+  ],
+  "src/blib2to3/pgen2/grammar.py": [
+   "new",
+   "self",
+   "version"
+  ],
+  "src/blib2to3/pygram.py": [
+   "pygram",
+   "python_grammar",
+   "python_grammar_no_print_statement_no_exec_statement",
+   "python_grammar_no_print_statement_no_exec_statement_async_keywords",
+   "python_grammar_soft_keywords"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,58 @@
+{
+ "instance_id": "zarr-developers__zarr-python-1968",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "b3010fcddb5f14aaed51bf456888e636df8c2697",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/abc/codec.py",
+  "src/zarr/array.py",
+  "src/zarr/indexing.py",
+  "src/zarr/store/remote.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/abc/codec.py": [
+   "batch_info"
+  ],
+  "src/zarr/abc/store.py": [
+   "writeable"
+  ],
+  "src/zarr/array.py": [
+   "self",
+   "store_path"
+  ],
+  "src/zarr/indexing.py": [
+   "chunks_multi_index_broadcast",
+   "dim_chunks",
+   "i",
+   "is_bool",
+   "is_bool_array",
+   "is_bool_list",
+   "is_int_or_bool_iterable",
+   "is_integer",
+   "is_integer_array",
+   "is_integer_list",
+   "ndim",
+   "s",
+   "selection",
+   "selection_normalized",
+   "x"
+  ],
+  "src/zarr/store/core.py": [
+   "store"
+  ],
+  "src/zarr/store/remote.py": [
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 109,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.6
+}

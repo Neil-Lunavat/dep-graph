@@ -1,0 +1,41 @@
+{
+ "instance_id": "mwaskom__seaborn-2996",
+ "repo_key": "mwaskom/seaborn",
+ "base_commit": "a5816697cbcab195a987f5e074204a052c13e1d5",
+ "status": "ok",
+ "co_edited": [
+  "seaborn/_compat.py",
+  "seaborn/_core/plot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "seaborn/_compat.py": [
+   "engine",
+   "fig",
+   "set_layout_engine"
+  ],
+  "seaborn/_core/plot.py": [
+   "Default",
+   "_figure",
+   "_layout_spec",
+   "_target",
+   "default",
+   "engine",
+   "engine_default",
+   "layout_engine",
+   "new",
+   "p",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "yukinarit__pyserde-229",
+ "repo_key": "yukinarit/pyserde",
+ "base_commit": "bd9039ef1ffac752f7566eb39fc2b3c0a18f7728",
+ "status": "ok",
+ "co_edited": [
+  "examples/union_operator.py",
+  "serde/compat.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/union_operator.py": [
+   "d"
+  ],
+  "serde/compat.py": [
+   "args",
+   "is_none",
+   "is_typing_union",
+   "is_union_type",
+   "typ"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

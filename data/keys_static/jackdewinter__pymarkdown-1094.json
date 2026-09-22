@@ -1,0 +1,25 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1094",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "e4ef5c6b193ad3f5013e8a7721a0379e07cc1178",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/links/link_parse_helper.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/links/link_parse_helper.py": [
+   "tabified_text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

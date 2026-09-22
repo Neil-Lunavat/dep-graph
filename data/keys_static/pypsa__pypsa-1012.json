@@ -1,0 +1,38 @@
+{
+ "instance_id": "pypsa__pypsa-1012",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "8093c685c87d9666e7e7dd3bdb35f7a4ca29f12f",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/optimization/optimize.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/descriptors.py": [
+   "get_as_dense"
+  ],
+  "pypsa/optimization/optimize.py": [
+   "attr",
+   "c",
+   "cost",
+   "cost_type",
+   "ds",
+   "lookup",
+   "m",
+   "n",
+   "objective",
+   "operation",
+   "sns"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

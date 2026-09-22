@@ -1,0 +1,44 @@
+{
+ "instance_id": "stanfordnlp__dspy-8607",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "aca8ebd4d7f0e4da249e7873d359fb730e709ddd",
+ "status": "ok",
+ "co_edited": [
+  "dspy/clients/base_lm.py",
+  "dspy/dsp/utils/settings.py",
+  "dspy/predict/predict.py",
+  "dspy/utils/dummies.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/clients/base_lm.py": [
+   "caller_modules",
+   "entry",
+   "history",
+   "module",
+   "self",
+   "update_history"
+  ],
+  "dspy/dsp/utils/settings.py": [
+   "settings"
+  ],
+  "dspy/predict/predict.py": [
+   "kwargs",
+   "trace"
+  ],
+  "dspy/utils/dummies.py": [
+   "entry",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 54,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

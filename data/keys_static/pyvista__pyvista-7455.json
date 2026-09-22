@@ -1,0 +1,35 @@
+{
+ "instance_id": "pyvista__pyvista-7455",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "a7269d5477de1687f92b79d55ab10694c13c0410",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/dataobject.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/__init__.py": [
+   "pyvista"
+  ],
+  "pyvista/core/dataobject.py": [
+   "_warn_imagedata_direction_matrix",
+   "file_ext",
+   "mesh",
+   "self"
+  ],
+  "pyvista/core/grid.py": [
+   "ImageData",
+   "direction_matrix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 5.2
+}

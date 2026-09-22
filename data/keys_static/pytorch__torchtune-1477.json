@@ -1,0 +1,33 @@
+{
+ "instance_id": "pytorch__torchtune-1477",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "069bc4dcd9e7d6795efd042dbc64d145e8a785d3",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/models/llama3/_tokenizer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/data/_utils.py": [
+   "truncate"
+  ],
+  "torchtune/models/llama3/_tokenizer.py": [
+   "add_eos",
+   "eos_id",
+   "mask",
+   "max_seq_len",
+   "self",
+   "tokens"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

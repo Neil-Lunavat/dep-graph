@@ -1,0 +1,48 @@
+{
+ "instance_id": "tobymao__sqlglot-4106",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "f8d4dc4bab90cd369eef090c23b81160a7ae78fc",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/expressions.py",
+  "sqlglot/generator.py",
+  "sqlglot/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/expressions.py": [
+   "Func",
+   "Star",
+   "UnpackColumns",
+   "exp"
+  ],
+  "sqlglot/generator.py": [
+   "e",
+   "self",
+   "sql"
+  ],
+  "sqlglot/parser.py": [
+   "_",
+   "_match_text_seq",
+   "_parse_function",
+   "_parse_star_op",
+   "_parse_star_ops",
+   "advance",
+   "self"
+  ],
+  "sqlglot/tokens.py": [
+   "STAR",
+   "TokenType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 38,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

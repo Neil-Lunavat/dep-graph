@@ -1,0 +1,60 @@
+{
+ "instance_id": "pdm-project__pdm-3237",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "fba5a6a65c37c2b9307c4d6c8ce3aacf7abb7c92",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/cli/commands/build.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/builders/sdist.py": [
+   "SdistBuilder"
+  ],
+  "src/pdm/builders/wheel.py": [
+   "WheelBuilder",
+   "build"
+  ],
+  "src/pdm/cli/commands/build.py": [
+   "artifacts",
+   "dest",
+   "dest_dir",
+   "options",
+   "project",
+   "sdist",
+   "sdist_file",
+   "sdist_fp",
+   "sdist_name",
+   "sdist_out",
+   "tf",
+   "uv_build_cmd",
+   "verbose",
+   "wheel",
+   "whl",
+   "whl_file"
+  ],
+  "src/pdm/core.py": [
+   "ui",
+   "uv_cmd"
+  ],
+  "src/pdm/project/core.py": [
+   "config",
+   "core",
+   "environment",
+   "root"
+  ],
+  "src/pdm/termui.py": [
+   "echo"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 142,
+  "names_resolved_in_repo": 95,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 19,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

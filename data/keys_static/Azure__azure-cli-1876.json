@@ -1,0 +1,37 @@
+{
+ "instance_id": "Azure__azure-cli-1876",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "62dab24154f910ff7f3ef2b6b3783945b58e9098",
+ "status": "ok",
+ "co_edited": [
+  "src/azure-cli-core/azure/cli/core/_util.py",
+  "src/azure-cli-core/azure/cli/core/application.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/azure-cli-core/azure/cli/core/_util.py": [
+   "allow_binary",
+   "content",
+   "encoding",
+   "f",
+   "file_path",
+   "input_file",
+   "read_file_content",
+   "throw_on_empty"
+  ],
+  "src/azure-cli-core/azure/cli/core/application.py": [
+   "content",
+   "path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.9
+}

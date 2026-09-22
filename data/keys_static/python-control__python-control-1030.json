@@ -1,0 +1,25 @@
+{
+ "instance_id": "python-control__python-control-1030",
+ "repo_key": "python-control/python-control",
+ "base_commit": "bb82883cb4abf5171e82ae4c025c012f5218b6a7",
+ "status": "ok",
+ "co_edited": [
+  "control/timeplot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/timeplot.py": [
+   "response"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

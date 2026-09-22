@@ -1,0 +1,57 @@
+{
+ "instance_id": "sympy__sympy-13265",
+ "repo_key": "sympy/sympy",
+ "base_commit": "1599a0d7cdf529c2d0db3a68e74a9aabb8334aa5",
+ "status": "ok",
+ "co_edited": [
+  "sympy/simplify/simplify.py",
+  "sympy/simplify/trigsimp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/mul.py": [
+   "Mul"
+  ],
+  "sympy/core/singleton.py": [
+   "S"
+  ],
+  "sympy/functions/elementary/exponential.py": [
+   "exp"
+  ],
+  "sympy/functions/elementary/hyperbolic.py": [
+   "cosh",
+   "sinh",
+   "tanh"
+  ],
+  "sympy/simplify/simplify.py": [
+   "bottom_up",
+   "short"
+  ],
+  "sympy/simplify/trigsimp.py": [
+   "c",
+   "ee",
+   "expr",
+   "exptrigsimp",
+   "f",
+   "k",
+   "m",
+   "newd",
+   "newexpr",
+   "rv",
+   "rvd",
+   "sign",
+   "signlog",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 120,
+  "names_resolved_in_repo": 124,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 12.7
+}

@@ -1,0 +1,50 @@
+{
+ "instance_id": "python-cmd2__cmd2-752",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "0f9fcfcd95ee7fd30ebddabbf2068d8ddb725364",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py",
+  "cmd2/parsing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "_input_line_to_statement",
+   "add_to_history",
+   "args",
+   "line",
+   "macros",
+   "self",
+   "statement",
+   "statement_parser",
+   "used_macros"
+  ],
+  "cmd2/history.py": [
+   "HistoryItem"
+  ],
+  "cmd2/parsing.py": [
+   "Statement",
+   "_expand",
+   "command_name",
+   "line",
+   "parse",
+   "parse_command_only",
+   "rawinput",
+   "self",
+   "to_parse",
+   "tokenize",
+   "tokens"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 118,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 29,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

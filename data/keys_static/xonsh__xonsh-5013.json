@@ -1,0 +1,73 @@
+{
+ "instance_id": "xonsh__xonsh-5013",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "04cba39a53ccb7bb8e8a5a23939ed8d000687d6b",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/lexer.py",
+  "xonsh/parsers/completion_context.py",
+  "xonsh/tokenize.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/lexer.py": [
+   "Lexer",
+   "_new_token",
+   "_pymode",
+   "_token_stream",
+   "_tolerant",
+   "get_tokens",
+   "key",
+   "lexpos",
+   "lineno",
+   "new_tok",
+   "pymode",
+   "s",
+   "self",
+   "st",
+   "state",
+   "tok",
+   "token",
+   "token_map",
+   "tokenize_ioredirects",
+   "tolerant",
+   "typ"
+  ],
+  "xonsh/parsers/completion_context.py": [
+   "lexer",
+   "self"
+  ],
+  "xonsh/tokenize.py": [
+   "ContStr",
+   "Funny",
+   "IOREDIRECT",
+   "Name_RE",
+   "Number",
+   "PseudoExtras",
+   "PseudoToken",
+   "PseudoTokenWithoutIO",
+   "Whitespace",
+   "_tokenize",
+   "consumed",
+   "empty",
+   "encoding",
+   "group",
+   "pos",
+   "readline",
+   "rl_gen",
+   "tokenize",
+   "tokenize_ioredirects",
+   "tolerant"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 81,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

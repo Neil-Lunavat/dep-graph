@@ -1,0 +1,36 @@
+{
+ "instance_id": "nilearn__nilearn-3823",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "bce754beea677d4d4a51191e21c64d09002f1429",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/_utils/data_gen.py",
+  "nilearn/interfaces/bids/_utils.py",
+  "nilearn/interfaces/fmriprep/load_confounds_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/_utils/data_gen.py": [
+   "columns",
+   "data",
+   "entities_to_include",
+   "fields",
+   "file_path",
+   "gifti_path",
+   "hemi",
+   "length",
+   "rand_gen",
+   "write_fake_bold_gifti"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 73,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 6.6
+}

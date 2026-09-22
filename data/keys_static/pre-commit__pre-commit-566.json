@@ -1,0 +1,37 @@
+{
+ "instance_id": "pre-commit__pre-commit-566",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "dd182fb42e0820d25ca865249d8c86fe98a0c8ec",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/commands/install_uninstall.py",
+  "pre_commit/commands/run.py",
+  "pre_commit/main.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/commands/install_uninstall.py": [
+   "f",
+   "hook_specific_contents",
+   "hook_type"
+  ],
+  "pre_commit/commands/run.py": [
+   "_",
+   "args",
+   "getter"
+  ],
+  "pre_commit/util.py": [
+   "resource_filename"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

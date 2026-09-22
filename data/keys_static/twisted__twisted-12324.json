@@ -1,0 +1,30 @@
+{
+ "instance_id": "twisted__twisted-12324",
+ "repo_key": "twisted/twisted",
+ "base_commit": "05cc97afa3c9c00386e5cd0c50e0807e9ef963d4",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/logger/_format.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/logger/_format.py": [
+   "_wrapped",
+   "format_spec",
+   "keycall",
+   "name",
+   "name_",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

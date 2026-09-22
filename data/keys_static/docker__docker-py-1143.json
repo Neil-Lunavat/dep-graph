@@ -1,0 +1,31 @@
+{
+ "instance_id": "docker__docker-py-1143",
+ "repo_key": "docker/docker-py",
+ "base_commit": "2d3bda84de39a75e560fc79512143d43e5d61226",
+ "status": "ok",
+ "co_edited": [
+  "docker/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/utils/utils.py": [
+   "DEFAULT_HTTP_HOST",
+   "addr",
+   "address_parts",
+   "host",
+   "path",
+   "port",
+   "proto"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

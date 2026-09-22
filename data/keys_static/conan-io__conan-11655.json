@@ -1,0 +1,58 @@
+{
+ "instance_id": "conan-io__conan-11655",
+ "repo_key": "conan-io/conan",
+ "base_commit": "442d11232b52a24b97a0470b7e17a1bdb3ec97ea",
+ "status": "ok",
+ "co_edited": [
+  "conan/tools/cmake/presets.py",
+  "conan/tools/system/package_manager.py",
+  "conans/model/conf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/tools/cmake/presets.py": [
+   "_append_user_preset_path",
+   "_forced_schema_2",
+   "_schema_version",
+   "cmake_preset",
+   "conanfile",
+   "data",
+   "default",
+   "i",
+   "preset",
+   "preset_path",
+   "preset_type",
+   "ret",
+   "save_cmake_user_presets",
+   "toolchain_file",
+   "version"
+  ],
+  "conan/tools/system/package_manager.py": [
+   "_conanfile",
+   "_conanfile_run",
+   "accepted_check_codes",
+   "accepted_install_codes",
+   "accepted_returns",
+   "accepted_update_codes",
+   "command",
+   "ret",
+   "self"
+  ],
+  "conans/errors.py": [
+   "ConanException"
+  ],
+  "conans/util/files.py": [
+   "load"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 98,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

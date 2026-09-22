@@ -1,0 +1,48 @@
+{
+ "instance_id": "xonsh__xonsh-4920",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "6fa83f830579d2bad39b1842911951f55a9da22c",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/prompt/gitstatus.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/__init__.py": [
+   "xonsh"
+  ],
+  "xonsh/dirstack.py": [
+   "_get_cwd",
+   "dirstack"
+  ],
+  "xonsh/prompt/base.py": [
+   "PromptField",
+   "update",
+   "updator",
+   "wrap"
+  ],
+  "xonsh/prompt/gitstatus.py": [
+   "GitStatusPromptField",
+   "_GSField",
+   "_GSInfo",
+   "_GitDir",
+   "_cwd",
+   "ctx",
+   "cwd",
+   "inside_repo",
+   "repo_path",
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 91,
+  "names_resolved_in_repo": 80,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

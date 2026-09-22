@@ -1,0 +1,21 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-4149",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "8e57c919f45e57f6b9199aaae415d423ad033c5d",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

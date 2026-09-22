@@ -1,0 +1,128 @@
+{
+ "instance_id": "streamlink__streamlink-1721",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "4924b8a15a45de36b459cf1ed20296d414a85c15",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/facebook.py",
+  "src/streamlink/plugins/funimationnow.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/__init__.py": [
+   "streamlink"
+  ],
+  "src/streamlink/compat.py": [
+   "compat"
+  ],
+  "src/streamlink/options.py": [
+   "argument_name",
+   "requires",
+   "sensitive"
+  ],
+  "src/streamlink/plugin/__init__.py": [
+   "plugin"
+  ],
+  "src/streamlink/plugin/api/__init__.py": [
+   "api",
+   "http"
+  ],
+  "src/streamlink/plugin/api/utils.py": [
+   "itertags",
+   "utils"
+  ],
+  "src/streamlink/plugin/api/validate.py": [
+   "text",
+   "validate"
+  ],
+  "src/streamlink/plugin/plugin.py": [
+   "clear_cookies",
+   "get_option",
+   "logger",
+   "save_cookies",
+   "session",
+   "url"
+  ],
+  "src/streamlink/plugins/facebook.py": [
+   "_playlist_re",
+   "_plurl_re",
+   "_src_re",
+   "match",
+   "playlist",
+   "res",
+   "self",
+   "stream_url",
+   "streams",
+   "url",
+   "vod_urls"
+  ],
+  "src/streamlink/plugins/funimationnow.py": [
+   "CSRF_NAME",
+   "__name__",
+   "api_base",
+   "api_url",
+   "args",
+   "bypass_incapsula",
+   "c",
+   "d",
+   "email",
+   "episode_info",
+   "error",
+   "exp",
+   "experience_id",
+   "get",
+   "headers",
+   "i",
+   "input",
+   "item",
+   "js",
+   "jsm",
+   "kwargs",
+   "language",
+   "log",
+   "login",
+   "login_api_url",
+   "login_csrf",
+   "login_schema",
+   "login_url",
+   "m",
+   "method",
+   "password",
+   "pinst_id",
+   "post",
+   "r",
+   "request",
+   "res",
+   "rlanguage",
+   "self",
+   "show_api_url",
+   "sources",
+   "sources_api_url",
+   "subtitle",
+   "success",
+   "token",
+   "url",
+   "x"
+  ],
+  "src/streamlink/stream/dash.py": [
+   "DASHStream",
+   "parse_manifest"
+  ],
+  "src/streamlink/stream/http.py": [
+   "HTTPStream"
+  ],
+  "src/streamlink/utils/__init__.py": [
+   "parse_json"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 371,
+  "names_resolved_in_repo": 271,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 27,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

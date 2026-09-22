@@ -1,0 +1,28 @@
+{
+ "instance_id": "sdv-dev__SDV-2646",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "47f915bf4db31a8f37833129e9f6ad71a5ea627b",
+ "status": "ok",
+ "co_edited": [
+  "sdv/sequential/par.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/sequential/par.py": [
+   "constraint"
+  ],
+  "sdv/single_table/base.py": [
+   "add_constraints"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

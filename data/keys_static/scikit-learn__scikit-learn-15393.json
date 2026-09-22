@@ -1,0 +1,25 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-15393",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "37ac3fd1252e4d333bf7bc7dad2010def6d6d0b0",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/impute/_iterative.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/impute/_iterative.py": [
+   "n"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

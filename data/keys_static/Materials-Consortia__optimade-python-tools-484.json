@@ -1,0 +1,33 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-484",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "f14c67f80a837e0f4ed53937029a2c769ceab2e8",
+ "status": "ok",
+ "co_edited": [
+  "optimade/models/jsonapi.py",
+  "optimade/models/links.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/models/jsonapi.py": [
+   "Config",
+   "Link",
+   "check_additional_keys_are_links",
+   "cls",
+   "extra",
+   "key",
+   "value",
+   "values"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

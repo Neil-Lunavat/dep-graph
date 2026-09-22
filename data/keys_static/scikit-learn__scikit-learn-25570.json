@@ -1,0 +1,27 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25570",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "cd25abee0ad0ac95225d4a9be8948eff69f49690",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/compose/_column_transformer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/compose/_column_transformer.py": [
+   "X",
+   "Xs",
+   "feature_names_outs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

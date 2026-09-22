@@ -1,0 +1,49 @@
+{
+ "instance_id": "deepset-ai__haystack-6841",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "0fbb0655f0ddcb5ae07f90872c7bf7b2d5df72b9",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/embedders/openai_document_embedder.py",
+  "haystack/components/embedders/openai_text_embedder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/__init__.py": [
+   "haystack"
+  ],
+  "haystack/components/embedders/openai_document_embedder.py": [
+   "batch",
+   "client",
+   "dimensions",
+   "model",
+   "response",
+   "self"
+  ],
+  "haystack/components/embedders/openai_text_embedder.py": [
+   "client",
+   "dimensions",
+   "model",
+   "response",
+   "self",
+   "text_to_embed"
+  ],
+  "haystack/core/component/component.py": [
+   "component"
+  ],
+  "haystack/core/serialization.py": [
+   "default_from_dict",
+   "default_to_dict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 113,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

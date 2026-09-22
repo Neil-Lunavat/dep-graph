@@ -1,0 +1,55 @@
+{
+ "instance_id": "dask__dask-11801",
+ "repo_key": "dask/dask",
+ "base_commit": "b88fbbbb22722b24331c5b4ce76f522c069fdd92",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/creation.py",
+  "dask/array/reductions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/core.py": [
+   "dtype"
+  ],
+  "dask/array/creation.py": [
+   "arange",
+   "blockstart",
+   "blockstop",
+   "bs",
+   "chunks",
+   "dtype",
+   "elem_count",
+   "like",
+   "r",
+   "start",
+   "step",
+   "stop"
+  ],
+  "dask/array/numpy_compat.py": [
+   "NUMPY_GE_200"
+  ],
+  "dask/array/reductions.py": [
+   "_custom_quantile",
+   "a",
+   "func",
+   "interpolation",
+   "keepdims",
+   "kwargs",
+   "method",
+   "numbagg",
+   "q",
+   "weights"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 90,
+  "names_resolved_in_repo": 78,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 26.0
+}

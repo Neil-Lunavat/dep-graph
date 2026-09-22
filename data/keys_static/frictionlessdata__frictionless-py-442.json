@@ -1,0 +1,67 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-442",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "2b27d87ac042119d93320051c5be78d9ebf954b6",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/extract/main.py",
+  "frictionless/extract/package.py",
+  "frictionless/extract/resource.py",
+  "frictionless/extract/table.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/extract/main.py": [
+   "extract",
+   "options",
+   "process",
+   "source",
+   "source_type",
+   "stream"
+  ],
+  "frictionless/extract/package.py": [
+   "data",
+   "extract_package",
+   "key",
+   "process",
+   "resource",
+   "result",
+   "row",
+   "source",
+   "stream"
+  ],
+  "frictionless/extract/resource.py": [
+   "data",
+   "extract_resource",
+   "process",
+   "resource",
+   "row",
+   "source",
+   "stream"
+  ],
+  "frictionless/extract/table.py": [
+   "data",
+   "process",
+   "read_row_stream",
+   "row",
+   "stream",
+   "table"
+  ],
+  "frictionless/resource.py": [
+   "read_row_stream"
+  ],
+  "frictionless/table.py": [
+   "row_stream"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 124,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

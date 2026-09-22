@@ -1,0 +1,29 @@
+{
+ "instance_id": "stanfordnlp__dspy-8739",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "da482fdee1560de668f9ada9ecf764cb13c8548b",
+ "status": "ok",
+ "co_edited": [
+  "dspy/primitives/module.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/primitives/module.py": [
+   "prediction_in_output",
+   "tokens"
+  ],
+  "dspy/primitives/prediction.py": [
+   "Prediction"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 11,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

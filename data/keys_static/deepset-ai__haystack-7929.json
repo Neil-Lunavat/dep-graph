@@ -1,0 +1,26 @@
+{
+ "instance_id": "deepset-ai__haystack-7929",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "8b9eddcd948e972c844e03000c2802e85e462c2a",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/generators/openai.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/components/generators/openai.py": [
+   "organization",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

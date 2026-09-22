@@ -1,0 +1,82 @@
+{
+ "instance_id": "bridgecrewio__checkov-6657",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "ea3ab628b456c0d8d401f37b568c90628a39e33a",
+ "status": "ok",
+ "co_edited": [
+  "checkov/cloudformation/cfn_utils.py",
+  "checkov/cloudformation/graph_builder/local_graph.py",
+  "checkov/common/parsers/node.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/__init__.py": [
+   "checkov"
+  ],
+  "checkov/cloudformation/cfn_utils.py": [
+   "_resource_name",
+   "e",
+   "enrich_resources_with_globals",
+   "global_properties",
+   "global_props",
+   "merged_properties",
+   "new_template",
+   "original_template",
+   "property",
+   "resource_details",
+   "resource_properties",
+   "resource_type",
+   "skip_properties",
+   "supported_types",
+   "supported_types_and_globals",
+   "template",
+   "type"
+  ],
+  "checkov/cloudformation/graph_builder/local_graph.py": [
+   "item",
+   "list_updated_value",
+   "list_updated_value_unique",
+   "property",
+   "value",
+   "vertex"
+  ],
+  "checkov/common/__init__.py": [
+   "common"
+  ],
+  "checkov/common/graph/graph_builder/graph_components/blocks.py": [
+   "attributes"
+  ],
+  "checkov/common/graph/graph_builder/local_graph.py": [
+   "attribute_value"
+  ],
+  "checkov/common/parsers/node.py": [
+   "DictNode",
+   "ListNode",
+   "deep_merge",
+   "dict1",
+   "dict2",
+   "end_mark",
+   "key",
+   "merged",
+   "start_mark",
+   "value"
+  ],
+  "checkov/common/util/__init__.py": [
+   "util"
+  ],
+  "checkov/common/util/data_structures_utils.py": [
+   "data_structures_utils",
+   "pickle_deepcopy"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 219,
+  "names_resolved_in_repo": 132,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

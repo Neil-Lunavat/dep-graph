@@ -1,0 +1,48 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-1117",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "db804dc97281ec605d9542440fe1688670bba00f",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/package/package.py",
+  "frictionless/program/validate.py",
+  "frictionless/resource/resource.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/error.py": [
+   "note"
+  ],
+  "frictionless/errors/__init__.py": [
+   "errors"
+  ],
+  "frictionless/errors/general.py": [
+   "PackageError",
+   "ResourceError"
+  ],
+  "frictionless/package/package.py": [
+   "invalid_field",
+   "invalid_fields",
+   "note",
+   "object",
+   "self"
+  ],
+  "frictionless/resource/resource.py": [
+   "invalid_field",
+   "invalid_fields",
+   "note",
+   "object",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

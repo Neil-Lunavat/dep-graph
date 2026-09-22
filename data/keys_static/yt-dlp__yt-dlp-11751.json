@@ -1,0 +1,58 @@
+{
+ "instance_id": "yt-dlp__yt-dlp-11751",
+ "repo_key": "yt-dlp/yt-dlp",
+ "base_commit": "fca3eb5f8be08d5fab2e18b45b7281a12e566725",
+ "status": "ok",
+ "co_edited": [
+  "yt_dlp/extractor/soundcloud.py",
+  "yt_dlp/extractor/youtube.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "yt_dlp/extractor/common.py": [
+   "_search_regex",
+   "default",
+   "write_debug"
+  ],
+  "yt_dlp/extractor/soundcloud.py": [
+   "_",
+   "_is_requested",
+   "abr",
+   "codec",
+   "ext",
+   "format_url",
+   "info",
+   "is_premium",
+   "is_preview",
+   "mime_type",
+   "preset",
+   "preset_base",
+   "protocol",
+   "self",
+   "short_identifier",
+   "stream_url",
+   "t",
+   "track_id",
+   "v"
+  ],
+  "yt_dlp/utils/_utils.py": [
+   "delim",
+   "join_nonempty",
+   "mimetype2ext",
+   "url_or_none"
+  ],
+  "yt_dlp/utils/traversal.py": [
+   "traverse_obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 83,
+  "names_resolved_in_repo": 71,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 7,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

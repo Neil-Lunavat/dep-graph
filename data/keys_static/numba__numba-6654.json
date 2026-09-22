@@ -1,0 +1,37 @@
+{
+ "instance_id": "numba__numba-6654",
+ "repo_key": "numba/numba",
+ "base_commit": "77a5b6333d91635bd16911225dca52a2f3d78425",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/typing/npydecl.py",
+  "numba/np/numpy_support.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/errors.py": [
+   "TypingError"
+  ],
+  "numba/core/typing/npydecl.py": [
+   "dt",
+   "dtstr",
+   "dtype",
+   "msg"
+  ],
+  "numba/np/numpy_support.py": [
+   "char",
+   "dtype",
+   "from_dtype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.1
+}

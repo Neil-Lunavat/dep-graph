@@ -1,0 +1,62 @@
+{
+ "instance_id": "pypsa__pypsa-924",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "94fdc994beacc482c720892e0e5e2a77968efcc4",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/components.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/clustering/__init__.py": [
+   "ClusteringAccessor"
+  ],
+  "pypsa/components.py": [
+   "_snapshots",
+   "a",
+   "all_components",
+   "arg",
+   "args",
+   "attr",
+   "attrs",
+   "b",
+   "component",
+   "df",
+   "equals",
+   "i",
+   "ignore_standard_types",
+   "investment_period_weightings",
+   "investment_periods",
+   "iterate_components",
+   "k",
+   "key",
+   "network",
+   "other",
+   "pnl",
+   "self",
+   "snapshots",
+   "v",
+   "value",
+   "with_time"
+  ],
+  "pypsa/descriptors.py": [
+   "Dict"
+  ],
+  "pypsa/optimization/optimize.py": [
+   "OptimizationAccessor"
+  ],
+  "pypsa/statistics.py": [
+   "StatisticsAccessor"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 408,
+  "names_resolved_in_repo": 145,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 15,
+  "truncated": false
+ },
+ "seconds": 7.5
+}

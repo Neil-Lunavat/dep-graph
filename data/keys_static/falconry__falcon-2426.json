@@ -1,0 +1,58 @@
+{
+ "instance_id": "falconry__falcon-2426",
+ "repo_key": "falconry/falcon",
+ "base_commit": "62c80e679c5a17eb08e1a836a2a8ad3f75697fdb",
+ "status": "ok",
+ "co_edited": [
+  "falcon/routing/static.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/errors.py": [
+   "HTTPNotFound"
+  ],
+  "falcon/request.py": [
+   "if_modified_since",
+   "range",
+   "range_unit"
+  ],
+  "falcon/response.py": [
+   "last_modified",
+   "set_stream",
+   "status"
+  ],
+  "falcon/routing/static.py": [
+   "_fallback_filename",
+   "_open_file",
+   "_set_range",
+   "content_range",
+   "fh",
+   "file_path",
+   "last_modified",
+   "length",
+   "req",
+   "req_range",
+   "resp",
+   "self",
+   "size",
+   "st",
+   "stream"
+  ],
+  "falcon/status_codes.py": [
+   "HTTP_304"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 144,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

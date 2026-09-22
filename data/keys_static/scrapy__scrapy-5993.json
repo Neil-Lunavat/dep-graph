@@ -1,0 +1,31 @@
+{
+ "instance_id": "scrapy__scrapy-5993",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "06ebdee35dc7ab5fa86c5076db341eae33485c37",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/utils/conf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/exceptions.py": [
+   "ScrapyDeprecationWarning"
+  ],
+  "scrapy/utils/conf.py": [
+   "_check_components",
+   "c",
+   "convert",
+   "custom"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

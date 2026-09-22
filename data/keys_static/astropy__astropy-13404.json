@@ -1,0 +1,25 @@
+{
+ "instance_id": "astropy__astropy-13404",
+ "repo_key": "astropy/astropy",
+ "base_commit": "16743c6faf5cb8433bf9f7702ae70d002a96caaf",
+ "status": "ok",
+ "co_edited": [
+  "astropy/utils/masked/function_helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/utils/masked/function_helpers.py": [
+   "getattr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

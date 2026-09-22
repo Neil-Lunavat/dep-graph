@@ -1,0 +1,38 @@
+{
+ "instance_id": "pylint-dev__pylint-9990",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "537e9da59e7df337fa39897d0b583ce0c12d3ed9",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/variables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/checkers/utils.py": [
+   "in_type_checking_block"
+  ],
+  "pylint/checkers/variables.py": [
+   "_report_unfound_name_definition",
+   "_reported_type_checking_usage_scopes",
+   "current_consumer",
+   "is_reported",
+   "n",
+   "name",
+   "node",
+   "nodes_to_consume",
+   "other_node",
+   "self",
+   "type_checking_definitions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

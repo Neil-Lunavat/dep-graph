@@ -1,0 +1,54 @@
+{
+ "instance_id": "Azure__azure-cli-2053",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "27816f4891c85592ad6f06bcc94008fa7d144b69",
+ "status": "ok",
+ "co_edited": [
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_help.py",
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_params.py",
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/commands.py",
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/custom.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/commands.py": [
+   "__name__",
+   "custom_path"
+  ],
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/custom.py": [
+   "ExtensionUpdateLongRunningOperation",
+   "_ACCESS_EXT_HANDLER_NAME",
+   "_WINDOWS_ACCESS_EXT",
+   "_is_linx_vm",
+   "_reset_windows_admin",
+   "_set_linux_user",
+   "auto_upgrade",
+   "client",
+   "ext",
+   "extension_name",
+   "get_vm",
+   "os_type",
+   "password",
+   "poller",
+   "publisher",
+   "reset_linux_ssh",
+   "resource_group_name",
+   "set_user",
+   "ssh_key_value",
+   "username",
+   "version",
+   "vm",
+   "vm_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 200,
+  "names_resolved_in_repo": 73,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

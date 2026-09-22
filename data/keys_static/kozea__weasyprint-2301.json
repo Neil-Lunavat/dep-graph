@@ -1,0 +1,29 @@
+{
+ "instance_id": "kozea__weasyprint-2301",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "33763ade9bed7e20f0bc4fee4b207596abee5375",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/layout/table.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/layout/table.py": [
+   "cell",
+   "child",
+   "original_style",
+   "style_copy",
+   "vertical_align_shift"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.4
+}

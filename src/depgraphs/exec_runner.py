@@ -66,6 +66,9 @@ parallel = True
 data_file = /work/{name}/.coverage
 source = /testbed
 dynamic_context = test_function
+
+[report]
+ignore_errors = True
 """
 
 NOOP = "def test_noop():\n    pass\n"
@@ -109,7 +112,6 @@ cp /work/zz_noop_test.py /testbed/zz_noop_test.py
 export COVERAGE_PROCESS_START=/work/noop.rc
 ( {noop_runner} -p no:cacheprovider /testbed/zz_noop_test.py ) > /work/noop.log 2>&1
 echo "noop_exit=$?"
-rm -f /testbed/zz_noop_test.py
 """
     apply_tests = "" if self_applies else \
         "git apply --whitespace=nowarn /work/test.diff || { echo STAGE=test_patch; exit 21; }"
@@ -133,13 +135,15 @@ unset COVERAGE_PROCESS_START
 rm -f "$SITE/zz_coverage_startup.pth"
 for n in main noop; do
   if ls /work/$n/.coverage* >/dev/null 2>&1; then
-    {py} -m coverage combine --rcfile=/work/$n.rc -q /work/$n >/dev/null 2>&1
-    {py} -m coverage json --rcfile=/work/$n.rc --show-contexts -q -o /work/$n.json >/dev/null 2>&1
-    {py} /work/post.py /work/$n.json /work/$n.compact.json || echo "post_failed_$n"
+    {py} -m coverage combine --rcfile=/work/$n.rc -q /work/$n >>/work/post.log 2>&1
+    {py} -m coverage json --rcfile=/work/$n.rc --show-contexts -q -o /work/$n.json >>/work/post.log 2>&1
+    {py} /work/post.py /work/$n.json /work/$n.compact.json >>/work/post.log 2>&1 || echo "post_failed_$n"
   else
     echo "no_coverage_$n"
   fi
 done
+rm -f /testbed/zz_noop_test.py
+tail -c 1500 /work/post.log
 echo DONE
 """
 

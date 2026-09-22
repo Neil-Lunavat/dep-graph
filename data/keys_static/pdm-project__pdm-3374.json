@@ -1,0 +1,58 @@
+{
+ "instance_id": "pdm-project__pdm-3374",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "f37fb16c2459807e0b392dc3306c373e5f68cc4f",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/_types.py",
+  "src/pdm/cli/commands/publish/__init__.py",
+  "src/pdm/models/auth.py",
+  "src/pdm/project/config.py",
+  "src/pdm/project/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/_types.py": [
+   "RepositoryConfig",
+   "populate_keyring_auth",
+   "self"
+  ],
+  "src/pdm/cli/commands/publish/__init__.py": [
+   "config"
+  ],
+  "src/pdm/models/auth.py": [
+   "_",
+   "_prompt_for_password",
+   "_selected_source",
+   "allow_keyring",
+   "allow_netrc",
+   "auth",
+   "candidates",
+   "index",
+   "netloc",
+   "original_url",
+   "parsed",
+   "password",
+   "self",
+   "source",
+   "target",
+   "url_no_auth",
+   "user",
+   "username",
+   "x"
+  ],
+  "src/pdm/project/config.py": [
+   "repo"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 80,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,35 @@
+{
+ "instance_id": "astropy__photutils-1477",
+ "repo_key": "astropy/photutils",
+ "base_commit": "29d92acce49438c9d22bcdae11c12145f93ce613",
+ "status": "ok",
+ "co_edited": [
+  "photutils/psf/photometry.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/psf/photometry.py": [
+   "_fitshape",
+   "_subshape",
+   "aperture_radius",
+   "extra_output_cols",
+   "niters",
+   "self",
+   "subshape",
+   "value"
+  ],
+  "photutils/psf/utils.py": [
+   "subshape"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 409,
+  "names_resolved_in_repo": 61,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

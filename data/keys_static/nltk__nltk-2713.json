@@ -1,0 +1,25 @@
+{
+ "instance_id": "nltk__nltk-2713",
+ "repo_key": "nltk/nltk",
+ "base_commit": "af21c5836afccd1dc0fd24a8f86ebea9a96050d6",
+ "status": "ok",
+ "co_edited": [
+  "nltk/metrics/aline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/metrics/aline.py": [
+   "C_skip"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

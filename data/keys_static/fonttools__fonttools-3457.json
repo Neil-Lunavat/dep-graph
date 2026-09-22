@@ -1,0 +1,26 @@
+{
+ "instance_id": "fonttools__fonttools-3457",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "84ebc7d34510720858db4916103b41dcd7f28730",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/varLib/instancer/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/varLib/instancer/__init__.py": [
+   "axisTag",
+   "var"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

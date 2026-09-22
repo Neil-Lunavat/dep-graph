@@ -1,0 +1,125 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5640",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "898910ea9fb3643a72a88ff3ff839d4c75dd1eed",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/asg.py",
+  "c7n/resources/cloudfront.py",
+  "c7n/resources/ec2.py",
+  "c7n/resources/rdscluster.py",
+  "c7n/resources/vpc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/__init__.py": [
+   "c7n"
+  ],
+  "c7n/actions/core.py": [
+   "data",
+   "manager",
+   "permissions"
+  ],
+  "c7n/filters/__init__.py": [
+   "filters"
+  ],
+  "c7n/filters/core.py": [
+   "AgeFilter",
+   "ValueFilter",
+   "__call__",
+   "annotate",
+   "executor_factory",
+   "manager",
+   "permissions",
+   "process",
+   "schema",
+   "schema_alias"
+  ],
+  "c7n/filters/iamaccess.py": [
+   "CrossAccountAccessFilter",
+   "get_accounts",
+   "process"
+  ],
+  "c7n/query.py": [
+   "DescribeSource",
+   "QueryResourceManager",
+   "TypeInfo",
+   "augment",
+   "get_resources",
+   "manager",
+   "query",
+   "resources"
+  ],
+  "c7n/resources/asg.py": [
+   "lid",
+   "mip_spec"
+  ],
+  "c7n/resources/cloudfront.py": [
+   "Distribution",
+   "DistributionConfig",
+   "annotation_key",
+   "augment",
+   "client",
+   "e",
+   "event",
+   "r",
+   "resources",
+   "self"
+  ],
+  "c7n/resources/ec2.py": [
+   "a",
+   "t"
+  ],
+  "c7n/resources/rdscluster.py": [
+   "CrossAccountSnapshot",
+   "DescribeClusterSnapshot",
+   "RDSClusterSnapshot",
+   "accounts",
+   "attrs",
+   "cache",
+   "client",
+   "config_type",
+   "delta_accounts",
+   "event",
+   "f",
+   "futures",
+   "get_source",
+   "process_resource_set",
+   "r",
+   "resource_ids",
+   "resource_set",
+   "resources",
+   "results",
+   "self",
+   "shared_accounts",
+   "source_type",
+   "w"
+  ],
+  "c7n/resources/vpc.py": [
+   "client",
+   "logroup",
+   "process_log_group",
+   "self"
+  ],
+  "c7n/tags.py": [
+   "tags",
+   "universal_augment"
+  ],
+  "c7n/utils.py": [
+   "chunks",
+   "local_session",
+   "rinherit",
+   "type_schema"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 229,
+  "names_resolved_in_repo": 168,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 14.4
+}

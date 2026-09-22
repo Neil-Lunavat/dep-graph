@@ -1,0 +1,28 @@
+{
+ "instance_id": "sdv-dev__SDV-2636",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "908ec43cb283abec52c24240d7fa28e77caf44ac",
+ "status": "ok",
+ "co_edited": [
+  "sdv/multi_table/hma.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/multi_table/hma.py": [
+   "_set_extended_columns_distributions",
+   "child_name",
+   "extended_columns",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

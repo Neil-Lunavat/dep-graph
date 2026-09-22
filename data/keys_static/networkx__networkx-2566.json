@@ -1,0 +1,43 @@
+{
+ "instance_id": "networkx__networkx-2566",
+ "repo_key": "networkx/networkx",
+ "base_commit": "ea4db3e5dc6b962c72f61060d18a2af3c9977e34",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/tree/mst.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/tree/mst.py": [
+   "G",
+   "boundary",
+   "component",
+   "d",
+   "data",
+   "e",
+   "edges",
+   "filter_nan_edges",
+   "ignore_nan",
+   "k",
+   "keys",
+   "minimum",
+   "minwt",
+   "msg",
+   "sign",
+   "u",
+   "v",
+   "weight",
+   "wt"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 383,
+  "names_resolved_in_repo": 133,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

@@ -1,0 +1,49 @@
+{
+ "instance_id": "reframe-hpc__reframe-2656",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "93de6f4ce259bdbceba478dbc29e6051c9b2e245",
+ "status": "ok",
+ "co_edited": [
+  "reframe/core/launchers/mpi.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reframe/__init__.py": [
+   "reframe"
+  ],
+  "reframe/core/launchers/__init__.py": [
+   "__init__"
+  ],
+  "reframe/core/launchers/mpi.py": [
+   "job",
+   "match",
+   "options",
+   "out",
+   "ret",
+   "self",
+   "slurm_version",
+   "use_cpus_per_task"
+  ],
+  "reframe/core/logging.py": [
+   "getlogger",
+   "logging"
+  ],
+  "reframe/utility/__init__.py": [
+   "utility"
+  ],
+  "reframe/utility/osext.py": [
+   "osext",
+   "run_command"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

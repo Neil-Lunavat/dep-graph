@@ -1,0 +1,25 @@
+{
+ "instance_id": "Textualize__textual-441",
+ "repo_key": "textualize/textual",
+ "base_commit": "efafbdfcc16fdd3c7e9b5906fc7d8cc6e354f70e",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/css/tokenize.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/css/tokenize.py": [
+   "TOKEN"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

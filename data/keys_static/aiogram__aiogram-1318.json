@@ -1,0 +1,29 @@
+{
+ "instance_id": "aiogram__aiogram-1318",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "8a77939d5bf7778be8a65e3531781220245724ff",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/fsm/middleware.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/fsm/context.py": [
+   "get_state"
+  ],
+  "aiogram/fsm/middleware.py": [
+   "context",
+   "data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

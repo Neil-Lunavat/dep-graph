@@ -1,0 +1,36 @@
+{
+ "instance_id": "bridgecrewio__checkov-7002",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "8b0f288ae10065b5f40673d904f2204c5a3ec770",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/gcp/GoogleSubnetworkIPV6PrivateGoogleEnabled.py",
+  "checkov/terraform/checks/resource/gcp/GoogleSubnetworkPrivateGoogleEnabled.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/terraform/checks/resource/base_resource_value_check.py": [
+   "BaseResourceValueCheck"
+  ],
+  "checkov/terraform/checks/resource/gcp/GoogleSubnetworkIPV6PrivateGoogleEnabled.py": [
+   "GoogleSubnetworkIPV6PrivateGoogleEnabled",
+   "PURPOSE_EXCEPTIONS",
+   "check",
+   "purpose"
+  ],
+  "checkov/terraform/checks/resource/gcp/GoogleSubnetworkPrivateGoogleEnabled.py": [
+   "PURPOSE_EXCEPTIONS",
+   "purpose"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.3
+}

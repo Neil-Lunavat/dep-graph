@@ -1,0 +1,30 @@
+{
+ "instance_id": "google__flax-3537",
+ "repo_key": "google/flax",
+ "base_commit": "51e2cf536f5e0f63a4c7c1c4dccbb2831abf924f",
+ "status": "ok",
+ "co_edited": [
+  "flax/experimental/nnx/nnx/nn/linear.py",
+  "flax/linen/linear.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/experimental/nnx/nnx/nn/linear.py": [
+   "kernel_size"
+  ],
+  "flax/linen/linear.py": [
+   "kernel_size",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 188,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

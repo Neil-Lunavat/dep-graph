@@ -1,0 +1,39 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-5880",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "dc9f74e73df4f3f20f7da3bd6119be37a4873b89",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/core/templaters/placeholder.py",
+  "src/sqlfluff/utils/reflow/reindent.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/core/parser/segments/meta.py": [
+   "TemplateSegment"
+  ],
+  "src/sqlfluff/core/templaters/placeholder.py": [
+   "found_param",
+   "quotation",
+   "replacement"
+  ],
+  "src/sqlfluff/utils/reflow/elements.py": [
+   "class_types",
+   "segments"
+  ],
+  "src/sqlfluff/utils/reflow/reindent.py": [
+   "elements",
+   "idx"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

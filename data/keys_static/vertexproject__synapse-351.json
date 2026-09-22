@@ -1,0 +1,47 @@
+{
+ "instance_id": "vertexproject__synapse-351",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "c6db6455a18db6afcd2fd3ef86f0f7c8a10e1b51",
+ "status": "ok",
+ "co_edited": [
+  "synapse/cores/common.py",
+  "synapse/models/inet.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/cores/common.py": [
+   "limit",
+   "lowerbound",
+   "prop",
+   "self",
+   "upperbound",
+   "valu"
+  ],
+  "synapse/lib/module.py": [
+   "core"
+  ],
+  "synapse/models/inet.py": [
+   "_ipv4addr",
+   "_ipv4str",
+   "cidr",
+   "cidrmasks",
+   "i",
+   "ipv4cidr",
+   "ipv4int",
+   "lowerbound",
+   "mask",
+   "self",
+   "valu"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

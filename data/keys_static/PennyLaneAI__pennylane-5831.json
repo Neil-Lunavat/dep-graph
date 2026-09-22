@@ -1,0 +1,29 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-5831",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "d65f671326b71bd9e755a157ec913af31888934b",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/ops/op_math/exp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/ops/op_math/exp.py": [
+   "Exp",
+   "coeff",
+   "new_base",
+   "num_steps",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

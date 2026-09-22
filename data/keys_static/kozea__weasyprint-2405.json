@@ -1,0 +1,46 @@
+{
+ "instance_id": "kozea__weasyprint-2405",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "fb462618190e87b4f0dec0bb677bcdea40b448a7",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/css/validation/descriptors.py",
+  "weasyprint/text/fonts.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/css/utils.py": [
+   "comma_separated_list",
+   "single_token"
+  ],
+  "weasyprint/css/validation/descriptors.py": [
+   "descriptor",
+   "token",
+   "unicode_range"
+  ],
+  "weasyprint/text/fonts.py": [
+   "charset",
+   "edit",
+   "features",
+   "key",
+   "match",
+   "mode",
+   "plus",
+   "range_",
+   "rule_descriptors",
+   "unicode_range",
+   "unicode_ranges",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 53,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

@@ -1,0 +1,36 @@
+{
+ "instance_id": "nltk__nltk-2888",
+ "repo_key": "nltk/nltk",
+ "base_commit": "68e4e589eb62750993aabef5554548973fe1e280",
+ "status": "ok",
+ "co_edited": [
+  "nltk/grammar.py",
+  "nltk/parse/generate.py",
+  "nltk/parse/util.py",
+  "nltk/parse/viterbi.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/__init__.py": [
+   "nltk"
+  ],
+  "nltk/grammar.py": [
+   "PCFG",
+   "_TERMINAL_RE",
+   "grammar"
+  ],
+  "nltk/parse/generate.py": [
+   "error"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 127,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "tornadoweb__tornado-2589",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "97d6599637e683fcab1d391468a8408c8496939a",
+ "status": "ok",
+ "co_edited": [
+  "tornado/util.py",
+  "tornado/web.py",
+  "tornado/websocket.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/websocket.py": [
+   "_abort",
+   "handler",
+   "open_result",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

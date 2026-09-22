@@ -1,0 +1,47 @@
+{
+ "instance_id": "python-control__python-control-1099",
+ "repo_key": "python-control/python-control",
+ "base_commit": "0ff045263f69802e32d7e5a69ac5c16142f7a96e",
+ "status": "ok",
+ "co_edited": [
+  "control/statefbk.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/exception.py": [
+   "ControlSlycot"
+  ],
+  "control/mateqn.py": [
+   "_check_shape",
+   "square"
+  ],
+  "control/statefbk.py": [
+   "A",
+   "B",
+   "C",
+   "ctrb",
+   "k",
+   "m",
+   "n",
+   "obsv",
+   "p"
+  ],
+  "control/statesp.py": [
+   "StateSpace",
+   "_ssmatrix",
+   "axis",
+   "ss",
+   "statesp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 93,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

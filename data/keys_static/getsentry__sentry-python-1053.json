@@ -1,0 +1,43 @@
+{
+ "instance_id": "getsentry__sentry-python-1053",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "b530b6f89ba9c13a9f65a0fa3f151ed42c9befe0",
+ "status": "ok",
+ "co_edited": [
+  "scripts/build_awslambda_layer.py",
+  "scripts/init_serverless_sdk.py",
+  "sentry_sdk/integrations/django/templates.py",
+  "sentry_sdk/integrations/logging.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scripts/build_awslambda_layer.py": [
+   "packages_dir",
+   "self",
+   "serverless_sdk_path"
+  ],
+  "sentry_sdk/consts.py": [
+   "traces_sample_rate"
+  ],
+  "sentry_sdk/integrations/django/templates.py": [
+   "_get_template_name_description",
+   "self",
+   "template_name"
+  ],
+  "sentry_sdk/integrations/logging.py": [
+   "_IGNORED_LOGGERS",
+   "logger",
+   "record"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

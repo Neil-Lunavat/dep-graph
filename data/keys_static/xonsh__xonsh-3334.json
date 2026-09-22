@@ -1,0 +1,23 @@
+{
+ "instance_id": "xonsh__xonsh-3334",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "a131b38c2d17f3a4f144bc28cf0c9b32c6af9e1b",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/ansi_colors.py",
+  "xonsh/color_tools.py",
+  "xonsh/pyghooks.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

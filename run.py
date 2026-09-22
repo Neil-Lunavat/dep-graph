@@ -71,6 +71,24 @@ def graphs():
 
 
 @stage
+def table1():
+    from depgraphs import table1 as t
+    t.main()
+
+
+@stage
+def keys_static():
+    from depgraphs import keys_static as k
+    k.main()
+
+
+@stage
+def exec_bundle():
+    from depgraphs import exec_bundle as e
+    e.main()
+
+
+@stage
 def builders_prep():
     from depgraphs.graph import compare
     compare.main(compare.rule_repos() + compare.EXTRA_REPOS)

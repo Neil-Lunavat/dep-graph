@@ -1,0 +1,50 @@
+{
+ "instance_id": "ethereum__web3.py-3103",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "2c5009b00ed9dff12519871b4193f5d46b606b66",
+ "status": "ok",
+ "co_edited": [
+  "web3/_utils/encoding.py",
+  "web3/gas_strategies/time_based.py",
+  "web3/providers/async_base.py",
+  "web3/providers/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/_utils/encoding.py": [
+   "FriendlyJsonSerde",
+   "Web3JsonEncoder",
+   "cls",
+   "json_encode",
+   "obj"
+  ],
+  "web3/eth/eth.py": [
+   "gas_price",
+   "get_block"
+  ],
+  "web3/gas_strategies/time_based.py": [
+   "w3"
+  ],
+  "web3/main.py": [
+   "eth"
+  ],
+  "web3/providers/async_base.py": [
+   "encoded",
+   "rpc_dict"
+  ],
+  "web3/providers/base.py": [
+   "encoded",
+   "rpc_dict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

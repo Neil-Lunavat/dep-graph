@@ -1,0 +1,54 @@
+{
+ "instance_id": "pydata__xarray-4758",
+ "repo_key": "pydata/xarray",
+ "base_commit": "46591d28d9fbbfc184aaf4075d330b1c8f070627",
+ "status": "ok",
+ "co_edited": [
+  "xarray/coding/cftime_offsets.py",
+  "xarray/coding/times.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/coding/cftime_offsets.py": [
+   "BaseCFTimeOffset",
+   "Microsecond",
+   "Millisecond",
+   "__apply__",
+   "_freq",
+   "as_timedelta",
+   "n",
+   "other",
+   "self"
+  ],
+  "xarray/coding/times.py": [
+   "_NETCDF_TIME_UNITS_CFTIME",
+   "_NETCDF_TIME_UNITS_NUMPY",
+   "_NS_PER_TIME_DELTA",
+   "_US_PER_TIME_DELTA",
+   "_decode_datetime_with_cftime",
+   "_netcdf_to_numpy_timeunit",
+   "_unit_timedelta_cftime",
+   "_unit_timedelta_numpy",
+   "dates",
+   "flat_num_dates",
+   "numpy_units",
+   "time_unit",
+   "time_units",
+   "timedeltas",
+   "unique_timedeltas",
+   "unit_timedelta",
+   "units",
+   "zero_timedelta"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 105,
+  "names_resolved_in_repo": 72,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 5.6
+}

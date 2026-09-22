@@ -1,0 +1,29 @@
+{
+ "instance_id": "conan-io__conan-16849",
+ "repo_key": "conan-io/conan",
+ "base_commit": "52a41eaefb06cae7cacce096713534690ecd347b",
+ "status": "ok",
+ "co_edited": [
+  "conans/model/requires.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/model/requires.py": [
+   "direct",
+   "require",
+   "run",
+   "self",
+   "visible"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.6
+}

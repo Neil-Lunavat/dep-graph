@@ -1,0 +1,44 @@
+{
+ "instance_id": "statsmodels__statsmodels-8333",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "25473b2c6cd1b88c74c2459aac9d4b337d32b453",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/stats/nonparametric.py",
+  "statsmodels/stats/proportion.py",
+  "statsmodels/stats/rates.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/stats/proportion.py": [
+   "count1",
+   "count2",
+   "i",
+   "idx_max",
+   "nobs1",
+   "nobs2",
+   "pvalue",
+   "statistic",
+   "tt1",
+   "tt2",
+   "vectorized"
+  ],
+  "statsmodels/stats/rates.py": [
+   "idx_max",
+   "pvalue",
+   "statistic",
+   "tt1",
+   "tt2"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 68,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

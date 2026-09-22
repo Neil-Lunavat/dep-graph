@@ -1,0 +1,32 @@
+{
+ "instance_id": "canonical__charmcraft-869",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "a95394f28ff6c0b974d39baa44f6d34530fd6a5f",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/reactive_plugin.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/reactive_plugin.py": [
+   "args",
+   "call_error",
+   "cmd",
+   "completed_process",
+   "exc",
+   "result_classification",
+   "run_charm_tool",
+   "tools_version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

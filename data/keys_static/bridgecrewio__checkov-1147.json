@@ -1,0 +1,60 @@
+{
+ "instance_id": "bridgecrewio__checkov-1147",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "e3cbb34c9c312a0310b032b7ca4956a10b61a0f7",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/data/base_check.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/__init__.py": [
+   "checkov"
+  ],
+  "checkov/common/__init__.py": [
+   "common"
+  ],
+  "checkov/common/checks/base_check.py": [
+   "__init__",
+   "block_type",
+   "categories",
+   "id",
+   "name",
+   "scan_entity_conf",
+   "supported_entities"
+  ],
+  "checkov/common/models/__init__.py": [
+   "models"
+  ],
+  "checkov/common/models/enums.py": [
+   "CheckCategories",
+   "CheckResult",
+   "UNKNOWN",
+   "enums"
+  ],
+  "checkov/terraform/checks/data/base_check.py": [
+   "_scan_data_conf_self_conf",
+   "categories",
+   "cls",
+   "conf",
+   "entity_type",
+   "id",
+   "name",
+   "scan_data_conf",
+   "self",
+   "supported_data",
+   "wrapped",
+   "wrapper"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.1
+}

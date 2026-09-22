@@ -1,0 +1,61 @@
+{
+ "instance_id": "narwhals-dev__narwhals-917",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "4cf94ce268c92b4d26b7e4fed6e245d3eee1bdfc",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_arrow/group_by.py",
+  "narwhals/_dask/group_by.py",
+  "narwhals/_pandas_like/group_by.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_arrow/group_by.py": [
+   "POLARS_TO_ARROW_AGGREGATIONS",
+   "function_name",
+   "root_name"
+  ],
+  "narwhals/_dask/group_by.py": [
+   "POLARS_TO_DASK_AGGREGATIONS",
+   "agg",
+   "chunk",
+   "function_name",
+   "n_unique",
+   "s",
+   "s0",
+   "simple_aggregations"
+  ],
+  "narwhals/_pandas_like/group_by.py": [
+   "a",
+   "all_aggs_are_simple",
+   "b",
+   "exc",
+   "from_dataframe",
+   "function_name",
+   "grouped",
+   "keys",
+   "msg",
+   "name_mapping",
+   "named_agg",
+   "nunique_aggs",
+   "output_name",
+   "output_names",
+   "result_aggs",
+   "result_nunique_aggs",
+   "result_simple_aggs",
+   "root_name",
+   "simple_aggregations",
+   "simple_aggs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 169,
+  "names_resolved_in_repo": 110,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

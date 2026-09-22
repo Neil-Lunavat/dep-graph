@@ -1,0 +1,39 @@
+{
+ "instance_id": "scipp__plopp-35",
+ "repo_key": "scipp/plopp",
+ "base_commit": "b005b5278bd6ae7c2c925aded5f0bd1a48e6c476",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/core/graph.py",
+  "src/plopp/core/model.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/core/graph.py": [
+   "dot",
+   "name",
+   "node"
+  ],
+  "src/plopp/core/model.py": [
+   "_data",
+   "args",
+   "func",
+   "key",
+   "kwargs",
+   "kwparents",
+   "parent",
+   "parents",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

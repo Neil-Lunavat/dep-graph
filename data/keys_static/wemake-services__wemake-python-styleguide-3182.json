@@ -1,0 +1,40 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-3182",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "dd44222252b83af2226b74c313c8beefd92e271b",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/classes.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "wemake_python_styleguide/logic/naming/enums.py"
+ ],
+ "symbol": {
+  "wemake_python_styleguide/__init__.py": [
+   "wemake_python_styleguide"
+  ],
+  "wemake_python_styleguide/logic/__init__.py": [
+   "logic"
+  ],
+  "wemake_python_styleguide/logic/naming/__init__.py": [
+   "naming"
+  ],
+  "wemake_python_styleguide/logic/naming/access.py": [
+   "access"
+  ],
+  "wemake_python_styleguide/visitors/ast/classes.py": [
+   "id_attr",
+   "node"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 10,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

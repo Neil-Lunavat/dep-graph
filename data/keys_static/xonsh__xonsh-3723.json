@@ -1,0 +1,33 @@
+{
+ "instance_id": "xonsh__xonsh-3723",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "9703c934b10da151a04bfe5fd17181145a933167",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/parsers/base.py",
+  "xonsh/parsers/v38.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/parsers/base.py": [
+   "_set_error",
+   "defs",
+   "self"
+  ],
+  "xonsh/parsers/v38.py": [
+   "argmts",
+   "p",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

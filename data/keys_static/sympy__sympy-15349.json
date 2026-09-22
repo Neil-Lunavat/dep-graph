@@ -1,0 +1,31 @@
+{
+ "instance_id": "sympy__sympy-15349",
+ "repo_key": "sympy/sympy",
+ "base_commit": "768da1c6f6ec907524b8ebbf6bf818c92b56101b",
+ "status": "ok",
+ "co_edited": [
+  "sympy/algebras/quaternion.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/algebras/quaternion.py": [
+   "a",
+   "b",
+   "c",
+   "d",
+   "m12",
+   "q",
+   "s"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

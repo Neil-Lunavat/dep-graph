@@ -1,0 +1,42 @@
+{
+ "instance_id": "dask__dask-5888",
+ "repo_key": "dask/dask",
+ "base_commit": "5f61f7f79b861be5ffdbf59950889166628a8fa6",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/core.py",
+  "dask/blockwise.py",
+  "dask/highlevelgraph.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/core.py": [
+   "bds",
+   "chunks",
+   "cumdims",
+   "dim",
+   "s",
+   "shapes",
+   "slices",
+   "starts"
+  ],
+  "dask/blockwise.py": [
+   "inputs"
+  ],
+  "dask/highlevelgraph.py": [
+   "collection",
+   "graph",
+   "key"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

@@ -1,0 +1,44 @@
+{
+ "instance_id": "openai__openai-agents-python-999",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "dff0548d1381481897839d9dd5d0cd03db5adf93",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/models/chatcmpl_stream_handler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/agents/models/chatcmpl_stream_handler.py": [
+   "fallback_starting_index",
+   "function_call",
+   "function_call_output_idx",
+   "function_call_starting_index",
+   "function_call_streaming",
+   "function_calls",
+   "get_and_increment",
+   "index",
+   "output_index",
+   "reasoning_content_index_and_output",
+   "refusal_content_index_and_output",
+   "sequence_number",
+   "state",
+   "streaming",
+   "tc_delta",
+   "tc_function",
+   "text_content_index_and_output"
+  ],
+  "src/agents/models/fake_id.py": [
+   "FAKE_RESPONSES_ID"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 196,
+  "names_resolved_in_repo": 99,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

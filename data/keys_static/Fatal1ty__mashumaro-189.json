@@ -1,0 +1,36 @@
+{
+ "instance_id": "Fatal1ty__mashumaro-189",
+ "repo_key": "fatal1ty/mashumaro",
+ "base_commit": "ab8242448631ab7a1ad2e437561377cd698a99e9",
+ "status": "ok",
+ "co_edited": [
+  "mashumaro/core/meta/types/unpack.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mashumaro/core/meta/code/builder.py": [
+   "cls",
+   "get_type_name_identifier"
+  ],
+  "mashumaro/core/meta/types/common.py": [
+   "builder"
+  ],
+  "mashumaro/core/meta/types/unpack.py": [
+   "base_variant",
+   "base_variants",
+   "spec",
+   "typ_name",
+   "variants_attr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

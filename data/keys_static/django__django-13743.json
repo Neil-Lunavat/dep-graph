@@ -1,0 +1,21 @@
+{
+ "instance_id": "django__django-13743",
+ "repo_key": "django/django",
+ "base_commit": "cf2ca22a5797cdd53a10954e9811893325b24a30",
+ "status": "ok",
+ "co_edited": [
+  "django/core/servers/basehttp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

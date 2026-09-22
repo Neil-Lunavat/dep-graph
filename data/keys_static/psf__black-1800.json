@@ -1,0 +1,61 @@
+{
+ "instance_id": "psf__black-1800",
+ "repo_key": "psf/black",
+ "base_commit": "3a309a36fcfc30a96a7fdd68b6b2c3aa2aa5341c",
+ "status": "ok",
+ "co_edited": [
+  "src/black/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/__init__.py": [
+   "FMT_OFF",
+   "FMT_PASS",
+   "FMT_SKIP",
+   "LN",
+   "ProtoComment",
+   "STANDALONE_COMMENT",
+   "WHITESPACE",
+   "comment",
+   "consumed",
+   "first",
+   "first_idx",
+   "generate_ignored_nodes",
+   "hidden_value",
+   "ignored",
+   "ignored_nodes",
+   "index",
+   "leaf",
+   "n",
+   "newlines",
+   "parent",
+   "preceding_leaf",
+   "prefix",
+   "prev",
+   "prev_sibling",
+   "previous_consumed",
+   "sibling",
+   "siblings",
+   "type",
+   "value"
+  ],
+  "src/blib2to3/pytree.py": [
+   "Leaf",
+   "parent",
+   "prefix",
+   "prev_sibling",
+   "remove",
+   "type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 145,
+  "names_resolved_in_repo": 146,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

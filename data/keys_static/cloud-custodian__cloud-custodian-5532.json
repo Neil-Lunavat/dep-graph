@@ -1,0 +1,58 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5532",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "c9a61ade52b5d6eb4c32ede4e2c69220ea38bcd7",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/iam.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/actions/core.py": [
+   "BaseAction",
+   "data",
+   "get_permissions",
+   "manager",
+   "process",
+   "validate"
+  ],
+  "c7n/exceptions.py": [
+   "PolicyValidationError"
+  ],
+  "c7n/resources/iam.py": [
+   "Role",
+   "RoleSetBoundary",
+   "SetBoundary",
+   "User",
+   "UserSetBoundary",
+   "client",
+   "get_method",
+   "method",
+   "params",
+   "policy",
+   "r",
+   "resource",
+   "resources",
+   "self",
+   "state"
+  ],
+  "c7n/utils.py": [
+   "QueryParser",
+   "chunks",
+   "filter_empty",
+   "get_partition",
+   "local_session",
+   "type_schema"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 125,
+  "names_resolved_in_repo": 92,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

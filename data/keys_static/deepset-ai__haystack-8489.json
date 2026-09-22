@@ -1,0 +1,69 @@
+{
+ "instance_id": "deepset-ai__haystack-8489",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "906177329bcc54f6946af361fcd3d0e334e6ce5f",
+ "status": "ok",
+ "co_edited": [
+  "haystack/core/pipeline/pipeline.py",
+  "haystack/tracing/datadog.py",
+  "haystack/tracing/logging_tracer.py",
+  "haystack/tracing/opentelemetry.py",
+  "haystack/tracing/tracer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/core/pipeline/base.py": [
+   "inputs"
+  ],
+  "haystack/core/pipeline/pipeline.py": [
+   "_run_component",
+   "components_inputs",
+   "name",
+   "parent_span",
+   "res",
+   "self",
+   "span"
+  ],
+  "haystack/tracing/__init__.py": [
+   "tracing"
+  ],
+  "haystack/tracing/datadog.py": [
+   "operation_name",
+   "parent_span",
+   "self",
+   "tags"
+  ],
+  "haystack/tracing/logging_tracer.py": [
+   "operation_name",
+   "parent_span",
+   "self",
+   "tags"
+  ],
+  "haystack/tracing/opentelemetry.py": [
+   "operation_name",
+   "parent_span",
+   "self",
+   "tags"
+  ],
+  "haystack/tracing/tracer.py": [
+   "Span",
+   "actual_tracer",
+   "operation_name",
+   "parent_span",
+   "self",
+   "span",
+   "tags",
+   "trace"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 175,
+  "names_resolved_in_repo": 62,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

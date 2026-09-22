@@ -1,0 +1,54 @@
+{
+ "instance_id": "jlowin__fastmcp-754",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "1914c9626121c61cd8f9bae1ed1e4a294ba7b093",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/client/transports.py",
+  "src/fastmcp/utilities/mcp_config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/__init__.py": [
+   "fastmcp"
+  ],
+  "src/fastmcp/client/__init__.py": [
+   "client"
+  ],
+  "src/fastmcp/client/auth/__init__.py": [
+   "auth"
+  ],
+  "src/fastmcp/client/auth/bearer.py": [
+   "BearerAuth",
+   "bearer"
+  ],
+  "src/fastmcp/client/transports.py": [
+   "SSETransport",
+   "auth",
+   "config",
+   "headers",
+   "self",
+   "server",
+   "url"
+  ],
+  "src/fastmcp/server/server.py": [
+   "name"
+  ],
+  "src/fastmcp/utilities/mcp_config.py": [
+   "auth",
+   "headers",
+   "self",
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

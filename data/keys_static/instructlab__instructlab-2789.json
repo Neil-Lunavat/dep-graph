@@ -1,0 +1,35 @@
+{
+ "instance_id": "instructlab__instructlab-2789",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "ed2c941a8ee3dafb884746d03bcdc0cae57fd8a0",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/data/generate.py",
+  "src/instructlab/configuration.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/cli/data/generate.py": [
+   "ctx",
+   "legacy_pretraining_format",
+   "student_model_arch",
+   "student_model_path"
+  ],
+  "src/instructlab/configuration.py": [
+   "ctx",
+   "params",
+   "student_model_arch",
+   "train_args"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

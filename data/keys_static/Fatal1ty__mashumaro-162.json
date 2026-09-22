@@ -1,0 +1,82 @@
+{
+ "instance_id": "Fatal1ty__mashumaro-162",
+ "repo_key": "fatal1ty/mashumaro",
+ "base_commit": "92d539cfde20c50d953730128441b951f60505cd",
+ "status": "ok",
+ "co_edited": [
+  "mashumaro/config.py",
+  "mashumaro/core/meta/code/builder.py",
+  "mashumaro/dialect.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mashumaro/__init__.py": [
+   "mashumaro"
+  ],
+  "mashumaro/config.py": [
+   "omit_default"
+  ],
+  "mashumaro/core/__init__.py": [
+   "core"
+  ],
+  "mashumaro/core/const.py": [
+   "MISSING",
+   "Sentinel"
+  ],
+  "mashumaro/core/meta/__init__.py": [
+   "meta"
+  ],
+  "mashumaro/core/meta/code/builder.py": [
+   "_get_dialect_or_config_option",
+   "_get_field_default_literal",
+   "add_line",
+   "alias",
+   "by_alias_feature",
+   "call_factory",
+   "comp_op",
+   "config",
+   "could_be_none",
+   "default",
+   "default_literal",
+   "ensure_object_imported",
+   "field",
+   "fname",
+   "force_value",
+   "ftype",
+   "get_field_default",
+   "indent",
+   "name",
+   "omit_default",
+   "omit_none",
+   "packed_value",
+   "packer",
+   "self",
+   "value"
+  ],
+  "mashumaro/core/meta/helpers.py": [
+   "is_named_tuple"
+  ],
+  "mashumaro/core/meta/types/__init__.py": [
+   "types"
+  ],
+  "mashumaro/core/meta/types/common.py": [
+   "FieldContext",
+   "NoneType",
+   "ValueSpec",
+   "common"
+  ],
+  "mashumaro/dialect.py": [
+   "omit_default"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 190,
+  "names_resolved_in_repo": 151,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

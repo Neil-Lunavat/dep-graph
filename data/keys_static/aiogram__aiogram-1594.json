@@ -1,0 +1,57 @@
+{
+ "instance_id": "aiogram__aiogram-1594",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "51beb4825723c83947377738d9fd449aa2f7d746",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/fsm/context.py",
+  "aiogram/fsm/scene.py",
+  "aiogram/fsm/storage/base.py",
+  "aiogram/fsm/storage/memory.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/fsm/context.py": [
+   "default",
+   "get_value",
+   "key",
+   "self",
+   "storage"
+  ],
+  "aiogram/fsm/scene.py": [
+   "default",
+   "get_value",
+   "key",
+   "self",
+   "state"
+  ],
+  "aiogram/fsm/storage/base.py": [
+   "StorageKey",
+   "data",
+   "default",
+   "dict_key",
+   "get_data",
+   "get_value",
+   "self",
+   "storage_key"
+  ],
+  "aiogram/fsm/storage/memory.py": [
+   "data",
+   "default",
+   "dict_key",
+   "self",
+   "storage",
+   "storage_key"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 290,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

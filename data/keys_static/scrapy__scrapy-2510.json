@@ -1,0 +1,40 @@
+{
+ "instance_id": "scrapy__scrapy-2510",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "4620d2f4256093296c490b412a95e4eb9aa5bd41",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/utils/reqser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/__init__.py": [
+   "scrapy"
+  ],
+  "scrapy/http/request/__init__.py": [
+   "Request"
+  ],
+  "scrapy/utils/__init__.py": [
+   "utils"
+  ],
+  "scrapy/utils/misc.py": [
+   "load_object",
+   "misc"
+  ],
+  "scrapy/utils/reqser.py": [
+   "d",
+   "request",
+   "request_cls"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

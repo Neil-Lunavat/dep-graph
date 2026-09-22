@@ -1,0 +1,29 @@
+{
+ "instance_id": "keras-team__keras-19883",
+ "repo_key": "keras-team/keras",
+ "base_commit": "ef50ceb0f05df7ba2bd406f935a75fad6a13255d",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/backend/torch/numpy.py",
+  "keras/src/ops/numpy.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/torch/numpy.py": [
+   "repeats"
+  ],
+  "keras/src/ops/numpy.py": [
+   "repeats"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

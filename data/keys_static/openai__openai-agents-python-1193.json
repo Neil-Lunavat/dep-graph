@@ -1,0 +1,60 @@
+{
+ "instance_id": "openai__openai-agents-python-1193",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "f20aa40f56ec374841dfe6e4f3d6118c8e32fb2b",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/agent.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "examples/agent_patterns/agents_as_tools_conditional.py"
+ ],
+ "symbol": {
+  "src/agents/__init__.py": [
+   "agents"
+  ],
+  "src/agents/agent.py": [
+   "Agent",
+   "AgentBase",
+   "get_all_tools",
+   "instructions",
+   "is_enabled",
+   "name",
+   "tool_description",
+   "tool_name"
+  ],
+  "src/agents/result.py": [
+   "final_output"
+  ],
+  "src/agents/run.py": [
+   "Runner",
+   "context",
+   "input",
+   "starting_agent"
+  ],
+  "src/agents/run_context.py": [
+   "RunContextWrapper",
+   "context"
+  ],
+  "src/agents/tool.py": [
+   "is_enabled",
+   "name"
+  ],
+  "src/agents/tracing/create.py": [
+   "trace"
+  ],
+  "src/agents/util/_types.py": [
+   "MaybeAwaitable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 171,
+  "names_resolved_in_repo": 51,
+  "defined_in_new_file": 42,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

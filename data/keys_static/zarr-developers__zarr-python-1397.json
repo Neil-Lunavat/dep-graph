@@ -1,0 +1,25 @@
+{
+ "instance_id": "zarr-developers__zarr-python-1397",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "d54f25c460f8835a0ec9a7b4bc3482159a5608f9",
+ "status": "ok",
+ "co_edited": [
+  "zarr/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "zarr/util.py": [
+   "fill_value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

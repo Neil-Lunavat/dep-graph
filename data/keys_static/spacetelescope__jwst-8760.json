@@ -1,0 +1,31 @@
+{
+ "instance_id": "spacetelescope__jwst-8760",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "f4291171d8d31dd3cba8c6feb28eec6a2f6816d0",
+ "status": "ok",
+ "co_edited": [
+  "jwst/stpipe/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/__init__.py": [
+   "__version__"
+  ],
+  "jwst/stpipe/core.py": [
+   "crds_context",
+   "log",
+   "result",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

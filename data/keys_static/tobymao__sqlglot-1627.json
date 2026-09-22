@@ -1,0 +1,85 @@
+{
+ "instance_id": "tobymao__sqlglot-1627",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "9c3cd2cabe39a683832c0fbad26714c31b41bc76",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/snowflake.py",
+  "sqlglot/expressions.py",
+  "sqlglot/generator.py",
+  "sqlglot/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/__init__.py": [
+   "sqlglot"
+  ],
+  "sqlglot/dialects/snowflake.py": [
+   "first_arg"
+  ],
+  "sqlglot/expressions.py": [
+   "Clone",
+   "Expression",
+   "Literal",
+   "exp"
+  ],
+  "sqlglot/generator.py": [
+   "clone",
+   "clone_sql",
+   "exists_sql",
+   "expr",
+   "expression",
+   "expression_sql",
+   "index_sql",
+   "kind",
+   "modifiers",
+   "no_schema_binding",
+   "postexpression_props_sql",
+   "properties_sql",
+   "self",
+   "sql",
+   "this",
+   "when"
+  ],
+  "sqlglot/optimizer/__init__.py": [
+   "optimizer"
+  ],
+  "sqlglot/optimizer/simplify.py": [
+   "root",
+   "simplify",
+   "simplify_literals"
+  ],
+  "sqlglot/parser.py": [
+   "CLONE_KINDS",
+   "_match",
+   "_match_text_seq",
+   "_match_texts",
+   "_parse_bitwise",
+   "_parse_table",
+   "_prev",
+   "clone",
+   "clone_expression",
+   "clone_kind",
+   "schema",
+   "self",
+   "when"
+  ],
+  "sqlglot/tokens.py": [
+   "FARROW",
+   "L_PAREN",
+   "R_PAREN",
+   "TokenType",
+   "text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 107,
+  "names_resolved_in_repo": 110,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

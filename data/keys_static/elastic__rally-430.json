@@ -1,0 +1,54 @@
+{
+ "instance_id": "elastic__rally-430",
+ "repo_key": "elastic/rally",
+ "base_commit": "188495b1fdcd8f9e36625ca2b10f1c9659750290",
+ "status": "ok",
+ "co_edited": [
+  "esrally/config.py",
+  "esrally/track/loader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/config.py": [
+   "gradle_bin"
+  ],
+  "esrally/track/loader.py": [
+   "TrackSyntaxError",
+   "_create_index_template",
+   "_load_template",
+   "body",
+   "contents",
+   "description",
+   "e",
+   "f",
+   "index_name",
+   "logger",
+   "mapping_dir",
+   "name",
+   "override_auto_manage_indices",
+   "rendered",
+   "self",
+   "source",
+   "template_content",
+   "template_name",
+   "template_vars",
+   "tpl_spec",
+   "track_params"
+  ],
+  "esrally/utils/io.py": [
+   "FileSource",
+   "io",
+   "read"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

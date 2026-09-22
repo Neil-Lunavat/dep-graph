@@ -1,0 +1,50 @@
+{
+ "instance_id": "ipython__ipython-14943",
+ "repo_key": "ipython/ipython",
+ "base_commit": "4d0c438d617e49b77d68cd98208f7b2d371a1381",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/completer.py",
+  "IPython/core/guarded_eval.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/completer.py": [
+   "debug",
+   "done",
+   "e",
+   "self"
+  ],
+  "IPython/core/guarded_eval.py": [
+   "_coerce_path_to_tuples",
+   "access_path",
+   "allow_list",
+   "allowed_external",
+   "allowed_getattr_external",
+   "allowed_getitem_external",
+   "allowed_operations_external",
+   "attr",
+   "dunders",
+   "full_module_path",
+   "member_type",
+   "module_name",
+   "module_path",
+   "node",
+   "path",
+   "self",
+   "value",
+   "value_module",
+   "value_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 141,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

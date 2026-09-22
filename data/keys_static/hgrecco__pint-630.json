@@ -1,0 +1,35 @@
+{
+ "instance_id": "hgrecco__pint-630",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "90174a33c00a1364fcf2af9c59adf7859b0706b2",
+ "status": "ok",
+ "co_edited": [
+  "pint/quantity.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/errors.py": [
+   "OffsetUnitCalculusError"
+  ],
+  "pint/quantity.py": [
+   "_eq",
+   "_is_multiplicative",
+   "_magnitude",
+   "_units",
+   "op",
+   "other",
+   "self",
+   "to_base_units"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 94,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

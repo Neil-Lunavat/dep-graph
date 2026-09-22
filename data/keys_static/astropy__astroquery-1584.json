@@ -1,0 +1,36 @@
+{
+ "instance_id": "astropy__astroquery-1584",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "b1805f64eec5ff8874890105c70c1381b36f1a50",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/utils/tap/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/utils/tap/core.py": [
+   "args",
+   "autorun",
+   "context",
+   "maxrec",
+   "name",
+   "outputFormat",
+   "output_format",
+   "uploadResource",
+   "uploadTableName",
+   "upload_resource",
+   "upload_table_name",
+   "verbose"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 40,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

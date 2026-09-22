@@ -1,0 +1,21 @@
+{
+ "instance_id": "kedro-org__kedro-5019",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "94c35e92d00b621f4477967366d04af2be21facd",
+ "status": "ok",
+ "co_edited": [
+  "kedro/templates/project/hooks/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "spacetelescope__jwst-7982",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "7cc16849c5e4bf89fa61d43d095dc7ef5c982f34",
+ "status": "ok",
+ "co_edited": [
+  "jwst/associations/lib/rules_level3.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/associations/lib/rules_level3.py": [
+   "_validate_candidates",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

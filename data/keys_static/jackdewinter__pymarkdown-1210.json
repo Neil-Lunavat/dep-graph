@@ -1,0 +1,93 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1210",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "11d4ff7c378ea444513ac694ef503bc0940f3a15",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/block_quotes/block_quote_non_fenced_helper.py",
+  "pymarkdown/block_quotes/block_quote_processor.py",
+  "pymarkdown/plugins/rule_md_031.py",
+  "pymarkdown/tokens/block_quote_markdown_token.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/block_quotes/block_quote_non_fenced_helper.py": [
+   "adjusted_removed_text",
+   "block_quote_token",
+   "bq_token",
+   "found_token",
+   "last_split_space",
+   "parser_state",
+   "search_index",
+   "search_token",
+   "split_spaces",
+   "stack_index"
+  ],
+  "pymarkdown/general/parser_state.py": [
+   "ParserState",
+   "token_stack"
+  ],
+  "pymarkdown/plugin_manager/plugin_scan_context.py": [
+   "PluginScanContext"
+  ],
+  "pymarkdown/plugins/rule_md_031.py": [
+   "PendingContainerAdjustment",
+   "__calculate_adjust",
+   "__closed_container_adjustments",
+   "__container_token_stack",
+   "__fix_spacing_list_remove_list",
+   "__removed_container_token_stack",
+   "adjust",
+   "adjustment",
+   "container_index",
+   "context",
+   "count2",
+   "index",
+   "initial_index",
+   "removed_list_token",
+   "self",
+   "setext_token",
+   "split_spaces",
+   "split_spaces_length",
+   "stack_index",
+   "token",
+   "token_line_number"
+  ],
+  "pymarkdown/tokens/block_quote_markdown_token.py": [
+   "BlockQuoteMarkdownToken",
+   "bleading_spaces",
+   "leading_text_index",
+   "self",
+   "weird_kludge_five",
+   "weird_kludge_six"
+  ],
+  "pymarkdown/tokens/list_start_markdown_token.py": [
+   "ListStartMarkdownToken",
+   "leading_spaces"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "is_block_quote_start",
+   "is_setext_heading",
+   "line_number"
+  ],
+  "pymarkdown/tokens/setext_heading_markdown_token.py": [
+   "SetextHeadingMarkdownToken",
+   "original_line_number"
+  ],
+  "pymarkdown/tokens/stack_token.py": [
+   "is_block_quote",
+   "matching_markdown_token"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 154,
+  "names_resolved_in_repo": 164,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

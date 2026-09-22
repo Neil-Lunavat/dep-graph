@@ -1,0 +1,38 @@
+{
+ "instance_id": "tox-dev__tox-1961",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "e0df6c16d90ff3dae3e08c42237bdda4feb065e3",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/config/loader/ini/replace.py",
+  "src/tox/config/set_env.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/config/loader/ini/replace.py": [
+   "REPLACE_PART",
+   "end",
+   "find_replace_part",
+   "match",
+   "start",
+   "to_replace",
+   "value"
+  ],
+  "src/tox/config/set_env.py": [
+   "_",
+   "__",
+   "line",
+   "match"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

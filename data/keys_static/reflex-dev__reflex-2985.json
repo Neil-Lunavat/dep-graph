@@ -1,0 +1,31 @@
+{
+ "instance_id": "reflex-dev__reflex-2985",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "9504700777fd067cc2bb73c66b62ce8f06955970",
+ "status": "ok",
+ "co_edited": [
+  "reflex/app.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/app.py": [
+   "component"
+  ],
+  "reflex/components/base/fragment.py": [
+   "Fragment"
+  ],
+  "reflex/components/component.py": [
+   "create"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

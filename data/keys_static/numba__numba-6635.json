@@ -1,0 +1,29 @@
+{
+ "instance_id": "numba__numba-6635",
+ "repo_key": "numba/numba",
+ "base_commit": "ddc6d35c241b849b2ed693e84ec1d11747029e40",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/untyped_passes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/compiler_machinery.py": [
+   "add_pass"
+  ],
+  "numba/core/untyped_passes.py": [
+   "GenericRewrites",
+   "pm"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

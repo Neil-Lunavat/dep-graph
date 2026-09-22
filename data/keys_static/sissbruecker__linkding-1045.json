@@ -1,0 +1,31 @@
+{
+ "instance_id": "sissbruecker__linkding-1045",
+ "repo_key": "sissbruecker/linkding",
+ "base_commit": "8928c785301526674cb949d38b583d02a499b0a4",
+ "status": "ok",
+ "co_edited": [
+  "bookmarks/services/auto_tagging.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "bookmarks/services/auto_tagging.py": [
+   "_fragment_matches",
+   "actual_fragment",
+   "comment_match",
+   "expected_fragment",
+   "line",
+   "parsed_pattern",
+   "parsed_url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

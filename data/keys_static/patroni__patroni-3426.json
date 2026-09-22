@@ -1,0 +1,37 @@
+{
+ "instance_id": "patroni__patroni-3426",
+ "repo_key": "patroni/patroni",
+ "base_commit": "e8911304a33cb8f0c6c048d3f8bae717633aca09",
+ "status": "ok",
+ "co_edited": [
+  "patroni/dcs/etcd3.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/dcs/etcd3.py": [
+   "Etcd3Exception",
+   "Etcd3WatchCanceled",
+   "logger",
+   "result"
+  ],
+  "patroni/utils.py": [
+   "RetryFailedError",
+   "USER_AGENT",
+   "deep_compare",
+   "enable_keepalive",
+   "iter_response_objects",
+   "parse_bool",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "astropy__astropy-14578",
+ "repo_key": "astropy/astropy",
+ "base_commit": "c748299218dcbd9e15caef558722cc04aa658fad",
+ "status": "ok",
+ "co_edited": [
+  "astropy/io/fits/column.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/io/fits/column.py": [
+   "_col_format_cls",
+   "array",
+   "cname",
+   "dtypes",
+   "format",
+   "from_recformat",
+   "ftype",
+   "i",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 12.7
+}

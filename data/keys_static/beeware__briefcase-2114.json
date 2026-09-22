@@ -1,0 +1,56 @@
+{
+ "instance_id": "beeware__briefcase-2114",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "8acc982527cefbffae5bbc46c9b1221a2b66c723",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/bootstraps/base.py",
+  "src/briefcase/bootstraps/console.py",
+  "src/briefcase/commands/new.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/__init__.py": [
+   "briefcase"
+  ],
+  "src/briefcase/bootstraps/base.py": [
+   "AppContext",
+   "context",
+   "extra_context",
+   "input",
+   "logger",
+   "project_overrides",
+   "self"
+  ],
+  "src/briefcase/bootstraps/console.py": [
+   "project_overrides",
+   "self"
+  ],
+  "src/briefcase/commands/base.py": [
+   "input",
+   "logger"
+  ],
+  "src/briefcase/commands/new.py": [
+   "additional_context",
+   "bootstrap",
+   "context",
+   "project_overrides",
+   "self"
+  ],
+  "src/briefcase/console.py": [
+   "Console",
+   "Log",
+   "console"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 59,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

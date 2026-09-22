@@ -1,0 +1,26 @@
+{
+ "instance_id": "openai__openai-agents-python-1192",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "f20aa40f56ec374841dfe6e4f3d6118c8e32fb2b",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/run.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/agents/run.py": [
+   "_default_trace_include_sensitive_data",
+   "val"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

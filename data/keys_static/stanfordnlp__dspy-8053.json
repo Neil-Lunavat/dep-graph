@@ -1,0 +1,44 @@
+{
+ "instance_id": "stanfordnlp__dspy-8053",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "dd954e3cf2fbb119530ca2e6885b784bad9bace9",
+ "status": "ok",
+ "co_edited": [
+  "dspy/propose/grounded_proposer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/__init__.py": [
+   "dspy"
+  ],
+  "dspy/propose/__init__.py": [
+   "propose"
+  ],
+  "dspy/propose/grounded_proposer.py": [
+   "N",
+   "demo_candidates",
+   "demo_set_i",
+   "num_demos",
+   "proposed_instruction",
+   "self",
+   "use_task_demos"
+  ],
+  "dspy/propose/propose_base.py": [
+   "Proposer",
+   "propose_base"
+  ],
+  "dspy/propose/utils.py": [
+   "strip_prefix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

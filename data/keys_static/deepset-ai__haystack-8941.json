@@ -1,0 +1,66 @@
+{
+ "instance_id": "deepset-ai__haystack-8941",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "db4f23771abb41e598ad65041c997d72d6268dd9",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/embedders/azure_document_embedder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/__init__.py": [
+   "haystack"
+  ],
+  "haystack/components/embedders/azure_document_embedder.py": [
+   "__name__",
+   "_client",
+   "_embed_batch",
+   "_prepare_texts_to_embed",
+   "all_embeddings",
+   "args",
+   "azure_deployment",
+   "b",
+   "batch",
+   "batch_size",
+   "dimensions",
+   "doc",
+   "documents",
+   "e",
+   "el",
+   "embeddings",
+   "ids",
+   "logger",
+   "progress_bar",
+   "response",
+   "self",
+   "text_to_embed",
+   "texts_to_embed"
+  ],
+  "haystack/core/component/component.py": [
+   "component"
+  ],
+  "haystack/core/serialization.py": [
+   "default_from_dict",
+   "default_to_dict"
+  ],
+  "haystack/dataclasses/document.py": [
+   "Document",
+   "id"
+  ],
+  "haystack/logging.py": [
+   "exception",
+   "getLogger",
+   "logging"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 90,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

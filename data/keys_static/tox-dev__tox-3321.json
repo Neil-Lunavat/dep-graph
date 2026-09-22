@@ -1,0 +1,39 @@
+{
+ "instance_id": "tox-dev__tox-3321",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "1ee4a3335b1195c85b2fe0db120355dd50324f79",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/session/cmd/run/parallel.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/__init__.py": [
+   "tox"
+  ],
+  "src/tox/session/cmd/run/parallel.py": [
+   "DEFAULT_PARALLEL",
+   "default_parallel",
+   "default_spinner",
+   "our",
+   "parallel_flags"
+  ],
+  "src/tox/util/__init__.py": [
+   "util"
+  ],
+  "src/tox/util/ci.py": [
+   "ci",
+   "is_ci"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "numba__numba-6028",
+ "repo_key": "numba/numba",
+ "base_commit": "d3b7ea1344779cf0bacfa82c754da5b71e133dbe",
+ "status": "ok",
+ "co_edited": [
+  "numba/cpython/tupleobj.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/extending.py": [
+   "overload"
+  ],
+  "numba/cpython/tupleobj.py": [
+   "getitem_literal_idx",
+   "getitem_literal_idx_impl",
+   "idx",
+   "idx_val",
+   "tup"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

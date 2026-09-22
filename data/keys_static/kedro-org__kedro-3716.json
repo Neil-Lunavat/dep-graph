@@ -1,0 +1,32 @@
+{
+ "instance_id": "kedro-org__kedro-3716",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "32b87be55f7b7e55179d0c288c97e5e33d139689",
+ "status": "ok",
+ "co_edited": [
+  "kedro/pipeline/modular_pipeline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/pipeline/modular_pipeline.py": [
+   "ModularPipelineError",
+   "error_msg",
+   "existing",
+   "non_existent",
+   "non_existent_input",
+   "possible_matches",
+   "sorted_non_existent",
+   "suggestions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "numba__numba-6586",
+ "repo_key": "numba/numba",
+ "base_commit": "0bac18af44d08e913cd512babb9f9b7f6386d30a",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/compiler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

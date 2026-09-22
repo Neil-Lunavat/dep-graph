@@ -1,0 +1,43 @@
+{
+ "instance_id": "sdv-dev__SDV-2502",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "e8921f9e7b49c9dbdd00637de5343ad2cc8d794a",
+ "status": "ok",
+ "co_edited": [
+  "sdv/io/local/local.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/io/local/local.py": [
+   "CSV_DEFAULT_READ_ARGS",
+   "CSV_DEFAULT_WRITE_ARGS",
+   "UNSUPPORTED_ARGS",
+   "__init__",
+   "data",
+   "file_name_suffix",
+   "file_names",
+   "file_path",
+   "folder_name",
+   "key",
+   "mode",
+   "read",
+   "read_csv_parameters",
+   "self",
+   "synthetic_data",
+   "table_data",
+   "table_name",
+   "to_csv_parameters",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 131,
+  "names_resolved_in_repo": 49,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

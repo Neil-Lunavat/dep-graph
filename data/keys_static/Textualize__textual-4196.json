@@ -1,0 +1,32 @@
+{
+ "instance_id": "Textualize__textual-4196",
+ "repo_key": "textualize/textual",
+ "base_commit": "5aaa6b539cda123415512bb4b49bf60c007f1e3b",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/renderables/sparkline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/renderables/sparkline.py": [
+   "T",
+   "_buckets",
+   "buckets",
+   "cls",
+   "data",
+   "num_buckets",
+   "self",
+   "width"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

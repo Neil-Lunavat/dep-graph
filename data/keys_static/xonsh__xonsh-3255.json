@@ -1,0 +1,36 @@
+{
+ "instance_id": "xonsh__xonsh-3255",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "aae977c407760128d95385f75e02d02b87267e91",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/environ.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/ansi_colors.py": [
+   "ansi_color_name_to_escape_code",
+   "cmap",
+   "reversed_style"
+  ],
+  "xonsh/environ.py": [
+   "data",
+   "esc",
+   "key",
+   "reversed_default",
+   "style",
+   "v",
+   "val"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.2
+}

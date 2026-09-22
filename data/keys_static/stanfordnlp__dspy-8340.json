@@ -1,0 +1,25 @@
+{
+ "instance_id": "stanfordnlp__dspy-8340",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "e4ec979a3d76f3375637f3a06bb92d406a36a31e",
+ "status": "ok",
+ "co_edited": [
+  "dspy/adapters/chat_adapter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/adapters/chat_adapter.py": [
+   "assistant_message_content"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

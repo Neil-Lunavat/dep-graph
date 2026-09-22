@@ -1,0 +1,21 @@
+{
+ "instance_id": "nipy__nipype-2349",
+ "repo_key": "nipy/nipype",
+ "base_commit": "045b28ef9056fac1107bc4f0707859d043f3bfd1",
+ "status": "ok",
+ "co_edited": [
+  "nipype/interfaces/io.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

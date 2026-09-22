@@ -1,0 +1,42 @@
+{
+ "instance_id": "tefra__xsdata-609",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "1c8ad8679822bc0c8770b44d81a47f4189abc45e",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/codegen/mappers/definitions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/codegen/mappers/definitions.py": [
+   "binding_message",
+   "cls",
+   "message",
+   "messages",
+   "name",
+   "namespace",
+   "operation",
+   "operation_name",
+   "port_type_message",
+   "port_type_operation",
+   "suffix"
+  ],
+  "xsdata/models/wsdl.py": [
+   "BindingMessage",
+   "PortTypeMessage",
+   "input",
+   "name",
+   "output"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

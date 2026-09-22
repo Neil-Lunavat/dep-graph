@@ -1,0 +1,49 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-1133",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "bcb5c6dfb42f1a195e8206f9dde7d9778877f099",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/cli/commands.py",
+  "src/sqlfluff/core/__init__.py",
+  "src/sqlfluff/core/linter/linter.py",
+  "src/sqlfluff/core/linter/runner.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/cli/commands.py": [
+   "bench",
+   "fix",
+   "fixed_suffix",
+   "force",
+   "kwargs",
+   "logger",
+   "paths",
+   "processes"
+  ],
+  "src/sqlfluff/core/linter/linter.py": [
+   "fix",
+   "ignore_non_existent_files",
+   "processes"
+  ],
+  "src/sqlfluff/core/linter/runner.py": [
+   "MultiProcessRunner",
+   "MultiThreadRunner",
+   "__init__",
+   "config",
+   "linter",
+   "processes",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

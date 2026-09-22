@@ -1,0 +1,39 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4654",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "dfb0ae3747e5cfaf362edaab835ef68642a7e97d",
+ "status": "ok",
+ "co_edited": [
+  "telegram/_chatmember.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/__init__.py": [
+   "telegram"
+  ],
+  "telegram/_chatmember.py": [
+   "self",
+   "status"
+  ],
+  "telegram/_utils/__init__.py": [
+   "_utils"
+  ],
+  "telegram/_utils/enum.py": [
+   "enum"
+  ],
+  "telegram/constants.py": [
+   "ChatMemberStatus",
+   "constants"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "mne-tools__mne-python-12324",
+ "repo_key": "mne-tools/mne-python",
+ "base_commit": "9f0dfefe612776226d22714958dec2f3e2c05e4b",
+ "status": "ok",
+ "co_edited": [
+  "mne/_fiff/meas_info.py",
+  "mne/annotations.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mne/annotations.py": [
+   "_onsets",
+   "annot_offset",
+   "chunk_duration",
+   "good_events",
+   "tol"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 74,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

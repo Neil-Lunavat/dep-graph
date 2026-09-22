@@ -1,0 +1,29 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-602",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "696cd6c41dc6ace4f1bc5758e8f59f1812e1d6be",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/helpers.py": [
+   "name",
+   "options",
+   "slug",
+   "slugify",
+   "text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

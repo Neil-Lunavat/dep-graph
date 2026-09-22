@@ -1,0 +1,53 @@
+{
+ "instance_id": "conan-io__conan-4539",
+ "repo_key": "conan-io/conan",
+ "base_commit": "84d3c55cf7036c445621592e200b3e16c2147a3e",
+ "status": "ok",
+ "co_edited": [
+  "conans/client/build/cmake.py",
+  "conans/client/build/cmake_flags.py",
+  "conans/client/loader_txt.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/client/build/cmake.py": [
+   "_conanfile",
+   "generator",
+   "self"
+  ],
+  "conans/client/build/cmake_flags.py": [
+   "generator"
+  ],
+  "conans/client/loader_txt.py": [
+   "dest",
+   "keep_path",
+   "line",
+   "p",
+   "pair",
+   "param",
+   "params",
+   "pattern",
+   "source",
+   "src",
+   "tokens",
+   "value",
+   "var"
+  ],
+  "conans/util/config_parser.py": [
+   "parse_lines"
+  ],
+  "conans/util/log.py": [
+   "logger"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 50,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.7
+}

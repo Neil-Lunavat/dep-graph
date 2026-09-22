@@ -1,0 +1,28 @@
+{
+ "instance_id": "marcosschroh__dataclasses-avroschema-723",
+ "repo_key": "marcosschroh/dataclasses-avroschema",
+ "base_commit": "6541274beed1c77426ce21fd538a29b23bfd7e87",
+ "status": "ok",
+ "co_edited": [
+  "dataclasses_avroschema/case.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dataclasses_avroschema/case.py": [
+   "case_record",
+   "case_type",
+   "element",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.2
+}

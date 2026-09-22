@@ -1,0 +1,25 @@
+{
+ "instance_id": "linkml__linkml-1772",
+ "repo_key": "linkml/linkml",
+ "base_commit": "656d1719297b2a394273db13262ba76b1e0be118",
+ "status": "ok",
+ "co_edited": [
+  "linkml/generators/pydanticgen.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/generators/pydanticgen.py": [
+   "pydantic_ver"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

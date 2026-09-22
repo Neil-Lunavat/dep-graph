@@ -1,0 +1,36 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-1150",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "1ebe9d7a7263650029516ac293e4d0d41c8ff8c7",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/core/results_output.py",
+  "fitbenchmarking/results_processing/fitting_report.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/core/results_output.py": [
+   "output_file",
+   "to_open",
+   "url",
+   "use_url"
+  ],
+  "fitbenchmarking/results_processing/fitting_report.py": [
+   "file_path",
+   "result"
+  ],
+  "fitbenchmarking/utils/fitbm_result.py": [
+   "fitting_report_link"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

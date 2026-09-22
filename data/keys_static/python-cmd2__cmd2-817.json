@@ -1,0 +1,32 @@
+{
+ "instance_id": "python-cmd2__cmd2-817",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "3f1b75df79fb2616d43faaa3c30552953c55488b",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/ansi.py": [
+   "ansi",
+   "style_warning"
+  ],
+  "cmd2/cmd2.py": [
+   "apply_style",
+   "end",
+   "msg",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

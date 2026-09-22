@@ -1,0 +1,42 @@
+{
+ "instance_id": "pylint-dev__pylint-4516",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "0b5a44359d8255c136af27c0ef5f5b196a526430",
+ "status": "ok",
+ "co_edited": [
+  "pylint/lint/expand_modules.py",
+  "pylint/lint/pylinter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/config/options_provider_mixin.py": [
+   "config"
+  ],
+  "pylint/lint/expand_modules.py": [
+   "_is_in_ignore_list_re",
+   "basename",
+   "element",
+   "file_pattern",
+   "files_or_modules",
+   "ignore_list",
+   "ignore_list_paths_re",
+   "ignore_list_re",
+   "something",
+   "subfilepath"
+  ],
+  "pylint/lint/pylinter.py": [
+   "modules",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "sissbruecker__linkding-811",
+ "repo_key": "sissbruecker/linkding",
+ "base_commit": "20fe88dd572e1aeec53f7725b620263e7b11ed2d",
+ "status": "ok",
+ "co_edited": [
+  "bookmarks/feeds.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "bookmarks/feeds.py": [
+   "request"
+  ],
+  "bookmarks/models.py": [
+   "q",
+   "shared",
+   "unread"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

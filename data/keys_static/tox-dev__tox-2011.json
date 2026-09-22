@@ -1,0 +1,45 @@
+{
+ "instance_id": "tox-dev__tox-2011",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "74e96d97e7111ecb6a3fb25f05a1d3a1fd633fd6",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/config/cli/parser.py",
+  "src/tox/config/of_type.py",
+  "src/tox/util/pep517/backend.py",
+  "src/tox/util/spinner.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/config/cli/parser.py": [
+   "c",
+   "l",
+   "level_map"
+  ],
+  "src/tox/config/of_type.py": [
+   "k",
+   "self",
+   "v",
+   "values"
+  ],
+  "src/tox/report.py": [
+   "LEVELS"
+  ],
+  "src/tox/util/spinner.py": [
+   "frame",
+   "max_width",
+   "self",
+   "text_frame"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

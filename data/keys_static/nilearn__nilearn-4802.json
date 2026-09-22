@@ -1,0 +1,80 @@
+{
+ "instance_id": "nilearn__nilearn-4802",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "b734e7af7f886de41daf19f3d030d89ac6f2c2c7",
+ "status": "ok",
+ "co_edited": [
+  "examples/07_advanced/plot_beta_series.py",
+  "examples/07_advanced/plot_bids_analysis.py",
+  "examples/07_advanced/plot_surface_bids_analysis.py",
+  "nilearn/glm/first_level/first_level.py",
+  "nilearn/interfaces/bids/query.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/07_advanced/plot_beta_series.py": [
+   "DESIGN_MATRICES",
+   "ax",
+   "axes",
+   "i_ax",
+   "lsa_beta_maps",
+   "lsa_glm",
+   "lss_beta_maps",
+   "maps",
+   "name",
+   "standard_glm"
+  ],
+  "examples/07_advanced/plot_bids_analysis.py": [
+   "axes",
+   "data",
+   "fig",
+   "midx",
+   "models",
+   "ncols",
+   "nrows",
+   "task_label"
+  ],
+  "nilearn/__init__.py": [
+   "nilearn"
+  ],
+  "nilearn/glm/first_level/first_level.py": [
+   "design_matrices_",
+   "img_filters",
+   "n_jobs",
+   "space_label",
+   "sub_labels"
+  ],
+  "nilearn/image/__init__.py": [
+   "image"
+  ],
+  "nilearn/image/image.py": [
+   "concat_imgs"
+  ],
+  "nilearn/interfaces/bids/query.py": [
+   "key",
+   "value"
+  ],
+  "nilearn/plotting/__init__.py": [
+   "plotting"
+  ],
+  "nilearn/plotting/img_plotting.py": [
+   "axes",
+   "cmap",
+   "plot_stat_map",
+   "show"
+  ],
+  "nilearn/plotting/matrix_plotting.py": [
+   "plot_design_matrix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 116,
+  "names_resolved_in_repo": 72,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

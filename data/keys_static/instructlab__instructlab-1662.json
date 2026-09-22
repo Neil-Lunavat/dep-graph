@@ -1,0 +1,49 @@
+{
+ "instance_id": "instructlab__instructlab-1662",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "0698b62870f094f2e9681e8ee0d2c53f6588b0a0",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/lab.py",
+  "src/instructlab/system/info.py",
+  "src/instructlab/system/system.py"
+ ],
+ "deleted": [
+  "src/instructlab/sysinfo.py"
+ ],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/system/info.py": [
+   "_instructlab_info",
+   "_llama_cpp_info",
+   "_platform_info",
+   "_torch_cuda_info",
+   "_torch_hpu_info",
+   "_torch_info",
+   "capmax",
+   "capmin",
+   "d",
+   "device",
+   "free",
+   "idx",
+   "info",
+   "key",
+   "prop",
+   "total",
+   "value"
+  ],
+  "src/instructlab/system/system.py": [
+   "system",
+   "system_group"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 59,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

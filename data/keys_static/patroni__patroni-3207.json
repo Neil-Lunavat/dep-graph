@@ -1,0 +1,31 @@
+{
+ "instance_id": "patroni__patroni-3207",
+ "repo_key": "patroni/patroni",
+ "base_commit": "e1faa38e9024eadebc9274041887276164c215fd",
+ "status": "ok",
+ "co_edited": [
+  "patroni/postgresql/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/postgresql/__init__.py": [
+   "major_version"
+  ],
+  "patroni/postgresql/config.py": [
+   "_postgresql",
+   "key_ver",
+   "params",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 9,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

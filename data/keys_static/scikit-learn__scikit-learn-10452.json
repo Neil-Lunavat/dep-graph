@@ -1,0 +1,34 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-10452",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "3e5469eda719956c076ae8e685ec1183bfd98569",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/preprocessing/data.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/preprocessing/data.py": [
+   "X",
+   "append",
+   "columns",
+   "comb",
+   "dtype",
+   "enumerate",
+   "hstack",
+   "out_col",
+   "prod",
+   "sparse"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 36,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

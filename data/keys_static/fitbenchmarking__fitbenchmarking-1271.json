@@ -1,0 +1,59 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-1271",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "98e3393ac3df0c3ad6be298ceb208742873c35e5",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/cli/main.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/cli/main.py": [
+   "LOGGER",
+   "all_dummy_results_flag",
+   "cp",
+   "current_path",
+   "data_dir",
+   "f",
+   "failed_problems",
+   "fit",
+   "group_labels",
+   "group_results_dir",
+   "label",
+   "message",
+   "options",
+   "pp_dfs",
+   "pp_dfs_all_prob_sets",
+   "problem_sets",
+   "result",
+   "result_dir",
+   "results",
+   "sub_dir",
+   "test_data",
+   "unselected_minimizers"
+  ],
+  "fitbenchmarking/core/fitting_benchmarking.py": [
+   "benchmark",
+   "checkpointer",
+   "data_dir",
+   "label"
+  ],
+  "fitbenchmarking/utils/checkpoint.py": [
+   "config",
+   "finalise"
+  ],
+  "fitbenchmarking/utils/options.py": [
+   "results_dir"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

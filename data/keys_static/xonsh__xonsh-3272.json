@@ -1,0 +1,21 @@
+{
+ "instance_id": "xonsh__xonsh-3272",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "59a042010f95e62f3be91368bd866a8580273174",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/aliases.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

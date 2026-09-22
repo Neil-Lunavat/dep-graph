@@ -1,0 +1,42 @@
+{
+ "instance_id": "missionpinball__mpf-1169",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "879c4891d320e089ef7bb9a7b8aba0873c287afa",
+ "status": "ok",
+ "co_edited": [
+  "mpf/assets/show.py",
+  "mpf/config_players/show_player.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/assets/show.py": [
+   "_run_next_step",
+   "_start_now",
+   "delay_secs",
+   "events_when_completed",
+   "machine",
+   "next_step_time",
+   "post_events",
+   "self",
+   "start_callback",
+   "start_time",
+   "sync_ms"
+  ],
+  "mpf/config_players/show_player.py": [
+   "instance_dict",
+   "key",
+   "show_settings",
+   "start_callback"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 82,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

@@ -1,0 +1,64 @@
+{
+ "instance_id": "Fatal1ty__mashumaro-180",
+ "repo_key": "fatal1ty/mashumaro",
+ "base_commit": "d70c5c5606bca8854ce9ad309bdb637309d590cb",
+ "status": "ok",
+ "co_edited": [
+  "mashumaro/core/meta/code/builder.py",
+  "mashumaro/core/meta/helpers.py",
+  "mashumaro/core/meta/types/common.py",
+  "mashumaro/core/meta/types/pack.py",
+  "mashumaro/core/meta/types/unpack.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mashumaro/core/meta/code/builder.py": [
+   "ensure_object_imported",
+   "field_type",
+   "get_type_name_identifier",
+   "resolved_type_params",
+   "self",
+   "typ"
+  ],
+  "mashumaro/core/meta/code/lines.py": [
+   "append"
+  ],
+  "mashumaro/core/meta/helpers.py": [
+   "is_local_type_name",
+   "resolved_type_params",
+   "type_name"
+  ],
+  "mashumaro/core/meta/types/common.py": [
+   "FieldContext",
+   "NoneType",
+   "ValueSpec",
+   "_PY_VALID_ID_RE",
+   "builder",
+   "clean_id",
+   "expression",
+   "origin_type",
+   "type",
+   "value"
+  ],
+  "mashumaro/core/meta/types/unpack.py": [
+   "field_type",
+   "lines",
+   "lit_type",
+   "literal_value",
+   "spec",
+   "unpacker",
+   "unpackers",
+   "variants_type_expr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 96,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

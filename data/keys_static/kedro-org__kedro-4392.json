@@ -1,0 +1,25 @@
+{
+ "instance_id": "kedro-org__kedro-4392",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "057de3457a778698001d9fd2f5797ca3b4a9ba3a",
+ "status": "ok",
+ "co_edited": [
+  "kedro/framework/hooks/manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/framework/hooks/manager.py": [
+   "hooks_collection"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

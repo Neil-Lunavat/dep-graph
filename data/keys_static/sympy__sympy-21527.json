@@ -1,0 +1,71 @@
+{
+ "instance_id": "sympy__sympy-21527",
+ "repo_key": "sympy/sympy",
+ "base_commit": "31d469a5335c81ec4a437e36a861945a6b43d916",
+ "status": "ok",
+ "co_edited": [
+  "sympy/polys/constructor.py",
+  "sympy/polys/matrices/ddm.py",
+  "sympy/polys/matrices/dense.py",
+  "sympy/polys/matrices/linsolve.py",
+  "sympy/polys/matrices/sdm.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/polys/constructor.py": [
+   "coeff",
+   "is_algebraic"
+  ],
+  "sympy/polys/domains/complexfield.py": [
+   "is_ComplexField"
+  ],
+  "sympy/polys/domains/domain.py": [
+   "is_ComplexField",
+   "is_RealField"
+  ],
+  "sympy/polys/domains/realfield.py": [
+   "is_RealField"
+  ],
+  "sympy/polys/matrices/ddm.py": [
+   "K",
+   "a",
+   "b",
+   "domain",
+   "partial_pivot",
+   "pivots",
+   "rref",
+   "to_sdm"
+  ],
+  "sympy/polys/matrices/dense.py": [
+   "_partial_pivot",
+   "a",
+   "ddm_irref",
+   "i",
+   "ip",
+   "j",
+   "m"
+  ],
+  "sympy/polys/matrices/linsolve.py": [
+   "Aaug",
+   "K"
+  ],
+  "sympy/polys/matrices/sdm.py": [
+   "Ai",
+   "Ainz",
+   "Ak",
+   "Aknz",
+   "j",
+   "to_ddm"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 59,
+  "names_resolved_in_repo": 56,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 27.7
+}

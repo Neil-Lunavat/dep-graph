@@ -1,0 +1,87 @@
+{
+ "instance_id": "pypsa__pypsa-1091",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "c36338c171cef52cdce7cd445795ee362435f6ea",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/descriptors.py",
+  "pypsa/networks.py",
+  "pypsa/optimization/constraints.py",
+  "pypsa/optimization/optimize.py",
+  "pypsa/pf.py",
+  "pypsa/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/constants.py": [
+   "DEFAULT_TIMESTAMP"
+  ],
+  "pypsa/descriptors.py": [
+   "attr",
+   "component",
+   "diff",
+   "dynamic",
+   "empty",
+   "index",
+   "n",
+   "res",
+   "snapshots",
+   "sns",
+   "sns_",
+   "static",
+   "static_to_dynamic"
+  ],
+  "pypsa/networks.py": [
+   "Network",
+   "_investment_periods",
+   "_snapshots",
+   "attrs",
+   "cols",
+   "dynamic",
+   "investment_periods",
+   "investment_periods_",
+   "k",
+   "periods",
+   "periods_",
+   "self",
+   "snapshots",
+   "snapshots_"
+  ],
+  "pypsa/optimization/constraints.py": [
+   "n",
+   "sns",
+   "sns_"
+  ],
+  "pypsa/optimization/optimize.py": [
+   "n",
+   "snapshots",
+   "sns"
+  ],
+  "pypsa/pf.py": [
+   "n",
+   "snapshots",
+   "sns",
+   "sub_network"
+  ],
+  "pypsa/utils.py": [
+   "as_index",
+   "force_subset",
+   "msg",
+   "n",
+   "n_attr",
+   "network_attribute",
+   "values",
+   "values_"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 238,
+  "names_resolved_in_repo": 131,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 13,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

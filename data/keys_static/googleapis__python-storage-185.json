@@ -1,0 +1,42 @@
+{
+ "instance_id": "googleapis__python-storage-185",
+ "repo_key": "googleapis/python-storage",
+ "base_commit": "7a4e7a5974abedb0b7b2e110cacbfcd0a40346b6",
+ "status": "ok",
+ "co_edited": [
+  "google/cloud/storage/blob.py",
+  "setup.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "google/cloud/storage/blob.py": [
+   "content_type",
+   "data",
+   "download",
+   "download_url",
+   "end",
+   "file_obj",
+   "headers",
+   "object_metadata",
+   "raw_download",
+   "response",
+   "start",
+   "timeout",
+   "transport",
+   "upload"
+  ],
+  "google/cloud/storage/constants.py": [
+   "_DEFAULT_TIMEOUT"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 600,
+  "names_resolved_in_repo": 62,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": true
+ },
+ "seconds": 3.2
+}

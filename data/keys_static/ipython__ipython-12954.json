@@ -1,0 +1,33 @@
+{
+ "instance_id": "ipython__ipython-12954",
+ "repo_key": "ipython/ipython",
+ "base_commit": "322f2fe50d9dccb6134d3d61df7d90772ecf2751",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/interactiveshell.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/alias.py": [
+   "retrieve_alias"
+  ],
+  "IPython/core/interactiveshell.py": [
+   "alias_manager",
+   "cmd",
+   "has_magic_alternatives",
+   "is_alias_expanded",
+   "main_cmd",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.8
+}

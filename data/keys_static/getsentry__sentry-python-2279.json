@@ -1,0 +1,30 @@
+{
+ "instance_id": "getsentry__sentry-python-2279",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "d48d3eb79bd6a91570476e5d3fc627e195ca2eba",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/client.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/client.py": [
+   "_should_sample_error",
+   "event",
+   "event_opt",
+   "is_checkin",
+   "is_transaction",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

@@ -1,0 +1,29 @@
+{
+ "instance_id": "Textualize__textual-5743",
+ "repo_key": "textualize/textual",
+ "base_commit": "21e91cd132964b9eb44442e6c6765c8fa22c2128",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/dom.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/dom.py": [
+   "screen",
+   "self"
+  ],
+  "src/textual/message_pump.py": [
+   "_is_mounted"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

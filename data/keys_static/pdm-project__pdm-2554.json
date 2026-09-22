@@ -1,0 +1,119 @@
+{
+ "instance_id": "pdm-project__pdm-2554",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "2fe1dcf39e2ed9601dae534cdf6359807f926235",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/cli/commands/add.py",
+  "src/pdm/cli/commands/update.py",
+  "src/pdm/cli/options.py",
+  "src/pdm/formats/pipfile.py",
+  "src/pdm/models/requirements.py",
+  "src/pdm/project/core.py",
+  "src/pdm/project/project_file.py",
+  "src/pdm/resolver/providers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/cli/commands/add.py": [
+   "prerelease"
+  ],
+  "src/pdm/cli/commands/update.py": [
+   "prerelease"
+  ],
+  "src/pdm/cli/options.py": [
+   "ArgumentGroup",
+   "is_mutually_exclusive",
+   "prerelease_option"
+  ],
+  "src/pdm/exceptions.py": [
+   "PdmUsageError"
+  ],
+  "src/pdm/formats/pipfile.py": [
+   "data",
+   "settings"
+  ],
+  "src/pdm/models/candidates.py": [
+   "Candidate",
+   "version"
+  ],
+  "src/pdm/models/repositories.py": [
+   "all_candidates"
+  ],
+  "src/pdm/models/requirements.py": [
+   "identify",
+   "prerelease",
+   "specifier",
+   "strip_extras"
+  ],
+  "src/pdm/project/core.py": [
+   "accepted_args",
+   "direct_minimal_versions",
+   "for_install",
+   "locked_candidates",
+   "locked_repository",
+   "name",
+   "params",
+   "provider_class",
+   "pyproject",
+   "repository",
+   "self",
+   "strategy",
+   "tracked_names"
+  ],
+  "src/pdm/project/project_file.py": [
+   "allow_prereleases",
+   "resolution",
+   "self",
+   "settings"
+  ],
+  "src/pdm/resolver/__init__.py": [
+   "resolver"
+  ],
+  "src/pdm/resolver/providers.py": [
+   "BaseProvider",
+   "__init__",
+   "allow_prereleases",
+   "args",
+   "arguments",
+   "candidate",
+   "cls",
+   "direct_minimal_versions",
+   "get_provider",
+   "identifier",
+   "k",
+   "key",
+   "kwargs",
+   "locked_candidates",
+   "locked_repository",
+   "overrides",
+   "p",
+   "params",
+   "parsed_version",
+   "pin",
+   "prerelease",
+   "project",
+   "provider",
+   "provider_arguments",
+   "providers",
+   "repository",
+   "requirement",
+   "self",
+   "tracked_names",
+   "v"
+  ],
+  "src/pdm/utils.py": [
+   "stacklevel"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 219,
+  "names_resolved_in_repo": 163,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "kozea__weasyprint-2233",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "f17bd4bfcab07d10a35a7e9c47920dbc43623e5b",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/layout/flex.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/layout/block.py": [
+   "block",
+   "block_level_width"
+  ],
+  "weasyprint/layout/flex.py": [
+   "box",
+   "containing_block",
+   "cross",
+   "parent_box"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "elastic__rally-540",
+ "repo_key": "elastic/rally",
+ "base_commit": "f2557f8476f7ba34c5def1c0126218f19266dee1",
+ "status": "ok",
+ "co_edited": [
+  "esrally/mechanic/telemetry.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/mechanic/telemetry.py": [
+   "collected_node_stats"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

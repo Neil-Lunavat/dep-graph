@@ -1,0 +1,102 @@
+{
+ "instance_id": "dask__dask-11605",
+ "repo_key": "dask/dask",
+ "base_commit": "44c75d08f6b693c53315c7926b5681af33696f5d",
+ "status": "ok",
+ "co_edited": [
+  "dask/_task_spec.py",
+  "dask/array/overlap.py",
+  "dask/dataframe/io/csv.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/__init__.py": [
+   "dask"
+  ],
+  "dask/_task_spec.py": [
+   "Dict",
+   "GraphNode",
+   "List",
+   "Set",
+   "Tuple",
+   "_wrap_namedtuple_task",
+   "args",
+   "k",
+   "klass",
+   "o",
+   "obj",
+   "parse_input",
+   "parsed_collection",
+   "parsed_dict",
+   "self",
+   "to_container",
+   "v"
+  ],
+  "dask/array/overlap.py": [
+   "_get_overlap_rechunked_chunks",
+   "allow_rechunk",
+   "args",
+   "c",
+   "coerce_depth",
+   "d",
+   "depth",
+   "depth2",
+   "depths",
+   "ensure_minimum_chunksize",
+   "kwargs",
+   "size",
+   "x"
+  ],
+  "dask/dataframe/__init__.py": [
+   "_dask_expr_enabled",
+   "dataframe",
+   "dd"
+  ],
+  "dask/dataframe/io/csv.py": [
+   "_columns",
+   "_read_csv",
+   "block",
+   "blocks",
+   "blocksize",
+   "colname",
+   "columns",
+   "df",
+   "dtypes",
+   "enforce",
+   "full_columns",
+   "head",
+   "header",
+   "i",
+   "is_first",
+   "is_last",
+   "kwargs",
+   "part",
+   "parts",
+   "path",
+   "path_info",
+   "paths",
+   "project_after_read",
+   "reader",
+   "rest_kwargs",
+   "write_header"
+  ],
+  "dask/dataframe/io/io.py": [
+   "enforce_metadata",
+   "label",
+   "meta"
+  ],
+  "dask/utils.py": [
+   "is_namedtuple_instance"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 221,
+  "names_resolved_in_repo": 168,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.8
+}

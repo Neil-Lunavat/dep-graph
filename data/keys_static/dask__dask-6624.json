@@ -1,0 +1,46 @@
+{
+ "instance_id": "dask__dask-6624",
+ "repo_key": "dask/dask",
+ "base_commit": "519b62fed6fa577a52b9273e11ccd9ba6d49644b",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/percentile.py",
+  "dask/array/reductions.py",
+  "dask/dataframe/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/core.py": [
+   "chunks"
+  ],
+  "dask/array/percentile.py": [
+   "_percentile",
+   "a",
+   "calc_q",
+   "i",
+   "interpolation",
+   "key",
+   "name",
+   "q"
+  ],
+  "dask/dataframe/core.py": [
+   "calc_qs",
+   "df",
+   "i",
+   "key",
+   "name",
+   "qs",
+   "val_dsk"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 201,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 21.2
+}

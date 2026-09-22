@@ -1,0 +1,66 @@
+{
+ "instance_id": "kozea__weasyprint-2252",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "7681902839b3f3192dae888e6dae38489bccf50e",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/css/__init__.py",
+  "weasyprint/layout/page.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/css/__init__.py": [
+   "PageSelectorType",
+   "_page_type_match",
+   "a",
+   "b",
+   "computed_from_cascaded",
+   "css",
+   "data",
+   "function",
+   "group",
+   "i",
+   "index",
+   "margin_rule",
+   "name",
+   "offset",
+   "page_data",
+   "page_selector_type",
+   "page_type",
+   "pseudo_type",
+   "selector",
+   "selector_list",
+   "self",
+   "specificity",
+   "token"
+  ],
+  "weasyprint/layout/page.py": [
+   "PageType",
+   "blank",
+   "context",
+   "group_i",
+   "group_index",
+   "html",
+   "i",
+   "index",
+   "initial_next_page",
+   "name",
+   "page",
+   "page_type",
+   "remake_page",
+   "resume_at",
+   "root_box",
+   "side"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 115,
+  "names_resolved_in_repo": 96,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

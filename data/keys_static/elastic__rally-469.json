@@ -1,0 +1,44 @@
+{
+ "instance_id": "elastic__rally-469",
+ "repo_key": "elastic/rally",
+ "base_commit": "a5408e0d0d07b271b509df8057a7c73303604c10",
+ "status": "ok",
+ "co_edited": [
+  "esrally/driver/runner.py",
+  "esrally/track/params.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/driver/runner.py": [
+   "action_meta_data_key",
+   "cache",
+   "es",
+   "logger",
+   "mandatory",
+   "max_num_segments",
+   "params",
+   "request_params",
+   "self",
+   "size",
+   "with_action_metadata"
+  ],
+  "esrally/track/params.py": [
+   "params",
+   "query_params",
+   "request_cache",
+   "request_params",
+   "results_per_page",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 97,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "missionpinball__mpf-1287",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "e67b40d891febb679279708351a6fb2560889b9f",
+ "status": "ok",
+ "co_edited": [
+  "mpf/config_players/coil_player.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/config_players/coil_player.py": [
+   "action",
+   "coil",
+   "context",
+   "s",
+   "self"
+  ],
+  "mpf/core/logging.py": [
+   "context",
+   "raise_config_error"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

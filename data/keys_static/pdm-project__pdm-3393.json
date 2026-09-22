@@ -1,0 +1,35 @@
+{
+ "instance_id": "pdm-project__pdm-3393",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "c582a94ce4c21d1099790b0ea4f785a8769be654",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/project/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/project/core.py": [
+   "dev_dependencies",
+   "dev_group",
+   "items",
+   "pyproject",
+   "self"
+  ],
+  "src/pdm/project/project_file.py": [
+   "settings"
+  ],
+  "src/pdm/project/toml_file.py": [
+   "_data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

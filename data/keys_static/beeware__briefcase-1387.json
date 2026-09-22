@@ -1,0 +1,31 @@
+{
+ "instance_id": "beeware__briefcase-1387",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "5483fd9a4d61f90f932a845311c6f820a1566cd3",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/integrations/docker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/console.py": [
+   "prefix"
+  ],
+  "src/briefcase/integrations/docker.py": [
+   "args",
+   "cache_image",
+   "image_tag",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

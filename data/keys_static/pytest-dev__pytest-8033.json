@@ -1,0 +1,37 @@
+{
+ "instance_id": "pytest-dev__pytest-8033",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "66311ff702d98450f29a448a47c0cd5fd0c51081",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/unittest.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/unittest.py": [
+   "args",
+   "cleanup",
+   "cleanup_name",
+   "cls",
+   "obj",
+   "pass_self",
+   "request",
+   "scope",
+   "self",
+   "setup",
+   "setup_name",
+   "teardown",
+   "teardown_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

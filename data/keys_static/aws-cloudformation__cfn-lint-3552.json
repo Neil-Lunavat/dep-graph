@@ -1,0 +1,87 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-3552",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "8f1d89a6acab43cfa6a6e1931442ba362d48617a",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/context/conditions/_conditions.py",
+  "src/cfnlint/jsonschema/_filter.py",
+  "src/cfnlint/jsonschema/validators.py",
+  "src/cfnlint/template/template.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "src/cfnlint/context/conditions/_utils.py"
+ ],
+ "symbol": {
+  "src/cfnlint/__init__.py": [
+   "cfnlint"
+  ],
+  "src/cfnlint/context/conditions/_conditions.py": [
+   "_build_conditions",
+   "_max_scenarios",
+   "conditions",
+   "evolve",
+   "evolve_from_instance",
+   "instance",
+   "params",
+   "product",
+   "scenario",
+   "scenarios_attempted",
+   "self",
+   "status"
+  ],
+  "src/cfnlint/context/conditions/exceptions.py": [
+   "Unsatisfiable"
+  ],
+  "src/cfnlint/decode/__init__.py": [
+   "decode"
+  ],
+  "src/cfnlint/decode/mark.py": [
+   "Mark"
+  ],
+  "src/cfnlint/decode/node.py": [
+   "dict_node",
+   "end_mark",
+   "list_node",
+   "node",
+   "start_mark"
+  ],
+  "src/cfnlint/helpers.py": [
+   "helpers",
+   "is_function"
+  ],
+  "src/cfnlint/jsonschema/_filter.py": [
+   "group_schema",
+   "instance",
+   "k_schema",
+   "scenario",
+   "scenario_instance",
+   "scenario_validator",
+   "schema",
+   "self",
+   "standard_schema",
+   "validator"
+  ],
+  "src/cfnlint/jsonschema/validators.py": [
+   "_instance",
+   "_schema",
+   "_validator",
+   "v",
+   "validator"
+  ],
+  "src/cfnlint/template/template.py": [
+   "obj",
+   "result"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 419,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 116,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.4
+}

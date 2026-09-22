@@ -1,0 +1,21 @@
+{
+ "instance_id": "RDFLib__rdflib-2112",
+ "repo_key": "rdflib/rdflib",
+ "base_commit": "bcd05e93c0325854b2c44447996cb4bf91cc830c",
+ "status": "ok",
+ "co_edited": [
+  "rdflib/plugins/stores/sparqlconnector.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.0
+}

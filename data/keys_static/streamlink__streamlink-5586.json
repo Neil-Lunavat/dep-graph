@@ -1,0 +1,96 @@
+{
+ "instance_id": "streamlink__streamlink-5586",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "5f64f2ee3a4d436cd6686efb2353109fd4da4b70",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugin/plugin.py",
+  "src/streamlink/plugins/goodgame.py",
+  "src/streamlink/plugins/twitch.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/__init__.py": [
+   "streamlink"
+  ],
+  "src/streamlink/exceptions.py": [
+   "NoStreamsError",
+   "PluginError",
+   "exceptions"
+  ],
+  "src/streamlink/plugin/api/validate/__init__.py": [
+   "validate"
+  ],
+  "src/streamlink/plugin/api/validate/_schemas.py": [
+   "get",
+   "none_or_all",
+   "transform"
+  ],
+  "src/streamlink/plugin/api/validate/_validate.py": [
+   "validate"
+  ],
+  "src/streamlink/plugin/api/validate/_validators.py": [
+   "parse_html",
+   "parse_json",
+   "xml_find"
+  ],
+  "src/streamlink/plugin/plugin.py": [
+   "QUALITY_WEIGHTS_EXTRA",
+   "_get_streams",
+   "group",
+   "match",
+   "matches",
+   "session",
+   "url",
+   "weights"
+  ],
+  "src/streamlink/plugins/goodgame.py": [
+   "_API_STREAMS_CHANNEL",
+   "_API_STREAMS_ID",
+   "_URL_HLS",
+   "_api_stream",
+   "_get_api_url",
+   "_get_channel_key",
+   "api_url",
+   "author",
+   "category",
+   "channel",
+   "data",
+   "hls_url",
+   "id",
+   "log",
+   "online",
+   "p_online",
+   "p_title",
+   "p_url",
+   "players",
+   "result",
+   "self",
+   "title"
+  ],
+  "src/streamlink/plugins/twitch.py": [
+   "err",
+   "error",
+   "log",
+   "orig"
+  ],
+  "src/streamlink/session.py": [
+   "http",
+   "streams"
+  ],
+  "src/streamlink/stream/hls.py": [
+   "HLSStream",
+   "parse_variant_playlist"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 198,
+  "names_resolved_in_repo": 147,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 10,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

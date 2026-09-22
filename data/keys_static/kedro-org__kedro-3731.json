@@ -1,0 +1,43 @@
+{
+ "instance_id": "kedro-org__kedro-3731",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "00789fa4d5f1ed8734d6e2561db4fd52c3feddc8",
+ "status": "ok",
+ "co_edited": [
+  "kedro/framework/cli/micropkg.py",
+  "kedro/framework/cli/pipeline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/framework/cli/micropkg.py": [
+   "project_metadata",
+   "tests_path",
+   "tests_target"
+  ],
+  "kedro/framework/cli/pipeline.py": [
+   "_copy_pipeline_tests",
+   "metadata",
+   "module_path",
+   "name",
+   "pipeline_name",
+   "project_metadata",
+   "project_root",
+   "result_path",
+   "tests_target"
+  ],
+  "kedro/framework/startup.py": [
+   "project_name",
+   "project_path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

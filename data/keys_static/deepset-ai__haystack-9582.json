@@ -1,0 +1,21 @@
+{
+ "instance_id": "deepset-ai__haystack-9582",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "848115c65edb98fe600d71cb398f8a5e4c874f76",
+ "status": "ok",
+ "co_edited": [
+  "haystack/dataclasses/streaming_chunk.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

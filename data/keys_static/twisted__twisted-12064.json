@@ -1,0 +1,28 @@
+{
+ "instance_id": "twisted__twisted-12064",
+ "repo_key": "twisted/twisted",
+ "base_commit": "41db66cf45a6fdcceaa0e6f2485d6ad6263b1ffb",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/python/deprecate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/python/deprecate.py": [
+   "docstringLines",
+   "l",
+   "spaces",
+   "trailer"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

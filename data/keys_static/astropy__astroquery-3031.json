@@ -1,0 +1,82 @@
+{
+ "instance_id": "astropy__astroquery-3031",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "604f284c1d63ac4ab2dc00c3fc85414786da3db3",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/mast/cloud.py",
+  "astroquery/mast/observations.py",
+  "astroquery/query.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/mast/cloud.py": [
+   "bkt",
+   "bucket_path",
+   "bytes_read",
+   "cache",
+   "data_product",
+   "download_file",
+   "local_path",
+   "numbytes",
+   "pb",
+   "progress_callback",
+   "progress_lock",
+   "pubdata_bucket",
+   "self",
+   "verbose"
+  ],
+  "astroquery/mast/core.py": [
+   "_cloud_connection"
+  ],
+  "astroquery/mast/observations.py": [
+   "_download_curl_script",
+   "_download_files",
+   "base_dir",
+   "base_url",
+   "cache",
+   "cloud_only",
+   "curl_flag",
+   "data_product",
+   "download_file",
+   "filters",
+   "flat",
+   "local_path",
+   "mrp_only",
+   "out_dir",
+   "products",
+   "self",
+   "uri",
+   "url_list",
+   "verbose"
+  ],
+  "astroquery/query.py": [
+   "block",
+   "blocksize",
+   "bytes_read",
+   "cache",
+   "continuation",
+   "f",
+   "head_safe",
+   "kwargs",
+   "length",
+   "local_filepath",
+   "method",
+   "open_mode",
+   "pb",
+   "progress_stream",
+   "response",
+   "verbose"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 197,
+  "names_resolved_in_repo": 131,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 12.8
+}

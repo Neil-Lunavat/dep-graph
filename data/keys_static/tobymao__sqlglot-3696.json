@@ -1,0 +1,60 @@
+{
+ "instance_id": "tobymao__sqlglot-3696",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "442c61defe05f4c168a7909d0a5fc5c043a2d2b4",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/duckdb.py",
+  "sqlglot/dialects/snowflake.py",
+  "sqlglot/expressions.py",
+  "sqlglot/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/duckdb.py": [
+   "arg",
+   "expression",
+   "parsejson_sql",
+   "self"
+  ],
+  "sqlglot/dialects/snowflake.py": [
+   "args",
+   "e"
+  ],
+  "sqlglot/expressions.py": [
+   "ParseJSON",
+   "arg_types",
+   "args",
+   "case",
+   "else_",
+   "exp",
+   "func",
+   "null",
+   "this",
+   "when"
+  ],
+  "sqlglot/generator.py": [
+   "func",
+   "sql"
+  ],
+  "sqlglot/helper.py": [
+   "seq_get"
+  ],
+  "sqlglot/parser.py": [
+   "_parse_string",
+   "_parse_var",
+   "any_token",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

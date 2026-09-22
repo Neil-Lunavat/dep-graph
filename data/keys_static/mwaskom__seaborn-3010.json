@@ -1,0 +1,28 @@
+{
+ "instance_id": "mwaskom__seaborn-3010",
+ "repo_key": "mwaskom/seaborn",
+ "base_commit": "0f5a013e2cf43562deec3b879458e59a73853813",
+ "status": "ok",
+ "co_edited": [
+  "seaborn/_stats/regression.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "seaborn/_stats/regression.py": [
+   "_fit_predict",
+   "data",
+   "groupby",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

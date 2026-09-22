@@ -1,0 +1,47 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-1112",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "62346c0985fca4ddee41a1f09b748376fa83e2ea",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/actions/validate.py",
+  "frictionless/package/validate.py",
+  "frictionless/program/common.py",
+  "frictionless/program/validate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/actions/validate.py": [
+   "name",
+   "options",
+   "package",
+   "type",
+   "validate_resource"
+  ],
+  "frictionless/package/package.py": [
+   "get_resource"
+  ],
+  "frictionless/package/validate.py": [
+   "options",
+   "package",
+   "resource"
+  ],
+  "frictionless/program/common.py": [
+   "common",
+   "resource_name"
+  ],
+  "frictionless/program/validate.py": [
+   "resource_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.7
+}

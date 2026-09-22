@@ -1,0 +1,44 @@
+{
+ "instance_id": "iterative__dvc-10798",
+ "repo_key": "iterative/dvc",
+ "base_commit": "ca73078b80438ac290e557efd2a0379f6b1f26b2",
+ "status": "ok",
+ "co_edited": [
+  "dvc/commands/experiments/show.py",
+  "dvc/repo/experiments/collect.py",
+  "dvc/repo/experiments/show.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dvc/cli/command.py": [
+   "args"
+  ],
+  "dvc/commands/experiments/show.py": [
+   "self"
+  ],
+  "dvc/repo/experiments/collect.py": [
+   "collect_rev",
+   "hide_workspace",
+   "kwargs",
+   "repo",
+   "result",
+   "workspace_data"
+  ],
+  "dvc/repo/experiments/serialize.py": [
+   "ExpState"
+  ],
+  "dvc/repo/experiments/show.py": [
+   "hide_workspace"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

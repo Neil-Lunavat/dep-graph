@@ -1,0 +1,75 @@
+{
+ "instance_id": "patroni__patroni-3148",
+ "repo_key": "patroni/patroni",
+ "base_commit": "2f800173a5e4cedfe99a6d6ad367057bfcc96d2b",
+ "status": "ok",
+ "co_edited": [
+  "features/steps/slots.py",
+  "patroni/dcs/__init__.py",
+  "patroni/postgresql/__init__.py",
+  "patroni/postgresql/slots.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "features/steps/slots.py": [
+   "context",
+   "exists",
+   "max_time",
+   "pg_name",
+   "physical_slot_no_xmin",
+   "query",
+   "row",
+   "slot_name",
+   "time_limit"
+  ],
+  "patroni/dcs/__init__.py": [
+   "Member",
+   "expected_active",
+   "has_member",
+   "leader_filter",
+   "leader_name",
+   "lsn",
+   "m",
+   "member",
+   "members",
+   "name",
+   "replica_filter",
+   "ret",
+   "role",
+   "self",
+   "slot_name",
+   "slot_name_from_member_name",
+   "slots"
+  ],
+  "patroni/postgresql/slots.py": [
+   "_copy_items",
+   "_replication_slots",
+   "_schedule_load_slots",
+   "active",
+   "drop_replication_slot",
+   "dropped",
+   "extra",
+   "logger",
+   "name",
+   "pg_wal_lsn_diff",
+   "r",
+   "ret",
+   "self",
+   "skip_temp_slots",
+   "value"
+  ],
+  "patroni/tags.py": [
+   "replicatefrom"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 187,
+  "names_resolved_in_repo": 131,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

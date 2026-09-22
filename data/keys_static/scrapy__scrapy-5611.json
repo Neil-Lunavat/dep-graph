@@ -1,0 +1,32 @@
+{
+ "instance_id": "scrapy__scrapy-5611",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "52d93490f57d4b2284e3d95efa5c622ab8ad16cb",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/http/response/text.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/http/response/__init__.py": [
+   "body"
+  ],
+  "scrapy/http/response/text.py": [
+   "_bom_encoding",
+   "self"
+  ],
+  "scrapy/utils/python.py": [
+   "memoizemethod_noargs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

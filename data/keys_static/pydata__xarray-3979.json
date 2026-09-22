@@ -1,0 +1,31 @@
+{
+ "instance_id": "pydata__xarray-3979",
+ "repo_key": "pydata/xarray",
+ "base_commit": "2c77eb531b6689f9f1d2adbde0d8bf852f1f7362",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/common.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/common.py": [
+   "fill_value"
+  ],
+  "xarray/core/utils.py": [
+   "Frozen",
+   "either_dict_or_kwargs",
+   "is_scalar",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

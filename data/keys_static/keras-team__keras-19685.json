@@ -1,0 +1,97 @@
+{
+ "instance_id": "keras-team__keras-19685",
+ "repo_key": "keras-team/keras",
+ "base_commit": "1353b11f343f06da7e8739369668de86d4875f23",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/layers/layer.py",
+  "keras/src/layers/merging/base_merge.py",
+  "keras/src/layers/merging/concatenate.py",
+  "keras/src/layers/merging/maximum.py",
+  "keras/src/layers/merging/minimum.py",
+  "keras/src/layers/merging/multiply.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/common/keras_tensor.py": [
+   "dtype"
+  ],
+  "keras/src/backend/tensorflow/core.py": [
+   "cast"
+  ],
+  "keras/src/layers/layer.py": [
+   "call_spec",
+   "first_arg",
+   "m",
+   "previous_mask",
+   "x"
+  ],
+  "keras/src/layers/merging/base_merge.py": [
+   "_apply_merge_op_and_or_mask",
+   "inputs",
+   "m",
+   "mask",
+   "op_fn",
+   "output",
+   "output_mask",
+   "self",
+   "x"
+  ],
+  "keras/src/layers/merging/concatenate.py": [
+   "concatenated",
+   "input_i",
+   "mask_i"
+  ],
+  "keras/src/layers/merging/maximum.py": [
+   "inputs",
+   "self"
+  ],
+  "keras/src/layers/merging/minimum.py": [
+   "inputs",
+   "self"
+  ],
+  "keras/src/layers/merging/multiply.py": [
+   "has_output_mask",
+   "inputs",
+   "mask",
+   "masks",
+   "output",
+   "output_mask",
+   "x"
+  ],
+  "keras/src/ops/__init__.py": [
+   "ops"
+  ],
+  "keras/src/ops/core.py": [
+   "shape"
+  ],
+  "keras/src/ops/numpy.py": [
+   "any",
+   "axis",
+   "broadcast_to",
+   "expand_dims",
+   "keepdims",
+   "logical_or",
+   "maximum",
+   "minimum",
+   "multiply",
+   "where"
+  ],
+  "keras/src/tree/__init__.py": [
+   "tree"
+  ],
+  "keras/src/tree/tree_api.py": [
+   "flatten"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 223,
+  "names_resolved_in_repo": 171,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 11.4
+}

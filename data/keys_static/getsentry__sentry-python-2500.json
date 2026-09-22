@@ -1,0 +1,68 @@
+{
+ "instance_id": "getsentry__sentry-python-2500",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "35d86b69980632816b5e055a2d697cdecef14a36",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/_types.py",
+  "sentry_sdk/envelope.py",
+  "sentry_sdk/integrations/rq.py",
+  "sentry_sdk/scope.py",
+  "sentry_sdk/transport.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/attachments.py": [
+   "add_to_transactions"
+  ],
+  "sentry_sdk/envelope.py": [
+   "ty"
+  ],
+  "sentry_sdk/integrations/rq.py": [
+   "_capture_exception",
+   "exc_info"
+  ],
+  "sentry_sdk/scope.py": [
+   "_apply_breadcrumbs_to_event",
+   "_apply_contexts_to_event",
+   "_apply_extra_to_event",
+   "_apply_fingerprint_to_event",
+   "_apply_level_to_event",
+   "_apply_tags_to_event",
+   "_apply_transaction_info_to_event",
+   "_apply_transaction_name_to_event",
+   "_apply_user_to_event",
+   "_attachments",
+   "_breadcrumbs",
+   "_disable_capture",
+   "_drop",
+   "attachment",
+   "attachments_to_send",
+   "cause",
+   "event",
+   "hint",
+   "is_check_in",
+   "is_transaction",
+   "options",
+   "self",
+   "ty"
+  ],
+  "sentry_sdk/transport.py": [
+   "_FunctionTransport",
+   "ref_transport"
+  ],
+  "sentry_sdk/utils.py": [
+   "logger"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 129,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.2
+}

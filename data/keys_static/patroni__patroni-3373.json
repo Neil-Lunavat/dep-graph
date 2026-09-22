@@ -1,0 +1,63 @@
+{
+ "instance_id": "patroni__patroni-3373",
+ "repo_key": "patroni/patroni",
+ "base_commit": "2823adf747be78382dcc35c13228d9a7c12e8113",
+ "status": "ok",
+ "co_edited": [
+  "patroni/dcs/etcd.py",
+  "patroni/dcs/etcd3.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/collections.py": [
+   "EMPTY_DICT"
+  ],
+  "patroni/dcs/etcd.py": [
+   "AbstractEtcdClientWithFailover",
+   "DnsCachingResolver",
+   "ERROR_CLS",
+   "StaleEtcdNode",
+   "StaleEtcdNodeGuard",
+   "__init__",
+   "_allow_reconnect",
+   "_check_cluster_raft_term",
+   "_cluster_id",
+   "_config",
+   "_dns_resolver",
+   "_load_machines_cache",
+   "_machines_cache_updated",
+   "_raft_term",
+   "_reset_cluster_raft_term",
+   "cache_ttl",
+   "config",
+   "dns_resolver",
+   "kwargs",
+   "self",
+   "set_machines_cache_ttl"
+  ],
+  "patroni/dcs/etcd3.py": [
+   "KVCache",
+   "_client",
+   "_is_ready",
+   "events",
+   "header",
+   "kill_stream",
+   "message",
+   "result",
+   "self"
+  ],
+  "patroni/utils.py": [
+   "Retry"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 152,
+  "names_resolved_in_repo": 96,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

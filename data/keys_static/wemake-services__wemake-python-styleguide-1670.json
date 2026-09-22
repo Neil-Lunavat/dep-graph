@@ -1,0 +1,49 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1670",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "259e5d39622bada48cba95dce2eb94d2d77aaecc",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/tokenize/conditions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/violations/refactoring.py": [
+   "ImplicitElifViolation"
+  ],
+  "wemake_python_styleguide/visitors/base.py": [
+   "add_violation",
+   "file_tokens"
+  ],
+  "wemake_python_styleguide/visitors/tokenize/conditions.py": [
+   "_check_complex_else",
+   "_check_implicit_elif",
+   "_does_else_belong_to_if",
+   "_if_has_code_below",
+   "_is_invalid_token",
+   "belongs_to_if",
+   "complex_else",
+   "context_count",
+   "current_token",
+   "index",
+   "is_not_else",
+   "next_token",
+   "next_tokens",
+   "remaining_tokens",
+   "self",
+   "token",
+   "token_index",
+   "tokens"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 70,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 13,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

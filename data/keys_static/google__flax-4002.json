@@ -1,0 +1,30 @@
+{
+ "instance_id": "google__flax-4002",
+ "repo_key": "google/flax",
+ "base_commit": "fbdc3394f67c973c3502c482d168152437fea3c2",
+ "status": "ok",
+ "co_edited": [
+  "flax/errors.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/errors.py": [
+   "FlaxError",
+   "class_name",
+   "error_page",
+   "message",
+   "module_name",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

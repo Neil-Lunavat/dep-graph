@@ -1,0 +1,36 @@
+{
+ "instance_id": "jlowin__fastmcp-1578",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "94b1eb9d6e75cf12dccffc04f9f96f3bb8921bba",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/tools/tool_transform.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/tools/tool_transform.py": [
+   "base_def",
+   "base_schema",
+   "def_name",
+   "def_schema",
+   "merged_defs",
+   "override_defs",
+   "override_schema",
+   "result"
+  ],
+  "src/fastmcp/utilities/json_schema.py": [
+   "compress_schema",
+   "prune_defs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

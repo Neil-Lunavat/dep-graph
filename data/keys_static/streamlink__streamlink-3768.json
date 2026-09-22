@@ -1,0 +1,51 @@
+{
+ "instance_id": "streamlink__streamlink-3768",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "1ed85fcb24c6436f93c8e7ed9931e0266e7ee696",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugin/api/http_session.py",
+  "src/streamlink/plugins/twitch.py",
+  "src/streamlink/plugins/zattoo.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugin/api/http_session.py": [
+   "_HTTPResponse",
+   "__all__",
+   "args",
+   "err",
+   "exception",
+   "headers",
+   "kwargs",
+   "method",
+   "params",
+   "proxies",
+   "rerr",
+   "self",
+   "timeout",
+   "url"
+  ],
+  "src/streamlink/plugin/api/useragents.py": [
+   "FIREFOX",
+   "useragents"
+  ],
+  "src/streamlink/plugins/zattoo.py": [
+   "__uuid",
+   "app_token",
+   "app_token_url",
+   "base_url",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 63,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 6.8
+}

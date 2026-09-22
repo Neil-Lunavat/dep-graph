@@ -1,0 +1,41 @@
+{
+ "instance_id": "astropy__astropy-13842",
+ "repo_key": "astropy/astropy",
+ "base_commit": "3b448815e21b117d34fe63007b8ef63ee084fefb",
+ "status": "ok",
+ "co_edited": [
+  "astropy/table/table.py",
+  "astropy/table/table_helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/table/column.py": [
+   "col_copy",
+   "copy_indices"
+  ],
+  "astropy/table/table.py": [
+   "_init_indices",
+   "col",
+   "copy",
+   "data",
+   "self"
+  ],
+  "astropy/table/table_helpers.py": [
+   "copy",
+   "data",
+   "item",
+   "out",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 13.6
+}

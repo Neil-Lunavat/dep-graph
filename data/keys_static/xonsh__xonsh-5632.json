@@ -1,0 +1,32 @@
+{
+ "instance_id": "xonsh__xonsh-5632",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "32d72af53d5e858b617c8a10c531b67e561f8421",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/completer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/completer.py": [
+   "completion_context",
+   "ctx",
+   "prefix"
+  ],
+  "xonsh/parsers/completion_context.py": [
+   "command",
+   "prefix",
+   "python"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

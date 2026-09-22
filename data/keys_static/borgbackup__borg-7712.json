@@ -1,0 +1,32 @@
+{
+ "instance_id": "borgbackup__borg-7712",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "e69568309599bd88313c8e5c756296063a9b7e9b",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/manifest.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/constants.py": [
+   "ITEM_KEYS"
+  ],
+  "src/borg/manifest.py": [
+   "config",
+   "item_keys",
+   "m",
+   "manifest",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

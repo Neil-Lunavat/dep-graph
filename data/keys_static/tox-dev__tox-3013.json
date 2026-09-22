@@ -1,0 +1,28 @@
+{
+ "instance_id": "tox-dev__tox-3013",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "3238abf7e95fa7c5c041554452f4cee055f6c0d7",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/session/cmd/legacy.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/session/cmd/legacy.py": [
+   "option"
+  ],
+  "src/tox/session/env_select.py": [
+   "CliEnv"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

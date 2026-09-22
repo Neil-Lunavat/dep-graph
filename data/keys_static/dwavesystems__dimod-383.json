@@ -1,0 +1,56 @@
+{
+ "instance_id": "dwavesystems__dimod-383",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "72188236007a1225294a994f9684560de657d865",
+ "status": "ok",
+ "co_edited": [
+  "dimod/binary_quadratic_model.py",
+  "dimod/reference/composites/scalecomposite.py",
+  "dimod/sampleset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/binary_quadratic_model.py": [
+   "ignored_interactions",
+   "ignored_variables",
+   "quadratic",
+   "self",
+   "v"
+  ],
+  "dimod/reference/composites/scalecomposite.py": [
+   "_check_params",
+   "ignore_offset",
+   "ignored_interactions",
+   "ignored_variables",
+   "quadratic_range"
+  ],
+  "dimod/sampleset.py": [
+   "data",
+   "df",
+   "field",
+   "idx",
+   "record",
+   "sample",
+   "sample_column",
+   "sample_dict_cast",
+   "self",
+   "sorted_by",
+   "to_pandas_dataframe",
+   "variables"
+  ],
+  "dimod/views.py": [
+   "SampleView",
+   "items"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 151,
+  "names_resolved_in_repo": 82,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

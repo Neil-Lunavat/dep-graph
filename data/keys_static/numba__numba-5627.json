@@ -1,0 +1,35 @@
+{
+ "instance_id": "numba__numba-5627",
+ "repo_key": "numba/numba",
+ "base_commit": "1dabbf67426ad6243f7b6d791d3d38dbb68ab33e",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/ssa.py",
+  "numba/typed/typedlist.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/ssa.py": [
+   "block",
+   "defstmt",
+   "i",
+   "stop"
+  ],
+  "numba/typed/typedlist.py": [
+   "_extend",
+   "append",
+   "iterable",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

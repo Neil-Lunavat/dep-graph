@@ -1,0 +1,49 @@
+{
+ "instance_id": "jlowin__fastmcp-299",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "d0869457b1b34b38229aa7203463ad1de201ce59",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/server/openapi.py",
+  "src/fastmcp/server/server.py",
+  "src/fastmcp/tools/tool.py",
+  "src/fastmcp/tools/tool_manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/server/openapi.py": [
+   "annotations"
+  ],
+  "src/fastmcp/server/server.py": [
+   "annotations",
+   "description",
+   "fn",
+   "name",
+   "tags"
+  ],
+  "src/fastmcp/tools/tool.py": [
+   "annotations",
+   "description",
+   "name",
+   "self",
+   "tags"
+  ],
+  "src/fastmcp/tools/tool_manager.py": [
+   "annotations",
+   "description",
+   "fn",
+   "name",
+   "tags"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 75,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "google__mobly-433",
+ "repo_key": "google/mobly",
+ "base_commit": "02b9d84acfe775a6fe73e2b960ba7e47765184d6",
+ "status": "ok",
+ "co_edited": [
+  "mobly/controllers/android_device.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mobly/controllers/android_device.py": [
+   "debug_tag",
+   "out_name",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

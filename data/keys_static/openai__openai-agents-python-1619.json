@@ -1,0 +1,66 @@
+{
+ "instance_id": "openai__openai-agents-python-1619",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "5de3b5849ed973fa09b0e78fbe2a65f1b3073035",
+ "status": "ok",
+ "co_edited": [
+  "examples/basic/lifecycle_example.py",
+  "src/agents/run.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/basic/lifecycle_example.py": [
+   "_usage_to_str",
+   "agent",
+   "context",
+   "event_counter",
+   "input_items",
+   "response",
+   "self",
+   "system_prompt"
+  ],
+  "src/agents/__init__.py": [
+   "agents"
+  ],
+  "src/agents/agent.py": [
+   "Agent",
+   "hooks"
+  ],
+  "src/agents/items.py": [
+   "ModelResponse",
+   "TResponseInputItem",
+   "items"
+  ],
+  "src/agents/lifecycle.py": [
+   "RunHooks",
+   "on_llm_end",
+   "on_llm_start"
+  ],
+  "src/agents/run.py": [
+   "agent",
+   "context_wrapper",
+   "filtered",
+   "final_response",
+   "hooks",
+   "input",
+   "instructions",
+   "new_response"
+  ],
+  "src/agents/run_context.py": [
+   "RunContextWrapper"
+  ],
+  "src/agents/util/_coro.py": [
+   "_coro"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 130,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

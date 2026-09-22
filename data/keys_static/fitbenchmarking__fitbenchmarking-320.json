@@ -1,0 +1,28 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-320",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "be3361d4fd7a34a8a2fcfa7a8510908accf9222a",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/fitting/misc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/fitting/misc.py": [
+   "chi_sq",
+   "errors",
+   "problem",
+   "r"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

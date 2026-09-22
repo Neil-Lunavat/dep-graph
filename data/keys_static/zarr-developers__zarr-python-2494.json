@@ -1,0 +1,30 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2494",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "f74e53aca5311ec077da71585dd962c4af7b8a11",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/api/asynchronous.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/api/asynchronous.py": [
+   "_CREATE_MODES",
+   "mode",
+   "store_path"
+  ],
+  "src/zarr/storage/common.py": [
+   "read_only"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

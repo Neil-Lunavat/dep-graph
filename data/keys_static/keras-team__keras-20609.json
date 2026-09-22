@@ -1,0 +1,69 @@
+{
+ "instance_id": "keras-team__keras-20609",
+ "repo_key": "keras-team/keras",
+ "base_commit": "1597013645bfcd31207d31b969193b458ce85626",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/backend/tensorflow/trainer.py",
+  "keras/src/losses/loss.py",
+  "keras/src/trainers/trainer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/__init__.py": [
+   "keras"
+  ],
+  "keras/src/__init__.py": [
+   "src"
+  ],
+  "keras/src/backend/__init__.py": [
+   "backend",
+   "backend_module"
+  ],
+  "keras/src/backend/common/variables.py": [
+   "is_float_dtype"
+  ],
+  "keras/src/backend/config.py": [
+   "backend",
+   "floatx"
+  ],
+  "keras/src/backend/tensorflow/core.py": [
+   "cast",
+   "dtype"
+  ],
+  "keras/src/backend/tensorflow/trainer.py": [
+   "loss",
+   "num_replicas",
+   "self"
+  ],
+  "keras/src/losses/loss.py": [
+   "loss",
+   "num_replicas",
+   "scale_loss_for_distribution",
+   "value"
+  ],
+  "keras/src/ops/__init__.py": [
+   "ops",
+   "ops_module"
+  ],
+  "keras/src/ops/numpy.py": [
+   "sum"
+  ],
+  "keras/src/trainers/trainer.py": [
+   "_aggregate_additional_loss",
+   "loss",
+   "losses",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 72,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 8.8
+}

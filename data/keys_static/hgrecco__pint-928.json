@@ -1,0 +1,31 @@
+{
+ "instance_id": "hgrecco__pint-928",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "5109e05fe89e18258a5cc88f444d80cfb7d18cce",
+ "status": "ok",
+ "co_edited": [
+  "pint/formatting.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/formatting.py": [
+   "fmt",
+   "formatter",
+   "p",
+   "rm",
+   "spec",
+   "u",
+   "unit"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

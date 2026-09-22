@@ -1,0 +1,53 @@
+{
+ "instance_id": "terrapower__armi-1929",
+ "repo_key": "terrapower/armi",
+ "base_commit": "b436537edfed991e6ff560a1d1b2d4b018507db1",
+ "status": "ok",
+ "co_edited": [
+  "armi/reactor/blueprints/assemblyBlueprint.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/__init__.py": [
+   "armi"
+  ],
+  "armi/reactor/__init__.py": [
+   "reactor"
+  ],
+  "armi/reactor/blueprints/assemblyBlueprint.py": [
+   "_checkParamConsistency",
+   "blockVals",
+   "blocks",
+   "comp",
+   "materialModifications",
+   "modList",
+   "modName",
+   "msg",
+   "name",
+   "paramName",
+   "paramsToCheck",
+   "self"
+  ],
+  "armi/reactor/flags.py": [
+   "Flags",
+   "flags"
+  ],
+  "armi/reactor/grids/__init__.py": [
+   "grids"
+  ],
+  "armi/runLog.py": [
+   "error",
+   "runLog"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 48,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

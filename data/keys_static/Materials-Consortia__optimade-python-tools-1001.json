@@ -1,0 +1,27 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-1001",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "03b60f9f313db87daf5b76192a426588072a79e2",
+ "status": "ok",
+ "co_edited": [
+  "optimade/models/structures.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/models/structures.py": [
+   "i",
+   "numbers",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

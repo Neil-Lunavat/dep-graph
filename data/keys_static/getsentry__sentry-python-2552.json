@@ -1,0 +1,57 @@
+{
+ "instance_id": "getsentry__sentry-python-2552",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "e9b5855d619ded6152bd84dff93f948ac2d32515",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/metrics.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/__init__.py": [
+   "sentry_sdk"
+  ],
+  "sentry_sdk/client.py": [
+   "metrics_aggregator"
+  ],
+  "sentry_sdk/hub.py": [
+   "Hub",
+   "client",
+   "current"
+  ],
+  "sentry_sdk/metrics.py": [
+   "_enable_code_locations",
+   "_get_aggregator",
+   "_seen_locations",
+   "aggregator",
+   "client",
+   "frm",
+   "get_code_location",
+   "hub",
+   "key",
+   "loc",
+   "meta_key",
+   "metrics_noop",
+   "record_code_location",
+   "self",
+   "stacklevel",
+   "start_of_day",
+   "timestamp",
+   "ty",
+   "unit"
+  ],
+  "sentry_sdk/utils.py": [
+   "to_timestamp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 102,
+  "names_resolved_in_repo": 88,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

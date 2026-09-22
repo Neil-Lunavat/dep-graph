@@ -1,0 +1,43 @@
+{
+ "instance_id": "xonsh__xonsh-2795",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "10774002e5e78a33cb455fa19a1f7c28d62ee805",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/execer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/execer.py": [
+   "_parse_ctx_free",
+   "debug_level",
+   "filename",
+   "idx",
+   "input",
+   "last_error_col",
+   "line",
+   "lines",
+   "logical_input",
+   "maxcol",
+   "mode",
+   "msg",
+   "mstr",
+   "nlogical",
+   "sbpline",
+   "self"
+  ],
+  "xonsh/tools.py": [
+   "replace_logical_line"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

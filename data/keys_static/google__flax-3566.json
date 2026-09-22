@@ -1,0 +1,73 @@
+{
+ "instance_id": "google__flax-3566",
+ "repo_key": "google/flax",
+ "base_commit": "b468207650e7fd2b9b4b035dbbec6176d9ae3734",
+ "status": "ok",
+ "co_edited": [
+  "flax/experimental/nnx/nnx/graph_utils.py",
+  "flax/experimental/nnx/nnx/module.py",
+  "flax/experimental/nnx/nnx/nn/attention.py",
+  "flax/experimental/nnx/nnx/state.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/experimental/nnx/nnx/graph_utils.py": [
+   "_SubgraphRepr",
+   "_graph_unflatten",
+   "_graph_update_dynamic",
+   "graphdef",
+   "index_to_node",
+   "name",
+   "node",
+   "self",
+   "state",
+   "subgraph",
+   "subgraphs"
+  ],
+  "flax/experimental/nnx/nnx/module.py": [
+   "VariablesMapping",
+   "module_vars",
+   "name",
+   "self",
+   "state",
+   "value",
+   "variables"
+  ],
+  "flax/experimental/nnx/nnx/nn/attention.py": [
+   "head_dim",
+   "in_features",
+   "num_heads",
+   "qkv_features",
+   "self"
+  ],
+  "flax/experimental/nnx/nnx/reprlib.py": [
+   "Attr",
+   "Object",
+   "Representable",
+   "__nnx_repr__",
+   "end",
+   "reprlib",
+   "start",
+   "type",
+   "value_sep"
+  ],
+  "flax/experimental/nnx/nnx/state.py": [
+   "Key",
+   "self",
+   "variables"
+  ],
+  "flax/experimental/nnx/nnx/variables.py": [
+   "Variable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 95,
+  "names_resolved_in_repo": 70,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

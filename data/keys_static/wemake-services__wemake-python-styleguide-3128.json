@@ -1,0 +1,37 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-3128",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "ffcce608bbfe07dba658f9951ceeb5da78073472",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/logic/tokens/strings.py",
+  "wemake_python_styleguide/violations/consistency.py",
+  "wemake_python_styleguide/visitors/tokenize/primitives.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/tokens/strings.py": [
+   "char",
+   "decimal_separator",
+   "digit_counter",
+   "format_with_thousands",
+   "number_cleared",
+   "number_formated",
+   "number_str",
+   "thousands_separator"
+  ],
+  "wemake_python_styleguide/visitors/tokenize/primitives.py": [
+   "token"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

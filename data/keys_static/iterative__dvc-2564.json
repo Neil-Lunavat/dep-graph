@@ -1,0 +1,32 @@
+{
+ "instance_id": "iterative__dvc-2564",
+ "repo_key": "iterative/dvc",
+ "base_commit": "8787ac03808fcf38dcac01f7a57f82f216b28e12",
+ "status": "ok",
+ "co_edited": [
+  "dvc/utils/__init__.py",
+  "dvc/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dvc/utils/__init__.py": [
+   "env",
+   "parts",
+   "path",
+   "pyenv_root"
+  ],
+  "dvc/version.py": [
+   "_BASE_VERSION"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

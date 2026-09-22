@@ -1,0 +1,62 @@
+{
+ "instance_id": "pylint-dev__pylint-10246",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "d17bb0631ce13b00a68319f31425ddf5a57719eb",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/refactoring/implicit_booleaness_checker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/checkers/base_checker.py": [
+   "args",
+   "confidence",
+   "node"
+  ],
+  "pylint/checkers/refactoring/implicit_booleaness_checker.py": [
+   "_",
+   "_is_constant_zero",
+   "_operators",
+   "all_ops",
+   "base_names_of_instance",
+   "comparator",
+   "instance_has_bool",
+   "is_base_comprehension_type",
+   "is_left_empty_literal",
+   "is_right_empty_literal",
+   "left_operand",
+   "literal_node",
+   "mother_classes",
+   "node",
+   "node_name",
+   "operand",
+   "operator",
+   "original",
+   "right_operand",
+   "self",
+   "suggestion",
+   "t",
+   "target_instance",
+   "target_node"
+  ],
+  "pylint/checkers/utils.py": [
+   "is_empty_dict_literal",
+   "is_empty_str_literal",
+   "safe_infer",
+   "utils"
+  ],
+  "pylint/interfaces.py": [
+   "HIGH"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 110,
+  "names_resolved_in_repo": 108,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

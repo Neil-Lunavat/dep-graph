@@ -1,0 +1,37 @@
+{
+ "instance_id": "canonical__charmcraft-917",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "754050ef4091ed4f1aeaf58934850deb50d046aa",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/main.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/commands/store/client.py": [
+   "ALTERNATE_AUTH_ENV_VAR"
+  ],
+  "charmcraft/main.py": [
+   "EXTRA_ENVIRONMENT",
+   "env_string",
+   "name",
+   "os_platform",
+   "useful_env",
+   "value"
+  ],
+  "charmcraft/utils.py": [
+   "get_os_platform",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

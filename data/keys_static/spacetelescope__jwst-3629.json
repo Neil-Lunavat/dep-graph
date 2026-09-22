@@ -1,0 +1,74 @@
+{
+ "instance_id": "spacetelescope__jwst-3629",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "d176230f633d270b4c52b66941030a2acef62d9b",
+ "status": "ok",
+ "co_edited": [
+  "jwst/associations/lib/diff.py",
+  "jwst/associations/lib/rules_level2_base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/__init__.py": [
+   "jwst"
+  ],
+  "jwst/associations/__init__.py": [
+   "associations"
+  ],
+  "jwst/associations/lib/__init__.py": [
+   "lib"
+  ],
+  "jwst/associations/lib/diff.py": [
+   "asns",
+   "diff",
+   "dups",
+   "get_product_names",
+   "left",
+   "left_asns",
+   "left_duplicates",
+   "left_product_names",
+   "logger",
+   "product_names",
+   "right",
+   "right_asns",
+   "right_duplicates",
+   "right_product_names"
+  ],
+  "jwst/associations/lib/rules_level2_base.py": [
+   "DMSLevel2bBase",
+   "Utility",
+   "_merge_asns",
+   "asn",
+   "asns",
+   "asns_to_prune",
+   "associations",
+   "dups",
+   "finalize",
+   "finalized",
+   "finalized_asns",
+   "lv2_asns",
+   "merge_asns",
+   "others",
+   "product_name",
+   "product_names",
+   "prune_duplicate_products",
+   "pruned",
+   "sort_by_candidate",
+   "to_prune"
+  ],
+  "jwst/associations/registry.py": [
+   "RegistryMarker",
+   "callback"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 261,
+  "names_resolved_in_repo": 104,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 7.7
+}

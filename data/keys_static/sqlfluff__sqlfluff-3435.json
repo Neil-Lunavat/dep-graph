@@ -1,0 +1,21 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-3435",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "8e724ef8906eecce7179f4b7c52d4fc0672e4bd9",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/rules/L027.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

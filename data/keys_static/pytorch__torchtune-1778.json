@@ -1,0 +1,29 @@
+{
+ "instance_id": "pytorch__torchtune-1778",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "89f21c28c2a2f37fd5ebace65d3f63a5497d8ae6",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/models/phi3/_tokenizer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/data/_messages.py": [
+   "role"
+  ],
+  "torchtune/models/phi3/_tokenizer.py": [
+   "ignore_system_prompt",
+   "message"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

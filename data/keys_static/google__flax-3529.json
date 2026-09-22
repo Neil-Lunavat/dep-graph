@@ -1,0 +1,42 @@
+{
+ "instance_id": "google__flax-3529",
+ "repo_key": "google/flax",
+ "base_commit": "829e004c6d5646f24bd048023a4407e3b4d5aa98",
+ "status": "ok",
+ "co_edited": [
+  "flax/linen/attention.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/linen/attention.py": [
+   "attn_weights",
+   "broadcast_dropout",
+   "dropout_rate",
+   "dropout_rng",
+   "dtype",
+   "key",
+   "m_deterministic",
+   "mask",
+   "module",
+   "precision",
+   "query",
+   "return_weights",
+   "self",
+   "value"
+  ],
+  "flax/linen/module.py": [
+   "Module",
+   "sow"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 148,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

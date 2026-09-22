@@ -1,0 +1,26 @@
+{
+ "instance_id": "keras-team__keras-19300",
+ "repo_key": "keras-team/keras",
+ "base_commit": "df705d4fc719ab617705197248804d689ad74767",
+ "status": "ok",
+ "co_edited": [
+  "keras/ops/nn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/ops/nn.py": [
+   "axis",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

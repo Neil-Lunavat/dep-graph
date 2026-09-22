@@ -1,0 +1,65 @@
+{
+ "instance_id": "instructlab__instructlab-367",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "59de6749732381006f3c97806b0e8c1d07c99efa",
+ "status": "ok",
+ "co_edited": [
+  "cli/config.py",
+  "cli/generator/generate_data.py",
+  "cli/lab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cli/config.py": [
+   "DEFAULT_TAXONOMY_BASE",
+   "config",
+   "generate",
+   "taxonomy_base"
+  ],
+  "cli/generator/generate_data.py": [
+   "base",
+   "branches",
+   "current_commit",
+   "d",
+   "exc",
+   "get_taxonomy_diff",
+   "head_commit",
+   "logger",
+   "modified_files",
+   "re_git_branch",
+   "read_taxonomy",
+   "repo",
+   "seed_instruction_data",
+   "taxonomy",
+   "taxonomy_base",
+   "untracked_files",
+   "updated_taxonomy_files"
+  ],
+  "cli/generator/utils.py": [
+   "GenerateException"
+  ],
+  "cli/lab.py": [
+   "cfg",
+   "check",
+   "ctx",
+   "exc",
+   "interactive",
+   "list",
+   "model_path",
+   "repository",
+   "taxonomy_base",
+   "taxonomy_path",
+   "updated_taxonomy_files"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 148,
+  "names_resolved_in_repo": 105,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

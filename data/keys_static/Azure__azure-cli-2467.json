@@ -1,0 +1,26 @@
+{
+ "instance_id": "Azure__azure-cli-2467",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "d79710730933432d2c8ccd722d31fbbf75845ce0",
+ "status": "ok",
+ "co_edited": [
+  "src/command_modules/azure-cli-resource/azure/cli/command_modules/resource/_help.py",
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/custom.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/custom.py": [
+   "vm_scale_set_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

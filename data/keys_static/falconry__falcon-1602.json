@@ -1,0 +1,36 @@
+{
+ "instance_id": "falconry__falcon-1602",
+ "repo_key": "falconry/falcon",
+ "base_commit": "69f6a3232eb47d7f0ff631e4fdc09b168d836eff",
+ "status": "ok",
+ "co_edited": [
+  "falcon/media/handlers.py",
+  "falcon/request.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/constants.py": [
+   "MEDIA_URLENCODED",
+   "constants"
+  ],
+  "falcon/media/__init__.py": [
+   "media"
+  ],
+  "falcon/media/urlencoded.py": [
+   "URLEncodedFormHandler"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

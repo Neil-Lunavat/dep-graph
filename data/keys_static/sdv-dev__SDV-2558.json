@@ -1,0 +1,39 @@
+{
+ "instance_id": "sdv-dev__SDV-2558",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "82791e920f604c310a50dc69d9c0ea3502fdaf58",
+ "status": "ok",
+ "co_edited": [
+  "sdv/evaluation/multi_table.py",
+  "sdv/evaluation/single_table.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/evaluation/multi_table.py": [
+   "column_names",
+   "metadata",
+   "plot_type",
+   "real_data",
+   "sample_size",
+   "synthetic_data"
+  ],
+  "sdv/evaluation/single_table.py": [
+   "column_names",
+   "metadata",
+   "plot_type",
+   "real_data",
+   "sample_size",
+   "synthetic_data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 92,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

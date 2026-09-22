@@ -1,0 +1,33 @@
+{
+ "instance_id": "borgbackup__borg-7942",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "e6d40f63d46b7fa9b4e3f549d66fdc5ffa1fd972",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/locking.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/locking.py": [
+   "ADD",
+   "REMOVE",
+   "REMOVE2",
+   "elements",
+   "id",
+   "key",
+   "modify",
+   "op",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

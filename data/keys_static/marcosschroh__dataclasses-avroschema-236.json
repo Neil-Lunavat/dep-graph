@@ -1,0 +1,31 @@
+{
+ "instance_id": "marcosschroh__dataclasses-avroschema-236",
+ "repo_key": "marcosschroh/dataclasses-avroschema",
+ "base_commit": "c5a9f9b6bd3fba8301a57787605b84ef06724c63",
+ "status": "ok",
+ "co_edited": [
+  "dataclasses_avroschema/model_generator/generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dataclasses_avroschema/model_generator/generator.py": [
+   "_parse_decimal",
+   "field",
+   "imports",
+   "self"
+  ],
+  "dataclasses_avroschema/types.py": [
+   "JsonDict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

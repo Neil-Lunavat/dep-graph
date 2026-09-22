@@ -1,0 +1,49 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-990",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "5385fa5468cc9f12f3169218369dfd2d9915bb52",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/clib/session.py",
+  "pygmt/src/plot.py",
+  "pygmt/src/plot3d.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/session.py": [
+   "_data",
+   "_virtualfile_from",
+   "check_kind",
+   "data",
+   "extra_arrays",
+   "self",
+   "virtualfile_from_matrix",
+   "x",
+   "y",
+   "z"
+  ],
+  "pygmt/src/plot.py": [
+   "data",
+   "extra_arrays",
+   "x",
+   "y"
+  ],
+  "pygmt/src/plot3d.py": [
+   "data",
+   "extra_arrays",
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 94,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

@@ -1,0 +1,50 @@
+{
+ "instance_id": "sympy__sympy-16943",
+ "repo_key": "sympy/sympy",
+ "base_commit": "a6232c17a6d3c79e95353924df3a3cd062df0708",
+ "status": "ok",
+ "co_edited": [
+  "sympy/series/formal.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/evalf.py": [
+   "n"
+  ],
+  "sympy/core/function.py": [
+   "Function",
+   "eval"
+  ],
+  "sympy/core/numbers.py": [
+   "oo"
+  ],
+  "sympy/core/symbol.py": [
+   "Dummy"
+  ],
+  "sympy/series/formal.py": [
+   "Coeff",
+   "ak",
+   "cls",
+   "f",
+   "ind",
+   "k",
+   "n",
+   "p",
+   "x",
+   "xk"
+  ],
+  "sympy/series/sequences.py": [
+   "sequence"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 53,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 6.8
+}

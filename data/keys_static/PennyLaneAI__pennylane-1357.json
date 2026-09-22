@@ -1,0 +1,28 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-1357",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "be3c88d320ee48a0f3fb761c981356137de20027",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/ops/channel.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/ops/channel.py": [
+   "gamma",
+   "p",
+   "p_0",
+   "p_1"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

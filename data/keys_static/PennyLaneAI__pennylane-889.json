@@ -1,0 +1,40 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-889",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "685cb00f62763c65dba59cb4b1566ecbeb789ad5",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/numpy/tensor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/numpy/tensor.py": [
+   "__array_ufunc__",
+   "args",
+   "i",
+   "inputs",
+   "kwargs",
+   "method",
+   "output",
+   "outputs",
+   "requires_grad",
+   "res",
+   "result",
+   "self",
+   "tensor",
+   "ufunc",
+   "ufunc_output",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

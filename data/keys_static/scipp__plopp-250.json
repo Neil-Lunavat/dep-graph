@@ -1,0 +1,30 @@
+{
+ "instance_id": "scipp__plopp-250",
+ "repo_key": "scipp/plopp",
+ "base_commit": "ce3bf7908351dfb1bacf2ceb85b9c365fb23f7ed",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/plotting/common.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/plotting/common.py": [
+   "check_allowed_dtypes",
+   "check_not_binned",
+   "da",
+   "dim",
+   "out",
+   "params"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

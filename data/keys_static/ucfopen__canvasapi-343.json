@@ -1,0 +1,33 @@
+{
+ "instance_id": "ucfopen__canvasapi-343",
+ "repo_key": "ucfopen/canvasapi",
+ "base_commit": "62aa3eb8045f4a5f5edeb16fafad3fdf44bff624",
+ "status": "ok",
+ "co_edited": [
+  "canvasapi/assignment.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "canvasapi/assignment.py": [
+   "Assignment",
+   "AssignmentOverride",
+   "attributes",
+   "override",
+   "requester",
+   "self"
+  ],
+  "canvasapi/canvas_object.py": [
+   "__init__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

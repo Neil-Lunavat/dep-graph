@@ -1,0 +1,21 @@
+{
+ "instance_id": "beeware__briefcase-1180",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "d6986051cdbb17c42249d61f2ca20c3154d24edd",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/platforms/macOS/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

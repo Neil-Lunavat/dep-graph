@@ -1,0 +1,39 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4626",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "e4b0f8cb640439ac8d49ee2072a0d8147f7623f2",
+ "status": "ok",
+ "co_edited": [
+  "telegram/ext/_baseupdateprocessor.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "telegram/ext/_utils/asyncio.py"
+ ],
+ "symbol": {
+  "telegram/__init__.py": [
+   "telegram"
+  ],
+  "telegram/ext/__init__.py": [
+   "ext"
+  ],
+  "telegram/ext/_baseupdateprocessor.py": [
+   "_semaphore",
+   "current_concurrent_updates",
+   "max_concurrent_updates",
+   "self"
+  ],
+  "telegram/ext/_utils/__init__.py": [
+   "_utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 111,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 31,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

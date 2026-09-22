@@ -1,0 +1,29 @@
+{
+ "instance_id": "dpkp__kafka-python-2631",
+ "repo_key": "dpkp/kafka-python",
+ "base_commit": "48dd596462be5fc7cda004c85b26db823c184a39",
+ "status": "ok",
+ "co_edited": [
+  "kafka/sasl/gssapi.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kafka/sasl/gssapi.py": [
+   "_is_authenticated",
+   "config",
+   "gssapi",
+   "gssapi_name",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

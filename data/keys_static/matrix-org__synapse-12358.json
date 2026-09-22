@@ -1,0 +1,33 @@
+{
+ "instance_id": "matrix-org__synapse-12358",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "800ba87cc881856adae19ec40485578356398639",
+ "status": "ok",
+ "co_edited": [
+  "synapse/types.py",
+  "synapse/util/async_helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/util/__init__.py": [
+   "sleep"
+  ],
+  "synapse/util/async_helpers.py": [
+   "_clock",
+   "_release_lock",
+   "entry",
+   "key",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

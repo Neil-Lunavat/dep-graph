@@ -1,0 +1,90 @@
+{
+ "instance_id": "psf__black-4720",
+ "repo_key": "psf/black",
+ "base_commit": "bdd7fcd9396350b2887e22dec67072db3aeeeaa9",
+ "status": "ok",
+ "co_edited": [
+  "src/black/__init__.py",
+  "src/black/linegen.py",
+  "src/black/mode.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/__init__.py": [
+   "features",
+   "is_star_except",
+   "line_generation_features",
+   "line_generator",
+   "mode",
+   "n"
+  ],
+  "src/black/linegen.py": [
+   "LineGenerator",
+   "child",
+   "features",
+   "mode",
+   "node",
+   "parent",
+   "remove_await_parens",
+   "remove_with_parens",
+   "self"
+  ],
+  "src/black/mode.py": [
+   "ANN_ASSIGN_EXTENDED_RHS",
+   "ASSIGNMENT_EXPRESSIONS",
+   "ASYNC_KEYWORDS",
+   "DEBUG_F_STRINGS",
+   "EXCEPT_STAR",
+   "FSTRING_PARSING",
+   "FUTURE_ANNOTATIONS",
+   "F_STRINGS",
+   "Feature",
+   "Mode",
+   "NUMERIC_UNDERSCORES",
+   "PARENTHESIZED_CONTEXT_MANAGERS",
+   "PATTERN_MATCHING",
+   "POS_ONLY_ARGUMENTS",
+   "PY314",
+   "Preview",
+   "RELAXED_DECORATORS",
+   "TRAILING_COMMA_IN_CALL",
+   "TRAILING_COMMA_IN_DEF",
+   "TYPE_PARAMS",
+   "TYPE_PARAM_DEFAULTS",
+   "UNPACKING_ON_FLOW",
+   "UNPARENTHESIZED_EXCEPT_TYPES",
+   "VARIADIC_GENERICS",
+   "remove_parens_around_except_types",
+   "target_versions"
+  ],
+  "src/black/nodes.py": [
+   "is_name_token",
+   "is_tuple",
+   "syms"
+  ],
+  "src/blib2to3/pgen2/token.py": [
+   "token"
+  ],
+  "src/blib2to3/pygram.py": [
+   "except_clause"
+  ],
+  "src/blib2to3/pytree.py": [
+   "Node",
+   "children",
+   "next_sibling",
+   "parent",
+   "type",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 248,
+  "names_resolved_in_repo": 251,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

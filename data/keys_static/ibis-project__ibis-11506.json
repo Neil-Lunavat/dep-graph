@@ -1,0 +1,38 @@
+{
+ "instance_id": "ibis-project__ibis-11506",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "8641087cbfdb847bf5f1e9e3fd920be55bf659c7",
+ "status": "ok",
+ "co_edited": [
+  "ibis/common/typing.py",
+  "ibis/expr/datatypes/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ibis/__init__.py": [
+   "ibis"
+  ],
+  "ibis/common/__init__.py": [
+   "common"
+  ],
+  "ibis/common/typing.py": [
+   "UnionType",
+   "typing"
+  ],
+  "ibis/expr/datatypes/core.py": [
+   "not_nones",
+   "t",
+   "typ"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

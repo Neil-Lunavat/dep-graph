@@ -1,0 +1,52 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-574",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "4856d64e441434e395c5b8e7874022052c76f9af",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/modules.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/session.py": [
+   "Session",
+   "call_module",
+   "virtualfile_from_matrix"
+  ],
+  "pygmt/exceptions.py": [
+   "GMTInvalidInput"
+  ],
+  "pygmt/helpers/tempfile.py": [
+   "GMTTempFile",
+   "name",
+   "read"
+  ],
+  "pygmt/helpers/utils.py": [
+   "build_arg_string",
+   "data_kind",
+   "dummy_context"
+  ],
+  "pygmt/modules.py": [
+   "_table",
+   "arg_str",
+   "file_context",
+   "fname",
+   "info",
+   "kind",
+   "kwargs",
+   "lib",
+   "table",
+   "tmpfile"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

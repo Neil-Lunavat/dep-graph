@@ -1,0 +1,33 @@
+{
+ "instance_id": "scrapy__scrapy-6349",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "4300a1d240c7c2c21a4ef0c1c60c3d844493e516",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/core/downloader/handlers/http11.py",
+  "scrapy/settings/default_settings.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/core/downloader/handlers/http11.py": [
+   "contextFactory",
+   "crawler"
+  ],
+  "scrapy/crawler.py": [
+   "Crawler"
+  ],
+  "scrapy/settings/default_settings.py": [
+   "METAREFRESH_IGNORE_TAGS"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

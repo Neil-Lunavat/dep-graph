@@ -1,0 +1,52 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-10306",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "b90661d6a46aa3619d3eec94d5281f5888add501",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/cluster/affinity_propagation_.py",
+  "sklearn/cluster/birch.py",
+  "sklearn/cross_decomposition/pls_.py",
+  "sklearn/decomposition/fastica_.py",
+  "sklearn/gaussian_process/gpc.py",
+  "sklearn/gaussian_process/gpr.py",
+  "sklearn/linear_model/logistic.py",
+  "sklearn/linear_model/ransac.py",
+  "sklearn/linear_model/ridge.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/__init__.py": [
+   "sklearn"
+  ],
+  "sklearn/cluster/birch.py": [
+   "centroids",
+   "n_clusters",
+   "self"
+  ],
+  "sklearn/exceptions.py": [
+   "ConvergenceWarning",
+   "NotFittedError",
+   "exceptions"
+  ],
+  "sklearn/gaussian_process/gpc.py": [
+   "convergence_dict"
+  ],
+  "sklearn/gaussian_process/gpr.py": [
+   "convergence_dict"
+  ],
+  "sklearn/linear_model/ridge.py": [
+   "info"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 36,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.5
+}

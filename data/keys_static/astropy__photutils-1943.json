@@ -1,0 +1,52 @@
+{
+ "instance_id": "astropy__photutils-1943",
+ "repo_key": "astropy/photutils",
+ "base_commit": "dcfe91707566dfb7b2f7e6d0e511132c1d10066a",
+ "status": "ok",
+ "co_edited": [
+  "photutils/detection/core.py",
+  "photutils/detection/irafstarfinder.py",
+  "photutils/detection/peakfinder.py",
+  "photutils/detection/starfinder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/detection/core.py": [
+   "border_width",
+   "exclude_border",
+   "kernel",
+   "mask",
+   "shape",
+   "tbl",
+   "xborder",
+   "xradius",
+   "yborder",
+   "yradius"
+  ],
+  "photutils/detection/irafstarfinder.py": [
+   "cutout_convdata",
+   "nsky",
+   "self"
+  ],
+  "photutils/detection/peakfinder.py": [
+   "border_width",
+   "centroid_func",
+   "mask",
+   "npeaks"
+  ],
+  "photutils/detection/starfinder.py": [
+   "denom",
+   "kernel"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 79,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.1
+}

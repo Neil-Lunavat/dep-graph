@@ -1,0 +1,77 @@
+{
+ "instance_id": "elastic__rally-451",
+ "repo_key": "elastic/rally",
+ "base_commit": "7aad2e841ca7a2e022447993a83513f24b49c755",
+ "status": "ok",
+ "co_edited": [
+  "esrally/config.py",
+  "esrally/mechanic/supplier.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/__init__.py": [
+   "PROGRAM_NAME",
+   "esrally"
+  ],
+  "esrally/config.py": [
+   "CURRENT_CONFIG_VERSION",
+   "_ask_property",
+   "auto_detected_java_home",
+   "check_path_exists",
+   "config",
+   "current_version",
+   "detected",
+   "java_10_home",
+   "java_home",
+   "logger",
+   "mandatory",
+   "o",
+   "out",
+   "prompter",
+   "raw_java_10_home",
+   "self",
+   "target_version"
+  ],
+  "esrally/mechanic/supplier.py": [
+   "Builder",
+   "_java10_home",
+   "build_cmd",
+   "builder",
+   "cfg",
+   "challenge_root_path",
+   "es_src_dir",
+   "gradle",
+   "java10_home",
+   "java_home",
+   "log_file",
+   "logger",
+   "self",
+   "src_dir",
+   "task"
+  ],
+  "esrally/utils/__init__.py": [
+   "utils"
+  ],
+  "esrally/utils/io.py": [
+   "guess_java_home",
+   "io",
+   "major_version",
+   "normalize_path"
+  ],
+  "esrally/utils/jvm.py": [
+   "is_early_access_release",
+   "jvm",
+   "major_version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 136,
+  "names_resolved_in_repo": 221,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.4
+}

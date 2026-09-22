@@ -1,0 +1,35 @@
+{
+ "instance_id": "RDFLib__rdflib-2474",
+ "repo_key": "rdflib/rdflib",
+ "base_commit": "0ea6ca579442219d67ffb1fc7313f05fd16d8d49",
+ "status": "ok",
+ "co_edited": [
+  "rdflib/plugins/sparql/aggregates.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "rdflib/plugins/sparql/aggregates.py": [
+   "__init__",
+   "aggregation",
+   "self",
+   "separator",
+   "value"
+  ],
+  "rdflib/plugins/sparql/parserutils.py": [
+   "CompValue"
+  ],
+  "rdflib/term.py": [
+   "Literal"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.9
+}

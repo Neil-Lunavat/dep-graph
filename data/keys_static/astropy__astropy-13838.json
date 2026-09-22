@@ -1,0 +1,27 @@
+{
+ "instance_id": "astropy__astropy-13838",
+ "repo_key": "astropy/astropy",
+ "base_commit": "a6c712375ed38d422812e013566a34f928677acd",
+ "status": "ok",
+ "co_edited": [
+  "astropy/table/pprint.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/table/pprint.py": [
+   "multidims",
+   "multidims_all_ones",
+   "multidims_has_zero"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.5
+}

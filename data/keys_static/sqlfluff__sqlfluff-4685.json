@@ -1,0 +1,54 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-4685",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "0826b41d77df19c1bd27d6110481ff78f9d1a68d",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/cli/commands.py",
+  "src/sqlfluff/rules/convention/CV03.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/cli/commands.py": [
+   "f",
+   "persist_timing",
+   "result"
+  ],
+  "src/sqlfluff/core/linter/linting_result.py": [
+   "persist_timing_records"
+  ],
+  "src/sqlfluff/core/parser/markers.py": [
+   "source_position",
+   "templated_position"
+  ],
+  "src/sqlfluff/core/parser/segments/base.py": [
+   "pos_marker",
+   "segments"
+  ],
+  "src/sqlfluff/core/rules/base.py": [
+   "LintFix",
+   "delete",
+   "fixes"
+  ],
+  "src/sqlfluff/core/rules/context.py": [
+   "segment"
+  ],
+  "src/sqlfluff/rules/convention/CV03.py": [
+   "comma_pos",
+   "context",
+   "fixes",
+   "last_content",
+   "seg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 61,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "vertexproject__synapse-382",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "c4259279399bfbe717448739eda74b1f135c8a1a",
+ "status": "ok",
+ "co_edited": [
+  "synapse/cores/common.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/cores/common.py": [
+   "_core_tagforms",
+   "_core_tags",
+   "self"
+  ],
+  "synapse/lib/cache.py": [
+   "clear"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

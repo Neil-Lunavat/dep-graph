@@ -1,0 +1,36 @@
+{
+ "instance_id": "sunpy__sunpy-7024",
+ "repo_key": "sunpy/sunpy",
+ "base_commit": "c6e2b3048cb3369a277a05271f54ec3e07522dce",
+ "status": "ok",
+ "co_edited": [
+  "sunpy/timeseries/timeseries_factory.py",
+  "sunpy/util/functools.py",
+  "sunpy/util/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sunpy/timeseries/timeseries_factory.py": [
+   "arg",
+   "kwargs"
+  ],
+  "sunpy/util/datatype_factory_base.py": [
+   "NoMatchError"
+  ],
+  "sunpy/util/util.py": [
+   "expand_list_generator",
+   "inp",
+   "item"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

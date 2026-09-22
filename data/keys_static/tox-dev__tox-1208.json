@@ -1,0 +1,32 @@
+{
+ "instance_id": "tox-dev__tox-1208",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "41a41166c5b3fd8a7702fd2758fabb041a93e24e",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/config/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/config/__init__.py": [
+   "_cfg",
+   "_subs",
+   "config",
+   "name",
+   "reader",
+   "section_name",
+   "self",
+   "testenvprefix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

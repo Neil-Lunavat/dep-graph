@@ -1,0 +1,36 @@
+{
+ "instance_id": "sunpy__sunpy-4724",
+ "repo_key": "sunpy/sunpy",
+ "base_commit": "94b31a412fe9486db1a448e4e2e99a77d57ec2ae",
+ "status": "ok",
+ "co_edited": [
+  "sunpy/coordinates/frames.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sunpy/__init__.py": [
+   "sunpy"
+  ],
+  "sunpy/coordinates/frames.py": [
+   "lat",
+   "lon"
+  ],
+  "sunpy/util/__init__.py": [
+   "util"
+  ],
+  "sunpy/util/exceptions.py": [
+   "SunpyUserWarning",
+   "exceptions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

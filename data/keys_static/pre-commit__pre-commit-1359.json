@@ -1,0 +1,33 @@
+{
+ "instance_id": "pre-commit__pre-commit-1359",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "0a8ba31b9b6656d90f94fc368b47acb502cea44d",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/error_handler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/error_handler.py": [
+   "_exception_to_bytes",
+   "_log_line_b",
+   "error_msg",
+   "exc",
+   "log",
+   "msg"
+  ],
+  "pre_commit/output.py": [
+   "output"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

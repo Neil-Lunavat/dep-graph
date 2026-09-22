@@ -1,0 +1,46 @@
+{
+ "instance_id": "repobee__repobee-363",
+ "repo_key": "repobee/repobee",
+ "base_commit": "47fe1df45f8b1805337090591fa372ae77c9fca2",
+ "status": "ok",
+ "co_edited": [
+  "src/_repobee/cli.py",
+  "src/_repobee/main.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_repobee/cli.py": [
+   "LOGGER",
+   "api",
+   "args",
+   "ext_cmd",
+   "hook_results"
+  ],
+  "src/_repobee/command.py": [
+   "author",
+   "command",
+   "issue",
+   "migrate_repos",
+   "purge_review_teams",
+   "setup_student_repos",
+   "show_body",
+   "show_config",
+   "state",
+   "title_regex"
+  ],
+  "src/_repobee/formatters.py": [
+   "format_hook_results_output",
+   "formatters"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 94,
+  "names_resolved_in_repo": 60,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 30,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

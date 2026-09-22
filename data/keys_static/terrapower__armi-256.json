@@ -1,0 +1,39 @@
+{
+ "instance_id": "terrapower__armi-256",
+ "repo_key": "terrapower/armi",
+ "base_commit": "6e3f2dae1d4dc1e17dc41c4a82393386744dc2c1",
+ "status": "ok",
+ "co_edited": [
+  "armi/bookkeeping/db/database3.py",
+  "armi/reactor/grids.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/bookkeeping/db/database3.py": [
+   "i",
+   "multiLocs",
+   "subLoc",
+   "unpackedLocs"
+  ],
+  "armi/reactor/grids.py": [
+   "MultiIndexLocation",
+   "__getitem__",
+   "extend",
+   "idx",
+   "ijk",
+   "locators",
+   "self",
+   "val"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

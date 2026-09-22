@@ -1,0 +1,36 @@
+{
+ "instance_id": "google__flax-4705",
+ "repo_key": "google/flax",
+ "base_commit": "32ad6c57a6f2c09080e9746b903addcb5c2b226c",
+ "status": "ok",
+ "co_edited": [
+  "flax/nnx/nn/linear.py",
+  "flax/typing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/nnx/nn/linear.py": [
+   "einsum_op",
+   "einsum_str",
+   "inputs",
+   "kernel",
+   "precision",
+   "self",
+   "y"
+  ],
+  "flax/typing.py": [
+   "Array",
+   "EinsumT"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

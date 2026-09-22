@@ -1,0 +1,26 @@
+{
+ "instance_id": "python-cmd2__cmd2-569",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "9fee6105210b36201b5d2edc610f20bd67eac9f2",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/pyscript_bridge.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/pyscript_bridge.py": [
+   "__bool__",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,69 @@
+{
+ "instance_id": "pypsa__pypsa-1195",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "d3e13462d0622d7cc20c383d976bf566b6b8ad76",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/optimization/optimize.py",
+  "pypsa/statistics/expressions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/__init__.py": [
+   "pypsa"
+  ],
+  "pypsa/descriptors.py": [
+   "inds"
+  ],
+  "pypsa/networks.py": [
+   "dynamic",
+   "get_committable_i",
+   "get_switchable_as_dense",
+   "static"
+  ],
+  "pypsa/optimization/__init__.py": [
+   "optimization"
+  ],
+  "pypsa/optimization/optimize.py": [
+   "attr",
+   "c",
+   "lookup",
+   "optimize"
+  ],
+  "pypsa/statistics/abstract.py": [
+   "_aggregate_timeseries",
+   "agg"
+  ],
+  "pypsa/statistics/expressions.py": [
+   "aggregate_time",
+   "attr",
+   "c",
+   "com_i",
+   "cost",
+   "cost_type",
+   "cost_types",
+   "cost_types_",
+   "mapping",
+   "n",
+   "opex",
+   "p",
+   "result",
+   "self",
+   "term",
+   "var",
+   "w",
+   "weights",
+   "weights_one"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 175,
+  "names_resolved_in_repo": 103,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

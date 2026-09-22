@@ -1,0 +1,26 @@
+{
+ "instance_id": "pre-commit__pre-commit-803",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "f2da2c435c1123c4edc4ca9701c245cc25b0a50d",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/commands/run.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/commands/run.py": [
+   "args",
+   "hook"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

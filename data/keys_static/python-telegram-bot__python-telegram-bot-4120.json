@@ -1,0 +1,51 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4120",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "277031cfb256933921531403fa70d036f863f459",
+ "status": "ok",
+ "co_edited": [
+  "telegram/ext/_applicationbuilder.py",
+  "telegram/request/_httpxrequest.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/_utils/defaultvalue.py": [
+   "DEFAULT_NONE"
+  ],
+  "telegram/_utils/types.py": [
+   "ODVInput"
+  ],
+  "telegram/ext/_applicationbuilder.py": [
+   "BuilderType",
+   "_media_write_timeout",
+   "_request_param_check",
+   "attr",
+   "get_updates",
+   "media_write_timeout",
+   "name",
+   "self",
+   "timeouts"
+  ],
+  "telegram/request/_baserequest.py": [
+   "__slots__"
+  ],
+  "telegram/request/_httpxrequest.py": [
+   "_client",
+   "_media_write_timeout",
+   "files",
+   "media_write_timeout",
+   "self",
+   "write_timeout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 134,
+  "names_resolved_in_repo": 40,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

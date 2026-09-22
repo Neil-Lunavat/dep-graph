@@ -1,0 +1,68 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-277",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "c1cbe8cb01ab83d3980c15653356bd14245436f3",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/container_block_processor.py",
+  "pymarkdown/container_markdown_token.py",
+  "pymarkdown/list_block_processor.py",
+  "pymarkdown/plugins/rule_md_027.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/container_markdown_token.py": [
+   "absolute_index",
+   "allow_overflow",
+   "delta",
+   "increment_index",
+   "leading_text",
+   "leading_text_index",
+   "self",
+   "split_leading_spaces"
+  ],
+  "pymarkdown/list_block_processor.py": [
+   "POGGER",
+   "__handle_list_nesting",
+   "adj_ws",
+   "all_conditionals",
+   "block_quote_data",
+   "first_conditional",
+   "last_block_index",
+   "parser_state",
+   "position_marker",
+   "second_conditional",
+   "secondary_conditionals",
+   "third_conditional"
+  ],
+  "pymarkdown/parser_logger.py": [
+   "debug"
+  ],
+  "pymarkdown/plugins/rule_md_027.py": [
+   "__container_tokens",
+   "__get_last_block_quote",
+   "__last_token",
+   "column_number_delta",
+   "found_block_quote_token",
+   "i",
+   "is_start_properly_scoped",
+   "self",
+   "split_line_length",
+   "token",
+   "whitespace_to_use"
+  ],
+  "pymarkdown/position_marker.py": [
+   "line_number"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 126,
+  "names_resolved_in_repo": 121,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

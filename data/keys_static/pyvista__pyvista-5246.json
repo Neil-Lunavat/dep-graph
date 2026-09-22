@@ -1,0 +1,40 @@
+{
+ "instance_id": "pyvista__pyvista-5246",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "2335614927c201f2f1b1753d7b959b50abe040db",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/dataset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/dataobject.py": [
+   "field_data"
+  ],
+  "pyvista/core/dataset.py": [
+   "arr",
+   "cell_data",
+   "data",
+   "new_name",
+   "old_name",
+   "point_data",
+   "self"
+  ],
+  "pyvista/core/datasetattributes.py": [
+   "pop"
+  ],
+  "pyvista/core/pyvista_ndarray.py": [
+   "VTKObject"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

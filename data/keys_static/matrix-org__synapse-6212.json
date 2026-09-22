@@ -1,0 +1,28 @@
+{
+ "instance_id": "matrix-org__synapse-6212",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "423f7ae3974e251fef110c90a620a51789459d68",
+ "status": "ok",
+ "co_edited": [
+  "synapse/handlers/presence.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/handlers/presence.py": [
+   "external_process_last_updated_ms",
+   "external_process_to_current_syncs",
+   "process_id",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "Azure__azure-cli-2214",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "01bbaf048c7669c024ece5e84c9360d829624574",
+ "status": "ok",
+ "co_edited": [
+  "src/command_modules/azure-cli-network/azure/cli/command_modules/network/commands.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/command_modules/azure-cli-network/azure/cli/command_modules/network/commands.py": [
+   "__name__",
+   "dns_record_set_path",
+   "record"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

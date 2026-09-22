@@ -1,0 +1,39 @@
+{
+ "instance_id": "bridgecrewio__checkov-6354",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "a902244a6743eff627eaf485e01ae6ae0a9f24d5",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/module/base_module_check.py",
+  "checkov/terraform/checks/module/generic/RevisionVersionTag.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/common/models/enums.py": [
+   "CheckResult",
+   "PASSED"
+  ],
+  "checkov/terraform/checks/module/base_module_check.py": [
+   "BaseModuleCheck",
+   "is_git_source",
+   "source"
+  ],
+  "checkov/terraform/checks/module/generic/RevisionVersionTag.py": [
+   "VERSION_PATTERN",
+   "conf",
+   "source",
+   "source_url",
+   "version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.2
+}

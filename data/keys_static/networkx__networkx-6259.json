@@ -1,0 +1,36 @@
+{
+ "instance_id": "networkx__networkx-6259",
+ "repo_key": "networkx/networkx",
+ "base_commit": "53be757de9a87a3413943737fbf8478bb23b17c7",
+ "status": "ok",
+ "co_edited": [
+  "networkx/convert_matrix.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/convert_matrix.py": [
+   "A",
+   "chain",
+   "create_using",
+   "d",
+   "edge_attr",
+   "edges",
+   "from_numpy_array",
+   "parallel_edges",
+   "python_type",
+   "triples",
+   "u",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 100,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

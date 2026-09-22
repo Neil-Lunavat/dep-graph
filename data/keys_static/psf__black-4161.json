@@ -1,0 +1,41 @@
+{
+ "instance_id": "psf__black-4161",
+ "repo_key": "psf/black",
+ "base_commit": "995e4ada14d63a9bec39c5fc83275d0e49742618",
+ "status": "ok",
+ "co_edited": [
+  "src/black/__init__.py",
+  "src/black/files.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/__init__.py": [
+   "path",
+   "report",
+   "root",
+   "root_relative_path"
+  ],
+  "src/black/files.py": [
+   "get_root_relative_path",
+   "normalized_path",
+   "path",
+   "report",
+   "root",
+   "root_relative_path"
+  ],
+  "src/black/report.py": [
+   "Report",
+   "path_ignored"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

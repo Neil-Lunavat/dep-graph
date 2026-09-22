@@ -1,0 +1,44 @@
+{
+ "instance_id": "beeware__briefcase-1910",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "3eb7226b6e519c691aa31760cac2c8237ab95991",
+ "status": "ok",
+ "co_edited": [
+  "automation/src/automation/bootstraps/pyside6.py",
+  "src/briefcase/integrations/file.py",
+  "src/briefcase/platforms/macOS/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "automation/src/automation/bootstraps/pyside6.py": [
+   "self"
+  ],
+  "src/briefcase/bootstraps/pyside6.py": [
+   "pyproject_table_macOS"
+  ],
+  "src/briefcase/integrations/file.py": [
+   "cls",
+   "group_paths",
+   "p",
+   "path",
+   "paths",
+   "sorted_depth_first"
+  ],
+  "src/briefcase/platforms/macOS/__init__.py": [
+   "group",
+   "path",
+   "self",
+   "sign_targets"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 119,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

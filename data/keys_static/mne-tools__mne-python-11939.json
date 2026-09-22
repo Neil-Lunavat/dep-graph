@@ -1,0 +1,25 @@
+{
+ "instance_id": "mne-tools__mne-python-11939",
+ "repo_key": "mne-tools/mne-python",
+ "base_commit": "82b2e82e42c5167f30df371f3ca7e18b86a2313a",
+ "status": "ok",
+ "co_edited": [
+  "mne/preprocessing/maxfilter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mne/utils/__init__.py": [
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

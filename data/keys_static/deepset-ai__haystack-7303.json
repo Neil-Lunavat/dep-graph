@@ -1,0 +1,34 @@
+{
+ "instance_id": "deepset-ai__haystack-7303",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "8d7a58347ddce640b4871f6017936537a9f1088c",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/routers/file_type_router.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/components/routers/file_type_router.py": [
+   "matched",
+   "mime_type",
+   "mime_type_patterns",
+   "mime_types",
+   "pattern",
+   "self",
+   "source"
+  ],
+  "haystack/dataclasses/byte_stream.py": [
+   "meta"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 218,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

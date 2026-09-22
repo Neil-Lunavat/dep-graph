@@ -1,0 +1,51 @@
+{
+ "instance_id": "missionpinball__mpf-1424",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "c43bf1badfedd961d324af3199ea586438102ca3",
+ "status": "ok",
+ "co_edited": [
+  "mpf/config_players/show_player.py",
+  "mpf/core/config_processor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/config_players/show_player.py": [
+   "key"
+  ],
+  "mpf/core/config_processor.py": [
+   "_check_sections",
+   "_find_similar_key",
+   "best_key",
+   "best_similarity",
+   "config",
+   "config_spec",
+   "config_type",
+   "config_validator",
+   "existing_key",
+   "filename",
+   "ignore_unknown_sections",
+   "k",
+   "key",
+   "log",
+   "self",
+   "similarity",
+   "suggestion"
+  ],
+  "mpf/core/config_validator.py": [
+   "get_config_spec"
+  ],
+  "mpf/exceptions/config_file_error.py": [
+   "ConfigFileError"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 84,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

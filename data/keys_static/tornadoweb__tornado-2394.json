@@ -1,0 +1,40 @@
+{
+ "instance_id": "tornadoweb__tornado-2394",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "50800f37b72c7a401cd49c948cb5be85cabbafea",
+ "status": "ok",
+ "co_edited": [
+  "tornado/iostream.py",
+  "tornado/netutil.py",
+  "tornado/web.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/iostream.py": [
+   "err",
+   "self",
+   "socket"
+  ],
+  "tornado/netutil.py": [
+   "sock"
+  ],
+  "tornado/web.py": [
+   "finish",
+   "flush",
+   "future",
+   "html",
+   "include_footers",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 128,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

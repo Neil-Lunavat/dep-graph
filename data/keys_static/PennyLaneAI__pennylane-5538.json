@@ -1,0 +1,48 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-5538",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "d03216e6ce5407a7f28489aa4d4b23a9c4345fac",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/ops/functions/equal.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/__init__.py": [
+   "math",
+   "qml"
+  ],
+  "pennylane/operation.py": [
+   "data",
+   "hyperparameters"
+  ],
+  "pennylane/ops/functions/equal.py": [
+   "_equal",
+   "atol",
+   "check_interface",
+   "check_trainability",
+   "d1",
+   "d2",
+   "equal",
+   "equal_kwargs",
+   "op1",
+   "op2",
+   "params_1",
+   "params_2",
+   "rtol"
+  ],
+  "pennylane/templates/subroutines/hilbert_schmidt.py": [
+   "HilbertSchmidt"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 86,
+  "names_resolved_in_repo": 75,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

@@ -1,0 +1,28 @@
+{
+ "instance_id": "getsentry__sentry-python-2020",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "eb5ee4acf1556a9973ef1fe7d0ae63bab150059d",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/utils.py": [
+   "frame",
+   "include_local_variables",
+   "include_source_context",
+   "tb_lineno"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

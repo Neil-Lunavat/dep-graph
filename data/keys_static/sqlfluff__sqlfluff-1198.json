@@ -1,0 +1,35 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-1198",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "d3ec79d6cab0f94bd831d570250bce1afd4b1dc5",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/cli/commands.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/cli/commands.py": [
+   "annotation_level",
+   "filepath",
+   "format",
+   "github_result",
+   "non_human_output",
+   "record",
+   "result",
+   "violation"
+  ],
+  "src/sqlfluff/core/linter/linting_result.py": [
+   "as_records"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

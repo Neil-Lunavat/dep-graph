@@ -1,0 +1,30 @@
+{
+ "instance_id": "ethereum__web3.py-3120",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "f55177b3be6f604a965e0b7d456ff3c6de3402ff",
+ "status": "ok",
+ "co_edited": [
+  "web3/middleware/exception_retry_request.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/middleware/exception_retry_request.py": [
+   "DEFAULT_ALLOWLIST",
+   "allow_list",
+   "backoff_factor",
+   "check_if_retry_on_failure",
+   "method",
+   "root"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

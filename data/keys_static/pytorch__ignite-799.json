@@ -1,0 +1,25 @@
+{
+ "instance_id": "pytorch__ignite-799",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "51c113023dd7f3933aa2d03687dd838ad11c7e7b",
+ "status": "ok",
+ "co_edited": [
+  "ignite/engine/engine.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/engine/engine.py": [
+   "seed"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

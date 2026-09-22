@@ -1,0 +1,29 @@
+{
+ "instance_id": "networkx__networkx-8043",
+ "repo_key": "networkx/networkx",
+ "base_commit": "ee458799cdb8c95864a0331bd945b4bb11337db9",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/isomorphism/isomorphvf2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/isomorphism/isomorphvf2.py": [
+   "G1",
+   "G2",
+   "_is_directed_matcher",
+   "is_directed_matcher",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 7,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

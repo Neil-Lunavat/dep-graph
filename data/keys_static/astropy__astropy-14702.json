@@ -1,0 +1,27 @@
+{
+ "instance_id": "astropy__astropy-14702",
+ "repo_key": "astropy/astropy",
+ "base_commit": "b3b8295c4b0478558bd0e4c6ec28bf16b90880b8",
+ "status": "ok",
+ "co_edited": [
+  "astropy/io/votable/tree.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/io/votable/tree.py": [
+   "s",
+   "self",
+   "to_table"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 9,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

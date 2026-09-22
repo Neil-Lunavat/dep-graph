@@ -1,0 +1,26 @@
+{
+ "instance_id": "reframe-hpc__reframe-2999",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "b7b9e3ec656bbc430f132d9558ae0360ddfeccdf",
+ "status": "ok",
+ "co_edited": [
+  "reframe/utility/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reframe/utility/__init__.py": [
+   "__rfm_json_encode__",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

@@ -1,0 +1,52 @@
+{
+ "instance_id": "pvlib__pvlib-python-2039",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "19c9598355b8243038bdeb1253d219e0371f71af",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/spectrum/__init__.py",
+  "pvlib/spectrum/mismatch.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "docs/examples/spectrum/plot_standard_ASTM_G173-03.py"
+ ],
+ "symbol": {
+  "pvlib/__init__.py": [
+   "pvlib"
+  ],
+  "pvlib/_deprecation.py": [
+   "_deprecation",
+   "alternative",
+   "deprecated",
+   "name",
+   "removal",
+   "since"
+  ],
+  "pvlib/spectrum/__init__.py": [
+   "spectrum"
+  ],
+  "pvlib/spectrum/mismatch.py": [
+   "SPECTRA_FILES",
+   "col",
+   "e_ref",
+   "e_sun",
+   "filepath",
+   "get_reference_spectra",
+   "interpolator",
+   "pvlib_datapath",
+   "standard",
+   "wavelength",
+   "wavelengths"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 387,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 7,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

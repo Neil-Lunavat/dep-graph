@@ -1,0 +1,44 @@
+{
+ "instance_id": "streamlink__streamlink-5478",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "4a234ff76a73ad238eea8470267366592963ad50",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/session.py",
+  "src/streamlink/stream/hls.py",
+  "src/streamlink_cli/argparser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/options.py": [
+   "get"
+  ],
+  "src/streamlink/session.py": [
+   "options"
+  ],
+  "src/streamlink/stream/hls.py": [
+   "Sequence",
+   "playlist_targetduration",
+   "segment_queue_timing_threshold_factor",
+   "self"
+  ],
+  "src/streamlink/stream/segmented.py": [
+   "put",
+   "session"
+  ],
+  "src/streamlink/utils/args.py": [
+   "ge",
+   "num"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 73,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

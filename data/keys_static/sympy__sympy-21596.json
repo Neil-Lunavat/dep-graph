@@ -1,0 +1,62 @@
+{
+ "instance_id": "sympy__sympy-21596",
+ "repo_key": "sympy/sympy",
+ "base_commit": "110997fe18b9f7d5ba7d22f624d156a29bf40759",
+ "status": "ok",
+ "co_edited": [
+  "sympy/sets/handlers/intersection.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/mul.py": [
+   "Mul"
+  ],
+  "sympy/core/relational.py": [
+   "Eq"
+  ],
+  "sympy/sets/conditionset.py": [
+   "ConditionSet"
+  ],
+  "sympy/sets/handlers/intersection.py": [
+   "_solution_union",
+   "base_set",
+   "exprs",
+   "f",
+   "i",
+   "im",
+   "n",
+   "sols",
+   "sym",
+   "x",
+   "xis"
+  ],
+  "sympy/sets/sets.py": [
+   "FiniteSet",
+   "Union"
+  ],
+  "sympy/simplify/__init__.py": [
+   "simplify"
+  ],
+  "sympy/simplify/radsimp.py": [
+   "numer",
+   "radsimp"
+  ],
+  "sympy/solvers/solvers.py": [
+   "denoms",
+   "solve_linear"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.6
+}

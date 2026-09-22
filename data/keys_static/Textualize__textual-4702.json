@@ -1,0 +1,26 @@
+{
+ "instance_id": "Textualize__textual-4702",
+ "repo_key": "textualize/textual",
+ "base_commit": "50b767f73b241c04751714620206d28742e8fc0a",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/widgets/_tabs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/widgets/_tabs.py": [
+   "offset",
+   "tab"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

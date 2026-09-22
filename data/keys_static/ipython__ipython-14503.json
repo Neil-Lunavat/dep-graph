@@ -1,0 +1,36 @@
+{
+ "instance_id": "ipython__ipython-14503",
+ "repo_key": "ipython/ipython",
+ "base_commit": "78fea5f8d7bf6ca55796e82ed341e7fd291878f0",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/ultratb.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/ultratb.py": [
+   "chained_exc_ids",
+   "chained_exception_message",
+   "chained_exceptions_tb_offset",
+   "context",
+   "etb",
+   "etype",
+   "evalue",
+   "exception",
+   "get_parts_of_chained_exception",
+   "out_list",
+   "prepare_chained_exception_message",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

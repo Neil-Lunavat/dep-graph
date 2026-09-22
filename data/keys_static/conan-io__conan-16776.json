@@ -1,0 +1,56 @@
+{
+ "instance_id": "conan-io__conan-16776",
+ "repo_key": "conan-io/conan",
+ "base_commit": "8ebf1ca548854919398c38d9f15912ad01f3b18a",
+ "status": "ok",
+ "co_edited": [
+  "conan/cli/commands/graph.py",
+  "conan/tools/microsoft/visual.py",
+  "conans/client/graph/install_graph.py",
+  "conans/client/rest_client_local_recipe_index.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/internal/cache/cache.py": [
+   "recipe_layout"
+  ],
+  "conan/internal/cache/conan_reference_layout.py": [
+   "export_sources"
+  ],
+  "conan/internal/conan_app.py": [
+   "cache"
+  ],
+  "conan/tools/microsoft/visual.py": [
+   "compiler"
+  ],
+  "conans/client/graph/install_graph.py": [
+   "errors",
+   "missing",
+   "missing_prefs",
+   "n",
+   "package",
+   "tab"
+  ],
+  "conans/client/rest_client_local_recipe_index.py": [
+   "_app",
+   "e",
+   "export_sources",
+   "ref",
+   "self"
+  ],
+  "conans/errors.py": [
+   "ConanReferenceDoesNotExistInDB",
+   "NotFoundException"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 55,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.1
+}

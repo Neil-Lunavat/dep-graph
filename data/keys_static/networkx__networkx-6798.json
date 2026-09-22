@@ -1,0 +1,63 @@
+{
+ "instance_id": "networkx__networkx-6798",
+ "repo_key": "networkx/networkx",
+ "base_commit": "0204a246a8bfba38153f03b3967a669c05a7181f",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/planarity.py",
+  "networkx/algorithms/similarity.py",
+  "networkx/algorithms/tree/mst.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/planarity.py": [
+   "__forbidden",
+   "add_edge",
+   "add_edges_from",
+   "add_weighted_edges_from",
+   "args",
+   "attr",
+   "ccw",
+   "cw",
+   "e",
+   "ebunch",
+   "end_node",
+   "err",
+   "incoming_graph_data",
+   "kwargs",
+   "n",
+   "nodes",
+   "ref_ccw",
+   "ref_cw",
+   "remove_edge",
+   "remove_edges_from",
+   "remove_node",
+   "remove_nodes_from",
+   "self",
+   "start_node",
+   "succs_u",
+   "succs_v",
+   "u",
+   "un_ccw",
+   "un_cw",
+   "uv_ccw",
+   "uv_cw",
+   "v",
+   "vu_ccw",
+   "vu_cw"
+  ],
+  "networkx/algorithms/tree/mst.py": [
+   "G"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 483,
+  "names_resolved_in_repo": 151,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 14.0
+}

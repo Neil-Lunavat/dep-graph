@@ -1,0 +1,26 @@
+{
+ "instance_id": "projectmesa__mesa-2463",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "ef383c4edef8b2e13f40bfd28e9d149386577ff3",
+ "status": "ok",
+ "co_edited": [
+  "mesa/visualization/solara_viz.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mesa/visualization/solara_viz.py": [
+   "model_parameters",
+   "name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "python-control__python-control-1065",
+ "repo_key": "python-control/python-control",
+ "base_commit": "d810d5aac00cf9a4215f601247d08f6f7904bcfe",
+ "status": "ok",
+ "co_edited": [
+  "control/pzmap.py",
+  "control/rlocus.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/pzmap.py": [
+   "rho",
+   "xlim",
+   "xpeaks",
+   "ylim",
+   "ypeaks"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 56,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "python-cmd2__cmd2-595",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "eaf2918a8036e95a373cd9694317335dbc548cad",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py",
+  "examples/colors.py",
+  "examples/plumbum_colors.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "decolorized_write",
+   "msg_str",
+   "self",
+   "stdout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 151,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

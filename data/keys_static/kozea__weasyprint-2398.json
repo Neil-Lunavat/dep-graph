@@ -1,0 +1,28 @@
+{
+ "instance_id": "kozea__weasyprint-2398",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "20197135f56dcd886248e671058933c14cdf5f78",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/pdf/fonts.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/pdf/fonts.py": [
+   "description_string",
+   "hash",
+   "name",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,28 @@
+{
+ "instance_id": "bridgecrewio__checkov-1457",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "415fa65362b1b51b569a2f8348a5981614acf422",
+ "status": "ok",
+ "co_edited": [
+  "checkov/common/output/report.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/common/output/report.py": [
+   "failed_checks",
+   "record",
+   "report",
+   "skip_records"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.5
+}

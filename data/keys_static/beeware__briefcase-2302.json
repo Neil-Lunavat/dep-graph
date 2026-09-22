@@ -1,0 +1,43 @@
+{
+ "instance_id": "beeware__briefcase-2302",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "80d08a54a42bc6ba5dce85e42f025dcd916c175d",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/platforms/macOS/app.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/commands/base.py": [
+   "console"
+  ],
+  "src/briefcase/config.py": [
+   "app_name"
+  ],
+  "src/briefcase/console.py": [
+   "info",
+   "prefix"
+  ],
+  "src/briefcase/platforms/macOS/__init__.py": [
+   "SigningIdentity",
+   "app",
+   "identity",
+   "sign_app"
+  ],
+  "src/briefcase/platforms/macOS/app.py": [
+   "app",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

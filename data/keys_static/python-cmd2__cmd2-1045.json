@@ -1,0 +1,33 @@
+{
+ "instance_id": "python-cmd2__cmd2-1045",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "5f1ea98c1513225c7bf87976ca438410afff2268",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "_startup_commands",
+   "script_cmd",
+   "self",
+   "silent_startup_script",
+   "startup_script"
+  ],
+  "cmd2/utils.py": [
+   "quote_string",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

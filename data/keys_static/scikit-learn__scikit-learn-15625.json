@@ -1,0 +1,32 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-15625",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "e650a207efc9dd33556b1b9678b043f73a18aecb",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/metrics/_classification.py",
+  "sklearn/metrics/_plot/confusion_matrix.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/metrics/_classification.py": [
+   "cm",
+   "labels",
+   "normalize"
+  ],
+  "sklearn/metrics/_plot/confusion_matrix.py": [
+   "labels",
+   "normalize"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 91,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

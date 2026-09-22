@@ -1,0 +1,36 @@
+{
+ "instance_id": "aiogram__aiogram-661",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "0ca9f98baf5820c2f6cd3d770d7e6cc61bdf8306",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/methods/answer_inline_query.py",
+  "aiogram/types/message.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/methods/answer_inline_query.py": [
+   "bot",
+   "data",
+   "input_message_content",
+   "input_message_contents",
+   "result"
+  ],
+  "aiogram/methods/base.py": [
+   "prepare_parse_mode"
+  ],
+  "aiogram/types/message.py": [
+   "allow_sending_without_reply"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 133,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

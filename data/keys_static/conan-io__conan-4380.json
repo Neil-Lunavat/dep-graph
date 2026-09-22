@@ -1,0 +1,42 @@
+{
+ "instance_id": "conan-io__conan-4380",
+ "repo_key": "conan-io/conan",
+ "base_commit": "256c14775b6281dec546aec1aa4c5973fe0d3ac8",
+ "status": "ok",
+ "co_edited": [
+  "conans/client/loader.py",
+  "conans/client/output.py",
+  "conans/util/progress_bar.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/client/output.py": [
+   "_",
+   "_stream",
+   "back",
+   "data",
+   "front",
+   "newline",
+   "self"
+  ],
+  "conans/util/progress_bar.py": [
+   "_tqdm_bar",
+   "desc",
+   "output",
+   "pb_kwargs",
+   "prev",
+   "self",
+   "tell"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 11.8
+}

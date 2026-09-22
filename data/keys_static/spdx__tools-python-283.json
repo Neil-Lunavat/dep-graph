@@ -1,0 +1,29 @@
+{
+ "instance_id": "spdx__tools-python-283",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "328a816a5bb8ee43d4031c8df0a2655f571b532c",
+ "status": "ok",
+ "co_edited": [
+  "spdx/parsers/tagvaluebuilders.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "spdx/parsers/tagvaluebuilders.py": [
+   "doc",
+   "file",
+   "self",
+   "str_from_text",
+   "text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

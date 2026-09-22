@@ -1,0 +1,25 @@
+{
+ "instance_id": "reflex-dev__reflex-2350",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "accaf6dc528db25a420e8d76de5d8839854b8dad",
+ "status": "ok",
+ "co_edited": [
+  "reflex/vars.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/vars.py": [
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

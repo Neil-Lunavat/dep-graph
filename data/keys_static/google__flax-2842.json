@@ -1,0 +1,28 @@
+{
+ "instance_id": "google__flax-2842",
+ "repo_key": "google/flax",
+ "base_commit": "398e170b1e14bec7369987af7beafd32405f21ef",
+ "status": "ok",
+ "co_edited": [
+  "examples/lm1b/temperature_sampler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/lm1b/temperature_sampler.py": [
+   "i",
+   "i0",
+   "max_decode_len",
+   "not_at_end"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

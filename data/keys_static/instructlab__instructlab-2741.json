@@ -1,0 +1,35 @@
+{
+ "instance_id": "instructlab__instructlab-2741",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "ed2c941a8ee3dafb884746d03bcdc0cae57fd8a0",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/data/generate.py",
+  "src/instructlab/cli/model/train.py",
+  "src/instructlab/model/accelerated_train.py",
+  "src/instructlab/model/convert.py",
+  "src/instructlab/model/evaluate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/model/accelerated_train.py": [
+   "journal",
+   "output_checkpoint"
+  ],
+  "src/instructlab/model/phased_training.py": [
+   "checkpoint",
+   "journalfile",
+   "score"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

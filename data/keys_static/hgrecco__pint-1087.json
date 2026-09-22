@@ -1,0 +1,39 @@
+{
+ "instance_id": "hgrecco__pint-1087",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "878f81e75dc61f7fe58e64c927fe2da939aca0dd",
+ "status": "ok",
+ "co_edited": [
+  "pint/numpy_func.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/compat.py": [
+   "np"
+  ],
+  "pint/numpy_func.py": [
+   "_prod",
+   "a",
+   "all_kwargs",
+   "arg_names",
+   "args",
+   "axis",
+   "exponent",
+   "implements",
+   "kwargs",
+   "result",
+   "units",
+   "where"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 57,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

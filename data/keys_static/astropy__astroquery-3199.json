@@ -1,0 +1,27 @@
+{
+ "instance_id": "astropy__astroquery-3199",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "5019431af2ce05bc51c18f3626e62790f4f5d3a7",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/simbad/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/simbad/core.py": [
+   "_Column",
+   "link",
+   "table"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

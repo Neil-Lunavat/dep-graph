@@ -1,0 +1,55 @@
+{
+ "instance_id": "numba__numba-5356",
+ "repo_key": "numba/numba",
+ "base_commit": "0aaf62d830e7a9d1dc5ffbf710a7cd38caa52d1a",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/codegen.py",
+  "numba/core/ir.py",
+  "numba/core/lowering.py",
+  "numba/typed/listobject.py",
+  "numba/typed/typedlist.py"
+ ],
+ "deleted": [
+  "numba/misc/dump_style.py"
+ ],
+ "new_files": [],
+ "symbol": {
+  "numba/core/ir.py": [
+   "text"
+  ],
+  "numba/typed/listobject.py": [
+   "DEFAULT_ALLOCATED",
+   "allocated",
+   "imp",
+   "impl_new_list",
+   "item",
+   "listobject",
+   "new_list"
+  ],
+  "numba/typed/typedlist.py": [
+   "DEFAULT_ALLOCATED",
+   "_make_list",
+   "_parse_arg",
+   "allocated",
+   "cls",
+   "empty_list",
+   "impl",
+   "item_type",
+   "itemty",
+   "lsttype",
+   "meminfo",
+   "self",
+   "typedlist_empty"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

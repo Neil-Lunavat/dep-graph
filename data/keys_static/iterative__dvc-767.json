@@ -1,0 +1,44 @@
+{
+ "instance_id": "iterative__dvc-767",
+ "repo_key": "iterative/dvc",
+ "base_commit": "582cb9e0641528168bcacb002ff43f5736920a00",
+ "status": "ok",
+ "co_edited": [
+  "dvc/cli.py",
+  "dvc/command/remove.py",
+  "dvc/project.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dvc/cli.py": [
+   "remove_parser",
+   "remove_parser_group"
+  ],
+  "dvc/command/common/base.py": [
+   "args",
+   "project"
+  ],
+  "dvc/command/remove.py": [
+   "outs_only",
+   "self",
+   "target"
+  ],
+  "dvc/project.py": [
+   "outs_only",
+   "remove",
+   "self",
+   "stage",
+   "target"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

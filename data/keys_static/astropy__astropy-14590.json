@@ -1,0 +1,41 @@
+{
+ "instance_id": "astropy__astropy-14590",
+ "repo_key": "astropy/astropy",
+ "base_commit": "5f74eacbcc7fff707a44d8eb58adaa514cb7dcb5",
+ "status": "ok",
+ "co_edited": [
+  "astropy/utils/masked/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/utils/masked/core.py": [
+   "_combine_masks",
+   "_get_data_and_mask",
+   "axis",
+   "copy",
+   "keepdims",
+   "kwargs",
+   "mask",
+   "masks",
+   "out",
+   "out_mask",
+   "self",
+   "where",
+   "where_mask",
+   "where_unmasked"
+  ],
+  "astropy/utils/shapes.py": [
+   "copy"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 152,
+  "names_resolved_in_repo": 79,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.7
+}

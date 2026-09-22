@@ -1,0 +1,42 @@
+{
+ "instance_id": "nipy__nipype-2673",
+ "repo_key": "nipy/nipype",
+ "base_commit": "69dce12bdf256c3bb0a8b6da9a1d1cdce48b66ec",
+ "status": "ok",
+ "co_edited": [
+  "nipype/pipeline/engine/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nipype/pipeline/engine/utils.py": [
+   "_identify_collapses",
+   "_protect_collapses",
+   "_uncollapse",
+   "basedir",
+   "cloned",
+   "collapsed",
+   "cwd",
+   "hastraits",
+   "indexable",
+   "key",
+   "modify_paths",
+   "new",
+   "orig",
+   "outputs",
+   "raw",
+   "relative",
+   "result",
+   "tosave"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 180,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

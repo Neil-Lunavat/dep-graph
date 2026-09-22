@@ -1,0 +1,38 @@
+{
+ "instance_id": "statsmodels__statsmodels-9165",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "37bd2e421bad61bc54e8260b86a10a68d17892b3",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/tsa/statespace/mlemodel.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/__init__.py": [
+   "statsmodels"
+  ],
+  "statsmodels/tsa/__init__.py": [
+   "tsa"
+  ],
+  "statsmodels/tsa/statespace/__init__.py": [
+   "statespace"
+  ],
+  "statsmodels/tsa/statespace/mlemodel.py": [
+   "random_state"
+  ],
+  "statsmodels/tsa/statespace/simulation_smoother.py": [
+   "check_random_state",
+   "simulation_smoother"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

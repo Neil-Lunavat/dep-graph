@@ -1,0 +1,83 @@
+{
+ "instance_id": "tobymao__sqlglot-4628",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "59d886d6abfc00726b785a4d468f6b2e0f9d3b1a",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/snowflake.py",
+  "sqlglot/dialects/trino.py",
+  "sqlglot/expressions.py",
+  "sqlglot/generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/dialect.py": [
+   "build_formatted_time"
+  ],
+  "sqlglot/dialects/snowflake.py": [
+   "_build_datetime",
+   "args",
+   "e",
+   "formatted_exp",
+   "int_value",
+   "kind",
+   "klass",
+   "safe",
+   "self"
+  ],
+  "sqlglot/dialects/trino.py": [
+   "_parse_json_query",
+   "_parse_json_query_quote",
+   "expression",
+   "json_path",
+   "option",
+   "quote",
+   "self"
+  ],
+  "sqlglot/expressions.py": [
+   "DATE",
+   "DataType",
+   "Expression",
+   "JSONExtract",
+   "JSONExtractQuote",
+   "StrToTime",
+   "TIME",
+   "TsOrDsToDate",
+   "TsOrDsToTime",
+   "Type",
+   "arg_types",
+   "args",
+   "exp",
+   "this"
+  ],
+  "sqlglot/generator.py": [
+   "expression",
+   "format_time",
+   "func",
+   "jsonextractquote_sql",
+   "scalar",
+   "self",
+   "sql",
+   "this",
+   "time_format"
+  ],
+  "sqlglot/parser.py": [
+   "_index",
+   "_match_text_seq",
+   "_tokens"
+  ],
+  "sqlglot/tokens.py": [
+   "text"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 116,
+  "names_resolved_in_repo": 104,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 11.2
+}

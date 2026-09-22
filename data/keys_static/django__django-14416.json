@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-14416",
+ "repo_key": "django/django",
+ "base_commit": "84c7c4a477eae5de394d036d7ba1e58a37e18b69",
+ "status": "ok",
+ "co_edited": [
+  "django/middleware/locale.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/middleware/locale.py": [
+   "language_url",
+   "redirect",
+   "response_redirect_class",
+   "self"
+  ],
+  "django/utils/cache.py": [
+   "patch_vary_headers"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

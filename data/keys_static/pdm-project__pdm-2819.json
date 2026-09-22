@@ -1,0 +1,41 @@
+{
+ "instance_id": "pdm-project__pdm-2819",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "cd07cbf413c5f55006308856660ee1208285c83b",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/environments/base.py",
+  "src/pdm/project/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/environments/base.py": [
+   "_setting_list",
+   "key",
+   "project",
+   "self",
+   "stripped",
+   "v",
+   "value",
+   "var"
+  ],
+  "src/pdm/project/core.py": [
+   "env_or_setting",
+   "get_setting",
+   "key",
+   "pyproject",
+   "self",
+   "var"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 126,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

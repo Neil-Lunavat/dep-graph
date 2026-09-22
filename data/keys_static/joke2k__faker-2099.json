@@ -1,0 +1,40 @@
+{
+ "instance_id": "joke2k__faker-2099",
+ "repo_key": "joke2k/faker",
+ "base_commit": "71715c88c21a186043c4da7f015bbc9ebdb94bb8",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/date_time/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/providers/date_time/__init__.py": [
+   "after_today",
+   "args",
+   "before_today",
+   "end_date",
+   "func",
+   "kwargs",
+   "maybe_format_as_string",
+   "pattern",
+   "result",
+   "self",
+   "start_date",
+   "tzinfo",
+   "wrapper"
+  ],
+  "faker/typing.py": [
+   "DateParseType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 218,
+  "names_resolved_in_repo": 60,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.9
+}

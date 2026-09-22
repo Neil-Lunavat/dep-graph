@@ -1,0 +1,80 @@
+{
+ "instance_id": "statsmodels__statsmodels-9407",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "f29be609729882446846a930bec1afbdc78a0d2b",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/base/data.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/base/data.py": [
+   "_asarray_2d_null_rows",
+   "_convert_endog_exog",
+   "arr",
+   "arrays",
+   "c",
+   "combined",
+   "combined_2d",
+   "combined_2d_names",
+   "combined_names",
+   "const_idx",
+   "cov_names",
+   "d",
+   "data",
+   "depth",
+   "design_info",
+   "drop_nans_2d",
+   "e",
+   "endog",
+   "exc",
+   "exog",
+   "exog_names",
+   "formula",
+   "handle_data",
+   "handle_missing",
+   "hasconst",
+   "how",
+   "i",
+   "k",
+   "klass",
+   "kwargs",
+   "level",
+   "missing",
+   "missing_idx",
+   "names",
+   "nan_idx",
+   "none_array_names",
+   "obj",
+   "orig_endog",
+   "orig_exog",
+   "out",
+   "pos",
+   "result",
+   "row_labels",
+   "self",
+   "values",
+   "wrap_output",
+   "x",
+   "x_is_boolean_array",
+   "y",
+   "ynames"
+  ],
+  "statsmodels/compat/python.py": [
+   "lmap"
+  ],
+  "statsmodels/tools/sm_exceptions.py": [
+   "MissingDataError"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 239,
+  "names_resolved_in_repo": 195,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

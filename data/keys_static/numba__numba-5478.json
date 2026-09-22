@@ -1,0 +1,63 @@
+{
+ "instance_id": "numba__numba-5478",
+ "repo_key": "numba/numba",
+ "base_commit": "1e2dc49c699b72c48b258a7c15998b505058289a",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/lowering.py",
+  "numba/core/typeinfer.py",
+  "numba/core/types/misc.py",
+  "numba/core/typing/builtins.py",
+  "numba/core/typing/context.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/lowering.py": [
+   "builder",
+   "context",
+   "pyval",
+   "self",
+   "tyctx",
+   "valty"
+  ],
+  "numba/core/typeinfer.py": [
+   "ty"
+  ],
+  "numba/core/types/__init__.py": [
+   "types"
+  ],
+  "numba/core/types/misc.py": [
+   "_value",
+   "maybe_literal",
+   "self",
+   "unliteral",
+   "value"
+  ],
+  "numba/core/typing/builtins.py": [
+   "arg",
+   "args",
+   "classty",
+   "self"
+  ],
+  "numba/core/typing/context.py": [
+   "lit",
+   "resolve_value_type",
+   "resolve_value_type_prefer_literal",
+   "self",
+   "value"
+  ],
+  "numba/core/typing/templates.py": [
+   "context"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 49,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

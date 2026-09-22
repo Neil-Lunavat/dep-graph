@@ -1,0 +1,32 @@
+{
+ "instance_id": "aiogram__aiogram-1469",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "f1c9fc50f0a7e186bab4587b28d019a909a7e97f",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/types/message.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/types/message.py": [
+   "chat_value",
+   "force_private",
+   "include_thread_id",
+   "is_topic_message",
+   "message_id",
+   "message_id_value",
+   "message_thread_id",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

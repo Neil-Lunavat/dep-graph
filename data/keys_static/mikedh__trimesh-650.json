@@ -1,0 +1,43 @@
+{
+ "instance_id": "mikedh__trimesh-650",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "bf989493ce1919c96b0a904adf37140f10b32894",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/exchange/load.py",
+  "trimesh/exchange/obj.py",
+  "trimesh/path/path.py",
+  "trimesh/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/caching.py": [
+   "dtype"
+  ],
+  "trimesh/exchange/load.py": [
+   "file_obj"
+  ],
+  "trimesh/exchange/obj.py": [
+   "data",
+   "k",
+   "per_row",
+   "v"
+  ],
+  "trimesh/path/path.py": [
+   "values"
+  ],
+  "trimesh/version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 7.0
+}

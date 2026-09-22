@@ -1,0 +1,52 @@
+{
+ "instance_id": "astropy__photutils-1805",
+ "repo_key": "astropy/photutils",
+ "base_commit": "1f474ae20fcf1b0a7953d59948a1fd458ba91aa5",
+ "status": "ok",
+ "co_edited": [
+  "photutils/psf/photometry.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/psf/photometry.py": [
+   "_fit_model_params",
+   "_param_maps",
+   "_validate_bounds",
+   "aperture_radius",
+   "dx",
+   "dy",
+   "fitter",
+   "fitter_maxiters",
+   "i",
+   "index",
+   "localbkg_estimator",
+   "maxiters",
+   "mode",
+   "model",
+   "name",
+   "non_none",
+   "param",
+   "params",
+   "row",
+   "self",
+   "value",
+   "x_bounds",
+   "x_param",
+   "xcolname",
+   "xy_bounds",
+   "y_bounds",
+   "y_param",
+   "ycolname"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 286,
+  "names_resolved_in_repo": 110,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

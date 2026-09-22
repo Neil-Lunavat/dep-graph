@@ -1,0 +1,31 @@
+{
+ "instance_id": "numba__numba-5213",
+ "repo_key": "numba/numba",
+ "base_commit": "13ece9b97e6f01f750e870347f231282325f60c3",
+ "status": "ok",
+ "co_edited": [
+  "numba/cpython/unicode.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/cpython/unicode.py": [
+   "chars",
+   "i",
+   "str_len",
+   "string"
+  ],
+  "numba/cpython/unicode_support.py": [
+   "_PyUnicode_IsSpace"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

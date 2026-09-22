@@ -1,0 +1,21 @@
+{
+ "instance_id": "bridgecrewio__checkov-6695",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "e1a17d5af24185b8bc1952c8c46af130fce90794",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/gcp/CloudSqlMajorVersion.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

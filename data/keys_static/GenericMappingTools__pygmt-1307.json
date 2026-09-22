@@ -1,0 +1,28 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-1307",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "ec73ea42428da74fca505cf6c14e71c5c667a6f3",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/figure.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/exceptions.py": [
+   "GMTInvalidInput"
+  ],
+  "pygmt/figure.py": [
+   "ext"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

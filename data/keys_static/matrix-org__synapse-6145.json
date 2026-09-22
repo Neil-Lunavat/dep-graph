@@ -1,0 +1,26 @@
+{
+ "instance_id": "matrix-org__synapse-6145",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "479fbac96f5accb752e39046684b904b816cfb44",
+ "status": "ok",
+ "co_edited": [
+  "synapse/storage/events_worker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/storage/events_worker.py": [
+   "entry",
+   "event_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

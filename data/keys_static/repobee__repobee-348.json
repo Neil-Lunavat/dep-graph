@@ -1,0 +1,59 @@
+{
+ "instance_id": "repobee__repobee-348",
+ "repo_key": "repobee/repobee",
+ "base_commit": "b706b5d9a283305d53af92c7a0bf641fcb12126c",
+ "status": "ok",
+ "co_edited": [
+  "src/_repobee/cli.py",
+  "src/_repobee/ext/gitlab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_repobee/cli.py": [
+   "_connect_to_api",
+   "api",
+   "args",
+   "user"
+  ],
+  "src/_repobee/exception.py": [
+   "APIError",
+   "BadCredentials",
+   "exception",
+   "msg"
+  ],
+  "src/_repobee/ext/gitlab.py": [
+   "GitLabAPI",
+   "LOGGER",
+   "_convert_error",
+   "_ssl_verify",
+   "_verify_group",
+   "base_url",
+   "conversion",
+   "exc",
+   "expected",
+   "gl",
+   "group",
+   "group_name",
+   "master_org_name",
+   "matching_members",
+   "member",
+   "msg",
+   "org_name",
+   "self",
+   "slug_matched",
+   "ssl_verify",
+   "token",
+   "user"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 154,
+  "names_resolved_in_repo": 89,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

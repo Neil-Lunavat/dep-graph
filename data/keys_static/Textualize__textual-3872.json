@@ -1,0 +1,33 @@
+{
+ "instance_id": "Textualize__textual-3872",
+ "repo_key": "textualize/textual",
+ "base_commit": "49e71862688a60e5e29f6bb60084e45890a65285",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/widgets/_radio_set.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/widgets/_radio_set.py": [
+   "_move_selected_button",
+   "_selected",
+   "button",
+   "candidate_indices",
+   "direction",
+   "distance",
+   "index",
+   "selected",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 151,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

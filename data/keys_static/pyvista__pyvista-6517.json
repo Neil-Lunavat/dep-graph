@@ -1,0 +1,48 @@
+{
+ "instance_id": "pyvista__pyvista-6517",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "9ad8ddc23557eafdd74b7684ffad5d8b497e59eb",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/utilities/points.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/__init__.py": [
+   "pyvista"
+  ],
+  "pyvista/core/filters/data_set.py": [
+   "align_xyz",
+   "return_matrix"
+  ],
+  "pyvista/core/pointset.py": [
+   "PolyData"
+  ],
+  "pyvista/core/utilities/points.py": [
+   "aligned",
+   "aligned_bnds",
+   "center",
+   "i_size",
+   "inverse_matrix",
+   "j_size",
+   "matrix",
+   "normal",
+   "plane",
+   "points"
+  ],
+  "pyvista/core/utilities/transform.py": [
+   "Transform",
+   "inverse_matrix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 8.0
+}

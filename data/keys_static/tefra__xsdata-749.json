@@ -1,0 +1,72 @@
+{
+ "instance_id": "tefra__xsdata-749",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "8d431a234d79c487950acc0f3eac019fb98d5088",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/codegen/mappers/dtd.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/__init__.py": [
+   "xsdata"
+  ],
+  "xsdata/codegen/mappers/dtd.py": [
+   "attr",
+   "build_content",
+   "build_restrictions",
+   "build_value",
+   "cls",
+   "content",
+   "element",
+   "kwargs",
+   "restrictions",
+   "target",
+   "types"
+  ],
+  "xsdata/codegen/models.py": [
+   "AttrType",
+   "Class",
+   "Restrictions",
+   "attrs",
+   "clone",
+   "index",
+   "name",
+   "native",
+   "qname",
+   "restrictions",
+   "tag",
+   "types"
+  ],
+  "xsdata/models/dtd.py": [
+   "DtdElementType",
+   "MIXED",
+   "content",
+   "occur",
+   "type"
+  ],
+  "xsdata/models/enums.py": [
+   "DataType",
+   "EXTENSION",
+   "STRING",
+   "Tag"
+  ],
+  "xsdata/utils/__init__.py": [
+   "utils"
+  ],
+  "xsdata/utils/constants.py": [
+   "DEFAULT_ATTR_NAME",
+   "constants"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 58,
+  "names_resolved_in_repo": 54,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

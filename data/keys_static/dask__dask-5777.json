@@ -1,0 +1,55 @@
+{
+ "instance_id": "dask__dask-5777",
+ "repo_key": "dask/dask",
+ "base_commit": "0ecef985bb7c75e02b0bc50aa1564f004103b0d1",
+ "status": "ok",
+ "co_edited": [
+  "dask/dataframe/core.py",
+  "dask/dataframe/io/parquet/arrow.py",
+  "dask/dataframe/multi.py",
+  "dask/dataframe/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "dask/dataframe/_compat.py"
+ ],
+ "symbol": {
+  "dask/dataframe/core.py": [
+   "_meta",
+   "_take_last",
+   "count_timedeltas",
+   "cumpart",
+   "df",
+   "empty_index",
+   "freq",
+   "include_right",
+   "is_anchored",
+   "is_offset",
+   "meta",
+   "name",
+   "name2",
+   "offset",
+   "self",
+   "series_typ",
+   "skipna"
+  ],
+  "dask/dataframe/io/parquet/arrow.py": [
+   "columns",
+   "columns_and_parts",
+   "part_name",
+   "partitions"
+  ],
+  "dask/dataframe/multi.py": [
+   "frames"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 252,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 99,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 30.6
+}

@@ -1,0 +1,47 @@
+{
+ "instance_id": "dpkp__kafka-python-2573",
+ "repo_key": "dpkp/kafka-python",
+ "base_commit": "70ec261b0d41448eb9d6b4ff9456d0d2d65edf15",
+ "status": "ok",
+ "co_edited": [
+  "kafka/client_async.py",
+  "kafka/protocol/metadata.py",
+  "kafka/sasl/oauth.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kafka/client_async.py": [
+   "api_version",
+   "cluster",
+   "self",
+   "topics"
+  ],
+  "kafka/cluster.py": [
+   "need_all_topic_metadata"
+  ],
+  "kafka/protocol/metadata.py": [
+   "MetadataRequest",
+   "NO_TOPICS"
+  ],
+  "kafka/sasl/oauth.py": [
+   "__name__",
+   "_error",
+   "_is_authenticated",
+   "_is_done",
+   "auth_bytes",
+   "error",
+   "log",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

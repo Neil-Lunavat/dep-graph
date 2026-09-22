@@ -1,0 +1,31 @@
+{
+ "instance_id": "reframe-hpc__reframe-2613",
+ "repo_key": "reframe-hpc/reframe",
+ "base_commit": "0cd78028c73c047ed49314e6cf9f00bf0e76458e",
+ "status": "ok",
+ "co_edited": [
+  "reframe/core/containers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reframe/core/containers.py": [
+   "Apptainer",
+   "Singularity",
+   "__init__",
+   "_launch_command",
+   "image",
+   "run_opts",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

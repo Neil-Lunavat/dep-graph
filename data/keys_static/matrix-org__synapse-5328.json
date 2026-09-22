@@ -1,0 +1,87 @@
+{
+ "instance_id": "matrix-org__synapse-5328",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "fe2294ec8dc4b37d19930bd1ae0867645207af2e",
+ "status": "ok",
+ "co_edited": [
+  "synapse/crypto/keyring.py",
+  "synapse/federation/federation_base.py",
+  "synapse/federation/transport/server.py",
+  "synapse/rest/client/v1/voip.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/crypto/keyring.py": [
+   "PerspectivesKeyFetcher",
+   "ServerKeyFetcher",
+   "StoreKeyFetcher",
+   "_key_fetchers",
+   "completed",
+   "deferred",
+   "fetch_key_result",
+   "fetcher",
+   "get_keys",
+   "get_server_verify_key_v2_direct",
+   "hs",
+   "json_object",
+   "key_fetchers",
+   "key_id",
+   "key_ids",
+   "keys_for_server",
+   "keys_to_fetch",
+   "min_valid_ts",
+   "minimum_valid_until_ts",
+   "missing_keys",
+   "perspective_keys",
+   "perspective_name",
+   "process",
+   "req",
+   "result_keys",
+   "results",
+   "self",
+   "server_and_json",
+   "server_keys",
+   "server_name",
+   "validity_time",
+   "verify_json_for_server",
+   "verify_json_objects_for_server",
+   "verify_request"
+  ],
+  "synapse/events/__init__.py": [
+   "event_id"
+  ],
+  "synapse/federation/federation_base.py": [
+   "p"
+  ],
+  "synapse/federation/transport/server.py": [
+   "_clock",
+   "hs",
+   "json_request",
+   "keyring",
+   "now",
+   "origin",
+   "self"
+  ],
+  "synapse/rest/client/v1/voip.py": [
+   "auth",
+   "hs",
+   "self"
+  ],
+  "synapse/types.py": [
+   "get_domain_from_id"
+  ],
+  "synapse/util/logcontext.py": [
+   "PreserveLoggingContext"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 318,
+  "names_resolved_in_repo": 136,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.5
+}

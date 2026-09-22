@@ -1,0 +1,31 @@
+{
+ "instance_id": "kedro-org__kedro-3944",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "3c46b4120f503fff2644818411d1983f7be94e57",
+ "status": "ok",
+ "co_edited": [
+  "kedro/io/core.py",
+  "kedro/io/data_catalog.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/io/core.py": [
+   "exc",
+   "name"
+  ],
+  "kedro/io/data_catalog.py": [
+   "ds_config",
+   "ds_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

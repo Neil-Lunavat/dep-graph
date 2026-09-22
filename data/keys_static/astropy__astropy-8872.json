@@ -1,0 +1,26 @@
+{
+ "instance_id": "astropy__astropy-8872",
+ "repo_key": "astropy/astropy",
+ "base_commit": "b750a0e6ee76fb6b8a099a4d16ec51977be46bf6",
+ "status": "ok",
+ "co_edited": [
+  "astropy/units/quantity.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/units/quantity.py": [
+   "dtype",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 21.1
+}

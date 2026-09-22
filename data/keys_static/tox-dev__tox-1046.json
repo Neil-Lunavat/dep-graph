@@ -1,0 +1,38 @@
+{
+ "instance_id": "tox-dev__tox-1046",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "1eccb2042dd96a08e8a2684945c811bf5c32402f",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/package.py",
+  "src/tox/session.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/package.py": [
+   "exists",
+   "file_id",
+   "i",
+   "links",
+   "operation",
+   "package",
+   "package_dir",
+   "session_dir",
+   "session_package",
+   "temp_dir"
+  ],
+  "src/tox/session.py": [
+   "tox_env"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

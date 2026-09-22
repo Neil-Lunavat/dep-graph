@@ -1,0 +1,27 @@
+{
+ "instance_id": "python-cmd2__cmd2-1069",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "cc9d96a7c5309bec64856e4dd9554d2cee235d23",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/argparse_completer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/argparse_completer.py": [
+   "arg_choices",
+   "choice",
+   "index"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

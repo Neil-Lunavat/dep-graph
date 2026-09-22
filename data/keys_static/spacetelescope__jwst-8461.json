@@ -1,0 +1,26 @@
+{
+ "instance_id": "spacetelescope__jwst-8461",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "854f84b2586aa6135e8c4a41fec4b030d63d30c7",
+ "status": "ok",
+ "co_edited": [
+  "jwst/assign_wcs/nirspec.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/assign_wcs/nirspec.py": [
+   "source_xpos",
+   "source_ypos"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,57 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-4026",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "8ea6c9ccdb70f2ed05c3b61c9f83690ebc079c4c",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/rules/resources/iam/Permissions.py",
+  "src/cfnlint/rules/resources/iam/StatementResources.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/cfnlint/context/context.py": [
+   "parameters"
+  ],
+  "src/cfnlint/helpers.py": [
+   "ensure_list",
+   "is_function"
+  ],
+  "src/cfnlint/jsonschema/protocols.py": [
+   "context",
+   "is_type"
+  ],
+  "src/cfnlint/rules/helpers/get_value_from_path.py": [
+   "path"
+  ],
+  "src/cfnlint/rules/resources/iam/Permissions.py": [
+   "action",
+   "enums",
+   "permission",
+   "permission_regex",
+   "x"
+  ],
+  "src/cfnlint/rules/resources/iam/StatementResources.py": [
+   "action",
+   "all_resources",
+   "instance",
+   "k",
+   "key",
+   "resource",
+   "resources",
+   "using_fn_arns",
+   "v",
+   "validator",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.2
+}

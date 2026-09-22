@@ -1,0 +1,47 @@
+{
+ "instance_id": "pyvista__pyvista-6528",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "adc548ab5bd7e38447b1524302f7534d515b8456",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/utilities/points.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/_validation/validate.py": [
+   "broadcast_to",
+   "dtype_out",
+   "must_be_integer",
+   "must_have_shape"
+  ],
+  "pyvista/core/utilities/geometric_objects.py": [
+   "center",
+   "direction",
+   "i_resolution",
+   "i_size",
+   "j_resolution",
+   "j_size"
+  ],
+  "pyvista/core/utilities/points.py": [
+   "fit_plane_to_points",
+   "i_resolution",
+   "i_size",
+   "j_resolution",
+   "j_size",
+   "points",
+   "resolution",
+   "return_meta",
+   "valid_resolution"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 166,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

@@ -1,0 +1,39 @@
+{
+ "instance_id": "stanfordnlp__dspy-1651",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "9a952fef5fa8399cb82cb726860814e21816f16d",
+ "status": "ok",
+ "co_edited": [
+  "dspy/functional/functional.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/__init__.py": [
+   "dspy"
+  ],
+  "dspy/functional/functional.py": [
+   "instructions",
+   "predictor",
+   "self",
+   "signature",
+   "value"
+  ],
+  "dspy/predict/predict.py": [
+   "signature"
+  ],
+  "dspy/signatures/signature.py": [
+   "Signature",
+   "ensure_signature"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.9
+}

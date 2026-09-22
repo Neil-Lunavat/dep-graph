@@ -1,0 +1,38 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-884",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "c0bad78f3fa9549591738c77f869724f721e6830",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/core/dialects/dialect_ansi.py",
+  "src/sqlfluff/core/parser/lexer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/core/parser/lexer.py": [
+   "DividerClass",
+   "TrimClass",
+   "class_kwargs",
+   "divider",
+   "pattern",
+   "self",
+   "subdivide",
+   "trim_post_subdivide",
+   "trimmer"
+  ],
+  "src/sqlfluff/core/parser/segments/raw.py": [
+   "RawSegment",
+   "make"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 50,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

@@ -1,0 +1,28 @@
+{
+ "instance_id": "deepset-ai__haystack-6717",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "0616197b44ae95da03aad7e5ac3997b243bd735d",
+ "status": "ok",
+ "co_edited": [
+  "haystack/document_stores/in_memory/document_store.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/document_stores/in_memory/document_store.py": [
+   "doc_fields",
+   "docs_scores",
+   "i",
+   "score"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

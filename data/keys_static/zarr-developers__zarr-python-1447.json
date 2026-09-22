@@ -1,0 +1,26 @@
+{
+ "instance_id": "zarr-developers__zarr-python-1447",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "98f74d5e362eff88d1022749e82d7bed9d62b7a2",
+ "status": "ok",
+ "co_edited": [
+  "zarr/meta.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "zarr/meta.py": [
+   "codec",
+   "conf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

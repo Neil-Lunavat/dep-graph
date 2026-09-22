@@ -1,0 +1,43 @@
+{
+ "instance_id": "ethereum__web3.py-3594",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "f7d1cd37c9acb3f6a565655da720b9848d9b65bb",
+ "status": "ok",
+ "co_edited": [
+  "web3/providers/persistent/subscription_manager.py",
+  "web3/utils/subscriptions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/providers/persistent/subscription_container.py": [
+   "subscriptions_by_label"
+  ],
+  "web3/providers/persistent/subscription_manager.py": [
+   "_subscription_container",
+   "_validate_and_normalize_label",
+   "get_by_label",
+   "i",
+   "self",
+   "subscription",
+   "subscriptions"
+  ],
+  "web3/utils/subscriptions.py": [
+   "EthSubscription",
+   "_default_label",
+   "_label",
+   "label",
+   "self",
+   "subscription_params"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,71 @@
+{
+ "instance_id": "missionpinball__mpf-1137",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "941faa48843f7a67de2e59df89af6e44a7d4edbe",
+ "status": "ok",
+ "co_edited": [
+  "mpf/core/config_spec.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "mpf/devices/digital_output.py"
+ ],
+ "symbol": {
+  "mpf/__init__.py": [
+   "mpf"
+  ],
+  "mpf/core/__init__.py": [
+   "core"
+  ],
+  "mpf/core/device.py": [
+   "__init__",
+   "_initialize",
+   "class_label",
+   "collection",
+   "config",
+   "config_section",
+   "machine",
+   "name"
+  ],
+  "mpf/core/machine.py": [
+   "MachineController",
+   "get_platform_sections",
+   "machine"
+  ],
+  "mpf/core/platform.py": [
+   "DriverConfig",
+   "DriverPlatform",
+   "LightsPlatform",
+   "platform"
+  ],
+  "mpf/core/system_wide_device.py": [
+   "SystemWideDevice",
+   "system_wide_device"
+  ],
+  "mpf/platforms/__init__.py": [
+   "platforms"
+  ],
+  "mpf/platforms/interfaces/__init__.py": [
+   "interfaces"
+  ],
+  "mpf/platforms/interfaces/driver_platform_interface.py": [
+   "DriverPlatformInterface",
+   "HoldSettings",
+   "PulseSettings",
+   "driver_platform_interface"
+  ],
+  "mpf/platforms/interfaces/light_platform_interface.py": [
+   "LightPlatformInterface",
+   "light_platform_interface"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 220,
+  "names_resolved_in_repo": 64,
+  "defined_in_new_file": 139,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

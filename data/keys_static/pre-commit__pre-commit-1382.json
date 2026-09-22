@@ -1,0 +1,31 @@
+{
+ "instance_id": "pre-commit__pre-commit-1382",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "34e9d117861ba758b3fd2d0b33eb70de9f05238d",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/color.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/color.py": [
+   "ENABLE_VIRTUAL_TERMINAL_PROCESSING",
+   "GetConsoleMode",
+   "GetStdHandle",
+   "STD_ERROR_HANDLE",
+   "SetConsoleMode",
+   "flags",
+   "stderr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.2
+}

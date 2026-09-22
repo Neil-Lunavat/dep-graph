@@ -1,0 +1,41 @@
+{
+ "instance_id": "dask__dask-3016",
+ "repo_key": "dask/dask",
+ "base_commit": "9a1f92801eebeefba4481fa5c9fc00badeee148a",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/core.py",
+  "dask/bag/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/bag/core.py": [
+   "b",
+   "columns",
+   "compute",
+   "concat",
+   "dsk",
+   "head",
+   "k",
+   "meta",
+   "n",
+   "name",
+   "npartitions",
+   "r",
+   "safe_take",
+   "self",
+   "take",
+   "warn"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 100,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "ethereum__web3.py-3187",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "8f853f5841fd62187bce0c9f17be75627104ca43",
+ "status": "ok",
+ "co_edited": [
+  "web3/__init__.py",
+  "web3/eth/async_eth.py",
+  "web3/eth/eth.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/__init__.py": [
+   "__version__"
+  ],
+  "web3/eth/async_eth.py": [
+   "reward_percentiles"
+  ],
+  "web3/eth/eth.py": [
+   "reward_percentiles"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,51 @@
+{
+ "instance_id": "ipython__ipython-14838",
+ "repo_key": "ipython/ipython",
+ "base_commit": "978324813ce6a4a39156c549436b89eb22944038",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/completer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/completer.py": [
+   "ATTRIBUTE",
+   "GLOBAL",
+   "_ATTR_MATCH_RE",
+   "_CompletionContextType",
+   "_determine_completion_context",
+   "_is_in_string_or_comment",
+   "chain_match",
+   "completion_type",
+   "context",
+   "expr",
+   "expr_start",
+   "expression_depth",
+   "i",
+   "in_double_quote",
+   "in_expression",
+   "in_single_quote",
+   "in_template_string",
+   "in_triple_double",
+   "in_triple_quote",
+   "in_triple_single",
+   "is_in_expression",
+   "is_string",
+   "line",
+   "m2",
+   "self",
+   "text",
+   "text_until_cursor"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 210,
+  "names_resolved_in_repo": 237,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

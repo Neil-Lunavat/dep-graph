@@ -1,0 +1,95 @@
+{
+ "instance_id": "iterative__dvc-10842",
+ "repo_key": "iterative/dvc",
+ "base_commit": "82efd3e7809606497b5c9a1f58e4abdbc7f98330",
+ "status": "ok",
+ "co_edited": [
+  "dvc/commands/checkout.py",
+  "dvc/commands/data_sync.py",
+  "dvc/exceptions.py",
+  "dvc/repo/checkout.py",
+  "dvc/repo/pull.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dvc/__init__.py": [
+   "dvc"
+  ],
+  "dvc/commands/checkout.py": [
+   "exc",
+   "log_changes",
+   "msg",
+   "result",
+   "stats"
+  ],
+  "dvc/commands/data_sync.py": [
+   "exc",
+   "log_summary",
+   "result",
+   "self",
+   "stats"
+  ],
+  "dvc/exceptions.py": [
+   "CheckoutError",
+   "__init__",
+   "result",
+   "self",
+   "target_infos"
+  ],
+  "dvc/repo/__init__.py": [
+   "repo"
+  ],
+  "dvc/repo/checkout.py": [
+   "_fspath_dir",
+   "_remove_unused_links",
+   "_stats",
+   "allow_missing",
+   "change",
+   "changelist",
+   "changes",
+   "count",
+   "failed",
+   "index",
+   "isdir",
+   "key",
+   "out_changes",
+   "out_key",
+   "out_keys",
+   "out_path",
+   "out_stats",
+   "p",
+   "result",
+   "self",
+   "stats",
+   "stats_typ",
+   "t",
+   "typ",
+   "typ_map"
+  ],
+  "dvc/repo/index.py": [
+   "IndexView",
+   "index"
+  ],
+  "dvc/repo/pull.py": [
+   "exc",
+   "processed_files_count",
+   "result"
+  ],
+  "dvc/utils/__init__.py": [
+   "relpath"
+  ],
+  "dvc/utils/humanize.py": [
+   "get_summary"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 192,
+  "names_resolved_in_repo": 133,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.1
+}

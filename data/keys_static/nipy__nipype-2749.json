@@ -1,0 +1,71 @@
+{
+ "instance_id": "nipy__nipype-2749",
+ "repo_key": "nipy/nipype",
+ "base_commit": "a10963c408d3e3bbc8e1e91a21a7779ee2ca3fe9",
+ "status": "ok",
+ "co_edited": [
+  "nipype/interfaces/ants/segmentation.py",
+  "nipype/interfaces/fsl/dti.py",
+  "nipype/interfaces/fsl/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nipype/interfaces/ants/segmentation.py": [
+   "_",
+   "_gen_filename",
+   "ext",
+   "input_wm",
+   "name",
+   "output",
+   "output_image",
+   "outputs",
+   "self"
+  ],
+  "nipype/interfaces/base/core.py": [
+   "_gen_filename",
+   "_list_outputs",
+   "_outputs",
+   "inputs"
+  ],
+  "nipype/interfaces/base/specs.py": [
+   "get"
+  ],
+  "nipype/interfaces/base/traits_extension.py": [
+   "exists",
+   "isdefined"
+  ],
+  "nipype/interfaces/fsl/base.py": [
+   "_gen_fname",
+   "suffix"
+  ],
+  "nipype/interfaces/fsl/dti.py": [
+   "base_name",
+   "input_flag",
+   "k",
+   "keys_to_ignore",
+   "opt_output",
+   "output",
+   "outputs",
+   "self",
+   "sse"
+  ],
+  "nipype/interfaces/fsl/utils.py": [
+   "out_base_name",
+   "outbase",
+   "self"
+  ],
+  "nipype/utils/filemanip.py": [
+   "split_filename"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 65,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

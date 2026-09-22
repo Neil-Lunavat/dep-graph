@@ -1,0 +1,41 @@
+{
+ "instance_id": "numba__numba-5624",
+ "repo_key": "numba/numba",
+ "base_commit": "1dabbf67426ad6243f7b6d791d3d38dbb68ab33e",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/analysis.py",
+  "numba/typed/typedlist.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/core/analysis.py": [
+   "branch_bit",
+   "cond",
+   "deadcond",
+   "defns",
+   "func_ir",
+   "nullified",
+   "nullified_conditions",
+   "nullified_info",
+   "repl_idx",
+   "x"
+  ],
+  "numba/typed/typedlist.py": [
+   "_extend",
+   "append",
+   "iterable",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

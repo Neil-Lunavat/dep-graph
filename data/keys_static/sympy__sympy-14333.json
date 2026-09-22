@@ -1,0 +1,25 @@
+{
+ "instance_id": "sympy__sympy-14333",
+ "repo_key": "sympy/sympy",
+ "base_commit": "3f935daa5634c765345bf99df9d85b3d31def1ec",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/numbers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/numbers.py": [
+   "m"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "pytest-dev__pytest-9646",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "6aaa017b1e81f6eccc48ee4f6b52d25c49747554",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/nodes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/nodes.py": [
+   "Collector",
+   "_check_item_and_collector_diamond_inheritance",
+   "attr_name",
+   "base",
+   "cls",
+   "problems",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

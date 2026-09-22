@@ -1,0 +1,31 @@
+{
+ "instance_id": "conan-io__conan-5005",
+ "repo_key": "conan-io/conan",
+ "base_commit": "3a53d711221524c14ce7add50e4b1894383cf6fa",
+ "status": "ok",
+ "co_edited": [
+  "conans/client/conf/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/client/conf/__init__.py": [
+   "_env_c",
+   "default_package_id_mode",
+   "get_item",
+   "self"
+  ],
+  "conans/util/env_reader.py": [
+   "get_env"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

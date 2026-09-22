@@ -1,0 +1,124 @@
+{
+ "instance_id": "PyPSA__PyPSA-1310",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "0943f8749689c8e6913ba142d4cd750724c4a085",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/components/descriptors.py",
+  "pypsa/optimization/abstract.py",
+  "pypsa/optimization/common.py",
+  "pypsa/optimization/constraints.py",
+  "pypsa/optimization/global_constraints.py",
+  "pypsa/optimization/optimize.py",
+  "pypsa/optimization/variables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/common.py": [
+   "expand_series"
+  ],
+  "pypsa/components/components.py": [
+   "committables",
+   "extendables",
+   "fixed"
+  ],
+  "pypsa/components/descriptors.py": [
+   "active_assets",
+   "get_active_assets",
+   "inactive_assets",
+   "self"
+  ],
+  "pypsa/components/store.py": [
+   "lines"
+  ],
+  "pypsa/network/abstract.py": [
+   "has_scenarios",
+   "snapshots"
+  ],
+  "pypsa/network/components.py": [
+   "c",
+   "components",
+   "generators",
+   "static"
+  ],
+  "pypsa/network/io.py": [
+   "snapshot_weightings"
+  ],
+  "pypsa/networks.py": [
+   "Network"
+  ],
+  "pypsa/optimization/abstract.py": [
+   "ext_i",
+   "n"
+  ],
+  "pypsa/optimization/common.py": [
+   "_set_dynamic_data",
+   "attr",
+   "c",
+   "component",
+   "df",
+   "n"
+  ],
+  "pypsa/optimization/constraints.py": [
+   "C_branch",
+   "active",
+   "attr_set",
+   "c",
+   "cbuses",
+   "com_i",
+   "e_init",
+   "eff_stand",
+   "eh",
+   "elapsed_h",
+   "ext_i",
+   "fix",
+   "fix_i",
+   "loads",
+   "n",
+   "noncyclic_b",
+   "snapshots",
+   "sns"
+  ],
+  "pypsa/optimization/global_constraints.py": [
+   "c",
+   "carrier",
+   "cond",
+   "ext_all",
+   "ext_i",
+   "gens",
+   "n",
+   "static"
+  ],
+  "pypsa/optimization/optimize.py": [
+   "_n",
+   "attr",
+   "c",
+   "com_i",
+   "cost",
+   "cost_type",
+   "ext_i",
+   "n",
+   "self",
+   "sns"
+  ],
+  "pypsa/optimization/variables.py": [
+   "active",
+   "c",
+   "com_i",
+   "ext_i",
+   "mod_i",
+   "sns",
+   "upper"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 588,
+  "names_resolved_in_repo": 282,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 14,
+  "truncated": false
+ },
+ "seconds": 11.4
+}

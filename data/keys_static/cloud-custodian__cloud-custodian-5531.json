@@ -1,0 +1,75 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5531",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "5f0b86d17ba7056759e2987d01b827d2267e44c5",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/dms.py",
+  "c7n/resources/iam.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/__init__.py": [
+   "c7n"
+  ],
+  "c7n/filters/core.py": [
+   "data",
+   "manager"
+  ],
+  "c7n/resources/aws.py": [
+   "Arn",
+   "parse"
+  ],
+  "c7n/resources/dms.py": [
+   "arn_type",
+   "augment",
+   "universal_taggable"
+  ],
+  "c7n/resources/iam.py": [
+   "actions",
+   "arn",
+   "arn_resources",
+   "boundaries",
+   "boundary_arn",
+   "boundary_arns",
+   "boundary_iam_map",
+   "boundary_map",
+   "boundary_policy",
+   "client",
+   "evaluations",
+   "get_iam_arns",
+   "iam_arn",
+   "iam_arns",
+   "iam_resources",
+   "initialize_boundaries",
+   "p",
+   "params",
+   "perms",
+   "policies",
+   "r",
+   "resource_arn",
+   "resources",
+   "rid",
+   "roles",
+   "self"
+  ],
+  "c7n/tags.py": [
+   "RemoveTag",
+   "Tag",
+   "TagActionFilter",
+   "TagDelayedAction",
+   "tags",
+   "universal_augment"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 140,
+  "names_resolved_in_repo": 109,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.6
+}

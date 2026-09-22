@@ -1,0 +1,31 @@
+{
+ "instance_id": "statsmodels__statsmodels-8378",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "07997722c2581dafabdea068f51974536568377c",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/tsa/tsatools.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/tsa/tsatools.py": [
+   "c",
+   "k",
+   "maxlag",
+   "nobs",
+   "nvar",
+   "x",
+   "x_columns"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

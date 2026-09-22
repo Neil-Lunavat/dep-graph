@@ -1,0 +1,29 @@
+{
+ "instance_id": "patroni__patroni-3045",
+ "repo_key": "patroni/patroni",
+ "base_commit": "9d231aeecdd69f4d06c75a702755fa70d8c2b5f6",
+ "status": "ok",
+ "co_edited": [
+  "patroni/postgresql/bootstrap.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/postgresql/__init__.py": [
+   "_postgresql"
+  ],
+  "patroni/postgresql/bootstrap.py": [
+   "ret",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

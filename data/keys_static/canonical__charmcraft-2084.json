@@ -1,0 +1,46 @@
+{
+ "instance_id": "canonical__charmcraft-2084",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "0ab0cc25005a65cad2f00f37e925cdae6d9398a7",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/application/commands/store.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/application/commands/store.py": [
+   "lib",
+   "lib_data",
+   "libs_tips",
+   "local_libs_data",
+   "parsed_args",
+   "tip"
+  ],
+  "charmcraft/errors.py": [
+   "LibraryError",
+   "errors"
+  ],
+  "charmcraft/store/models.py": [
+   "api",
+   "lib_id",
+   "patch"
+  ],
+  "charmcraft/utils/charmlibs.py": [
+   "api",
+   "charm_name",
+   "lib_id",
+   "lib_name",
+   "patch"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

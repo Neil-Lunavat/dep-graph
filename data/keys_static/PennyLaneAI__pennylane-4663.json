@@ -1,0 +1,35 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-4663",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "4c3ab729c0715c0a78a0e9b3454a650f0e7e7096",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/data/data_manager/foldermap.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/data/data_manager/foldermap.py": [
+   "curr_level",
+   "fmap_next",
+   "next_param",
+   "next_params",
+   "param_arg",
+   "param_arg_repr",
+   "param_name",
+   "todo"
+  ],
+  "pennylane/data/data_manager/params.py": [
+   "ParamArg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

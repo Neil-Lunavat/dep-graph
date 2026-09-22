@@ -1,0 +1,28 @@
+{
+ "instance_id": "fonttools__fonttools-3510",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "b2b771076c37e3a5ab3ab8e93a39b978ae832c15",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/subset/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/subset/__init__.py": [
+   "n",
+   "nameIDs",
+   "options",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

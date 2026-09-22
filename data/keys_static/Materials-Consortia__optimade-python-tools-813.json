@@ -1,0 +1,46 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-813",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "ce8b4ddd1dbdf2a11ab2d8f2457eb2cac6624009",
+ "status": "ok",
+ "co_edited": [
+  "optimade/filterparser/lark_parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/__init__.py": [
+   "optimade"
+  ],
+  "optimade/filterparser/lark_parser.py": [
+   "AVAILABLE_PARSERS",
+   "__all__",
+   "exc",
+   "f",
+   "filter_",
+   "get_versions",
+   "lark",
+   "parse",
+   "self",
+   "variant",
+   "version"
+  ],
+  "optimade/server/__init__.py": [
+   "server"
+  ],
+  "optimade/server/exceptions.py": [
+   "BadRequest",
+   "detail",
+   "exceptions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 171,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,57 @@
+{
+ "instance_id": "kozea__weasyprint-2416",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "1b24ad91323c8444e398b75ed40ad54cf678ea0d",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/text/line_break.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/text/line_break.py": [
+   "_",
+   "auto_hyphenation",
+   "can_break_text",
+   "dictionary",
+   "end",
+   "first_line",
+   "first_line_text",
+   "first_line_width",
+   "first_word_part",
+   "get_next_break_point",
+   "get_next_break_point_from_text",
+   "get_next_word_boundaries",
+   "lang",
+   "length",
+   "limit_zone",
+   "line_size",
+   "log_attrs",
+   "max_width",
+   "new_first_line_text",
+   "next_break_point",
+   "next_text",
+   "next_text_index",
+   "next_word",
+   "next_word_boundaries",
+   "previous_words",
+   "second_line_text",
+   "space",
+   "start",
+   "start_word",
+   "stop_word",
+   "style",
+   "text",
+   "total"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 91,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

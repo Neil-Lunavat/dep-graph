@@ -1,0 +1,28 @@
+{
+ "instance_id": "elastic__rally-1469",
+ "repo_key": "elastic/rally",
+ "base_commit": "207bb15258cdab397eea3a3e4fd4f08e50766bc5",
+ "status": "ok",
+ "co_edited": [
+  "esrally/async_connection.py",
+  "esrally/chart_generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/async_connection.py": [
+   "_enable_cleanup_closed",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

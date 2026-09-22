@@ -1,0 +1,32 @@
+{
+ "instance_id": "pylint-dev__pylint-4421",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "24b5159e00b8a380c1776dab6ce096df7bad79b1",
+ "status": "ok",
+ "co_edited": [
+  "pylint/__pkginfo__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/__pkginfo__.py": [
+   "__version__",
+   "c",
+   "get_numversion_from_version",
+   "n",
+   "num",
+   "numversion",
+   "v",
+   "version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 54,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

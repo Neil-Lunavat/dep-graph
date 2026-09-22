@@ -1,0 +1,61 @@
+{
+ "instance_id": "borgbackup__borg-7517",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "9263705de74cfa26be4e2a6395d1d6ae2ff70428",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archiver/__init__.py",
+  "src/borg/archiver/_common.py",
+  "src/borg/helpers/parseformat.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/archiver/__init__.py": [
+   "e",
+   "important",
+   "l",
+   "msg",
+   "tb",
+   "tb_log_level"
+  ],
+  "src/borg/archiver/_common.py": [
+   "__called",
+   "args",
+   "kwargs",
+   "self"
+  ],
+  "src/borg/constants.py": [
+   "MAX_DATA_SIZE"
+  ],
+  "src/borg/helpers/errors.py": [
+   "traceback"
+  ],
+  "src/borg/helpers/misc.py": [
+   "sysinfo"
+  ],
+  "src/borg/helpers/parseformat.py": [
+   "ENTRIES_MAP",
+   "VALID_MODES",
+   "token"
+  ],
+  "src/borg/helpers/process.py": [
+   "SigHup",
+   "SigTerm"
+  ],
+  "src/borg/remote.py": [
+   "exception_full",
+   "get_message",
+   "sysinfo"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 81,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

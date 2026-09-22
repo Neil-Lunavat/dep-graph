@@ -1,0 +1,33 @@
+{
+ "instance_id": "networkx__networkx-2713",
+ "repo_key": "networkx/networkx",
+ "base_commit": "9f6c9cd6a561d41192bc29f14fd9bc16bcaad919",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/community/quality.py",
+  "networkx/algorithms/simple_paths.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/community/quality.py": [
+   "G",
+   "partition"
+  ],
+  "networkx/algorithms/simple_paths.py": [
+   "ignore_nodes",
+   "root",
+   "source",
+   "target"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 11,
+  "truncated": false
+ },
+ "seconds": 7.8
+}

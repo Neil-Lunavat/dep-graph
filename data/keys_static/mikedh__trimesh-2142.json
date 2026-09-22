@@ -1,0 +1,66 @@
+{
+ "instance_id": "mikedh__trimesh-2142",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "20b4f177fd815ab65f1bf700335856d0281dae15",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/__init__.py",
+  "trimesh/exchange/gltf.py",
+  "trimesh/voxel/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/__init__.py": [
+   "E",
+   "path",
+   "voxel"
+  ],
+  "trimesh/constants.py": [
+   "strict",
+   "tol"
+  ],
+  "trimesh/exceptions.py": [
+   "ExceptionWrapper",
+   "exceptions"
+  ],
+  "trimesh/exchange/gltf.py": [
+   "_data_append",
+   "acc",
+   "blob",
+   "buff",
+   "buffer_items",
+   "data",
+   "graph",
+   "mesh",
+   "mesh_prim",
+   "meshes",
+   "normals",
+   "queue"
+  ],
+  "trimesh/typed.py": [
+   "NDArray",
+   "typed"
+  ],
+  "trimesh/util.py": [
+   "unitize",
+   "util"
+  ],
+  "trimesh/voxel/__init__.py": [
+   "__all__",
+   "voxel"
+  ],
+  "trimesh/voxel/creation.py": [
+   "creation"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 60,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

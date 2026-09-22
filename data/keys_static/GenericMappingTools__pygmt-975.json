@@ -1,0 +1,36 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-975",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "6f3650a0d6db63cd1a164c00d192ef0c3dc24b22",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/clib/session.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/conversion.py": [
+   "array_to_datetime"
+  ],
+  "pygmt/clib/session.py": [
+   "array",
+   "column",
+   "gmt_type",
+   "self",
+   "vector",
+   "vector_pointer"
+  ],
+  "pygmt/exceptions.py": [
+   "GMTInvalidInput"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

@@ -1,0 +1,44 @@
+{
+ "instance_id": "django__django-14727",
+ "repo_key": "django/django",
+ "base_commit": "7afca03c4058c25f2e1cec8d0b07c2157c93e831",
+ "status": "ok",
+ "co_edited": [
+  "django/core/management/commands/migrate.py",
+  "django/core/management/commands/sqlmigrate.py",
+  "django/db/migrations/loader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/core/management/commands/migrate.py": [
+   "app_label",
+   "executor",
+   "incomplete_migration",
+   "migration",
+   "target",
+   "targets"
+  ],
+  "django/db/migrations/executor.py": [
+   "loader"
+  ],
+  "django/db/migrations/loader.py": [
+   "app_label",
+   "graph",
+   "name_prefix",
+   "replacements"
+  ],
+  "django/db/migrations/migration.py": [
+   "name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.4
+}

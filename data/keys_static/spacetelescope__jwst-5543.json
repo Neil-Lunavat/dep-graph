@@ -1,0 +1,42 @@
+{
+ "instance_id": "spacetelescope__jwst-5543",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "c129fee33dbdd7c99a427e4425b81b940ab49dd0",
+ "status": "ok",
+ "co_edited": [
+  "jwst/assign_wcs/util.py",
+  "jwst/lib/set_telescope_pointing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/assign_wcs/util.py": [
+   "bb_xend",
+   "bb_yend",
+   "input_model"
+  ],
+  "jwst/lib/set_telescope_pointing.py": [
+   "badmnemonicsstring",
+   "good_mnemonic",
+   "goodtimes",
+   "logger",
+   "mnemonic",
+   "mnemonic_averages",
+   "obstime",
+   "this_time",
+   "this_value",
+   "times",
+   "values",
+   "zero_mnemonics"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

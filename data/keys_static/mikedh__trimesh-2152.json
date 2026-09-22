@@ -1,0 +1,62 @@
+{
+ "instance_id": "mikedh__trimesh-2152",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "11cd6f885a0c1980c6b094dba1f5cb5b321021c3",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/base.py",
+  "trimesh/boolean.py",
+  "trimesh/caching.py",
+  "trimesh/exchange/ply.py",
+  "trimesh/interfaces/blender.py",
+  "trimesh/parent.py",
+  "trimesh/path/path.py",
+  "trimesh/visual/gloss.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/caching.py": [
+   "cache_decorator",
+   "caching",
+   "item",
+   "sha256"
+  ],
+  "trimesh/constants.py": [
+   "tol",
+   "zero"
+  ],
+  "trimesh/exchange/ply.py": [
+   "attribute_dtype",
+   "data",
+   "dtype",
+   "name"
+  ],
+  "trimesh/interfaces/blender.py": [
+   "debug",
+   "meshes",
+   "operation",
+   "script",
+   "solver_options",
+   "use_exact",
+   "use_self"
+  ],
+  "trimesh/parent.py": [
+   "extents",
+   "scale",
+   "self"
+  ],
+  "trimesh/visual/gloss.py": [
+   "specularGlossinessTexture"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 185,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

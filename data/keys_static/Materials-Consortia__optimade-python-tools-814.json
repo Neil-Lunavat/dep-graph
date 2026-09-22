@@ -1,0 +1,41 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-814",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "00cb4e6872735e244123bef4acc74193118cf720",
+ "status": "ok",
+ "co_edited": [
+  "optimade/filtertransformers/mongo.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/filtertransformers/mongo.py": [
+   "_recursive_expression_phrase",
+   "arg",
+   "e",
+   "expr",
+   "expr1",
+   "expr2",
+   "f",
+   "filter_",
+   "handle_not_and",
+   "handle_not_or",
+   "inverse_operator_map",
+   "key",
+   "operator",
+   "prop",
+   "self",
+   "subdict",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 253,
+  "names_resolved_in_repo": 70,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

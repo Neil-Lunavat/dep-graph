@@ -1,0 +1,50 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2548",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "4e53a70728c69330bc096877a6172618cb717aa5",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/api/asynchronous.py",
+  "src/zarr/core/array.py",
+  "src/zarr/core/group.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/api/asynchronous.py": [
+   "_infer_overwrite",
+   "arr",
+   "kwargs",
+   "mode",
+   "overwrite",
+   "store",
+   "zarr_format"
+  ],
+  "src/zarr/core/array.py": [
+   "overwrite"
+  ],
+  "src/zarr/core/common.py": [
+   "AccessModeLiteral"
+  ],
+  "src/zarr/core/group.py": [
+   "create_group",
+   "grp",
+   "metadata",
+   "name",
+   "overwrite",
+   "path",
+   "self",
+   "value",
+   "zarr_format"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 104,
+  "names_resolved_in_repo": 66,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

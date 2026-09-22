@@ -1,0 +1,40 @@
+{
+ "instance_id": "dwavesystems__dimod-377",
+ "repo_key": "dwavesystems/dimod",
+ "base_commit": "91938b74aac2dff4fdcc6dc55bf3b710465799ae",
+ "status": "ok",
+ "co_edited": [
+  "dimod/core/sampler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dimod/binary_quadratic_model.py": [
+   "to_ising"
+  ],
+  "dimod/core/sampler.py": [
+   "J",
+   "Q",
+   "bqm",
+   "h",
+   "offset",
+   "parameters",
+   "sample",
+   "sample_ising",
+   "sampleset",
+   "self"
+  ],
+  "dimod/vartypes.py": [
+   "Vartype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 59,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "astropy__astroquery-2444",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "2543cc26f4ee53a0aaa4c629e814adf8a3ff93d2",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/svo_fps/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astroquery/svo_fps/core.py": [
+   "wavelength_eff_max"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

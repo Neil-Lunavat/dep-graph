@@ -1,0 +1,29 @@
+{
+ "instance_id": "pytest-dev__pytest-7231",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "85a06cfafbe49f2c56e22cef4fa88adcf7b54f59",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/logging.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/logging.py": [
+   "_FileHandler",
+   "log_file",
+   "log_file_handler",
+   "record",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

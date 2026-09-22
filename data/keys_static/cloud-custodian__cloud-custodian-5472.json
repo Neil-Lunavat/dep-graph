@@ -1,0 +1,63 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-5472",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "d3596445a82b76a722dc3244bb18770258109a8a",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/ec2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/filters/core.py": [
+   "Filter",
+   "ValueFilter",
+   "annotate",
+   "data",
+   "manager",
+   "match",
+   "permissions",
+   "process"
+  ],
+  "c7n/registry.py": [
+   "register"
+  ],
+  "c7n/resources/ec2.py": [
+   "EC2",
+   "SsmCompliance",
+   "annotation",
+   "client",
+   "eval_filters",
+   "event",
+   "f",
+   "filter_registry",
+   "filters",
+   "i",
+   "items",
+   "op",
+   "page",
+   "pager",
+   "r",
+   "resource_map",
+   "resources",
+   "result",
+   "results",
+   "self",
+   "severity",
+   "vf"
+  ],
+  "c7n/utils.py": [
+   "local_session",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 132,
+  "names_resolved_in_repo": 74,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 11.0
+}

@@ -1,0 +1,58 @@
+{
+ "instance_id": "beeware__briefcase-1598",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "7d689209e70625938af7549bdd17feac79436b2f",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/bootstraps/toga.py",
+  "src/briefcase/platforms/linux/system.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/commands/base.py": [
+   "tools"
+  ],
+  "src/briefcase/config.py": [
+   "AppConfig",
+   "app_name",
+   "version"
+  ],
+  "src/briefcase/integrations/base.py": [
+   "shutil"
+  ],
+  "src/briefcase/platforms/linux/__init__.py": [
+   "SUSE"
+  ],
+  "src/briefcase/platforms/linux/system.py": [
+   "_system_requirement_tools",
+   "_verify_packaging_tools",
+   "app",
+   "deb_abi",
+   "distro_tag",
+   "executable_name",
+   "install_cmd",
+   "kwargs",
+   "missing",
+   "package_name",
+   "passthrough",
+   "pkg_abi",
+   "rpm_abi",
+   "rpm_tag",
+   "self",
+   "system_installer",
+   "system_verify",
+   "test_mode",
+   "tool_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

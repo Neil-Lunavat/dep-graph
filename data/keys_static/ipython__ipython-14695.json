@@ -1,0 +1,25 @@
+{
+ "instance_id": "ipython__ipython-14695",
+ "repo_key": "ipython/ipython",
+ "base_commit": "b8220b5b975e3f4e19d078033aa1e68da28e2c9b",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/magics/script.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/magics/script.py": [
+   "stream"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "pandas-dev__pandas-61105",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "40a81803e707a053af2612e67a7752fe6f6fa1b4",
+ "status": "ok",
+ "co_edited": [
+  "pandas/core/arrays/arrow/array.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pandas/core/arrays/arrow/array.py": [
+   "dtype",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

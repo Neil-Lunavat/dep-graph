@@ -1,0 +1,33 @@
+{
+ "instance_id": "pvlib__pvlib-python-2292",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "4b113ab852b31df67db5f830833111e1159f4a51",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/snow.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/snow.py": [
+   "can_slide_coefficient",
+   "covered",
+   "hourly_snow_rate",
+   "initial_coverage",
+   "slide_amount_coefficient",
+   "slide_amt",
+   "snow_depth",
+   "threshold_depth",
+   "threshold_snowfall"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 237,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

@@ -1,0 +1,39 @@
+{
+ "instance_id": "scipp__plopp-154",
+ "repo_key": "scipp/plopp",
+ "base_commit": "235f95d38d72b903a76bd207400aa181c8d41140",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/backends/pythreejs/point_cloud.py",
+  "src/plopp/functions/scatter3d.py",
+  "src/plopp/graphics/figscatter3d.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/backends/pythreejs/point_cloud.py": [
+   "_check_ndim",
+   "data",
+   "new_values"
+  ],
+  "src/plopp/functions/scatter3d.py": [
+   "x",
+   "y",
+   "z"
+  ],
+  "src/plopp/graphics/figscatter3d.py": [
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

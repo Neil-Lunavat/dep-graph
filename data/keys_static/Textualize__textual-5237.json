@@ -1,0 +1,32 @@
+{
+ "instance_id": "Textualize__textual-5237",
+ "repo_key": "textualize/textual",
+ "base_commit": "0e9e3205e753388615badd989d7fab1aaba21ad5",
+ "status": "ok",
+ "co_edited": [
+  "src/textual/document/_wrapped_document.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/textual/document/_document.py": [
+   "get_line"
+  ],
+  "src/textual/document/_wrapped_document.py": [
+   "_tab_width",
+   "document",
+   "line_index",
+   "self",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

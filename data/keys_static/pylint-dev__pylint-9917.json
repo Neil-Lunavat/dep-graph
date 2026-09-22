@@ -1,0 +1,31 @@
+{
+ "instance_id": "pylint-dev__pylint-9917",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "b7eeccb603b119c14b8d1d0efd6b5edc723d690c",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/format.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/checkers/format.py": [
+   "_infer_else_finally_line_number",
+   "_is_first_node_in_else_finally_body",
+   "last_line_of_prev_block",
+   "node",
+   "parent",
+   "prev_line",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

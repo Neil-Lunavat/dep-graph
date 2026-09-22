@@ -1,0 +1,25 @@
+{
+ "instance_id": "instructlab__instructlab-2119",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "9be662aacc994c7016e9c0724500c658589369f2",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/model/evaluate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/model/evaluate.py": [
+   "effective_gpus"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

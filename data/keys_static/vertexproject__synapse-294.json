@@ -1,0 +1,27 @@
+{
+ "instance_id": "vertexproject__synapse-294",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "82966be7ae8b614ae15eb42b3bf7b8306e5604bf",
+ "status": "ok",
+ "co_edited": [
+  "synapse/cores/common.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/cores/common.py": [
+   "prop",
+   "tufo",
+   "valu"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

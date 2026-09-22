@@ -1,0 +1,29 @@
+{
+ "instance_id": "astropy__astropy-12544",
+ "repo_key": "astropy/astropy",
+ "base_commit": "3a0cd2d8cd7b459cdc1e1b97a14f3040ccc1fffc",
+ "status": "ok",
+ "co_edited": [
+  "astropy/io/fits/connect.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/io/fits/connect.py": [
+   "character_as_bytes",
+   "coltype",
+   "mask_invalid",
+   "memmap",
+   "unit_parse_strict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

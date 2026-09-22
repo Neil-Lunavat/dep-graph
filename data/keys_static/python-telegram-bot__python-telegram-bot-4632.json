@@ -1,0 +1,67 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4632",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "dd592cdd7c6059f80fa7362b7f6fc7e79fc878c7",
+ "status": "ok",
+ "co_edited": [
+  "telegram/_bot.py",
+  "telegram/_utils/types.py",
+  "telegram/ext/_applicationbuilder.py",
+  "telegram/ext/_extbot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/_bot.py": [
+   "_INSERTION_STRINGS",
+   "_LOGGER",
+   "_SUPPORTED_INSERTIONS",
+   "_TokenDict",
+   "__missing__",
+   "_base_file_url",
+   "_base_url",
+   "_parse_base_url",
+   "_token",
+   "base_file_url",
+   "base_url",
+   "insertion",
+   "key",
+   "self",
+   "token",
+   "value"
+  ],
+  "telegram/_utils/defaultvalue.py": [
+   "DefaultValue"
+  ],
+  "telegram/_utils/types.py": [
+   "BaseUrl",
+   "CorrectOptionID",
+   "DVInput",
+   "DVType",
+   "FileInput",
+   "FilePathInput",
+   "HTTPVersion",
+   "JSONDict",
+   "ODVInput",
+   "ReplyMarkup",
+   "SocketOpt"
+  ],
+  "telegram/ext/_applicationbuilder.py": [
+   "BuilderType",
+   "_base_file_url",
+   "_base_url",
+   "base_file_url",
+   "base_url",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 327,
+  "names_resolved_in_repo": 119,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.9
+}

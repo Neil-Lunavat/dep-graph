@@ -1,0 +1,45 @@
+{
+ "instance_id": "numba__numba-6265",
+ "repo_key": "numba/numba",
+ "base_commit": "3b3eab8922c9ca199fc3b2c758886628a2ab7494",
+ "status": "ok",
+ "co_edited": [
+  "numba/core/ir_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/__init__.py": [
+   "numba"
+  ],
+  "numba/core/__init__.py": [
+   "core"
+  ],
+  "numba/core/ir_utils.py": [
+   "DummyPipeline",
+   "ir",
+   "phistrip",
+   "reconstruct_ssa",
+   "state"
+  ],
+  "numba/core/typed_passes.py": [
+   "PreLowerStripPhis",
+   "run_pass",
+   "typed_passes"
+  ],
+  "numba/core/untyped_passes.py": [
+   "ReconstructSSA",
+   "run_pass",
+   "untyped_passes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

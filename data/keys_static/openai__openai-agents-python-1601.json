@@ -1,0 +1,64 @@
+{
+ "instance_id": "openai__openai-agents-python-1601",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "b5bf795b6c537e6d56dea1815c2f6602f436dac8",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/model_settings.py",
+  "src/agents/models/openai_responses.py",
+  "src/agents/tool.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "examples/tools/web_search_filters.py"
+ ],
+ "symbol": {
+  "src/agents/__init__.py": [
+   "agents"
+  ],
+  "src/agents/agent.py": [
+   "Agent",
+   "instructions",
+   "model",
+   "name"
+  ],
+  "src/agents/items.py": [
+   "raw_item",
+   "type"
+  ],
+  "src/agents/model_settings.py": [
+   "ModelSettings",
+   "response_include"
+  ],
+  "src/agents/models/openai_responses.py": [
+   "tool",
+   "tool_choice"
+  ],
+  "src/agents/result.py": [
+   "final_output",
+   "new_items"
+  ],
+  "src/agents/run.py": [
+   "Runner",
+   "run"
+  ],
+  "src/agents/tool.py": [
+   "WebSearchTool",
+   "filters",
+   "search_context_size",
+   "user_location"
+  ],
+  "src/agents/tracing/create.py": [
+   "trace"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 89,
+  "names_resolved_in_repo": 53,
+  "defined_in_new_file": 17,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "terrapower__armi-1230",
+ "repo_key": "terrapower/armi",
+ "base_commit": "09902887715d5f43ee78098eb42c59c09ca10942",
+ "status": "ok",
+ "co_edited": [
+  "armi/reactor/converters/axialExpansionChanger.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/materials/material.py": [
+   "Fluid",
+   "material"
+  ],
+  "armi/reactor/converters/axialExpansionChanger.py": [
+   "b",
+   "c",
+   "componentWFlag",
+   "flagOfInterest",
+   "solidMaterials"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

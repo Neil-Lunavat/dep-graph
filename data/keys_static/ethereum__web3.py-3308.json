@@ -1,0 +1,49 @@
+{
+ "instance_id": "ethereum__web3.py-3308",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "f6629c25731dcc7ee98f94f6a806dd8798cdd8e6",
+ "status": "ok",
+ "co_edited": [
+  "web3/_utils/math.py",
+  "web3/eth/async_eth.py",
+  "web3/eth/eth.py",
+  "web3/utils/caching.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/_utils/math.py": [
+   "fractional",
+   "higher",
+   "index",
+   "integer",
+   "lower",
+   "percentile",
+   "sorted_values",
+   "values"
+  ],
+  "web3/eth/async_eth.py": [
+   "data",
+   "self"
+  ],
+  "web3/eth/base_eth.py": [
+   "account"
+  ],
+  "web3/types.py": [
+   "ENS"
+  ],
+  "web3/utils/caching.py": [
+   "evicted_items",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 59,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

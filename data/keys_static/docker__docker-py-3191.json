@@ -1,0 +1,40 @@
+{
+ "instance_id": "docker__docker-py-3191",
+ "repo_key": "docker/docker-py",
+ "base_commit": "cb8f2c6630584d6d1b2d9296a0c780af0f5e5549",
+ "status": "ok",
+ "co_edited": [
+  "docker/api/build.py",
+  "docker/utils/__init__.py",
+  "docker/utils/build.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/api/build.py": [
+   "tag"
+  ],
+  "docker/utils/__init__.py": [
+   "utils"
+  ],
+  "docker/utils/build.py": [
+   "_TAG",
+   "build",
+   "create_archive",
+   "exclude_paths",
+   "match_tag",
+   "mkbuildcontext",
+   "tag",
+   "tar"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

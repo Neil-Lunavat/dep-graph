@@ -1,0 +1,46 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-1045",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "e3fd70a742d7222b3c3e5b217344d0ae5bc002fe",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/plugins/excel.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/error.py": [
+   "note"
+  ],
+  "frictionless/errors/__init__.py": [
+   "errors"
+  ],
+  "frictionless/errors/general.py": [
+   "HashingError"
+  ],
+  "frictionless/exception.py": [
+   "FrictionlessException"
+  ],
+  "frictionless/parser.py": [
+   "resource"
+  ],
+  "frictionless/plugins/excel.py": [
+   "chunk",
+   "error",
+   "exception",
+   "file",
+   "hasher",
+   "self",
+   "stat"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 51,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

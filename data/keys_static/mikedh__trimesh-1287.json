@@ -1,0 +1,61 @@
+{
+ "instance_id": "mikedh__trimesh-1287",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "73a41c3659b7962a07c8ebd509bca2455010e34f",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/bounds.py",
+  "trimesh/caching.py",
+  "trimesh/exchange/ply.py",
+  "trimesh/path/exchange/load.py",
+  "trimesh/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/bounds.py": [
+   "flip"
+  ],
+  "trimesh/caching.py": [
+   "_fast_crc",
+   "_hashed_md5",
+   "_hashed_xx",
+   "a",
+   "count",
+   "data",
+   "fast_hash",
+   "hasher",
+   "key",
+   "self"
+  ],
+  "trimesh/exchange/ply.py": [
+   "elements",
+   "faces",
+   "t_u",
+   "t_v",
+   "texcoord"
+  ],
+  "trimesh/path/exchange/load.py": [
+   "f",
+   "file_obj",
+   "file_type",
+   "kwargs",
+   "path_loaders"
+  ],
+  "trimesh/path/exchange/svg_io.py": [
+   "file_type"
+  ],
+  "trimesh/version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 80,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "bridgecrewio__checkov-211",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "53d4eebf3493703c42035e9efea89fdf8050fb43",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/aws/IAMPolicyAttachedToGroupOrRoles.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/terraform/checks/resource/aws/IAMPolicyAttachedToGroupOrRoles.py": [
+   "conf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

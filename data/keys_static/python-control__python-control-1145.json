@@ -1,0 +1,63 @@
+{
+ "instance_id": "python-control__python-control-1145",
+ "repo_key": "python-control/python-control",
+ "base_commit": "dc7d71bd1a2d143f10fa8fe91d31292bdf8f5113",
+ "status": "ok",
+ "co_edited": [
+  "control/ctrlplot.py",
+  "control/descfcn.py",
+  "control/freqplot.py",
+  "control/nichols.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/config.py": [
+   "config",
+   "defaults"
+  ],
+  "control/descfcn.py": [
+   "N_vals",
+   "a",
+   "ax",
+   "cplt",
+   "dfresp",
+   "lines",
+   "omega",
+   "point_label",
+   "pos"
+  ],
+  "control/freqplot.py": [
+   "_",
+   "ax",
+   "c",
+   "cos",
+   "kwargs",
+   "label_pos",
+   "ms",
+   "mt",
+   "p",
+   "pos_x",
+   "pos_y",
+   "sin",
+   "x",
+   "y",
+   "ymax",
+   "ymin"
+  ],
+  "control/nichols.py": [
+   "ax",
+   "ax_nichols",
+   "nichols_grid"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 91,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

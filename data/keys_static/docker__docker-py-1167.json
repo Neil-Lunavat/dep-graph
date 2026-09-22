@@ -1,0 +1,38 @@
+{
+ "instance_id": "docker__docker-py-1167",
+ "repo_key": "docker/docker-py",
+ "base_commit": "2ef02df2f06fafe7d71c96bac1e18d68217703ab",
+ "status": "ok",
+ "co_edited": [
+  "docker/client.py",
+  "docker/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/client.py": [
+   "_result",
+   "cls",
+   "kwargs",
+   "response",
+   "self",
+   "version"
+  ],
+  "docker/utils/utils.py": [
+   "cpuset_cpus",
+   "key",
+   "kwargs_from_env",
+   "userns_mode",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

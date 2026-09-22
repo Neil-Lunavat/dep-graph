@@ -1,0 +1,36 @@
+{
+ "instance_id": "pandas-dev__pandas-61017",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "5da9eb726c915412928ee44a0631a74bda614556",
+ "status": "ok",
+ "co_edited": [
+  "pandas/core/frame.py",
+  "pandas/core/generic.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pandas/core/frame.py": [
+   "blk",
+   "key"
+  ],
+  "pandas/core/generic.py": [
+   "block",
+   "cond",
+   "join_index",
+   "msg",
+   "other",
+   "ridx",
+   "right"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

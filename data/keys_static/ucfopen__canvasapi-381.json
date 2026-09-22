@@ -1,0 +1,32 @@
+{
+ "instance_id": "ucfopen__canvasapi-381",
+ "repo_key": "ucfopen/canvasapi",
+ "base_commit": "e85c5552b8bd611ab87fbf84ba9d752a86567be8",
+ "status": "ok",
+ "co_edited": [
+  "canvasapi/canvas.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "canvasapi/__init__.py": [
+   "canvasapi"
+  ],
+  "canvasapi/canvas.py": [
+   "base_url"
+  ],
+  "canvasapi/comm_message.py": [
+   "CommMessage",
+   "comm_message"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

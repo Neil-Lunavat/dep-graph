@@ -1,0 +1,33 @@
+{
+ "instance_id": "psf__black-4676",
+ "repo_key": "psf/black",
+ "base_commit": "24e4cb20ab03c20af390fec7303207af2a4a09e8",
+ "status": "ok",
+ "co_edited": [
+  "src/blib2to3/pgen2/tokenize.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/blib2to3/pgen2/token.py": [
+   "ASYNC",
+   "AWAIT"
+  ],
+  "src/blib2to3/pgen2/tokenize.py": [
+   "TOKEN_TYPE_MAP",
+   "source",
+   "source_line",
+   "token",
+   "token_str"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

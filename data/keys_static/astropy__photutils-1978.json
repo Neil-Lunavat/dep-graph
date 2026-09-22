@@ -1,0 +1,31 @@
+{
+ "instance_id": "astropy__photutils-1978",
+ "repo_key": "astropy/photutils",
+ "base_commit": "3d06161529624d7d3e886bb46d22aa99dcd015b5",
+ "status": "ok",
+ "co_edited": [
+  "photutils/detection/daofinder.py",
+  "photutils/detection/irafstarfinder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/detection/daofinder.py": [
+   "mask",
+   "newcat"
+  ],
+  "photutils/detection/irafstarfinder.py": [
+   "mask",
+   "newcat"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

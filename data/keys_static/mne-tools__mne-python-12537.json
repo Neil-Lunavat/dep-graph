@@ -1,0 +1,72 @@
+{
+ "instance_id": "mne-tools__mne-python-12537",
+ "repo_key": "mne-tools/mne-python",
+ "base_commit": "940ac9553ce42c15b4c16ecd013824ca3ea7244a",
+ "status": "ok",
+ "co_edited": [
+  "mne/io/base.py",
+  "mne/time_frequency/psd.py",
+  "mne/time_frequency/spectrum.py",
+  "mne/time_frequency/tfr.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mne/epochs.py": [
+   "Epochs"
+  ],
+  "mne/evoked.py": [
+   "Evoked"
+  ],
+  "mne/time_frequency/psd.py": [
+   "agg_func",
+   "arr",
+   "f_spect",
+   "good_mask",
+   "n_jobs",
+   "n_per_seg",
+   "psds",
+   "split",
+   "t_off",
+   "t_offsets",
+   "t_ons",
+   "t_onsets",
+   "weights",
+   "x",
+   "x_splits"
+  ],
+  "mne/time_frequency/spectrum.py": [
+   "data",
+   "method"
+  ],
+  "mne/time_frequency/tfr.py": [
+   "__getstate__",
+   "_data",
+   "_dims",
+   "axis",
+   "hdf5_dict",
+   "n_chan",
+   "n_freq",
+   "n_time",
+   "self",
+   "state",
+   "unknown_class"
+  ],
+  "mne/utils/__init__.py": [
+   "utils"
+  ],
+  "mne/utils/numerics.py": [
+   "_mask_to_onsets_offsets",
+   "numerics"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 121,
+  "names_resolved_in_repo": 95,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 10.9
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "ibis-project__ibis-4766",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "ac59dacb6963052ad9dfa2fa6631798be845b6d3",
+ "status": "ok",
+ "co_edited": [
+  "ibis/expr/datatypes/cast.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ibis/expr/datatypes/cast.py": [
+   "source",
+   "target",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

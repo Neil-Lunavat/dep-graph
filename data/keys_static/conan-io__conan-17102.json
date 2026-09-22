@@ -1,0 +1,76 @@
+{
+ "instance_id": "conan-io__conan-17102",
+ "repo_key": "conan-io/conan",
+ "base_commit": "2e3f51782056b6665560f9af6166e30d7c2801ab",
+ "status": "ok",
+ "co_edited": [
+  "conan/cli/commands/graph.py",
+  "conans/client/graph/install_graph.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/cli/commands/graph.py": [
+   "args"
+  ],
+  "conans/__init__.py": [
+   "conans"
+  ],
+  "conans/client/__init__.py": [
+   "client"
+  ],
+  "conans/client/graph/__init__.py": [
+   "graph"
+  ],
+  "conans/client/graph/graph.py": [
+   "BINARY_INVALID",
+   "BINARY_MISSING"
+  ],
+  "conans/client/graph/install_graph.py": [
+   "InstallGraph",
+   "ProfileArgs",
+   "_args",
+   "_filename",
+   "_profiles",
+   "_raise_invalid",
+   "analyze_package",
+   "args",
+   "context",
+   "current",
+   "data",
+   "deps_graph",
+   "deserialize",
+   "f",
+   "filename",
+   "from_args",
+   "install_graph",
+   "install_order",
+   "invalid",
+   "k",
+   "level",
+   "missing",
+   "n",
+   "new",
+   "order_by",
+   "other",
+   "pkg",
+   "pr_args",
+   "profile_args",
+   "profiles",
+   "result",
+   "s",
+   "self",
+   "serialize",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 123,
+  "names_resolved_in_repo": 104,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

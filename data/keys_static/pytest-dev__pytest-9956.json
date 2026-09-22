@@ -1,0 +1,33 @@
+{
+ "instance_id": "pytest-dev__pytest-9956",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "cc0fbbefa0f8a6b390e89ef0d4d64dd78783a5c1",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/python.py",
+  "src/_pytest/warning_types.py",
+  "src/pytest/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/python.py": [
+   "pyfuncitem",
+   "result"
+  ],
+  "src/_pytest/warning_types.py": [
+   "PytestDeprecationWarning",
+   "PytestReturnNotNoneWarning",
+   "__module__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

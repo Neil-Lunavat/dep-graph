@@ -1,0 +1,30 @@
+{
+ "instance_id": "conan-io__conan-15575",
+ "repo_key": "conan-io/conan",
+ "base_commit": "32718f18e917edad561dd1058c1479894b0191f7",
+ "status": "ok",
+ "co_edited": [
+  "conans/client/graph/provides.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/client/graph/provides.py": [
+   "current_provides",
+   "dep",
+   "dep_node",
+   "dep_provides",
+   "new_req",
+   "node"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

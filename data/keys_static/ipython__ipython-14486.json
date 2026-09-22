@@ -1,0 +1,38 @@
+{
+ "instance_id": "ipython__ipython-14486",
+ "repo_key": "ipython/ipython",
+ "base_commit": "ad07901d8cf6fb874262c6387bd24d9e5a284144",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/prefilter.py",
+  "IPython/core/splitinput.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "IPython/core/prefilter.py": [
+   "line_info",
+   "prefilter_manager",
+   "self"
+  ],
+  "IPython/core/splitinput.py": [
+   "esc",
+   "ifun",
+   "line",
+   "pre",
+   "raw_the_rest",
+   "self",
+   "split_user_input",
+   "the_rest"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

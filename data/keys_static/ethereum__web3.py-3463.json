@@ -1,0 +1,43 @@
+{
+ "instance_id": "ethereum__web3.py-3463",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "9e21be09d8f4c2356228284ffb52f4f6a3026e35",
+ "status": "ok",
+ "co_edited": [
+  "web3/datastructures.py",
+  "web3/middleware/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/datastructures.py": [
+   "TKey",
+   "_build_name",
+   "element",
+   "element_name",
+   "name",
+   "new",
+   "new_name",
+   "old",
+   "old_name",
+   "self",
+   "v",
+   "value"
+  ],
+  "web3/middleware/base.py": [
+   "Web3Middleware",
+   "__hash__",
+   "other",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 56,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

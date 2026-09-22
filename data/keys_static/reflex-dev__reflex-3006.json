@@ -1,0 +1,83 @@
+{
+ "instance_id": "reflex-dev__reflex-3006",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "bf0ebb8d09289a398f891964c53903f6a471d49d",
+ "status": "ok",
+ "co_edited": [
+  "reflex/app.py",
+  "reflex/components/component.py",
+  "reflex/reflex.py",
+  "reflex/utils/export.py",
+  "reflex/utils/imports.py",
+  "reflex/utils/prerequisites.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/app.py": [
+   "all_imports",
+   "compile_",
+   "export",
+   "import_var",
+   "import_vars",
+   "package",
+   "self",
+   "transpile_packages"
+  ],
+  "reflex/components/component.py": [
+   "_should_transpile",
+   "alias",
+   "dep",
+   "import_name",
+   "is_default",
+   "lib_dependencies",
+   "library",
+   "self",
+   "tag",
+   "transpile_packages"
+  ],
+  "reflex/config.py": [
+   "Config",
+   "get_config"
+  ],
+  "reflex/utils/__init__.py": [
+   "utils"
+  ],
+  "reflex/utils/format.py": [
+   "format",
+   "format_library_name"
+  ],
+  "reflex/utils/imports.py": [
+   "alias",
+   "install",
+   "is_default",
+   "render",
+   "self",
+   "tag",
+   "transpile"
+  ],
+  "reflex/utils/prerequisites.py": [
+   "app",
+   "config",
+   "export",
+   "get_compiled_app",
+   "p",
+   "prerequisites",
+   "reload",
+   "transpile_packages",
+   "update_next_config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 163,
+  "names_resolved_in_repo": 88,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

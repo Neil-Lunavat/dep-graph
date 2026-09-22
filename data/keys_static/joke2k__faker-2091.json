@@ -1,0 +1,58 @@
+{
+ "instance_id": "joke2k__faker-2091",
+ "repo_key": "joke2k/faker",
+ "base_commit": "71715c88c21a186043c4da7f015bbc9ebdb94bb8",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/address/en_IN/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/__init__.py": [
+   "faker"
+  ],
+  "faker/providers/__init__.py": [
+   "generator",
+   "providers",
+   "random_element"
+  ],
+  "faker/providers/address/__init__.py": [
+   "AddressProvider",
+   "Provider",
+   "address"
+  ],
+  "faker/providers/address/en_IN/__init__.py": [
+   "army_pincode",
+   "codes",
+   "include_union_territories",
+   "key",
+   "known_abbrs",
+   "pincode_in_army",
+   "pincode_in_military",
+   "pincode_in_state",
+   "pincode_range",
+   "postcode_in_army",
+   "postcode_in_military",
+   "self",
+   "state_abbr",
+   "state_pincode",
+   "states_abbr",
+   "union_territories",
+   "union_territories_abbr",
+   "union_territories_pincode",
+   "union_territory",
+   "zipcode_in_army",
+   "zipcode_in_military"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 137,
+  "names_resolved_in_repo": 93,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

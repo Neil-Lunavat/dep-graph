@@ -1,0 +1,27 @@
+{
+ "instance_id": "django-json-api__django-rest-framework-json-api-842",
+ "repo_key": "django-json-api/django-rest-framework-json-api",
+ "base_commit": "e09b85dc3a7220f2e6fb1a3994ba176a2b71566f",
+ "status": "ok",
+ "co_edited": [
+  "rest_framework_json_api/serializers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "rest_framework_json_api/serializers.py": [
+   "key",
+   "request",
+   "sparse_fieldset_query_param"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

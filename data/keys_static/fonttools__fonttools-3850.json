@@ -1,0 +1,26 @@
+{
+ "instance_id": "fonttools__fonttools-3850",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "dff78057170e1dc42e09480c2a2829a01854ee02",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/varLib/featureVars.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/varLib/featureVars.py": [
+   "conditionTable",
+   "fvr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

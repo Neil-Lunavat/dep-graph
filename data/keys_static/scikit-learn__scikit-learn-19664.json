@@ -1,0 +1,29 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-19664",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "2620a5545a806ee416d9d10e07c2de30cdd9bf20",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/semi_supervised/_label_propagation.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/base.py": [
+   "reset"
+  ],
+  "sklearn/semi_supervised/_label_propagation.py": [
+   "X",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

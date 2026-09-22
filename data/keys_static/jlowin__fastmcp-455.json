@@ -1,0 +1,45 @@
+{
+ "instance_id": "jlowin__fastmcp-455",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "5b05e80d8b558c7af6dd163a00150d4fa2d536fb",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/client/client.py",
+  "src/fastmcp/client/transports.py",
+  "src/fastmcp/exceptions.py",
+  "src/fastmcp/utilities/exceptions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/client/client.py": [
+   "arguments",
+   "name",
+   "self",
+   "timeout"
+  ],
+  "src/fastmcp/client/transports.py": [
+   "client_kwargs",
+   "headers",
+   "read_timeout_seconds",
+   "self",
+   "session_kwargs",
+   "sse_read_timeout",
+   "transport",
+   "url"
+  ],
+  "src/fastmcp/utilities/exceptions.py": [
+   "_catch_handlers",
+   "leaf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 269,
+  "names_resolved_in_repo": 83,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 20,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

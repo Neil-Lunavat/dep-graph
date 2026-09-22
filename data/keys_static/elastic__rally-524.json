@@ -1,0 +1,29 @@
+{
+ "instance_id": "elastic__rally-524",
+ "repo_key": "elastic/rally",
+ "base_commit": "54edbccaef684a2a5e202ba37b3fd0ca1b786821",
+ "status": "ok",
+ "co_edited": [
+  "esrally/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "esrally/config.py": [
+   "config",
+   "config_file",
+   "load",
+   "root_dir",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.4
+}

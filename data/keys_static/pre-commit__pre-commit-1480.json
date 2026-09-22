@@ -1,0 +1,27 @@
+{
+ "instance_id": "pre-commit__pre-commit-1480",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "d71699d7cdd02d54568209711934ad35c8e89dd7",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/languages/helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/languages/helpers.py": [
+   "FIXED_RANDOM_SEED",
+   "fixed_random",
+   "seq"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

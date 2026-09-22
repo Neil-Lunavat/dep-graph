@@ -1,0 +1,35 @@
+{
+ "instance_id": "mikedh__trimesh-706",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "82a2acda892e82e9c727ea8ba81c301bbfca5d70",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/remesh.py",
+  "trimesh/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/remesh.py": [
+   "attr_tris",
+   "face_index",
+   "faces",
+   "faces_subset",
+   "triangles",
+   "values",
+   "vertices"
+  ],
+  "trimesh/version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

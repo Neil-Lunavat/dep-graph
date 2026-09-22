@@ -1,0 +1,32 @@
+{
+ "instance_id": "falconry__falcon-2248",
+ "repo_key": "falconry/falcon",
+ "base_commit": "cd707961898e7012159b7205dabc4a2824eb3a68",
+ "status": "ok",
+ "co_edited": [
+  "falcon/response.py",
+  "falcon/util/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/response.py": [
+   "_cookies",
+   "name",
+   "partitioned",
+   "self"
+  ],
+  "falcon/util/__init__.py": [
+   "_reserved_cookie_attrs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 69,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

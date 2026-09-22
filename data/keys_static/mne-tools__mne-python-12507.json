@@ -1,0 +1,58 @@
+{
+ "instance_id": "mne-tools__mne-python-12507",
+ "repo_key": "mne-tools/mne-python",
+ "base_commit": "b8d9c1713bfef91e7b7bb663ec18a528a9b1691f",
+ "status": "ok",
+ "co_edited": [
+  "mne/filter.py",
+  "mne/fixes.py",
+  "mne/utils/docs.py",
+  "tutorials/preprocessing/25_background_filtering.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mne/__init__.py": [
+   "mne"
+  ],
+  "mne/filter.py": [
+   "_known_phases_fir",
+   "h",
+   "min_att_db",
+   "phase"
+  ],
+  "mne/fixes.py": [
+   "fixes",
+   "h",
+   "h_minimum",
+   "h_temp",
+   "half",
+   "method",
+   "minimum_phase",
+   "n_fft",
+   "n_half",
+   "n_out",
+   "stop",
+   "win"
+  ],
+  "tutorials/preprocessing/25_background_filtering.py": [
+   "all_axes",
+   "ax",
+   "axes",
+   "fig",
+   "h",
+   "h_min",
+   "third_height",
+   "title"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 317,
+  "names_resolved_in_repo": 97,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "dask__dask-11288",
+ "repo_key": "dask/dask",
+ "base_commit": "1ba9c5bf9d0b005b89a04804f29c16e5f0f2dadf",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/core.py": [
+   "_as_dtype",
+   "a",
+   "allow_unknown_chunksizes",
+   "asarray",
+   "astype",
+   "dtype",
+   "order",
+   "stack"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

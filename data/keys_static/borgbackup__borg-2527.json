@@ -1,0 +1,68 @@
+{
+ "instance_id": "borgbackup__borg-2527",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "eaf90cb73dfbe2e7996ae444d5c6bffd0ea89f7a",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archiver.py",
+  "src/borg/helpers.py",
+  "src/borg/logger.py",
+  "src/borg/remote.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/archiver.py": [
+   "args",
+   "do_serve",
+   "func",
+   "is_serve",
+   "logger_name",
+   "option",
+   "option_set",
+   "self"
+  ],
+  "src/borg/helpers.py": [
+   "get_home_dir",
+   "helpers",
+   "replace_placeholders",
+   "sysinfo"
+  ],
+  "src/borg/logger.py": [
+   "JsonFormatter",
+   "configured",
+   "create_logger",
+   "debug",
+   "fmt",
+   "formatter",
+   "is_serve",
+   "json",
+   "level",
+   "logger",
+   "setup_logging",
+   "warning"
+  ],
+  "src/borg/remote.py": [
+   "BORG_VERSION",
+   "args",
+   "client_data",
+   "level",
+   "line",
+   "logger",
+   "msg",
+   "opts",
+   "progress_logger",
+   "target_logger",
+   "topic"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 178,
+  "names_resolved_in_repo": 94,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

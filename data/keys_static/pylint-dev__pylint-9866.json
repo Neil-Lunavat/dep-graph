@@ -1,0 +1,26 @@
+{
+ "instance_id": "pylint-dev__pylint-9866",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "466c671cbe5c4f23747b8684665cebefdf6d8fdf",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/refactoring/refactoring_checker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/checkers/refactoring/refactoring_checker.py": [
+   "node",
+   "returns"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.3
+}

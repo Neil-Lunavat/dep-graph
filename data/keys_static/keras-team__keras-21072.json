@@ -1,0 +1,35 @@
+{
+ "instance_id": "keras-team__keras-21072",
+ "repo_key": "keras-team/keras",
+ "base_commit": "d865f5f0f2b7862afb96a4bf3dabdd0d464e5da9",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/backend/common/variables.py",
+  "keras/src/backend/tensorflow/core.py",
+  "keras/src/metrics/metric.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/common/variables.py": [
+   "_synchronization",
+   "self",
+   "synchronization"
+  ],
+  "keras/src/backend/tensorflow/core.py": [
+   "_map_synchronization",
+   "mapping",
+   "self",
+   "synchronization"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

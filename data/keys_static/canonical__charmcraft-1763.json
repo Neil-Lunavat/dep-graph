@@ -1,0 +1,35 @@
+{
+ "instance_id": "canonical__charmcraft-1763",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "ff36d80d6bb160dec17cb6067c34fbb600b96798",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/services/provider.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/__init__.py": [
+   "charmcraft"
+  ],
+  "charmcraft/env.py": [
+   "env",
+   "get_host_shared_cache_path"
+  ],
+  "charmcraft/services/provider.py": [
+   "base_name",
+   "instance_name",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

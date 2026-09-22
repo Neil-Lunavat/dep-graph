@@ -1,0 +1,41 @@
+{
+ "instance_id": "marcosschroh__dataclasses-avroschema-172",
+ "repo_key": "marcosschroh/dataclasses-avroschema",
+ "base_commit": "d88afb8df16039cf86fc0598e2d4c0431613987a",
+ "status": "ok",
+ "co_edited": [
+  "dataclasses_avroschema/fields.py",
+  "dataclasses_avroschema/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dataclasses_avroschema/fields.py": [
+   "alias",
+   "meta",
+   "metadata",
+   "name",
+   "parent",
+   "self",
+   "type"
+  ],
+  "dataclasses_avroschema/utils.py": [
+   "SchemaMetadata",
+   "create",
+   "get_alias_nested_items",
+   "name",
+   "schema_name",
+   "self",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

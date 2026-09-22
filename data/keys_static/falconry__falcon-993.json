@@ -1,0 +1,32 @@
+{
+ "instance_id": "falconry__falcon-993",
+ "repo_key": "falconry/falcon",
+ "base_commit": "673bb2e13613f04462a5515ba41f84dbab142970",
+ "status": "ok",
+ "co_edited": [
+  "falcon/responders.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/responders.py": [
+   "resp"
+  ],
+  "falcon/status_codes.py": [
+   "HTTP_200",
+   "status_codes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

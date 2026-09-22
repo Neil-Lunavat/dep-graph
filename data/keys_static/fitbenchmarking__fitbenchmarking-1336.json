@@ -1,0 +1,30 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-1336",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "f3f92bfbb2a4b0573142330fe4e824904a92fb59",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/results_processing/performance_profiler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/results_processing/performance_profiler.py": [
+   "data_to_plot",
+   "failures",
+   "huge",
+   "huge_indices",
+   "label",
+   "solver_values"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,81 @@
+{
+ "instance_id": "pytorch__torchtune-2139",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "f2bd4bc25b24587aef40f486087412b9da8f1d94",
+ "status": "ok",
+ "co_edited": [
+  "recipes/knowledge_distillation_distributed.py",
+  "recipes/knowledge_distillation_single_device.py",
+  "recipes/lora_dpo_distributed.py",
+  "recipes/lora_finetune_distributed.py",
+  "recipes/lora_finetune_single_device.py",
+  "recipes/qat_lora_finetune_distributed.py",
+  "torchtune/modules/peft/__init__.py",
+  "torchtune/modules/peft/_utils.py",
+  "torchtune/modules/peft/dora.py",
+  "torchtune/modules/peft/lora.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "recipes/knowledge_distillation_distributed.py": [
+   "lora_device",
+   "m"
+  ],
+  "recipes/knowledge_distillation_single_device.py": [
+   "m",
+   "model"
+  ],
+  "recipes/lora_dpo_distributed.py": [
+   "lora_device",
+   "m",
+   "model"
+  ],
+  "recipes/lora_finetune_distributed.py": [
+   "lora_device",
+   "m"
+  ],
+  "recipes/qat_lora_finetune_distributed.py": [
+   "lora_device",
+   "m"
+  ],
+  "torchtune/__init__.py": [
+   "torchtune"
+  ],
+  "torchtune/modules/peft/dora.py": [
+   "_get_weight_norm",
+   "base_weight",
+   "device",
+   "lora_a",
+   "lora_b",
+   "lora_weight",
+   "magnitude",
+   "recurse",
+   "self"
+  ],
+  "torchtune/modules/peft/lora.py": [
+   "device",
+   "lora_a",
+   "lora_b",
+   "recurse",
+   "self"
+  ],
+  "torchtune/utils/__init__.py": [
+   "utils"
+  ],
+  "torchtune/utils/_logging.py": [
+   "_logging",
+   "deprecated",
+   "msg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 203,
+  "names_resolved_in_repo": 63,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

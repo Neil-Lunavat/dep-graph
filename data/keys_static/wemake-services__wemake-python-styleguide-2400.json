@@ -1,0 +1,53 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-2400",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "e8c548578b439d37ba977cad9ffe7bb6b9d91c89",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/constants.py",
+  "wemake_python_styleguide/violations/oop.py",
+  "wemake_python_styleguide/visitors/ast/classes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/arguments/super_args.py": [
+   "super_args"
+  ],
+  "wemake_python_styleguide/logic/nodes.py": [
+   "nodes"
+  ],
+  "wemake_python_styleguide/violations/base.py": [
+   "error_template",
+   "text"
+  ],
+  "wemake_python_styleguide/violations/oop.py": [
+   "AsyncMagicMethodViolation",
+   "YieldMagicMethodViolation",
+   "oop"
+  ],
+  "wemake_python_styleguide/visitors/ast/classes.py": [
+   "_check_async_magic_methods",
+   "_check_bound_methods",
+   "_check_yield_magic_methods",
+   "_get_call_stmt_of_useless_method",
+   "_special_async_iter",
+   "attribute",
+   "call_stmt",
+   "class_name",
+   "defined_method_name",
+   "node",
+   "node_context",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 134,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 19,
+  "truncated": false
+ },
+ "seconds": 7.3
+}

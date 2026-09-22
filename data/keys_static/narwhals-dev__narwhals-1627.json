@@ -1,0 +1,29 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1627",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "ccf30e27ac1c14c68cb41b86062c793449ebe48f",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_pandas_like/expr.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_pandas_like/expr.py": [
+   "MANY_TO_MANY_AGG_FUNCTIONS_TO_PANDAS_EQUIVALENT",
+   "_function_name",
+   "_kwargs",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

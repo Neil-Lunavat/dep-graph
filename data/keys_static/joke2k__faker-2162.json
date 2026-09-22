@@ -1,0 +1,30 @@
+{
+ "instance_id": "joke2k__faker-2162",
+ "repo_key": "joke2k/faker",
+ "base_commit": "adae52da073f306f94183aec3b92b4333fead930",
+ "status": "ok",
+ "co_edited": [],
+ "deleted": [],
+ "new_files": [
+  "faker/providers/doi/__init__.py"
+ ],
+ "symbol": {
+  "faker/__init__.py": [
+   "faker"
+  ],
+  "faker/providers/__init__.py": [
+   "BaseProvider",
+   "generator",
+   "providers"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 51,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 11,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

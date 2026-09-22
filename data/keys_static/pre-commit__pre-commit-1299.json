@@ -1,0 +1,28 @@
+{
+ "instance_id": "pre-commit__pre-commit-1299",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "f74e3031bda69bc9b0f2a91ea83dc6e7a01e2986",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/commands/install_uninstall.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/commands/install_uninstall.py": [
+   "git_dir"
+  ],
+  "pre_commit/git.py": [
+   "git"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

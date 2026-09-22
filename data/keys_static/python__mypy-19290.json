@@ -1,0 +1,49 @@
+{
+ "instance_id": "python__mypy-19290",
+ "repo_key": "python/mypy",
+ "base_commit": "ed88d823f1fd2c572d8600d2c461bff1a86237c1",
+ "status": "ok",
+ "co_edited": [
+  "mypy/checkexpr.py",
+  "mypy/messages.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/checkexpr.py": [
+   "callee_type",
+   "context",
+   "inferred_args",
+   "inferred_type",
+   "msg",
+   "self",
+   "tv"
+  ],
+  "mypy/messages.py": [
+   "callee_name",
+   "callee_type",
+   "context",
+   "could_not_infer_type_arguments",
+   "format_type",
+   "options",
+   "self",
+   "tv"
+  ],
+  "mypy/nodes.py": [
+   "Context"
+  ],
+  "mypy/types.py": [
+   "CallableType",
+   "TypeVarLikeType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 5.6
+}

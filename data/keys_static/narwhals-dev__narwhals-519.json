@@ -1,0 +1,26 @@
+{
+ "instance_id": "narwhals-dev__narwhals-519",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "6db70d6272667853ba227e3643b6cd5ad5e6f283",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/translate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/translate.py": [
+   "allow_series",
+   "msg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

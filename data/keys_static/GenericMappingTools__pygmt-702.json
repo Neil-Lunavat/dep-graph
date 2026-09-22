@@ -1,0 +1,41 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-702",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "b8385bfd21faa3d282be5482d0cc056e7abe70ca",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/clib/loading.py",
+  "setup.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/loading.py": [
+   "clib_full_names",
+   "env",
+   "func",
+   "lib_fullnames",
+   "libfullpath",
+   "libname",
+   "libnames",
+   "libpath",
+   "msg",
+   "os_name"
+  ],
+  "pygmt/exceptions.py": [
+   "GMTOSError"
+  ],
+  "setup.py": [
+   "USE_SCM_VERSION"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

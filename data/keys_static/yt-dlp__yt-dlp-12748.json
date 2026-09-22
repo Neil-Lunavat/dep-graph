@@ -1,0 +1,30 @@
+{
+ "instance_id": "yt-dlp__yt-dlp-12748",
+ "repo_key": "yt-dlp/yt-dlp",
+ "base_commit": "336b33e72fe0105a33c40c8e5afdff720e17afdb",
+ "status": "ok",
+ "co_edited": [
+  "yt_dlp/extractor/youtube/_video.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "yt_dlp/extractor/common.py": [
+   "cache"
+  ],
+  "yt_dlp/extractor/youtube/_video.py": [
+   "func_code",
+   "player_id",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "xonsh__xonsh-4919",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "ffe7b3445cf64b25a741d214581d57871196fd34",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/procs/specs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/procs/proxies.py": [
+   "ProcProxy"
+  ],
+  "xonsh/procs/specs.py": [
+   "captured",
+   "cls",
+   "last"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

@@ -1,0 +1,36 @@
+{
+ "instance_id": "python-control__python-control-525",
+ "repo_key": "python-control/python-control",
+ "base_commit": "6d513589810d54fa89d7cf234462d1a370c7d127",
+ "status": "ok",
+ "co_edited": [
+  "control/margins.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/margins.py": [
+   "_poly_z_mag1_crossing",
+   "_poly_z_wstab",
+   "den",
+   "den_inv_zq",
+   "dt",
+   "epsw",
+   "num",
+   "num_inv_zp",
+   "p1",
+   "p2",
+   "p_q",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

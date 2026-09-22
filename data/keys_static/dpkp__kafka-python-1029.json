@@ -1,0 +1,29 @@
+{
+ "instance_id": "dpkp__kafka-python-1029",
+ "repo_key": "dpkp/kafka-python",
+ "base_commit": "899f11730db5f209c03cfad20111ec131ee4c70b",
+ "status": "ok",
+ "co_edited": [
+  "kafka/consumer/group.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kafka/consumer/group.py": [
+   "_subscription",
+   "self"
+  ],
+  "kafka/consumer/subscription_state.py": [
+   "subscription"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

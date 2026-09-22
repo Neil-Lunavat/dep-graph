@@ -1,0 +1,70 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-3563",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "b16d6b4ce0796020a0ad5ee1c56453fde6079f2b",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/context/conditions/_conditions.py",
+  "src/cfnlint/context/conditions/_utils.py",
+  "src/cfnlint/jsonschema/_filter.py",
+  "src/cfnlint/rules/resources/properties/Properties.py",
+  "src/cfnlint/rules/resources/properties/Tagging.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/cfnlint/__init__.py": [
+   "cfnlint"
+  ],
+  "src/cfnlint/context/__init__.py": [
+   "context"
+  ],
+  "src/cfnlint/context/conditions/_conditions.py": [
+   "context",
+   "instance",
+   "scenario",
+   "self",
+   "status"
+  ],
+  "src/cfnlint/context/conditions/_utils.py": [
+   "context",
+   "fn_k",
+   "fn_v",
+   "if_path",
+   "instance",
+   "is_root",
+   "scenario",
+   "v"
+  ],
+  "src/cfnlint/context/context.py": [
+   "Context",
+   "Parameter",
+   "context",
+   "functions"
+  ],
+  "src/cfnlint/helpers.py": [
+   "FUNCTIONS",
+   "helpers",
+   "is_function"
+  ],
+  "src/cfnlint/jsonschema/_filter.py": [
+   "instance",
+   "scenario_instance",
+   "validator"
+  ],
+  "src/cfnlint/rules/resources/properties/Properties.py": [
+   "fn_k",
+   "fn_v",
+   "properties"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 75,
+  "names_resolved_in_repo": 60,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

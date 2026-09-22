@@ -1,0 +1,33 @@
+{
+ "instance_id": "reflex-dev__reflex-2617",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "dec777485fa3bfc32e4b544193d5ff1d271518bf",
+ "status": "ok",
+ "co_edited": [
+  "reflex/vars.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/utils/types.py": [
+   "types"
+  ],
+  "reflex/vars.py": [
+   "Var",
+   "_var_type",
+   "i",
+   "index",
+   "self",
+   "type_"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

@@ -1,0 +1,30 @@
+{
+ "instance_id": "canonical__charmcraft-1741",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "8f64d66a11bbba33604af734946cc730fcac9540",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/services/store.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/services/store.py": [
+   "_base_url",
+   "_endpoints",
+   "_environment_auth",
+   "_storage_url",
+   "_user_agent",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

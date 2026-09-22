@@ -1,0 +1,38 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1694",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "ece40b94d7649cc30a3e8a896513719d28099aed",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/loops.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/walk.py": [
+   "walk"
+  ],
+  "wemake_python_styleguide/violations/best_practices.py": [
+   "LambdaInsideLoopViolation"
+  ],
+  "wemake_python_styleguide/visitors/ast/loops.py": [
+   "arg",
+   "arguments",
+   "body",
+   "lambda_node",
+   "node",
+   "self",
+   "subnode",
+   "symbol"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

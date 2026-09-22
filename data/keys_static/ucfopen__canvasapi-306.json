@@ -1,0 +1,28 @@
+{
+ "instance_id": "ucfopen__canvasapi-306",
+ "repo_key": "ucfopen/canvasapi",
+ "base_commit": "3ef34a89d63aa7461a079bc271944ad1f7ef5099",
+ "status": "ok",
+ "co_edited": [
+  "canvasapi/paginated_list.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "canvasapi/paginated_list.py": [
+   "_start",
+   "_stop",
+   "index",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

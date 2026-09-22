@@ -1,0 +1,35 @@
+{
+ "instance_id": "patroni__patroni-3198",
+ "repo_key": "patroni/patroni",
+ "base_commit": "e8a8bfe42f8f96747b0d9f432aaed907ebcf1c10",
+ "status": "ok",
+ "co_edited": [
+  "patroni/ha.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "features/steps/recovery.py"
+ ],
+ "symbol": {
+  "patroni/ha.py": [
+   "self",
+   "state_handler"
+  ],
+  "patroni/postgresql/__init__.py": [
+   "call_nowait"
+  ],
+  "patroni/postgresql/callback_executor.py": [
+   "CallbackAction",
+   "ON_ROLE_CHANGE"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 7,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

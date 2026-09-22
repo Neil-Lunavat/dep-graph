@@ -1,0 +1,26 @@
+{
+ "instance_id": "beeware__briefcase-2085",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "4005202304fdef04a5e87de2e8b09c9de506dcae",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/commands/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/commands/base.py": [
+   "remote",
+   "template"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

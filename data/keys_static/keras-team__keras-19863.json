@@ -1,0 +1,29 @@
+{
+ "instance_id": "keras-team__keras-19863",
+ "repo_key": "keras-team/keras",
+ "base_commit": "f6cf6a0e77dd504cfc35dd499dd8694b0b80b4ae",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/utils/summary_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/utils/summary_utils.py": [
+   "format_shape",
+   "i",
+   "layer",
+   "outputs",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

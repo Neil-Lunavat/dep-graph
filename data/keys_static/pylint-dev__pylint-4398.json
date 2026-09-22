@@ -1,0 +1,52 @@
+{
+ "instance_id": "pylint-dev__pylint-4398",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "43133c56d47bbc60e51a7f40433116b826eb18b7",
+ "status": "ok",
+ "co_edited": [
+  "pylint/lint/pylinter.py",
+  "pylint/lint/run.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/config/options_provider_mixin.py": [
+   "config"
+  ],
+  "pylint/constants.py": [
+   "MSG_TYPES"
+  ],
+  "pylint/lint/pylinter.py": [
+   "_checkers",
+   "all_checkers",
+   "any_fail_on_issues",
+   "checker",
+   "enable_fail_on_messages",
+   "fail_on_cats",
+   "fail_on_msgs",
+   "fail_on_symbols",
+   "fail_on_vals",
+   "msg",
+   "self",
+   "stats",
+   "val",
+   "x"
+  ],
+  "pylint/lint/run.py": [
+   "linter",
+   "score_value"
+  ],
+  "pylint/message/message_handler_mix_in.py": [
+   "enable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 82,
+  "names_resolved_in_repo": 56,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 7.1
+}

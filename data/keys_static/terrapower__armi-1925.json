@@ -1,0 +1,35 @@
+{
+ "instance_id": "terrapower__armi-1925",
+ "repo_key": "terrapower/armi",
+ "base_commit": "f1f3dbea05c2564404a03d8e053f72c2af15daa9",
+ "status": "ok",
+ "co_edited": [
+  "armi/reactor/blueprints/reactorBlueprint.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/reactor/blueprints/reactorBlueprint.py": [
+   "c",
+   "container",
+   "materialData",
+   "name",
+   "self"
+  ],
+  "armi/runLog.py": [
+   "runLog"
+  ],
+  "armi/utils/tabulate.py": [
+   "headers"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

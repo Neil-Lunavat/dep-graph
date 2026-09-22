@@ -1,0 +1,38 @@
+{
+ "instance_id": "terrapower__armi-1796",
+ "repo_key": "terrapower/armi",
+ "base_commit": "67af3ad2a093c6af6cc885ffdd78d14381316431",
+ "status": "ok",
+ "co_edited": [
+  "armi/operators/operator.py",
+  "armi/reactor/converters/blockConverters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "armi/operators/operator.py": [
+   "r",
+   "self"
+  ],
+  "armi/reactor/components/__init__.py": [
+   "DerivedShape",
+   "components"
+  ],
+  "armi/reactor/converters/blockConverters.py": [
+   "BlockConverter",
+   "_verifyExpansion",
+   "self",
+   "soluteNames",
+   "solvent"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

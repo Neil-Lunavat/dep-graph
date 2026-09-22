@@ -1,0 +1,25 @@
+{
+ "instance_id": "networkx__networkx-8055",
+ "repo_key": "networkx/networkx",
+ "base_commit": "679191810fc962e282b606622c90355f2e6f58ad",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/isomorphism/ismags.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/isomorphism/ismags.py": [
+   "cosets"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

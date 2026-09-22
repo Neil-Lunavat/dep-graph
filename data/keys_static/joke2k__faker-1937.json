@@ -1,0 +1,32 @@
+{
+ "instance_id": "joke2k__faker-1937",
+ "repo_key": "joke2k/faker",
+ "base_commit": "3f9b0e9c771c4bacd4d50cb90c02a912cb8b7780",
+ "status": "ok",
+ "co_edited": [
+  "faker/providers/geo/__init__.py",
+  "faker/providers/ssn/fi_FI/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/providers/__init__.py": [
+   "generator"
+  ],
+  "faker/providers/ssn/fi_FI/__init__.py": [
+   "age",
+   "max_age",
+   "min_age",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 9,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

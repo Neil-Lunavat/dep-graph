@@ -1,0 +1,26 @@
+{
+ "instance_id": "NVIDIA__hpc-container-maker-346",
+ "repo_key": "nvidia/hpc-container-maker",
+ "base_commit": "dea6f6915b1f4131485885b40ca780d348900191",
+ "status": "ok",
+ "co_edited": [
+  "hpccm/building_blocks/pnetcdf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hpccm/building_blocks/pnetcdf.py": [
+   "__prefix",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

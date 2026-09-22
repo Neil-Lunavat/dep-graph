@@ -1,0 +1,33 @@
+{
+ "instance_id": "aiogram__aiogram-1657",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "78748d36fd1fe9a71c3d42a7a88e0b63edd1c3d7",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/utils/formatting.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/utils/formatting.py": [
+   "as_caption_kwargs",
+   "as_gift_text_kwargs",
+   "as_poll_explanation_kwargs",
+   "as_poll_question_kwargs",
+   "entities_key",
+   "parse_mode_key",
+   "replace_parse_mode",
+   "self",
+   "text_key"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 175,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

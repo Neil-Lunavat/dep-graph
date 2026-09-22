@@ -1,0 +1,49 @@
+{
+ "instance_id": "pvlib__pvlib-python-2190",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "cc700f91ddfc511002d7468d335b43271dc7974a",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/solarposition.py",
+  "pvlib/spa.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/solarposition.py": [
+   "delta_t"
+  ],
+  "pvlib/spa.py": [
+   "a0",
+   "a1",
+   "a2",
+   "atmos_refract",
+   "dT",
+   "delta_t",
+   "esd",
+   "i",
+   "jd",
+   "jde",
+   "julian_ephemeris_day",
+   "loc_args",
+   "numthreads",
+   "out",
+   "result",
+   "solar_position_loop",
+   "split0",
+   "split1",
+   "split2",
+   "sst",
+   "unixtime"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 100,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

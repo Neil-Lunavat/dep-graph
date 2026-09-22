@@ -1,0 +1,67 @@
+{
+ "instance_id": "scipp__plopp-371",
+ "repo_key": "scipp/plopp",
+ "base_commit": "b0792693ded43696a6d0d6611f793da61076a0c4",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/backends/common.py",
+  "src/plopp/backends/matplotlib/line.py",
+  "src/plopp/backends/plotly/line.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/backends/common.py": [
+   "check_ndim",
+   "common",
+   "data",
+   "dim",
+   "errorbars",
+   "line_x",
+   "line_y",
+   "make_line_bbox",
+   "make_line_data",
+   "sel",
+   "stddevs",
+   "xscale",
+   "yscale"
+  ],
+  "src/plopp/backends/matplotlib/line.py": [
+   "_data",
+   "_dim",
+   "_error",
+   "self",
+   "xscale",
+   "yscale"
+  ],
+  "src/plopp/backends/plotly/line.py": [
+   "_data",
+   "_dim",
+   "_error",
+   "self",
+   "xscale",
+   "yscale"
+  ],
+  "src/plopp/core/utils.py": [
+   "merge_masks"
+  ],
+  "src/plopp/graphics/__init__.py": [
+   "graphics"
+  ],
+  "src/plopp/graphics/bbox.py": [
+   "BoundingBox",
+   "axis_bounds",
+   "bbox",
+   "pad"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 241,
+  "names_resolved_in_repo": 103,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

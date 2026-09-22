@@ -1,0 +1,25 @@
+{
+ "instance_id": "spdx__tools-python-768",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "248394cd2d1e60583f8c776e544f98b1184f42df",
+ "status": "ok",
+ "co_edited": [
+  "src/spdx_tools/spdx/datetime_conversions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spdx_tools/spdx/datetime_conversions.py": [
+   "date"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 8,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

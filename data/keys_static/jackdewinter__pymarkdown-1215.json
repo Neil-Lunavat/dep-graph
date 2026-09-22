@@ -1,0 +1,65 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1215",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "0983b67ce19c1986d7b6b35a1e697e53be12c91f",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/container_blocks/container_helper.py",
+  "pymarkdown/transform_markdown/transform_containers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/block_quotes/block_quote_data.py": [
+   "current_count",
+   "stack_count"
+  ],
+  "pymarkdown/container_blocks/container_helper.py": [
+   "ContainerHelper",
+   "POGGER",
+   "__xx",
+   "block_quote_data",
+   "extra_bqs",
+   "extracted_whitespace",
+   "indent_level",
+   "last_newline_part",
+   "needed_bqs",
+   "new_whitespace_prefix",
+   "parser_state",
+   "split_tab",
+   "until_index",
+   "x_tokens"
+  ],
+  "pymarkdown/general/parser_logger.py": [
+   "debug"
+  ],
+  "pymarkdown/general/parser_state.py": [
+   "ParserState",
+   "include_block_quotes",
+   "token_stack",
+   "until_this_index",
+   "was_forced"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "is_block_quote_start"
+  ],
+  "pymarkdown/tokens/stack_token.py": [
+   "is_block_quote"
+  ],
+  "pymarkdown/transform_markdown/transform_containers.py": [
+   "container_stack_copy",
+   "removed_token_indices",
+   "removed_tokens"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 63,
+  "names_resolved_in_repo": 61,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

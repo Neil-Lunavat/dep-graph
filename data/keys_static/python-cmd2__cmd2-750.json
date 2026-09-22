@@ -1,0 +1,44 @@
+{
+ "instance_id": "python-cmd2__cmd2-750",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "4aa8370092d1aba5edaf77bf9a867b23adf4aa97",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/argparse_custom.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/argparse_custom.py": [
+   "ATTR_CHOICES_CALLABLE",
+   "ChoicesCallable",
+   "_set_choices_callable",
+   "action",
+   "choices_callable",
+   "choices_callables",
+   "choices_function",
+   "choices_method",
+   "completer_function",
+   "completer_method",
+   "err_msg",
+   "is_completer",
+   "is_method",
+   "new_arg",
+   "num_params_set",
+   "set_choices_function",
+   "set_choices_method",
+   "set_completer_function",
+   "set_completer_method",
+   "to_call"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 178,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

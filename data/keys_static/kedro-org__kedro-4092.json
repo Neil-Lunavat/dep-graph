@@ -1,0 +1,36 @@
+{
+ "instance_id": "kedro-org__kedro-4092",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "036016004c5a2805b977b268af39313d6e7d5700",
+ "status": "ok",
+ "co_edited": [
+  "kedro/config/omegaconf_config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/config/omegaconf_config.py": [
+   "_check_duplicates",
+   "_get_all_keys",
+   "cfg",
+   "config",
+   "config_per_file",
+   "file",
+   "full_key",
+   "key",
+   "keys",
+   "parent_key",
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 66,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

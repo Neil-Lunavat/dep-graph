@@ -1,0 +1,81 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-6689",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "097a06f45b00781be9687fa08387e64c866c1ef6",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/kinesis.py",
+  "c7n/resources/resource_map.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/__init__.py": [
+   "c7n"
+  ],
+  "c7n/actions/core.py": [
+   "Action",
+   "manager",
+   "process"
+  ],
+  "c7n/element.py": [
+   "permissions",
+   "schema"
+  ],
+  "c7n/filters/__init__.py": [
+   "filters"
+  ],
+  "c7n/filters/vpc.py": [
+   "SubnetFilter",
+   "vpc"
+  ],
+  "c7n/manager.py": [
+   "action_registry",
+   "filter_registry",
+   "resources"
+  ],
+  "c7n/query.py": [
+   "QueryResourceManager",
+   "TypeInfo",
+   "arn",
+   "arn_type",
+   "augment",
+   "cfn_type",
+   "enum_spec",
+   "id",
+   "name",
+   "permission_prefix",
+   "permissions",
+   "resource_type",
+   "resources",
+   "service",
+   "universal_taggable"
+  ],
+  "c7n/registry.py": [
+   "register"
+  ],
+  "c7n/resources/kinesis.py": [
+   "KinesisAnalyticsAppV2",
+   "KinesisAnalyticsAppV2Delete",
+   "KinesisAnalyticsSubnetFilter",
+   "r",
+   "resources",
+   "self"
+  ],
+  "c7n/tags.py": [
+   "universal_augment"
+  ],
+  "c7n/utils.py": [
+   "type_schema"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 55,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

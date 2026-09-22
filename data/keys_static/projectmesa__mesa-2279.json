@@ -1,0 +1,32 @@
+{
+ "instance_id": "projectmesa__mesa-2279",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "113680d93cf1fee56ee26b436a889f2152e7aac6",
+ "status": "ok",
+ "co_edited": [
+  "mesa/agent.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mesa/agent.py": [
+   "_agents",
+   "agent",
+   "attr",
+   "attr_names",
+   "default_value",
+   "handle_missing",
+   "is_single_attr",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 137,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

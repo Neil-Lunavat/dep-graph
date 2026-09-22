@@ -1,0 +1,27 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9320",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "e05cef574b8f23ab1b57f57e7da6dee509a4e230",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/cmd/quickstart.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/cmd/quickstart.py": [
+   "is_path",
+   "is_path_or_empty",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 9,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

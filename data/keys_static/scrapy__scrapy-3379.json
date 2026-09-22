@@ -1,0 +1,27 @@
+{
+ "instance_id": "scrapy__scrapy-3379",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "8a4e51a19b9710452eacec8f83ed581ba202ec51",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/contracts/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/contracts/__init__.py": [
+   "key",
+   "spidercls",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

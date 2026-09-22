@@ -1,0 +1,28 @@
+{
+ "instance_id": "streamlink__streamlink-6544",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "987c4176f5d23efb845a0c0b884eac926e650d47",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/nicolive.py",
+  "src/streamlink/session/http.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/session/http.py": [
+   "encoding",
+   "kwargs",
+   "res"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

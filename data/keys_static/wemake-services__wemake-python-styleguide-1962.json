@@ -1,0 +1,31 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1962",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "8e2151470afe13141eca3e538a3d6e5d7ba97a39",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/conditions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/walk.py": [
+   "is_contained",
+   "walk"
+  ],
+  "wemake_python_styleguide/visitors/ast/conditions.py": [
+   "_returning_nodes",
+   "self",
+   "sub"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

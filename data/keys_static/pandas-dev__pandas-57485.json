@@ -1,0 +1,28 @@
+{
+ "instance_id": "pandas-dev__pandas-57485",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "ab8541ce51b70a8be728e8a15d78f7a5f82b62de",
+ "status": "ok",
+ "co_edited": [
+  "pandas/core/frame.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pandas/core/frame.py": [
+   "col",
+   "mask",
+   "self",
+   "that"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

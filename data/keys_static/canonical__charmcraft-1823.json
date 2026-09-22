@@ -1,0 +1,46 @@
+{
+ "instance_id": "canonical__charmcraft-1823",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "c29dbccfa82989ba1bf97823e135bd590e125bb6",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/application/commands/analyse.py",
+  "charmcraft/application/main.py",
+  "charmcraft/services/lifecycle.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/application/commands/analyse.py": [
+   "max_level",
+   "result"
+  ],
+  "charmcraft/application/main.py": [
+   "Charmcraft",
+   "_expand_environment",
+   "app",
+   "build_for",
+   "self",
+   "yaml_data"
+  ],
+  "charmcraft/models/lint.py": [
+   "level"
+  ],
+  "charmcraft/services/lifecycle.py": [
+   "_get_build_for",
+   "arch",
+   "build_for",
+   "host_arch",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

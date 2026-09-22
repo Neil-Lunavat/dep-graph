@@ -1,0 +1,35 @@
+{
+ "instance_id": "sdv-dev__SDV-2656",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "33a19f9f55ca41eaf70582228209c259f860737e",
+ "status": "ok",
+ "co_edited": [
+  "sdv/single_table/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/data_processing/data_processor.py": [
+   "is_condition",
+   "transform"
+  ],
+  "sdv/single_table/base.py": [
+   "_data_processor",
+   "_transform_conditions",
+   "condition_df",
+   "conditions",
+   "dtypes",
+   "self",
+   "transformed_condition"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

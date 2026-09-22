@@ -1,0 +1,36 @@
+{
+ "instance_id": "pre-commit__pre-commit-1251",
+ "repo_key": "pre-commit/pre-commit",
+ "base_commit": "83f08025789c31de9168a69bd3b6f465305ef296",
+ "status": "ok",
+ "co_edited": [
+  "pre_commit/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pre_commit/util.py": [
+   "CalledProcessError",
+   "_indent_or_none",
+   "cmd",
+   "expected_returncode",
+   "part",
+   "retcode",
+   "returncode",
+   "self",
+   "stderr",
+   "stderr_b",
+   "stdout",
+   "stdout_b"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

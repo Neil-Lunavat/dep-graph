@@ -1,0 +1,80 @@
+{
+ "instance_id": "matrix-org__synapse-6098",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "9614d3c9d1a99269684263f451b4bd5e7dc9f817",
+ "status": "ok",
+ "co_edited": [
+  "synapse/config/server.py",
+  "synapse/metrics/background_process_metrics.py",
+  "synapse/storage/background_updates.py",
+  "synapse/storage/client_ips.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/__init__.py": [
+   "synapse"
+  ],
+  "synapse/config/_base.py": [
+   "parse_duration"
+  ],
+  "synapse/config/server.py": [
+   "config",
+   "self",
+   "user_ips_max_age"
+  ],
+  "synapse/metrics/__init__.py": [
+   "metrics"
+  ],
+  "synapse/metrics/background_process_metrics.py": [
+   "args",
+   "background_process_metrics",
+   "desc",
+   "func",
+   "kwargs",
+   "result",
+   "run_as_background_process",
+   "wrap_as_background_process",
+   "wrap_as_background_process_inner",
+   "wrap_as_background_process_inner_2"
+  ],
+  "synapse/storage/_base.py": [
+   "_clock",
+   "allow_none",
+   "desc",
+   "keyvalues",
+   "retcol",
+   "runInteraction"
+  ],
+  "synapse/storage/background_updates.py": [
+   "_all_done",
+   "_background_update_queue",
+   "has_completed_background_update",
+   "self",
+   "update_exists",
+   "update_name"
+  ],
+  "synapse/storage/client_ips.py": [
+   "_batch_row_update",
+   "_prune_old_user_ips",
+   "_prune_old_user_ips_txn",
+   "_update_client_ips_batch_txn",
+   "hs",
+   "self",
+   "sql",
+   "timestamp",
+   "to_update",
+   "txn",
+   "user_ips_max_age"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 141,
+  "names_resolved_in_repo": 96,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 8.6
+}

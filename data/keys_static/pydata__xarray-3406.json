@@ -1,0 +1,27 @@
+{
+ "instance_id": "pydata__xarray-3406",
+ "repo_key": "pydata/xarray",
+ "base_commit": "fb0cf7b5fe56519a933ffcecbce9e9327fe236a6",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/groupby.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/groupby.py": [
+   "group",
+   "group_dim",
+   "obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

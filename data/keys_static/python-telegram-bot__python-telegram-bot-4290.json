@@ -1,0 +1,55 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4290",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "cf728496e4ffb9b9f9aaa4c3518d9f8898d2b4d9",
+ "status": "ok",
+ "co_edited": [
+  "telegram/ext/_handlers/chatmemberhandler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/__init__.py": [
+   "telegram"
+  ],
+  "telegram/_update.py": [
+   "Update"
+  ],
+  "telegram/_utils/__init__.py": [
+   "_utils"
+  ],
+  "telegram/_utils/types.py": [
+   "DVType",
+   "SCT",
+   "types"
+  ],
+  "telegram/ext/__init__.py": [
+   "ext"
+  ],
+  "telegram/ext/_handlers/chatmemberhandler.py": [
+   "ANY_CHAT_MEMBER",
+   "CHAT_MEMBER",
+   "_chat_ids",
+   "chat_id",
+   "chat_member_types",
+   "self",
+   "update"
+  ],
+  "telegram/ext/_utils/__init__.py": [
+   "_utils"
+  ],
+  "telegram/ext/_utils/_update_parsing.py": [
+   "_update_parsing",
+   "parse_chat_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 67,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

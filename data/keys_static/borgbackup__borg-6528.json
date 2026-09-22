@@ -1,0 +1,21 @@
+{
+ "instance_id": "borgbackup__borg-6528",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "e5e360d5b61c2b91e136a0c59319561190685011",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/helpers/parseformat.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

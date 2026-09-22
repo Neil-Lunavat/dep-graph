@@ -1,0 +1,28 @@
+{
+ "instance_id": "canonical__charmcraft-915",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "e5ac156c3ae6d335cb78b4494f3dac8386bd2798",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/commands/store/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/commands/store/__init__.py": [
+   "branches",
+   "channel",
+   "nonbranches_list",
+   "per_track"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "iterative__dvc-2421",
+ "repo_key": "iterative/dvc",
+ "base_commit": "4d267ef7424e6b87ed0bc9a6c69544c0f5fdb90c",
+ "status": "ok",
+ "co_edited": [
+  "dvc/repo/move.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dvc/repo/move.py": [
+   "stage"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

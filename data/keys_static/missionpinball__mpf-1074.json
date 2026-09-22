@@ -1,0 +1,61 @@
+{
+ "instance_id": "missionpinball__mpf-1074",
+ "repo_key": "missionpinball/mpf",
+ "base_commit": "ca7dadb34fac8c7bc0cb2a036e61af9ec0b1369b",
+ "status": "ok",
+ "co_edited": [
+  "mpf/core/placeholder_manager.py",
+  "mpf/devices/segment_display.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mpf/core/mpf_controller.py": [
+   "machine"
+  ],
+  "mpf/core/placeholder_manager.py": [
+   "BasePlaceholder",
+   "PlayerPlaceholder",
+   "PlayersPlaceholder",
+   "TemplateEvalError",
+   "__getattr__",
+   "__getitem__",
+   "_machine",
+   "_number",
+   "evaluate_and_subscribe",
+   "future",
+   "item",
+   "machine",
+   "name",
+   "node",
+   "number",
+   "ret_value",
+   "self",
+   "slice_subscript",
+   "slice_value",
+   "subscribe",
+   "subscribe_attribute",
+   "subscription",
+   "subscriptions",
+   "value"
+  ],
+  "mpf/devices/segment_display.py": [
+   "_current_placeholder",
+   "_update_display",
+   "args",
+   "future",
+   "kwargs",
+   "new_text",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 155,
+  "names_resolved_in_repo": 118,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.8
+}

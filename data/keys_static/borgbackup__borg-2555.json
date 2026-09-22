@@ -1,0 +1,34 @@
+{
+ "instance_id": "borgbackup__borg-2555",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "5a667d6f6aad54ba1246fee4dbf54a67f75b80f4",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/helpers.py": [
+   "_host",
+   "archive",
+   "host",
+   "m",
+   "orig",
+   "path",
+   "port",
+   "proto",
+   "self",
+   "user"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

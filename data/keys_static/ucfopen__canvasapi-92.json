@@ -1,0 +1,31 @@
+{
+ "instance_id": "ucfopen__canvasapi-92",
+ "repo_key": "ucfopen/canvasapi",
+ "base_commit": "7b7ec3c76028bc0ae186cb870deaadaf4da5e7a6",
+ "status": "ok",
+ "co_edited": [
+  "canvasapi/course.py",
+  "canvasapi/group.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "canvasapi/course.py": [
+   "order",
+   "topic_id"
+  ],
+  "canvasapi/group.py": [
+   "order",
+   "topic_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 43,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

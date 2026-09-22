@@ -1,0 +1,29 @@
+{
+ "instance_id": "ethereum__web3.py-3289",
+ "repo_key": "ethereum/web3.py",
+ "base_commit": "e29ce515208d424c9f9e54d512fcc0d2007b67bb",
+ "status": "ok",
+ "co_edited": [
+  "web3/_utils/events.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "web3/_utils/events.py": [
+   "event_abi",
+   "log_entry"
+  ],
+  "web3/_utils/type_conversion.py": [
+   "to_hex_if_bytes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "pyvista__pyvista-1374",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "b4d40d762f8deb79be874a1f132d5bb0e66235db",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/filters/data_set.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/__init__.py": [
+   "pyvista"
+  ],
+  "pyvista/core/filters/data_set.py": [
+   "dataset",
+   "source"
+  ],
+  "pyvista/core/pointset.py": [
+   "StructuredGrid"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

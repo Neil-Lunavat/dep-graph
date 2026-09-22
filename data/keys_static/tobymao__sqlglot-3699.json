@@ -1,0 +1,48 @@
+{
+ "instance_id": "tobymao__sqlglot-3699",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "3fba6035ac0263beab73ab62013a64a56dea9165",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/bigquery.py",
+  "sqlglot/dialects/clickhouse.py",
+  "sqlglot/dialects/dialect.py",
+  "sqlglot/optimizer/qualify_columns.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/dialect.py": [
+   "FORCE_EARLY_ALIAS_REF_EXPANSION"
+  ],
+  "sqlglot/expressions.py": [
+   "Group",
+   "exp"
+  ],
+  "sqlglot/optimizer/qualify_columns.py": [
+   "_expand_alias_refs",
+   "dialect",
+   "expand_alias_refs",
+   "expand_only_groupby",
+   "node",
+   "resolver",
+   "schema",
+   "scope"
+  ],
+  "sqlglot/optimizer/scope.py": [
+   "Scope"
+  ],
+  "sqlglot/schema.py": [
+   "empty"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 99,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

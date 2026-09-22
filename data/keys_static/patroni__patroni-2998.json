@@ -1,0 +1,45 @@
+{
+ "instance_id": "patroni__patroni-2998",
+ "repo_key": "patroni/patroni",
+ "base_commit": "8acefefc4238b9d32cda2e8670ba53e212837c7c",
+ "status": "ok",
+ "co_edited": [
+  "patroni/postgresql/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/collections.py": [
+   "CaseInsensitiveDict"
+  ],
+  "patroni/postgresql/__init__.py": [
+   "is_primary",
+   "major_version"
+  ],
+  "patroni/postgresql/config.py": [
+   "CMDLINE_OPTIONS",
+   "_false_validator",
+   "_postgresql",
+   "_recovery_params",
+   "_server_parameters",
+   "exclude",
+   "k",
+   "keep_values",
+   "name",
+   "parse_dsn",
+   "recovery_params",
+   "self",
+   "server_parameters",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 41,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

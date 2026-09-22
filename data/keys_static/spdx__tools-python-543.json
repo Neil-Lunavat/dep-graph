@@ -1,0 +1,33 @@
+{
+ "instance_id": "spdx__tools-python-543",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "73f3f462591894cac8ef11e01ebec7e702e33c25",
+ "status": "ok",
+ "co_edited": [
+  "spdx/writers/rdf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "spdx/writers/rdf.py": [
+   "doc_file",
+   "doc_node",
+   "document",
+   "file_node",
+   "package",
+   "package_node",
+   "self",
+   "snippet",
+   "snippet_node"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

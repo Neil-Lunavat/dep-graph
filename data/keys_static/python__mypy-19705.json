@@ -1,0 +1,36 @@
+{
+ "instance_id": "python__mypy-19705",
+ "repo_key": "python/mypy",
+ "base_commit": "abd9424039fd7b1f7da6b5c143a27c5b682371ee",
+ "status": "ok",
+ "co_edited": [
+  "mypy/semanal.py",
+  "mypy/typeanal.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/semanal.py": [
+   "flattened_items",
+   "self",
+   "type_analyzer",
+   "types"
+  ],
+  "mypy/typeanal.py": [
+   "fail",
+   "self"
+  ],
+  "mypy/types.py": [
+   "flatten_nested_tuples"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

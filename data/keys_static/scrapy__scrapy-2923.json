@@ -1,0 +1,56 @@
+{
+ "instance_id": "scrapy__scrapy-2923",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "b8fabeed8652d22725959345700b9e7d00073de4",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/pipelines/files.py",
+  "scrapy/pipelines/images.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/pipelines/files.py": [
+   "CACHE_CONTROL",
+   "GCSFilesStore",
+   "GCS_PROJECT_ID",
+   "STORE_SCHEMES",
+   "_get_content_type",
+   "_onsuccess",
+   "blob",
+   "bucket",
+   "buf",
+   "checksum",
+   "client",
+   "cls",
+   "gcs_store",
+   "headers",
+   "info",
+   "k",
+   "last_modified",
+   "meta",
+   "path",
+   "persist_file",
+   "prefix",
+   "self",
+   "settings",
+   "stat_file",
+   "uri",
+   "v"
+  ],
+  "scrapy/pipelines/images.py": [
+   "cls",
+   "gcs_store",
+   "settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 110,
+  "names_resolved_in_repo": 79,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

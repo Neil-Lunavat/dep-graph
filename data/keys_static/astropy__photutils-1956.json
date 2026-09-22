@@ -1,0 +1,26 @@
+{
+ "instance_id": "astropy__photutils-1956",
+ "repo_key": "astropy/photutils",
+ "base_commit": "d73bfb7b311565909da2cc554739617cdf2193ef",
+ "status": "ok",
+ "co_edited": [
+  "photutils/segmentation/catalog.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/segmentation/catalog.py": [
+   "columns",
+   "table_columns"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

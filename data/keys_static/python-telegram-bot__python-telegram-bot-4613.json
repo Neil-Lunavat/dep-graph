@@ -1,0 +1,33 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4613",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "679d03897951eaeb0de6ae45894bbe08ad204c5a",
+ "status": "ok",
+ "co_edited": [
+  "telegram/ext/_jobqueue.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/ext/_jobqueue.py": [
+   "Job",
+   "from_aps_job",
+   "job",
+   "jobs",
+   "jobs_generator",
+   "name",
+   "pattern",
+   "scheduler",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

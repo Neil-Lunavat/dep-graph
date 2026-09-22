@@ -1,0 +1,82 @@
+{
+ "instance_id": "bridgecrewio__checkov-6999",
+ "repo_key": "bridgecrewio/checkov",
+ "base_commit": "ddf2b88dfa506fb43a73cc9f64dc7377a679c0b3",
+ "status": "ok",
+ "co_edited": [
+  "checkov/terraform/checks/resource/aws/AutoScalingLaunchTemplate.py",
+  "checkov/terraform/checks/resource/aws/RDSInstancePerfInsightsEncryptionWithCMK.py",
+  "checkov/terraform/checks/resource/aws/SecretManagerSecret90days.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "checkov/__init__.py": [
+   "checkov"
+  ],
+  "checkov/common/__init__.py": [
+   "common"
+  ],
+  "checkov/common/models/__init__.py": [
+   "models"
+  ],
+  "checkov/common/models/enums.py": [
+   "CheckCategories",
+   "CheckResult",
+   "FAILED",
+   "PASSED",
+   "enums"
+  ],
+  "checkov/terraform/__init__.py": [
+   "terraform"
+  ],
+  "checkov/terraform/checks/__init__.py": [
+   "checks"
+  ],
+  "checkov/terraform/checks/resource/__init__.py": [
+   "resource"
+  ],
+  "checkov/terraform/checks/resource/aws/AutoScalingLaunchTemplate.py": [
+   "AutoScalingLaunchTemplate",
+   "conf",
+   "self"
+  ],
+  "checkov/terraform/checks/resource/aws/RDSInstancePerfInsightsEncryptionWithCMK.py": [
+   "conf",
+   "self"
+  ],
+  "checkov/terraform/checks/resource/aws/SecretManagerSecret90days.py": [
+   "_check_rate_expression",
+   "days",
+   "evaluated_keys",
+   "expression",
+   "rate_match",
+   "rotation_rule",
+   "rules",
+   "schedule",
+   "self",
+   "unit",
+   "value"
+  ],
+  "checkov/terraform/checks/resource/base_resource_check.py": [
+   "BaseResourceCheck",
+   "scan_resource_conf"
+  ],
+  "checkov/terraform/checks/resource/base_resource_value_check.py": [
+   "__init__",
+   "base_resource_value_check",
+   "get_expected_value",
+   "get_inspected_key",
+   "scan_resource_conf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 111,
+  "names_resolved_in_repo": 92,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

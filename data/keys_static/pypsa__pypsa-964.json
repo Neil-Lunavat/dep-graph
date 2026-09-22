@@ -1,0 +1,35 @@
+{
+ "instance_id": "pypsa__pypsa-964",
+ "repo_key": "pypsa/pypsa",
+ "base_commit": "48f526719d95454efed652e147fcdb0c5a8edf83",
+ "status": "ok",
+ "co_edited": [
+  "pypsa/components.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pypsa/components.py": [
+   "all_components",
+   "arg",
+   "args",
+   "component",
+   "ignore_standard_types",
+   "investment_periods",
+   "iterate_components",
+   "other_comps",
+   "self",
+   "snapshots",
+   "with_time"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

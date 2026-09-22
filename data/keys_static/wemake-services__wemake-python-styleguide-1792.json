@@ -1,0 +1,38 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1792",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "6791154f19b32fe1153ae973138e113520f66cbc",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/functions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/tree/functions.py": [
+   "functions"
+  ],
+  "wemake_python_styleguide/violations/refactoring.py": [
+   "ImplicitEnumerateViolation"
+  ],
+  "wemake_python_styleguide/visitors/ast/functions.py": [
+   "_is_multiple_args_range_with_len",
+   "args_len",
+   "is_one_arg_range",
+   "is_three_args_range",
+   "is_two_args_range",
+   "node",
+   "self",
+   "step_arg"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

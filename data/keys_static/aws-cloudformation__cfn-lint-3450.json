@@ -1,0 +1,52 @@
+{
+ "instance_id": "aws-cloudformation__cfn-lint-3450",
+ "repo_key": "aws-cloudformation/cfn-lint",
+ "base_commit": "36ff520aba444d75a9bcb34e1a12661ecece9ebf",
+ "status": "ok",
+ "co_edited": [
+  "src/cfnlint/rules/resources/PrimaryIdentifiers.py",
+  "src/cfnlint/schema/manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/cfnlint/helpers.py": [
+   "filename",
+   "name",
+   "provider",
+   "py"
+  ],
+  "src/cfnlint/rules/resources/PrimaryIdentifiers.py": [
+   "primary_ids"
+  ],
+  "src/cfnlint/schema/_exceptions.py": [
+   "ResourceNotFoundError"
+  ],
+  "src/cfnlint/schema/manager.py": [
+   "_normalize_resource_type",
+   "_provider_schema_modules",
+   "_region_primary",
+   "_registry_schemas",
+   "_root",
+   "_schemas",
+   "e",
+   "module",
+   "reg",
+   "region",
+   "resource_type",
+   "rt",
+   "schema",
+   "schema_cached",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 82,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

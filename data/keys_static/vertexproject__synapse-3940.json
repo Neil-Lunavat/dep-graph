@@ -1,0 +1,25 @@
+{
+ "instance_id": "vertexproject__synapse-3940",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "b5cc3206b4a0620ccbf75d560f93855f202e14ad",
+ "status": "ok",
+ "co_edited": [
+  "synapse/models/inet.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/models/inet.py": [
+   "valu"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

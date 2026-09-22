@@ -1,0 +1,76 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1136",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "5d2b0c8a8cf12fa74d046e4a64f2ed11a0fc27e7",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/block_quotes/block_quote_processor.py",
+  "pymarkdown/transform_gfm/transform_to_gfm_list_looseness.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/block_quotes/block_quote_data.py": [
+   "BlockQuoteData"
+  ],
+  "pymarkdown/block_quotes/block_quote_processor.py": [
+   "POGGER",
+   "avoid_block_starts",
+   "block_quote_data",
+   "character_after_list",
+   "container_level_tokens",
+   "container_start_bq_count",
+   "extracted_whitespace",
+   "last_block_quote_index",
+   "leaf_tokens",
+   "line_to_parse",
+   "original_line",
+   "original_start_index",
+   "parser_state",
+   "position_marker",
+   "process_fenced_block",
+   "start_index",
+   "this_exception",
+   "xprocess_fenced_block",
+   "xstack_index"
+  ],
+  "pymarkdown/general/parser_logger.py": [
+   "debug"
+  ],
+  "pymarkdown/general/parser_state.py": [
+   "ParserState"
+  ],
+  "pymarkdown/general/position_marker.py": [
+   "PositionMarker"
+  ],
+  "pymarkdown/general/requeue_line_info.py": [
+   "RequeueLineInfo"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "is_block_quote_end",
+   "is_block_quote_start",
+   "is_list_end",
+   "is_list_start"
+  ],
+  "pymarkdown/transform_gfm/transform_to_gfm_list_looseness.py": [
+   "__is_really_loose",
+   "actual_tokens",
+   "check_index",
+   "inner_containers",
+   "is_loose",
+   "real_answer",
+   "rt",
+   "search_index"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 116,
+  "names_resolved_in_repo": 93,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

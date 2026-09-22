@@ -1,0 +1,28 @@
+{
+ "instance_id": "nilearn__nilearn-4701",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "567498d5a6d7766ebebbb6aa2c186786a5ea3534",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/datasets/_utils.py",
+  "nilearn/mass_univariate/_utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/datasets/_utils.py": [
+   "fh",
+   "full_name",
+   "temp_full_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

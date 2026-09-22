@@ -1,0 +1,21 @@
+{
+ "instance_id": "pandas-dev__pandas-60691",
+ "repo_key": "pandas-dev/pandas",
+ "base_commit": "0110487d4bccf3f7498c22a71e6a0dfdb3be3a16",
+ "status": "ok",
+ "co_edited": [
+  "pandas/core/array_algos/replace.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

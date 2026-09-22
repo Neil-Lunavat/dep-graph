@@ -1,0 +1,26 @@
+{
+ "instance_id": "canonical__charmcraft-1850",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "4a3cbacbd5a1cae3cd1076e2ff8ba93f3e49f3e7",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/models/metadata.py",
+  "charmcraft/models/project.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/models/metadata.py": [
+   "charm_user"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 81,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

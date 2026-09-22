@@ -1,0 +1,69 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2210",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "06e3215faab96a8092e7874958f2b700fa362969",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/api/asynchronous.py",
+  "src/zarr/core/group.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/__init__.py": [
+   "zarr"
+  ],
+  "src/zarr/api/__init__.py": [
+   "api"
+  ],
+  "src/zarr/api/asynchronous.py": [
+   "ArrayLike",
+   "a",
+   "async_api",
+   "asynchronous",
+   "empty",
+   "empty_like",
+   "fill_value",
+   "full_like",
+   "like_kwargs",
+   "ones",
+   "ones_like",
+   "shape",
+   "zeros",
+   "zeros_like"
+  ],
+  "src/zarr/core/common.py": [
+   "ChunkCoords"
+  ],
+  "src/zarr/core/group.py": [
+   "_async_group",
+   "empty",
+   "empty_like",
+   "fill_value",
+   "full",
+   "full_like",
+   "kwargs",
+   "name",
+   "ones",
+   "ones_like",
+   "prototype",
+   "self",
+   "shape",
+   "store_path",
+   "zeros",
+   "zeros_like"
+  ],
+  "src/zarr/core/sync.py": [
+   "_sync"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 324,
+  "names_resolved_in_repo": 251,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

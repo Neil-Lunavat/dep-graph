@@ -1,0 +1,33 @@
+{
+ "instance_id": "sdv-dev__SDV-2472",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "6941081bdedabb2ba275b17a82a2d137d373ca47",
+ "status": "ok",
+ "co_edited": [
+  "sdv/single_table/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/metadata/metadata.py": [
+   "Metadata",
+   "load_from_dict"
+  ],
+  "sdv/single_table/base.py": [
+   "_check_original_metadata_updated",
+   "_original_metadata",
+   "metadata",
+   "self",
+   "unified_metadata"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

@@ -1,0 +1,35 @@
+{
+ "instance_id": "Azure__azure-cli-4265",
+ "repo_key": "azure/azure-cli",
+ "base_commit": "85c0e4c8fb21e26a4984cad3b21a5e22a6a8b92b",
+ "status": "ok",
+ "co_edited": [
+  "scripts/releaser/release.py",
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_validators.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scripts/releaser/release.py": [
+   "cli_repo_dir",
+   "set_up_cli_repo_dir"
+  ],
+  "src/command_modules/azure-cli-vm/azure/cli/command_modules/vm/_validators.py": [
+   "compute_client",
+   "ex",
+   "image",
+   "image_version",
+   "namespace",
+   "top_one"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 56,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

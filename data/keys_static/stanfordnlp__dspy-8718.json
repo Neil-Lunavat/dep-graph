@@ -1,0 +1,42 @@
+{
+ "instance_id": "stanfordnlp__dspy-8718",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "361473cb5fe29c91d0ee7b4fddc2967115f4f80f",
+ "status": "ok",
+ "co_edited": [
+  "dspy/clients/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/__init__.py": [
+   "cache",
+   "dspy"
+  ],
+  "dspy/clients/__init__.py": [
+   "DSPY_CACHE",
+   "_dspy_cache",
+   "_get_dspy_cache",
+   "disk_cache_dir",
+   "disk_cache_limit",
+   "e",
+   "logger"
+  ],
+  "dspy/clients/cache.py": [
+   "disk_cache_dir",
+   "disk_size_limit_bytes",
+   "enable_disk_cache",
+   "enable_memory_cache",
+   "memory_max_entries"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

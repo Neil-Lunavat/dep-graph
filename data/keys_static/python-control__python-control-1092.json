@@ -1,0 +1,65 @@
+{
+ "instance_id": "python-control__python-control-1092",
+ "repo_key": "python-control/python-control",
+ "base_commit": "93c4c8d2827bad02e48234799f159f196acb2282",
+ "status": "ok",
+ "co_edited": [
+  "control/__init__.py",
+  "control/lti.py",
+  "control/statesp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/__init__.py": [
+   "control"
+  ],
+  "control/freqplot.py": [
+   "_default_frequency_range",
+   "bode_plot",
+   "freqplot",
+   "nyquist_plot"
+  ],
+  "control/lti.py": [
+   "LTI",
+   "bode_plot",
+   "feedback",
+   "forced_response",
+   "impulse_response",
+   "nichols_plot",
+   "nyquist_plot",
+   "omega",
+   "other",
+   "self",
+   "sign",
+   "step_response",
+   "to_ss",
+   "to_tf"
+  ],
+  "control/nichols.py": [
+   "nichols_plot"
+  ],
+  "control/statesp.py": [
+   "control",
+   "ss"
+  ],
+  "control/timeresp.py": [
+   "forced_response",
+   "impulse_response",
+   "step_response",
+   "timeresp"
+  ],
+  "control/xferfcn.py": [
+   "tf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 85,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 7.7
+}

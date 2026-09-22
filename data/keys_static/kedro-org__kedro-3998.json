@@ -1,0 +1,25 @@
+{
+ "instance_id": "kedro-org__kedro-3998",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "beaf31382d3d58e4d956d3a82bafee462d31e4ed",
+ "status": "ok",
+ "co_edited": [
+  "kedro/templates/project/{{ cookiecutter.repo_name }}/docs/source/conf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/templates/project/{{ cookiecutter.repo_name }}/docs/source/conf.py": [
+   "language"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

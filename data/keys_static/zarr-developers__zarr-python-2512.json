@@ -1,0 +1,32 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2512",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "501ae9eaf1f5df774b2981db7020a4e6d1490606",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/core/array.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/core/array.py": [
+   "indexer",
+   "value"
+  ],
+  "src/zarr/core/buffer/core.py": [
+   "NDArrayLike"
+  ],
+  "src/zarr/core/indexing.py": [
+   "sel_shape"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "sdv-dev__SDV-2566",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "9674ebc8ad5ad00285a4b4720b01051c2f35d958",
+ "status": "ok",
+ "co_edited": [
+  "sdv/cag/programmable_constraint.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/cag/programmable_constraint.py": [
+   "metadata"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

@@ -1,0 +1,122 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1225",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "c6892745c1338db2972c47aac7a0d1e59b6138db",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/file_scan_helper.py",
+  "pymarkdown/plugins/rule_md_031.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/__init__.py": [
+   "pymarkdown"
+  ],
+  "pymarkdown/file_scan_helper.py": [
+   "_",
+   "fix_debug",
+   "next_replace_index"
+  ],
+  "pymarkdown/general/__init__.py": [
+   "general"
+  ],
+  "pymarkdown/general/parser_helper.py": [
+   "ParserHelper",
+   "make_value_visible"
+  ],
+  "pymarkdown/general/parser_logger.py": [
+   "ParserLogger",
+   "blah_sequence",
+   "parser_logger"
+  ],
+  "pymarkdown/general/position_marker.py": [
+   "PositionMarker"
+  ],
+  "pymarkdown/plugin_manager/plugin_scan_context.py": [
+   "PluginScanContext"
+  ],
+  "pymarkdown/plugins/rule_md_031.py": [
+   "PendingContainerAdjustment",
+   "__container_adjustments",
+   "__fix_spacing_list",
+   "__fix_spacing_list_detect_special",
+   "__fix_spacing_list_special",
+   "__last_token",
+   "__leading_space_index_tracker",
+   "__removed_container_adjustments",
+   "__removed_container_stack_token",
+   "adjust",
+   "adjusted_indent_level",
+   "block_quote_mod_index",
+   "container_stack_token",
+   "context",
+   "current_list_token",
+   "did_special_list_fix",
+   "do_insert",
+   "end_adj",
+   "index",
+   "initial_index",
+   "inner_block_quote_token",
+   "insert_index",
+   "is_special",
+   "leading_space_to_insert",
+   "leading_spaces",
+   "list_start_token",
+   "list_token",
+   "list_token_mod_index",
+   "new_end_token",
+   "new_token",
+   "next_container_adjustment",
+   "outer_block_quote_token",
+   "previous_block_quote_index",
+   "remaining_index",
+   "replacement_tokens",
+   "selected_leading_space",
+   "self",
+   "split_spaces",
+   "stack_index",
+   "stripped_bleading_spaces",
+   "token"
+  ],
+  "pymarkdown/plugins/utils/leading_space_index_tracker.py": [
+   "LeadingSpaceIndexTracker",
+   "calculate_token_line_number",
+   "get_container_stack_item",
+   "get_container_stack_size"
+  ],
+  "pymarkdown/tokens/blank_line_markdown_token.py": [
+   "column_delta",
+   "extracted_whitespace",
+   "position_marker"
+  ],
+  "pymarkdown/tokens/block_quote_markdown_token.py": [
+   "BlockQuoteMarkdownToken",
+   "bleading_spaces"
+  ],
+  "pymarkdown/tokens/list_start_markdown_token.py": [
+   "ListStartMarkdownToken",
+   "indent_level",
+   "leading_spaces"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "EndMarkdownToken",
+   "MarkdownToken",
+   "column_number",
+   "is_block_quote_end",
+   "is_block_quote_start",
+   "is_list_start",
+   "line_number",
+   "set_extra_end_data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 193,
+  "names_resolved_in_repo": 215,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

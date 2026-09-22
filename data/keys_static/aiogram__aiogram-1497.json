@@ -1,0 +1,28 @@
+{
+ "instance_id": "aiogram__aiogram-1497",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "b5d94f17b567fbc49a1c809e9fee6e19931b977f",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/utils/text_decorations.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/utils/text_decorations.py": [
+   "custom_emoji_id",
+   "link",
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

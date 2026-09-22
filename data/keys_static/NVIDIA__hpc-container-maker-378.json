@@ -1,0 +1,27 @@
+{
+ "instance_id": "NVIDIA__hpc-container-maker-378",
+ "repo_key": "nvidia/hpc-container-maker",
+ "base_commit": "db9fd15221e0b2c9794e0a04c4214ac40a39e4a7",
+ "status": "ok",
+ "co_edited": [
+  "hpccm/building_blocks/boost.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hpccm/building_blocks/boost.py": [
+   "__version",
+   "kwargs",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

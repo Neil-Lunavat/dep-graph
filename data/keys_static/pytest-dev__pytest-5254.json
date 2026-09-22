@@ -1,0 +1,49 @@
+{
+ "instance_id": "pytest-dev__pytest-5254",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "654d8da9f7ffd7a88e02ae2081ffcb2ca2e765b3",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/fixtures.py",
+  "src/_pytest/mark/structures.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/fixtures.py": [
+   "_get_direct_parametrize_args",
+   "argname",
+   "fixturenames",
+   "getfixtureclosure",
+   "ignore_args",
+   "initialnames",
+   "marker",
+   "node",
+   "p_argnames",
+   "parametrize_argnames",
+   "parentnode",
+   "self"
+  ],
+  "src/_pytest/mark/structures.py": [
+   "_",
+   "_for_parametrize",
+   "_parse_parametrize_args",
+   "argnames",
+   "argvalues",
+   "cls",
+   "config",
+   "func",
+   "function_definition",
+   "parameters"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 86,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

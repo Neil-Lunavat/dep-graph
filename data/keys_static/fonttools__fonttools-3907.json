@@ -1,0 +1,46 @@
+{
+ "instance_id": "fonttools__fonttools-3907",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "7b50bde2ee3ac6c9e1936ea8c5351ffd84e4606c",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/feaLib/builder.py",
+  "Lib/fontTools/feaLib/parser.py",
+  "Lib/fontTools/feaLib/variableScalar.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "Lib/fontTools/feaLib/builder.py": [
+   "e",
+   "font",
+   "location",
+   "model_cache",
+   "self",
+   "varstorebuilder"
+  ],
+  "Lib/fontTools/feaLib/parser.py": [
+   "cur_token_location_",
+   "expect_float_",
+   "expect_integer_or_float_",
+   "expect_number_",
+   "next_token_type_",
+   "self",
+   "value"
+  ],
+  "Lib/fontTools/feaLib/variableScalar.py": [
+   "ax",
+   "coord",
+   "location"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.9
+}

@@ -1,0 +1,51 @@
+{
+ "instance_id": "tobymao__sqlglot-4079",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "d89757e21665913d49a3ccc19deeea86ab59820c",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/clickhouse.py",
+  "sqlglot/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/clickhouse.py": [
+   "NO_PAREN_FUNCTIONS"
+  ],
+  "sqlglot/expressions.py": [
+   "ColumnConstraint",
+   "TransformColumnConstraint",
+   "exp"
+  ],
+  "sqlglot/parser.py": [
+   "NO_PAREN_FUNCTIONS",
+   "Parser",
+   "_match_pair",
+   "_match_text_seq",
+   "_parse_assignment",
+   "_parse_field",
+   "constraint_kind",
+   "constraints",
+   "expression",
+   "parser",
+   "persisted",
+   "self"
+  ],
+  "sqlglot/tokens.py": [
+   "CURRENT_TIMESTAMP",
+   "NOT",
+   "NULL",
+   "TokenType"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

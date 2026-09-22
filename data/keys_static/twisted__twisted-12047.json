@@ -1,0 +1,36 @@
+{
+ "instance_id": "twisted__twisted-12047",
+ "repo_key": "twisted/twisted",
+ "base_commit": "63df84e454978bd7a2d57ed292913384ca352e1a",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/conch/insults/insults.py",
+  "src/twisted/conch/insults/window.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/conch/insults/insults.py": [
+   "FUNCTION_KEYS",
+   "_KEY_NAMES",
+   "_name"
+  ],
+  "src/twisted/conch/insults/window.py": [
+   "func",
+   "height",
+   "methodName",
+   "name",
+   "self",
+   "width"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

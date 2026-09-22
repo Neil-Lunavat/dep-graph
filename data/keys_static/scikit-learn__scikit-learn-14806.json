@@ -1,0 +1,35 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14806",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "5cf88db24491112d2b8672f75df22f65a140d167",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/impute/_iterative.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/impute/_iterative.py": [
+   "X_filled",
+   "Xt",
+   "estimator",
+   "feat_idx",
+   "frac_of_missing_values",
+   "mask_missing_values",
+   "missing_row_mask",
+   "missing_values_idx",
+   "n_iter_",
+   "self",
+   "skip_complete"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 90,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 6.0
+}

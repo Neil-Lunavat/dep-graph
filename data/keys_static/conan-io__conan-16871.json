@@ -1,0 +1,71 @@
+{
+ "instance_id": "conan-io__conan-16871",
+ "repo_key": "conan-io/conan",
+ "base_commit": "d99c7149ff64c2dd98b5d9752f5308f8ffd70474",
+ "status": "ok",
+ "co_edited": [
+  "conans/client/graph/build_mode.py",
+  "conans/client/graph/compute_pid.py",
+  "conans/client/graph/graph_binaries.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conans/client/graph/build_mode.py": [
+   "_build_compatible_excluded",
+   "_build_compatible_patterns",
+   "allowed_compatible",
+   "clean_pattern",
+   "conan_file",
+   "conanfile",
+   "param",
+   "pattern",
+   "self"
+  ],
+  "conans/client/graph/compute_pid.py": [
+   "conanfile",
+   "e"
+  ],
+  "conans/client/graph/graph.py": [
+   "BINARY_BUILD",
+   "BINARY_INVALID"
+  ],
+  "conans/client/graph/graph_binaries.py": [
+   "GraphBinariesAnalyzer",
+   "_compatible_found",
+   "_find_build_compatible_binary",
+   "_find_existing_compatible_binaries",
+   "_get_compatible_packages",
+   "build_mode",
+   "compatible",
+   "compatibles",
+   "conanfile",
+   "node",
+   "original_binary",
+   "original_package_id",
+   "output",
+   "pkg_id",
+   "remotes",
+   "self",
+   "update"
+  ],
+  "conans/errors.py": [
+   "ConanInvalidConfiguration",
+   "conanfile_exception_formatter",
+   "conanfile_remove_attr"
+  ],
+  "conans/model/recipe_ref.py": [
+   "is_consumer",
+   "ref_matches"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 134,
+  "names_resolved_in_repo": 115,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.1
+}

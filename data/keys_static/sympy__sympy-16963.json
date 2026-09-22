@@ -1,0 +1,66 @@
+{
+ "instance_id": "sympy__sympy-16963",
+ "repo_key": "sympy/sympy",
+ "base_commit": "14abc988525f344d1974c043f83b1e6b1247aea6",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/compatibility.py",
+  "sympy/core/containers.py",
+  "sympy/core/evalf.py",
+  "sympy/core/function.py",
+  "sympy/core/operations.py",
+  "sympy/core/sympify.py",
+  "sympy/ntheory/factor_.py",
+  "sympy/tensor/indexed.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/containers.py": [
+   "Dict",
+   "containers",
+   "converter",
+   "d"
+  ],
+  "sympy/core/evalf.py": [
+   "n",
+   "options",
+   "x"
+  ],
+  "sympy/core/evaluate.py": [
+   "global_evaluate"
+  ],
+  "sympy/core/function.py": [
+   "expr"
+  ],
+  "sympy/core/sympify.py": [
+   "CantSympify",
+   "SympifyError",
+   "a",
+   "cls",
+   "converter",
+   "evaluate",
+   "rational",
+   "superclass",
+   "sympify"
+  ],
+  "sympy/ntheory/factor_.py": [
+   "n"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 122,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.3
+}

@@ -1,0 +1,36 @@
+{
+ "instance_id": "hgrecco__pint-1476",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "47bbe5b25215ec0bb2ce00bd24122743f9b9a4df",
+ "status": "ok",
+ "co_edited": [
+  "pint/registry.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/registry.py": [
+   "UnitsContainer",
+   "as_delta",
+   "case_sensitive",
+   "cname",
+   "input_string",
+   "ret",
+   "self",
+   "value"
+  ],
+  "pint/util.py": [
+   "UnitsContainerT",
+   "add"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

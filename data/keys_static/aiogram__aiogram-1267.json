@@ -1,0 +1,57 @@
+{
+ "instance_id": "aiogram__aiogram-1267",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "577b44cdc1807eb181cd982b20b6492bb24b42de",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/dispatcher/event/telegram.py",
+  "aiogram/dispatcher/router.py",
+  "examples/context_addition_from_filter.py",
+  "examples/multibot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/dispatcher/event/bases.py": [
+   "REJECTED",
+   "UNHANDLED"
+  ],
+  "aiogram/dispatcher/event/handler.py": [
+   "check"
+  ],
+  "aiogram/dispatcher/event/telegram.py": [
+   "_handler",
+   "check_root_filters",
+   "event",
+   "kwargs",
+   "self"
+  ],
+  "aiogram/dispatcher/router.py": [
+   "data",
+   "event",
+   "kwargs",
+   "observer",
+   "response",
+   "result"
+  ],
+  "aiogram/types/base.py": [
+   "TelegramObject"
+  ],
+  "aiogram/types/message.py": [
+   "answer"
+  ],
+  "examples/context_addition_from_filter.py": [
+   "message",
+   "name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 41,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

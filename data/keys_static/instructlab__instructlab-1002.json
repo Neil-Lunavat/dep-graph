@@ -1,0 +1,55 @@
+{
+ "instance_id": "instructlab__instructlab-1002",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "4aa80b1f403f96dc3f6503c83dbea21b18e8a337",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/generator/generate_data.py",
+  "src/instructlab/lab.py",
+  "src/instructlab/server.py",
+  "src/instructlab/train/linux_train.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/generator/generate_data.py": [
+   "DEFAULT_PROMPT_TEMPLATE_MERLINITE",
+   "DEFAULT_PROMPT_TEMPLATE_MIXTRAL",
+   "check_prompt_file",
+   "exc",
+   "model_family",
+   "prompt_file_path",
+   "prompt_template"
+  ],
+  "src/instructlab/lab.py": [
+   "ctx",
+   "gpu_layers",
+   "max_ctx_size",
+   "model_family",
+   "model_name",
+   "model_path",
+   "num_threads",
+   "serve"
+  ],
+  "src/instructlab/server.py": [
+   "bos_token",
+   "eos_token",
+   "model_family",
+   "template",
+   "template_dict",
+   "templates"
+  ],
+  "src/instructlab/train/linux_train.py": [
+   "model_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 358,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

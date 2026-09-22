@@ -1,0 +1,49 @@
+{
+ "instance_id": "docker__docker-py-2927",
+ "repo_key": "docker/docker-py",
+ "base_commit": "26064dd6b584ee14878157b4c8b001eefed70caf",
+ "status": "ok",
+ "co_edited": [
+  "docker/api/container.py",
+  "docker/errors.py",
+  "docker/models/containers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/api/container.py": [
+   "config",
+   "create_container_from_config",
+   "name",
+   "params",
+   "platform",
+   "self",
+   "use_config_proxy"
+  ],
+  "docker/errors.py": [
+   "_image_not_found_explanation_fragments",
+   "explanation",
+   "explanation_msg",
+   "fragment"
+  ],
+  "docker/models/containers.py": [
+   "kwargs",
+   "platform"
+  ],
+  "docker/utils/__init__.py": [
+   "utils"
+  ],
+  "docker/utils/utils.py": [
+   "version_lt"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

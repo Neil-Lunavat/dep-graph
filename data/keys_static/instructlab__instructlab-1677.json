@@ -1,0 +1,34 @@
+{
+ "instance_id": "instructlab__instructlab-1677",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "d7ed89dc00fff6b98d036a8519979fd6e9dd823b",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/configuration.py",
+  "src/instructlab/model/evaluate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/configuration.py": [
+   "DATASETS_DIR",
+   "DEFAULTS",
+   "_mmlubranch",
+   "tasks_dir"
+  ],
+  "src/instructlab/model/evaluate.py": [
+   "required_arg_names",
+   "required_args",
+   "tasks_dir"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 17,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

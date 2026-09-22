@@ -1,0 +1,25 @@
+{
+ "instance_id": "matplotlib__matplotlib-22991",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "953790680ac667adb869e1f1cba2f2b534cc6f0b",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/pyplot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/pyplot.py": [
+   "num"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.1
+}

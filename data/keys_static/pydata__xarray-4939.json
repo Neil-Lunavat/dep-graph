@@ -1,0 +1,33 @@
+{
+ "instance_id": "pydata__xarray-4939",
+ "repo_key": "pydata/xarray",
+ "base_commit": "eb7e112d45a9edebd8e5fb4f873e3e6adb18824a",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/rolling.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/rolling.py": [
+   "_reduce_method",
+   "cls",
+   "func",
+   "include_skipna",
+   "kwargs",
+   "numeric_only",
+   "reduce",
+   "self",
+   "wrapped_func"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 175,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

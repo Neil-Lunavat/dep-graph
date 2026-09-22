@@ -1,0 +1,46 @@
+{
+ "instance_id": "oasis-open__cti-python-stix2-534",
+ "repo_key": "oasis-open/cti-python-stix2",
+ "base_commit": "81550cab92aaacbca5db0d37c607dfd1707ce4c3",
+ "status": "ok",
+ "co_edited": [
+  "stix2/equivalence/pattern/transform/comparison.py",
+  "stix2/patterns.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "stix2/equivalence/pattern/transform/comparison.py": [
+   "_dupe_ast",
+   "and_arg_set",
+   "and_node",
+   "arg",
+   "ast",
+   "distributed_and_arg_sets",
+   "distributed_children",
+   "new_object_path",
+   "other_children",
+   "prod_seq"
+  ],
+  "stix2/patterns.py": [
+   "AndBooleanExpression",
+   "ObjectPath",
+   "OrBooleanExpression",
+   "ParentheticalExpression",
+   "_BooleanExpression",
+   "_ComparisonExpression",
+   "arg",
+   "operands",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

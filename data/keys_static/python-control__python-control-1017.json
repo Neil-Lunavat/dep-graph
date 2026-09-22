@@ -1,0 +1,41 @@
+{
+ "instance_id": "python-control__python-control-1017",
+ "repo_key": "python-control/python-control",
+ "base_commit": "4acc78b8aec4f145e7e72c931accfa7e12e5cd4d",
+ "status": "ok",
+ "co_edited": [
+  "control/nlsys.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/iosys.py": [
+   "_parse_spec"
+  ],
+  "control/nlsys.py": [
+   "_find_output_or_input_signal",
+   "connection",
+   "dprint",
+   "gain",
+   "indices",
+   "isig",
+   "isys",
+   "new_inplist",
+   "new_outlist",
+   "osig",
+   "osys",
+   "signal_list",
+   "spec",
+   "syslist"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 99,
+  "names_resolved_in_repo": 54,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

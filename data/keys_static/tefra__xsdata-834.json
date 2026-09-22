@@ -1,0 +1,26 @@
+{
+ "instance_id": "tefra__xsdata-834",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "cb80011ebd5b096ec5d0613c95fb01f2c2ff073b",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/models/config.py",
+  "xsdata/utils/hooks.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/utils/hooks.py": [
+   "entry_points"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-2343",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "c4414c8c23012277fcfe71250dbc73df72083769",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/logic/tree/variables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

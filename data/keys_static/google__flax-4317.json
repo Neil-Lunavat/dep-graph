@@ -1,0 +1,27 @@
+{
+ "instance_id": "google__flax-4317",
+ "repo_key": "google/flax",
+ "base_commit": "c1046ad08f885e3ff35e6fdec2bd0b6495e04e22",
+ "status": "ok",
+ "co_edited": [
+  "flax/nnx/statelib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "flax/nnx/statelib.py": [
+   "kp",
+   "try_convert_int",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

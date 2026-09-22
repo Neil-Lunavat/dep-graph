@@ -1,0 +1,71 @@
+{
+ "instance_id": "stanfordnlp__dspy-1556",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "92d25a7066227d18f852eb49a397b46c11f0dc1a",
+ "status": "ok",
+ "co_edited": [
+  "dspy/predict/predict.py",
+  "dspy/primitives/module.py",
+  "dspy/signatures/signature.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/__init__.py": [
+   "dspy"
+  ],
+  "dspy/predict/predict.py": [
+   "_load_state_legacy",
+   "excluded_keys",
+   "extended_signature",
+   "name",
+   "save_verbose",
+   "self",
+   "signature",
+   "state",
+   "use_legacy_loading",
+   "value"
+  ],
+  "dspy/primitives/__init__.py": [
+   "primitives"
+  ],
+  "dspy/primitives/module.py": [
+   "dump_state",
+   "f",
+   "load",
+   "load_state",
+   "name",
+   "param",
+   "path",
+   "self",
+   "state",
+   "use_legacy_loading"
+  ],
+  "dspy/primitives/program.py": [
+   "Module",
+   "program"
+  ],
+  "dspy/signatures/signature.py": [
+   "Signature",
+   "cls",
+   "dump_state",
+   "field",
+   "fields",
+   "instructions",
+   "load_state",
+   "saved_field",
+   "signature_copy",
+   "state",
+   "title_cased_words"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 185,
+  "names_resolved_in_repo": 116,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.6
+}

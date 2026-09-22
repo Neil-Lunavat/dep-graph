@@ -1,0 +1,40 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-3381",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "25071c8c7d577b9016af21b28ac1ae8363b5bb3a",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/tape/tape.py",
+  "pennylane/transforms/insert_ops.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/__init__.py": [
+   "QuantumFunctionError",
+   "qml"
+  ],
+  "pennylane/ops/op_math/adjoint_class.py": [
+   "Adjoint"
+  ],
+  "pennylane/tape/qscript.py": [
+   "stop_at"
+  ],
+  "pennylane/templates/__init__.py": [
+   "templates"
+  ],
+  "pennylane/transforms/insert_ops.py": [
+   "e",
+   "op"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

@@ -1,0 +1,38 @@
+{
+ "instance_id": "kedro-org__kedro-4387",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "46259b9f5b89a226d47e2119afb40ad7b4fa5e63",
+ "status": "ok",
+ "co_edited": [
+  "kedro/framework/cli/starters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/framework/cli/starters.py": [
+   "EXAMPLE_ARG_HELP",
+   "NAME_ARG_HELP",
+   "TELEMETRY_ARG_HELP",
+   "TOOLS_ARG_HELP",
+   "cookiecutter_context",
+   "default_value",
+   "prompt",
+   "prompt_lines",
+   "prompts",
+   "self",
+   "text",
+   "title",
+   "title_line",
+   "variable_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 54,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,78 @@
+{
+ "instance_id": "pdm-project__pdm-1712",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "72c82f5441fe3b5e30358e9e7c1ea73647b852bf",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/models/repositories.py",
+  "src/pdm/models/requirements.py",
+  "src/pdm/resolver/providers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/models/__init__.py": [
+   "models"
+  ],
+  "src/pdm/models/backends.py": [
+   "expand_line"
+  ],
+  "src/pdm/models/candidates.py": [
+   "req"
+  ],
+  "src/pdm/models/environment.py": [
+   "project"
+  ],
+  "src/pdm/models/repositories.py": [
+   "environment",
+   "path",
+   "req",
+   "root",
+   "self",
+   "url"
+  ],
+  "src/pdm/models/requirements.py": [
+   "FileRequirement",
+   "get_full_url",
+   "is_named",
+   "parse_requirement",
+   "path",
+   "requirements",
+   "result",
+   "self",
+   "strip_extras"
+  ],
+  "src/pdm/project/core.py": [
+   "backend",
+   "root"
+  ],
+  "src/pdm/resolver/providers.py": [
+   "_compare_file_reqs",
+   "backend",
+   "candidate",
+   "left",
+   "repository",
+   "req1",
+   "req2",
+   "requirement",
+   "right",
+   "self"
+  ],
+  "src/pdm/utils.py": [
+   "cd",
+   "normalize_name",
+   "path_to_url",
+   "url_to_path",
+   "url_without_fragments"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 121,
+  "names_resolved_in_repo": 111,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 7,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

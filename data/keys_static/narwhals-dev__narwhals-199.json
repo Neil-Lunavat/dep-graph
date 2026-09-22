@@ -1,0 +1,57 @@
+{
+ "instance_id": "narwhals-dev__narwhals-199",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "3e6059a60ec23c40025d15e9b49ec8eec57e6854",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_pandas_like/expr.py",
+  "narwhals/expression.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/__init__.py": [
+   "narwhals"
+  ],
+  "narwhals/_pandas_like/__init__.py": [
+   "_pandas_like"
+  ],
+  "narwhals/_pandas_like/expr.py": [
+   "_implementation",
+   "expr",
+   "filter",
+   "plx",
+   "predicates",
+   "self"
+  ],
+  "narwhals/_pandas_like/namespace.py": [
+   "PandasNamespace",
+   "all_horizontal",
+   "namespace"
+  ],
+  "narwhals/_pandas_like/utils.py": [
+   "register_expression_call"
+  ],
+  "narwhals/expression.py": [
+   "Expr",
+   "extract_native",
+   "filter",
+   "plx",
+   "pred",
+   "predicates",
+   "self"
+  ],
+  "narwhals/utils.py": [
+   "flatten"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

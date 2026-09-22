@@ -1,0 +1,29 @@
+{
+ "instance_id": "RDFLib__rdflib-1012",
+ "repo_key": "rdflib/rdflib",
+ "base_commit": "39d07c4a5c9395f1322a269982e69b63cbf4db22",
+ "status": "ok",
+ "co_edited": [
+  "rdflib/plugins/parsers/notation3.py",
+  "setup.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "rdflib/plugins/parsers/notation3.py": [
+   "exponent_syntax"
+  ],
+  "setup.py": [
+   "kwargs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

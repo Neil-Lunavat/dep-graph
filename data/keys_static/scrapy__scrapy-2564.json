@@ -1,0 +1,38 @@
+{
+ "instance_id": "scrapy__scrapy-2564",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "afac3fd2c28ac5b16e7e3c95fca5acd1334f8c58",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/downloadermiddlewares/httpproxy.py",
+  "scrapy/settings/default_settings.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/downloadermiddlewares/httpproxy.py": [
+   "auth_encoding",
+   "creds",
+   "password",
+   "proxies",
+   "self",
+   "user",
+   "user_pass"
+  ],
+  "scrapy/exceptions.py": [
+   "NotConfigured"
+  ],
+  "scrapy/utils/python.py": [
+   "encoding"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

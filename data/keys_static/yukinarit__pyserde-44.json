@@ -1,0 +1,56 @@
+{
+ "instance_id": "yukinarit__pyserde-44",
+ "repo_key": "yukinarit/pyserde",
+ "base_commit": "1e668d17742d8ef39f0b362b0c975bb324614058",
+ "status": "ok",
+ "co_edited": [
+  "serde/compat.py",
+  "serde/core.py",
+  "serde/de.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "serde/compat.py": [
+   "field",
+   "has_default",
+   "has_default_factory",
+   "is_union",
+   "iter_types",
+   "type_args"
+  ],
+  "serde/core.py": [
+   "default_factory",
+   "f",
+   "name"
+  ],
+  "serde/de.py": [
+   "arg",
+   "cls",
+   "data",
+   "dataclass",
+   "datavar",
+   "dict",
+   "enum",
+   "exists",
+   "f",
+   "g",
+   "iterbased",
+   "list",
+   "opt",
+   "primitive",
+   "res",
+   "self",
+   "tuple"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 160,
+  "names_resolved_in_repo": 109,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

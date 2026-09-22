@@ -1,0 +1,49 @@
+{
+ "instance_id": "twisted__twisted-12366",
+ "repo_key": "twisted/twisted",
+ "base_commit": "7ac990f8d59699221633269c9e13b47dfbbab8a3",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/internet/interfaces.py",
+  "src/twisted/internet/tcp.py",
+  "src/twisted/internet/unix.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/internet/interfaces.py": [
+   "address",
+   "backlog",
+   "checkPID",
+   "factory",
+   "mode",
+   "timeout",
+   "wantPID"
+  ],
+  "src/twisted/internet/tcp.py": [
+   "e",
+   "enabled",
+   "getTcpNoDelay",
+   "self",
+   "setTcpNoDelay",
+   "socket"
+  ],
+  "src/twisted/internet/unix.py": [
+   "enabled",
+   "self"
+  ],
+  "src/twisted/python/log.py": [
+   "err",
+   "log"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 137,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

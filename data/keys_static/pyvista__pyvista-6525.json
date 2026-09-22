@@ -1,0 +1,26 @@
+{
+ "instance_id": "pyvista__pyvista-6525",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "1e485f56c02e409fa71ea8acf0c495008cd43a7f",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/grid.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/grid.py": [
+   "dimensions",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.0
+}

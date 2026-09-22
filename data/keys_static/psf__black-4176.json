@@ -1,0 +1,46 @@
+{
+ "instance_id": "psf__black-4176",
+ "repo_key": "psf/black",
+ "base_commit": "659c29a41c7c686687aef21f57b95bcfa236b03b",
+ "status": "ok",
+ "co_edited": [
+  "src/black/cache.py",
+  "src/black/mode.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/__init__.py": [
+   "black"
+  ],
+  "src/black/cache.py": [
+   "cache_file",
+   "cls",
+   "e",
+   "exists",
+   "mode"
+  ],
+  "src/black/mode.py": [
+   "_MAX_CACHE_KEY_PART_LENGTH",
+   "enabled_features",
+   "f",
+   "features_and_magics",
+   "python_cell_magics",
+   "self",
+   "version_str"
+  ],
+  "src/black/output.py": [
+   "err",
+   "output"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

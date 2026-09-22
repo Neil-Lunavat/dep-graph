@@ -1,0 +1,51 @@
+{
+ "instance_id": "tobymao__sqlglot-3242",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "59f1d13bc5e37ebe6636b05e0381facc9725f7b0",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/sqlite.py",
+  "sqlglot/expressions.py",
+  "sqlglot/generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/sqlite.py": [
+   "_build_strftime",
+   "args",
+   "e",
+   "self"
+  ],
+  "sqlglot/expressions.py": [
+   "Anonymous",
+   "CurrentTimestamp",
+   "DataType",
+   "Func",
+   "TIMESTAMP",
+   "TimeToStr",
+   "TsOrDsToTimestamp",
+   "Type",
+   "cast",
+   "exp",
+   "this"
+  ],
+  "sqlglot/generator.py": [
+   "expression",
+   "func",
+   "self",
+   "sql",
+   "this",
+   "tsordstotimestamp_sql"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 62,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

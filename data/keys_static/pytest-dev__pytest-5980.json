@@ -1,0 +1,30 @@
+{
+ "instance_id": "pytest-dev__pytest-5980",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "0225cb37c02b6760c8b1d0efcf3728f669bbfe17",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/config/__init__.py",
+  "src/_pytest/hookspec.py",
+  "src/_pytest/reports.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "src/_pytest/report_log.py"
+ ],
+ "symbol": {
+  "src/_pytest/reports.py": [
+   "data",
+   "report"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 139,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 97,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

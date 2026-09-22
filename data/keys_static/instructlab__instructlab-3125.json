@@ -1,0 +1,54 @@
+{
+ "instance_id": "instructlab__instructlab-3125",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "5e7c7b4d53ce320a4de201c31c4fdd153ab207bc",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/process/list.py",
+  "src/instructlab/data/generate_data.py",
+  "src/instructlab/defaults.py",
+  "src/instructlab/process/process.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/__init__.py": [
+   "instructlab"
+  ],
+  "src/instructlab/cli/process/list.py": [
+   "list_processes",
+   "process_list",
+   "s",
+   "state"
+  ],
+  "src/instructlab/data/generate_data.py": [
+   "local_uuid"
+  ],
+  "src/instructlab/defaults.py": [
+   "DONE",
+   "ERRORED",
+   "ILAB_PROCESS_STATUS",
+   "RUNNING",
+   "defaults",
+   "value"
+  ],
+  "src/instructlab/process/process.py": [
+   "complete",
+   "complete_process",
+   "filter_processes",
+   "local_uuid",
+   "process",
+   "state",
+   "status"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 54,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

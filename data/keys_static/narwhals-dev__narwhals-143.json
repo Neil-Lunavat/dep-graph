@@ -1,0 +1,25 @@
+{
+ "instance_id": "narwhals-dev__narwhals-143",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "b22fc47f6ca376fa0ae9115800fa9b8ddfdbe99b",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_pandas_like/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_pandas_like/series.py": [
+   "ser"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.7
+}

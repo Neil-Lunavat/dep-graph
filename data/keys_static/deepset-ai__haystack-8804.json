@@ -1,0 +1,41 @@
+{
+ "instance_id": "deepset-ai__haystack-8804",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "ad5d29d92fec1592ee8a8597df46ea09b9260f8a",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/converters/__init__.py",
+  "haystack/components/converters/docx.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/__init__.py": [
+   "haystack"
+  ],
+  "haystack/components/__init__.py": [
+   "components"
+  ],
+  "haystack/components/converters/__init__.py": [
+   "converters"
+  ],
+  "haystack/components/converters/docx.py": [
+   "DOCXToDocument",
+   "_get_docx_metadata",
+   "document",
+   "docx",
+   "docx_document",
+   "docx_metadata",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

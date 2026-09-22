@@ -1,0 +1,33 @@
+{
+ "instance_id": "scipp__plopp-435",
+ "repo_key": "scipp/plopp",
+ "base_commit": "96bc68d48abb1a420eda6262f0380870b2d36a2b",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/widgets/slice.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/core/utils.py": [
+   "coord_element_to_string"
+  ],
+  "src/plopp/widgets/slice.py": [
+   "coord",
+   "da",
+   "dim",
+   "label",
+   "slider",
+   "slider_constr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

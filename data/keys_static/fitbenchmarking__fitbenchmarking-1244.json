@@ -1,0 +1,39 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-1244",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "bf51c519b48a817bcceaf59332081343a358c608",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/core/fitting_benchmarking.py",
+  "setup.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/core/fitting_benchmarking.py": [
+   "_",
+   "checkpointer",
+   "controller",
+   "emissions",
+   "emissions_tracker",
+   "grabbed_output",
+   "num_runs",
+   "options",
+   "perform_fit",
+   "start_values_index",
+   "track_emissions"
+  ],
+  "fitbenchmarking/utils/options.py": [
+   "table_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 85,
+  "names_resolved_in_repo": 75,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

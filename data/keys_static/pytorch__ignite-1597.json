@@ -1,0 +1,31 @@
+{
+ "instance_id": "pytorch__ignite-1597",
+ "repo_key": "pytorch/ignite",
+ "base_commit": "02030d5b614311e167c4ca3ff38d6fc1f09d9ffd",
+ "status": "ok",
+ "co_edited": [
+  "ignite/handlers/checkpoint.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ignite/handlers/checkpoint.py": [
+   "_check_lt_n_saved",
+   "_compare_fn",
+   "_saved",
+   "greater_or_equal",
+   "new",
+   "priority",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

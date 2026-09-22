@@ -1,0 +1,31 @@
+{
+ "instance_id": "kozea__weasyprint-2404",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "fb462618190e87b4f0dec0bb677bcdea40b448a7",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/draw/text.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/draw/text.py": [
+   "clusters",
+   "glyph_item",
+   "i",
+   "num_glyphs",
+   "offset",
+   "utf8_positions",
+   "utf8_slice"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

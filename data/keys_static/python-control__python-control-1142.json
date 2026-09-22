@@ -1,0 +1,29 @@
+{
+ "instance_id": "python-control__python-control-1142",
+ "repo_key": "python-control/python-control",
+ "base_commit": "394e1c2c638cc0fe37d584fee6e4799794b3666e",
+ "status": "ok",
+ "co_edited": [
+  "control/xferfcn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/xferfcn.py": [
+   "i",
+   "j",
+   "k",
+   "out",
+   "unsupported_types"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

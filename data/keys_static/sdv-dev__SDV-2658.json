@@ -1,0 +1,64 @@
+{
+ "instance_id": "sdv-dev__SDV-2658",
+ "repo_key": "sdv-dev/sdv",
+ "base_commit": "a400b4e963fb140290007835ff7e2872b9d330b9",
+ "status": "ok",
+ "co_edited": [
+  "sdv/cag/one_hot_encoding.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sdv/__init__.py": [
+   "sdv"
+  ],
+  "sdv/_utils.py": [
+   "_create_unique_name",
+   "_utils"
+  ],
+  "sdv/cag/_utils.py": [
+   "_remove_columns_from_metadata",
+   "columns_to_drop"
+  ],
+  "sdv/cag/base.py": [
+   "__init__"
+  ],
+  "sdv/cag/one_hot_encoding.py": [
+   "EPSILON",
+   "_categorical_column",
+   "_column_names",
+   "_validate_init_inputs",
+   "categories",
+   "col",
+   "column",
+   "column_names",
+   "column_to_index",
+   "data",
+   "idx",
+   "indices",
+   "learning_strategy",
+   "max_category_indices",
+   "md",
+   "metadata",
+   "name",
+   "num_cols",
+   "num_rows",
+   "one_hot_data",
+   "self",
+   "table_data",
+   "table_name",
+   "transformed",
+   "transformed_data",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 219,
+  "names_resolved_in_repo": 140,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

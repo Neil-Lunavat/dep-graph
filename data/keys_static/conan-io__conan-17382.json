@@ -1,0 +1,25 @@
+{
+ "instance_id": "conan-io__conan-17382",
+ "repo_key": "conan-io/conan",
+ "base_commit": "aa4920ec0935511b0f3d8f57040b70c00996e0c4",
+ "status": "ok",
+ "co_edited": [
+  "conan/tools/system/package_manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/tools/system/package_manager.py": [
+   "check_command"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

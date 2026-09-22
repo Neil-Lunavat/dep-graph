@@ -1,0 +1,29 @@
+{
+ "instance_id": "tox-dev__tox-2212",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "957a280af356575b00ac6bee34fb02919e95766e",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/tox_env/python/api.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/tox_env/python/api.py": [
+   "changed",
+   "conf",
+   "k",
+   "old",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

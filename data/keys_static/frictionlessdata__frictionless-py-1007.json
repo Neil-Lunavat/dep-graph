@@ -1,0 +1,41 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-1007",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "35425305296f34f0ce902994151b2d7bbf0aca5b",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/errors/cell.py",
+  "frictionless/steps/cell.py",
+  "frictionless/steps/row.py",
+  "frictionless/steps/table.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/step.py": [
+   "__init__"
+  ],
+  "frictionless/steps/row.py": [
+   "descriptor",
+   "field_names",
+   "reverse",
+   "self"
+  ],
+  "frictionless/steps/table.py": [
+   "from_field_names",
+   "mode",
+   "self",
+   "to_field_names",
+   "use_hash"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

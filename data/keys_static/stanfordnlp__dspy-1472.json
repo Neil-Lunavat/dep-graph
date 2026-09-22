@@ -1,0 +1,36 @@
+{
+ "instance_id": "stanfordnlp__dspy-1472",
+ "repo_key": "stanfordnlp/dspy",
+ "base_commit": "2dbc249b7d5def49aecaf8ab23d147e15ca6c63e",
+ "status": "ok",
+ "co_edited": [
+  "dspy/evaluate/evaluate.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dspy/evaluate/evaluate.py": [
+   "HTML",
+   "configure_dataframe_for_ipython_notebook_display",
+   "df",
+   "df_to_display",
+   "display",
+   "display_dataframe",
+   "is_in_ipython_notebook_environment",
+   "message",
+   "metric_name",
+   "obj",
+   "stylize_metric_name",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 153,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

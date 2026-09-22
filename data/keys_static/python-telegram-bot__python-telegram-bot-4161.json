@@ -1,0 +1,35 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4161",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "8a542e22a0c32d7122c4735004ca51bc072ef313",
+ "status": "ok",
+ "co_edited": [
+  "telegram/ext/_application.py",
+  "telegram/ext/_updater.py",
+  "telegram/ext/_utils/webhookhandler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/ext/_application.py": [
+   "unix"
+  ],
+  "telegram/ext/_updater.py": [
+   "unix"
+  ],
+  "telegram/ext/_utils/webhookhandler.py": [
+   "_http_server",
+   "self",
+   "unix"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 223,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

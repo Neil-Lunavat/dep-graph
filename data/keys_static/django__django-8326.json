@@ -1,0 +1,33 @@
+{
+ "instance_id": "django__django-8326",
+ "repo_key": "django/django",
+ "base_commit": "af1fa5e7da21c57a4037e67f93493af4e78d454a",
+ "status": "ok",
+ "co_edited": [
+  "django/core/management/commands/diffsettings.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/core/management/commands/diffsettings.py": [
+   "default_settings",
+   "key",
+   "options",
+   "output",
+   "output_func",
+   "output_hash",
+   "output_unified",
+   "self",
+   "user_settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.5
+}

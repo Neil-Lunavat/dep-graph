@@ -1,0 +1,39 @@
+{
+ "instance_id": "pyvista__pyvista-4782",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "5cd232d8359dae5b04cbfafb5e4a07e220636fce",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/filters/composite.py",
+  "pyvista/core/filters/data_set.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/core/_vtk_core.py": [
+   "_vtk"
+  ],
+  "pyvista/core/filters/composite.py": [
+   "sample"
+  ],
+  "pyvista/core/filters/data_set.py": [
+   "DataSetFilters",
+   "alg",
+   "err",
+   "locator",
+   "locator_map",
+   "mark_blank",
+   "pass_field_data",
+   "sample"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 81,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

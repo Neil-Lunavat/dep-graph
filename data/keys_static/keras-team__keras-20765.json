@@ -1,0 +1,47 @@
+{
+ "instance_id": "keras-team__keras-20765",
+ "repo_key": "keras-team/keras",
+ "base_commit": "e345cbdfba9c656b01ef4e116822ad03ffe9d804",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/layers/rnn/time_distributed.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/__init__.py": [
+   "keras"
+  ],
+  "keras/src/__init__.py": [
+   "src"
+  ],
+  "keras/src/backend/__init__.py": [
+   "backend"
+  ],
+  "keras/src/backend/config.py": [
+   "backend"
+  ],
+  "keras/src/layers/rnn/time_distributed.py": [
+   "batch_size",
+   "mask_shape",
+   "timesteps"
+  ],
+  "keras/src/utils/__init__.py": [
+   "utils"
+  ],
+  "keras/src/utils/module_utils.py": [
+   "module_utils",
+   "tensorflow",
+   "tf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,79 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1040",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "9a51501d727c11ce486b9918dc4d6eced80bbddc",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_arrow/series.py",
+  "narwhals/_pandas_like/series.py",
+  "narwhals/_polars/series.py",
+  "narwhals/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/__init__.py": [
+   "narwhals"
+  ],
+  "narwhals/_arrow/series.py": [
+   "_name",
+   "c",
+   "cols",
+   "columns",
+   "da",
+   "drop_first",
+   "name",
+   "null_col_pa",
+   "null_col_pl",
+   "output_order",
+   "self",
+   "separator",
+   "series",
+   "v"
+  ],
+  "narwhals/_pandas_like/__init__.py": [
+   "_pandas_like"
+  ],
+  "narwhals/_pandas_like/series.py": [
+   "_backend_version",
+   "_implementation",
+   "cols",
+   "drop_first",
+   "has_nulls",
+   "name",
+   "null_col_pd",
+   "null_col_pl",
+   "output_order",
+   "result",
+   "self",
+   "separator",
+   "series"
+  ],
+  "narwhals/_pandas_like/utils.py": [
+   "select_columns_by_name",
+   "utils"
+  ],
+  "narwhals/_polars/series.py": [
+   "_",
+   "_from_native_series",
+   "_native_series",
+   "drop_first",
+   "dtype",
+   "has_nulls",
+   "output_columns",
+   "result",
+   "self",
+   "ser",
+   "series"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 153,
+  "names_resolved_in_repo": 91,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

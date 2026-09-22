@@ -1,0 +1,53 @@
+{
+ "instance_id": "narwhals-dev__narwhals-1613",
+ "repo_key": "narwhals-dev/narwhals",
+ "base_commit": "79de45774925b5dcdea17c3e1fda1aeac38d8c18",
+ "status": "ok",
+ "co_edited": [
+  "narwhals/_arrow/group_by.py",
+  "narwhals/_pandas_like/group_by.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "narwhals/_arrow/group_by.py": [
+   "expected_old_names_indices",
+   "expected_pyarrow_column_names",
+   "i",
+   "idx",
+   "index_map",
+   "item",
+   "keys",
+   "msg",
+   "new_column_names",
+   "output_name",
+   "pyarrow_output_name",
+   "result_simple"
+  ],
+  "narwhals/_pandas_like/group_by.py": [
+   "col_name",
+   "expected_old_names",
+   "expected_old_names_indices",
+   "function",
+   "i",
+   "idx",
+   "index_map",
+   "item",
+   "msg",
+   "new_names",
+   "output_name",
+   "result_simple_aggs",
+   "simple_aggregations",
+   "simple_aggs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 127,
+  "names_resolved_in_repo": 75,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

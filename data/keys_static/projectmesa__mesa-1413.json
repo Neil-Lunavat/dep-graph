@@ -1,0 +1,41 @@
+{
+ "instance_id": "projectmesa__mesa-1413",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "5c68906b7f7f1d96c2467695b3ee0eb18d9c01ed",
+ "status": "ok",
+ "co_edited": [
+  "mesa/batchrunner.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mesa/batchrunner.py": [
+   "_make_model_kwargs",
+   "agent_data",
+   "data",
+   "display_progress",
+   "iteration",
+   "iterations",
+   "kwargs",
+   "model_data",
+   "p",
+   "parameters",
+   "pbar",
+   "process_func",
+   "results",
+   "run",
+   "run_id",
+   "runs_list",
+   "step"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 87,
+  "names_resolved_in_repo": 47,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

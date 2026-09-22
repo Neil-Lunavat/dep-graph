@@ -1,0 +1,32 @@
+{
+ "instance_id": "pyvista__pyvista-7040",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "9437248deb4600eaaedbd6c2796f9d3d8ff95167",
+ "status": "ok",
+ "co_edited": [
+  "examples/01-filter/contouring.py",
+  "pyvista/core/filters/image_data.py",
+  "pyvista/core/filters/poly_data.py",
+  "pyvista/examples/downloads.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "examples/01-filter/contouring.py": [
+   "label_map",
+   "mesh"
+  ],
+  "pyvista/core/errors.py": [
+   "PyVistaDeprecationWarning"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

@@ -1,0 +1,21 @@
+{
+ "instance_id": "ipython__ipython-14964",
+ "repo_key": "ipython/ipython",
+ "base_commit": "cbac235320fe91056a0fb6dba74cd8bef7fc21d9",
+ "status": "ok",
+ "co_edited": [
+  "IPython/core/ultratb.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

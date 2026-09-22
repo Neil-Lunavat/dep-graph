@@ -1,0 +1,50 @@
+{
+ "instance_id": "spacetelescope__jwst-7745",
+ "repo_key": "spacetelescope/jwst",
+ "base_commit": "c607b4e6c235986de089ccd3cd318d895936e632",
+ "status": "ok",
+ "co_edited": [
+  "jwst/refpix/irs2_subtract_reference.py",
+  "jwst/refpix/refpix_step.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "jwst/refpix/irs2_subtract_reference.py": [
+   "bad_pix",
+   "data",
+   "diff_m",
+   "diffs",
+   "good_idx",
+   "good_pix",
+   "high_diffs",
+   "high_means_idx",
+   "high_std_idx",
+   "integ",
+   "log",
+   "mean_mean",
+   "mean_std",
+   "n_int",
+   "ovr_corr_mitigation_ftr",
+   "ref",
+   "remaining_rp",
+   "rp_means",
+   "rp_stds",
+   "std_of_diffs",
+   "std_of_means",
+   "std_of_std"
+  ],
+  "jwst/refpix/refpix_step.py": [
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 124,
+  "names_resolved_in_repo": 56,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

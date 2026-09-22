@@ -1,0 +1,37 @@
+{
+ "instance_id": "aiogram__aiogram-1250",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "b311d59fce5d1f7554825b6c60daadcce189e9e7",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/utils/chat_action.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/client/bot.py": [
+   "action",
+   "chat_id",
+   "message_thread_id"
+  ],
+  "aiogram/types/message.py": [
+   "Message"
+  ],
+  "aiogram/utils/chat_action.py": [
+   "action",
+   "chat_id",
+   "event",
+   "message_thread_id",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

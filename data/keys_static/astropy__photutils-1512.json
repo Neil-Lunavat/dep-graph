@@ -1,0 +1,25 @@
+{
+ "instance_id": "astropy__photutils-1512",
+ "repo_key": "astropy/photutils",
+ "base_commit": "2f5e0759acc7477cc4c2ed185ce445825771af5a",
+ "status": "ok",
+ "co_edited": [
+  "photutils/detection/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "photutils/detection/core.py": [
+   "tbl"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

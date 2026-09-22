@@ -1,0 +1,25 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-933",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "387470a44fb96f96aa5faf32f83e44d29bbe1535",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/dialects/dialect_postgres.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/dialects/dialect_postgres.py": [
+   "postgres_dialect"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

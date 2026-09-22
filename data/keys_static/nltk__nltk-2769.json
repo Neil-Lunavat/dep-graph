@@ -1,0 +1,40 @@
+{
+ "instance_id": "nltk__nltk-2769",
+ "repo_key": "nltk/nltk",
+ "base_commit": "1244ab9fc4b130ae20127267d49eea506e30a9ae",
+ "status": "ok",
+ "co_edited": [
+  "nltk/tokenize/punkt.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/tokenize/punkt.py": [
+   "DEBUG_DECISION_FMT",
+   "REASON_DEFAULT_DECISION",
+   "_lang_vars",
+   "_ortho_heuristic",
+   "_params",
+   "_second_pass_annotation",
+   "d",
+   "decision_text",
+   "is_initial",
+   "match",
+   "self",
+   "sent_end_chars",
+   "tok",
+   "tokens",
+   "type",
+   "type_no_sentperiod"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 74,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.1
+}

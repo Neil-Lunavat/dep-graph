@@ -1,0 +1,29 @@
+{
+ "instance_id": "pydata__xarray-10141",
+ "repo_key": "pydata/xarray",
+ "base_commit": "bb539d8e89fa7601e69fb9dbf849b051c61a3a31",
+ "status": "ok",
+ "co_edited": [
+  "xarray/backends/api.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/backends/api.py": [
+   "backend",
+   "open_backend_dataset_parameters"
+  ],
+  "xarray/backends/common.py": [
+   "open_dataset_parameters"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

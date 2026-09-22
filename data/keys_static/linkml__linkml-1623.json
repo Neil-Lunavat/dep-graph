@@ -1,0 +1,33 @@
+{
+ "instance_id": "linkml__linkml-1623",
+ "repo_key": "linkml/linkml",
+ "base_commit": "3e04645fc5faf1d9a3486d9ff2fac7c7d7ea54ab",
+ "status": "ok",
+ "co_edited": [
+  "linkml/generators/jsonschemagen.py",
+  "linkml/utils/generator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/generators/jsonschemagen.py": [
+   "add_keyword",
+   "constraints",
+   "schema_type",
+   "self",
+   "slot"
+  ],
+  "linkml/utils/generator.py": [
+   "schemaview"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

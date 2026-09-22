@@ -1,0 +1,34 @@
+{
+ "instance_id": "keras-team__keras-19924",
+ "repo_key": "keras-team/keras",
+ "base_commit": "a2e9a5252d2eab389bd19d359e6e7325a8232c79",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/saving/saving_lib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/saving/saving_lib.py": [
+   "H5IOStore",
+   "_VARS_FNAME_H5",
+   "asset_store",
+   "close",
+   "mode",
+   "weights_file_path",
+   "weights_store",
+   "working_dir",
+   "write_zf",
+   "zf"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

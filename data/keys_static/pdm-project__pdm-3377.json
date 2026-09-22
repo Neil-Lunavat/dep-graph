@@ -1,0 +1,67 @@
+{
+ "instance_id": "pdm-project__pdm-3377",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "f0ad0c07af9184da790f689c5f1e05344cf6eaa2",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/formats/poetry.py",
+  "src/pdm/models/candidates.py",
+  "src/pdm/models/requirements.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/_types.py": [
+   "RequirementDict"
+  ],
+  "src/pdm/exceptions.py": [
+   "RequirementError"
+  ],
+  "src/pdm/formats/poetry.py": [
+   "_convert_specifier",
+   "fix_req_path",
+   "name",
+   "pdm_req",
+   "req_dict"
+  ],
+  "src/pdm/models/candidates.py": [
+   "project_root",
+   "req",
+   "self"
+  ],
+  "src/pdm/models/requirements.py": [
+   "FileRequirement",
+   "Requirement",
+   "absolute_path",
+   "check_installable",
+   "cls",
+   "create",
+   "e",
+   "editable",
+   "from_req_dict",
+   "is_vcs",
+   "kwargs",
+   "name",
+   "path",
+   "r",
+   "req_dict",
+   "result",
+   "self",
+   "version"
+  ],
+  "src/pdm/models/setup.py": [
+   "Setup",
+   "from_directory",
+   "name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 98,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

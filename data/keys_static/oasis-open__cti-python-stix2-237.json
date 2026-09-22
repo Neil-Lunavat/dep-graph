@@ -1,0 +1,46 @@
+{
+ "instance_id": "oasis-open__cti-python-stix2-237",
+ "repo_key": "oasis-open/cti-python-stix2",
+ "base_commit": "06e23b08b8877bedc909889800682eec16a219c9",
+ "status": "ok",
+ "co_edited": [
+  "stix2/properties.py",
+  "stix2/v20/observables.py",
+  "stix2/v21/observables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "stix2/base.py": [
+   "_Observable",
+   "_STIXBase",
+   "_inner",
+   "base"
+  ],
+  "stix2/properties.py": [
+   "BinaryProperty",
+   "BooleanProperty",
+   "CallableValues",
+   "DictionaryProperty",
+   "args",
+   "kwargs",
+   "parent_instance",
+   "self"
+  ],
+  "stix2/v20/observables.py": [
+   "self"
+  ],
+  "stix2/v21/observables.py": [
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

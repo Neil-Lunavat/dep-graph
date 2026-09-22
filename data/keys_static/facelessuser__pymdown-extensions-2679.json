@@ -1,0 +1,36 @@
+{
+ "instance_id": "facelessuser__pymdown-extensions-2679",
+ "repo_key": "facelessuser/pymdown-extensions",
+ "base_commit": "fbf4bf22da3bc864f24b4ee6a2c05b145fb6c304",
+ "status": "ok",
+ "co_edited": [
+  "pymdownx/blocks/caption.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymdownx/blocks/block.py": [
+   "md"
+  ],
+  "pymdownx/blocks/caption.py": [
+   "el",
+   "fig_num",
+   "fig_type",
+   "md",
+   "prepend",
+   "self",
+   "template",
+   "update_tag",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

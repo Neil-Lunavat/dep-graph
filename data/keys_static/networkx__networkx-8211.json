@@ -1,0 +1,21 @@
+{
+ "instance_id": "networkx__networkx-8211",
+ "repo_key": "networkx/networkx",
+ "base_commit": "8ec80c76f34ccb5df0ab197eef597da49d86f029",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/clique.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

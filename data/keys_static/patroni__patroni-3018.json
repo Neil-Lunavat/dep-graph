@@ -1,0 +1,29 @@
+{
+ "instance_id": "patroni__patroni-3018",
+ "repo_key": "patroni/patroni",
+ "base_commit": "b09af642e6a345c021860148fd9946e1698ad545",
+ "status": "ok",
+ "co_edited": [
+  "patroni/postgresql/validator.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "patroni/postgresql/available_parameters/__init__.py"
+ ],
+ "symbol": {
+  "patroni/postgresql/validator.py": [
+   "_read_postgres_gucs_validators_file",
+   "file",
+   "stream"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 172,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 44,
+  "defined_in_test_file": 0,
+  "jedi_errors": 14,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

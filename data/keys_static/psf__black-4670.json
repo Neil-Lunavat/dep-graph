@@ -1,0 +1,40 @@
+{
+ "instance_id": "psf__black-4670",
+ "repo_key": "psf/black",
+ "base_commit": "bbc36ea205292e213b0c9a448f630d19726605e4",
+ "status": "ok",
+ "co_edited": [
+  "src/black/ranges.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/black/nodes.py": [
+   "syms"
+  ],
+  "src/black/ranges.py": [
+   "node"
+  ],
+  "src/blib2to3/pgen2/token.py": [
+   "NEWLINE"
+  ],
+  "src/blib2to3/pygram.py": [
+   "decorated"
+  ],
+  "src/blib2to3/pytree.py": [
+   "Leaf",
+   "Node",
+   "insert_child",
+   "type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

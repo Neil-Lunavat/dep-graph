@@ -1,0 +1,56 @@
+{
+ "instance_id": "astropy__astropy-7441",
+ "repo_key": "astropy/astropy",
+ "base_commit": "5e5764ed27a8ee1a162a09e3398fcfb7481389af",
+ "status": "ok",
+ "co_edited": [
+  "astropy/time/core.py",
+  "astropy/time/formats.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/_erfa/__init__.py": [
+   "erfa"
+  ],
+  "astropy/time/core.py": [
+   "format",
+   "out",
+   "replicate",
+   "self",
+   "tm",
+   "to_datetime",
+   "val"
+  ],
+  "astropy/time/formats.py": [
+   "TimeDeltaDatetime",
+   "TimeDeltaFormat",
+   "TimeUnique",
+   "_check_scale",
+   "_check_val_type",
+   "_scale",
+   "iterator",
+   "jd",
+   "jd1",
+   "mask_if_needed",
+   "name",
+   "out",
+   "sec",
+   "self",
+   "set_jds",
+   "val",
+   "val1",
+   "val2",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 91,
+  "names_resolved_in_repo": 52,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.2
+}

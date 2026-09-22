@@ -1,0 +1,29 @@
+{
+ "instance_id": "matplotlib__matplotlib-21481",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "d448de31b7deaec8310caaf8bba787e097bf9211",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/_layoutgrid.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/_layoutgrid.py": [
+   "child",
+   "children",
+   "i",
+   "j",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

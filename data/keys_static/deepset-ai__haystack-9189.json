@@ -1,0 +1,68 @@
+{
+ "instance_id": "deepset-ai__haystack-9189",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "f6fceb1b568bf08f8244cf123b71cf32af8bec33",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/embedders/azure_document_embedder.py",
+  "haystack/components/embedders/openai_document_embedder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/__init__.py": [
+   "haystack"
+  ],
+  "haystack/components/__init__.py": [
+   "components"
+  ],
+  "haystack/components/embedders/__init__.py": [
+   "embedders"
+  ],
+  "haystack/components/embedders/azure_document_embedder.py": [
+   "AzureOpenAIDocumentEmbedder",
+   "_init_http_client",
+   "api_key",
+   "api_version",
+   "async_client",
+   "azure_ad_token",
+   "azure_ad_token_provider",
+   "azure_deployment",
+   "azure_endpoint",
+   "client",
+   "client_args",
+   "default_headers",
+   "http_client_kwargs",
+   "max_retries",
+   "model",
+   "organization",
+   "self",
+   "timeout"
+  ],
+  "haystack/components/embedders/openai_document_embedder.py": [
+   "OpenAIDocumentEmbedder"
+  ],
+  "haystack/core/component/component.py": [
+   "component"
+  ],
+  "haystack/core/serialization.py": [
+   "default_from_dict",
+   "default_to_dict"
+  ],
+  "haystack/logging.py": [
+   "logging"
+  ],
+  "haystack/utils/auth.py": [
+   "resolve_value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 81,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

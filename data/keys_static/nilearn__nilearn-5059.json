@@ -1,0 +1,44 @@
+{
+ "instance_id": "nilearn__nilearn-5059",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "b851ecc5a14a6d11aa9f8c2aa59cbede493e699f",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/_utils/class_inspect.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/__init__.py": [
+   "nilearn"
+  ],
+  "nilearn/_utils/class_inspect.py": [
+   "check_masker_clean_kwargs",
+   "check_nifti_masker_clean",
+   "check_nifti_masker_detrending",
+   "check_nifti_masker_fit_list_3d",
+   "check_nifti_masker_fit_with_3d_mask",
+   "check_nifti_masker_fit_with_4d_mask",
+   "check_nifti_masker_fit_with_empty_mask",
+   "check_surface_masker_clean",
+   "check_surface_masker_detrending",
+   "detrended_signal",
+   "estimator",
+   "input_img",
+   "is_multimasker",
+   "is_surf_masker",
+   "niimg_input",
+   "signal",
+   "tags"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 234,
+  "names_resolved_in_repo": 99,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 8,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 8.1
+}

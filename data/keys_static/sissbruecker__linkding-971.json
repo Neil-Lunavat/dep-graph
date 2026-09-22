@@ -1,0 +1,33 @@
+{
+ "instance_id": "sissbruecker__linkding-971",
+ "repo_key": "sissbruecker/linkding",
+ "base_commit": "fc48b266a8c6005dca7d21ff96f4392ef62c0ccf",
+ "status": "ok",
+ "co_edited": [
+  "bookmarks/utils.py",
+  "siteroot/settings/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "bookmarks/utils.py": [
+   "claims",
+   "email",
+   "generate_username",
+   "username"
+  ],
+  "siteroot/settings/base.py": [
+   "OIDC_RP_SCOPES",
+   "OIDC_USERNAME_CLAIM"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 13,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

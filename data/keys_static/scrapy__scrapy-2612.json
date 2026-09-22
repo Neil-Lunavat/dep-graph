@@ -1,0 +1,35 @@
+{
+ "instance_id": "scrapy__scrapy-2612",
+ "repo_key": "scrapy/scrapy",
+ "base_commit": "7b49b9c0f53396ac89cbd74930bc4c6e41d41901",
+ "status": "ok",
+ "co_edited": [
+  "scrapy/spiderloader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "scrapy/spiderloader.py": [
+   "_check_name_duplicates",
+   "_found",
+   "cls",
+   "dupes",
+   "locations",
+   "mod",
+   "module",
+   "msg",
+   "name",
+   "self",
+   "spcls"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

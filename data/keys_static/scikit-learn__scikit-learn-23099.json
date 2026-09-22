@@ -1,0 +1,36 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-23099",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "42d235924efa64987a19e945035c85414c53d4f0",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/gaussian_process/_gpr.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/gaussian_process/_gpr.py": [
+   "X",
+   "n_targets",
+   "n_targets_seen",
+   "self",
+   "y",
+   "y_cov",
+   "y_mean",
+   "y_var"
+  ],
+  "sklearn/utils/_param_validation.py": [
+   "Interval",
+   "closed"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 11.2
+}

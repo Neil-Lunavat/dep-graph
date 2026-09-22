@@ -1,0 +1,29 @@
+{
+ "instance_id": "networkx__networkx-2773",
+ "repo_key": "networkx/networkx",
+ "base_commit": "3d7ea0d690e59c2d5d223528ea9e21b21fb7f8a4",
+ "status": "ok",
+ "co_edited": [
+  "networkx/generators/degree_seq.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/generators/degree_seq.py": [
+   "c",
+   "mapping",
+   "order",
+   "u",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

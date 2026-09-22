@@ -1,0 +1,60 @@
+{
+ "instance_id": "openai__openai-agents-python-998",
+ "repo_key": "openai/openai-agents-python",
+ "base_commit": "b09d37d8326c5d21760aaf10e9ff2eb8a01ebdaa",
+ "status": "ok",
+ "co_edited": [
+  "src/agents/agent.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/agents/agent.py": [
+   "__post_init__",
+   "handoff_description",
+   "handoffs",
+   "hooks",
+   "input_guardrails",
+   "instructions",
+   "mcp_config",
+   "mcp_servers",
+   "model",
+   "model_settings",
+   "name",
+   "output_guardrails",
+   "output_type",
+   "prompt",
+   "reset_tool_choice",
+   "self",
+   "tool_use_behavior",
+   "tools"
+  ],
+  "src/agents/agent_output.py": [
+   "AgentOutputSchemaBase",
+   "agent_output"
+  ],
+  "src/agents/lifecycle.py": [
+   "AgentHooksBase",
+   "lifecycle"
+  ],
+  "src/agents/model_settings.py": [
+   "ModelSettings"
+  ],
+  "src/agents/models/__init__.py": [
+   "models"
+  ],
+  "src/agents/models/interface.py": [
+   "Model",
+   "interface"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 176,
+  "names_resolved_in_repo": 103,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

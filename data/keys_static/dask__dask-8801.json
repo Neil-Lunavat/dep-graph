@@ -1,0 +1,30 @@
+{
+ "instance_id": "dask__dask-8801",
+ "repo_key": "dask/dask",
+ "base_commit": "9634da11a5a6e5eb64cf941d2088aabffe504adb",
+ "status": "ok",
+ "co_edited": [
+  "dask/config.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/config.py": [
+   "_load_config_file",
+   "config",
+   "configs",
+   "exc",
+   "f",
+   "path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

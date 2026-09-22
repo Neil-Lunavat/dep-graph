@@ -1,0 +1,38 @@
+{
+ "instance_id": "pvlib__pvlib-python-1948",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "780c3ab8536db878ebcc65abd0ec90483005c658",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/solarposition.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/solarposition.py": [
+   "_datetime_to_unixtime",
+   "dtindex",
+   "epoch",
+   "hours",
+   "hrs",
+   "hrs_minus_tzs",
+   "naive_times",
+   "time",
+   "times",
+   "ts",
+   "tz_info",
+   "tzs",
+   "unixtime",
+   "utcday"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 15,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

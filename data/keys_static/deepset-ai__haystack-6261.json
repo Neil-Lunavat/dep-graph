@@ -1,0 +1,27 @@
+{
+ "instance_id": "deepset-ai__haystack-6261",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "676da681d08e2fc97b1e6ff66ef98f57c6f0260f",
+ "status": "ok",
+ "co_edited": [
+  "haystack/nodes/other/join_docs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/nodes/other/join_docs.py": [
+   "item_best_score",
+   "tmp",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

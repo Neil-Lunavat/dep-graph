@@ -1,0 +1,25 @@
+{
+ "instance_id": "numba__numba-5176",
+ "repo_key": "numba/numba",
+ "base_commit": "d7953a18dbf5ea231dc16e967ce8e9b754578ea6",
+ "status": "ok",
+ "co_edited": [
+  "numba/typing/templates.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/typing/templates.py": [
+   "kws"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 9,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

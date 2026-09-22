@@ -1,0 +1,93 @@
+{
+ "instance_id": "python__mypy-19615",
+ "repo_key": "python/mypy",
+ "base_commit": "a3eb219fb9a1c4d700b897ebd5e0ba95d2846c35",
+ "status": "ok",
+ "co_edited": [
+  "mypy/checker.py",
+  "mypy/checkmember.py",
+  "mypy/fixup.py",
+  "mypy/messages.py",
+  "mypy/nodes.py",
+  "mypy/semanal.py",
+  "mypy/types.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "mypy/__init__.py": [
+   "mypy"
+  ],
+  "mypy/checker.py": [
+   "definition",
+   "defn",
+   "e",
+   "extract_callable_type",
+   "func",
+   "getter_type",
+   "item",
+   "item_type",
+   "node",
+   "self",
+   "sig",
+   "type_name",
+   "var"
+  ],
+  "mypy/checkmember.py": [
+   "expanded"
+  ],
+  "mypy/fixup.py": [
+   "d",
+   "item",
+   "typ"
+  ],
+  "mypy/messages.py": [
+   "arg",
+   "definition",
+   "definition_arg_names",
+   "s",
+   "tp"
+  ],
+  "mypy/nodes.py": [
+   "Decorator",
+   "FuncDef",
+   "SYMBOL_FUNCBASE_TYPES",
+   "SymbolNode",
+   "definition",
+   "func",
+   "get_func_def",
+   "items",
+   "name",
+   "setter_type",
+   "typ",
+   "type",
+   "var"
+  ],
+  "mypy/semanal.py": [
+   "callable",
+   "first_item",
+   "item",
+   "typ"
+  ],
+  "mypy/types.py": [
+   "AnyType",
+   "CallableType",
+   "Overloaded",
+   "ProperType",
+   "SymbolNode",
+   "TypeOfAny",
+   "definition",
+   "from_error",
+   "types"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 167,
+  "names_resolved_in_repo": 121,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 15,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

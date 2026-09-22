@@ -1,0 +1,25 @@
+{
+ "instance_id": "streamlink__streamlink-2102",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "e29c8b75e664671216abc8c660f2dec21310cec9",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/ok_live.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugins/ok_live.py": [
+   "_url_re"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

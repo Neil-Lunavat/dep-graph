@@ -1,0 +1,36 @@
+{
+ "instance_id": "nltk__nltk-2768",
+ "repo_key": "nltk/nltk",
+ "base_commit": "6c07b5e99389b47e13c5e70fa07b37ef29ea8f73",
+ "status": "ok",
+ "co_edited": [
+  "nltk/translate/ribes_score.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nltk/translate/ribes_score.py": [
+   "find_increasing_sequences",
+   "increasing_sequences",
+   "normalize",
+   "num_increasing_pairs",
+   "num_possible_pairs",
+   "seq",
+   "tau",
+   "worder",
+   "worder_len"
+  ],
+  "nltk/util.py": [
+   "choose"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

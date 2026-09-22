@@ -1,0 +1,49 @@
+{
+ "instance_id": "mikedh__trimesh-609",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "db0f8e7c6a3c0a3b027a93c15a33a8cc25c7f5b2",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/geometry.py",
+  "trimesh/util.py",
+  "trimesh/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/constants.py": [
+   "constants"
+  ],
+  "trimesh/geometry.py": [
+   "a",
+   "b",
+   "dot",
+   "epsilon",
+   "perp",
+   "rotation"
+  ],
+  "trimesh/util.py": [
+   "_STRICT",
+   "generate_basis",
+   "log",
+   "result",
+   "util",
+   "x",
+   "x_norm",
+   "y",
+   "z"
+  ],
+  "trimesh/version.py": [
+   "__version__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

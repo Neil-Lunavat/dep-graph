@@ -1,0 +1,34 @@
+{
+ "instance_id": "kedro-org__kedro-4178",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "fd6a69d78e7ab2de2d0392d55af2942bb69e6ab6",
+ "status": "ok",
+ "co_edited": [
+  "features/steps/cli_steps.py",
+  "kedro/templates/project/hooks/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "features/steps/cli_steps.py": [
+   "context",
+   "pip_install_project_and_dev_dependencies"
+  ],
+  "kedro/templates/project/hooks/utils.py": [
+   "_remove_from_toml",
+   "dev_pyproject_requirements",
+   "docs_pyproject_requirements",
+   "pyproject_file_path",
+   "selected_tools_list"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

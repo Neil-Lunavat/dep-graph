@@ -1,0 +1,36 @@
+{
+ "instance_id": "linkml__linkml-1709",
+ "repo_key": "linkml/linkml",
+ "base_commit": "598376ce7f8c11bd3cf31f0ca7e3d5c34770021a",
+ "status": "ok",
+ "co_edited": [
+  "linkml/generators/docgen.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/generators/docgen.py": [
+   "_write",
+   "args",
+   "cli",
+   "dialect",
+   "directory",
+   "hierarchical_class_view",
+   "index_name",
+   "out_str",
+   "self",
+   "template_directory",
+   "use_slot_uris",
+   "yamlfile"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

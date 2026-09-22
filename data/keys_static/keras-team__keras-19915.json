@@ -1,0 +1,29 @@
+{
+ "instance_id": "keras-team__keras-19915",
+ "repo_key": "keras-team/keras",
+ "base_commit": "f0bae912201bbd265a3485ccf4f490be2fc675c7",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/export/export_lib.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/export/export_lib.py": [
+   "d",
+   "make_tensor_spec",
+   "model",
+   "structure",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 6.7
+}

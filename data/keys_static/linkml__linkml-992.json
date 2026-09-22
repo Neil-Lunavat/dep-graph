@@ -1,0 +1,42 @@
+{
+ "instance_id": "linkml__linkml-992",
+ "repo_key": "linkml/linkml",
+ "base_commit": "a4d277de1b25fb00f0a4df5a3cc0256accf323d3",
+ "status": "ok",
+ "co_edited": [
+  "linkml/linter/cli.py",
+  "linkml/linter/formatters/terminal_formatter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/linter/cli.py": [
+   "formatter",
+   "output",
+   "verbose"
+  ],
+  "linkml/linter/formatters/formatter.py": [
+   "__init__",
+   "write"
+  ],
+  "linkml/linter/formatters/terminal_formatter.py": [
+   "TerminalFormatter",
+   "current_schema",
+   "file",
+   "key",
+   "name",
+   "problem_counts",
+   "self",
+   "verbose"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

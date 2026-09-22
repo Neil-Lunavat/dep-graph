@@ -1,0 +1,25 @@
+{
+ "instance_id": "pytorch__torchtune-997",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "f35e5d6a840e1aeadefa92e87fd331c4798a0022",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/models/phi3/_component_builders.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/models/phi3/_component_builders.py": [
+   "rope_base"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

@@ -1,0 +1,39 @@
+{
+ "instance_id": "matrix-org__synapse-5307",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "58cce39f3a91d81f3c994d510b0a283efd468ec7",
+ "status": "ok",
+ "co_edited": [
+  "synapse/config/registration.py",
+  "synapse/crypto/keyring.py",
+  "synapse/storage/_base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/crypto/keyring.py": [
+   "from_server",
+   "key_id",
+   "response_json",
+   "self",
+   "time_added_ms",
+   "verify_keys"
+  ],
+  "synapse/storage/_base.py": [
+   "self",
+   "set_expiration_date_for_user_txn",
+   "txn",
+   "user",
+   "user_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

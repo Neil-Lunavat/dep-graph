@@ -1,0 +1,50 @@
+{
+ "instance_id": "kedro-org__kedro-3680",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "ac589ca13b2dccaa96526ec000a7778d297b24ff",
+ "status": "ok",
+ "co_edited": [
+  "kedro/framework/cli/__init__.py",
+  "kedro/framework/cli/cli.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/__init__.py": [
+   "kedro"
+  ],
+  "kedro/framework/__init__.py": [
+   "framework"
+  ],
+  "kedro/framework/cli/__init__.py": [
+   "BRIGHT_BLACK",
+   "ORANGE",
+   "cli"
+  ],
+  "kedro/framework/cli/cli.py": [
+   "catch_exception",
+   "cli",
+   "hint",
+   "main",
+   "message",
+   "project_groups",
+   "result",
+   "self",
+   "warn"
+  ],
+  "kedro/framework/cli/utils.py": [
+   "command_with_verbosity",
+   "load_entry_points",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

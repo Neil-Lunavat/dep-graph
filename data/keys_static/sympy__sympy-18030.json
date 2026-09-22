@@ -1,0 +1,87 @@
+{
+ "instance_id": "sympy__sympy-18030",
+ "repo_key": "sympy/sympy",
+ "base_commit": "7501960ea18912f9055a32be50bda30805fc0c95",
+ "status": "ok",
+ "co_edited": [
+  "sympy/polys/polyfuncs.py",
+  "sympy/polys/specialpolys.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/add.py": [
+   "Add"
+  ],
+  "sympy/core/basic.py": [
+   "Basic",
+   "free_symbols",
+   "subs"
+  ],
+  "sympy/core/compatibility.py": [
+   "range"
+  ],
+  "sympy/core/containers.py": [
+   "Tuple",
+   "containers"
+  ],
+  "sympy/core/expr.py": [
+   "expand"
+  ],
+  "sympy/core/mul.py": [
+   "Mul"
+  ],
+  "sympy/core/singleton.py": [
+   "S"
+  ],
+  "sympy/core/symbol.py": [
+   "Dummy",
+   "symbols"
+  ],
+  "sympy/polys/polyfuncs.py": [
+   "X",
+   "Y",
+   "d",
+   "data",
+   "n",
+   "x"
+  ],
+  "sympy/polys/specialpolys.py": [
+   "X",
+   "Y",
+   "i",
+   "interpolating_poly",
+   "n",
+   "numert",
+   "ok",
+   "x"
+  ],
+  "sympy/utilities/__init__.py": [
+   "utilities"
+  ],
+  "sympy/utilities/decorator.py": [
+   "public"
+  ],
+  "sympy/utilities/iterables.py": [
+   "subsets"
+  ],
+  "sympy/utilities/misc.py": [
+   "filldedent"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 168,
+  "names_resolved_in_repo": 90,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 17.2
+}

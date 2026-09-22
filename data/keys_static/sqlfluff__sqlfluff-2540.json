@@ -1,0 +1,52 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-2540",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "ef7d86548757fcbc3405ac421c38acefa55db9aa",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/core/rules/config_info.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "src/sqlfluff/rules/L062.py"
+ ],
+ "symbol": {
+  "src/sqlfluff/__init__.py": [
+   "sqlfluff"
+  ],
+  "src/sqlfluff/core/__init__.py": [
+   "core"
+  ],
+  "src/sqlfluff/core/parser/segments/base.py": [
+   "raw",
+   "raw_upper",
+   "segments"
+  ],
+  "src/sqlfluff/core/rules/__init__.py": [
+   "rules"
+  ],
+  "src/sqlfluff/core/rules/base.py": [
+   "BaseRule",
+   "LintResult",
+   "RuleContext",
+   "_eval",
+   "anchor",
+   "base",
+   "description",
+   "segment"
+  ],
+  "src/sqlfluff/core/rules/doc_decorators.py": [
+   "doc_decorators",
+   "document_configuration"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 214,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 32,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

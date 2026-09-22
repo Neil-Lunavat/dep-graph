@@ -1,0 +1,32 @@
+{
+ "instance_id": "reflex-dev__reflex-4620",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "427d7c56abe33a300f211680edd22b90c6981ef7",
+ "status": "ok",
+ "co_edited": [
+  "reflex/vars/number.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/vars/number.py": [
+   "equal_operation",
+   "greater_than_operation",
+   "greater_than_or_equal_operation",
+   "less_than_operation",
+   "less_than_or_equal_operation",
+   "not_equal_operation",
+   "other",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

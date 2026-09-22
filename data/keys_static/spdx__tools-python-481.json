@@ -1,0 +1,22 @@
+{
+ "instance_id": "spdx__tools-python-481",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "3838ef18317ca20626387f5aa05a506d71cf606a",
+ "status": "ok",
+ "co_edited": [
+  "spdx/parsers/lexers/tagvalue.py",
+  "spdx/parsers/tagvalue.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

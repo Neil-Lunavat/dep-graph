@@ -1,0 +1,98 @@
+{
+ "instance_id": "yt-dlp__yt-dlp-10611",
+ "repo_key": "yt-dlp/yt-dlp",
+ "base_commit": "4b69e1b53ea21e631cd5dd68ff531e2f1671ec17",
+ "status": "ok",
+ "co_edited": [
+  "yt_dlp/extractor/mediaklikk.py",
+  "yt_dlp/extractor/olympics.py",
+  "yt_dlp/extractor/tver.py",
+  "yt_dlp/extractor/youtube.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "yt_dlp/extractor/common.py": [
+   "_GEO_BYPASS",
+   "_VALID_URL",
+   "_html_search_meta",
+   "_search_json_ld",
+   "countries",
+   "default",
+   "group",
+   "m3u8_id",
+   "query",
+   "raise_geo_restricted",
+   "report_warning"
+  ],
+  "yt_dlp/extractor/mediaklikk.py": [
+   "player_data",
+   "url",
+   "video_id"
+  ],
+  "yt_dlp/extractor/olympics.py": [
+   "_",
+   "_extract_from_nextjs_data",
+   "_tokenize_url",
+   "data",
+   "e",
+   "formats",
+   "geo_countries",
+   "info",
+   "is_live",
+   "json_ld",
+   "m3u8_url",
+   "self",
+   "subtitles",
+   "tokenized_url",
+   "url",
+   "v",
+   "video_id",
+   "video_uuid",
+   "webpage"
+  ],
+  "yt_dlp/extractor/tver.py": [
+   "BRIGHTCOVE_URL_TEMPLATE",
+   "self",
+   "video_id",
+   "video_type"
+  ],
+  "yt_dlp/extractor/youtube.py": [
+   "funcname",
+   "idx",
+   "jscode",
+   "self"
+  ],
+  "yt_dlp/networking/__init__.py": [
+   "networking"
+  ],
+  "yt_dlp/networking/exceptions.py": [
+   "HTTPError",
+   "exceptions"
+  ],
+  "yt_dlp/utils/__init__.py": [
+   "utils"
+  ],
+  "yt_dlp/utils/_utils.py": [
+   "ExtractorError",
+   "cause",
+   "int_or_none",
+   "parse_iso8601",
+   "try_get",
+   "url_or_none"
+  ],
+  "yt_dlp/utils/traversal.py": [
+   "traversal",
+   "traverse_obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 121,
+  "names_resolved_in_repo": 110,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

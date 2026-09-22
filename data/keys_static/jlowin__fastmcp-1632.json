@@ -1,0 +1,36 @@
+{
+ "instance_id": "jlowin__fastmcp-1632",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "3f24e401fd16069c620c7fff21e897bda7473909",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/server/elicitation.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/server/elicitation.py": [
+   "ElicitationJsonSchema",
+   "display_name",
+   "enum_cls",
+   "enum_names",
+   "enum_schema",
+   "generate_inner",
+   "has_custom_names",
+   "member",
+   "members",
+   "result",
+   "schema",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.6
+}

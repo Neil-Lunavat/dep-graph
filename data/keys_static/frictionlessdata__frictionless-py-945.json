@@ -1,0 +1,56 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-945",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "5c1817f1d8d1931a6017024b24300a769f91f9a1",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/detector.py",
+  "frictionless/helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "frictionless/detector.py": [
+   "__field_float_numbers",
+   "candidate",
+   "field",
+   "fields",
+   "fragment",
+   "header_rows",
+   "index",
+   "max_score",
+   "name",
+   "names",
+   "row_number",
+   "runner",
+   "runner_fields",
+   "schema",
+   "self"
+  ],
+  "frictionless/field.py": [
+   "Field",
+   "float_number",
+   "type"
+  ],
+  "frictionless/metadata.py": [
+   "to_copy"
+  ],
+  "frictionless/settings.py": [
+   "DEFAULT_HEADER_ROWS",
+   "settings"
+  ],
+  "frictionless/system.py": [
+   "create_candidates",
+   "system"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 63,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

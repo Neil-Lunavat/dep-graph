@@ -1,0 +1,49 @@
+{
+ "instance_id": "tornadoweb__tornado-2075",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "62e47215ce12aee83f951758c96775a43e80475b",
+ "status": "ok",
+ "co_edited": [
+  "tornado/netutil.py",
+  "tornado/tcpserver.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/ioloop.py": [
+   "IOLoop",
+   "READ",
+   "add_handler",
+   "current",
+   "remove_handler"
+  ],
+  "tornado/netutil.py": [
+   "accept_handler",
+   "io_loop",
+   "remove_handler",
+   "removed",
+   "sock"
+  ],
+  "tornado/platform/asyncio.py": [
+   "add_handler",
+   "remove_handler"
+  ],
+  "tornado/tcpserver.py": [
+   "_handle_connection",
+   "_handlers",
+   "_sockets",
+   "fd",
+   "self",
+   "sock"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 52,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

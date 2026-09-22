@@ -1,0 +1,27 @@
+{
+ "instance_id": "mwaskom__seaborn-3407",
+ "repo_key": "mwaskom/seaborn",
+ "base_commit": "515286e02be3e4c0ff2ef4addb34a53c4a676ee4",
+ "status": "ok",
+ "co_edited": [
+  "seaborn/axisgrid.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "seaborn/axisgrid.py": [
+   "diag_axes",
+   "diag_vars",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

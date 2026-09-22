@@ -1,0 +1,44 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4323",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "cfc75bb08ba07aac21cedd7d946fcb3bcaf4cdef",
+ "status": "ok",
+ "co_edited": [
+  "telegram/_messageentity.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "telegram/_messageentity.py": [
+   "accumulated_length",
+   "entities",
+   "entity",
+   "i",
+   "last_position",
+   "length",
+   "new_entity",
+   "offset",
+   "out",
+   "position",
+   "position_translation",
+   "positions",
+   "text",
+   "text_slice",
+   "translated_length",
+   "translated_positions",
+   "x"
+  ],
+  "telegram/_telegramobject.py": [
+   "_unfrozen"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 247,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

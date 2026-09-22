@@ -1,0 +1,28 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-3114",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "73efd383c3712153a868a882a8353ef8169aabdc",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/formatter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/formatter.py": [
+   "_NO_COLOR",
+   "_bold",
+   "_underline",
+   "filename"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

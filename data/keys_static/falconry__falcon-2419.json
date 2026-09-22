@@ -1,0 +1,36 @@
+{
+ "instance_id": "falconry__falcon-2419",
+ "repo_key": "falconry/falcon",
+ "base_commit": "77d5e6394a88ead151c9469494749f95f06b24bf",
+ "status": "ok",
+ "co_edited": [],
+ "deleted": [],
+ "new_files": [
+  "examples/recipes/plain_text_main.py"
+ ],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/media/__init__.py": [
+   "media"
+  ],
+  "falcon/media/base.py": [
+   "BaseHandler",
+   "deserialize",
+   "serialize"
+  ],
+  "falcon/util/mediatypes.py": [
+   "parse_header"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 28,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

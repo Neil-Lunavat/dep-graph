@@ -1,0 +1,49 @@
+{
+ "instance_id": "sympy__sympy-15011",
+ "repo_key": "sympy/sympy",
+ "base_commit": "b7c5ba2bf3ffd5cf453b25af7c8ddd9a639800cb",
+ "status": "ok",
+ "co_edited": [
+  "sympy/utilities/lambdify.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/function.py": [
+   "Function"
+  ],
+  "sympy/core/symbol.py": [
+   "Dummy",
+   "Symbol"
+  ],
+  "sympy/matrices/expressions/matexpr.py": [
+   "MatrixSymbol"
+  ],
+  "sympy/utilities/iterables.py": [
+   "flatten"
+  ],
+  "sympy/utilities/lambdify.py": [
+   "_argrepr",
+   "_subexpr",
+   "arg",
+   "argrep",
+   "argstrs",
+   "dummify",
+   "dummy",
+   "expr",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 14.3
+}

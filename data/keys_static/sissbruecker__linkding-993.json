@@ -1,0 +1,44 @@
+{
+ "instance_id": "sissbruecker__linkding-993",
+ "repo_key": "sissbruecker/linkding",
+ "base_commit": "9d61bdce52ddc916abcb9f932410102be17b354e",
+ "status": "ok",
+ "co_edited": [
+  "bookmarks/api/serializers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "bookmarks/__init__.py": [
+   "bookmarks"
+  ],
+  "bookmarks/api/serializers.py": [
+   "get_web_archive_snapshot_url",
+   "obj",
+   "self",
+   "web_archive_snapshot_url"
+  ],
+  "bookmarks/models.py": [
+   "Bookmark",
+   "date_added",
+   "url",
+   "web_archive_snapshot_url"
+  ],
+  "bookmarks/services/__init__.py": [
+   "services"
+  ],
+  "bookmarks/services/wayback.py": [
+   "generate_fallback_webarchive_url",
+   "wayback"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

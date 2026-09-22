@@ -1,0 +1,41 @@
+{
+ "instance_id": "SpikeInterface__spikeinterface-3670",
+ "repo_key": "spikeinterface/spikeinterface",
+ "base_commit": "1ed860fe15ec32f0aba5e7b876821393e9e5d758",
+ "status": "ok",
+ "co_edited": [
+  "src/spikeinterface/postprocessing/principal_component.py",
+  "src/spikeinterface/qualitymetrics/pca_metrics.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spikeinterface/core/sortinganalyzer.py": [
+   "params"
+  ],
+  "src/spikeinterface/postprocessing/principal_component.py": [
+   "all_projections",
+   "channel_indices",
+   "selected_inds",
+   "self",
+   "some_projections"
+  ],
+  "src/spikeinterface/qualitymetrics/pca_metrics.py": [
+   "all_labels",
+   "dense_projections",
+   "neighbor_channel_indices",
+   "neighbor_unit_ids",
+   "pca_ext",
+   "pcs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

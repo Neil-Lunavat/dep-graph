@@ -1,0 +1,39 @@
+{
+ "instance_id": "pylint-dev__pylint-8819",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "dc1f5f6cbb1e649feab8ae53ed8be88845afeaf1",
+ "status": "ok",
+ "co_edited": [
+  "pylint/config/config_initialization.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/config/config_initialization.py": [
+   "_order_all_first",
+   "all_action",
+   "arg",
+   "args_list",
+   "config_args",
+   "i",
+   "indexes_to_prepend",
+   "joined",
+   "msg",
+   "returned_args",
+   "value"
+  ],
+  "pylint/config/exceptions.py": [
+   "ArgumentPreprocessingError",
+   "_UnrecognizedOptionError"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 89,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

@@ -1,0 +1,46 @@
+{
+ "instance_id": "sympy__sympy-15971",
+ "repo_key": "sympy/sympy",
+ "base_commit": "c267d554e16f0392af2b22a2922cbe0db7e8c798",
+ "status": "ok",
+ "co_edited": [
+  "sympy/printing/pretty/pretty.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/functions/__init__.py": [
+   "functions"
+  ],
+  "sympy/functions/special/__init__.py": [
+   "special"
+  ],
+  "sympy/functions/special/zeta_functions.py": [
+   "lerchphi",
+   "zeta_functions"
+  ],
+  "sympy/printing/pretty/pretty.py": [
+   "_print_Function",
+   "_print_lerchphi",
+   "_use_unicode",
+   "e",
+   "func_name",
+   "self"
+  ],
+  "sympy/printing/pretty/pretty_symbology.py": [
+   "greek_unicode"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 19,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

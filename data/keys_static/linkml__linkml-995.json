@@ -1,0 +1,44 @@
+{
+ "instance_id": "linkml__linkml-995",
+ "repo_key": "linkml/linkml",
+ "base_commit": "3ea865ec1fcb7ea2c4f34f5291cab81f127285d7",
+ "status": "ok",
+ "co_edited": [
+  "linkml/linter/cli.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/linter/cli.py": [
+   "config",
+   "error_count",
+   "exit_code",
+   "fix",
+   "format",
+   "ignore_warnings",
+   "max_warnings",
+   "output",
+   "problem",
+   "schema",
+   "warning_count"
+  ],
+  "linkml/linter/config/datamodel/__init__.py": [
+   "datamodel"
+  ],
+  "linkml/linter/config/datamodel/config.py": [
+   "RuleLevel",
+   "config",
+   "error",
+   "warning"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 29,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

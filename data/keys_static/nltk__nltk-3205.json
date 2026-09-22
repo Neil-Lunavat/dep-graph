@@ -1,0 +1,21 @@
+{
+ "instance_id": "nltk__nltk-3205",
+ "repo_key": "nltk/nltk",
+ "base_commit": "e0b05bb36f18b3d6b2a44e4a1831b05d586791f3",
+ "status": "ok",
+ "co_edited": [
+  "nltk/translate/bleu_score.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

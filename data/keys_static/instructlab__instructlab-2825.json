@@ -1,0 +1,83 @@
+{
+ "instance_id": "instructlab__instructlab-2825",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "e0a1e8ce2fa10b9730dc9f6b3d4036f4e63947d9",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/cli/model/serve.py",
+  "src/instructlab/configuration.py",
+  "src/instructlab/defaults.py",
+  "src/instructlab/model/chat.py",
+  "src/instructlab/model/serve_backend.py",
+  "src/instructlab/taxonomy/diff.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/__init__.py": [
+   "instructlab"
+  ],
+  "src/instructlab/cli/model/serve.py": [
+   "ctx",
+   "max_ctx_size"
+  ],
+  "src/instructlab/configuration.py": [
+   "config_file",
+   "configuration",
+   "file_path",
+   "lock",
+   "write_config",
+   "yaml_file",
+   "yamlfile"
+  ],
+  "src/instructlab/defaults.py": [
+   "CONFIG_FILE_LOCK",
+   "CONFIG_LOCK_FILENAME",
+   "DEFAULTS",
+   "MAX_CONTEXT_SIZE",
+   "_config_dir",
+   "defaults",
+   "self"
+  ],
+  "src/instructlab/model/backends/__init__.py": [
+   "backends"
+  ],
+  "src/instructlab/model/backends/backends.py": [
+   "backends"
+  ],
+  "src/instructlab/model/backends/common.py": [
+   "LLAMA_CPP"
+  ],
+  "src/instructlab/model/backends/server.py": [
+   "get_backend_type"
+  ],
+  "src/instructlab/model/chat.py": [
+   "backend_instance",
+   "backend_type",
+   "ctx",
+   "info",
+   "max_ctx_size",
+   "msg",
+   "self",
+   "total_context_size"
+  ],
+  "src/instructlab/model/serve_backend.py": [
+   "backend",
+   "ctx",
+   "logger",
+   "max_ctx_size"
+  ],
+  "src/instructlab/taxonomy/diff.py": [
+   "f"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 154,
+  "names_resolved_in_repo": 106,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

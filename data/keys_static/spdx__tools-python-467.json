@@ -1,0 +1,39 @@
+{
+ "instance_id": "spdx__tools-python-467",
+ "repo_key": "spdx/tools-python",
+ "base_commit": "788e8d4aec940a3c2b2f16bd731564ee1a8da5d8",
+ "status": "ok",
+ "co_edited": [
+  "src/spdx/writer/tagvalue/tagvalue_writer_helper_functions.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/spdx/__init__.py": [
+   "spdx"
+  ],
+  "src/spdx/model/__init__.py": [
+   "model"
+  ],
+  "src/spdx/model/relationship.py": [
+   "Relationship",
+   "RelationshipType",
+   "comment",
+   "related_spdx_element_id",
+   "relationship"
+  ],
+  "src/spdx/writer/tagvalue/tagvalue_writer_helper_functions.py": [
+   "files_by_spdx_id",
+   "relationship"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

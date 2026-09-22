@@ -1,0 +1,38 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-886",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "30e3597933d3a90ef5318c2553cc2d24f833fe3f",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/transform_markdown/transform_list_block.py",
+  "pymarkdown/transform_markdown/transform_new_list_item.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/tokens/list_start_markdown_token.py": [
+   "indent_level"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "column_number",
+   "is_new_list_item"
+  ],
+  "pymarkdown/transform_markdown/transform_list_block.py": [
+   "block_quote_leading_space_length",
+   "containing_list_token",
+   "current_token",
+   "list_leading_space_length",
+   "list_start_content_length",
+   "pad_to_length"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,39 @@
+{
+ "instance_id": "linkml__linkml-1276",
+ "repo_key": "linkml/linkml",
+ "base_commit": "df69f0f588175fac627e369c43f3f984d04744db",
+ "status": "ok",
+ "co_edited": [
+  "linkml/generators/jsonschemagen.py",
+  "linkml/workspaces/example_runner.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "linkml/generators/jsonschemagen.py": [
+   "add_keyword",
+   "applies_to_all_array_elements",
+   "is_array",
+   "is_object",
+   "keyword",
+   "prop",
+   "self",
+   "slot",
+   "value"
+  ],
+  "linkml/workspaces/example_runner.py": [
+   "dict_obj",
+   "self",
+   "use_type_designators"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 92,
+  "names_resolved_in_repo": 179,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.9
+}

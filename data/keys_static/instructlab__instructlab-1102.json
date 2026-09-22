@@ -1,0 +1,55 @@
+{
+ "instance_id": "instructlab__instructlab-1102",
+ "repo_key": "instructlab/instructlab",
+ "base_commit": "eadb214ef45a059d43e102942cc0d59046019a33",
+ "status": "ok",
+ "co_edited": [
+  "src/instructlab/chat/chat.py",
+  "src/instructlab/config.py",
+  "src/instructlab/generator/utils.py",
+  "src/instructlab/lab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/instructlab/chat/chat.py": [
+   "client",
+   "m",
+   "model",
+   "model_ids",
+   "model_list"
+  ],
+  "src/instructlab/config.py": [
+   "DEFAULT_API_KEY",
+   "DEFAULT_CONNECTION_TIMEOUT",
+   "DEFAULT_MODEL",
+   "DEFAULT_MODEL_OLD",
+   "DEFAULT_MODEL_PATH",
+   "chat",
+   "config",
+   "generate",
+   "model"
+  ],
+  "src/instructlab/generator/utils.py": [
+   "client",
+   "m",
+   "model",
+   "model_ids",
+   "model_list",
+   "model_name"
+  ],
+  "src/instructlab/lab.py": [
+   "cfg",
+   "model_path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 74,
+  "names_resolved_in_repo": 55,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

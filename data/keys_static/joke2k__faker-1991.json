@@ -1,0 +1,41 @@
+{
+ "instance_id": "joke2k__faker-1991",
+ "repo_key": "joke2k/faker",
+ "base_commit": "17f22ba4cb5c158b63785c8e441597369dafdb61",
+ "status": "ok",
+ "co_edited": [
+  "faker/proxy.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/generator.py": [
+   "Generator"
+  ],
+  "faker/proxy.py": [
+   "Faker",
+   "__getitem__",
+   "_factory_map",
+   "config",
+   "factories",
+   "generator",
+   "includes",
+   "instance",
+   "items",
+   "locale",
+   "locales",
+   "providers",
+   "self",
+   "use_weighting"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 59,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

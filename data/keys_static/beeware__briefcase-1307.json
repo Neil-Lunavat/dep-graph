@@ -1,0 +1,38 @@
+{
+ "instance_id": "beeware__briefcase-1307",
+ "repo_key": "beeware/briefcase",
+ "base_commit": "96479a0cab4814ea5ed359d2431628d145e86698",
+ "status": "ok",
+ "co_edited": [
+  "src/briefcase/integrations/android_sdk.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/briefcase/integrations/android_sdk.py": [
+   "android_home",
+   "android_sdk_root",
+   "cls",
+   "root_path",
+   "sdk_env_source",
+   "sdk_path_from_env",
+   "sdk_root",
+   "sdk_source",
+   "self",
+   "tools"
+  ],
+  "src/briefcase/integrations/base.py": [
+   "ToolCache",
+   "os"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 224,
+  "names_resolved_in_repo": 42,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

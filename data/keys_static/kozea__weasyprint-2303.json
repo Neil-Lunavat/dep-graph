@@ -1,0 +1,28 @@
+{
+ "instance_id": "kozea__weasyprint-2303",
+ "repo_key": "kozea/weasyprint",
+ "base_commit": "d0fcb3c49700a43fd04f9030becbb59640f0ebdf",
+ "status": "ok",
+ "co_edited": [
+  "weasyprint/pdf/stream.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "weasyprint/pdf/stream.py": [
+   "alpha",
+   "self",
+   "set_alpha",
+   "stroke"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

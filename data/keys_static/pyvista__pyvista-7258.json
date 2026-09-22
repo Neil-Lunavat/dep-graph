@@ -1,0 +1,55 @@
+{
+ "instance_id": "pyvista__pyvista-7258",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "91711e56edc0ccf561e9188376783530864d7f13",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/core/dataobject.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/__init__.py": [
+   "pyvista"
+  ],
+  "pyvista/core/__init__.py": [
+   "core"
+  ],
+  "pyvista/core/composite.py": [
+   "MultiBlock",
+   "node_type",
+   "recursive_iterator"
+  ],
+  "pyvista/core/dataobject.py": [
+   "_warn_multiblock_nested_field_data",
+   "field_data",
+   "index",
+   "index_fmt",
+   "iterator",
+   "mesh",
+   "name",
+   "nested_multiblock",
+   "self",
+   "typed_iterator"
+  ],
+  "pyvista/core/datasetattributes.py": [
+   "keys"
+  ],
+  "pyvista/core/filters/__init__.py": [
+   "filters"
+  ],
+  "pyvista/core/filters/composite.py": [
+   "_format_nested_index",
+   "composite"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.5
+}

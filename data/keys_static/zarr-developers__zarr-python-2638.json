@@ -1,0 +1,31 @@
+{
+ "instance_id": "zarr-developers__zarr-python-2638",
+ "repo_key": "zarr-developers/zarr-python",
+ "base_commit": "584d66dd4c2c8ccb5788aa6f9a27bfa76e3166bd",
+ "status": "ok",
+ "co_edited": [
+  "src/zarr/core/group.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/zarr/core/group.py": [
+   "array",
+   "create_array",
+   "data",
+   "kwargs",
+   "name",
+   "self",
+   "shape"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.8
+}

@@ -1,0 +1,53 @@
+{
+ "instance_id": "borgbackup__borg-7474",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "8dc52b23dbf1ebe54e827fc545db01dc4f830d5f",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archiver/transfer_cmd.py",
+  "src/borg/repoobj.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/archiver/transfer_cmd.py": [
+   "cdata",
+   "chunk_id"
+  ],
+  "src/borg/crypto/key.py": [
+   "decrypt"
+  ],
+  "src/borg/helpers/msgpack.py": [
+   "msgpack",
+   "unpackb"
+  ],
+  "src/borg/repoobj.py": [
+   "cdata",
+   "clevel",
+   "compressor",
+   "csize",
+   "ctype",
+   "data",
+   "data_compressed",
+   "data_encrypted",
+   "decompress",
+   "id",
+   "key",
+   "meta",
+   "meta_compressed",
+   "meta_packed",
+   "psize",
+   "self",
+   "want_compressed"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 129,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

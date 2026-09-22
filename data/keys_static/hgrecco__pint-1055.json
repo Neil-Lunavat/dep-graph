@@ -1,0 +1,41 @@
+{
+ "instance_id": "hgrecco__pint-1055",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "d8bd0d04be9544d8e7bdd6a5d74485330f5f8e01",
+ "status": "ok",
+ "co_edited": [
+  "pint/numpy_func.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pint/compat.py": [
+   "zero_or_nan"
+  ],
+  "pint/numpy_func.py": [
+   "_is_quantity",
+   "_is_sequence_with_quantity_elements",
+   "arg",
+   "arg_i",
+   "args",
+   "convert_arg",
+   "item",
+   "obj",
+   "output_wrap",
+   "pre_calc_units",
+   "test_element",
+   "unwrap_and_wrap_consistent_units",
+   "x1",
+   "x2"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 113,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

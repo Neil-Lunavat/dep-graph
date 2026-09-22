@@ -1,0 +1,28 @@
+{
+ "instance_id": "sympy__sympy-19601",
+ "repo_key": "sympy/sympy",
+ "base_commit": "28b41c73c12b70d6ad9f6e45109a80649c4456da",
+ "status": "ok",
+ "co_edited": [
+  "sympy/simplify/radsimp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/simplify/radsimp.py": [
+   "k",
+   "rv",
+   "urep",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 3.3
+}

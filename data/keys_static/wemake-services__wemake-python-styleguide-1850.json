@@ -1,0 +1,36 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1850",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "7ad2e202921c58309bcc146faa0d8c66265c7bb3",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/logic/tree/variables.py",
+  "wemake_python_styleguide/violations/best_practices.py",
+  "wemake_python_styleguide/visitors/ast/builtins.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/tree/variables.py": [
+   "_is_valid_single",
+   "element",
+   "is_valid_block_variable_definition",
+   "is_valid_unpacking_target",
+   "target",
+   "var_definition",
+   "variables"
+  ],
+  "wemake_python_styleguide/visitors/ast/builtins.py": [
+   "target"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

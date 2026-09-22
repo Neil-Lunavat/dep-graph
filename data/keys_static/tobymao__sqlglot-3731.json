@@ -1,0 +1,73 @@
+{
+ "instance_id": "tobymao__sqlglot-3731",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "1e07c4d29a43192fb57c120f3b9c1c2fa27d0fa6",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/snowflake.py",
+  "sqlglot/expressions.py",
+  "sqlglot/generator.py",
+  "sqlglot/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/snowflake.py": [
+   "_parse_changes",
+   "_parse_historical_data",
+   "at_before",
+   "changes",
+   "historical_data",
+   "information",
+   "self",
+   "table"
+  ],
+  "sqlglot/expressions.py": [
+   "Changes",
+   "Expression",
+   "HistoricalData",
+   "arg_types",
+   "exp",
+   "set"
+  ],
+  "sqlglot/generator.py": [
+   "alias",
+   "at_before",
+   "changes",
+   "changes_sql",
+   "end",
+   "expression",
+   "file_format",
+   "hints",
+   "information",
+   "joins",
+   "laterals",
+   "only",
+   "ordinality",
+   "partition",
+   "pivots",
+   "seg",
+   "self",
+   "sql",
+   "table",
+   "version"
+  ],
+  "sqlglot/parser.py": [
+   "HISTORICAL_DATA_PREFIX",
+   "_match_r_paren",
+   "_match_text_seq",
+   "_match_texts",
+   "_parse_var",
+   "any_token"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 107,
+  "names_resolved_in_repo": 101,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 12.5
+}

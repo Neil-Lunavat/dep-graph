@@ -1,0 +1,47 @@
+{
+ "instance_id": "sympy__sympy-19182",
+ "repo_key": "sympy/sympy",
+ "base_commit": "46921d2880a7b3d81b92e5ae7b147e955ef78b71",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/mul.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/logic.py": [
+   "_fuzzy_group",
+   "fuzzy_and",
+   "fuzzy_not",
+   "logic"
+  ],
+  "sympy/core/mul.py": [
+   "d",
+   "n",
+   "self"
+  ],
+  "sympy/core/numbers.py": [
+   "Float",
+   "numbers"
+  ],
+  "sympy/simplify/radsimp.py": [
+   "exact",
+   "fraction"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 20,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 8.9
+}

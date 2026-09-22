@@ -1,0 +1,63 @@
+{
+ "instance_id": "pytorch__torchtune-1806",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "c5b738681ef0c2541344aff1063e5f85720b3c1f",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/models/gemma/_tokenizer.py",
+  "torchtune/models/mistral/_tokenizer.py",
+  "torchtune/models/phi3/_tokenizer.py",
+  "torchtune/models/qwen2/_tokenizer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/data/_messages.py": [
+   "Message",
+   "masked"
+  ],
+  "torchtune/data/_utils.py": [
+   "truncate"
+  ],
+  "torchtune/models/gemma/_tokenizer.py": [
+   "add_eos",
+   "eos_id",
+   "self"
+  ],
+  "torchtune/models/mistral/_tokenizer.py": [
+   "add_eos",
+   "eos_id",
+   "messages",
+   "self"
+  ],
+  "torchtune/models/phi3/_tokenizer.py": [
+   "add_eos",
+   "eos_id",
+   "mask",
+   "max_seq_len",
+   "message",
+   "self",
+   "tokenized_messages"
+  ],
+  "torchtune/models/qwen2/_tokenizer.py": [
+   "add_eos",
+   "eos_id",
+   "mask",
+   "max_seq_len",
+   "self",
+   "tokenized_messages"
+  ],
+  "torchtune/modules/tokenizers/_utils.py": [
+   "eos_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

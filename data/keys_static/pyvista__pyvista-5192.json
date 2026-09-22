@@ -1,0 +1,47 @@
+{
+ "instance_id": "pyvista__pyvista-5192",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "673600daf5c1a4633b1750fb0849f77733dfe48a",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/plotting/_property.py",
+  "pyvista/plotting/plotter.py",
+  "pyvista/plotting/themes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/__init__.py": [
+   "pyvista"
+  ],
+  "pyvista/core/utilities/misc.py": [
+   "_check_range"
+  ],
+  "pyvista/plotting/_property.py": [
+   "_theme",
+   "edge_opacity",
+   "self",
+   "value"
+  ],
+  "pyvista/plotting/plotter.py": [
+   "edge_opacity"
+  ],
+  "pyvista/plotting/themes.py": [
+   "_edge_opacity",
+   "edge_opacity",
+   "self"
+  ],
+  "pyvista/report.py": [
+   "vtk_version_info"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 300,
+  "names_resolved_in_repo": 47,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

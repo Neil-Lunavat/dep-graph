@@ -1,0 +1,52 @@
+{
+ "instance_id": "nilearn__nilearn-3971",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "93c49f1ff2219506411aa20c35a971288708261e",
+ "status": "ok",
+ "co_edited": [
+  "maint_tools/citation_cff_maint.py",
+  "nilearn/maskers/multi_nifti_labels_masker.py",
+  "nilearn/maskers/multi_nifti_maps_masker.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "maint_tools/citation_cff_maint.py": [
+   "add_consortium",
+   "author",
+   "authors",
+   "citation",
+   "remove_consortium",
+   "write_citation_cff"
+  ],
+  "nilearn/maskers/multi_nifti_labels_masker.py": [
+   "cfs",
+   "confounds",
+   "func",
+   "imgs",
+   "imgs_list",
+   "niimg_iter",
+   "sample_mask",
+   "sms"
+  ],
+  "nilearn/maskers/multi_nifti_maps_masker.py": [
+   "cfs",
+   "confounds",
+   "func",
+   "imgs",
+   "imgs_list",
+   "niimg_iter",
+   "sample_mask",
+   "sms"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 76,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

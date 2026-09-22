@@ -1,0 +1,25 @@
+{
+ "instance_id": "aiogram__aiogram-1247",
+ "repo_key": "aiogram/aiogram",
+ "base_commit": "90654ac0fa3b33e3dc3dd7ff47ea9a4e84a040d5",
+ "status": "ok",
+ "co_edited": [
+  "aiogram/dispatcher/dispatcher.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "aiogram/dispatcher/dispatcher.py": [
+   "workflow_data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

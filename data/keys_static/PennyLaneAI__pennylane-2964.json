@@ -1,0 +1,35 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-2964",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "754f2c978cba83a83ba7117df1b930d1512ea333",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/ops/identity.py",
+  "pennylane/ops/qubit/non_parametric_ops.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/operation.py": [
+   "compute_sparse_matrix"
+  ],
+  "pennylane/ops/identity.py": [
+   "hyperparams",
+   "params"
+  ],
+  "pennylane/ops/qubit/non_parametric_ops.py": [
+   "INV_SQRT2",
+   "hyperparams",
+   "params"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 38,
+  "names_resolved_in_repo": 19,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

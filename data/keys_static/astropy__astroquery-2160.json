@@ -1,0 +1,21 @@
+{
+ "instance_id": "astropy__astroquery-2160",
+ "repo_key": "astropy/astroquery",
+ "base_commit": "241d896bede51d68dc48d02f3569d532178492ef",
+ "status": "ok",
+ "co_edited": [
+  "astroquery/utils/commons.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,59 @@
+{
+ "instance_id": "cloud-custodian__cloud-custodian-4846",
+ "repo_key": "cloud-custodian/cloud-custodian",
+ "base_commit": "91f2016bfe3a595ec2b0a73695ebce8ad962175c",
+ "status": "ok",
+ "co_edited": [
+  "c7n/resources/awslambda.py",
+  "c7n/resources/vpc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "c7n/__init__.py": [
+   "c7n"
+  ],
+  "c7n/filters/__init__.py": [
+   "filters"
+  ],
+  "c7n/filters/core.py": [
+   "manager"
+  ],
+  "c7n/filters/kms.py": [
+   "KmsRelatedFilter",
+   "kms"
+  ],
+  "c7n/filters/related.py": [
+   "RelatedIdsExpression"
+  ],
+  "c7n/resources/awslambda.py": [
+   "AWSLambda",
+   "KmsFilter"
+  ],
+  "c7n/resources/vpc.py": [
+   "expr",
+   "func",
+   "get_ecs_cwe_sgs",
+   "get_eni_sgs",
+   "get_lambda_sgs",
+   "get_launch_config_sgs",
+   "get_scanners",
+   "get_sg_refs",
+   "ids",
+   "kind",
+   "rule",
+   "scanner",
+   "self",
+   "sg_ids"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 106,
+  "names_resolved_in_repo": 40,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

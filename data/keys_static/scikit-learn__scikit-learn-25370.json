@@ -1,0 +1,25 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25370",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "f45a9071e1ff2bdc044c040959b5387c3d9559c8",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/manifold/_t_sne.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/manifold/_t_sne.py": [
+   "pca"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

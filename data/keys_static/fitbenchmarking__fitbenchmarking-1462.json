@@ -1,0 +1,45 @@
+{
+ "instance_id": "fitbenchmarking__fitbenchmarking-1462",
+ "repo_key": "fitbenchmarking/fitbenchmarking",
+ "base_commit": "82716374bf37f0fe0e6f6a5fc5cc14fa7d036976",
+ "status": "ok",
+ "co_edited": [
+  "fitbenchmarking/results_processing/fitting_report.py",
+  "fitbenchmarking/results_processing/plots.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "fitbenchmarking/results_processing/fitting_report.py": [
+   "fig_fit",
+   "fig_pdf",
+   "fit_success",
+   "get_figure_paths",
+   "options",
+   "pdf_success",
+   "result"
+  ],
+  "fitbenchmarking/results_processing/plots.py": [
+   "_starting_guess_plot_line",
+   "data_len",
+   "df",
+   "i",
+   "result",
+   "self",
+   "x_start",
+   "y_start"
+  ],
+  "fitbenchmarking/utils/options.py": [
+   "make_plots"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

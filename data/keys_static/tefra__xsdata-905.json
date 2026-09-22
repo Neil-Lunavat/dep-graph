@@ -1,0 +1,31 @@
+{
+ "instance_id": "tefra__xsdata-905",
+ "repo_key": "tefra/xsdata",
+ "base_commit": "fa05d61338a5beb06caf8438383bed0b9070ee26",
+ "status": "ok",
+ "co_edited": [
+  "xsdata/codegen/handlers/create_compound_fields.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xsdata/codegen/handlers/create_compound_fields.py": [
+   "config",
+   "names",
+   "self",
+   "substitutions"
+  ],
+  "xsdata/models/config.py": [
+   "use_substitution_groups"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

@@ -1,0 +1,37 @@
+{
+ "instance_id": "mikedh__trimesh-2136",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "021af1fedb3c6cff0e42cba9eed140eea7f819e3",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/exchange/ply.py",
+  "trimesh/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/exchange/ply.py": [
+   "mesh"
+  ],
+  "trimesh/util.py": [
+   "a",
+   "b",
+   "euclidean",
+   "has_module",
+   "is_none",
+   "is_sequence",
+   "is_string",
+   "name",
+   "obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 56,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

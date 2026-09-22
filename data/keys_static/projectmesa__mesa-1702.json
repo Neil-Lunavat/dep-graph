@@ -1,0 +1,51 @@
+{
+ "instance_id": "projectmesa__mesa-1702",
+ "repo_key": "projectmesa/mesa",
+ "base_commit": "6f08b070e4e530f82ca526b3152bfb60d3188259",
+ "status": "ok",
+ "co_edited": [
+  "mesa/datacollection.py",
+  "mesa/model.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docs/tutorials/MoneyModel.py": [
+   "schedule"
+  ],
+  "mesa/datacollection.py": [
+   "_prefix",
+   "agent",
+   "agent_records",
+   "agent_records_without_none",
+   "agent_reporters",
+   "exclude_none_values",
+   "get_reports",
+   "model",
+   "model_reporters",
+   "r",
+   "rep",
+   "rep_funcs",
+   "reports",
+   "reports_without_none",
+   "self",
+   "tables"
+  ],
+  "mesa/model.py": [
+   "agent_reporters",
+   "exclude_none_values",
+   "model_reporters",
+   "self",
+   "tables"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 67,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

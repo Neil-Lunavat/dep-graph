@@ -1,0 +1,35 @@
+{
+ "instance_id": "yt-dlp__yt-dlp-10516",
+ "repo_key": "yt-dlp/yt-dlp",
+ "base_commit": "a3bab4752a2b3d56e5a59b4e0411bb8f695c010b",
+ "status": "ok",
+ "co_edited": [
+  "yt_dlp/extractor/tiktok.py",
+  "yt_dlp/extractor/youtube.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "yt_dlp/extractor/tiktok.py": [
+   "EXT_MAP",
+   "caption",
+   "lang",
+   "preference",
+   "subs_list",
+   "subtitles",
+   "x"
+  ],
+  "yt_dlp/utils/_utils.py": [
+   "qualities"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 10.2
+}

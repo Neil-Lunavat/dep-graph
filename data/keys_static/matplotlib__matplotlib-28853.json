@@ -1,0 +1,28 @@
+{
+ "instance_id": "matplotlib__matplotlib-28853",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "fe6389f9b1bcad62b5b3620fa73507febc703607",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/axes/_axes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/axes/_axes.py": [
+   "nc",
+   "nr",
+   "x",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

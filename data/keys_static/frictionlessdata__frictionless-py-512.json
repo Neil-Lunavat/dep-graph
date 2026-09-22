@@ -1,0 +1,21 @@
+{
+ "instance_id": "frictionlessdata__frictionless-py-512",
+ "repo_key": "frictionlessdata/frictionless-py",
+ "base_commit": "941099ddc4657afdc9c455e0a2d1e9857ff7494a",
+ "status": "ok",
+ "co_edited": [
+  "frictionless/parsers/inline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

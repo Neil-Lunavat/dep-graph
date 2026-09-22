@@ -1,0 +1,57 @@
+{
+ "instance_id": "vertexproject__synapse-296",
+ "repo_key": "vertexproject/synapse",
+ "base_commit": "2cf04d94d938409b246e89d1aecefe8ed0feb577",
+ "status": "ok",
+ "co_edited": [
+  "synapse/cores/common.py",
+  "synapse/lib/storm.py",
+  "synapse/lib/syntax.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/common.py": [
+   "s_common"
+  ],
+  "synapse/cores/common.py": [
+   "isSetPropOk",
+   "prop",
+   "self"
+  ],
+  "synapse/exc.py": [
+   "BadSyntaxError"
+  ],
+  "synapse/lib/storm.py": [
+   "_fprop",
+   "_prop",
+   "core",
+   "form",
+   "formnodes",
+   "formprops",
+   "forms",
+   "mesg",
+   "node",
+   "nodes",
+   "prop",
+   "props",
+   "query",
+   "valid",
+   "valu"
+  ],
+  "synapse/lib/syntax.py": [
+   "kwargs",
+   "prop",
+   "valu"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 214,
+  "names_resolved_in_repo": 82,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 14,
+  "truncated": false
+ },
+ "seconds": 3.5
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25299",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "d9cfe3f6b1c58dd253dc87cb676ce5171ff1f8a1",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/metrics/_classification.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/metrics/_classification.py": [
+   "eps",
+   "y_pred",
+   "y_pred_sum"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 4,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

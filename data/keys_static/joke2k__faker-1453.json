@@ -1,0 +1,37 @@
+{
+ "instance_id": "joke2k__faker-1453",
+ "repo_key": "joke2k/faker",
+ "base_commit": "ca43530c384807393bf2812ea86a16978738b2af",
+ "status": "ok",
+ "co_edited": [
+  "faker/proxy.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "faker/proxy.py": [
+   "UniqueProxy",
+   "__deepcopy__",
+   "_factories",
+   "_factory_map",
+   "_locales",
+   "_seen",
+   "_unique_proxy",
+   "_weights",
+   "cls",
+   "k",
+   "memodict",
+   "result",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 49,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

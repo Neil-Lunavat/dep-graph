@@ -1,0 +1,49 @@
+{
+ "instance_id": "python-control__python-control-416",
+ "repo_key": "python-control/python-control",
+ "base_commit": "8366806bc774d31ab946bb717e10a169f3247fdd",
+ "status": "ok",
+ "co_edited": [
+  "control/frdata.py",
+  "control/statesp.py",
+  "control/xferfcn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/frdata.py": [
+   "fresp",
+   "ifunc",
+   "omega",
+   "outstr",
+   "self"
+  ],
+  "control/lti.py": [
+   "dt",
+   "isdtime",
+   "issiso",
+   "strict"
+  ],
+  "control/statesp.py": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "self"
+  ],
+  "control/xferfcn.py": [
+   "den",
+   "num",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 84,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 5,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

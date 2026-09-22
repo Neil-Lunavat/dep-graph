@@ -1,0 +1,72 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-1246",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "911e871a488de37a5b90ebaf9e2f489e278848a3",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/block_quotes/block_quote_count_helper.py",
+  "pymarkdown/plugins/rule_md_031.py",
+  "pymarkdown/transform_markdown/transform_containers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/block_quotes/block_quote_count_helper.py": [
+   "embedded_list_stack_token",
+   "parser_state"
+  ],
+  "pymarkdown/general/parser_helper.py": [
+   "ParserHelper",
+   "newline_character"
+  ],
+  "pymarkdown/general/parser_state.py": [
+   "original_line_to_parse"
+  ],
+  "pymarkdown/plugin_manager/plugin_scan_context.py": [
+   "PluginScanContext"
+  ],
+  "pymarkdown/plugins/rule_md_031.py": [
+   "_",
+   "__fix_spacing_block_quote",
+   "__fix_spacing_list",
+   "__fix_spacing_one_container",
+   "__fix_spacing_removed_container",
+   "__removed_container_stack_token",
+   "context",
+   "did_special_list_fix",
+   "removed_list_token",
+   "self",
+   "split_spaces",
+   "token"
+  ],
+  "pymarkdown/tokens/list_start_markdown_token.py": [
+   "ListStartMarkdownToken",
+   "leading_spaces"
+  ],
+  "pymarkdown/tokens/markdown_token.py": [
+   "MarkdownToken",
+   "is_block_quote_start",
+   "is_list_start"
+  ],
+  "pymarkdown/tokens/stack_token.py": [
+   "indent_level"
+  ],
+  "pymarkdown/transform_markdown/transform_containers.py": [
+   "prev_list_token",
+   "removed_list_token",
+   "removed_token_index",
+   "removed_token_indices",
+   "removed_token_split_spaces",
+   "split_leading_spaces"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 75,
+  "names_resolved_in_repo": 85,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

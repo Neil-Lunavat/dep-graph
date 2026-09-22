@@ -1,0 +1,50 @@
+{
+ "instance_id": "statsmodels__statsmodels-8801",
+ "repo_key": "statsmodels/statsmodels",
+ "base_commit": "c967ca06d96b3314891b81b6839ebad5730a540f",
+ "status": "ok",
+ "co_edited": [
+  "statsmodels/robust/norms.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "statsmodels/robust/norms.py": [
+   "_",
+   "_cabs",
+   "_subset",
+   "a",
+   "absz",
+   "b",
+   "c",
+   "d",
+   "dt",
+   "factor",
+   "s",
+   "self",
+   "sign",
+   "subset",
+   "t",
+   "t1",
+   "t2",
+   "t3",
+   "t34",
+   "test",
+   "v",
+   "x",
+   "z",
+   "z_isscalar",
+   "za",
+   "zt3"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 268,
+  "names_resolved_in_repo": 187,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

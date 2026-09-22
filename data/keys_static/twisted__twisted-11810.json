@@ -1,0 +1,120 @@
+{
+ "instance_id": "twisted__twisted-11810",
+ "repo_key": "twisted/twisted",
+ "base_commit": "a60a32bc6349cb93a08ee58a73baddab31ff20b0",
+ "status": "ok",
+ "co_edited": [
+  "src/twisted/conch/unix.py",
+  "src/twisted/cred/checkers.py",
+  "src/twisted/cred/credentials.py",
+  "src/twisted/cred/portal.py",
+  "src/twisted/python/fakepwd.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/twisted/__init__.py": [
+   "twisted"
+  ],
+  "src/twisted/conch/avatar.py": [
+   "__init__"
+  ],
+  "src/twisted/conch/unix.py": [
+   "UnixConchUser",
+   "interfaces",
+   "logout",
+   "mind",
+   "self",
+   "user",
+   "username"
+  ],
+  "src/twisted/cred/__init__.py": [
+   "cred"
+  ],
+  "src/twisted/cred/checkers.py": [
+   "ANONYMOUS",
+   "ICredentialsChecker",
+   "_cacheTimestamp",
+   "_credCache",
+   "addUser",
+   "checkers",
+   "credentialInterfaces",
+   "credentials",
+   "getUser",
+   "p",
+   "password",
+   "requestAvatarId",
+   "self",
+   "u",
+   "up",
+   "username",
+   "users"
+  ],
+  "src/twisted/cred/credentials.py": [
+   "IAnonymous",
+   "ICredentials",
+   "IUsernameHashedPassword",
+   "IUsernamePassword",
+   "checkPassword",
+   "credentials",
+   "password",
+   "self",
+   "username"
+  ],
+  "src/twisted/cred/error.py": [
+   "error"
+  ],
+  "src/twisted/cred/portal.py": [
+   "IRealm",
+   "_InterfaceItself",
+   "_requestResult",
+   "avatarId",
+   "checker",
+   "checkers",
+   "credentialInterfaces",
+   "credentials",
+   "interfaces",
+   "listCredentialsInterfaces",
+   "mind",
+   "portal",
+   "realm",
+   "self"
+  ],
+  "src/twisted/internet/__init__.py": [
+   "internet"
+  ],
+  "src/twisted/internet/defer.py": [
+   "Deferred",
+   "defer",
+   "maybeDeferred"
+  ],
+  "src/twisted/internet/interfaces.py": [
+   "IListeningPort",
+   "interfaces"
+  ],
+  "src/twisted/python/fakepwd.py": [
+   "_UserRecord",
+   "_lastGID",
+   "_lastUID",
+   "_users",
+   "gecos",
+   "gid",
+   "home",
+   "newUser",
+   "password",
+   "self",
+   "shell",
+   "uid",
+   "username"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 271,
+  "names_resolved_in_repo": 154,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

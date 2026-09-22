@@ -1,0 +1,63 @@
+{
+ "instance_id": "numba__numba-3883",
+ "repo_key": "numba/numba",
+ "base_commit": "532306131aa3072c50ae3a6b124824cf63b61b1f",
+ "status": "ok",
+ "co_edited": [
+  "numba/analysis.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "numba/__init__.py": [
+   "numba"
+  ],
+  "numba/analysis.py": [
+   "_",
+   "blk",
+   "branch",
+   "branch_bit",
+   "branch_info",
+   "cond",
+   "condition",
+   "const_conds",
+   "deadcond",
+   "defns",
+   "do_prune",
+   "func_ir",
+   "keep",
+   "nullified_conditions",
+   "prune",
+   "prune_stat",
+   "repl_idx",
+   "take_truebr",
+   "taken",
+   "x"
+  ],
+  "numba/consts.py": [
+   "ConstantInference",
+   "consts"
+  ],
+  "numba/ir.py": [
+   "Assign",
+   "Const",
+   "_consts",
+   "_definitions",
+   "ir",
+   "loc",
+   "truebr"
+  ],
+  "numba/types/__init__.py": [
+   "types"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 78,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.2
+}

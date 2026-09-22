@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-29317",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "28f69ba98708393deb0f35501940f40b0f081504",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/legend.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/legend.py": [
+   "_auto_legend_data",
+   "artist",
+   "bboxes",
+   "lines",
+   "offsets",
+   "renderer",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "dask__dask-11707",
+ "repo_key": "dask/dask",
+ "base_commit": "c5524337c7abf5f9c5436736cbc8c081c193e8ab",
+ "status": "ok",
+ "co_edited": [
+  "dask/array/creation.py",
+  "dask/array/slicing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "dask/array/creation.py": [
+   "dtype",
+   "start",
+   "step",
+   "stop"
+  ],
+  "dask/array/slicing.py": [
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 12.7
+}

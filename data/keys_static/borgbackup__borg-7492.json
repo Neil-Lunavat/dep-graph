@@ -1,0 +1,41 @@
+{
+ "instance_id": "borgbackup__borg-7492",
+ "repo_key": "borgbackup/borg",
+ "base_commit": "6b02c05f2b644320850fb040c2631b3090bb6db6",
+ "status": "ok",
+ "co_edited": [
+  "src/borg/archiver/create_cmd.py",
+  "src/borg/fuse.py",
+  "src/borg/helpers/progress.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/borg/fuse.py": [
+   "stat_"
+  ],
+  "src/borg/helpers/progress.py": [
+   "info",
+   "msg",
+   "pct",
+   "self",
+   "space",
+   "terminal_space"
+  ],
+  "src/borg/platform/__init__.py": [
+   "platform"
+  ],
+  "src/borg/platform/base.py": [
+   "swidth"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 120,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.7
+}

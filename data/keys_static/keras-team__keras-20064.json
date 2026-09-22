@@ -1,0 +1,38 @@
+{
+ "instance_id": "keras-team__keras-20064",
+ "repo_key": "keras-team/keras",
+ "base_commit": "933579d3c4a585f236982d05d3a74921f9567415",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/backend/tensorflow/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/tensorflow/core.py": [
+   "f",
+   "fn_output_signature",
+   "get_fn_output_signature",
+   "input",
+   "x",
+   "xs"
+  ],
+  "keras/src/tree/__init__.py": [
+   "tree"
+  ],
+  "keras/src/tree/tree_api.py": [
+   "flatten",
+   "is_nested",
+   "pack_sequence_as"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 30,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

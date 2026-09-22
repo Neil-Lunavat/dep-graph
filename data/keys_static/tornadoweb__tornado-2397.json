@@ -1,0 +1,53 @@
+{
+ "instance_id": "tornadoweb__tornado-2397",
+ "repo_key": "tornadoweb/tornado",
+ "base_commit": "6410cd98c1a5e938246a17cac0769f689ed471c5",
+ "status": "ok",
+ "co_edited": [
+  "tornado/curl_httpclient.py",
+  "tornado/httputil.py",
+  "tornado/simple_httpclient.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "tornado/__init__.py": [
+   "tornado"
+  ],
+  "tornado/curl_httpclient.py": [
+   "curl",
+   "request",
+   "userpwd"
+  ],
+  "tornado/escape.py": [
+   "_unicode",
+   "escape",
+   "utf8"
+  ],
+  "tornado/httputil.py": [
+   "encode_username_password",
+   "httputil",
+   "password",
+   "username"
+  ],
+  "tornado/simple_httpclient.py": [
+   "password",
+   "username"
+  ],
+  "tornado/util.py": [
+   "ObjectDict",
+   "PY3",
+   "unicode_type",
+   "util"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 53,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

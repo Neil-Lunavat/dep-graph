@@ -1,0 +1,39 @@
+{
+ "instance_id": "pylint-dev__pylint-5839",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "15040ee7c42958606ae27aa32ccbe54371b83049",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/__init__.py",
+  "pylint/checkers/unsupported_version.py",
+  "pylint/constants.py",
+  "script/get_unused_message_id_category.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/__init__.py": [
+   "pylint"
+  ],
+  "pylint/constants.py": [
+   "DELETED_MSGID_PREFIXES",
+   "DeletedMessage",
+   "constants",
+   "msgid",
+   "old_names",
+   "symbol"
+  ],
+  "script/get_unused_message_id_category.py": [
+   "categories"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 108,
+  "names_resolved_in_repo": 76,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

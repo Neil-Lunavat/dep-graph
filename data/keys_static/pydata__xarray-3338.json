@@ -1,0 +1,38 @@
+{
+ "instance_id": "pydata__xarray-3338",
+ "repo_key": "pydata/xarray",
+ "base_commit": "3f0049ffc51e4c709256cf174c435f741370148d",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/groupby.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/common.py": [
+   "ALL_DIMS",
+   "ImplementsArrayReduce",
+   "ImplementsDatasetReduce",
+   "common"
+  ],
+  "xarray/core/groupby.py": [
+   "_dims",
+   "_group_dim",
+   "_group_indices",
+   "bins",
+   "dim",
+   "dims",
+   "group_indices",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 3.3
+}

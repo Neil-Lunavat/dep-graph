@@ -1,0 +1,32 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1849",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "272f4d3e9030e4af6584d389fca042d0a06cb6e5",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/visitors/ast/naming.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "wemake_python_styleguide/logic/naming/access.py": [
+   "access"
+  ],
+  "wemake_python_styleguide/visitors/ast/naming.py": [
+   "assigned_name",
+   "count",
+   "names",
+   "used_name",
+   "used_names"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

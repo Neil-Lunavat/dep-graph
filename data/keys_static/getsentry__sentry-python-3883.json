@@ -1,0 +1,38 @@
+{
+ "instance_id": "getsentry__sentry-python-3883",
+ "repo_key": "getsentry/sentry-python",
+ "base_commit": "8ced6609e6fcc95855f43cf9fc1d94b59836b57f",
+ "status": "ok",
+ "co_edited": [
+  "sentry_sdk/_lru_cache.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sentry_sdk/_lru_cache.py": [
+   "LRUCache",
+   "_SENTINEL",
+   "_data",
+   "current",
+   "default",
+   "full",
+   "hits",
+   "key",
+   "max_size",
+   "misses",
+   "new",
+   "ret",
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 90,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

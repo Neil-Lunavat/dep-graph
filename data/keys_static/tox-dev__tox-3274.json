@@ -1,0 +1,25 @@
+{
+ "instance_id": "tox-dev__tox-3274",
+ "repo_key": "tox-dev/tox",
+ "base_commit": "822c9d07699aa090fb8d37cb94247ea0d085125b",
+ "status": "ok",
+ "co_edited": [
+  "src/tox/config/cli/parser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/tox/config/cli/parser.py": [
+   "of_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

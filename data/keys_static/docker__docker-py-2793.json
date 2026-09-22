@@ -1,0 +1,26 @@
+{
+ "instance_id": "docker__docker-py-2793",
+ "repo_key": "docker/docker-py",
+ "base_commit": "31775a1532a66cf8a4c183a99bb5c73623147295",
+ "status": "ok",
+ "co_edited": [
+  "docker/models/secrets.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "docker/models/secrets.py": [
+   "kwargs",
+   "obj"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

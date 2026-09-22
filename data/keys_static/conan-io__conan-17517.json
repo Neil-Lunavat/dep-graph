@@ -1,0 +1,58 @@
+{
+ "instance_id": "conan-io__conan-17517",
+ "repo_key": "conan-io/conan",
+ "base_commit": "003e2cfb746dbc83370758c192edacebd761472b",
+ "status": "ok",
+ "co_edited": [
+  "conan/api/output.py",
+  "conans/client/rest/auth_manager.py",
+  "conans/client/rest/conan_requester.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "conan/__init__.py": [
+   "conan"
+  ],
+  "conan/api/__init__.py": [
+   "api"
+  ],
+  "conan/api/output.py": [
+   "BLUE",
+   "Color",
+   "ConanOutput",
+   "MAGENTA",
+   "_write_message",
+   "fg",
+   "info",
+   "msg",
+   "output",
+   "scope",
+   "self",
+   "success",
+   "trace"
+  ],
+  "conans/client/rest/auth_manager.py": [
+   "_RemoteCreds",
+   "_creds",
+   "localdb",
+   "remote",
+   "self",
+   "user",
+   "usermsg"
+  ],
+  "conans/client/rest/conan_requester.py": [
+   "method",
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 39,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

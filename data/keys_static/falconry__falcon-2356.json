@@ -1,0 +1,57 @@
+{
+ "instance_id": "falconry__falcon-2356",
+ "repo_key": "falconry/falcon",
+ "base_commit": "5ce771e19b9aed17401f5865011ebec59105f5a6",
+ "status": "ok",
+ "co_edited": [
+  "falcon/app_helpers.py",
+  "falcon/http_error.py",
+  "falcon/response.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "falcon/__init__.py": [
+   "falcon"
+  ],
+  "falcon/app_helpers.py": [
+   "exception",
+   "media_handlers",
+   "mt",
+   "options",
+   "predefined",
+   "resp"
+  ],
+  "falcon/constants.py": [
+   "MEDIA_JSON",
+   "MEDIA_XML"
+  ],
+  "falcon/http_error.py": [
+   "_to_xml",
+   "self",
+   "to_xml"
+  ],
+  "falcon/response.py": [
+   "data",
+   "media_handlers",
+   "options",
+   "self",
+   "xml_error_serialization"
+  ],
+  "falcon/util/__init__.py": [
+   "util"
+  ],
+  "falcon/util/deprecation.py": [
+   "deprecated"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 118,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

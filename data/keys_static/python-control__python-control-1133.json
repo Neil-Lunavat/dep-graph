@@ -1,0 +1,27 @@
+{
+ "instance_id": "python-control__python-control-1133",
+ "repo_key": "python-control/python-control",
+ "base_commit": "f6799ab8e60d7fcd4b02d52d5903f08c24957faf",
+ "status": "ok",
+ "co_edited": [
+  "control/iosys.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "control/iosys.py": [
+   "_repr_html_",
+   "_repr_markdown_",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

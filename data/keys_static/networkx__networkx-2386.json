@@ -1,0 +1,42 @@
+{
+ "instance_id": "networkx__networkx-2386",
+ "repo_key": "networkx/networkx",
+ "base_commit": "464bf8fc08ffa09cfd0183fb5cae1adfe6839e12",
+ "status": "ok",
+ "co_edited": [
+  "networkx/algorithms/bipartite/matching.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "networkx/algorithms/bipartite/matching.py": [
+   "G",
+   "_alternating_dfs",
+   "along_matched",
+   "child",
+   "children",
+   "edge",
+   "edge_sets",
+   "edges",
+   "matched_edges",
+   "matching",
+   "parent",
+   "stack",
+   "targets",
+   "u",
+   "unmatched_edges",
+   "v",
+   "valid_edges",
+   "visited"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 105,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

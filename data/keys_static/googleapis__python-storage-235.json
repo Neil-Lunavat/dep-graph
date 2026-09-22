@@ -1,0 +1,27 @@
+{
+ "instance_id": "googleapis__python-storage-235",
+ "repo_key": "googleapis/python-storage",
+ "base_commit": "3465d08e098edb250dee5e97d1fb9ded8bae5700",
+ "status": "ok",
+ "co_edited": [
+  "google/cloud/storage/blob.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "google/cloud/storage/blob.py": [
+   "error",
+   "error_message",
+   "response"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

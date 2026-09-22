@@ -1,0 +1,70 @@
+{
+ "instance_id": "wemake-services__wemake-python-styleguide-1916",
+ "repo_key": "wemake-services/wemake-python-styleguide",
+ "base_commit": "a605c95bd84367cd8643c5163361c286de51bb96",
+ "status": "ok",
+ "co_edited": [
+  "wemake_python_styleguide/logic/tree/functions.py",
+  "wemake_python_styleguide/visitors/ast/complexity/classes.py",
+  "wemake_python_styleguide/visitors/ast/complexity/counts.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "wemake_python_styleguide/logic/tree/decorators.py"
+ ],
+ "symbol": {
+  "wemake_python_styleguide/__init__.py": [
+   "wemake_python_styleguide"
+  ],
+  "wemake_python_styleguide/compat/__init__.py": [
+   "compat"
+  ],
+  "wemake_python_styleguide/compat/aliases.py": [
+   "FunctionNodes",
+   "aliases"
+  ],
+  "wemake_python_styleguide/logic/__init__.py": [
+   "logic"
+  ],
+  "wemake_python_styleguide/logic/nodes.py": [
+   "get_parent"
+  ],
+  "wemake_python_styleguide/logic/tree/__init__.py": [
+   "tree"
+  ],
+  "wemake_python_styleguide/logic/tree/classes.py": [
+   "classes"
+  ],
+  "wemake_python_styleguide/logic/tree/functions.py": [
+   "_METHOD_TYPES",
+   "function_type",
+   "functions",
+   "is_method"
+  ],
+  "wemake_python_styleguide/types.py": [
+   "AnyFunctionDef",
+   "types"
+  ],
+  "wemake_python_styleguide/violations/base.py": [
+   "baseline",
+   "text"
+  ],
+  "wemake_python_styleguide/visitors/ast/complexity/classes.py": [
+   "node"
+  ],
+  "wemake_python_styleguide/visitors/ast/complexity/counts.py": [
+   "_check_tuple_unpack",
+   "node",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 140,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 15,
+  "defined_in_test_file": 0,
+  "jedi_errors": 12,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

@@ -1,0 +1,31 @@
+{
+ "instance_id": "keras-team__keras-20122",
+ "repo_key": "keras-team/keras",
+ "base_commit": "816d219c04b2bdb7de81081fa14eac63000dac30",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/backend/tensorflow/linalg.py",
+  "keras/src/backend/torch/linalg.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/tensorflow/linalg.py": [
+   "compute_uv",
+   "full_matrices",
+   "x"
+  ],
+  "keras/src/backend/torch/linalg.py": [
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

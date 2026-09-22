@@ -1,0 +1,37 @@
+{
+ "instance_id": "pydata__xarray-7003",
+ "repo_key": "pydata/xarray",
+ "base_commit": "5bec4662a7dd4330eca6412c477ca3f238323ed2",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/indexes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/indexes.py": [
+   "PandasIndex",
+   "PandasMultiIndex",
+   "convert_new_idx",
+   "coords",
+   "dim",
+   "idx",
+   "index",
+   "index_id",
+   "new_idx",
+   "seen"
+  ],
+  "xarray/core/variable.py": [
+   "dims"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 3,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

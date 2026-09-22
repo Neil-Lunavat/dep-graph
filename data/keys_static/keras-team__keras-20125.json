@@ -1,0 +1,32 @@
+{
+ "instance_id": "keras-team__keras-20125",
+ "repo_key": "keras-team/keras",
+ "base_commit": "6fd4873a367d20624105967c5be0d451f72f946d",
+ "status": "ok",
+ "co_edited": [
+  "keras/src/ops/core.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "keras/src/backend/common/keras_tensor.py": [
+   "any_symbolic_tensors"
+  ],
+  "keras/src/ops/core.py": [
+   "StopGradient",
+   "variable"
+  ],
+  "keras/src/ops/operation.py": [
+   "symbolic_call"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "yt-dlp__yt-dlp-4841",
+ "repo_key": "yt-dlp/yt-dlp",
+ "base_commit": "07a1250e0e90515ff8142161536f9dafa6eaba1b",
+ "status": "ok",
+ "co_edited": [
+  "yt_dlp/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "yt_dlp/utils.py": [
+   "url"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

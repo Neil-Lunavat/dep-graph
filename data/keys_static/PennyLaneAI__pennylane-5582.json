@@ -1,0 +1,38 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-5582",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "ea0107d15a2794dbe7772d89edd18a99b9b1e664",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/devices/null_qubit.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/devices/null_qubit.py": [
+   "new_shots_stopping_condition",
+   "new_stopping_condition",
+   "op",
+   "original_shots_stopping_condition",
+   "original_stopping_condition",
+   "program",
+   "t"
+  ],
+  "pennylane/devices/preprocess.py": [
+   "decompose",
+   "preprocess"
+  ],
+  "pennylane/transforms/core/transform_dispatcher.py": [
+   "transform"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 34,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

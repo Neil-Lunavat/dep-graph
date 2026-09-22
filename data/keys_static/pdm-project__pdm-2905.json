@@ -1,0 +1,56 @@
+{
+ "instance_id": "pdm-project__pdm-2905",
+ "repo_key": "pdm-project/pdm",
+ "base_commit": "06d459247d9e5109e9321c6165afa941dd20fdca",
+ "status": "ok",
+ "co_edited": [
+  "src/pdm/formats/poetry.py",
+  "src/pdm/models/requirements.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/pdm/_types.py": [
+   "RequirementDict"
+  ],
+  "src/pdm/formats/poetry.py": [
+   "_convert_specifier",
+   "backend",
+   "fix_req_path",
+   "name",
+   "pdm_req",
+   "req",
+   "req_dict"
+  ],
+  "src/pdm/models/__init__.py": [
+   "models"
+  ],
+  "src/pdm/models/backends.py": [
+   "DEFAULT_BACKEND",
+   "backends"
+  ],
+  "src/pdm/models/requirements.py": [
+   "FileRequirement",
+   "Requirement",
+   "as_line",
+   "check_installable",
+   "cls",
+   "create",
+   "from_req_dict",
+   "is_local_dir",
+   "name",
+   "req_dict",
+   "requirements",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 65,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

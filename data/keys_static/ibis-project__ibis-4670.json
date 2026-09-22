@@ -1,0 +1,68 @@
+{
+ "instance_id": "ibis-project__ibis-4670",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "725a6b1b989c3edae0b63d4681dfe9fc987582fe",
+ "status": "ok",
+ "co_edited": [
+  "ibis/backends/dask/execution/strings.py",
+  "ibis/backends/pandas/execution/strings.py",
+  "ibis/expr/builders.py",
+  "ibis/expr/operations/logical.py",
+  "ibis/expr/rules.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "ibis/__init__.py": [
+   "ibis"
+  ],
+  "ibis/backends/pandas/core.py": [
+   "integer_types"
+  ],
+  "ibis/backends/pandas/execution/strings.py": [
+   "data",
+   "length",
+   "start"
+  ],
+  "ibis/expr/__init__.py": [
+   "expr"
+  ],
+  "ibis/expr/builders.py": [
+   "base",
+   "case_expr",
+   "self"
+  ],
+  "ibis/expr/operations/__init__.py": [
+   "operations",
+   "ops"
+  ],
+  "ibis/expr/operations/generic.py": [
+   "Literal",
+   "generic"
+  ],
+  "ibis/expr/operations/logical.py": [
+   "arg",
+   "left",
+   "lower_bound",
+   "right",
+   "upper_bound"
+  ],
+  "ibis/expr/operations/strings.py": [
+   "Substring"
+  ],
+  "ibis/expr/rules.py": [
+   "_arg_type_error_format",
+   "op",
+   "rlz"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 61,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.7
+}

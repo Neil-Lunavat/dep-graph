@@ -1,0 +1,29 @@
+{
+ "instance_id": "tobymao__sqlglot-3799",
+ "repo_key": "tobymao/sqlglot",
+ "base_commit": "44d650637d5d7a662b57ec1d8ca74dffe0f7ad73",
+ "status": "ok",
+ "co_edited": [
+  "sqlglot/dialects/postgres.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sqlglot/dialects/dialect.py": [
+   "build_formatted_time"
+  ],
+  "sqlglot/expressions.py": [
+   "StrToDate",
+   "exp"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

@@ -1,0 +1,33 @@
+{
+ "instance_id": "kedro-org__kedro-4570",
+ "repo_key": "kedro-org/kedro",
+ "base_commit": "f1f49e51bd6cfce827f9090fc3d10096d6edab9c",
+ "status": "ok",
+ "co_edited": [
+  "kedro/pipeline/pipeline.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "kedro/pipeline/node.py": [
+   "name",
+   "namespace"
+  ],
+  "kedro/pipeline/pipeline.py": [
+   "dependencies",
+   "key",
+   "node",
+   "parent",
+   "parent_namespace"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 18,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

@@ -1,0 +1,27 @@
+{
+ "instance_id": "GenericMappingTools__pygmt-1484",
+ "repo_key": "genericmappingtools/pygmt",
+ "base_commit": "4163497b9a12bcfc35b337ced20dde9afae10ce7",
+ "status": "ok",
+ "co_edited": [
+  "pygmt/clib/conversion.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pygmt/clib/conversion.py": [
+   "coord_inc",
+   "dim",
+   "grid"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 6,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

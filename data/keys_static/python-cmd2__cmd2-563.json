@@ -1,0 +1,47 @@
+{
+ "instance_id": "python-cmd2__cmd2-563",
+ "repo_key": "python-cmd2/cmd2",
+ "base_commit": "924f8a57a73de7da462e654f3937b134ca92dbc7",
+ "status": "ok",
+ "co_edited": [
+  "cmd2/cmd2.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "cmd2/cmd2.py": [
+   "COMMAND_FUNC_PREFIX",
+   "HELP_CATEGORY",
+   "HELP_FUNC_PREFIX",
+   "argparser",
+   "category",
+   "cmd_func",
+   "cmd_wrapper",
+   "cmds_cats",
+   "cmds_doc",
+   "command",
+   "doc",
+   "doc_block",
+   "doc_line",
+   "found_first",
+   "func",
+   "get_help_topics",
+   "has_help_func",
+   "help_func",
+   "help_topics",
+   "self",
+   "stripped_line",
+   "target",
+   "topics"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 107,
+  "names_resolved_in_repo": 75,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,97 @@
+{
+ "instance_id": "ibis-project__ibis-9658",
+ "repo_key": "ibis-project/ibis",
+ "base_commit": "f019b6766ee81a41e3f78bfaba69439a6d0ee707",
+ "status": "ok",
+ "co_edited": [
+  "ibis/backends/mssql/__init__.py",
+  "ibis/expr/builders.py",
+  "ibis/expr/types/numeric.py",
+  "ibis/expr/types/relations.py",
+  "ibis/selectors.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "ibis/common/selectors.py"
+ ],
+ "symbol": {
+  "ibis/__init__.py": [
+   "ibis"
+  ],
+  "ibis/backends/mssql/__init__.py": [
+   "_ddl_begin",
+   "_safe_ddl",
+   "args",
+   "con",
+   "create_stmt",
+   "cur",
+   "cursor",
+   "host",
+   "kwargs",
+   "port",
+   "query",
+   "self"
+  ],
+  "ibis/backends/sql/__init__.py": [
+   "dialect"
+  ],
+  "ibis/common/__init__.py": [
+   "common"
+  ],
+  "ibis/common/bases.py": [
+   "Singleton"
+  ],
+  "ibis/common/deferred.py": [
+   "Resolver"
+  ],
+  "ibis/common/grounds.py": [
+   "Concrete",
+   "grounds"
+  ],
+  "ibis/common/typing.py": [
+   "VarTuple"
+  ],
+  "ibis/expr/__init__.py": [
+   "expr"
+  ],
+  "ibis/expr/builders.py": [
+   "groupings",
+   "orderings"
+  ],
+  "ibis/expr/operations/__init__.py": [
+   "ops"
+  ],
+  "ibis/expr/operations/core.py": [
+   "Value"
+  ],
+  "ibis/expr/operations/sortkeys.py": [
+   "SortKey"
+  ],
+  "ibis/expr/types/__init__.py": [
+   "ir",
+   "types"
+  ],
+  "ibis/expr/types/generic.py": [
+   "Value",
+   "_bind_to_parent_table"
+  ],
+  "ibis/expr/types/numeric.py": [
+   "how",
+   "right",
+   "self",
+   "where"
+  ],
+  "ibis/expr/types/relations.py": [
+   "Table"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 153,
+  "names_resolved_in_repo": 89,
+  "defined_in_new_file": 12,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 13.3
+}

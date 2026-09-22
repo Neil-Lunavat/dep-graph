@@ -1,0 +1,49 @@
+{
+ "instance_id": "reflex-dev__reflex-4720",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "3cb44431288dd143bed6ba67e9b13afc2cde1aa9",
+ "status": "ok",
+ "co_edited": [
+  "reflex/app.py",
+  "reflex/utils/prerequisites.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "reflex/components/base/strict_mode.py"
+ ],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/app.py": [
+   "app_wrappers",
+   "config"
+  ],
+  "reflex/components/__init__.py": [
+   "components"
+  ],
+  "reflex/components/base/__init__.py": [
+   "base"
+  ],
+  "reflex/components/component.py": [
+   "Component",
+   "component",
+   "create",
+   "library",
+   "tag"
+  ],
+  "reflex/config.py": [
+   "get_config",
+   "react_strict_mode"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 20,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 4,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.4
+}

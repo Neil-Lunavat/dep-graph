@@ -1,0 +1,33 @@
+{
+ "instance_id": "xonsh__xonsh-3428",
+ "repo_key": "xonsh/xonsh",
+ "base_commit": "8bbefebef30f2a75a695aa6fc5ed23b14db8f842",
+ "status": "ok",
+ "co_edited": [
+  "xonsh/prompt/vc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xonsh/__init__.py": [
+   "xonsh"
+  ],
+  "xonsh/lazyasd.py": [
+   "LazyObject",
+   "lazyasd"
+  ],
+  "xonsh/prompt/vc.py": [
+   "RE_REMOVE_ANSI",
+   "branch"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

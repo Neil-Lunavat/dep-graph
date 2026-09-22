@@ -1,0 +1,28 @@
+{
+ "instance_id": "Materials-Consortia__optimade-python-tools-1844",
+ "repo_key": "materials-consortia/optimade-python-tools",
+ "base_commit": "55e2dd0c2d4c414ca8ec60b70902786b886a678a",
+ "status": "ok",
+ "co_edited": [
+  "optimade/models/responses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "optimade/models/entries.py": [
+   "EntryResource"
+  ],
+  "optimade/models/utils.py": [
+   "description"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

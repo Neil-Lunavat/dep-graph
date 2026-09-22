@@ -1,0 +1,31 @@
+{
+ "instance_id": "python-telegram-bot__python-telegram-bot-4802",
+ "repo_key": "python-telegram-bot/python-telegram-bot",
+ "base_commit": "89556d02e36f3a9647cf480fe117647b5749f4be",
+ "status": "ok",
+ "co_edited": [
+  "src/telegram/ext/_application.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/telegram/ext/_application.py": [
+   "block",
+   "callback",
+   "error_handler_items",
+   "error_handlers",
+   "handlers",
+   "self",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 127,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

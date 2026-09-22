@@ -1,0 +1,29 @@
+{
+ "instance_id": "reflex-dev__reflex-3037",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "67702e092723a829e70f483e68f86c08213543f6",
+ "status": "ok",
+ "co_edited": [
+  "reflex/utils/types.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/utils/types.py": [
+   "allowed_value_str",
+   "comp_name",
+   "key",
+   "value",
+   "value_str"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

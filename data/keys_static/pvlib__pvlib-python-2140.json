@@ -1,0 +1,35 @@
+{
+ "instance_id": "pvlib__pvlib-python-2140",
+ "repo_key": "pvlib/pvlib-python",
+ "base_commit": "5e43be7a7a924f8161181a49e93053aa4a80f54d",
+ "status": "ok",
+ "co_edited": [
+  "pvlib/spectrum/__init__.py",
+  "pvlib/spectrum/irradiance.py",
+  "pvlib/spectrum/mismatch.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pvlib/spectrum/irradiance.py": [
+   "ape",
+   "average_photon_energy",
+   "e",
+   "hclambda",
+   "int_pfd",
+   "int_spectra",
+   "integrate",
+   "pfd",
+   "spectra"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 315,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 6,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

@@ -1,0 +1,47 @@
+{
+ "instance_id": "fonttools__fonttools-3437",
+ "repo_key": "fonttools/fonttools",
+ "base_commit": "0572f7871823bdef3ceceaf41dedd0a6bd100995",
+ "status": "ok",
+ "co_edited": [
+  "Lib/fontTools/designspaceLib/__init__.py",
+  "Lib/fontTools/subset/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "Lib/fontTools/designspaceLib/__main__.py"
+ ],
+ "symbol": {
+  "Lib/fontTools/designspaceLib/__init__.py": [
+   "DesignSpaceDocument",
+   "args",
+   "description",
+   "ds",
+   "fromfile",
+   "groupDescription",
+   "inputLoc",
+   "inputLocation",
+   "lastGroup",
+   "main",
+   "mappingElement",
+   "mappingObject",
+   "mappingsElement",
+   "options",
+   "outputLoc",
+   "outputLocation",
+   "parser",
+   "root",
+   "self",
+   "write"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 109,
+  "names_resolved_in_repo": 68,
+  "defined_in_new_file": 1,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

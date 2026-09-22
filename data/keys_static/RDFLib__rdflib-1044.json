@@ -1,0 +1,25 @@
+{
+ "instance_id": "RDFLib__rdflib-1044",
+ "repo_key": "rdflib/rdflib",
+ "base_commit": "a3245fb1fac921a5d8e07bce80914c42f5399b32",
+ "status": "ok",
+ "co_edited": [
+  "rdflib/namespace.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "rdflib/namespace.py": [
+   "ALLOWED_NAME_CHARS"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

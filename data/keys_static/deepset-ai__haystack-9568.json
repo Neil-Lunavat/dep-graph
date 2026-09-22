@@ -1,0 +1,42 @@
+{
+ "instance_id": "deepset-ai__haystack-9568",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "fc64884819b37c944a9580c022698c19102a37eb",
+ "status": "ok",
+ "co_edited": [
+  "haystack/dataclasses/byte_stream.py",
+  "haystack/dataclasses/document.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/dataclasses/byte_stream.py": [
+   "ByteStream",
+   "cls",
+   "data",
+   "from_dict",
+   "meta",
+   "mime_type",
+   "self",
+   "to_dict"
+  ],
+  "haystack/dataclasses/document.py": [
+   "blob",
+   "data",
+   "self",
+   "sparse_embedding"
+  ],
+  "haystack/dataclasses/sparse_embedding.py": [
+   "to_dict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

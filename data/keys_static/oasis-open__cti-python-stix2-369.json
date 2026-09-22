@@ -1,0 +1,28 @@
+{
+ "instance_id": "oasis-open__cti-python-stix2-369",
+ "repo_key": "oasis-open/cti-python-stix2",
+ "base_commit": "380926cff59f9e0d70914c2de933e4651f13259d",
+ "status": "ok",
+ "co_edited": [
+  "stix2/v21/sdo.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "stix2/properties.py": [
+   "ListProperty",
+   "ReferenceProperty",
+   "spec_version",
+   "valid_types"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

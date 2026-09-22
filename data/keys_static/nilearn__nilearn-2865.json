@@ -1,0 +1,26 @@
+{
+ "instance_id": "nilearn__nilearn-2865",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "dbbd221e3633c97464034c5366faa548728c9999",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/datasets/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "nilearn/datasets/utils.py": [
+   "overwrite",
+   "session"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

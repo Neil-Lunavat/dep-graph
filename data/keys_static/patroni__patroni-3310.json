@@ -1,0 +1,32 @@
+{
+ "instance_id": "patroni__patroni-3310",
+ "repo_key": "patroni/patroni",
+ "base_commit": "5ed4d33f7da60a7780a5693c677bcb82249a92f5",
+ "status": "ok",
+ "co_edited": [
+  "patroni/ha.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "patroni/ha.py": [
+   "check_quorum",
+   "cluster",
+   "exclude_failover_candidate",
+   "failover",
+   "logger",
+   "node",
+   "quorum_votes",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

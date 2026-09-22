@@ -1,0 +1,21 @@
+{
+ "instance_id": "nilearn__nilearn-3924",
+ "repo_key": "nilearn/nilearn",
+ "base_commit": "0b49cc0cd99ca5bfd8780e5429c5d744dc21db81",
+ "status": "ok",
+ "co_edited": [
+  "nilearn/plotting/img_plotting.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 0,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

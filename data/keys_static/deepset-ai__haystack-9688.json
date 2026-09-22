@@ -1,0 +1,97 @@
+{
+ "instance_id": "deepset-ai__haystack-9688",
+ "repo_key": "deepset-ai/haystack",
+ "base_commit": "5f3c37d287a4fa882d59161a20f762e9102bc6aa",
+ "status": "ok",
+ "co_edited": [
+  "haystack/components/routers/metadata_router.py",
+  "haystack/utils/filters.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "haystack/__init__.py": [
+   "haystack"
+  ],
+  "haystack/components/routers/metadata_router.py": [
+   "cls",
+   "current_obj_matched",
+   "data",
+   "doc_or_bytestream",
+   "documents",
+   "edge",
+   "from_dict",
+   "init_params",
+   "output",
+   "output_type",
+   "rule",
+   "rules",
+   "run",
+   "self",
+   "to_dict",
+   "unmatched"
+  ],
+  "haystack/core/component/component.py": [
+   "component",
+   "set_output_types"
+  ],
+  "haystack/core/serialization.py": [
+   "default_from_dict",
+   "default_to_dict"
+  ],
+  "haystack/dataclasses/__init__.py": [
+   "dataclasses"
+  ],
+  "haystack/dataclasses/byte_stream.py": [
+   "ByteStream"
+  ],
+  "haystack/dataclasses/document.py": [
+   "Document"
+  ],
+  "haystack/utils/__init__.py": [
+   "utils"
+  ],
+  "haystack/utils/filters.py": [
+   "COMPARISON_OPERATORS",
+   "LOGICAL_OPERATORS",
+   "_and",
+   "_comparison_condition",
+   "_ensure_both_dates_naive_or_aware",
+   "_equal",
+   "_greater_than",
+   "_greater_than_equal",
+   "_in",
+   "_less_than",
+   "_less_than_equal",
+   "_logic_condition",
+   "_not",
+   "_not_equal",
+   "_not_in",
+   "_or",
+   "_parse_date",
+   "condition",
+   "conditions",
+   "document",
+   "document_matches_filter",
+   "document_value",
+   "e",
+   "filter_value",
+   "filters",
+   "operator",
+   "value"
+  ],
+  "haystack/utils/type_serialization.py": [
+   "deserialize_type",
+   "serialize_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 506,
+  "names_resolved_in_repo": 267,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

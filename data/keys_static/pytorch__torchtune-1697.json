@@ -1,0 +1,32 @@
+{
+ "instance_id": "pytorch__torchtune-1697",
+ "repo_key": "pytorch/torchtune",
+ "base_commit": "3fddc56942846220b39945559f4b5e695873bb43",
+ "status": "ok",
+ "co_edited": [
+  "torchtune/datasets/_packed.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "torchtune/datasets/_packed.py": [
+   "_should_stop_packing",
+   "current_pack",
+   "max_packs",
+   "max_seq_len",
+   "packs",
+   "self",
+   "seq_len",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

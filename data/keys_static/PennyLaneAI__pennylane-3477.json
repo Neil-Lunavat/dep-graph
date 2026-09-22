@@ -1,0 +1,62 @@
+{
+ "instance_id": "PennyLaneAI__pennylane-3477",
+ "repo_key": "pennylaneai/pennylane",
+ "base_commit": "d06c9c197dd6745e0056a94c8cdd419b4c0b6bfa",
+ "status": "ok",
+ "co_edited": [
+  "pennylane/ops/qubit/matrix_ops.py",
+  "pennylane/transforms/decompositions/single_qubit_unitary.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pennylane/__init__.py": [
+   "math",
+   "qml"
+  ],
+  "pennylane/ops/qubit/matrix_ops.py": [
+   "U",
+   "is_batched",
+   "shape",
+   "shape_without_batch_dim",
+   "wires"
+  ],
+  "pennylane/ops/qubit/parametric_ops.py": [
+   "RZ",
+   "Rot",
+   "wires"
+  ],
+  "pennylane/transforms/__init__.py": [
+   "transforms"
+  ],
+  "pennylane/transforms/decompositions/single_qubit_unitary.py": [
+   "U",
+   "_convert_to_su2",
+   "angles_U00",
+   "angles_U10",
+   "dets",
+   "epsilon",
+   "exp_angles",
+   "off_diagonal_elements",
+   "omegas",
+   "phis",
+   "thetas",
+   "wire"
+  ],
+  "pennylane/transforms/decompositions/two_qubit_unitary.py": [
+   "two_qubit_decomposition"
+  ],
+  "pennylane/wires.py": [
+   "Wires"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 108,
+  "names_resolved_in_repo": 84,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.4
+}

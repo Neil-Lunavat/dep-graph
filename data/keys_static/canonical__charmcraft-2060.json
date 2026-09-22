@@ -1,0 +1,29 @@
+{
+ "instance_id": "canonical__charmcraft-2060",
+ "repo_key": "canonical/charmcraft",
+ "base_commit": "6d0d9ce4d7656fe77df8b322f30c892ef212862a",
+ "status": "ok",
+ "co_edited": [
+  "charmcraft/services/package.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "charmcraft/services/package.py": [
+   "_platform",
+   "_project",
+   "dest_dir",
+   "platform",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

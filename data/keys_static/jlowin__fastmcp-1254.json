@@ -1,0 +1,32 @@
+{
+ "instance_id": "jlowin__fastmcp-1254",
+ "repo_key": "jlowin/fastmcp",
+ "base_commit": "d04840560a31ede819f4951f49b15e63d55ff23c",
+ "status": "ok",
+ "co_edited": [
+  "src/fastmcp/experimental/server/openapi/components.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/fastmcp/experimental/server/openapi/components.py": [
+   "_client",
+   "cli_headers",
+   "headers",
+   "key",
+   "logger",
+   "request",
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 26,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 10,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

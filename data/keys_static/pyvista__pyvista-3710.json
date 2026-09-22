@@ -1,0 +1,27 @@
+{
+ "instance_id": "pyvista__pyvista-3710",
+ "repo_key": "pyvista/pyvista",
+ "base_commit": "846f1834f7428acff9395ef4b8a3bd39b42c99e6",
+ "status": "ok",
+ "co_edited": [
+  "pyvista/demos/demos.py",
+  "pyvista/utilities/geometric_objects.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pyvista/utilities/geometric_objects.py": [
+   "resolution",
+   "theta"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "scipp__plopp-375",
+ "repo_key": "scipp/plopp",
+ "base_commit": "fae6e2a86c873d8b260f0098280c4cc644085267",
+ "status": "ok",
+ "co_edited": [
+  "src/plopp/backends/matplotlib/canvas.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/plopp/backends/matplotlib/canvas.py": [
+   "_maybe_trim_polar_limits",
+   "ax",
+   "axis_type",
+   "limits",
+   "self",
+   "value",
+   "xmax",
+   "xmin"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 82,
+  "names_resolved_in_repo": 33,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

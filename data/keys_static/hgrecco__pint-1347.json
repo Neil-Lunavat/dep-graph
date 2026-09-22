@@ -1,0 +1,21 @@
+{
+ "instance_id": "hgrecco__pint-1347",
+ "repo_key": "hgrecco/pint",
+ "base_commit": "37a61ede6fbd628c7dc160eb36278cf41c96484c",
+ "status": "ok",
+ "co_edited": [
+  "benchmarks/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

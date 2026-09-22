@@ -1,0 +1,85 @@
+{
+ "instance_id": "reflex-dev__reflex-2439",
+ "repo_key": "reflex-dev/reflex",
+ "base_commit": "84858854ae2bc4a5b3b136e04b65b44fef26ebab",
+ "status": "ok",
+ "co_edited": [
+  "reflex/components/component.py",
+  "reflex/components/core/match.py",
+  "reflex/components/radix/primitives/accordion.py",
+  "reflex/style.py",
+  "reflex/vars.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "reflex/__init__.py": [
+   "reflex"
+  ],
+  "reflex/components/component.py": [
+   "_get_imports",
+   "self",
+   "style"
+  ],
+  "reflex/components/core/match.py": [
+   "_create_case_var_with_var_data",
+   "_var_data",
+   "case",
+   "case_element",
+   "cls",
+   "cond",
+   "default",
+   "element",
+   "match_cases",
+   "self"
+  ],
+  "reflex/components/radix/primitives/accordion.py": [
+   "_var_data",
+   "accordion_theme_content",
+   "accordion_theme_root",
+   "accordion_theme_trigger",
+   "color_scheme",
+   "comp",
+   "self",
+   "variant"
+  ],
+  "reflex/style.py": [
+   "Style",
+   "_var_data",
+   "emotion_style",
+   "format_as_emotion",
+   "style",
+   "style_dict"
+  ],
+  "reflex/utils/imports.py": [
+   "ImportDict",
+   "imports",
+   "merge_imports"
+  ],
+  "reflex/vars.py": [
+   "BaseVar",
+   "Var",
+   "VarData",
+   "_extract_var_data",
+   "_var_data",
+   "_var_is_string",
+   "_var_state",
+   "merge",
+   "self",
+   "type_",
+   "value",
+   "values",
+   "var_datas",
+   "vars"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 175,
+  "names_resolved_in_repo": 140,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

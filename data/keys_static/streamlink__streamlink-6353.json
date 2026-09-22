@@ -1,0 +1,26 @@
+{
+ "instance_id": "streamlink__streamlink-6353",
+ "repo_key": "streamlink/streamlink",
+ "base_commit": "2bcdafc67824a60d65bce8bea65d019061c4e360",
+ "status": "ok",
+ "co_edited": [
+  "src/streamlink/plugins/mangomolo.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/streamlink/plugin/plugin.py": [
+   "name",
+   "pattern"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,91 @@
+{
+ "instance_id": "mikedh__trimesh-2354",
+ "repo_key": "mikedh/trimesh",
+ "base_commit": "1493543559f9a56366052b74003cccf06900fe27",
+ "status": "ok",
+ "co_edited": [
+  "trimesh/bounds.py",
+  "trimesh/creation.py",
+  "trimesh/exchange/threemf.py",
+  "trimesh/path/arc.py",
+  "trimesh/path/curve.py",
+  "trimesh/path/exchange/misc.py",
+  "trimesh/rendering.py",
+  "trimesh/triangles.py",
+  "trimesh/util.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "trimesh/bounds.py": [
+   "bounds",
+   "contains",
+   "points"
+  ],
+  "trimesh/constants.py": [
+   "merge",
+   "strict",
+   "tol"
+  ],
+  "trimesh/exchange/threemf.py": [
+   "i"
+  ],
+  "trimesh/path/arc.py": [
+   "R",
+   "arc_dist",
+   "arc_ok",
+   "close",
+   "discrete",
+   "points"
+  ],
+  "trimesh/path/curve.py": [
+   "binomial",
+   "n",
+   "points",
+   "result",
+   "test"
+  ],
+  "trimesh/path/exchange/misc.py": [
+   "linestrings_to_path",
+   "multi"
+  ],
+  "trimesh/rendering.py": [
+   "faces",
+   "mesh",
+   "normals",
+   "smooth",
+   "vertex_count",
+   "vertices"
+  ],
+  "trimesh/triangles.py": [
+   "crosses",
+   "triangles",
+   "unit",
+   "valid"
+  ],
+  "trimesh/typed.py": [
+   "Dict",
+   "Integer",
+   "List",
+   "typed"
+  ],
+  "trimesh/util.py": [
+   "detect",
+   "faces",
+   "is_shape",
+   "log",
+   "row_norm",
+   "text",
+   "util"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 251,
+  "names_resolved_in_repo": 115,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 9,
+  "truncated": false
+ },
+ "seconds": 5.0
+}

@@ -1,0 +1,41 @@
+{
+ "instance_id": "matrix-org__synapse-5257",
+ "repo_key": "matrix-org/synapse",
+ "base_commit": "fa1b293da2e0a5e47864ccb49e530d8a81d81790",
+ "status": "ok",
+ "co_edited": [
+  "synapse/crypto/keyring.py",
+  "synapse/http/servlet.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "synapse/api/errors.py": [
+   "Codes",
+   "INVALID_PARAM",
+   "SynapseError",
+   "errcode"
+  ],
+  "synapse/crypto/keyring.py": [
+   "rq",
+   "self",
+   "server_name",
+   "server_names",
+   "server_to_deferred",
+   "verify_requests",
+   "wait_for_previous_lookups"
+  ],
+  "synapse/http/servlet.py": [
+   "message"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 32,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

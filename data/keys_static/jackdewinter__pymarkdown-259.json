@@ -1,0 +1,59 @@
+{
+ "instance_id": "jackdewinter__pymarkdown-259",
+ "repo_key": "jackdewinter/pymarkdown",
+ "base_commit": "91e63ade5a88c244c8d404a42c80589ce9c53834",
+ "status": "ok",
+ "co_edited": [
+  "pymarkdown/container_block_processor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pymarkdown/container_block_processor.py": [
+   "POGGER",
+   "_",
+   "__adjust_for_list_container_find",
+   "block_index",
+   "close_tokens",
+   "container_depth",
+   "document_index",
+   "extracted_whitespace",
+   "found_list_token",
+   "have_pre_processed_indent",
+   "indent_already_processed",
+   "is_paragraph_continuation",
+   "list_index",
+   "new_index_indent",
+   "new_index_number",
+   "new_text_to_parse",
+   "parser_state",
+   "position_marker",
+   "removed_leading_space",
+   "skip_containers_before_leaf_blocks",
+   "total_ws",
+   "was_other_paragraph_continuation",
+   "xposition_marker"
+  ],
+  "pymarkdown/parser_helper.py": [
+   "ParserHelper",
+   "extract_whitespace"
+  ],
+  "pymarkdown/parser_logger.py": [
+   "debug"
+  ],
+  "pymarkdown/position_marker.py": [
+   "index_indent",
+   "line_number",
+   "text_to_parse"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 98,
+  "names_resolved_in_repo": 90,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.0
+}

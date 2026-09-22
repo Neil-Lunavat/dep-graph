@@ -1,0 +1,55 @@
+{
+ "instance_id": "sqlfluff__sqlfluff-4041",
+ "repo_key": "sqlfluff/sqlfluff",
+ "base_commit": "66fd602d0824138f212082c8fdf381266a9edad3",
+ "status": "ok",
+ "co_edited": [
+  "src/sqlfluff/core/errors.py",
+  "src/sqlfluff/core/linter/linted_file.py",
+  "src/sqlfluff/core/linter/linter.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/sqlfluff/core/errors.py": [
+   "CheckTuple",
+   "SQLBaseError",
+   "SQLLintError",
+   "check_tuple",
+   "desc",
+   "description",
+   "e",
+   "f",
+   "fix_raws",
+   "fixes",
+   "line_no",
+   "line_pos",
+   "rule_code",
+   "self",
+   "source_fixes",
+   "source_signature"
+  ],
+  "src/sqlfluff/core/linter/linted_file.py": [
+   "LintedFile",
+   "dedupe_buffer",
+   "deduplicate_in_source_space",
+   "linter_logger",
+   "new_violations",
+   "signature",
+   "v",
+   "violations"
+  ],
+  "src/sqlfluff/core/linter/linter.py": [
+   "violations"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 144,
+  "names_resolved_in_repo": 65,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}
