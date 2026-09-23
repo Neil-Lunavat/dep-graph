@@ -34,96 +34,96 @@
    {
     "method": "oracle",
     "auc": 0.7734787659178549,
-    "rank": 1
+    "rank": 1.0
    },
    {
     "method": "rrf_pprpl_issue_path",
     "auc": 0.48582589285714284,
-    "rank": 2
+    "rank": 2.0
    },
    {
     "method": "rrf_hops_issue_path",
     "auc": 0.47952449145069204,
-    "rank": 3
+    "rank": 3.0
    },
    {
     "method": "rrf_hops_path",
     "auc": 0.45711705134816016,
-    "rank": 4
+    "rank": 4.0
    },
    {
     "method": "rrf_ppr_issue_path",
     "auc": 0.4445339590246017,
-    "rank": 5
+    "rank": 5.0
    },
    {
     "method": "path_issue",
     "auc": 0.4342253964517383,
-    "rank": 6
+    "rank": 6.0
    }
   ],
   "symbol": [
    {
     "method": "oracle",
     "auc": 0.7930416975089866,
-    "rank": 1
+    "rank": 1.0
    },
    {
     "method": "ppr_out_pl",
     "auc": 0.4906277821205256,
-    "rank": 2
+    "rank": 2.0
    },
    {
     "method": "ppr_und_pl",
     "auc": 0.48932899880616615,
-    "rank": 3
+    "rank": 3.0
    },
    {
     "method": "hops_lines",
     "auc": 0.47674197454971573,
-    "rank": 4
+    "rank": 4.0
    },
    {
     "method": "rrf_hops_path",
     "auc": 0.47590547495198987,
-    "rank": 5
+    "rank": 5.0
    },
    {
     "method": "rrf_pprpl_issue_path",
     "auc": 0.47350017102079317,
-    "rank": 6
+    "rank": 6.0
    }
   ],
   "union_static": [
    {
     "method": "oracle",
     "auc": 0.7893429656157402,
-    "rank": 1
+    "rank": 1.0
    },
    {
     "method": "ppr_und_pl",
     "auc": 0.4853997422784688,
-    "rank": 2
+    "rank": 2.0
    },
    {
     "method": "ppr_out_pl",
     "auc": 0.48439018911713544,
-    "rank": 3
+    "rank": 3.0
    },
    {
     "method": "hops_lines",
     "auc": 0.4743552021588963,
-    "rank": 4
+    "rank": 4.0
    },
    {
     "method": "rrf_hops_path",
     "auc": 0.4723611406653937,
-    "rank": 5
+    "rank": 5.0
    },
    {
     "method": "rrf_pprpl_issue_path",
     "auc": 0.4687840420572092,
-    "rank": 6
+    "rank": 6.0
    }
   ]
  },

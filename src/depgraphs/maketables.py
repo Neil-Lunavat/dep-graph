@@ -16,10 +16,18 @@ from depgraphs.study2 import FUSION, OUT
 
 PAPER = ROOT / "paper"
 BS = chr(92)
+LF = chr(10)
 NL = BS + BS
 
 FAM = {"structure": "str", "lexical": "lex", "fusion": "fus", "global": "glo",
-       "reference": "ref"}
+       "fusion-control": "f--", "reference": "ref"}
+
+STRATA = ["explicit", "all", "no_full_path", "no_explicit", "no_stem"]
+STRATUM_LABEL = {"explicit": "names a key file as code",
+                 "all": "every task",
+                 "no_full_path": "no full path quoted",
+                 "no_explicit": "no explicit mention",
+                 "no_stem": "no stem at all"}
 
 
 def m(name: str) -> str:
@@ -42,6 +50,8 @@ def write(stem: str, body: str):
 
 def main_table():
     ps = pd.read_csv(OUT / "per_source.csv")
+    ps = ps[ps["rank"].notna()]
+    ps["rank"] = ps["rank"].astype(int)
     left = ps[ps.source == "co_edited"].sort_values("rank").reset_index(drop=True)
     right = ps[ps.source == "symbol"].sort_values("rank").reset_index(drop=True)
     rows = []
@@ -59,7 +69,7 @@ def main_table():
 
 
 def worst_table():
-    r = pd.read_csv(OUT / "rank_by_source.csv")
+    r = pd.read_csv(OUT / "rank_by_source.csv").dropna(subset=["co_edited", "symbol"])
     r["worst"] = r[["co_edited", "symbol"]].max(axis=1)
     ps = pd.read_csv(OUT / "per_source.csv")
     fam = dict(zip(ps.method, ps.family))
@@ -118,24 +128,96 @@ KEEP = ["rrf_pprpl_issue_path", "rrf_hops_path", "ppr_out_pl", "ppr_und_pl",
 
 
 def leak_table():
-    d = pd.read_csv(OUT / "leak_sensitivity.csv")
+    """The leakage strata, each on the population matched to carry both keys.
+
+    Both controls at once. Reading the strata off the full corpus would leave the symbol
+    columns containing the single-file pull requests that the matching control exists to
+    remove, which is the one place the two controls could have disagreed.
+    """
+    d = pd.read_csv(OUT / "per_source_joint.csv")
+    d = d[d["rank"].notna()]
     rows = []
     for name in KEEP:
         cells = [m(name)]
         for st in ("no_full_path", "no_explicit", "no_stem"):
             for src in ("co_edited", "symbol"):
                 g = d[(d.stratum == st) & (d.source == src) & (d.method == name)]
-                cells.append("%s (%d)" % (("%.3f" % g.auc_no_leak.iloc[0]).lstrip("0"),
-                                          int(g.rank_no_leak.iloc[0]))
-                             if len(g) else "--")
+                cells.append("%s (%d)" % (("%.3f" % g.auc.iloc[0]).lstrip("0"),
+                                          int(g["rank"].iloc[0])) if len(g) else "--")
         rows.append(" & ".join(cells) + " " + NL)
-    write("leak", "\n".join(rows))
+    n = [int(d[(d.stratum == st) & (d.source == "co_edited")].n_pr.iloc[0])
+         for st in ("no_full_path", "no_explicit", "no_stem")]
+    rows.append(BS + "midrule")
+    rows.append(BS + "textit{pull requests} & " + " & ".join(
+        r"%s" % ("{:,}".format(x).replace(",", "{,}")) for x in n
+        for _ in (0, 1)) + " " + NL)
+    write("leak", LF.join(rows))
+
+
+def issue_table():
+    """What the issue text adds to a fusion, by how explicitly the issue names the answer.
+
+    Each pair is one fusion against the identical fusion with every issue-derived input
+    replaced by its seed-derived counterpart: same walk, same number of lists, same BM25,
+    no issue. The difference is therefore what the issue contributes, and it is read off
+    within each leakage stratum rather than over the corpus as a whole.
+    """
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    pairs = [("rrf_pprpl_issue_path", "rrf_pprpl_seedpath"),
+             ("rrf_hops_path", "rrf_hops_pathseed")]
+    rows = []
+    for st in STRATA:
+        cells = [STRATUM_LABEL[st]]
+        n = None
+        for a, b in pairs:
+            for src in ("co_edited", "symbol"):
+                g = pw[(pw.unit == "repo") & (pw.stratum == st)
+                       & (pw.population == "shared") & (pw.source == src)
+                       & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+                if not len(g):
+                    cells.append("--")
+                    continue
+                r = g.iloc[0]
+                d = (1 if r.a == a else -1) * r.delta
+                n = int(r.n_pr)
+                star = ("^{" + BS + "ast}" if r.p_holm < 0.05 else "")
+                cells.append("$%+.3f%s$" % (d, star))
+        rows.append(("%s & %d & " % (cells[0], n)) + " & ".join(cells[1:]) + " " + NL)
+        if st == "all":
+            rows.append(BS + "midrule")
+    write("issue", LF.join(rows))
+
+
+def heldout_table():
+    """Choose the fusion on half the repositories, report it on the other half."""
+    h = pd.read_csv(OUT / "heldout.csv")
+    h = h[h["rank"].notna()]
+    chosen = h.chosen_on_select.iloc[0]
+    rows = []
+    for half, label in (("select", "selection half"), ("confirm", "held-out half")):
+        g = h[h.half == half]
+        rows.append(BS + "multicolumn{4}{@{}l}{" + BS + "textit{%s: %d repositories, "
+                    "%d pull requests}} %s" % (
+                        label, int(g.n_repos.iloc[0]),
+                        int(g[g.source == "co_edited"].n_pr.iloc[0]), NL))
+        top = g[(g.source == "co_edited") & (g.method != "oracle")].nsmallest(5, "rank")
+        for name in top.method:
+            cells = [m(name), FAM.get(top[top.method == name].family.iloc[0], "?")]
+            for src in ("co_edited", "symbol"):
+                r = g[(g.source == src) & (g.method == name)].iloc[0]
+                cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r["rank"])))
+            rows.append(" & ".join(cells[:2] + cells[2:]) + " " + NL)
+        if half == "select":
+            rows.append(BS + "midrule")
+    write("heldout", LF.join(rows))
+    print("   held-out: chose %s on the selection half" % chosen)
 
 
 def shared_table():
     """The two keys re-scored on the pull requests that carry both of them."""
     sh = pd.read_csv(OUT / "per_source_shared.csv")
     full = pd.read_csv(OUT / "per_source.csv")
+    sh, full = sh[sh["rank"].notna()], full[full["rank"].notna()]
     rows = []
     for src in ("co_edited", "symbol"):
         s = sh[sh.source == src].set_index("method")
@@ -200,6 +282,8 @@ def main():
     ceiling_table()
     size_table()
     leak_table()
+    issue_table()
+    heldout_table()
     figure_data()
 
 

@@ -28,14 +28,24 @@
 
 % Accepted at ASE 2025 (per the authors' repository); proceedings pages not
 % yet confirmed, so cited via arXiv.
-@misc{jiang2025cosil,
-  title         = {Issue Localization via {LLM}-Driven Iterative Code Graph Searching},
-  author        = {Jiang, Zhonghao and Ren, Xiaoxue and Yan, Meng and Jiang, Wei and Li, Yong and Liu, Zhongxin},
-  year          = {2025},
-  eprint        = {2503.22424},
+@inproceedings{jiang2025cosil,
+  title     = {Issue Localization via {LLM}-Driven Iterative Code Graph Searching},
+  author    = {Jiang, Zhonghao and Ren, Xiaoxue and Yan, Meng and Jiang, Wei and Li, Yong and Liu, Zhongxin},
+  booktitle = {Proceedings of the 40th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  year      = {2025},
+  note      = {Preprint titled ``CoSIL: Software Issue Localization via LLM-Driven Code Repository Graph Searching''; arXiv:2503.22424}
+}
+
+% Leakage of the answer into the issue text. Checked 2026-09-24 against arXiv:2410.06992:
+% the 32.67% figure is the share of SWE-Agent+GPT-4's *passed* patches whose issue report or
+% comments already contained the solution, not a share of the benchmark.
+@misc{aleithan2024swebenchplus,
+  title         = {{SWE-Bench+}: Enhanced Coding Benchmark for {LLM}s},
+  author        = {Aleithan, Reem and Xue, Haoran and Mohajer, Mohammad Mahdi and Nnorom, Elijah and Uddin, Gias and Wang, Song},
+  year          = {2024},
+  eprint        = {2410.06992},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.SE},
-  note          = {Earlier version titled ``CoSIL: Software Issue Localization via LLM-Driven Code Repository Graph Searching''. To appear, ASE 2025}
+  primaryClass  = {cs.SE}
 }
 
 @inproceedings{ouyang2025repograph,

@@ -149,6 +149,12 @@ def checknums():
 
 
 @stage
+def claims():
+    from depgraphs import claims as c
+    c.main()
+
+
+@stage
 def builders_prep():
     from depgraphs.graph import compare
     compare.main(compare.rule_repos() + compare.EXTRA_REPOS)

@@ -103,6 +103,12 @@ def main():
     print("tasks: %d -> %s" % (n, p.name))
     for c in ("full", "stem", "explicit", "incidental"):
         print("  %-11s %5d  (%.1f%%)" % (c, df[c].sum(), 100 * df[c].mean()))
+    # "incidental" counts a task whose *weakest* mention is incidental, so a task that also
+    # has an explicit mention is in both columns and the two do not sum to "stem". The
+    # paper quotes the disjoint figure: tasks with a stem but no explicit mention anywhere.
+    inc_only = int(((df["full"] == 0) & (df["explicit"] == 0) & (df["stem"] > 0)).sum())
+    print("  incidental only %5d  (%.1f%%)   explicit + incidental-only = %.1f%% = stem"
+          % (inc_only, 100 * inc_only / n, 100 * (df["explicit"].mean() + inc_only / n)))
     strict = df[(df["full"] == 0) & (df["stem"] == 0)]
     print("  strict stratum (no full path, no stem): %d (%.1f%%)"
           % (len(strict), 100 * len(strict) / n))

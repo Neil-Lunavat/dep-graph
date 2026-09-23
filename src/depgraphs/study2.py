@@ -185,6 +185,18 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng):
     shuffled = sorted(others)
     rng.shuffle(shuffled)
     out["random"] = shuffled
+
+    # --- fusion controls.
+    # A fusion is given more lists than any single method, so "it wins because it sees
+    # more input" is the null hypothesis for the whole fusion result. These two are the
+    # winning recipes with every issue-derived input replaced by its seed-derived
+    # counterpart: same structural component, same number of lists, same BM25 machinery,
+    # but nothing from the issue report. A fusion that wins merely by having more lists
+    # to blend should win here too. Appended after "random" so that adding them leaves
+    # the random stream of every pre-existing method untouched.
+    out["rrf_hops_pathseed"] = by_score(rrf(out["hops_lines"], out["path_seed"]), rng)
+    out["rrf_pprpl_seedpath"] = by_score(
+        rrf(out["ppr_und_pl"], out["bm25_seed"], out["path_seed"]), rng)
     return out
 
 
@@ -192,13 +204,16 @@ METHODS = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
            "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl", "pagerank", "indegree",
            "bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue",
            "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
-           "rrf_hops_issue_path", "rrf_pprpl_issue_path", "same_dir", "random"]
+           "rrf_hops_issue_path", "rrf_pprpl_issue_path",
+           "rrf_hops_pathseed", "rrf_pprpl_seedpath", "same_dir", "random"]
 STRUCTURE = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
              "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl"]
 GLOBAL = ["pagerank", "indegree"]
 LEXICAL = ["bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue"]
 FUSION = ["rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
           "rrf_hops_issue_path", "rrf_pprpl_issue_path"]
+# Issue-free counterparts of the two winning fusions, used only as controls.
+FUSION_CTL = ["rrf_hops_pathseed", "rrf_pprpl_seedpath"]
 
 
 def coverage_curve(order, key, cost):

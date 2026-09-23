@@ -238,8 +238,11 @@ def c_leak_rates():
             for c in ("full", "stem", "explicit", "incidental")]
     strict = int(((d["full"] == 0) & (d["stem"] == 0)).sum())
     primary = int(((d["full"] == 0) & (d["explicit"] == 0)).sum())
-    return ("%d tasks: %s | primary stratum %d, strictest %d"
-            % (n, ", ".join(bits), primary, strict))
+    inc_only = int(((d["full"] == 0) & (d["explicit"] == 0) & (d["stem"] > 0)).sum())
+    adds_up = abs(100 * (d["explicit"].mean() + inc_only / n) - 100 * d["stem"].mean()) < 0.05
+    return ("%d tasks: %s | incidental-only %.1f%% | explicit+incidental-only = stem: %s"
+            " | primary stratum %d, strictest %d"
+            % (n, ", ".join(bits), 100 * inc_only / n, adds_up, primary, strict))
 
 
 @check("which fusions survive, and what distinguishes them")
@@ -259,6 +262,74 @@ def c_fusion_why():
                       "beats-pure" if r.loc[m, "worst"] < best_pure else "does-not",
                       "path" in m))
     return "best pure worst=%d | %s" % (best_pure, "; ".join(out))
+
+
+@check("what the issue adds to a fusion, by how explicitly the issue names the answer")
+def c_issue_dose():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    out = []
+    for st in ("explicit", "all", "no_full_path", "no_explicit", "no_stem"):
+        bits = []
+        for a, b in (("rrf_pprpl_issue_path", "rrf_pprpl_seedpath"),
+                     ("rrf_hops_path", "rrf_hops_pathseed")):
+            for src in ("co_edited", "symbol"):
+                g = pw[(pw.unit == "repo") & (pw.stratum == st)
+                       & (pw.population == "shared") & (pw.source == src)
+                       & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+                if not len(g):
+                    continue
+                r = g.iloc[0]
+                d = (1 if r.a == a else -1) * r.delta
+                bits.append("%+.3f%s" % (d, "*" if r.p_holm < 0.05 else ""))
+        out.append("%s [%s]" % (st, " ".join(bits)))
+    return " | ".join(out)
+
+
+@check("both controls at once: matched population inside each leakage stratum")
+def c_joint():
+    j = pd.read_csv(OUT / "per_source_joint.csv")
+    out = []
+    for st in ("all", "no_explicit", "no_stem"):
+        for src in ("co_edited", "symbol"):
+            g = j[(j.stratum == st) & (j.source == src) & (j.method != "oracle")]
+            g = g.sort_values("rank").head(3)
+            out.append("%s/%s n=%d: %s" % (
+                st, src, int(g.n_pr.iloc[0]),
+                ", ".join("%s %.3f" % (m, a) for m, a in zip(g.method, g.auc))))
+    return " | ".join(out)
+
+
+@check("held-out split: is the fusion chosen on one half still best on the other?")
+def c_heldout():
+    h = pd.read_csv(OUT / "heldout.csv")
+    chosen = h.chosen_on_select.iloc[0]
+    out = ["chose %s on %d repositories" % (chosen, int(h.n_repos.iloc[0]))]
+    for src in ("co_edited", "symbol"):
+        g = h[(h.half == "confirm") & (h.source == src) & (h.method != "oracle")]
+        r = g[g.method == chosen].iloc[0]
+        best = g.sort_values("rank").iloc[0]
+        out.append("held-out %s: rank %d (%.3f), best is %s %.3f"
+                   % (src, int(r["rank"]), r.auc, best.method, best.auc))
+    return " | ".join(out)
+
+
+@check("are the leakage-stratum rank changes significant, or only nominal?")
+def c_leak_tested():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    out = []
+    for st in ("no_full_path", "no_explicit", "no_stem"):
+        for a, b, src in (("hops_lines", "path_issue", "co_edited"),
+                          ("rrf_pprpl_issue_path", "path_issue", "co_edited"),
+                          ("ppr_und_pl", "rrf_pprpl_issue_path", "symbol")):
+            g = pw[(pw.unit == "repo") & (pw.stratum == st) & (pw.population == "shared")
+                   & (pw.source == src)
+                   & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+            if not len(g):
+                continue
+            r = g.iloc[0]
+            d = (1 if r.a == a else -1) * r.delta
+            out.append("%s %s>%s/%s d=%+.3f p=%.2g" % (st, a, b, src, d, r.p_holm))
+    return "; ".join(out)
 
 
 def main():
