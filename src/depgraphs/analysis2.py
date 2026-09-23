@@ -148,25 +148,32 @@ def overlap(top_path, k=20):
 
 
 def leak_sensitivity(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
-    """Re-rank on the tasks whose issue text contains no key file path verbatim.
+    """Re-rank on the tasks whose issue text does not name the key files.
 
     Path-matching methods would look good for a trivial reason if issue reports simply
-    quoted the paths of the files that had to change, so the comparison is repeated with
-    those tasks removed.
+    named the files that had to change, so the comparison is repeated with those tasks
+    removed. Two strata: issues quoting no full key path, and the stricter set quoting
+    neither a full path nor a bare file stem, since stems are what path BM25 matches on.
     """
     leak = pd.read_csv(OUT / "issue_path_leak.csv")
-    clean = set(leak.loc[leak["full"] == 0, "task_id"])
-    sub = rows[rows["task_id"].isin(clean)]
+    strata = {
+        # no key file's full path appears verbatim in the issue
+        "no_full_path": set(leak.loc[leak["full"] == 0, "task_id"]),
+        # stricter: no key file's stem appears either, which is what path BM25 matches on
+        "no_stem": set(leak.loc[(leak["full"] == 0) & (leak["stem"] == 0), "task_id"]),
+    }
     recs = []
-    for src in SOURCES:
-        mat = pr_level(sub, src)
-        for m in methods:
-            if m in mat:
-                v = mat[m].dropna()
-                recs.append({"source": src, "method": m, "n_pr": len(v),
-                             "auc_no_leak": float(v.mean())})
+    for name, clean in strata.items():
+        sub = rows[rows["task_id"].isin(clean)]
+        for src in SOURCES:
+            mat = pr_level(sub, src)
+            for m in methods:
+                if m in mat:
+                    v = mat[m].dropna()
+                    recs.append({"stratum": name, "source": src, "method": m,
+                                 "n_pr": len(v), "auc_no_leak": float(v.mean())})
     df = pd.DataFrame(recs)
-    df["rank_no_leak"] = df.groupby("source")["auc_no_leak"].rank(
+    df["rank_no_leak"] = df.groupby(["stratum", "source"])["auc_no_leak"].rank(
         ascending=False, method="min").astype(int)
     return df
 
@@ -243,7 +250,8 @@ def main():
     per_source = table_per_source(rows)
     per_source.to_csv(OUT / "per_source.csv", index=False)
 
-    contenders = ["ppr_und", "ppr_und_pl", "hops_lines", "pagerank", "bm25_issue",
+    contenders = ["ppr_und", "ppr_und_pl", "ppr_out", "ppr_out_pl", "ppr_in",
+                  "ppr_in_pl", "hops_lines", "pagerank", "bm25_issue",
                   "bm25_issue_pl", "path_issue", "bm25_seed", "path_seed",
                   "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
                   "rrf_hops_issue_path", "rrf_pprpl_issue_path", "same_dir", "random"]

@@ -5,7 +5,8 @@ scored with the frozen coverage-cost metric: cumulative lines against budgets
 250..32000, AUC = mean coverage over the eight doublings.
 
 Families
-  structure  seed-conditioned walks over the import graph (bfs_und, hops_lines, ppr_und)
+  structure  seed-conditioned walks over the import graph (bfs_und, hops_lines,
+             ppr_und, and directed personalised PageRank in both edge directions)
   global     query-independent repository priors (pagerank, indegree) - no seed, no issue
   lexical    BM25 over identifier bags, queried by the seed file or by the issue text
   fusion     reciprocal-rank fusion of a structural and a lexical ordering
@@ -129,6 +130,17 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng):
     out["ppr_und"] = by_score({p: ppr.get(p, 0.0) for p in others}, rng)
     out["ppr_und_pl"] = by_score({p: ppr.get(p, 0.0) / cost[p] for p in others}, rng)
 
+    # Directed variants. An edge a -> b means a imports b, so walking G reaches what the
+    # seed depends on and walking G.reverse() reaches what depends on the seed.
+    for tag, H in (("out", G), ("in", G.reverse(copy=False))):
+        if G.number_of_edges() and seed in H:
+            d = nx.pagerank(H, alpha=0.85, personalization={seed: 1.0})
+        else:
+            d = {q: 0.0 for q in nodes}
+        out["ppr_%s" % tag] = by_score({q: d.get(q, 0.0) for q in others}, rng)
+        out["ppr_%s_pl" % tag] = by_score(
+            {q: d.get(q, 0.0) / cost[q] for q in others}, rng)
+
     # --- global priors: no seed, no issue
     pr = nx.pagerank(G, alpha=0.85) if G.number_of_edges() else {p: 1.0 for p in nodes}
     out["pagerank"] = by_score({p: pr.get(p, 0.0) for p in others}, rng)
@@ -176,11 +188,13 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng):
     return out
 
 
-METHODS = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl", "pagerank", "indegree",
+METHODS = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
+           "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl", "pagerank", "indegree",
            "bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue",
            "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
            "rrf_hops_issue_path", "rrf_pprpl_issue_path", "same_dir", "random"]
-STRUCTURE = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl"]
+STRUCTURE = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
+             "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl"]
 GLOBAL = ["pagerank", "indegree"]
 LEXICAL = ["bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue"]
 FUSION = ["rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",

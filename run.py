@@ -119,6 +119,18 @@ def ceiling():
 
 
 @stage
+def maketables():
+    from depgraphs import maketables as t
+    t.main()
+
+
+@stage
+def checknums():
+    from depgraphs import checknums as c
+    c.main()
+
+
+@stage
 def ball():
     from depgraphs import ball as b
     b.main()

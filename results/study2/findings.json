@@ -1,14 +1,14 @@
 {
  "rank_agreement": {
   "all": {
-   "spearman": 0.44685242518059853,
-   "p": 0.06301029106386723,
-   "n_methods": 18
+   "spearman": 0.3721061547148504,
+   "p": 0.08813540538188502,
+   "n_methods": 22
   },
   "contenders": {
-   "spearman": 0.25588235294117645,
-   "p": 0.33878990807124576,
-   "n_methods": 16
+   "spearman": 0.23909774436090225,
+   "p": 0.3099862644060448,
+   "n_methods": 20
   }
  },
  "n_tasks_scored": 2412,
@@ -38,27 +38,27 @@
    },
    {
     "method": "rrf_pprpl_issue_path",
-    "auc": 0.48838870019131314,
+    "auc": 0.48582589285714284,
     "rank": 2
    },
    {
     "method": "rrf_hops_issue_path",
-    "auc": 0.48191803145457807,
+    "auc": 0.47952449145069204,
     "rank": 3
    },
    {
     "method": "rrf_hops_path",
-    "auc": 0.45818531783397604,
+    "auc": 0.45711705134816016,
     "rank": 4
    },
    {
     "method": "rrf_ppr_issue_path",
-    "auc": 0.4462414151944519,
+    "auc": 0.4445339590246017,
     "rank": 5
    },
    {
     "method": "path_issue",
-    "auc": 0.435825192247332,
+    "auc": 0.4342253964517383,
     "rank": 6
    }
   ],
@@ -69,13 +69,13 @@
     "rank": 1
    },
    {
-    "method": "ppr_und_pl",
-    "auc": 0.48932899880616615,
+    "method": "ppr_out_pl",
+    "auc": 0.4906277821205256,
     "rank": 2
    },
    {
-    "method": "rrf_hops_path",
-    "auc": 0.477124617407851,
+    "method": "ppr_und_pl",
+    "auc": 0.48932899880616615,
     "rank": 3
    },
    {
@@ -84,13 +84,13 @@
     "rank": 4
    },
    {
-    "method": "rrf_pprpl_issue_path",
-    "auc": 0.47517121846828386,
+    "method": "rrf_hops_path",
+    "auc": 0.47590547495198987,
     "rank": 5
    },
    {
-    "method": "rrf_hops_issue_path",
-    "auc": 0.4581719309628022,
+    "method": "rrf_pprpl_issue_path",
+    "auc": 0.47350017102079317,
     "rank": 6
    }
   ],
@@ -106,23 +106,23 @@
     "rank": 2
    },
    {
-    "method": "hops_lines",
-    "auc": 0.4743552021588963,
+    "method": "ppr_out_pl",
+    "auc": 0.48439018911713544,
     "rank": 3
    },
    {
-    "method": "rrf_hops_path",
-    "auc": 0.4733056889576167,
+    "method": "hops_lines",
+    "auc": 0.4743552021588963,
     "rank": 4
    },
    {
-    "method": "rrf_pprpl_issue_path",
-    "auc": 0.47011338795338803,
+    "method": "rrf_hops_path",
+    "auc": 0.4723611406653937,
     "rank": 5
    },
    {
-    "method": "rrf_hops_issue_path",
-    "auc": 0.4541047702416663,
+    "method": "rrf_pprpl_issue_path",
+    "auc": 0.4687840420572092,
     "rank": 6
    }
   ]
@@ -130,39 +130,39 @@
  "rank_reversal": {
   "bfs_und": {
    "co_edited": 13,
-   "symbol": 9,
-   "union_static": 8,
+   "symbol": 10,
+   "union_static": 10,
    "worst_case": 13
   },
   "bm25_issue": {
    "co_edited": 7,
-   "symbol": 16,
-   "union_static": 16,
-   "worst_case": 16
+   "symbol": 18,
+   "union_static": 18,
+   "worst_case": 18
   },
   "bm25_issue_pl": {
    "co_edited": 15,
-   "symbol": 15,
-   "union_static": 15,
-   "worst_case": 15
-  },
-  "bm25_seed": {
-   "co_edited": 8,
    "symbol": 17,
    "union_static": 17,
    "worst_case": 17
   },
+  "bm25_seed": {
+   "co_edited": 8,
+   "symbol": 19,
+   "union_static": 19,
+   "worst_case": 19
+  },
   "hops_lines": {
    "co_edited": 10,
    "symbol": 4,
-   "union_static": 3,
+   "union_static": 4,
    "worst_case": 10
   },
   "indegree": {
-   "co_edited": 18,
-   "symbol": 11,
-   "union_static": 11,
-   "worst_case": 18
+   "co_edited": 22,
+   "symbol": 13,
+   "union_static": 13,
+   "worst_case": 22
   },
   "oracle": {
    "co_edited": 1,
@@ -171,76 +171,100 @@
    "worst_case": 1
   },
   "pagerank": {
-   "co_edited": 17,
-   "symbol": 10,
-   "union_static": 10,
-   "worst_case": 17
+   "co_edited": 21,
+   "symbol": 12,
+   "union_static": 12,
+   "worst_case": 21
   },
   "path_issue": {
    "co_edited": 6,
-   "symbol": 13,
-   "union_static": 13,
-   "worst_case": 13
+   "symbol": 15,
+   "union_static": 15,
+   "worst_case": 15
   },
   "path_seed": {
    "co_edited": 12,
-   "symbol": 14,
-   "union_static": 14,
-   "worst_case": 14
+   "symbol": 16,
+   "union_static": 16,
+   "worst_case": 16
+  },
+  "ppr_in": {
+   "co_edited": 20,
+   "symbol": 22,
+   "union_static": 22,
+   "worst_case": 22
+  },
+  "ppr_in_pl": {
+   "co_edited": 19,
+   "symbol": 21,
+   "union_static": 21,
+   "worst_case": 21
+  },
+  "ppr_out": {
+   "co_edited": 18,
+   "symbol": 7,
+   "union_static": 8,
+   "worst_case": 18
+  },
+  "ppr_out_pl": {
+   "co_edited": 17,
+   "symbol": 2,
+   "union_static": 3,
+   "worst_case": 17
   },
   "ppr_und": {
    "co_edited": 14,
-   "symbol": 7,
-   "union_static": 7,
+   "symbol": 9,
+   "union_static": 9,
    "worst_case": 14
   },
   "ppr_und_pl": {
    "co_edited": 11,
-   "symbol": 2,
+   "symbol": 3,
    "union_static": 2,
    "worst_case": 11
   },
   "random": {
-   "co_edited": 19,
-   "symbol": 19,
-   "union_static": 19,
-   "worst_case": 19
+   "co_edited": 23,
+   "symbol": 23,
+   "union_static": 23,
+   "worst_case": 23
   },
   "rrf_hops_issue_path": {
    "co_edited": 3,
-   "symbol": 6,
-   "union_static": 6,
-   "worst_case": 6
+   "symbol": 8,
+   "union_static": 7,
+   "worst_case": 8
   },
   "rrf_hops_path": {
    "co_edited": 4,
-   "symbol": 3,
-   "union_static": 4,
-   "worst_case": 4
-  },
-  "rrf_ppr_issue": {
-   "co_edited": 9,
-   "symbol": 12,
-   "union_static": 12,
-   "worst_case": 12
-  },
-  "rrf_ppr_issue_path": {
-   "co_edited": 5,
-   "symbol": 8,
-   "union_static": 9,
-   "worst_case": 8
-  },
-  "rrf_pprpl_issue_path": {
-   "co_edited": 2,
    "symbol": 5,
    "union_static": 5,
    "worst_case": 5
   },
+  "rrf_ppr_issue": {
+   "co_edited": 9,
+   "symbol": 14,
+   "union_static": 14,
+   "worst_case": 14
+  },
+  "rrf_ppr_issue_path": {
+   "co_edited": 5,
+   "symbol": 11,
+   "union_static": 11,
+   "worst_case": 11
+  },
+  "rrf_pprpl_issue_path": {
+   "co_edited": 2,
+   "symbol": 6,
+   "union_static": 6,
+   "worst_case": 6
+  },
   "same_dir": {
    "co_edited": 16,
-   "symbol": 18,
-   "union_static": 18,
-   "worst_case": 18
+   "symbol": 20,
+   "union_static": 20,
+   "worst_case": 20
   }
  },
  "repo_size_quartile_bounds": {
