@@ -73,11 +73,12 @@ def worst_table():
     r["worst"] = r[["co_edited", "symbol"]].max(axis=1)
     ps = pd.read_csv(OUT / "per_source.csv")
     fam = dict(zip(ps.method, ps.family))
-    r = r[r.method != "oracle"].sort_values(["worst", "method"])
-    rows = ["%s & %s & %d & %d & %d %s" % (
+    r = r[r.method != "oracle"].sort_values(["worst_gap", "method"])
+    rows = ["%s & %s & %d & %d & %d & %s %s" % (
         m(x.method), FAM.get(fam.get(x.method, ""), "?"),
-        x.co_edited, x.symbol, x.worst, NL) for x in r.itertuples()]
-    write("worst", "\n".join(rows))
+        x.co_edited, x.symbol, x.worst,
+        ("%.3f" % x.worst_gap).lstrip("0"), NL) for x in r.itertuples()]
+    write("worst", LF.join(rows))
 
 
 def full_table():
@@ -188,31 +189,6 @@ def issue_table():
     write("issue", LF.join(rows))
 
 
-def heldout_table():
-    """Choose the fusion on half the repositories, report it on the other half."""
-    h = pd.read_csv(OUT / "heldout.csv")
-    h = h[h["rank"].notna()]
-    chosen = h.chosen_on_select.iloc[0]
-    rows = []
-    for half, label in (("select", "selection half"), ("confirm", "held-out half")):
-        g = h[h.half == half]
-        rows.append(BS + "multicolumn{4}{@{}l}{" + BS + "textit{%s: %d repositories, "
-                    "%d pull requests}} %s" % (
-                        label, int(g.n_repos.iloc[0]),
-                        int(g[g.source == "co_edited"].n_pr.iloc[0]), NL))
-        top = g[(g.source == "co_edited") & (g.method != "oracle")].nsmallest(5, "rank")
-        for name in top.method:
-            cells = [m(name), FAM.get(top[top.method == name].family.iloc[0], "?")]
-            for src in ("co_edited", "symbol"):
-                r = g[(g.source == src) & (g.method == name)].iloc[0]
-                cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r["rank"])))
-            rows.append(" & ".join(cells[:2] + cells[2:]) + " " + NL)
-        if half == "select":
-            rows.append(BS + "midrule")
-    write("heldout", LF.join(rows))
-    print("   held-out: chose %s on the selection half" % chosen)
-
-
 def shared_table():
     """The two keys re-scored on the pull requests that carry both of them."""
     sh = pd.read_csv(OUT / "per_source_shared.csv")
@@ -255,6 +231,47 @@ def lines_table():
     write("lines", "\n".join(rows))
 
 
+def heldout_table():
+    """How often each fusion is selected on one half, and how it then does on the other."""
+    h = pd.read_csv(OUT / "heldout.csv")
+    n = len(h)
+    rows = []
+    for name, k in h.chosen.value_counts().items():
+        g = h[h.chosen == name]
+        cells = [m(name), "%d/%d" % (k, n)]
+        for src in ("co_edited", "symbol"):
+            cells.append("%d/%d" % (int((g["rank_" + src] == 2).sum()), k))
+            cells.append(("%.3f" % (g["best_" + src] - g["auc_" + src]).mean()).lstrip("0"))
+        rows.append(" & ".join(cells) + " " + NL)
+    write("heldout", LF.join(rows))
+
+
+def redaction_table():
+    """What deleting the key files' names from the issue costs, within task."""
+    d = pd.read_csv(OUT / "redaction.csv")
+    order = ["path_issue", "bm25_issue", "rrf_hops_path", "rrf_pprpl_issue_path"]
+    rows = []
+    for group in ("names removed", "nothing removed"):
+        rows.append(BS + "multicolumn{5}{@{}l}{" + BS + "textit{%s}} %s"
+                    % (group + (" (970 tasks)" if group == "names removed"
+                                else " (1{,}442 tasks; the difference must be nil)"), NL))
+        for name in order:
+            g = d[(d.group == group) & (d.method == name)]
+            if not len(g):
+                continue
+            cells = [m(name)]
+            for src in ("co_edited", "symbol"):
+                r = g[g.source == src].iloc[0]
+                star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
+                # the column is the change caused by redaction, so a loss prints negative
+                cells.append("%s & $%+.3f%s$" % (("%.3f" % r.auc).lstrip("0"),
+                                                 -r.delta, star))
+            rows.append(" & ".join(cells) + " " + NL)
+        if group == "names removed":
+            rows.append(BS + "midrule")
+    write("redact", LF.join(rows))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -284,6 +301,7 @@ def main():
     leak_table()
     issue_table()
     heldout_table()
+    redaction_table()
     figure_data()
 
 

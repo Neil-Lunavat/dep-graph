@@ -299,20 +299,6 @@ def c_joint():
     return " | ".join(out)
 
 
-@check("held-out split: is the fusion chosen on one half still best on the other?")
-def c_heldout():
-    h = pd.read_csv(OUT / "heldout.csv")
-    chosen = h.chosen_on_select.iloc[0]
-    out = ["chose %s on %d repositories" % (chosen, int(h.n_repos.iloc[0]))]
-    for src in ("co_edited", "symbol"):
-        g = h[(h.half == "confirm") & (h.source == src) & (h.method != "oracle")]
-        r = g[g.method == chosen].iloc[0]
-        best = g.sort_values("rank").iloc[0]
-        out.append("held-out %s: rank %d (%.3f), best is %s %.3f"
-                   % (src, int(r["rank"]), r.auc, best.method, best.auc))
-    return " | ".join(out)
-
-
 @check("are the leakage-stratum rank changes significant, or only nominal?")
 def c_leak_tested():
     pw = pd.read_csv(OUT / "pairwise.csv")
@@ -330,6 +316,81 @@ def c_leak_tested():
             d = (1 if r.a == a else -1) * r.delta
             out.append("%s %s>%s/%s d=%+.3f p=%.2g" % (st, a, b, src, d, r.p_holm))
     return "; ".join(out)
+
+
+@check("redaction: what deleting the key files' names from the same issue costs")
+def c_redaction():
+    d = pd.read_csv(OUT / "redaction.csv")
+    out = []
+    for grp in ("names removed", "nothing removed"):
+        g = d[d.group == grp]
+        bits = ["%s/%s %+.3f [%.3f,%.3f]%s" % (r.method, r.source[:3], r.delta,
+                                               r.ci_lo, r.ci_hi,
+                                               "*" if r.p_holm < 0.05 else "")
+                for r in g.itertuples() if r.method in
+                ("path_issue", "rrf_pprpl_issue_path")]
+        out.append("%s (n=%d): %s" % (grp, int(g.n.iloc[0]), "; ".join(bits)))
+    ctl = d[d.group == "nothing removed"].delta.abs().max()
+    out.append("control arm max |delta| = %.4f (must be ~0)" % ctl)
+    return " | ".join(out)
+
+
+@check("decomposition: does whole issue = names + rest, on one population?")
+def c_decompose():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+
+    def d(a, b, src, st):
+        g = pw[(pw.unit == "repo") & (pw.stratum == st) & (pw.population == "shared")
+               & (pw.source == src)
+               & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+        r = g.iloc[0]
+        return (1 if r.a == a else -1) * r.delta
+
+    F, T, R = "rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "rrf_pprpl_issue_path_rd"
+    out = []
+    for src in ("co_edited", "symbol"):
+        whole, names, rest = (d(F, T, src, "explicit"), d(F, R, src, "explicit"),
+                              d(R, T, src, "explicit"))
+        non = d(F, T, src, "no_explicit")
+        out.append("%s: whole %+.3f = names %+.3f + rest %+.3f (residual %+.4f); "
+                   "names nothing %+.3f"
+                   % (src, whole, names, rest, whole - names - rest, non))
+    return " | ".join(out)
+
+
+@check("repeated held-out splits: how often is the same fusion selected and confirmed?")
+def c_splits():
+    h = pd.read_csv(OUT / "heldout.csv")
+    top = h.chosen.value_counts()
+    best = top.idxmax()
+    g = h[h.chosen == best]
+    return ("%d splits; %s selected %d; best on held-out %d (co_edited) / %d (symbol); "
+            "mean gap %.4f / %.4f"
+            % (len(h), best, len(g), int((g.rank_co_edited == 2).sum()),
+               int((g.rank_symbol == 2).sum()),
+               (g.best_co_edited - g.auc_co_edited).mean(),
+               (g.best_symbol - g.auc_symbol).mean()))
+
+
+@check("RRF k: does the headline fusion depend on the fusion constant?")
+def c_rrf_k():
+    ps = pd.read_csv(OUT / "per_source.csv").set_index(["source", "method"])
+    out = []
+    for src in ("co_edited", "symbol"):
+        v = [float(ps.loc[(src, m), "auc"]) for m in
+             ("rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path",
+              "rrf_pprpl_issue_path_k200")]
+        out.append("%s k=10/60/200 %.3f/%.3f/%.3f spread %.4f"
+                   % (src, v[0], v[1], v[2], max(v) - min(v)))
+    return " | ".join(out)
+
+
+@check("worst-case shortfall in AUC, which does not depend on the competitor set")
+def c_worst_gap():
+    r = pd.read_csv(OUT / "rank_by_source.csv")
+    r = r[r.method != "oracle"].sort_values("worst_gap").head(4)
+    return "; ".join("%s gap %.3f (worst rank %d)" % (x.method, x.worst_gap, int(x.worst_case))
+                     for x in r.itertuples())
 
 
 def main():

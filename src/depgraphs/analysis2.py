@@ -19,13 +19,15 @@ from scipy import stats
 
 from depgraphs.lexfeat import ROOT
 from depgraphs.study2 import (BUDGETS, FUSION, FUSION_CTL, GLOBAL, LEXICAL, METHODS,
-                              STRUCTURE, OUT)
+                              REDACTED, RRF_K_VARIANTS, STRUCTURE, OUT)
 
 SEED = 20260923
 SOURCES = ["co_edited", "symbol", "union_static"]
 FAMILY = ({m: "structure" for m in STRUCTURE} | {m: "global" for m in GLOBAL}
           | {m: "lexical" for m in LEXICAL} | {m: "fusion" for m in FUSION}
           | {m: "fusion-control" for m in FUSION_CTL}
+          | {m: "redacted" for m in REDACTED}
+          | {m: "rrf-k" for m in RRF_K_VARIANTS}
           | {"same_dir": "reference", "random": "reference", "oracle": "reference"})
 
 
@@ -66,7 +68,7 @@ def boot_ci(values: np.ndarray, groups: np.ndarray, n=2000, seed=SEED):
 
 
 def auc_table(rows: pd.DataFrame, sources=None, prs: pd.Index | None = None,
-              tasks: set | None = None) -> pd.DataFrame:
+              tasks: set | None = None, ci: bool = True) -> pd.DataFrame:
     """Mean AUC per method, with a bootstrap CI over repositories, on a subpopulation.
 
     `prs` restricts to a set of pull requests (the population-matching control) and
@@ -86,7 +88,8 @@ def auc_table(rows: pd.DataFrame, sources=None, prs: pd.Index | None = None,
             ok = ~np.isnan(v)
             if not ok.any():
                 continue
-            lo, hi = boot_ci(v[ok], repo.to_numpy()[ok])
+            lo, hi = (boot_ci(v[ok], repo.to_numpy()[ok])
+                      if ci else (float("nan"), float("nan")))
             recs.append({"source": src, "method": m, "family": FAMILY.get(m, "?"),
                          "n_pr": int(ok.sum()), "auc": float(v[ok].mean()),
                          "ci_lo": lo, "ci_hi": hi})
@@ -95,7 +98,8 @@ def auc_table(rows: pd.DataFrame, sources=None, prs: pd.Index | None = None,
     # oracle included. The fusion controls exist only to answer "is a fusion just more
     # input?" and are not candidate reading orders, so they are scored but not ranked;
     # including them would shift every rank in every table by up to two places.
-    rankable = ~df["method"].isin(FUSION_CTL)
+    rankable = ~df["method"].isin(list(FUSION_CTL) + list(REDACTED)
+                                  + list(RRF_K_VARIANTS))
     df["rank"] = (df[rankable].groupby("source")["auc"]
                   .rank(ascending=False, method="min").astype(int))
     return df.sort_values(["source", "rank"])
@@ -274,36 +278,100 @@ def leak_sensitivity(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
     return df
 
 
-def heldout(rows: pd.DataFrame, methods: list[str], seed: int = SEED) -> pd.DataFrame:
-    """Split the repositories in half; choose on one half, report on the other.
+def heldout(rows: pd.DataFrame, methods: list[str], seed: int = SEED,
+            n_splits: int = 200) -> pd.DataFrame:
+    """Split the repositories in half, choose on one half, report on the other, many times.
 
-    Both the fusion recipe and the worst-rank criterion that picks it were settled after
-    seeing the full results, which makes the fusion recommendation exploratory however
-    large its margin. Splitting by repository rather than by pull request keeps every
-    task of a repository on the same side, so the reporting half is independent of the
-    choosing half in the way the clustering demands. The selection rule is fixed here and
-    applied mechanically: among the fusions, take the one whose worst rank across the two
-    keys is best on the selection half, then report that method, unexamined, on the other.
+    Both the fusion recipe and the criterion that picks it were settled after seeing the
+    full results, which makes the recommendation exploratory however large its margin. One
+    split would not fix that: with five candidate fusions and a winner that is already best
+    overall, a single 56/56 draw is close to a foregone conclusion. So the split is repeated
+    200 times and we report how often each fusion is selected and what rank it then attains
+    on the half that did not select it. Splitting by repository rather than by pull request
+    keeps every task of a repository on one side, as the clustering demands.
     """
     repos = np.array(sorted(rows["repo_key"].unique()))
     rng = np.random.default_rng(seed)
-    pick = rng.permutation(len(repos))
-    halves = {"select": set(repos[pick[: len(repos) // 2]]),
-              "confirm": set(repos[pick[len(repos) // 2:]])}
-    tab = {}
-    for half, keep in halves.items():
-        sub = rows[rows["repo_key"].isin(keep)]
-        t = auc_table(sub, ("co_edited", "symbol"), prs=shared_prs(sub))
-        t.insert(0, "half", half)
-        tab[half] = t
-    sel = tab["select"]
-    worst = (sel[sel.method.isin(methods)].pivot(index="method", columns="source",
-                                                 values="rank").max(axis=1))
-    chosen = worst[worst.index.isin(FUSION)].sort_values().index[0]
-    out = pd.concat(tab.values(), ignore_index=True)
-    out["chosen_on_select"] = chosen
-    out["n_repos"] = out["half"].map({k: len(v) for k, v in halves.items()})
-    return out
+    fusions = [m for m in methods if m in FUSION]
+    recs = []
+    for it in range(n_splits):
+        pick = rng.permutation(len(repos))
+        halves = {"select": set(repos[pick[: len(repos) // 2]]),
+                  "confirm": set(repos[pick[len(repos) // 2:]])}
+        tab = {}
+        for half, keep in halves.items():
+            sub = rows[rows["repo_key"].isin(keep)]
+            # no bootstrap here: the split needs ranks and means, and 200 splits
+            # times 2,000 resamples times every method is hours of nothing
+            tab[half] = auc_table(sub, ("co_edited", "symbol"), prs=shared_prs(sub),
+                                  ci=False)
+        sel = tab["select"].pivot(index="method", columns="source", values="rank")
+        worst = sel.loc[[m for m in fusions if m in sel.index]].max(axis=1)
+        chosen = worst.sort_values().index[0]
+        con = tab["confirm"]
+        rec = {"split": it, "chosen": chosen}
+        for src in ("co_edited", "symbol"):
+            g = con[con.source == src].set_index("method")
+            rec["rank_%s" % src] = int(g.loc[chosen, "rank"])
+            rec["auc_%s" % src] = float(g.loc[chosen, "auc"])
+            rec["best_%s" % src] = float(g[g.index != "oracle"]["auc"].max())
+        recs.append(rec)
+    return pd.DataFrame(recs)
+
+
+def redaction(rows: pd.DataFrame, unit: str = "repo") -> pd.DataFrame:
+    """Score the same task twice, once on the issue and once on the issue with the key
+    files' names deleted, and report the difference.
+
+    This is the within-task version of the leakage control. Dropping the tasks whose issue
+    names a key file compares two sets of *issues* as well as two leakage regimes, and
+    issues that carry a stack trace are plausibly better written than those that do not.
+    Here the task, the issue, its length and its traceback are all held fixed and only the
+    names are removed, so the difference cannot be an issue-quality effect.
+
+    Reported on the tasks where redaction actually changed something, on the tasks where it
+    did not (where the difference must be zero, and is, which is the sanity check), and over
+    everything scored.
+    """
+    # exactly the strata of leak_strata, so that this table and the stratified tests in
+    # pairwise.csv are about the same tasks and the decomposition is additive
+    st = leak_strata(rows)
+    groups = {
+        "names removed": st["explicit"],
+        "nothing removed": st["no_explicit"],
+        "all tasks": st["all"],
+    }
+    repo = rows.groupby("instance_id")["repo_key"].first()
+    recs = []
+    for label, tasks in groups.items():
+        sub = rows[rows["task_id"].isin(tasks)]
+        # the matched population, as everywhere else in the results, so that the numbers
+        # here and the stratified ones in pairwise.csv decompose additively
+        keep = shared_prs(sub)
+        for src in ("co_edited", "symbol"):
+            mat = pr_level(sub, src).loc[lambda m: m.index.intersection(keep)]
+            for rd, plain in REDACTED.items():
+                if rd not in mat or plain not in mat:
+                    continue
+                pair = mat[[plain, rd]].dropna()
+                if unit == "repo":
+                    pair = pair.groupby(repo.reindex(pair.index).to_numpy()).mean()
+                x, y = pair[plain].to_numpy(), pair[rd].to_numpy()
+                if len(x) < 3:
+                    continue
+                try:
+                    p = stats.wilcoxon(x, y, zero_method="wilcox").pvalue
+                except ValueError:
+                    p = 1.0
+                d = x - y
+                lo, hi = boot_ci(d, np.arange(len(d)))
+                recs.append({"group": label, "source": src, "method": plain,
+                             "n": len(x), "auc": float(x.mean()),
+                             "auc_redacted": float(y.mean()), "delta": float(d.mean()),
+                             "ci_lo": lo, "ci_hi": hi, "a12": a12(x, y), "p": p})
+    df = pd.DataFrame(recs)
+    df["p_holm"] = holm(df["p"].tolist())
+    return df
 
 
 def rank_agreement(per_source: pd.DataFrame) -> dict:
@@ -316,7 +384,7 @@ def rank_agreement(per_source: pd.DataFrame) -> dict:
     """
     out = {}
     # the fusion controls are not candidate reading orders, so they stay out of both scales
-    ctl = set(FUSION_CTL)
+    ctl = set(FUSION_CTL) | set(REDACTED) | set(RRF_K_VARIANTS)
     for label, drop in (("all", {"oracle"} | ctl),
                         ("contenders", {"oracle", "random", "same_dir"} | ctl)):
         piv = per_source[~per_source.method.isin(drop)].pivot(
@@ -347,7 +415,8 @@ def by_size(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
         pd.qcut(q, 4, labels=["Q1", "Q2", "Q3", "Q4"])))
     # Rank on the same scale as every other table: all scored orderings, oracle included,
     # less the two fusion controls, which are scored but never ranked.
-    rankable = [m for m in rows["method"].unique() if m not in FUSION_CTL]
+    skip = set(FUSION_CTL) | set(REDACTED) | set(RRF_K_VARIANTS)
+    rankable = [m for m in rows["method"].unique() if m not in skip]
     recs = []
     for src in SOURCES:
         d = rows[(rows["source"] == src) & (rows["method"].isin(rankable))]
@@ -390,7 +459,9 @@ def main():
                   "bm25_issue_pl", "path_issue", "bm25_seed", "path_seed",
                   "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
                   "rrf_hops_issue_path", "rrf_pprpl_issue_path",
-                  "rrf_hops_pathseed", "rrf_pprpl_seedpath", "same_dir", "random"]
+                  "rrf_hops_pathseed", "rrf_pprpl_seedpath",
+                  "bm25_issue_rd", "path_issue_rd", "rrf_hops_path_rd",
+                  "rrf_pprpl_issue_path_rd", "same_dir", "random"]
     shared = shared_prs(rows)
     # Four views of the same comparisons: PR-level and repository-level, over everything
     # and over the PRs that carry both keys. The repository-level tests on the shared
@@ -414,6 +485,7 @@ def main():
         OUT / "per_source_shared.csv", index=False)
     table_joint(rows).to_csv(OUT / "per_source_joint.csv", index=False)
     heldout(rows, contenders).to_csv(OUT / "heldout.csv", index=False)
+    redaction(rows).to_csv(OUT / "redaction.csv", index=False)
 
     cur = (curves.groupby(["source", "method", "budget"])["coverage"].mean()
            .reset_index())
@@ -424,10 +496,19 @@ def main():
     ov = pd.concat([overlap(OUT / "top.jsonl.gz", k) for k in (10, 20, 50)])
     ov.to_csv(OUT / "overlap.csv", index=False)
 
-    # rank reversal across key sources
-    piv = (per_source[per_source["rank"].notna()]
-           .pivot(index="method", columns="source", values="rank").astype(int))
+    # Robustness across key sources, two ways. Worst-case *rank* is easy to read but moves
+    # when the competitor set changes: adding four directed walks reshuffles everything
+    # below them. Worst-case *shortfall* -- the largest AUC gap to the best non-oracle
+    # ordering under either key -- says the same thing in units that do not depend on who
+    # else was scored, and is the criterion we ask readers to check against.
+    rk = per_source[per_source["rank"].notna()]
+    piv = rk.pivot(index="method", columns="source", values="rank").astype(int)
     piv["worst_case"] = piv[["co_edited", "symbol"]].max(axis=1)
+    au = rk.pivot(index="method", columns="source", values="auc")
+    for src in ("co_edited", "symbol"):
+        best = au.loc[au.index != "oracle", src].max()
+        piv["gap_" + src] = (best - au[src]).round(4)
+    piv["worst_gap"] = piv[["gap_co_edited", "gap_symbol"]].max(axis=1)
     piv.sort_values("worst_case").to_csv(OUT / "rank_by_source.csv")
 
     leak = leak_sensitivity(rows, contenders)

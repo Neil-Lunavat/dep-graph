@@ -21,7 +21,7 @@ co_edited,Q3,ppr_in,0.2409936694964871,20
 co_edited,Q4,ppr_in,0.15577771445457617,20
 co_edited,Q1,ppr_in_pl,0.4502445226917058,20
 co_edited,Q2,ppr_in_pl,0.34313060131275835,18
-co_edited,Q3,ppr_in_pl,0.2544637436030879,18
+co_edited,Q3,ppr_in_pl,0.2544637436030878,18
 co_edited,Q4,ppr_in_pl,0.1569325185748058,19
 co_edited,Q1,hops_lines,0.5167169684775319,7
 co_edited,Q2,hops_lines,0.4121591877307583,7
@@ -195,7 +195,7 @@ union_static,Q1,bm25_issue,0.473908081751219,18
 union_static,Q2,bm25_issue,0.365631787680107,18
 union_static,Q3,bm25_issue,0.2701436955852981,19
 union_static,Q4,bm25_issue,0.2309400440796031,17
-union_static,Q1,bm25_issue_pl,0.5157943964622885,11
+union_static,Q1,bm25_issue_pl,0.5157943964622886,11
 union_static,Q2,bm25_issue_pl,0.3823295559482534,15
 union_static,Q3,bm25_issue_pl,0.2968500117661956,16
 union_static,Q4,bm25_issue_pl,0.21006920780735255,19

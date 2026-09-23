@@ -96,17 +96,18 @@ def bm25(query: dict[str, int], docs: dict[str, dict], k1=1.5, b=0.75) -> dict[s
     return scores
 
 
-def rrf(*orders):
+def rrf(*orders, k=None):
     sc = collections.defaultdict(float)
+    kk = RRF_K if k is None else k
     for o in orders:
         for i, p in enumerate(o):
-            sc[p] += 1.0 / (RRF_K + i + 1)
+            sc[p] += 1.0 / (kk + i + 1)
     return dict(sc)
 
 
 # ----------------------------------------------------------------- the methods
 
-def orderings(nodes, edges, lines, seed, bags, issue_bag, rng):
+def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None):
     others = [p for p in nodes if p != seed]
     if not others:
         return {}
@@ -197,6 +198,37 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng):
     out["rrf_hops_pathseed"] = by_score(rrf(out["hops_lines"], out["path_seed"]), rng)
     out["rrf_pprpl_seedpath"] = by_score(
         rrf(out["ppr_und_pl"], out["bm25_seed"], out["path_seed"]), rng)
+
+    # --- redaction arm.
+    # Dropping tasks whose issue names a key file cannot separate "the issue names the
+    # answer" from "issues that name the answer are better written". This arm re-runs the
+    # issue-queried rankings on the *same* issue with only those names deleted (redact.py),
+    # so the pair differs in the names and in nothing else -- not in length, not in the
+    # traceback, not in the task. Appended last, again, to leave the random stream alone.
+    if issue_bag_rd is not None:
+        rd = bm25(issue_bag_rd, docs)
+        out["bm25_issue_rd"] = by_score(rd, rng) if rd else []
+        out["path_issue_rd"] = (by_score(bm25(issue_bag_rd, pdocs), rng)
+                                if issue_bag_rd else [])
+        if out["bm25_issue_rd"]:
+            out["rrf_hops_path_rd"] = by_score(
+                rrf(out["hops_lines"], out["path_issue_rd"]), rng)
+            out["rrf_pprpl_issue_path_rd"] = by_score(
+                rrf(out["ppr_und_pl"], out["bm25_issue_rd"], out["path_issue_rd"]), rng)
+        else:
+            out["rrf_hops_path_rd"] = out["hops_lines"]
+            out["rrf_pprpl_issue_path_rd"] = out["ppr_und_pl"]
+
+    # --- RRF's k is a free parameter we never varied. Two more settings an order of
+    # magnitude either side of the usual 60, so a reader can see whether the fusion result
+    # depends on it. Appended last, as every addition to this function is.
+    if out["bm25_issue"]:
+        for k in (10, 200):
+            out["rrf_pprpl_issue_path_k%d" % k] = by_score(
+                rrf(out["ppr_und_pl"], out["bm25_issue"], out["path_issue"], k=k), rng)
+    else:
+        for k in (10, 200):
+            out["rrf_pprpl_issue_path_k%d" % k] = out["ppr_und_pl"]
     return out
 
 
@@ -205,7 +237,10 @@ METHODS = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
            "bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue",
            "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
            "rrf_hops_issue_path", "rrf_pprpl_issue_path",
-           "rrf_hops_pathseed", "rrf_pprpl_seedpath", "same_dir", "random"]
+           "rrf_hops_pathseed", "rrf_pprpl_seedpath",
+           "bm25_issue_rd", "path_issue_rd", "rrf_hops_path_rd",
+           "rrf_pprpl_issue_path_rd",
+           "rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path_k200", "same_dir", "random"]
 STRUCTURE = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
              "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl"]
 GLOBAL = ["pagerank", "indegree"]
@@ -214,6 +249,13 @@ FUSION = ["rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
           "rrf_hops_issue_path", "rrf_pprpl_issue_path"]
 # Issue-free counterparts of the two winning fusions, used only as controls.
 FUSION_CTL = ["rrf_hops_pathseed", "rrf_pprpl_seedpath"]
+# The same rankings with the key files' names deleted from the issue (redact.py). Also
+# controls: scored so that each can be paired with its unredacted self, never ranked.
+REDACTED = {"bm25_issue_rd": "bm25_issue", "path_issue_rd": "path_issue",
+            "rrf_hops_path_rd": "rrf_hops_path",
+            "rrf_pprpl_issue_path_rd": "rrf_pprpl_issue_path"}
+# Sensitivity of the headline fusion to RRF's k. Scored, never ranked.
+RRF_K_VARIANTS = ["rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path_k200"]
 
 
 def coverage_curve(order, key, cost):
@@ -254,7 +296,7 @@ def lines_to_reach(order, key, cost, fracs=(0.5, 1.0)):
 
 # ----------------------------------------------------------------- per repo
 
-def run_repo(repo_key: str, tasks: list, issues: dict):
+def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = None):
     repo_dir = repo_key.replace("/", "__")
     try:
         commits, blobs = load_repo(repo_dir)
@@ -279,12 +321,15 @@ def run_repo(repo_key: str, tasks: list, issues: dict):
         mapping = commits.get(sha, {})
         bags = {p: blobs.get(mapping.get(p, ""), {}) for p in nodes}
         issue_bag = issues.get(t["instance_id"], {})
+        # keyed by task, because which names count as the answer depends on the seed
+        issue_bag_rd = (redacted or {}).get(t["task_id"])
         cost = {p: max(lines.get(p, 0), 1) for p in nodes}
 
         per_run = []
         for r in range(RUNS):
             rng = random.Random("%s|%d|20260923" % (t["task_id"], r))
-            per_run.append(orderings(nodes, edges, lines, seed, bags, issue_bag, rng))
+            per_run.append(orderings(nodes, edges, lines, seed, bags, issue_bag, rng,
+                                     issue_bag_rd))
         if not per_run[0]:
             continue
 
@@ -325,6 +370,11 @@ def main(workers: int = 8):
     tasks = [json.loads(l) for l in open(ROOT / "data" / "tasks.jsonl", encoding="utf-8")]
     raw = json.loads((ROOT / "data" / "issue_bags.json").read_text())
     issues = {k: v["bag"] for k, v in raw.items()}
+    rd_path = ROOT / "data" / "issue_bags_redacted.json"
+    redacted = ({k: v["bag"] for k, v in json.loads(rd_path.read_text()).items()}
+                if rd_path.exists() else {})
+    if not redacted:
+        print("no redacted issue bags; run `python -m depgraphs.redact` first", flush=True)
     by = collections.defaultdict(list)
     for t in tasks:
         by[t["repo_key"]].append(t)
@@ -333,7 +383,7 @@ def main(workers: int = 8):
     done = 0
     with gzip.open(OUT / "top.jsonl.gz", "wt", encoding="utf-8") as tf, \
             ProcessPoolExecutor(workers) as ex:
-        futs = {ex.submit(run_repo, k, v, issues): k for k, v in by.items()}
+        futs = {ex.submit(run_repo, k, v, issues, redacted): k for k, v in by.items()}
         for f in as_completed(futs):
             r, c, tops = f.result()
             rows += r

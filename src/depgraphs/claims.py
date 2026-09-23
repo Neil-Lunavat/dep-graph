@@ -77,6 +77,21 @@ def delta(a: str, b: str, source: str, stratum="all", population="shared") -> fl
     return float((1 if r.a == a else -1) * r.delta)
 
 
+def redact_delta(method: str, source: str, group: str = "names removed") -> float:
+    d = csv("redaction.csv")
+    r = d[(d.group == group) & (d.method == method) & (d.source == source)].iloc[0]
+    return float(r.delta)
+
+
+def split_stat(what: str, source: str = "co_edited") -> int:
+    h = csv("heldout.csv")
+    top = h.chosen.value_counts().idxmax()
+    if what == "selected":
+        return int((h.chosen == top).sum())
+    g = h[h.chosen == top]
+    return int((g["rank_" + source] == 2).sum())
+
+
 def pct(x: float) -> str:
     return "%.1f" % (100 * x)
 
@@ -93,7 +108,7 @@ def claims() -> list[tuple[str, str, str]]:
     n = len(leak)
     inc_only = int(((leak["full"] == 0) & (leak["explicit"] == 0)
                     & (leak["stem"] > 0)).sum())
-    ps, joint, held = csv("per_source.csv"), csv("per_source_joint.csv"), csv("heldout.csv")
+    ps, joint = csv("per_source.csv"), csv("per_source_joint.csv")
     sh = csv("per_source_shared.csv")
 
     C = [
@@ -114,28 +129,38 @@ def claims() -> list[tuple[str, str, str]]:
          .replace(",", "{,}")),
 
         # ---- the issue ablation, the paper's headline
-        ("Over the corpus it is worth", "issue worth, co_edited, all corpus",
+        ("Over the corpus the issue is worth", "issue worth, co_edited, all corpus",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited"))),
-        ("Over the corpus it is worth", "issue worth, symbol, all corpus",
+        ("Over the corpus the issue is worth", "issue worth, symbol, all corpus",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol"))),
-        ("names a key file as code, against", "issue worth where explicit, co_edited",
+        ("that becomes", "issue worth where explicit, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
                     stratum="explicit"))),
-        ("names a key file as code, against", "issue worth where explicit, symbol",
+        ("that becomes", "issue worth where explicit, symbol",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol",
                     stratum="explicit"))),
-        ("names a key file as code, against", "issue worth where not, co_edited",
+        ("that becomes", "issue worth where not, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
                     stratum="no_explicit"))),
-        ("names a key file as code, against", "issue worth where not, symbol",
+        ("that becomes", "issue worth where not, symbol",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol",
                     stratum="no_explicit"))),
-        ("Requiring the stem to be absent as well", "issue worth, no stem, co_edited",
+        ("requiring the stem to be absent as well", "issue worth, no stem, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
                     stratum="no_stem"))),
         ("The issue-free twins of Section",
          "issue-free twin over its own walk",
          num3(delta("rrf_pprpl_seedpath", "ppr_und_pl", "co_edited", population="all"))),
+
+        # ---- the decomposition
+        ("the issue as a whole is worth", "issue worth where explicit, co_edited",
+         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
+                    stratum="explicit"))),
+        ("Of that, the names", "names share of it, co_edited",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited"))),
+        ("the issue as a" + chr(10) + "whole is worth", "issue worth where not, co_edited",
+         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
+                    stratum="no_explicit"))),
 
         # ---- population matching
         ("the 702 pull requests that carry both",
@@ -150,13 +175,27 @@ def claims() -> list[tuple[str, str, str]]:
         ("Reciprocal-rank fusion of a\nlength-aware walk", "fusion over best structural, sym",
          num3(delta("rrf_pprpl_issue_path", "ppr_und_pl", "symbol"))),
 
-        # ---- held-out confirmation
-        ("On the held-out half it", "held-out co_edited AUC",
-         num3(auc("heldout.csv", "co_edited", "rrf_pprpl_issue_path", half="confirm"))),
-        ("On the held-out half it", "held-out symbol AUC",
-         num3(auc("heldout.csv", "symbol", "rrf_pprpl_issue_path", half="confirm"))),
-        ("A random 56 of the 112 repositories", "repositories per half",
-         str(int(held.n_repos.iloc[0]))),
+        # ---- held-out confirmation over repeated splits
+        ("is selected in", "splits selecting the winner", str(split_stat("selected"))),
+        ("and in 195 of those it is the best", "splits confirming it on co_edited", str(split_stat("best", "co_edited"))),
+        ("did not select it,", "splits confirming it on symbol",
+         str(split_stat("best", "symbol"))),
+
+        # ---- redaction: the within-task experiment
+        ("removing just the names costs", "redaction cost, path_issue, co_edited",
+         num3(redact_delta("path_issue", "co_edited"))),
+        ("removing just the names costs", "redaction cost, path_issue, symbol",
+         num3(redact_delta("path_issue", "symbol"))),
+        ("it costs the best fusion", "redaction cost, fusion, co_edited",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited"))),
+        ("it costs the best fusion", "redaction cost, fusion, symbol",
+         num3(redact_delta("rrf_pprpl_issue_path", "symbol"))),
+        ("where the redactor found nothing to remove",
+         "redaction is a no-op where nothing was removed",
+         "0.002" if all(abs(redact_delta(m, src, "nothing removed")) <= 0.0025
+                        for m in ("path_issue", "bm25_issue", "rrf_hops_path",
+                                  "rrf_pprpl_issue_path")
+                        for src in ("co_edited", "symbol")) else "CONTROL-ARM-NOT-FLAT"),
 
         # ---- the leakage strata, jointly controlled
         ("Under the weak\nfull-path control it barely moves", "path_issue full corpus",
@@ -169,11 +208,11 @@ def claims() -> list[tuple[str, str, str]]:
                   stratum="no_explicit"))),
         ("under the strictest, to", "path_issue, no stem",
          num3(auc("per_source_joint.csv", "co_edited", "path_issue", stratum="no_stem"))),
-        ("are first and second under both real controls, at", "ppr_und_pl symbol primary",
+        ("lead under both real controls", "ppr_und_pl symbol primary",
          num3(auc("per_source_joint.csv", "symbol", "ppr_und_pl", stratum="no_explicit"))),
-        ("are first and second under both real controls, at", "hops_lines symbol primary",
+        ("lead under both real controls", "hops_lines symbol primary",
          num3(auc("per_source_joint.csv", "symbol", "hops_lines", stratum="no_explicit"))),
-        ("and the\nbest fusion is fourth at", "fusion symbol primary",
+        ("with the best fusion fourth at", "fusion symbol primary",
          num3(auc("per_source_joint.csv", "symbol", "rrf_pprpl_issue_path",
                   stratum="no_explicit"))),
         ("on co-edited\nfiles is", "hops_lines over path_issue, no full path",

@@ -132,139 +132,208 @@
    "co_edited": 13,
    "symbol": 10,
    "union_static": 10,
-   "worst_case": 13
+   "worst_case": 13,
+   "gap_co_edited": 0.1237,
+   "gap_symbol": 0.0705,
+   "worst_gap": 0.1237
   },
   "bm25_issue": {
    "co_edited": 7,
    "symbol": 18,
    "union_static": 18,
-   "worst_case": 18
+   "worst_case": 18,
+   "gap_co_edited": 0.0786,
+   "gap_symbol": 0.1502,
+   "worst_gap": 0.1502
   },
   "bm25_issue_pl": {
    "co_edited": 15,
    "symbol": 17,
    "union_static": 17,
-   "worst_case": 17
+   "worst_case": 17,
+   "gap_co_edited": 0.1318,
+   "gap_symbol": 0.1353,
+   "worst_gap": 0.1353
   },
   "bm25_seed": {
    "co_edited": 8,
    "symbol": 19,
    "union_static": 19,
-   "worst_case": 19
+   "worst_case": 19,
+   "gap_co_edited": 0.0927,
+   "gap_symbol": 0.1546,
+   "worst_gap": 0.1546
   },
   "hops_lines": {
    "co_edited": 10,
    "symbol": 4,
    "union_static": 4,
-   "worst_case": 10
+   "worst_case": 10,
+   "gap_co_edited": 0.0969,
+   "gap_symbol": 0.0139,
+   "worst_gap": 0.0969
   },
   "indegree": {
    "co_edited": 22,
    "symbol": 13,
    "union_static": 13,
-   "worst_case": 22
+   "worst_case": 22,
+   "gap_co_edited": 0.2152,
+   "gap_symbol": 0.0926,
+   "worst_gap": 0.2152
   },
   "oracle": {
    "co_edited": 1,
    "symbol": 1,
    "union_static": 1,
-   "worst_case": 1
+   "worst_case": 1,
+   "gap_co_edited": -0.2877,
+   "gap_symbol": -0.3024,
+   "worst_gap": -0.2877
   },
   "pagerank": {
    "co_edited": 21,
    "symbol": 12,
    "union_static": 12,
-   "worst_case": 21
+   "worst_case": 21,
+   "gap_co_edited": 0.2147,
+   "gap_symbol": 0.0808,
+   "worst_gap": 0.2147
   },
   "path_issue": {
    "co_edited": 6,
    "symbol": 15,
    "union_static": 15,
-   "worst_case": 15
+   "worst_case": 15,
+   "gap_co_edited": 0.0516,
+   "gap_symbol": 0.1082,
+   "worst_gap": 0.1082
   },
   "path_seed": {
    "co_edited": 12,
    "symbol": 16,
    "union_static": 16,
-   "worst_case": 16
+   "worst_case": 16,
+   "gap_co_edited": 0.1152,
+   "gap_symbol": 0.1258,
+   "worst_gap": 0.1258
   },
   "ppr_in": {
    "co_edited": 20,
    "symbol": 22,
    "union_static": 22,
-   "worst_case": 22
+   "worst_case": 22,
+   "gap_co_edited": 0.1779,
+   "gap_symbol": 0.2217,
+   "worst_gap": 0.2217
   },
   "ppr_in_pl": {
    "co_edited": 19,
    "symbol": 21,
    "union_static": 21,
-   "worst_case": 21
+   "worst_case": 21,
+   "gap_co_edited": 0.1753,
+   "gap_symbol": 0.2139,
+   "worst_gap": 0.2139
   },
   "ppr_out": {
    "co_edited": 18,
    "symbol": 7,
    "union_static": 8,
-   "worst_case": 18
+   "worst_case": 18,
+   "gap_co_edited": 0.1734,
+   "gap_symbol": 0.0325,
+   "worst_gap": 0.1734
   },
   "ppr_out_pl": {
    "co_edited": 17,
    "symbol": 2,
    "union_static": 3,
-   "worst_case": 17
+   "worst_case": 17,
+   "gap_co_edited": 0.159,
+   "gap_symbol": 0.0,
+   "worst_gap": 0.159
   },
   "ppr_und": {
    "co_edited": 14,
    "symbol": 9,
    "union_static": 9,
-   "worst_case": 14
+   "worst_case": 14,
+   "gap_co_edited": 0.1284,
+   "gap_symbol": 0.0449,
+   "worst_gap": 0.1284
   },
   "ppr_und_pl": {
    "co_edited": 11,
    "symbol": 3,
    "union_static": 2,
-   "worst_case": 11
+   "worst_case": 11,
+   "gap_co_edited": 0.1144,
+   "gap_symbol": 0.0013,
+   "worst_gap": 0.1144
   },
   "random": {
    "co_edited": 23,
    "symbol": 23,
    "union_static": 23,
-   "worst_case": 23
+   "worst_case": 23,
+   "gap_co_edited": 0.2376,
+   "gap_symbol": 0.2422,
+   "worst_gap": 0.2422
   },
   "rrf_hops_issue_path": {
    "co_edited": 3,
    "symbol": 8,
    "union_static": 7,
-   "worst_case": 8
+   "worst_case": 8,
+   "gap_co_edited": 0.0063,
+   "gap_symbol": 0.0341,
+   "worst_gap": 0.0341
   },
   "rrf_hops_path": {
    "co_edited": 4,
    "symbol": 5,
    "union_static": 5,
-   "worst_case": 5
+   "worst_case": 5,
+   "gap_co_edited": 0.0287,
+   "gap_symbol": 0.0147,
+   "worst_gap": 0.0287
   },
   "rrf_ppr_issue": {
    "co_edited": 9,
    "symbol": 14,
    "union_static": 14,
-   "worst_case": 14
+   "worst_case": 14,
+   "gap_co_edited": 0.0928,
+   "gap_symbol": 0.1002,
+   "worst_gap": 0.1002
   },
   "rrf_ppr_issue_path": {
    "co_edited": 5,
    "symbol": 11,
    "union_static": 11,
-   "worst_case": 11
+   "worst_case": 11,
+   "gap_co_edited": 0.0413,
+   "gap_symbol": 0.0706,
+   "worst_gap": 0.0706
   },
   "rrf_pprpl_issue_path": {
    "co_edited": 2,
    "symbol": 6,
    "union_static": 6,
-   "worst_case": 6
+   "worst_case": 6,
+   "gap_co_edited": 0.0,
+   "gap_symbol": 0.0171,
+   "worst_gap": 0.0171
   },
   "same_dir": {
    "co_edited": 16,
    "symbol": 20,
    "union_static": 20,
-   "worst_case": 20
+   "worst_case": 20,
+   "gap_co_edited": 0.1571,
+   "gap_symbol": 0.1708,
+   "worst_gap": 0.1708
   }
  },
  "n_prs_shared": 702,

@@ -101,6 +101,12 @@ def issues():
 
 
 @stage
+def redact():
+    from depgraphs import redact as r
+    r.main()
+
+
+@stage
 def study2():
     from depgraphs import study2 as s
     s.main()
