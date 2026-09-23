@@ -168,6 +168,99 @@ def c_directed():
     return " | ".join(out)
 
 
+@check("matched population: what moves when both keys score the same PRs")
+def c_shared():
+    sh = pd.read_csv(OUT / "per_source_shared.csv")
+    full = pd.read_csv(OUT / "per_source.csv")
+    out = []
+    for src in ("co_edited", "symbol"):
+        a = sh[sh.source == src].set_index("method")
+        b = full[full.source == src].set_index("method")
+        d = (a["rank"] - b["rank"].reindex(a.index)).dropna()
+        worst = d.abs().sort_values(ascending=False).head(3)
+        top = a.sort_values("rank").index[1:4].tolist()   # skip the oracle
+        out.append("%s (n=%d): top3 %s; biggest rank moves %s"
+                   % (src, int(a.n_pr.iloc[0]), top,
+                      ", ".join("%s %+d" % (k, v) for k, v in worst.items())))
+    return " | ".join(out)
+
+
+@check("repository-level tests: does any headline comparison lose significance?")
+def c_repo_unit():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    if "unit" not in pw.columns:
+        return "pairwise.csv has no unit column - rerun analysis2"
+    pairs = [("rrf_pprpl_issue_path", "path_issue"),
+             ("ppr_out_pl", "path_issue"),
+             ("hops_lines", "path_issue"),
+             ("ppr_out_pl", "ppr_in_pl"),
+             ("ppr_out_pl", "ppr_und_pl")]
+    out = []
+    for a, b in pairs:
+        for src in ("co_edited", "symbol"):
+            for pop in ("all", "shared"):
+                g = pw[(pw.unit == "repo") & (pw.population == pop) & (pw.source == src)
+                       & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+                if not len(g):
+                    continue
+                r = g.iloc[0]
+                sign = -1 if r.a != a else 1
+                out.append("%s>%s %s/%s d=%+.3f p=%.2g"
+                           % (a, b, src, pop, sign * r.delta, r.p_holm))
+    return "; ".join(out)
+
+
+@check("leakage strata: is the co_edited finding an artefact of over-correcting?")
+def c_leak_strata():
+    d = pd.read_csv(OUT / "leak_sensitivity.csv")
+    want = {"no_full_path", "no_explicit", "no_stem"}
+    have = set(d.stratum.unique())
+    if not want <= have:
+        return "missing strata %s - rerun leakage then analysis2" % (want - have)
+    out = []
+    for st in ("no_full_path", "no_explicit", "no_stem"):
+        g = d[(d.stratum == st) & (d.source == "co_edited")]
+        pi = g[g.method == "path_issue"].iloc[0]
+        hl = g[g.method == "hops_lines"].iloc[0]
+        out.append("%s (n=%d): path_issue #%d %.3f, hops_lines #%d %.3f"
+                   % (st, int(pi.n_pr), pi.rank_no_leak, pi.auc_no_leak,
+                      hl.rank_no_leak, hl.auc_no_leak))
+    return " | ".join(out)
+
+
+@check("leakage rates: full path, explicit code mention, bare stem")
+def c_leak_rates():
+    d = pd.read_csv(OUT / "issue_path_leak.csv")
+    if "explicit" not in d.columns:
+        return "issue_path_leak.csv has no explicit column - rerun leakage"
+    n = len(d)
+    bits = ["%s %.1f%%" % (c, 100 * d[c].mean())
+            for c in ("full", "stem", "explicit", "incidental")]
+    strict = int(((d["full"] == 0) & (d["stem"] == 0)).sum())
+    primary = int(((d["full"] == 0) & (d["explicit"] == 0)).sum())
+    return ("%d tasks: %s | primary stratum %d, strictest %d"
+            % (n, ", ".join(bits), primary, strict))
+
+
+@check("which fusions survive, and what distinguishes them")
+def c_fusion_why():
+    r = _rank_by_source()
+    pure = [m for m in r.index if m not in FUSION
+            and m not in ("oracle", "random", "same_dir")]
+    best_pure = r.loc[pure, "worst"].min()
+    scaled = {"hops_lines", "ppr_und_pl"}
+    out = []
+    for m in sorted(FUSION):
+        if m not in r.index:
+            continue
+        base = [b for b in scaled if b.split("_")[0][:4] in m or b in m]
+        out.append("%s worst=%d %s path=%s"
+                   % (m, r.loc[m, "worst"],
+                      "beats-pure" if r.loc[m, "worst"] < best_pure else "does-not",
+                      "path" in m))
+    return "best pure worst=%d | %s" % (best_pure, "; ".join(out))
+
+
 def main():
     bad = 0
     for name, fn in CHECKS:

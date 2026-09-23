@@ -17,3 +17,9 @@ data/issue_bags.json
 
 papers/
 claude-web/*.pdf
+paper/paper.aux
+paper/paper.bbl
+paper/paper.blg
+paper/paper.out
+paper/paper.log
+paper/paper.xdv

@@ -21,8 +21,8 @@
 
 \begin{document}
 
-\title{The Import Graph Answers a Different Question}
-\subtitle{Structure, Issue Text, and What Belongs in a Context Window}
+\title{What Belongs in an Agent's Context Window}
+\subtitle{Import Structure, Issue Text, and Two Controls That Change the Answer}
 
 \author{Neil Lunavat}
 \affiliation{%
@@ -35,49 +35,57 @@ An agent asked to change one file in an unfamiliar repository cannot read the re
 our corpus the median repository is 286{,}385 tokens and 60.5\% of tasks sit in one larger
 than a 200{,}000-token window; the files that actually matter are a median 2.98\% of it.
 Something must choose. Two signals are available for the choice: the repository's import
-structure, and the words of the issue report. Tools overwhelmingly use the first.
+structure, and the words of the issue report. Graph-based context tools order by the first.
 
 We compare both, and their combination, on 2{,}412 change tasks from 1{,}162 real pull
 requests in 112 Python repositories, scoring each ordering by how much of an evidence-based
 answer key it covers per line read. The comparison only has an answer once one says what
-``needed'' means, and that turns out to decide everything. Ranks below are over all
-twenty-three orderings we score, the oracle included. Graded against the files
-\emph{co-edited} in the same pull request, the four best orderings fuse structure with issue
-text, the best pure signal is issue-text-to-path matching (AUC 0.434, rank 6), and the best
-purely structural ordering is tenth (0.389); a query-independent PageRank prior is
-twenty-first, barely above random (0.271 vs.\ 0.248). Graded against the files that
-\emph{define symbols the change uses}, the order inverts: cost-scaled personalised PageRank
-following imports outward is second (0.491), issue-text matching falls to fifteenth (0.382),
-and the PageRank prior climbs to twelfth, far above random (0.410). Edge direction, which an
-undirected walk discards, separates the best structural ordering from nearly the worst: the
-same walk run against the import direction is twenty-second (0.269). Every one of these
-reversals is significant under Holm correction with the pull request as the unit.
+``needed'' means, so we grade against two keys and never merge them: the files
+\emph{co-edited} in the same pull request, and the files that \emph{define symbols the
+change uses}. Ranks below are over all twenty-three orderings we score, the oracle included.
 
-One half of this is close to expected, and we say so at the outset rather than claim a
-symmetric discovery. The symbol key is built by resolving names with \texttt{jedi}, which
-follows import edges; a key constructed by walking the import graph favouring methods that
-walk the import graph is no surprise. The result that carries the paper is the other half:
-on the co-edited key --- the one every graph-based localization system we checked actually
-grades against --- structural proximity is beaten by matching issue words against file
-paths, a method with no graph and no seed. That advantage is conditional, and we say where
-it comes from: removing every task whose issue names a key file by stem, roughly half the
-corpus, sends path matching from sixth to thirteenth and lifts pure structure to fifth.
-What survives both controls is that the key decides which family wins --- structure is first
-to third on symbol in every stratum and never better than fifth on co-edited --- and that
-fusing a walk with path matching holds the top four places on co-edited files throughout.
+One result survives every control we apply. Reciprocal-rank fusion of a cost-scaled
+personalised walk with issue-text-to-path matching is the best non-oracle ordering under
+\emph{both} keys on the 702 pull requests that carry both (AUC 0.487 and 0.470). It beats
+the best pure lexical ordering by 0.055 and 0.067, and the best pure structural one by 0.097
+and 0.039, all Holm-corrected with the repository as the unit.
+
+The two single-signal effects that a less careful reading of our own tables would report do
+not survive. Graded on the full corpus, issue-to-path matching beats every purely structural
+ordering on the co-edited key (0.434 against 0.389 for the best walk) --- but 40.2\% of
+tasks have an issue that names a key file \emph{as code}, and on the rest path matching
+falls from fifth to eleventh of the twenty orderings we test against one another, while
+\m{hops\_lines}, which reads no issue text at all, takes its place in fifth. Graded on the full corpus, a walk
+following imports outward is second on the symbol key (0.491) against path matching's
+fifteenth (0.382) --- but the symbol key also covers single-file pull requests, which have no
+co-edited key at all, and on a population matched to carry both keys the walk falls to eighth
+and is no longer distinguishable from path matching ($p_{\text{Holm}} = 1$). We report both
+controls at length because each dissolves an effect that we had ourselves previously written
+down as a finding.
+
+What edge direction buys is also narrower than it first appears. Discarding direction costs
+nothing --- an undirected walk and an outward one are indistinguishable on the symbol key
+($p_{\text{Holm}} = 1$) --- while reversing it is severe ($+0.215$ outward over inward,
+$p_{\text{Holm}} < 10^{-17}$). Both figures are over the full corpus, and both hold on the matched
+population. The finding is that walking \emph{against} imports is bad,
+not that direction is the decisive structural choice. The symbol key is in addition partly
+circular with the methods it favours, being built by resolving names with \texttt{jedi},
+which follows import edges; we state that at the outset rather than claim a symmetric
+discovery.
 
 Two further results bound the problem. The two-hop neighbourhood of the seed, the usual
 justification for graph retrieval, holds 87.5\% of the needed files but is also 56\% of the
 repository and a median of 21{,}646 lines: it supplies recall, not precision, at a lift of
-only 1.57$\times$ over taking the same share of files at random. And the headroom is large
-and measurable without running any model: an oracle ordering puts the complete answer inside
-an 8{,}000-line budget for 97.5\% of pull requests, whereas the best method we test reaches
-58.5\%. Since no agent can use a file it was never given, that gap bounds every downstream
-system at once. Reciprocal-rank fusion of a walk with path matching is the only family
-placing in the top six under both evidence sources. We argue that retrieval for code change must be reported per
-evidence source, and that a cheap lexical signal belongs in every graph-based context tool.
-We make no claim about downstream repair rates; Section~\ref{sec:protocol} pre-registers
-the experiment that would test one.
+only 1.57$\times$ over taking the same share of files at random. And the distance to a perfect ordering is
+large and measurable without running any model: an oracle puts the complete answer inside an
+8{,}000-line budget for 97.5\% of pull requests, whereas the best method we test reaches
+58.5\%. Since no agent can use a file it was never given, that gap is an upper bound on
+what better selection could add to any system under that budget --- not an estimate of it,
+since an oracle reads only key files by construction. We argue that retrieval for code change must be reported per evidence source
+\emph{and} per leakage stratum, that filename mentions in issue text are a first-class
+confound rather than a footnote, and that a cheap lexical signal belongs in any
+graph-based context tool that does not already have one. We make no claim about downstream repair rates;
+Section~\ref{sec:protocol} pre-registers the experiment that would test one.
 \end{abstract}
 
 \keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
@@ -107,7 +115,16 @@ you need to read is near, in the graph, to what you are changing.
 There is a second signal, and it is the one a human reaches for first. Asked to fix the
 login page, a developer thinks of the authentication files --- not because \m{login.py}
 imports them, which it may well not, but because the words match. That signal sits in the
-issue report, and graph-based tools largely do not use it for ordering.
+issue report.
+
+We are not the first to notice it. SWE-bench's own sparse-retrieval baseline is BM25 with
+the issue as the query~\cite{jimenez2024swebench}, Agentless~\cite{xia2025agentless} leans on
+file and directory names, and the agentic systems all read the issue text as part of their
+loop. What is missing is not the idea that words help. It is a measurement of how far they
+carry against structure, on a stated answer key, under a stated budget, and with the issue
+corpus's habit of naming the answer controlled for. Every system in Table~\ref{tab:priorkeys}
+reports end-to-end accuracy against a single key; none reports that comparison, and none
+reports how often its issues name the files it is scored on.
 
 This paper compares the two. The comparison sounds simple and is not, because it has no
 answer until one says what it means for a file to have been ``needed''. We use two evidence
@@ -138,27 +155,45 @@ property of the tasks?
 \item A head-to-head comparison of import-graph proximity and issue-text retrieval as
 \emph{reading orders} under a line budget, on 2{,}412 tasks from 1{,}162 real pull requests
 in 112 Python repositories, with both signals scored against the same two evidence sources.
-\item Evidence that the conclusion of such a comparison is decided by the evidence source
-rather than by the methods: across twenty contending orderings, each individual reversal is
-significant under Holm correction with the pull request as the unit. The rank correlation
-between the two sources is low ($\rho = 0.24$ over the contenders, $p = 0.31$), but with
-twenty methods that statistic is too imprecise to carry weight on its own, and we rest the
-claim on the paired tests.
+\item Evidence that the conclusion of such a comparison is decided as much by the evidence
+source and by how the corpus is filtered as by the methods. Across twenty contending
+orderings the two keys induce different rankings, but we show that two of the largest
+apparent effects are properties of the comparison rather than of the signals: one is
+filename leakage from the issue text, the other a population mismatch between the two keys.
+All claims are Holm-corrected with the \emph{repository} as the unit, since pull requests
+cluster within repositories and treating them as independent inflates significance by many
+orders of magnitude.
 \item A quantification of what graph proximity actually contributes: recall over half the
 repository, at a lift of 1.57$\times$, with 4.2\% precision at two hops.
 \item A robustness criterion --- worst-case rank across evidence sources --- under which
-the three fusions that include path matching beat every pure signal, while the two that
-fuse a walk with BM25 alone do not.
+three of our five fusions beat every pure signal. The dividing line is not whether path
+matching is included, since four of the five include it and one of those still fails. It is
+whether the structural input is cost-scaled: the three that fuse from \m{hops\_lines} or
+\m{ppr\_und\_pl} succeed, and the two built on the unscaled \m{ppr\_und} do not.
 \item A cost accounting in tokens rather than files: a corpus-wide calibration of Python
 source (8.50 tokens per line in aggregate, median 7.88), and a method-independent ceiling
 --- the share of pull requests whose complete answer fits a given budget at all. An oracle
 ordering reaches 97.5\% of pull requests within 8{,}000 lines where the best method we test
 reaches 58.5\%, so the shortfall is headroom and not task difficulty.
-\item Evidence that edge direction, which the undirected walks common in this literature
-discard, is worth more than any other structural choice we test on the symbol key --- a
-cost-scaled walk along import edges ranks second, the same walk reversed twenty-second ---
-and worth nothing on the co-edited key, where every directed and undirected variant falls
-below a same-directory baseline.
+\item A precise statement of what edge direction buys. Reversing a walk is severely harmful
+--- following imports outward beats the same walk run inward by 0.215 AUC on the symbol key,
+or 0.123 on the population matched to both keys ($p_{\text{Holm}} < 10^{-14}$ in both cases,
+repository as the unit) --- but \emph{discarding} direction costs nothing, because the
+undirected walk common in this literature is indistinguishable from the outward one
+($p_{\text{Holm}} = 1$ on the full corpus, $0.42$ on the matched one). On the co-edited key direction is not merely
+unhelpful but harmful: all four directed variants rank seventeenth to twentieth, below a
+same-directory baseline that uses no graph at all, while all four undirected walks rank tenth
+to fourteenth, above it.
+
+\item Two controls that each dissolve an effect we had previously reported as a finding, and
+which we recommend as standard practice. A \emph{leakage} control that classifies whether an
+issue names a key file as code rather than merely sharing a word with it: 40.2\% of tasks do,
+and on the rest issue-to-path matching falls from fifth to eleventh of the twenty contenders
+on the co-edited key. A
+\emph{population} control that restricts both keys to the 702 pull requests carrying both,
+since a co-edited key requires a multi-file pull request while a symbol key does not: on the
+matched population the best directed walk falls from second to eighth on the symbol key and
+is no longer distinguishable from path matching.
 \item A replication package with the graphs, tasks, issue-token bags, token counts,
 orderings, generated tables and analysis scripts.
 \end{enumerate}
@@ -295,7 +330,12 @@ remaining files of the repository. This gives 3{,}123 tasks from 1{,}873 pull re
 113 repositories. Of these, 2{,}412 tasks --- 1{,}162 pull requests in 112 repositories ---
 have at least one key file inside the graph once the seed is removed, and they are the ones
 scored here; the remaining 711 tasks have an empty key under both sources and are reported
-but not scored. Within the scored set, 1{,}958 tasks (708 pull requests) have a co-edited
+but not scored. Those 711 tasks come from 711 distinct pull requests, and 706 of them change
+a single file: with no second edited file there is no co-edited key, and the symbol key is
+empty whenever the changed code resolves to nothing outside itself --- standard library,
+third-party packages, or names \texttt{jedi} could not resolve. That is 61.2\% of all
+single-file tasks, which is a real limitation of the symbol key and not a filtering choice
+of ours. Within the scored set, 1{,}958 tasks (708 pull requests) have a co-edited
 key and 2{,}341 (1{,}156 pull requests) a symbol key.
 
 The median repository contributes 131 graph nodes and the median key is 3 files totalling
@@ -367,8 +407,12 @@ Family & Method & Ordering \\
 \midrule
 structure & \m{bfs\_und} & breadth-first from the seed, undirected \\
  & \m{hops\_lines} & by (hop distance from seed, file length) \\
- & \m{ppr\_und} & personalised PageRank, restart at the seed \\
+ & \m{ppr\_und} & personalised PageRank from the seed, undirected \\
  & \m{ppr\_und\_pl} & the same, divided by file length \\
+ & \m{ppr\_out} & the same walk along import edges: what the seed depends on \\
+ & \m{ppr\_out\_pl} & the same, divided by file length \\
+ & \m{ppr\_in} & the same walk against import edges: what depends on the seed \\
+ & \m{ppr\_in\_pl} & the same, divided by file length \\
 \midrule
 global & \m{pagerank} & PageRank of the whole graph; ignores seed and issue \\
  & \m{indegree} & number of files importing this one \\
@@ -417,12 +461,26 @@ fraction of a small context window to more than a large one.
 
 \subsection{Statistics}
 
-The unit of analysis is the pull request: task AUCs are averaged within a pull request
-first, so a change touching many files does not count many times. Paired comparisons use the
-Wilcoxon signed-rank test with the Vargha--Delaney $A_{12}$ effect size, Holm-corrected
-within each family of comparisons. Confidence intervals are 2{,}000-resample bootstraps
-resampling \emph{repositories}, not tasks, so that a few large repositories cannot
-manufacture significance.
+Task AUCs are averaged within a pull request first, so a change touching many files does not
+count many times. Paired comparisons use the Wilcoxon signed-rank test with the
+Vargha--Delaney $A_{12}$ effect size, Holm-corrected within each family of comparisons.
+Confidence intervals are 2{,}000-resample bootstraps resampling \emph{repositories}, not
+tasks, so that a few large repositories cannot manufacture significance.
+
+The paired tests are reported with the \textbf{repository} as the unit: the pull-request
+scores are averaged within a repository and the test runs over the 112 repositories. Pull
+requests are not independent draws --- they cluster in repositories that differ in size,
+layout convention and issue-writing culture --- and a test that ignores the clustering
+counts the same evidence many times. The difference is not cosmetic. The same comparison
+that yields $p < 10^{-100}$ over 1{,}156 pull requests yields $p < 10^{-20}$ over 112
+repositories. The effect sizes are essentially unchanged, which is the point: the conclusions
+survive, and only the arithmetic of the $p$-values was ever overstated. We report the
+pull-request-level tests alongside, in the replication package, so the two can be compared.
+
+Because a co-edited key requires a pull request that touches more than one graph file while
+a symbol key does not, the two keys do not cover the same pull requests. Wherever we compare
+across keys we therefore report the comparison twice: over each key's full population, and
+over the 702 pull requests that carry both (Section~\ref{sec:shared}).
 
 \section{Results}
 
@@ -471,17 +529,21 @@ the query-independent priors are twenty-first and twenty-second of twenty-three,
 \m{same\_dir} and barely above random. Under the symbol key the table inverts: the top four
 are three structural orderings and one fusion, and the best lexical ordering is fifteenth.
 
-The individual reversals are large and all significant after Holm correction. Issue-text
-path matching beats cost-scaled personalised PageRank by 0.063 AUC on co-edited files
-($A_{12} = 0.421$ for the walk, $p_{\text{Holm}} < 10^{-11}$) and loses to it by 0.107 on
-symbol files ($A_{12} = 0.629$, $p_{\text{Holm}} < 10^{-31}$). BM25 on the issue text beats
-it by 0.036 and then loses by 0.149 ($A_{12} = 0.678$).
+The individual reversals are large and significant after Holm correction with the repository
+as the unit. Issue-text path matching beats cost-scaled personalised PageRank by 0.059 AUC
+on co-edited files ($A_{12} = 0.403$ for the walk, $p_{\text{Holm}} < 10^{-4}$) and loses to
+it by 0.100 on symbol files ($A_{12} = 0.671$, $p_{\text{Holm}} < 10^{-8}$).
 
 We rest the reversal on those paired tests rather than on a rank correlation. The
 correlation is low --- Spearman $\rho = 0.24$ over the twenty contenders ($p = 0.31$), and
 $\rho = 0.37$ over all twenty-two non-oracle orderings ($p = 0.09$) --- but with twenty
 points a non-significant $\rho$ is weak evidence of anything, and its value moves with which
 methods are included. The Holm-corrected pairwise reversals do not have that weakness.
+
+Two things about Table~\ref{tab:main} are \emph{not} safe to read off it, and the next two
+subsections are about them. The two columns are computed over different pull requests, and
+the left column is computed over a corpus in which many issues name the answer outright.
+Each of those turns out to account for one of the two halves of the reversal.
 
 Figure~\ref{fig:curves} shows the same reversal as coverage curves. Table~\ref{tab:lines}
 states it in the unit a context budget is actually spent in: to reach half the co-edited
@@ -490,9 +552,51 @@ lines, against 4{,}838 following issue-text path matching and 3{,}342 following 
 fusion. On symbol files the same three numbers are 3{,}483, 6{,}638 and 3{,}957 --- the walk
 and the words trade places, and the fusion is close to the better of the two in both.
 
+\subsection{The reversal is smaller on a matched population}
+\label{sec:shared}
+
+A co-edited key exists only for a pull request that changes more than one file in the graph.
+A symbol key does not need that, and 444 of the 1{,}156 pull requests with a symbol key
+change a single file. The two columns of Table~\ref{tab:main} are therefore scored on
+different samples, and single-file changes are exactly the case where a seed's import
+neighbourhood is most of what there is to find. The comparison has to be repeated on a
+population that carries both keys.
+
+Table~\ref{tab:shared} does that, on the 702 pull requests that have both. On the co-edited
+key nothing moves: no method changes rank by more than one place. On the symbol key the
+structural family loses most of its advantage. Cost-scaled personalised PageRank along
+import edges falls from second to eighth (0.491 to 0.417), the undirected form from third to
+fifth, and \m{hops\_lines} from fourth to sixth, while issue-to-path matching rises from
+fifteenth to ninth. The three top places under both keys are then held by the same three
+fusions.
+
+The statistical claim moves with the ranks. On the full corpus a walk along import edges
+beats path matching on the symbol key by 0.101 ($p_{\text{Holm}} < 10^{-8}$, repository as
+the unit). On the matched population the same comparison gives $+0.008$ and
+$p_{\text{Holm}} = 1$; for \m{hops\_lines} against path matching it gives $+0.019$ and
+$p_{\text{Holm}} = 1$. We therefore do not claim that structural proximity beats issue-text
+retrieval on the symbol key. On a like-for-like sample the two are indistinguishable, and
+what remains of the reversal is the co-edited half --- which the next control also qualifies.
+
+\begin{table}
+\caption{The two keys re-scored on the 702 pull requests that carry both, top ten under
+each. $\Delta$ is the change in rank against the full population of
+Table~\ref{tab:main}; a positive number means the method does worse once the samples are
+matched.}
+\label{tab:shared}
+\small
+\begin{tabular}{llcrc}
+\toprule
+Method & Fam. & AUC & \# & $\Delta$ \\
+\midrule
+\rows{tab_shared}
+\bottomrule
+\end{tabular}
+\end{table}
+
 \begin{table}
 \caption{Mean AUC by evidence source, pull request as the unit, with bootstrap 95\%
-confidence intervals over repositories. The same nineteen orderings, ranked twice.}
+confidence intervals over repositories. The same twenty-three orderings, ranked twice.}
 \label{tab:main}
 \footnotesize
 \setlength{\tabcolsep}{3.5pt}
@@ -545,62 +649,63 @@ PageRank does the reverse.}
 \end{figure}
 
 \begin{table}
-\caption{Median lines that must be read before half the key is covered. Lower is better.}
+\caption{Median lines that must be read before half, then all, of the key is covered. Lower is better.}
 \label{tab:lines}
 \small
-\begin{tabular}{lrr}
+\begin{tabular}{lrr@{\hskip 1.5em}rr}
 \toprule
-Method & \m{co\_edited} & \m{symbol} \\
+& \multicolumn{2}{c}{to half the key} & \multicolumn{2}{c}{to all of it} \\
+\cmidrule(r){2-3}\cmidrule(l){4-5}
+Method & \m{co\_edited} & \m{symbol} & \m{co\_edited} & \m{symbol} \\
 \midrule
-\m{oracle} & 524 & 440 \\
-\m{rrf\_pprpl\_issue\_path} & 3{,}254 & 3{,}849 \\
-\m{rrf\_hops\_path} & 3{,}956 & 3{,}699 \\
-\m{ppr\_und\_pl} & 6{,}155 & 3{,}483 \\
-\m{hops\_lines} & 5{,}620 & 4{,}080 \\
-\m{ppr\_und} & 6{,}514 & 4{,}395 \\
-\m{path\_issue} & 4{,}747 & 6{,}524 \\
-\m{bm25\_issue} & 5{,}012 & 7{,}451 \\
-\m{pagerank} & 11{,}294 & 5{,}635 \\
-\m{random} & 14{,}627 & 14{,}223 \\
+\rows{tab_lines}
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Edge direction is the largest structural choice, on one key only}
+\subsection{Direction: reversing a walk is costly, discarding it is free}
 \label{sec:direction}
 
 The walks above are undirected, as they are in most of this literature. An import edge has a
-direction, and discarding it turns out to cost more than any other structural decision we
-test --- on one key, and nothing on the other.
+direction, so we add both orientations of the personalised walk, cost-scaled and not.
 
-Running the same personalised walk along import edges (towards what the seed depends on)
-places \m{ppr\_out\_pl} second of twenty-three on the symbol key at 0.491, just ahead of the
-undirected \m{ppr\_und\_pl} at 0.489. Running it against the edges (towards what depends on
-the seed) collapses to \m{ppr\_in} at 0.269, twenty-second, a hair above random. A single
-choice of direction spans almost the entire range of the table.
+The result is asymmetric, and the asymmetry is the finding. Running the walk \emph{along}
+import edges --- towards what the seed depends on --- places \m{ppr\_out\_pl} second of
+twenty-three on the symbol key at 0.491. Running it \emph{against} them collapses to
+\m{ppr\_in\_pl} at 0.277, twenty-first. The like-for-like gap is 0.123 on the matched
+population and 0.215 on the full one, in both cases the largest separation between two
+structural orderings anywhere in our results ($p_{\text{Holm}} < 10^{-14}$, repository as
+the unit).
 
-On the co-edited key the same four variants rank seventeenth to twentieth, all of them below
-\m{same\_dir}, a baseline that orders files by directory and consults no graph at all. There
-is no direction that rescues the walk: the best structural ordering on co-edited files
-remains \m{hops\_lines}, at tenth.
+But the undirected walk loses almost nothing. On the symbol key \m{ppr\_und\_pl} scores
+0.489 against \m{ppr\_out\_pl}'s 0.491, a difference of 0.002 that is not significant on the
+full corpus ($p_{\text{Holm}} = 1$) and reverses in sign, slightly, on the matched one. So
+the practice this literature has settled on --- throw the direction away --- is not the
+mistake it might appear to be from the spread of the table. Walking backwards is the mistake.
 
-This is the clearest statement we can make of the paper's claim. The symbol key is built by
-following imports, so following imports finds it; the direction that matters is exactly the
-direction \texttt{jedi} traverses. The co-edited key records a human decision about what
-belonged in one change, and no orientation of the import graph recovers it well.
+On the co-edited key direction is worse than useless. All four directed variants rank
+seventeenth to twentieth, below \m{same\_dir}, a baseline that orders files by directory and
+consults no graph at all; all four undirected walks rank tenth to fourteenth, above it.
+Committing to an orientation costs 0.044 to 0.061 AUC there ($p_{\text{Holm}} < 10^{-3}$).
+
+The explanation is the same one that qualifies the symbol key throughout. That key is built
+by resolving names with \texttt{jedi}, which follows imports in exactly one direction, so a
+walk in that direction is measuring something close to the key's own construction. The
+co-edited key records a human decision about what belonged in one change, and no orientation
+of the import graph recovers it well.
 
 \subsection{RQ3: what the seed is worth depends on the source too}
 
 A query-independent PageRank prior --- a ranking that never looks at the seed or the issue,
 and simply says which files matter in this repository --- reaches 0.410 on symbol files
 against 0.489 for the best cost-scaled personalised walk, which does look at the seed. That
-is 84\% of the personalised score, and far above random (0.248; $A_{12} = 0.713$,
-$p_{\text{Holm}} < 10^{-100}$). On that evidence source, much of what the personalised walk
+is 84\% of the personalised score, and far above random (0.248; $A_{12} = 0.758$,
+$p_{\text{Holm}} < 10^{-16}$). On that evidence source, much of what the personalised walk
 delivers is a repository prior.
 
 Under the co-edited key the same prior scores 0.271 against a random floor of 0.248. The
-difference is significant but negligible ($A_{12} = 0.526$, $p_{\text{Holm}} = 0.01$), and
-the personalised walk beats it by 0.100 ($A_{12} = 0.626$). Knowing which file is being changed therefore
+difference is significant but negligible ($A_{12} = 0.552$, $p_{\text{Holm}} = 0.001$), and
+the personalised walk beats it by 0.101 ($A_{12} = 0.666$). Knowing which file is being changed therefore
 matters a great deal for predicting what else was changed, and rather little for predicting
 what the code calls, where knowing the repository's hubs is nearly as good.
 
@@ -609,6 +714,7 @@ source: whether ``the graph knows what you are working on'' appears true or fals
 a function of the answer key.
 
 \subsection{RQ4: the two signals name different files}
+\label{sec:rq4}
 
 The reversal is not two methods disagreeing about the order of one list. At $k=10$ the
 top-10 sets of personalised PageRank and issue-text BM25 have a mean Jaccard overlap of
@@ -646,23 +752,28 @@ Source & $k$ & both & structure only & words only & neither \\
 
 If the evidence source is not known in advance --- and for a tool shipped to users it is not
 --- the quantity to optimise is the worst rank a method attains across sources.
-Table~\ref{tab:worst} ranks by it. Three of the five fusions beat every pure signal; the
-two that do not --- \m{rrf\_ppr\_issue} and \m{rrf\_ppr\_issue\_path} --- are the ones built
-on the undirected personalised walk, which is itself weak on co-edited files. The best,
+Table~\ref{tab:worst} ranks by it. Three of the five fusions beat every pure signal. The
+two that do not --- \m{rrf\_ppr\_issue} and \m{rrf\_ppr\_issue\_path} --- are not
+distinguished by whether they include path matching, since four of the five do and one
+of those still fails. They are the two built on the unscaled \m{ppr\_und}. The three that
+survive all fuse from a cost-scaled structural input, either \m{hops\_lines} or
+\m{ppr\_und\_pl}. Dividing by file length before fusing is what makes the difference. The best,
 \m{rrf\_hops\_path}, is nothing more than reciprocal-rank fusion of hop-distance ordering
 with issue-tokens-against-file-paths, and is fourth under one source and fifth under the
 other.
 
-The insurance is close to free. Against pure structure (\m{hops\_lines}) it gains 0.068 AUC
-on co-edited files ($A_{12} = 0.585$, $p_{\text{Holm}} < 10^{-34}$) and loses 0.001 on
-symbol files ($p_{\text{Holm}} = 1.0$); against \m{ppr\_und\_pl} it gains 0.086
-($p_{\text{Holm}} < 10^{-39}$) and loses 0.013 ($p_{\text{Holm}} = 0.31$). The lexical signal adds a large amount where structure is weak and costs
+The insurance is close to free. Against pure structure (\m{hops\_lines}) it gains 0.067 AUC
+on co-edited files ($A_{12} = 0.602$, $p_{\text{Holm}} < 10^{-11}$) and gains 0.003 on
+symbol files ($p_{\text{Holm}} = 1$); against \m{ppr\_und\_pl} it gains 0.087
+($p_{\text{Holm}} < 10^{-13}$) and loses 0.008 ($p_{\text{Holm}} = 1$). The lexical signal adds a large amount where structure is weak and costs
 nothing where structure is strong.
 
 \begin{table}
-\caption{Worst rank attained across the two evidence sources, over the twenty-two
-non-oracle orderings. Lower is better. The three fusions that include path matching beat
-every pure signal; the two built on the undirected walk alone do not.}
+\caption{Worst rank attained across the two evidence sources. Ranks are those of
+Table~\ref{tab:main}, over all twenty-three orderings with the oracle included, so the
+best attainable worst rank here is 2. Lower is better. The three fusions built on a
+cost-scaled structural input beat every pure signal; the two built on the unscaled walk
+do not.}
 \label{tab:worst}
 \small
 \begin{tabular}{llccc}
@@ -674,7 +785,7 @@ Method & Fam. & \m{co\_edited} & \m{symbol} & worst \\
 \end{tabular}
 \end{table}
 
-\subsection{RQ6: the shortfall is headroom, not task difficulty}
+\subsection{RQ6: what a budget rules out, and what it does not}
 \label{sec:ceiling}
 
 A coverage number says how much of the key a method found. It does not say whether finding
@@ -688,6 +799,14 @@ Table~\ref{tab:ceiling} reports it. The complete answer fits a 32{,}000-token bu
 90.3\% of pull requests under the co-edited key and 87.3\% under the symbol key, and a
 64{,}000-token budget for over 95\% of both. The task is not, in general, impossible at
 realistic budgets.
+
+We are careful about what this licenses. The oracle reads only key files, so that it fits a
+small key into a small budget is close to arithmetic: the ceiling shows the keys are small,
+not that the remaining distance is reachable from the signals available. What it does rule
+out is the competing explanation --- that current methods score as they do because the
+answers do not fit --- and that is worth ruling out, because it is the explanation a reader
+reaches for first. The gap between 58.5\% and 97.5\% is therefore an upper bound on what
+better selection could add, not an estimate of it.
 
 \begin{table}
 \caption{Share of pull requests whose \emph{entire} key fits within a token budget. This is
@@ -730,65 +849,87 @@ Ordering & co\_edited (\%) & symbol (\%) \\
 
 Two things are worth noting. The reversal survives the stricter criterion:
 \m{bm25\_issue} loses 14.9 points and \m{path\_issue} 11.5 points moving from the co-edited
-key to the symbol key, while the structural orderings gain and \m{pagerank} gains eleven. And the fusion orderings again sit at or near the top of both columns, which is the
-same conclusion RQ5 reached by AUC, reached here by a measure that ignores partial credit
+key to the symbol key, while the outward walks gain the most (\m{ppr\_out} 15.2 points,
+\m{ppr\_out\_pl} 14.7) and \m{pagerank} gains 11.5. The gain is not a property of
+the structural family as such: the two inward walks lose 11.2 and 11.7 points, more than
+\m{path\_issue} does. It is a property of walking the direction the key was built along.
+And the fusion orderings again sit at or near the top of both columns, which is the same
+conclusion RQ5 reached by AUC, reached here by a measure that ignores partial credit
 entirely.
 
 \subsection{Sensitivity: are the lexical methods just copying paths out of the issue?}
+\label{sec:leak}
 
 Issue reports often contain stack traces, and a stack trace names files. If the lexical
 advantage came from reports quoting the paths of the files that had to change, it would be
 an artefact of the benchmark rather than a property of language.
 
-Partly it does, and the effect is large enough that we report it as a result rather than as
-a reassurance.
+Largely it does, and the effect is big enough that we report it as a result rather than as a
+reassurance.
 
-The full path of a key file appears verbatim in the issue text for 4.2\% of key files, and
-12.6\% of tasks contain at least one; the bare file stem appears for 20.4\%, and 48.5\% of
-tasks contain at least one stem. Path BM25 matches on stems, so the full-path control is too
-weak. We therefore report two strata: tasks whose issue quotes no full key path (2{,}108
-tasks, 668 scored pull requests on the co-edited key), and the stricter set quoting neither a
-path nor a stem (1{,}243 tasks, 509 pull requests).
+The full path of a key file appears verbatim in the issue text for 12.6\% of tasks, and a
+bare file stem for 48.5\%. Path BM25 tokenises a path into lowercased subtokens, so a stem is
+enough to match and the full-path control is far too weak. But a bare stem is also too
+strong a criterion on its own: an issue about ``models'' and a key file called
+\texttt{models.py} share a word because a project's prose and its filenames draw on one
+domain vocabulary, and using that overlap is retrieval, not leakage. We therefore classify
+every stem occurrence by how it is written. A mention is \emph{explicit} if it appears as
+code --- \texttt{core.py}, \texttt{simbad/core}, a dotted module path, inside backticks, or
+inside a fenced or indented block --- and \emph{incidental} if the stem occurs only as an
+ordinary English word. Explicit mentions cover 40.2\% of tasks; a further 11.7\% have
+incidental matches only.
 
-Under the weaker control little moves: \m{path\_issue} falls from 0.434 to 0.407 on co-edited
-files and holds fifth, still ahead of every structural ordering. Under the stricter control
-it falls to 0.336 and \emph{thirteenth}, and \m{hops\_lines} --- pure structure --- rises to
-fifth at 0.385, ahead of every pure lexical method. On the symbol key nothing moves at all:
-\m{ppr\_out\_pl} and \m{ppr\_und\_pl} are first and second in both strata.
+That gives three nested strata, reported in Table~\ref{tab:leak}: issues quoting no full key
+path (2{,}108 tasks, 668 pull requests on the co-edited key), issues naming no key file as
+code (1{,}442 tasks, 549 pull requests), and the strictest set containing no key stem at all
+(1{,}243 tasks, 509 pull requests). We treat the middle one as primary. It removes the
+leakage channel while leaving the vocabulary signal in place, and it does not select as
+heavily for vague issues as the strictest does.
+
+The result is the same under both real controls, which is what makes it credible. Ranks in
+this subsection are over the twenty contenders, the scale Table\ref{tab:leak} uses, on which
+\m{path\_issue} is fifth on the full corpus. Under the weak full-path control it barely
+moves, falling from 0.434 to 0.407 and holding fifth. Under the primary control it falls to 0.361 and \emph{eleventh}; under the strictest,
+to 0.336 and thirteenth. \m{hops\_lines} --- pure structure, no issue text --- rises to fifth
+in both, at 0.394 and 0.385, ahead of every pure lexical ordering. Because the middle and the
+strictest strata agree, the finding is not an artefact of over-correcting: it does not depend
+on discarding incidental vocabulary overlap. On the symbol key nothing moves in any stratum:
+\m{ppr\_out\_pl}, \m{ppr\_und\_pl} and \m{hops\_lines} are first, second and third in all
+three.
 
 We draw two conclusions and decline a third. First, the lexical advantage on the co-edited
-key is substantially an effect of issue reports naming the files that change --- by stem far
-more often than by path. Second, that is not only an artefact: naming happens in about half
-of real reports, so a tool that exploits it is exploiting something real, and the honest
-statement is conditional rather than universal. What we do \emph{not} conclude is that words
-beat structure on co-edited files in general; that claim holds on the full corpus and fails
-under the stricter control, and we have written the paper to say so.
+key is substantially an effect of issue reports naming the files that change, in code, in
+two tasks out of five. Second, that is not purely an artefact: naming does happen in real
+reports, so a tool that exploits it exploits something real, and the honest statement is
+conditional rather than universal. What we do \emph{not} conclude --- and what an earlier
+draft of this paper did conclude --- is that words beat structure on co-edited files in
+general. That claim holds on the full corpus and fails under both of the controls we regard
+as meaningful.
 
-Two things survive both controls. The key still decides which family wins: structural
-orderings are first to third on the symbol key in every stratum and never better than fifth
-on the co-edited key in any stratum. And fusion survives: the four path-bearing fusions hold
-the top four places on co-edited files under both controls, with
-\m{rrf\_hops\_issue\_path} first at 0.414 in the strictest stratum. The comparable leakage
-figures for the seed itself are 10.3\% full path and 35.1\% stem.
+What survives is fusion. The three cost-scaled fusions hold the top three places on
+co-edited files in every stratum, with \m{rrf\_pprpl\_issue\_path} first at 0.431 in the
+primary stratum and \m{rrf\_hops\_issue\_path} first at 0.414 in the strictest. The
+comparable leakage figures for the seed itself are 10.3\% full path and 35.1\% stem.
 
 The \m{path\_seed} control separates ``issue text'' from ``path matching'' more directly: the
 same path-BM25 ranking, queried by the seed's own path instead of the issue, scores 0.371 on
-co-edited files against 0.434 for the issue query ($+0.064$, $p_{	ext{Holm}} < 10^{-14}$),
-and the two are indistinguishable on symbol files ($+0.018$, $p_{	ext{Holm}} = 0.30$). The gain is attributable to the
-issue text, and only where the target is what developers changed.
+co-edited files against 0.434 for the issue query ($+0.064$, $p_{\text{Holm}} < 10^{-14}$),
+and the two are indistinguishable on symbol files ($+0.018$, $p_{\text{Holm}} = 0.30$). The
+gain is attributable to the issue text, and only where the target is what developers changed.
 
 \begin{table}
-\caption{AUC and rank (in brackets) under the two leakage controls: issues quoting no full
-key path, and the stricter set quoting neither a path nor a bare stem. Ranks are within the
-twenty contenders on that stratum.}
+\caption{AUC and rank (in brackets) under the three nested leakage controls: issues quoting
+no full key path, issues naming no key file as code, and the strictest set containing no key
+stem at all. Ranks are within the twenty contenders on that stratum.}
 \label{tab:leak}
 \footnotesize
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lcc@{\hskip 1.2em}cc}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcc@{\hskip 0.9em}cc@{\hskip 0.9em}cc}
 \toprule
-& \multicolumn{2}{c}{no full path} & \multicolumn{2}{c}{no path or stem} \\
-\cmidrule(r){2-3}\cmidrule(l){4-5}
-Method & co\_edited & symbol & co\_edited & symbol \\
+& \multicolumn{2}{c}{no full path} & \multicolumn{2}{c}{no explicit mention}
+& \multicolumn{2}{c}{no path or stem} \\
+\cmidrule(r){2-3}\cmidrule(lr){4-5}\cmidrule(l){6-7}
+Method & co\_edited & symbol & co\_edited & symbol & co\_edited & symbol \\
 \midrule
 \rows{tab_leak}
 \bottomrule
@@ -796,6 +937,7 @@ Method & co\_edited & symbol & co\_edited & symbol \\
 \end{table}
 
 \subsection{Sensitivity: does the reversal survive in large repositories?}
+\label{sec:size}
 
 The corpus skews small --- the median repository contributes 131 graph nodes --- so the
 reversal has to be shown not to be an artefact of repositories one can almost read whole.
@@ -804,19 +946,24 @@ boundaries 73, 131 and 246 nodes; the largest repository has 2{,}487). The media
 graph nodes and the median of 286{,}385 tokens per repository are consistent: they imply
 roughly 2{,}200 tokens, or some 260 lines, per file, which is an ordinary Python module.
 
-The reversal holds in every quartile. It does not widen monotonically with size: the
+The pattern of Table~
+ef{tab:main} holds in every quartile, so neither it nor the
+qualifications of Sections~
+ef{sec:shared} and~
+ef{sec:leak} are artefacts of repository
+size. It does not widen monotonically with size: the
 co-edited-minus-symbol rank gap for \m{ppr\_und\_pl} runs 9, 5, 9, 10 across the quartiles
 and for \m{hops\_lines} 5, 1, 3, 3, so the right claim is stability, not a trend. In the
-largest quartile, issue-text path matching is fifth on co-edited files and tenth on symbol
+largest quartile, issue-text path matching is fifth on co-edited files and twelfth on symbol
 files, while cost-scaled personalised PageRank is eleventh and first respectively. The
 query-independent prior degrades fastest of all: on co-edited files in the largest
 quartile it scores 0.113 against a random floor of 0.089, which is to say that in the
 repositories where retrieval matters most, knowing only which files are central is worth
 almost nothing. \m{rrf\_hops\_path} never falls below fifth in any of the eight cells,
-and is third or better in six of them.
+and is third or better in five of them.
 
 \begin{table}
-\caption{Mean AUC (rank among the sixteen contenders) by quartile of repository size in
+\caption{Mean AUC (rank among the twenty contenders) by quartile of repository size in
 graph nodes. Q1 $\leq 73$, Q2 $\leq 131$, Q3 $\leq 246$, Q4 up to 2{,}487.}
 \label{tab:size}
 \footnotesize
@@ -835,57 +982,87 @@ Method & Q1 & Q2 & Q3 & Q4 & Q1 & Q2 & Q3 & Q4 \\
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{The graph and the issue answer different questions.} Read together, the results
-have a simple interpretation. An import edge records that one file calls another. That is
-close to the definition of the symbol key, and structural methods duly win there. The
-co-edited key records what a person decided to change in one sitting --- a decision made
-about a feature, a bug, a concept --- and words track that better than call structure does.
-Neither result is a defect in the other method. They are answers to different questions that
-the literature has been treating as one question.
+\paragraph{What we can and cannot say about the two keys.} The tidy version of this paper
+would be that the import graph answers the compiler's question and the issue text answers
+the developer's, and that the field has been grading the first against the second. Our own
+controls will not support the tidy version, and it is worth being exact about what is left.
 
-\paragraph{The field's default key is the one structure is worst at.} Every graph-based
-localization system we could check (Table~\ref{tab:priorkeys}) is graded against the files
-the gold patch touched --- our \m{co\_edited} source. On that source, in our measurements,
-the best purely structural ordering ranks tenth of the twenty-three orderings we score
-(ninth of the twenty we subject to paired testing),
-behind matching issue words against file paths --- a method with no graph, no model and no
-seed.
+On the symbol key, structural methods win on the full corpus and are indistinguishable from
+issue-to-path matching once the population is matched to the co-edited key
+(Section~\ref{sec:shared}). That key is also built by following imports, so we would have
+discounted a win there in any case. On the co-edited key, issue-to-path matching wins on the
+full corpus and loses to pure structure once tasks whose issues name a key file in code are
+removed (Section~\ref{sec:leak}). Each half of the reversal, in other words, has an
+explanation that is not about the signals at all --- one is a sampling artefact, the other a
+leakage artefact --- and an earlier draft of this paper reported both halves as findings.
 
-Two qualifications matter here. Our task hands every structural method a correct seed file
-for free, whereas LocAgent, CoSIL and the rest must localize from the issue text alone;
-their task is harder, and a component that underperforms given a free seed might still earn
-its place without one. And they are LLM agents that also read the issue, so the graph is one
-component among several. We therefore do not claim their advertised component fails to do
-the work. What our results do suggest is narrower and still uncomfortable: on the ground
-truth those systems themselves adopt, graph proximity is not the strongest available signal
-even when handed the answer's neighbourhood, and nobody has reported that comparison.
+What remains is weaker but real. The two keys still induce different rankings, and a method
+tuned on one is not thereby good on the other. But the honest summary of the single-signal
+comparison is that neither family dominates once both confounds are controlled, and the
+interesting result is elsewhere.
 
-\paragraph{The practical consequence is not ``use words instead''.} It is that a tool whose
-ordering rests on one signal is being tuned against whichever evidence source its evaluation
-happened to adopt. The fusion results show the cost of insurance is near zero: adding a BM25
-ranking of issue tokens against file paths to an existing graph walk needs no model, no
-index beyond the file list and no extra hop through the graph, and it is the difference
-between being tenth and being fourth when the target turns out to be co-editing.
+\paragraph{Fusion is the result.} It is the only claim in this paper that survives every
+control we applied. Reciprocal-rank fusion of a cost-scaled walk with issue-to-path matching
+is the best non-oracle ordering under both keys on the matched population, where it beats
+the best pure lexical ordering by 0.055 and 0.067 and the best pure structural one by 0.097
+and 0.039 at the repository level, and it holds the top three places on co-edited files in
+all three leakage strata. It needs no model,
+no index beyond the file list, and no extra hop through the graph.
+
+Two caveats keep this from being stronger than it is. The fusions are the only methods given
+both the seed and the issue, so part of their advantage is simply more input rather than
+genuine complementarity; the overlap analysis (Section~\ref{sec:rq4}) argues for
+complementarity, but a fusion of structure with a non-issue lexical signal would separate the
+two cleanly and we have not run one. And the fusion family and the worst-rank criterion were
+both added after the design freeze (Section~\ref{sec:design-freeze}), so they are
+exploratory, and a held-out split of repositories would be the right way to confirm them.
+
+\paragraph{The field's default key, restated carefully.} Every graph-based localization
+system we could check (Table~\ref{tab:priorkeys}) is graded against the files the gold patch
+touched --- our \m{co\_edited} source. On that source the best purely structural ordering
+ranks tenth of the twenty-three orderings we score, behind matching issue words against file
+paths, a method with no graph, no model and no seed. That gap narrows and then reverses once
+filename leakage is removed, which is itself the point: the comparison those systems are
+implicitly making depends on a property of the issue corpus that none of them report.
+
+Two further qualifications matter. Our task hands every structural method a correct seed file
+for free, whereas LocAgent, CoSIL and the rest must localize from the issue text alone; their
+task is harder, and a component that underperforms given a free seed might still earn its
+place without one. And they are LLM agents that also read the issue, so the graph is one
+component among several. We do not claim their advertised component fails to do its work.
+The narrower claim we will defend is that on the ground truth those systems themselves
+adopt, graph proximity is not obviously the strongest available signal even when handed the
+answer's neighbourhood, and that nobody has reported the comparison or the leakage rate.
+
+\paragraph{Filename leakage deserves to be a standard control.} Two tasks in five in this
+corpus have an issue that names a key file as code. That is not a benchmark defect --- real
+reports really do contain stack traces --- but it means any lexical baseline evaluated
+without the stratification is reporting a mixture of two very different regimes, and any
+structural method compared against such a baseline is being judged against a moving target.
+The control costs a regular expression over text the benchmark already ships. We think
+retrieval papers should report the rate and the stratified result as a matter of course, in
+the same way they report the corpus size.
 
 \paragraph{What ``within two hops'' is worth.} The two-hop neighbourhood earns its
 reputation on recall and loses it on precision: it contains seven of every eight needed
 files and also half the repository. Reporting the recall without the size is, on this
 corpus, reporting half a statistic.
 
-\paragraph{What this means for an agent's context, and what it does not.} The budget
-framing is not decoration: at a median 286{,}385 tokens, most of these repositories do not
-fit in the windows current systems run with, so selection is forced rather than optional.
-Two numbers bound what selection can achieve. The answer is a median 2.98\% of the
-repository, so a well-chosen context could be some 34$\times$ smaller than the whole; and an
-oracle ordering fits the complete answer inside 8{,}000 lines for 97.5\% of pull requests
-where our best method manages 58.5\%, so most of that reduction is currently unrealised.
+\paragraph{What this means for an agent's context, and what it does not.} The budget framing
+is not decoration: at a median 286{,}385 tokens, most of these repositories do not fit in the
+windows current systems run with, so selection is forced rather than optional. Two numbers
+bound what selection can achieve. The answer is a median 2.98\% of the repository, so a
+well-chosen context could be some 34$\times$ smaller than the whole; and an oracle ordering
+fits the complete answer inside 8{,}000 lines for 97.5\% of pull requests where our best
+method manages 58.5\%.
 
-We are deliberately not claiming that better selection raises repair rates. We did not run
-an agent, and a retrieval improvement need not survive contact with one. What the ceiling
-does license is the weaker, safer statement: a file absent from the context cannot be used,
-so the share of tasks whose answer fits the budget bounds any system operating under it.
-Section~\ref{sec:protocol} specifies the experiment that would convert that bound into a
-performance claim, in advance of running it.
+We are deliberately not claiming that better selection raises repair rates. We did not run an
+agent, and a retrieval improvement need not survive contact with one. What the ceiling
+licenses is the weaker statement: a file absent from the context cannot be used, so the share
+of tasks whose answer fits the budget bounds any system operating under it. It does not
+license the claim that the remaining gap is reachable from the signals we have, only that it
+is not closed off by the tasks themselves. Section~\ref{sec:protocol} specifies the
+experiment that would convert the bound into a performance claim, in advance of running it.
 
 \paragraph{A note on order versus selection.} An ordering plus a budget is a selection, and
 it is the selection that matters here. We make no claim about the position of a file
@@ -893,20 +1070,27 @@ it is the selection that matters here. We make no claim about the position of a 
 in this paper concerns which files are read at all.
 
 \paragraph{The human reading of the same result.} The budget for a developer is attention
-rather than tokens, and the reversal has a plain reading there too. Asked to fix the login
-page, a developer thinks of the authentication files because the words match, not because
-the imports connect --- and the co-edited key, which records what a person actually chose to
-change, is where words win. The symbol key, which records what the compiler would care
-about, is where structure wins. We report the token framing because it makes the budget
+rather than tokens, and the results have a plain reading there. Asked to fix the login page,
+a developer thinks of the authentication files partly because the words match and partly
+because the imports connect; our fusion result says those two routes are largely
+complementary, and our leakage result says that how much the words help depends on how
+explicitly the report was written. We report the token framing because it makes the budget
 concrete and measurable; we do not think the finding is confined to machines.
 
 \paragraph{Recommendations.} (1) Report retrieval results separately for at least one
 structural and one behavioural notion of relevance, and report the worst case across them.
-(2) Treat a query-independent repository prior, not random order, as the floor for
-structural methods --- on symbol-style keys it captures 92\% of a personalised walk.
-(3) Include a lexical signal from the issue text in graph-based context tools. (4) Report
-cost in tokens and report the ceiling alongside the score, so that a reader can tell a hard
-task from a poor ordering.
+(2) Report, and stratify by, whether the query text names the answer files in code.
+(3) Match populations before comparing across keys; a key that only exists for multi-file
+changes does not cover the same tasks as one that does not.
+(4) Treat a query-independent repository prior, not random order, as the floor for
+structural methods --- on symbol-style keys it captures 84\% of a personalised walk.
+(5) Where a graph-based tool orders context by structure alone, add a lexical signal from
+the issue text and cost-scale the structural side before fusing; where one already uses
+both, report them separately as well as combined, since on our corpus the combination
+beats either part under both keys. (6) Report cost in tokens and report the
+ceiling alongside the score, so a reader can tell a hard task from a poor ordering.
+(7) Cluster paired tests by repository; pull requests within a repository are not
+independent, and ignoring that inflates significance by many orders of magnitude.
 
 \section{A Pre-Registered Protocol for the Downstream Test}
 \label{sec:protocol}
@@ -926,8 +1110,10 @@ re-run of an existing leaderboard.
 
 \paragraph{Conditions.} Six contexts per task, each truncated to the same token budget:
 (i) the seed file alone, a floor; (ii) seed plus the best structural ordering
-(\m{ppr\_und\_pl}); (iii) seed plus the best lexical ordering (\m{path\_issue});
-(iv) seed plus the best fusion (\m{rrf\_hops\_path}); (v) seed plus the true key, a
+(\m{ppr\_und\_pl} on the symbol key, \m{hops\_lines} on the co-edited
+key --- no single structural ordering is best under both, so the condition is defined per
+key); (iii) seed plus the best lexical ordering (\m{path\_issue});
+(iv) seed plus the best fusion by worst-case rank (\m{rrf\_hops\_path}); (v) seed plus the true key, a
 ceiling; (vi) the repository truncated to the budget in a fixed canonical order, which is
 what a system with no retrieval step does. Budgets of 16{,}000 and 64{,}000 tokens, chosen
 from Table~\ref{tab:ceiling} to sit either side of the point where most answers begin to
@@ -970,35 +1156,53 @@ the natural third leg.
 
 \paragraph{Internal.} The graph builder resolves imports statically and misses dynamic
 imports and plugin registration. The symbol key is produced by a static analyser and
-inherits its resolution failures. Both biases favour structural methods, so the co-edited
-reversal is if anything understated. Issue-path leakage is measured and shown not to drive
-the result.
+inherits its resolution failures. Both biases favour structural methods. Issue-path leakage is
+measured and does substantially drive the co-edited result: it is reported in
+Section~\ref{sec:leak} as a finding rather than a reassurance, and the corresponding claim
+is stated conditionally throughout. Our leakage classifier is a regular expression over
+issue text and will mislabel some mentions in either direction; we report three nested
+strata rather than one so that the conclusion does not rest on a single cut.
 
 \paragraph{External.} Python only, file granularity only, and pull requests drawn from
 benchmark suites that select for reproducible test-verified fixes --- a population plausibly
 better documented than average, which may flatter the issue-text methods. The median
-repository here has 131 graph files and very large repositories are under-represented, but
-the size split in \S4.7 shows the reversal widening rather than narrowing with repository
-size, so the bias does not run in the direction that would explain it away.
+repository here has 131 graph files and very large repositories are under-represented. The
+size split in Section~\ref{sec:size} shows the pattern to be stable across size quartiles
+rather than widening with size, so we cannot argue that the bias runs in a harmless
+direction; we can only say that it does not appear to be a size effect.
 
-\paragraph{Conclusion.} Pull-request-level aggregation, Holm correction within comparison
-families and bootstrapping over repositories guard against the main inflation risks. Effect
-sizes accompany every test because several differences are significant and small.
+\paragraph{Conclusion.} Pull-request-level aggregation, repository-level paired tests, Holm
+correction within comparison families and bootstrapping over repositories guard against the
+main inflation risks. Effect sizes accompany every test because several differences are
+significant and small. The fusion family, the worst-rank criterion and the directed walks
+were all added after the design freeze and are exploratory; we have not held out a split of
+repositories to confirm them, which is the main remaining weakness of the fusion claim.
 
 \section{Conclusion}
 
 We compared import-graph proximity and issue-text retrieval as reading orders for Python
 change tasks on 2{,}412 tasks from 1{,}162 pull requests across 112 repositories, under two
-evidence-based definitions of which files a change required. The comparison has no
-source-independent answer: the rankings the two sources induce over sixteen methods are
-statistically unrelated, with structural orderings winning on files the change references
-and lexical orderings winning on files the developer changed alongside it. The graph's
-two-hop neighbourhood, the standard justification for structural retrieval, turns out to be
-half the repository. Fusing a structural and a lexical ordering is the only strategy that
-stays near the top under both sources, and it costs almost nothing. We recommend that
-context-retrieval work for code change report per evidence source, use a repository prior
-rather than random order as its floor, and stop treating the dependency graph as the only
-signal in the room.
+evidence-based definitions of which files a change required. On the full corpus the two
+definitions give opposite answers, structural orderings winning on the files a change
+references and lexical orderings on the files a developer changed alongside it. Most of
+this paper is then about why that headline does not survive contact with two controls.
+Matching the populations, since a co-edited key only exists for a multi-file change,
+removes the structural advantage on the symbol key. Removing the two tasks in five whose
+issue names a key file in code removes the lexical advantage on the co-edited key. Each
+control dissolves one half, and neither family dominates once both are applied.
+
+What survives is the combination. Reciprocal-rank fusion of a cost-scaled walk with
+issue-text-to-path matching is the best non-oracle ordering under both keys on a matched
+population, holds the top places under every leakage stratum, and costs a BM25 index over
+the file list. The graph's two-hop neighbourhood, the standard justification for
+structural retrieval, turns out to be half the repository, and an oracle fits the complete
+answer in 8{,}000 lines for 97.5\% of pull requests where our best method reaches 58.5\%.
+
+We recommend that context-retrieval work for code change report per evidence source,
+report and stratify by whether the query names the answer, match populations before
+comparing across keys, cluster its tests by repository, use a repository prior rather than
+random order as its floor, and stop treating the dependency graph as the only signal in
+the room.
 
 \section*{Data Availability}
 

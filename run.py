@@ -113,20 +113,14 @@ def tokcost():
 
 
 @stage
+def leakage():
+    from depgraphs import leakage as l
+    l.main()
+
+
+@stage
 def ceiling():
     from depgraphs import ceiling as c
-    c.main()
-
-
-@stage
-def maketables():
-    from depgraphs import maketables as t
-    t.main()
-
-
-@stage
-def checknums():
-    from depgraphs import checknums as c
     c.main()
 
 
@@ -140,6 +134,18 @@ def ball():
 def analysis2():
     from depgraphs import analysis2 as a
     a.main()
+
+
+@stage
+def maketables():
+    from depgraphs import maketables as t
+    t.main()
+
+
+@stage
+def checknums():
+    from depgraphs import checknums as c
+    c.main()
 
 
 @stage

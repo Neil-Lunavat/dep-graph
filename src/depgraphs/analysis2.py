@@ -81,8 +81,58 @@ def table_per_source(rows: pd.DataFrame) -> pd.DataFrame:
     return df.sort_values(["source", "rank"])
 
 
-def pairwise(rows: pd.DataFrame, source: str, methods: list[str]) -> pd.DataFrame:
+def shared_prs(rows: pd.DataFrame) -> pd.Index:
+    """Pull requests that have a non-empty key under *both* evidence sources.
+
+    A co-edited key exists only for a PR that touches more than one graph file, while a
+    symbol key exists for single-file PRs too. Comparing the full per-source tables
+    therefore compares two different populations, and single-file PRs are exactly the ones
+    where a seed's import neighbourhood is most of what there is to find. Restricting to
+    the intersection is what isolates the effect of the key from the effect of the sample.
+    """
+    idx = None
+    for src in ("co_edited", "symbol"):
+        here = pr_level(rows, src).dropna(how="all").index
+        idx = here if idx is None else idx.intersection(here)
+    return idx
+
+
+def table_shared(rows: pd.DataFrame) -> pd.DataFrame:
+    """table_per_source, recomputed on the PRs that carry both keys."""
+    keep = shared_prs(rows)
+    recs = []
+    for src in ("co_edited", "symbol"):
+        mat = pr_level(rows, src).loc[keep]
+        repo = (rows.groupby("instance_id")["repo_key"].first().reindex(mat.index))
+        for m in mat.columns:
+            v = mat[m].to_numpy()
+            ok = ~np.isnan(v)
+            lo, hi = boot_ci(v[ok], repo.to_numpy()[ok])
+            recs.append({"source": src, "method": m, "family": FAMILY.get(m, "?"),
+                         "n_pr": int(ok.sum()), "auc": float(v[ok].mean()),
+                         "ci_lo": lo, "ci_hi": hi})
+    df = pd.DataFrame(recs)
+    df["rank"] = df.groupby("source")["auc"].rank(ascending=False,
+                                                  method="min").astype(int)
+    return df.sort_values(["source", "rank"])
+
+
+def pairwise(rows: pd.DataFrame, source: str, methods: list[str], unit: str = "pr",
+             population: pd.Index | None = None) -> pd.DataFrame:
+    """Paired tests between every pair of methods on one evidence source.
+
+    unit="pr" treats pull requests as independent. They are not: they cluster in 112
+    repositories, which is what makes the PR-level p-values as small as they are. With
+    unit="repo" the PR scores are averaged within a repository first and the test runs
+    over repositories, so the effect sizes are unchanged but the evidence is counted at
+    the level at which the sampling actually happened.
+    """
     mat = pr_level(rows, source)[methods].dropna()
+    if population is not None:
+        mat = mat.loc[mat.index.intersection(population)]
+    if unit == "repo":
+        repo = rows.groupby("instance_id")["repo_key"].first()
+        mat = mat.groupby(repo.reindex(mat.index).to_numpy()).mean()
     recs, pvals = [], []
     for a, b in combinations(methods, 2):
         x, y = mat[a].to_numpy(), mat[b].to_numpy()
@@ -90,7 +140,9 @@ def pairwise(rows: pd.DataFrame, source: str, methods: list[str]) -> pd.DataFram
             p = stats.wilcoxon(x, y, zero_method="wilcox").pvalue
         except ValueError:
             p = 1.0
-        recs.append({"source": source, "a": a, "b": b, "n_pr": len(x),
+        recs.append({"source": source, "unit": unit,
+                     "population": "shared" if population is not None else "all",
+                     "a": a, "b": b, "n_pr": len(x),
                      "mean_a": float(x.mean()), "mean_b": float(y.mean()),
                      "delta": float(x.mean() - y.mean()), "a12": a12(x, y), "p": p})
         pvals.append(p)
@@ -159,7 +211,14 @@ def leak_sensitivity(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
     strata = {
         # no key file's full path appears verbatim in the issue
         "no_full_path": set(leak.loc[leak["full"] == 0, "task_id"]),
-        # stricter: no key file's stem appears either, which is what path BM25 matches on
+        # no key file is named *as code*: no "core.py", no "simbad/core", nothing in a
+        # code span. Bare-word overlap ("models" for models.py) is left in, because a
+        # project's prose and its filenames share a domain vocabulary and using that is
+        # retrieval, not leakage. This is the stratum we treat as primary.
+        "no_explicit": set(leak.loc[(leak["full"] == 0) & (leak["explicit"] == 0),
+                                    "task_id"]),
+        # strictest: no key file's stem appears at all, which over-corrects by removing
+        # legitimate vocabulary signal, and selects for vaguer issues
         "no_stem": set(leak.loc[(leak["full"] == 0) & (leak["stem"] == 0), "task_id"]),
     }
     recs = []
@@ -255,8 +314,17 @@ def main():
                   "bm25_issue_pl", "path_issue", "bm25_seed", "path_seed",
                   "rrf_ppr_issue", "rrf_ppr_issue_path", "rrf_hops_path",
                   "rrf_hops_issue_path", "rrf_pprpl_issue_path", "same_dir", "random"]
-    pw = pd.concat([pairwise(rows, s, contenders) for s in SOURCES])
+    shared = shared_prs(rows)
+    # Four views of the same comparisons: PR-level and repository-level, over everything
+    # and over the PRs that carry both keys. The repository-level tests on the shared
+    # population are the conservative ones, and the ones the claims rest on.
+    pw = pd.concat(
+        [pairwise(rows, s, contenders, unit=u, population=pop)
+         for s in SOURCES for u in ("pr", "repo")
+         for pop in (None, shared)])
     pw.to_csv(OUT / "pairwise.csv", index=False)
+
+    table_shared(rows).to_csv(OUT / "per_source_shared.csv", index=False)
 
     cur = (curves.groupby(["source", "method", "budget"])["coverage"].mean()
            .reset_index())
@@ -295,6 +363,7 @@ def main():
                             .nsmallest(6, "rank")[["method", "auc", "rank"]]
                             .to_dict("records") for s in SOURCES},
         "rank_reversal": piv.to_dict("index"),
+        "n_prs_shared": int(len(shared)),
         "repo_size_quartile_bounds": {str(k): int(v) for k, v in size_bounds.items()},
     }
     (OUT / "findings.json").write_text(json.dumps(findings, indent=1))

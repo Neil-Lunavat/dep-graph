@@ -99,10 +99,8 @@ def size_table():
     sz = sz[sz.source.isin(["co_edited", "symbol"])]
     piv = sz.pivot_table(index="method", columns=["source", "size_q"],
                          values=["auc", "rank"])
-    keep = ["rrf_pprpl_issue_path", "rrf_hops_path", "ppr_out_pl", "ppr_und_pl",
-            "hops_lines", "path_issue", "bm25_issue", "pagerank"]
     rows = []
-    for name in keep:
+    for name in KEEP:
         if name not in piv.index:
             continue
         cells = [m(name)]
@@ -115,14 +113,16 @@ def size_table():
     write("size", "\n".join(rows))
 
 
+KEEP = ["rrf_pprpl_issue_path", "rrf_hops_path", "ppr_out_pl", "ppr_und_pl",
+        "hops_lines", "path_issue", "bm25_issue", "pagerank"]
+
+
 def leak_table():
     d = pd.read_csv(OUT / "leak_sensitivity.csv")
-    keep = ["rrf_pprpl_issue_path", "rrf_hops_path", "ppr_out_pl", "ppr_und_pl",
-            "hops_lines", "path_issue", "bm25_issue", "pagerank"]
     rows = []
-    for name in keep:
+    for name in KEEP:
         cells = [m(name)]
-        for st in ("no_full_path", "no_stem"):
+        for st in ("no_full_path", "no_explicit", "no_stem"):
             for src in ("co_edited", "symbol"):
                 g = d[(d.stratum == st) & (d.source == src) & (d.method == name)]
                 cells.append("%s (%d)" % (("%.3f" % g.auc_no_leak.iloc[0]).lstrip("0"),
@@ -130,6 +130,47 @@ def leak_table():
                              if len(g) else "--")
         rows.append(" & ".join(cells) + " " + NL)
     write("leak", "\n".join(rows))
+
+
+def shared_table():
+    """The two keys re-scored on the pull requests that carry both of them."""
+    sh = pd.read_csv(OUT / "per_source_shared.csv")
+    full = pd.read_csv(OUT / "per_source.csv")
+    rows = []
+    for src in ("co_edited", "symbol"):
+        s = sh[sh.source == src].set_index("method")
+        f = full[full.source == src].set_index("method")
+        if src == "symbol":
+            rows.append(BS + "midrule")
+        for name in s.sort_values("rank").index[:10]:
+            d = int(s.loc[name, "rank"]) - int(f.loc[name, "rank"])
+            rows.append("%s & %s & %s & %d & %s %s" % (
+                m(name), FAM.get(s.loc[name, "family"], "?"),
+                ("%.3f" % s.loc[name, "auc"]).lstrip("0"), int(s.loc[name, "rank"]),
+                "$+%d$" % d if d > 0 else ("$%d$" % d if d < 0 else "--"), NL))
+    write("shared", "\n".join(rows))
+
+
+def lines_table():
+    """Median lines read before half, then all, of the key is covered."""
+    d = pd.read_csv(OUT / "lines_to_reach.csv")
+    piv = d[d.source.isin(["co_edited", "symbol"])].pivot(
+        index="method", columns="source",
+        values=["lines_half_median", "lines_all_median"])
+    order = ["oracle"] + [k for k in KEEP if k != "pagerank"] + ["random"]
+    rows = []
+    for name in order:
+        if name not in piv.index:
+            continue
+        cells = [m(name)]
+        for col in ("lines_half_median", "lines_all_median"):
+            for src in ("co_edited", "symbol"):
+                cells.append("{:,}".format(round(piv.loc[name, (col, src)]))
+                             .replace(",", "{,}"))
+        rows.append(" & ".join(cells) + " " + NL)
+        if name == "oracle":
+            rows.append(BS + "midrule")
+    write("lines", "\n".join(rows))
 
 
 def figure_data():
@@ -152,7 +193,9 @@ def figure_data():
 
 def main():
     main_table()
+    shared_table()
     worst_table()
+    lines_table()
     full_table()
     ceiling_table()
     size_table()
