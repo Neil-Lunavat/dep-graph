@@ -2,7 +2,7 @@
 % Every number below is copied from results/study2/ (per_source.csv, pairwise.csv,
 % rank_by_source.csv, lines_to_reach.csv, complementarity.csv, overlap.csv, ball.csv,
 % distance_profile.csv, leak_sensitivity.csv, findings.json). Do not edit numbers by hand;
-% re-run src/depgraphs/{study2,analysis2,ball}.py and re-copy. \TODO{} marks pending parts.
+% re-run src/depgraphs/{study2,analysis2,ball,tokcost,ceiling}.py and re-copy.
 \documentclass[acmsmall,review]{acmart}
 
 \usepackage{booktabs}
@@ -18,46 +18,51 @@
 \begin{document}
 
 \title{The Import Graph Answers a Different Question}
-\subtitle{Structure, Issue Text, and What Counts as a File You Needed to Read}
+\subtitle{Structure, Issue Text, and What Belongs in a Context Window}
 
 \author{Neil Lunavat}
 \affiliation{%
-  \institution{\TODO{institution}}
-  \country{\TODO{country}}}
+  \institution{Pimpri Chinchwad College of Engineering}
+  \country{India}}
 \email{neillunavat3192@gmail.com}
 
 \begin{abstract}
-To change an unfamiliar file, a developer or an agent must decide what else to read, and in
-what order. Two signals are available: the repository's dependency structure, and the words
-of the issue report. Tools overwhelmingly use the first. We compare both, and their
-combination, on 2{,}412 change tasks from 1{,}162 real pull requests in 112 Python
-repositories, scoring each ordering by how much of an evidence-based answer key it covers
-per line read.
+An agent asked to change one file in an unfamiliar repository cannot read the repository. In
+our corpus the median repository is 286{,}385 tokens and 60.5\% of tasks sit in one larger
+than a 200{,}000-token window; the files that actually matter are a median 2.98\% of it.
+Something must choose. Two signals are available for the choice: the repository's import
+structure, and the words of the issue report. Tools overwhelmingly use the first.
 
-The comparison only has an answer once one says what ``needed to read'' means, and that turns
-out to decide everything. Graded against the files that were \emph{co-edited} in the same
-pull request, the four best orderings fuse structure with issue text, the best pure signal
-is issue-text-to-path matching (AUC 0.436), and the best purely structural ordering is
-tenth (0.389); a query-independent PageRank prior is seventeenth, barely above random
-(0.272 vs.\ 0.247). Graded against the files that \emph{define symbols the change uses}, the
-ranking inverts: cost-scaled personalised PageRank is first (0.489), issue-text matching
-falls to thirteenth (0.383), and the PageRank prior climbs to tenth, far above random
-(0.410 vs.\ 0.251). Across the sixteen contending methods the two evidence sources induce
-rankings that are statistically unrelated (Spearman $\rho = 0.26$, $p = 0.34$). Every
-reversal is significant under Holm correction with the pull request as the unit.
+We compare both, and their combination, on 2{,}412 change tasks from 1{,}162 real pull
+requests in 112 Python repositories, scoring each ordering by how much of an evidence-based
+answer key it covers per line read. The comparison only has an answer once one says what
+``needed'' means, and that turns out to decide everything. Graded against the files
+\emph{co-edited} in the same pull request, the four best orderings fuse structure with issue
+text, the best pure signal is issue-text-to-path matching (AUC 0.436), and the best purely
+structural ordering is tenth (0.389); a query-independent PageRank prior is seventeenth,
+barely above random (0.272 vs.\ 0.247). Graded against the files that \emph{define symbols
+the change uses}, the ranking inverts: cost-scaled personalised PageRank is first (0.489),
+issue-text matching falls to thirteenth (0.383), and the PageRank prior climbs to tenth, far
+above random (0.410 vs.\ 0.251). Across the sixteen contending methods the two evidence
+sources induce rankings that are statistically unrelated (Spearman $\rho = 0.26$,
+$p = 0.34$). Every reversal is significant under Holm correction with the pull request as
+the unit. We verify that the four graph-based localization systems we could check all grade
+against the first of these keys --- the one on which structure is weakest.
 
-Two further results explain the reversal and what to do about it. The two-hop neighbourhood
-of the seed, the usual justification for graph retrieval, holds 87.5\% of the needed files
-but is also 56\% of the repository and a median of 21{,}646 lines: it supplies recall, not
-precision, with a lift of only 1.57$\times$ over taking the same share of files at random.
-And the two signals genuinely disagree about which files to name --- the top-10 lists of
-personalised PageRank and issue-text matching have a mean Jaccard overlap of 0.19, and at
-$k=20$ nearly a quarter of co-edited files are reachable by words alone. Reciprocal-rank
-fusion of one structural and one lexical ordering is consequently the only family in the top
-six under both evidence sources: it gains 0.069 AUC over pure structure on co-edited files
-($p < 0.001$) while losing nothing on symbol files ($-0.0004$, $p = 1.0$). We argue that
-retrieval for code change should be reported per evidence source, and that a cheap lexical
-signal belongs in every graph-based context tool.
+Two further results bound the problem. The two-hop neighbourhood of the seed, the usual
+justification for graph retrieval, holds 87.5\% of the needed files but is also 56\% of the
+repository and a median of 21{,}646 lines: it supplies recall, not precision, at a lift of
+only 1.57$\times$ over taking the same share of files at random. And the headroom is large
+and measurable without running any model: an oracle ordering puts the complete answer inside
+an 8{,}000-line budget for 97.5\% of pull requests, whereas the best method we test reaches
+58.7\%. Since no agent can use a file it was never given, that gap bounds every downstream
+system at once. Reciprocal-rank fusion of one structural and one lexical ordering is the
+only family in the top six under both evidence sources, gaining 0.069 AUC over pure
+structure on co-edited files ($p < 0.001$) while losing nothing on symbol files
+($-0.0004$, $p = 1.0$). We argue that retrieval for code change must be reported per
+evidence source, and that a cheap lexical signal belongs in every graph-based context tool.
+We make no claim about downstream repair rates; Section~\ref{sec:protocol} pre-registers
+the experiment that would test one.
 \end{abstract}
 
 \keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
@@ -67,10 +72,17 @@ software engineering}
 
 \section{Introduction}
 
-A developer is handed a bug report and a file to change. Before writing anything they must
-decide what else to read. So must an automated agent, under a much harder constraint: a
-context window is finite, and every line spent on an irrelevant file is a line not spent on
-a relevant one.
+An agent is handed a bug report and a file to change. Before it can write anything it must
+decide what else to read, and it cannot simply read everything. In the corpus we study the
+median repository is 286{,}385 tokens; 74.8\% of tasks sit in a repository larger than a
+128{,}000-token window and 60.5\% in one larger than 200{,}000. Meanwhile the files that
+carry the answer are a median 2.98\% of the repository. The reduction available is roughly
+34$\times$, and every line spent on an irrelevant file is a line not spent on a relevant
+one. Something has to choose, and the choice is the subject of this paper.
+
+A human faces a softer version of the same problem --- attention rather than tokens --- and
+we return to that reading in Section~\ref{sec:discussion}. The budget is what makes the
+question sharp, so we pose it in those terms throughout.
 
 The dominant answer in tool building is the dependency graph. Aider builds a repository map
 from the call and definition graph; RepoGraph, LocAgent and CoSIL construct code graphs and
@@ -100,6 +112,9 @@ sources, and by how much?
 repository prior, and does the answer depend on the evidence source?
 \item[RQ4] Do the two signals retrieve the same files, or different ones?
 \item[RQ5] Does fusing them produce an ordering that is good under both evidence sources?
+\item[RQ6] What fraction of tasks could be solved at all under a given budget --- that is,
+how much of the gap between current methods and a perfect ordering is headroom rather than a
+property of the tasks?
 \end{description}
 
 \subsection*{Contributions}
@@ -115,8 +130,13 @@ $\rho = 0.26$.
 repository, at a lift of 1.57$\times$, with 4.2\% precision at two hops.
 \item A robustness criterion --- worst-case rank across evidence sources --- and the finding
 that under it every fusion of a structural and a lexical ordering beats every pure signal.
-\item A replication package with the graphs, tasks, issue-token bags, orderings and analysis
-scripts.
+\item A cost accounting in tokens rather than files: a corpus-wide calibration of Python
+source (8.50 tokens per line in aggregate, median 7.88), and a method-independent ceiling
+--- the share of pull requests whose complete answer fits a given budget at all. An oracle
+ordering reaches 97.5\% of pull requests within 8{,}000 lines where the best method we test
+reaches 58.7\%, so the shortfall is headroom and not task difficulty.
+\item A replication package with the graphs, tasks, issue-token bags, token counts,
+orderings and analysis scripts.
 \end{enumerate}
 
 \section{Background and Related Work}
@@ -124,12 +144,12 @@ scripts.
 \paragraph{Dependency structure as a guide to change.} Using program structure to decide what
 a change touches is old. Impact analysis~\cite{bohner1996impact} propagates from a changed
 element along dependencies; Robillard~\cite{robillard2008topology} ranks program elements by
-the topology of their dependencies; feature-location surveys~\cite{dit2013feature} catalogue
+the topology of their dependencies; feature-location surveys~\cite{dit2013featurelocation} catalogue
 structural, textual and dynamic techniques and note that they are usually evaluated in
 isolation. Ko et al.~\cite{ko2006exploratory} observed developers navigating largely by
 identifier names and search rather than by following dependencies.
 
-\paragraph{Change history.} Zimmermann et al.~\cite{zimmermann2005mining} and Ying et
+\paragraph{Change history.} Zimmermann et al.~\cite{zimmermann2004mining} and Ying et
 al.~\cite{ying2004predicting} mine co-change from version histories to suggest files that
 change together. Our co-edited evidence source is the same notion of relatedness, used as
 ground truth rather than as a method.
@@ -137,49 +157,103 @@ ground truth rather than as a method.
 \paragraph{Graph-based context for agents.} SWE-bench~\cite{jimenez2024swebench} and its
 successors~\cite{badertdinov2025swerebench,zhang2025swebenchlive} made repository-scale
 change tasks a standard benchmark, and a family of systems now assembles context by walking
-a code graph: Aider's repository map~\cite{aiderrepomap},
+a code graph: Aider's repository map~\cite{aider2023repomap},
 RepoGraph~\cite{ouyang2025repograph}, LocAgent~\cite{chen2025locagent} and
-CoSIL~\cite{cosil2025}. Agentless~\cite{xia2024agentless} is a notable counterexample that
+CoSIL~\cite{jiang2025cosil}. Agentless~\cite{xia2025agentless} is a notable counterexample that
 leans on file and directory names.
 
 What these systems share is the ground truth they are judged against.
-Table~\ref{tab:priorkeys} records it for the four systems we could check directly. Where
-localization accuracy is reported at all, the target is the set of files or functions
+Table~\ref{tab:priorkeys} records it for every system whose evaluation section we read in
+the published PDF; each entry is quoted or paraphrased from that section, not from an
+abstract or a secondary description.
+Where localization accuracy is reported at all, the target is the set of files or functions
 touched by the gold patch --- the SWE-bench convention, and exactly our \m{co\_edited}
 source. That is the evidence source on which, in our results, structural proximity is the
-weaker of the two signals. \TODO{extend this to 20--30 papers; four verified entries are not
-a survey, and the claim that the patch-based key is the field default should rest on a
-systematic sample}
+weaker of the two signals.
 
-\begin{table}
-\caption{What graph-based localization systems are graded against. Verified from the
-published papers on 2026-09-23.}
+\begin{table*}
+\caption{What repository-context systems are graded against, read from each paper's own
+evaluation section (2026-09-23). The upper block is the patch-based convention; the lower
+block is the concurrent work that departs from it.}
 \label{tab:priorkeys}
-\small
-\begin{tabular}{llp{6.1cm}}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llp{8.8cm}}
 \toprule
 System & Venue & Ground truth used for evaluation \\
 \midrule
-LocAgent~\cite{chen2025locagent} & ACL 2025 & Files and functions modified by the patch, on
-SWE-bench-Lite; Acc@$k$ over the top-$k$ predicted locations \\
-CoSIL~\cite{cosil2025} & ASE 2025 & File- and function-level localization accuracy on
-SWE-bench Lite and Verified, i.e.\ the patched locations \\
-Agentless~\cite{xia2024agentless} & FSE 2025 & Localization then repair on SWE-bench Lite;
-localization is scored against the patched files \\
-RepoGraph~\cite{ouyang2025repograph} & ICLR 2025 & Not localization accuracy: a plug-in
-scored by end-to-end issue resolution rate \\
+\multicolumn{3}{l}{\emph{Files touched by the gold patch}} \\
+LocAgent~\cite{chen2025locagent} & ACL 2025 & ``The affected files or functions \ldots as
+identified in the patches, are considered the target locations'' \\
+CoSIL~\cite{jiang2025cosil} & ASE 2025 & File- and function-level accuracy on SWE-bench Lite
+and Verified, i.e.\ the patched locations \\
+Agentless~\cite{xia2025agentless} & FSE 2025 & Correct if the edit covers a superset of the
+ground-truth patch locations, at line, function and file level \\
+LingmaAgent~\cite{ma2025lingmaagent} & FSE 2025 & Fault locations extracted from the
+developer patch, at file and function level \\
+SWE-Fixer~\cite{xie2025swefixer} & ACL 2025 & Precision and recall against the defective
+files of the resolving pull request; BM25 top-30 then a learned reranker \\
+KGCompass~\cite{yang2025kgcompass} & 2025 & Files and code elements modified by the
+ground-truth patch, scored by Jaccard overlap \\
+SWE-Adept~\cite{he2026sweadept} & 2026 & Correct only if \emph{all} locations modified by
+the ground-truth patch appear in the top-$k$ \\
+SWERank~\cite{reddy2025swerank} & 2025 & Every function modified in the pull request is a
+positive \\
+CodeScout~\cite{sutawika2026codescout} & 2026 & Reuses LocAgent's patch-processing scripts:
+modified files, modules and functions \\
+RepoGraph~\cite{ouyang2025repograph} & ICLR 2025 & ``The percentage of problems where
+the edit locations match the ground truth patch'', at file, function and line level \\
+\midrule
+\multicolumn{3}{l}{\emph{Something other than the gold patch alone}} \\
+GraphLocator~\cite{liu2025graphlocator} & 2025 & Locations extracted from the fix patch,
+then dual-annotated and cross-reviewed because patch-derived ground truth ``contains
+missing locations'' \\
+SWE-Explore~\cite{zhang2026sweexplore} & 2026 & File and line intervals that successful
+agents actually \emph{read}, intersected across several verified trajectories \\
+ContextBench~\cite{li2026contextbench} & 2026 & Human-annotated context traced outward from
+the patch regions, pruned by a second annotator, validated by an LLM patching from it alone \\
+AgentRetrievalBench~\cite{qin2026agentretrievalbench} & 2026 & A file is relevant if reading
+it helps the agent's next step; one of four task types is ripple files beyond an anchor \\
+CodeR~\cite{chen2024coder} & 2024 & End-to-end on SWE-bench, but its separate localization
+study uses golden locations marked by the authors \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
+
+\paragraph{Concurrent work is questioning the key.} The patch convention is under active
+revision, by at least four efforts that appeared while this study was running, and we want
+to be exact about how close they come. SWE-Explore~\cite{zhang2026sweexplore} derives
+line-level ground truth ``from independent agent trajectories that successfully solved the
+same issue, distilling the specific code regions their solution paths actually consulted'',
+and scores a ranked list ``under a fixed line budget'' --- both the key and the cost model
+are close relatives of ours. ContextBench~\cite{li2026contextbench} annotates gold context
+by hand, 522{,}115 lines over 1{,}136 tasks, and measures recall, precision and efficiency
+rather than end-to-end resolution. AgentRetrievalBench~\cite{qin2026agentretrievalbench}
+defines a file as relevant ``when reading it would materially help the agent take the next
+correct step'', evaluated under a top-$k$ or token budget; one of its four task types,
+ripple files beyond an anchored edit, is our co-edited source by another name. And
+GraphLocator~\cite{liu2025graphlocator} keeps the patch key but dual-annotates it, on the
+stated grounds that patch-derived ground truth misses locations.
+
+We take this as corroboration of the premise rather than as a threat to it: several groups
+independently concluded in the same year that the patch key is inadequate. What none of
+them reports is the consequence we measure. Each proposes a better key and evaluates
+methods against it; we hold two keys already recoverable from existing benchmark data, and
+show that the choice between them \emph{reverses the ranking of the methods themselves}
+--- sixteen methods, rankings uncorrelated at $\rho = 0.26$, every individual reversal
+significant. The contribution is not the observation that keys differ. It is the
+measurement of what the field's default key costs the signal the field has invested in.
 
 \paragraph{Retrieval.} BM25~\cite{robertson2009bm25} remains the reference lexical ranking
 function; we use it unchanged, varying only the query.
 
 \section{Study Design}
 
+\label{sec:design-freeze}
 The corpus, the graph builder, the task definition and the coverage--cost metric were fixed
 and tagged in version control before any method was run; the present study adds method
-families and analyses on top of that frozen base.
+families and analyses on top of that frozen base. Changes made after that tag, and claims we
+have retracted, are recorded in the replication package rather than silently absorbed.
 
 \subsection{Repositories and tasks}
 
@@ -221,9 +295,12 @@ question is whether the choice matters. It does, and the union is not a neutral 
 union largely inherits the structural source's verdict.
 
 A third source --- files actually executed by the tests that the fix repairs --- is defined
-in our protocol but collected for only a small part of the corpus, and is therefore excluded
-here. \TODO{complete the execution-based key over the remaining pull requests and repeat the
-analysis with three sources}
+in our protocol and was collected for 113 pull requests before we stopped. We exclude it
+rather than report it: a source covering under a tenth of the corpus cannot be compared
+against two that cover all of it, and reporting it alongside them would invite exactly the
+conflation this paper argues against. The partial collection is in the replication package
+so that it is visible rather than quietly dropped, and completing it is the obvious
+extension.
 
 \subsection{Reading orders}
 
@@ -288,6 +365,17 @@ must be read before half the key has been covered.
 
 Orderings with ties are re-drawn three times per task with distinct seeds and the coverage
 curves averaged.
+
+The budget is denominated in lines because the pre-registered design fixed it that way at
+\texttt{freeze-1}, and we do not change a frozen metric after seeing results. Lines are
+nevertheless the wrong unit for a context window, so we measure the conversion rather than
+assume it: across the 121{,}075 distinct file versions in the corpus, tokenised with the
+\texttt{cl100k\_base} byte-pair vocabulary, Python source runs to 8.50 tokens per line in
+aggregate and a median of 7.88 per file, with a 5th--95th percentile range of 5.70--10.90.
+Absolute counts shift by a small constant factor between tokenizer families; the ratios we
+report do not depend on the choice. A budget of 8{,}000 lines is therefore roughly 68{,}000
+tokens, and the eight budgets span roughly 2{,}100 to 272{,}000 tokens --- from a
+fraction of a small context window to more than a large one.
 
 \subsection{Statistics}
 
@@ -552,6 +640,79 @@ Method & \m{co\_edited} & \m{symbol} & worst \\
 \end{tabular}
 \end{table}
 
+\subsection{RQ6: the shortfall is headroom, not task difficulty}
+\label{sec:ceiling}
+
+A coverage number says how much of the key a method found. It does not say whether finding
+all of it was possible. If the needed files together exceed the budget, no ordering of them
+fits and no downstream system can succeed, however capable: a model cannot use a file it was
+never given. That bound is a property of the task and the budget alone, so it can be
+measured once and applied to every method at once --- and, usefully here, without running a
+model.
+
+Table~\ref{tab:ceiling} reports it. The complete answer fits a 32{,}000-token budget for
+90.3\% of pull requests under the co-edited key and 87.3\% under the symbol key, and a
+64{,}000-token budget for over 95\% of both. The task is not, in general, impossible at
+realistic budgets.
+
+\begin{table}
+\caption{Share of pull requests whose \emph{entire} key fits within a token budget. This is
+a ceiling: no ordering can exceed it, and no agent can act on files outside it.}
+\label{tab:ceiling}
+\small
+\begin{tabular}{rrr}
+\toprule
+Token budget & co\_edited (\%) & symbol (\%) \\
+\midrule
+4{,}000    & 34.1 & 31.5 \\
+8{,}000    & 54.2 & 50.8 \\
+16{,}000   & 75.1 & 72.5 \\
+32{,}000   & 90.3 & 87.3 \\
+64{,}000   & 96.9 & 95.5 \\
+128{,}000  & 99.5 & 99.4 \\
+200{,}000  & 99.9 & 99.9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Against that ceiling, current orderings fall a long way short. Table~\ref{tab:full} counts
+the pull requests each method takes to \emph{complete} coverage at 8{,}000 lines, a budget
+at which an oracle succeeds on 97.5\% of them. The best method reaches 58.7\% on the
+co-edited key and 50.4\% on the symbol key. Roughly forty points of the gap is therefore
+attributable to the ordering rather than to the budget or the task.
+
+\begin{table}
+\caption{Share of pull requests taken to \emph{complete} coverage within 8{,}000 lines. The
+oracle row is the ceiling of Table~\ref{tab:ceiling} expressed in the frozen unit. The
+reversal of Table~\ref{tab:main} reappears under this stricter criterion.}
+\label{tab:full}
+\small
+\begin{tabular}{lrr}
+\toprule
+Ordering & co\_edited (\%) & symbol (\%) \\
+\midrule
+\texttt{oracle}              & 97.5 & 95.9 \\
+\midrule
+\texttt{rrf\_hops\_issue\_path} & 58.7 & 49.0 \\
+\texttt{rrf\_hops\_path}     & 54.6 & 50.4 \\
+\texttt{bm25\_issue}         & 51.8 & 36.9 \\
+\texttt{path\_issue}         & 48.4 & 36.5 \\
+\texttt{hops\_lines}         & 48.1 & 51.0 \\
+\texttt{ppr\_und\_pl}        & 45.1 & 50.0 \\
+\texttt{pagerank}            & 31.8 & 43.4 \\
+\texttt{same\_dir}           & 27.8 & 23.8 \\
+\texttt{random}              & 14.5 & 14.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two things are worth noting. The reversal survives the stricter criterion: the two
+issue-text methods lose about fifteen points moving from the co-edited key to the symbol
+key, while the two structural methods gain three to five, and \texttt{pagerank} gains
+eleven. And the fusion orderings again sit at or near the top of both columns, which is the
+same conclusion RQ5 reached by AUC, reached here by a measure that ignores partial credit
+entirely.
+
 \subsection{Sensitivity: are the lexical methods just copying paths out of the issue?}
 
 Issue reports often contain stack traces, and a stack trace names files. If the lexical
@@ -610,6 +771,7 @@ Method & Q1 & Q2 & Q3 & Q4 & Q1 & Q2 & Q3 & Q4 \\
 \end{table}
 
 \section{Discussion}
+\label{sec:discussion}
 
 \paragraph{The graph and the issue answer different questions.} Read together, the results
 have a simple interpretation. An import edge records that one file calls another. That is
@@ -641,11 +803,93 @@ reputation on recall and loses it on precision: it contains seven of every eight
 files and also half the repository. Reporting the recall without the size is, on this
 corpus, reporting half a statistic.
 
+\paragraph{What this means for an agent's context, and what it does not.} The budget
+framing is not decoration: at a median 286{,}385 tokens, most of these repositories do not
+fit in the windows current systems run with, so selection is forced rather than optional.
+Two numbers bound what selection can achieve. The answer is a median 2.98\% of the
+repository, so a well-chosen context could be some 34$\times$ smaller than the whole; and an
+oracle ordering fits the complete answer inside 8{,}000 lines for 97.5\% of pull requests
+where our best method manages 58.7\%, so most of that reduction is currently unrealised.
+
+We are deliberately not claiming that better selection raises repair rates. We did not run
+an agent, and a retrieval improvement need not survive contact with one. What the ceiling
+does license is the weaker, safer statement: a file absent from the context cannot be used,
+so the share of tasks whose answer fits the budget bounds any system operating under it.
+Section~\ref{sec:protocol} specifies the experiment that would convert that bound into a
+performance claim, in advance of running it.
+
+\paragraph{A note on order versus selection.} An ordering plus a budget is a selection, and
+it is the selection that matters here. We make no claim about the position of a file
+\emph{within} a prompt, which is a different question with its own literature; every result
+in this paper concerns which files are read at all.
+
+\paragraph{The human reading of the same result.} The budget for a developer is attention
+rather than tokens, and the reversal has a plain reading there too. Asked to fix the login
+page, a developer thinks of the authentication files because the words match, not because
+the imports connect --- and the co-edited key, which records what a person actually chose to
+change, is where words win. The symbol key, which records what the compiler would care
+about, is where structure wins. We report the token framing because it makes the budget
+concrete and measurable; we do not think the finding is confined to machines.
+
 \paragraph{Recommendations.} (1) Report retrieval results separately for at least one
 structural and one behavioural notion of relevance, and report the worst case across them.
 (2) Treat a query-independent repository prior, not random order, as the floor for
 structural methods --- on symbol-style keys it captures 92\% of a personalised walk.
-(3) Include a lexical signal from the issue text in graph-based context tools.
+(3) Include a lexical signal from the issue text in graph-based context tools. (4) Report
+cost in tokens and report the ceiling alongside the score, so that a reader can tell a hard
+task from a poor ordering.
+
+\section{A Pre-Registered Protocol for the Downstream Test}
+\label{sec:protocol}
+
+This paper measures retrieval, not repair. The obvious next question --- whether a context
+assembled by one of these orderings lets a model actually fix the issue --- requires running
+models, which we have not done. Rather than gesture at it as future work, we specify it here
+in enough detail to be executed or contradicted, in the same spirit as the design freeze
+that preceded this study (\S\ref{sec:design-freeze}). We commit to reporting the result
+whichever way it falls.
+
+\paragraph{Corpus.} The 1{,}162 scored pull requests of this study. Every one carries a
+test specification from the benchmark suite it came from, naming the tests that must change
+from failing to passing and those that must keep passing, so resolution can be decided by
+execution rather than by patch similarity. We note that only 15 of them overlap SWE-bench Verified, so this is not a
+re-run of an existing leaderboard.
+
+\paragraph{Conditions.} Six contexts per task, each truncated to the same token budget:
+(i) the seed file alone, a floor; (ii) seed plus the best structural ordering
+(\m{ppr\_und\_pl}); (iii) seed plus the best lexical ordering (\m{path\_issue});
+(iv) seed plus the best fusion (\m{rrf\_hops\_path}); (v) seed plus the true key, a
+ceiling; (vi) the repository truncated to the budget in a fixed canonical order, which is
+what a system with no retrieval step does. Budgets of 16{,}000 and 64{,}000 tokens, chosen
+from Table~\ref{tab:ceiling} to sit either side of the point where most answers begin to
+fit.
+
+\paragraph{Models.} Two, of clearly different capability, so that the result is not a
+property of one model. A weak model that fails everywhere and a strong model that succeeds
+everywhere would both be uninformative; the pilot below exists to detect that before the
+full run.
+
+\paragraph{Generation.} A single API call per task and condition, with no tools and no
+retrieval available to the model. This is essential rather than incidental: a model that can
+search the repository defeats the budget, and the quantity under study is what a fixed
+context supports.
+
+\paragraph{Outcome and analysis.} A task is resolved if the generated patch applies and the
+specified tests pass. The comparison is paired across conditions on the same tasks, tested
+with McNemar's test, Holm-corrected across the condition pairs, with the pull request as the
+unit as elsewhere in this paper. We do not require the models to be reliable; we require the
+\emph{difference between conditions} to be measurable, and the pairing makes the stochastic
+component common to all conditions.
+
+\paragraph{Pilot and stopping rule.} A 150-task pilot on the weaker model precedes the full
+run. If the oracle condition resolves under 10\% or over 90\% of pilot tasks, the budget is
+outside the informative range and is adjusted before the main run --- and that adjustment is
+reported.
+
+\paragraph{What would falsify the implication.} If conditions (ii), (iii) and (iv) do not
+differ from (vi) at equal budget, then retrieval quality does not transfer to repair at
+these budgets, and the results of this paper should be read as being about retrieval alone.
+That outcome is publishable and we would report it.
 
 \section{Threats to Validity}
 
@@ -691,20 +935,21 @@ signal in the room.
 
 The replication package contains the import graphs at every base commit, the task
 definitions and evidence keys, the issue-token bags, the per-task orderings and coverage
-curves, and the analysis scripts that produce every number and figure in this paper.
-\TODO{archive and mint a DOI}
+curves, the per-file token counts, and the analysis scripts that produce every number and
+figure in this paper. It will be archived at a permanent identifier on acceptance.
 
 \section*{Use of AI Tools}
 
 Claude (Anthropic) was used to write the analysis and method code, to run the experiments
 and to draft this manuscript. All numeric results are produced by scripts in the replication
 package and were copied mechanically from their output files; the author verified the
-design, the claims and the text. Bibliographic entries were drafted with AI assistance; the
-seven entries for recent systems and benchmarks were checked online against arXiv, the ACL
-Anthology and the publisher listings on 2026-09-23, and the entries in
-Table~\ref{tab:priorkeys} were read from the papers themselves. \TODO{the remaining
-entries, all older and written from memory, still need checking against the published
-record.}
+design, the claims and the text. Bibliographic entries were drafted with AI assistance and
+then checked against arXiv, the ACL Anthology and the publisher listings on 2026-09-23; the
+evaluation section of every system in Table~\ref{tab:priorkeys} was read directly rather
+than summarised from an abstract. That check corrected eight entries drafted from memory,
+including a journal name, an author order, three titles changed between preprint versions,
+and one volume recorded as authored that is in fact edited. The corrections are listed in
+the replication package.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}

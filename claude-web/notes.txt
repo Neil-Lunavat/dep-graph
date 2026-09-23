@@ -1,0 +1,79 @@
+GROUND-TRUTH KEY NOTES  (written 2026-09-23 while verifying citations)
+Each note below comes from the paper's own text: its evaluation section, abstract or construction section.
+"not checked" means I did not look. It does NOT mean the paper has no key.
+
+=== EXCEPTIONS: graded against something other than the gold patch's edited files ===
+
+zhang-2026-sweexplore  [STRONGEST EXCEPTION]
+  Ground truth = file/line intervals that successful agents actually READ (view calls, cat/head/sed -n,
+  grep -n hits), intersected across several independent solution-verified trajectories.
+  This is the closest published key to "files a developer read". Worth a sentence by name.
+
+li-2026-contextbench  [EXCEPTION, READ CAREFULLY]
+  Human-annotated "gold context". Annotators start at the gold-patch regions and trace the dependencies
+  and related artifacts outward. A second annotator then prunes it, and it is validated by checking that
+  an LLM given only that context can produce a passing patch.
+  Their stated motivation is that end-to-end resolve rate is not enough. They do NOT argue that
+  edited-file ground truth is inadequate for localization. Still, it is the nearest neighbour to our claim.
+
+qin-2026-agentretrievalbench  [EXCEPTION, POSSIBLE COMPETING CLAIM]
+  A file counts as relevant when reading it helps the agent's next workflow step. There are four task
+  types: code2test, comment2context, trace2code and edit2ripple. edit2ripple ("ripple files beyond an
+  anchor") is effectively change coupling, which is one of our two evidence keys. Read before submitting.
+
+chen-2024-coder  [PARTIAL EXCEPTION]
+  End-to-end results use SWE-bench. Its separate fault-localization study (104 SWE-bench Lite issues)
+  uses "golden locations of each issue ... marked by authors", i.e. a manually labelled set.
+
+vogel-2026-codebasememory  [EXCEPTION, NOT A LOCALIZATION TASK]
+  A graph-based code-exploration tool. It is graded on structural questions (hub detection, caller
+  ranking, call chains) against reference answers from manual code inspection. It also reports about
+  10x token reduction versus file exploration, which is useful for the token-cost argument.
+
+=== EDITED-FILES KEY (supports the finding) ===
+
+chen-2025-locagent / Loc-Bench
+  "The affected files or functions in the original codebase, as identified in the patches, are
+  considered the target locations." Loc-Bench was built for two reasons: contamination, and too many
+  bug reports (85% of SWE-bench Lite). It adds feature, security and performance issues created after
+  Oct 2024, and excludes patches touching more than 5 files or 10 functions.
+  -> Its motivation is NOT a critique of the ground-truth key. It keeps the patch key.
+     So it supports the finding. It is not a competing claim.
+xia-2025-agentless     A patch counts as correctly located if it edits a superset of the ground-truth
+                       patch locations (line, function and file levels).
+ma-2025-lingmaagent    Fault locations extracted from the developer patch (file and function level).
+yang-2025-kgcompass    Files and code elements modified by the ground-truth patch (Jaccard overlap).
+liu-2025-graphlocator  Paths of all modified files, plus the enclosing class/module of the modified lines.
+he-2026-sweadept       Correct only if ALL locations modified in the ground-truth patch are in the top-k.
+reddy-2025-swerank     Each function modified in the PR is a positive.
+sutawika-2026-codescout  Reuses LocAgent's patch-processing scripts: modified files, modules and functions.
+xie-2025-swefixer      Precision/recall against gold defective files from the resolving PRs. BM25 top-30,
+                       then a learned reranker, so it is also a lexical-baseline data point.
+
+=== OTHER USEFUL FACTS ===
+
+ma-2026-llmagentssee   Builds a graph with contains / imports / invokes / inherits edges. Reports only
+                       end-to-end resolve rate (tests), with no separate localization key.
+caumartin-2026-retrievalrepr  BM25 vs 4 dense embedders for bug localization on Long Code Arena and
+                       SWE-bench Verified. BM25 is cheap regardless of representation and gains +138% Hit@5
+                       from raw source on SWE-bench. Good for "lexical is a serious baseline". Key = the
+                       benchmarks' own labels (not checked in detail).
+du-2025-contextlength  Accuracy drops 13.9-85% as input grows, even with perfect retrieval and with
+                       distractors masked. Pairs with Lost in the Middle for the token-cost argument.
+aider-2023-repomap     PageRank-style ranking on a file graph whose edges are dependencies. The blog post
+                       is the most paper-shaped Aider source.
+
+=== NOT CHECKED FOR GROUND-TRUTH KEY ===
+OrcaLoca, CoSIL, RepoGraph, CodexGraph, GraphCoder, RepoHyper (code completion, so the key is probably
+next-line), CGM, SynFix, SWE-Debate, SWE-Search, SWE-Exp, CoRNStack, SWE-agent, AutoCodeRover,
+SpecRover, OpenHands, MASAI, MAGIS.
+
+=== CITATION CORRECTIONS FOUND WHILE VERIFYING ===
+- LocAgent: ACL Anthology lists 2nd author as "Robert Tang"; arXiv lists "Xiangru Tang".
+- "RepoUnderstander" = the arXiv paper 2406.01422, now titled "Alibaba LingmaAgent: ..." (FSE 2025 Industry).
+- KGCompass: arXiv title is now "Enhancing Repository-Level Software Repair via Repository-Aware Knowledge Graphs".
+- CoSIL: the v1 title differs ("CoSIL: Software Issue Localization via ..."). Accepted at ASE 2025.
+- MASAI: the NeurIPS'24 workshop listing orders authors Wadhwa, Sonwane, Arora; arXiv has Arora first.
+- Dit et al. 2013: the journal is "Journal of Software: Evolution and Process" 25(1):53-95, not JSME.
+- Bohner & Arnold: an EDITED volume (use editor=, not author=). Wiley's catalogue lists Arnold first.
+- SWE-bench Verified: the blog has 16 named authors; published 2024-08-13 and updated 2025-02-24.

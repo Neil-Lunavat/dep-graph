@@ -107,6 +107,18 @@ def study2():
 
 
 @stage
+def tokcost():
+    from depgraphs import tokcost as t
+    t.main()
+
+
+@stage
+def ceiling():
+    from depgraphs import ceiling as c
+    c.main()
+
+
+@stage
 def ball():
     from depgraphs import ball as b
     b.main()
