@@ -1,0 +1,53 @@
+{
+ "instance_id": "modin-project__modin-6648",
+ "repo_key": "modin-project/modin",
+ "base_commit": "112afb6fb455beec67c9ded6f42ffbf378bbbf79",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/dataframe/pandas/dataframe/dataframe.py",
+  "modin/core/storage_formats/base/query_compiler.py",
+  "modin/core/storage_formats/pandas/query_compiler.py",
+  "modin/experimental/core/storage_formats/hdk/query_compiler.py",
+  "modin/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/dataframe/pandas/dataframe/dataframe.py": [
+   "_partition_mgr_cls",
+   "_partitions",
+   "self",
+   "wait_computations"
+  ],
+  "modin/core/storage_formats/base/query_compiler.py": [
+   "execute",
+   "self"
+  ],
+  "modin/core/storage_formats/pandas/query_compiler.py": [
+   "_modin_frame",
+   "finalize",
+   "self"
+  ],
+  "modin/experimental/core/storage_formats/hdk/query_compiler.py": [
+   "_modin_frame",
+   "force_import",
+   "self"
+  ],
+  "modin/utils.py": [
+   "execute",
+   "obj",
+   "objs",
+   "query_compiler",
+   "trigger_hdk_import"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 91,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 1,
+  "truncated": false
+ },
+ "seconds": 4.7
+}

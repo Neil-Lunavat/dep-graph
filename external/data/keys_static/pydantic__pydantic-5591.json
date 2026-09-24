@@ -1,0 +1,31 @@
+{
+ "instance_id": "pydantic__pydantic-5591",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "f50ae9f282c29e460563829d40d9eeffcf87e479",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/_internal/_std_types_schema.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/_internal/_std_types_schema.py": [
+   "_",
+   "enum_type",
+   "lax",
+   "strict",
+   "to_enum_validator",
+   "unable_to_parse_from_json",
+   "updates"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 54,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.2
+}

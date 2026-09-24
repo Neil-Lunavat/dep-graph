@@ -55,7 +55,10 @@ keys are scored on, and removing the tasks whose issue names a key file.
 What survives is a ranking rather than a mechanism. On the pull requests that carry both keys,
 fusing a length-aware personalised walk with issue matching is never significantly worse than
 the best pure ordering under any leakage control, and it is the stable choice across 200 random
-repository splits; for single-file changes a length-aware walk alone does better.
+repository splits; for single-file changes a length-aware walk alone does better. On seven
+repositories outside the sample, under predictions committed before scoring, the recommendation
+holds at the margin we allowed and three of four predictions pass; the fourth, that deleting
+the names alone costs the fusion significantly on both keys, fails on the co-edited key.
 \end{abstract}
 
 \keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
@@ -901,8 +904,10 @@ What this establishes should not be overstated. The 200 splits are resamples of 
 repositories, and the selected fusion is already the best overall on the matched population,
 so agreement across them is largely expected: they show that the choice is \emph{stable} ---
 no small group of repositories is carrying it --- not that it generalises to repositories we
-did not sample. That would need an external set, which we do not have. Nor does it make the
-fusion family a discovery; it was chosen by us, from five candidates, on these data.
+did not sample. Section~\ref{sec:external} tests that on repositories outside the sample. Nor
+does it make the fusion family a discovery; it was chosen by us, from five candidates, on these
+data.
+
 
 \begin{table}
 \caption{200 random 56/56 splits of the repositories. ``Selected'' counts the splits in
@@ -944,6 +949,58 @@ Method & Fam. & \m{co\_edited} & \m{symbol} & worst & gap \\
 testing. Reciprocal-rank fusion's $k$ was fixed at the customary 60; re-running the whole
 pipeline at $k = 10$ and $k = 200$ moves its AUC by at most 0.007 on the co-edited key and
 0.010 on the symbol key, an order of magnitude below the differences this section turns on.
+
+\subsection{An external test on seven repositories the study never saw}
+\label{sec:external}
+
+Seven repositories pass every one of our sampling rules and were left out only because we
+restricted the task sources to SWE-bench, SWE-bench-Live and SWE-rebench: ansible, hydra,
+moto, modin, MONAI, pydantic and qutebrowser, whose eligible tasks come from SWE-Gym and
+SWE-bench Pro. We drew their tasks by the main sample's rule, seed and cap --- 140 pull
+requests --- and then, \emph{before building a graph, a key or a score for any of them},
+committed four predictions with their failure criteria to the replication package
+(\texttt{paper/external\_prereg.md}); the version history records the order. The pipeline
+then ran unchanged. Of the 140 pull requests, 139 yield a task and 96 have a non-empty key
+under at least one source, 66 under both. Seven repositories are too few for the
+repository-level Wilcoxon test --- its smallest two-sided $p$ at $n = 7$ is 0.016 --- so the
+predictions name the mixed model of Section~\ref{sec:stats} as their test, with the caveat,
+stated in advance, that seven groups estimate the random intercept poorly. These repositories
+are also larger than the sample's (a median of 289 non-test Python files against 160), and
+two of them are copyleft.
+
+Table~\ref{tab:external} gives the four outcomes. Three predictions hold. The recommended
+fusion is third on the oracle-inclusive scale under both keys, second only to
+\m{rrf\_hops\_issue\_path}, a fusion of the same family, and its worst shortfall is 0.030 ---
+at the limit we set, not inside it. It is never significantly worse than a pure ordering, and
+walking inward is as costly as in the main sample. In these larger repositories the path-matching
+fusions take ranks two to five under \emph{both} keys; on the symbol key the length-aware
+walks no longer lead, as they do on the main sample's single-file changes.
+
+The fourth fails. Deleting the key files' names from issues that name them costs the fusion
+0.033 on the symbol key, significantly, but 0.030 on the co-edited key with $p_{\text{Holm}}
+= 0.11$, on only 33 matched pull requests in six repositories; the control part --- the
+redaction moves nothing where nothing is named --- holds. So the causal effect of the names
+alone is not established on the co-edited key here, and where it is measured it is half the
+size it is in the main sample. The wider arms, which we did not predict, cost the fusion
+0.086 and 0.090 on the co-edited key: in these repositories an issue points at its files
+through their directories far more than through their names, which is what one would expect of
+code bases whose modules are named for deep package paths. The share of issues naming a key
+file as code, 40.6\%, is the main sample's to within half a point.
+
+\begin{table*}
+\caption{The four predictions committed to the replication package before the external
+repositories were scored, and what they showed. Matched population throughout
+except E3, mixed model with a random intercept per repository, Holm within each prediction.}
+\label{tab:external}
+\footnotesize
+\begin{tabular}{lp{5.2cm}p{5.9cm}l}
+\toprule
+& Prediction & Observed & Outcome \\
+\midrule
+\rows{tab_external}
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \subsection{RQ6: what a budget rules out, and what it does not}
 \label{sec:ceiling}
@@ -1567,9 +1624,10 @@ main inflation risks. Effect sizes accompany every test because several differen
 significant and small. The fusion family, the worst-rank criterion and the directed walks
 were all added after the design freeze, so they are exploratory in origin;
 Section~\ref{sec:heldout} shows the selection is stable across resamples of our
-repositories, which addresses the selection within the family but neither the fact that the
-family was chosen after seeing results nor generalisation to repositories outside the
-sample.
+repositories, and Section~\ref{sec:external} that it holds, at the margin we allowed, on seven
+repositories outside the sample under predictions fixed in advance. Neither addresses the fact
+that the family was chosen after seeing results, and seven repositories are a small external
+set: one of the four predictions failed on it.
 
 \section{Conclusion}
 
@@ -1601,7 +1659,9 @@ The practical recommendation still stands, in a narrower form. Reciprocal-rank f
 length-aware walk with issue-text-to-path matching is the best non-oracle ordering under both
 keys on the matched population, is stably selected across 200 random repository splits, and
 on that population is never significantly worse than the best pure ordering under any leakage
-control; for single-file changes a length-aware walk alone does better. It costs a BM25 index over file paths and contents. The graph's two-hop neighbourhood,
+control; for single-file changes a length-aware walk alone does better. On seven unseen
+repositories, tested against predictions fixed in advance, it is second only to another fusion
+of the same family under both keys. It costs a BM25 index over file paths and contents. The graph's two-hop neighbourhood,
 the standard justification for structural retrieval, turns out to be half the repository, and
 an oracle fits the complete answer in 8{,}000 lines for 97.5\% of pull requests where our best
 method reaches 58.5\%.

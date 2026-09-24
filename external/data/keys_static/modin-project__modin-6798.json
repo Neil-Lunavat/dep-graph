@@ -1,0 +1,26 @@
+{
+ "instance_id": "modin-project__modin-6798",
+ "repo_key": "modin-project/modin",
+ "base_commit": "b8202f127d79b20076126edce85dd63a59e4a677",
+ "status": "ok",
+ "co_edited": [
+  "modin/pandas/indexing.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/pandas/indexing.py": [
+   "col_loc",
+   "item"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

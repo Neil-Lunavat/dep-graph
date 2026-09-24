@@ -1,0 +1,39 @@
+{
+ "instance_id": "modin-project__modin-6969",
+ "repo_key": "modin-project/modin",
+ "base_commit": "e36749008fdf277d08f01c5dc675edb1b8d62512",
+ "status": "ok",
+ "co_edited": [
+  "modin/pandas/groupby.py",
+  "modin/pandas/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/pandas/groupby.py": [
+   "agg_kwargs",
+   "first",
+   "last",
+   "min_count",
+   "numeric_only",
+   "self",
+   "skipna"
+  ],
+  "modin/pandas/series.py": [
+   "axis",
+   "kind",
+   "order",
+   "self",
+   "stable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

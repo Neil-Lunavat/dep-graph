@@ -1,0 +1,36 @@
+{
+ "instance_id": "Project-MONAI__MONAI-5503",
+ "repo_key": "project-monai/monai",
+ "base_commit": "d51edc3ddf8450f3c7b612971188313863f9aa25",
+ "status": "ok",
+ "co_edited": [
+  "monai/apps/pathology/losses/hovernet_loss.py",
+  "monai/transforms/post/array.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/apps/pathology/losses/hovernet_loss.py": [
+   "image",
+   "result_h",
+   "result_v",
+   "self",
+   "sobel_h",
+   "sobel_v"
+  ],
+  "monai/transforms/post/array.py": [
+   "ax",
+   "kernel_diff",
+   "kernels"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 59,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

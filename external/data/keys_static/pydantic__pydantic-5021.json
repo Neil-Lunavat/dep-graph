@@ -1,0 +1,33 @@
+{
+ "instance_id": "pydantic__pydantic-5021",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "ef3cc495a9c86553b62a95a6052fd9b6ebc045e9",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/_internal/_model_construction.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/_internal/_model_construction.py": [
+   "MockValidator",
+   "cls",
+   "config_warning_string",
+   "e",
+   "name",
+   "usage_warning_string"
+  ],
+  "pydantic/main.py": [
+   "__pydantic_validator__"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

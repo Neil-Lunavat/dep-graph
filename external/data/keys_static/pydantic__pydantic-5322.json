@@ -1,0 +1,45 @@
+{
+ "instance_id": "pydantic__pydantic-5322",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "1116c49b09df8156f5c0bd9ccd62f54a809e195f",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/_internal/_dataclasses.py",
+  "pydantic/_internal/_generate_schema.py",
+  "pydantic/config.py",
+  "pydantic/json_schema.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/_internal/_generate_schema.py": [
+   "allow_inf_nan",
+   "config",
+   "get",
+   "ser_json_bytes",
+   "ser_json_timedelta",
+   "str_max_length",
+   "str_strip_whitespace",
+   "str_to_lower",
+   "str_to_upper"
+  ],
+  "pydantic/config.py": [
+   "ConfigDict",
+   "Extra",
+   "config",
+   "extra"
+  ],
+  "pydantic/json_schema.py": [
+   "schema"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 16,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

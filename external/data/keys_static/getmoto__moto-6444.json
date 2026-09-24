@@ -1,0 +1,57 @@
+{
+ "instance_id": "getmoto__moto-6444",
+ "repo_key": "getmoto/moto",
+ "base_commit": "bec9130d4c474674ef2beb3cc4acc756aa270793",
+ "status": "ok",
+ "co_edited": [
+  "moto/rds/models.py",
+  "moto/rds/responses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/rds/models.py": [
+   "Cluster",
+   "ClusterSnapshot",
+   "Database",
+   "DatabaseSnapshot",
+   "cluster",
+   "cluster_identifier",
+   "create_auto_cluster_snapshot",
+   "create_auto_snapshot",
+   "database",
+   "db_cluster_identifier",
+   "db_instance_identifier",
+   "db_snapshot_identifier",
+   "db_snapshot_name",
+   "kwargs",
+   "self",
+   "snapshot",
+   "snapshot_id",
+   "snapshot_name",
+   "snapshot_type",
+   "source_db_identifier",
+   "source_snapshot",
+   "tags",
+   "target_snapshot_identifier"
+  ],
+  "moto/rds/responses.py": [
+   "db_cluster_identifier",
+   "db_instance_identifier",
+   "db_snapshot_identifier",
+   "tags"
+  ],
+  "moto/rds/utils.py": [
+   "FilterDef"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 93,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

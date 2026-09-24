@@ -1,0 +1,71 @@
+{
+ "instance_id": "facebookresearch__hydra-734",
+ "repo_key": "facebookresearch/hydra",
+ "base_commit": "8c51854a7d87c25aa1f5e0dccb9bf621639a8dcd",
+ "status": "ok",
+ "co_edited": [
+  "hydra/_internal/config_loader_impl.py",
+  "hydra/_internal/core_plugins/basic_sweeper.py",
+  "hydra/_internal/hydra.py",
+  "hydra/core/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hydra/_internal/config_loader_impl.py": [
+   "config_name",
+   "config_overrides",
+   "example_override",
+   "from_shell",
+   "msg",
+   "repository",
+   "run_mode",
+   "self",
+   "sweep_overrides",
+   "with_search_path",
+   "x"
+  ],
+  "hydra/_internal/config_repository.py": [
+   "config_exists"
+  ],
+  "hydra/_internal/core_plugins/basic_sweeper.py": [
+   "all_batches",
+   "arguments",
+   "chunks_iter",
+   "lists",
+   "loader",
+   "lst",
+   "max_batch_size",
+   "n",
+   "overrides",
+   "self",
+   "split_arguments",
+   "x"
+  ],
+  "hydra/_internal/hydra.py": [
+   "cfg",
+   "task_overrides"
+  ],
+  "hydra/core/override_parser/overrides_parser.py": [
+   "get_key_element",
+   "get_value_string"
+  ],
+  "hydra/errors.py": [
+   "HydraException"
+  ],
+  "hydra/types.py": [
+   "MULTIRUN",
+   "RUN",
+   "RunMode"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 113,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

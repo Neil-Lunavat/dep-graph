@@ -381,6 +381,36 @@ def mixed_table():
     write("mixed", LF.join(rows))
 
 
+def external_table():
+    """The four predictions of paper/external_prereg.md and what the external set showed."""
+    import json
+    f = ROOT / "external" / "results" / "study2" / "predictions.json"
+    if not f.exists():
+        return
+    r = json.loads(f.read_text())
+    ok = {True: "pass", False: BS + "textbf{fail}", None: "not testable"}
+
+    def est(t):
+        return "%+.3f ($p_{%s{Holm}} = %.3f$)" % (t["estimate"], BS + "text", t["p_holm"])
+    e1, e2, e3, e4 = r["E1"], r["E2"], r["E3"], r["E4"]
+    worst2 = min(e2["tests"], key=lambda t: t["estimate"])
+    rows = [
+        "E1 & fusion in the top three non-oracle orderings under both keys, worst shortfall "
+        "$" + BS + "le 0.030$ & rank %d and %d (oracle included); shortfall %.3f & %s %s" % (
+            e1["co_edited"]["rank"], e1["symbol"]["rank"], e1["worst_shortfall"],
+            ok[e1["pass"]], NL),
+        "E2 & fusion never significantly worse than four pure orderings, either key & "
+        "smallest difference %s & %s %s" % (est(worst2), ok[e2["pass"]], NL),
+        "E3 & outward walk beats inward on the symbol key & %+.3f ($p = %.3f$) & %s %s" % (
+            e3["estimate"], e3["p"], ok[e3["pass"]], NL),
+        "E4 & names redaction costs the fusion under both keys; nothing where nothing is named "
+        "& %s and %s; control $" % tuple(est(t) for t in e4["named"])
+        + BS + "le %.3f$ & %s %s" % (max(abs(v) for v in e4["unnamed_mean_move"].values()),
+                                    ok[e4["pass"]], NL),
+    ]
+    write("external", LF.join(rows))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -415,6 +445,7 @@ def main():
     distance_table()
     families_table()
     mixed_table()
+    external_table()
     figure_data()
 
 

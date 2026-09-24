@@ -1,0 +1,70 @@
+{
+ "instance_id": "facebookresearch__hydra-1456",
+ "repo_key": "facebookresearch/hydra",
+ "base_commit": "7e7832f72664b40ee04834ac8956e7146a3d37fb",
+ "status": "ok",
+ "co_edited": [
+  "hydra/_internal/config_loader_impl.py",
+  "hydra/_internal/defaults_list.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hydra/__init__.py": [
+   "hydra"
+  ],
+  "hydra/_internal/config_loader_impl.py": [
+   "parsed_overrides"
+  ],
+  "hydra/_internal/defaults_list.py": [
+   "children",
+   "config_name",
+   "cs",
+   "d",
+   "interpolated_subtree",
+   "is_root_config",
+   "new_root",
+   "overrides",
+   "overrides_list",
+   "primary",
+   "repo",
+   "res",
+   "root",
+   "skip_missing",
+   "subtree"
+  ],
+  "hydra/core/__init__.py": [
+   "core"
+  ],
+  "hydra/core/config_store.py": [
+   "ConfigStore",
+   "config_store",
+   "instance",
+   "name",
+   "node",
+   "provider",
+   "store"
+  ],
+  "hydra/core/default_element.py": [
+   "ConfigDefault",
+   "DefaultsTreeNode",
+   "InputDefault",
+   "children",
+   "config_path",
+   "node",
+   "parent",
+   "path",
+   "primary",
+   "update_parent"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 63,
+  "names_resolved_in_repo": 59,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

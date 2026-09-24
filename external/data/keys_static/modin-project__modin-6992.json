@@ -1,0 +1,54 @@
+{
+ "instance_id": "modin-project__modin-6992",
+ "repo_key": "modin-project/modin",
+ "base_commit": "a96639529a2e121f24b8c5462e1e76c243b85ede",
+ "status": "ok",
+ "co_edited": [
+  "modin/logging/class_logger.py",
+  "modin/logging/config.py",
+  "modin/logging/logger_decorator.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/config/envvars.py": [
+   "LogMode"
+  ],
+  "modin/config/pubsub.py": [
+   "get"
+  ],
+  "modin/logging/class_logger.py": [
+   "log_level"
+  ],
+  "modin/logging/config.py": [
+   "CRITICAL",
+   "DEBUG",
+   "ERROR",
+   "INFO",
+   "LogLevel",
+   "WARNING",
+   "_create_logger",
+   "config",
+   "get_logger",
+   "job_id",
+   "log_level",
+   "log_name",
+   "namespace"
+  ],
+  "modin/logging/logger_decorator.py": [
+   "log_level",
+   "logger",
+   "start_line",
+   "stop_line"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 83,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

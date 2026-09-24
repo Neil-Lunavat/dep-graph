@@ -1,0 +1,38 @@
+{
+ "instance_id": "modin-project__modin-6370",
+ "repo_key": "modin-project/modin",
+ "base_commit": "58f850d20bbb3aba5fc592bff4003ebfdc81b68a",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/storage_formats/pandas/query_compiler.py",
+  "modin/pandas/groupby.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/storage_formats/pandas/query_compiler.py": [
+   "agg_method",
+   "args",
+   "grp",
+   "kwargs",
+   "original_agg_func",
+   "result"
+  ],
+  "modin/pandas/groupby.py": [
+   "_query_compiler",
+   "self"
+  ],
+  "modin/utils.py": [
+   "MODIN_UNNAMED_SERIES_LABEL"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

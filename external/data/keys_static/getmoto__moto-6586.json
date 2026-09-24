@@ -1,0 +1,57 @@
+{
+ "instance_id": "getmoto__moto-6586",
+ "repo_key": "getmoto/moto",
+ "base_commit": "6843eb4c86ee0abad140d02930af95050120a0ef",
+ "status": "ok",
+ "co_edited": [
+  "moto/awslambda/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/awslambda/models.py": [
+   "_set_function_code",
+   "_validate_s3_bucket_and_key",
+   "account_id",
+   "code",
+   "code_bytes",
+   "code_sha_256",
+   "code_size",
+   "data",
+   "digest",
+   "ecr_backend",
+   "from_update",
+   "image_id",
+   "images",
+   "key",
+   "manifest",
+   "region",
+   "registry_id",
+   "repo_name",
+   "self",
+   "tag",
+   "update_function_code",
+   "updated_spec",
+   "uri"
+  ],
+  "moto/ecr/exceptions.py": [
+   "ImageNotFoundException"
+  ],
+  "moto/ecr/models.py": [
+   "ecr_backends"
+  ],
+  "moto/settings.py": [
+   "lambda_stub_ecr",
+   "settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 104,
+  "names_resolved_in_repo": 106,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

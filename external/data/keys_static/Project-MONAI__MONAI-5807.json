@@ -1,0 +1,60 @@
+{
+ "instance_id": "Project-MONAI__MONAI-5807",
+ "repo_key": "project-monai/monai",
+ "base_commit": "315d2d2fc29a83fc863bfcb6088e8d06f6cae027",
+ "status": "ok",
+ "co_edited": [
+  "monai/networks/blocks/localnet_block.py",
+  "monai/networks/blocks/regunet_block.py",
+  "monai/networks/nets/regunet.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/networks/blocks/localnet_block.py": [
+   "additive_upsampling",
+   "align_corners",
+   "deconv_block",
+   "h0",
+   "in_channels",
+   "mid",
+   "mode",
+   "out_channels",
+   "self",
+   "spatial_dims",
+   "x"
+  ],
+  "monai/networks/blocks/regunet_block.py": [
+   "align_corners",
+   "image_size",
+   "layer",
+   "level",
+   "max_level",
+   "mode",
+   "self",
+   "x"
+  ],
+  "monai/networks/nets/regunet.py": [
+   "align_corners",
+   "in_channels",
+   "mode",
+   "out_channels",
+   "output_size",
+   "resized",
+   "self",
+   "spatial_dims",
+   "use_additive_sampling",
+   "use_additive_upsampling",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 191,
+  "names_resolved_in_repo": 93,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

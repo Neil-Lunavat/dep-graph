@@ -1,0 +1,63 @@
+{
+ "instance_id": "getmoto__moto-5968",
+ "repo_key": "getmoto/moto",
+ "base_commit": "4d6271d1bdec1c5eec5789d7c6cc8ef35566d0c2",
+ "status": "ok",
+ "co_edited": [
+  "moto/glue/models.py",
+  "moto/glue/responses.py",
+  "moto/glue/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/glue/models.py": [
+   "_current_version",
+   "as_dict",
+   "database_name",
+   "delete_table_version",
+   "delete_version",
+   "get_table",
+   "get_table_version",
+   "get_table_versions",
+   "get_version",
+   "self",
+   "table",
+   "table_input",
+   "table_name",
+   "ver",
+   "ver_id",
+   "version",
+   "version_id",
+   "versions"
+  ],
+  "moto/glue/responses.py": [
+   "data",
+   "database_name",
+   "delete_table_version",
+   "glue_backend",
+   "parameters",
+   "self",
+   "table_name",
+   "ver_id",
+   "version",
+   "version_id",
+   "versions"
+  ],
+  "moto/glue/utils.py": [
+   "fake_table",
+   "part_keys",
+   "self",
+   "versions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 142,
+  "names_resolved_in_repo": 111,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

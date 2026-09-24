@@ -1,0 +1,64 @@
+{
+ "instance_id": "Project-MONAI__MONAI-2530",
+ "repo_key": "project-monai/monai",
+ "base_commit": "17dde67bbf95991b6c7465724e41653d22972449",
+ "status": "ok",
+ "co_edited": [
+  "monai/apps/deepgrow/interaction.py",
+  "monai/apps/deepgrow/transforms.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/__init__.py": [
+   "monai"
+  ],
+  "monai/apps/deepgrow/interaction.py": [
+   "batchdata",
+   "batchdata_list",
+   "i",
+   "self",
+   "transforms"
+  ],
+  "monai/apps/deepgrow/transforms.py": [
+   "_apply",
+   "_get_signal",
+   "_will_interact",
+   "add_guidance",
+   "d",
+   "discrepancy",
+   "disparity",
+   "guidance",
+   "image",
+   "label",
+   "neg",
+   "number_intensity_ch",
+   "pos",
+   "pred",
+   "probability",
+   "self",
+   "sid",
+   "signal"
+  ],
+  "monai/data/__init__.py": [
+   "data"
+  ],
+  "monai/data/utils.py": [
+   "decollate_batch",
+   "detach",
+   "list_data_collate"
+  ],
+  "monai/transforms/transform.py": [
+   "R"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 128,
+  "names_resolved_in_repo": 81,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

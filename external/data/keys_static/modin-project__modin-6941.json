@@ -1,0 +1,40 @@
+{
+ "instance_id": "modin-project__modin-6941",
+ "repo_key": "modin-project/modin",
+ "base_commit": "6dfe13fb5468c3fbac85e11fcbc9a64b30d14ac7",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/dataframe/pandas/dataframe/dataframe.py",
+  "modin/core/dataframe/pandas/partitioning/partition_manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/dataframe/pandas/dataframe/dataframe.py": [
+   "_extract_partitions",
+   "_partitions",
+   "columns",
+   "index",
+   "o",
+   "other",
+   "self"
+  ],
+  "modin/core/dataframe/pandas/partitioning/partition_manager.py": [
+   "_partition_class",
+   "cls",
+   "create_partition_from_metadata",
+   "metadata",
+   "metadata_dataframe",
+   "partitions"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 102,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

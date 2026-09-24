@@ -1,0 +1,51 @@
+{
+ "instance_id": "getmoto__moto-5202",
+ "repo_key": "getmoto/moto",
+ "base_commit": "4aa5e4388d4a9a7d4a95c265552e2d4b4c1ba376",
+ "status": "ok",
+ "co_edited": [
+  "moto/s3/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/__init__.py": [
+   "moto"
+  ],
+  "moto/core/common_models.py": [
+   "BaseModel"
+  ],
+  "moto/moto_api/__init__.py": [
+   "moto_api",
+   "state_manager"
+  ],
+  "moto/moto_api/_internal/__init__.py": [
+   "_internal"
+  ],
+  "moto/moto_api/_internal/managed_state_model.py": [
+   "ManagedState",
+   "managed_state_model",
+   "status"
+  ],
+  "moto/moto_api/_internal/state_manager.py": [
+   "transition"
+  ],
+  "moto/s3/models.py": [
+   "FakeKey",
+   "expiry_date",
+   "header",
+   "key",
+   "res",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

@@ -1,0 +1,25 @@
+{
+ "instance_id": "getmoto__moto-7105",
+ "repo_key": "getmoto/moto",
+ "base_commit": "85156f59396a85e83e83200c9df41b66d6f82b68",
+ "status": "ok",
+ "co_edited": [
+  "moto/batch/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/batch/models.py": [
+   "job"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

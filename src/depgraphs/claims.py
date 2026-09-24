@@ -14,6 +14,7 @@ Usage:  python -m depgraphs.claims
 """
 from __future__ import annotations
 
+import json
 import sys
 
 import pandas as pd
@@ -92,6 +93,10 @@ def redact_delta(method: str, source: str, group: str = "names removed",
         d = d[d.arm == arm]
     r = d[(d.group == group) & (d.method == method) & (d.source == source)].iloc[0]
     return float(r.delta)
+
+
+_ext = ROOT / "external" / "results" / "study2" / "predictions.json"
+EXT = json.loads(_ext.read_text()) if _ext.exists() else {}
 
 
 def gap(source: str = "co_edited") -> float:
@@ -380,6 +385,25 @@ def claims() -> list[tuple[str, str, str]]:
          num3(csv("redaction.csv").query("arm == 'symbols' and group == 'nothing removed' and "
                                         "source == 'co_edited' and method == 'path_issue'")
               .auc_redacted.iloc[0])),
+        # ---- the external test set (numbers from its own tree, predictions fixed in advance)
+        ("Table~\\ref{tab:external} gives the four outcomes", "external: E1 worst shortfall",
+         num3(EXT["E1"]["worst_shortfall"])),
+        ("The fourth fails", "external: names arm, symbol",
+         num3(EXT["E4"]["named"][1]["estimate"])),
+        ("The fourth fails", "external: names arm, co_edited",
+         num3(EXT["E4"]["named"][0]["estimate"])),
+        ("The fourth fails", "external: named matched PRs",
+         str(EXT["E4"]["named_matched_prs"])),
+        ("The fourth fails", "external: paths arm, co_edited",
+         num3(EXT["descriptive"]["redaction_arms_named_matched"]["co_edited"]["_rdp"])),
+        ("The fourth fails", "external: symbols arm, co_edited",
+         num3(EXT["descriptive"]["redaction_arms_named_matched"]["co_edited"]["_rds"])),
+        ("The share of issues naming a key\nfile as code", "external: explicit naming rate",
+         pct(EXT["descriptive"]["explicit_rate"])),
+        ("Of the 140 pull requests, 139 yield", "external: PRs with a key",
+         str(EXT["descriptive"]["n_prs"])),
+        ("Of the 140 pull requests, 139 yield", "external: matched PRs",
+         str(EXT["descriptive"]["n_prs_matched"])),
         ("query-independent prior degrades fastest", "random, largest quartile, co_edited",
          num3(auc("by_size.csv", "co_edited", "random", size_q="Q4"))),
     ]

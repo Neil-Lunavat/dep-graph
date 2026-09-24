@@ -1,0 +1,71 @@
+{
+ "instance_id": "getmoto__moto-6724",
+ "repo_key": "getmoto/moto",
+ "base_commit": "b6a582e6244f705c4e3234b25d86e09c2d1d0100",
+ "status": "ok",
+ "co_edited": [
+  "moto/logs/models.py",
+  "moto/logs/responses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/core/common_models.py": [
+   "BaseModel"
+  ],
+  "moto/core/utils.py": [
+   "unix_time_millis"
+  ],
+  "moto/logs/exceptions.py": [
+   "LimitExceededException"
+  ],
+  "moto/logs/models.py": [
+   "LogStream",
+   "SubscriptionFilter",
+   "account_id",
+   "allowed_events",
+   "arn",
+   "creation_time",
+   "describe_subscription_filters",
+   "destination_arn",
+   "filter_name",
+   "filter_pattern",
+   "formatted_log_events",
+   "kwargs",
+   "log_events",
+   "log_group",
+   "log_group_name",
+   "log_stream_name",
+   "name",
+   "put_log_events",
+   "region",
+   "retention_in_days",
+   "role_arn",
+   "self",
+   "service",
+   "stream",
+   "subscription_filter",
+   "subscription_filters",
+   "to_json",
+   "token",
+   "update",
+   "upload_sequence_token"
+  ],
+  "moto/logs/responses.py": [
+   "_filters",
+   "f",
+   "log_group_name",
+   "logs_backend",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 236,
+  "names_resolved_in_repo": 205,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

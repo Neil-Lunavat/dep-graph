@@ -1,0 +1,33 @@
+{
+ "instance_id": "getmoto__moto-5545",
+ "repo_key": "getmoto/moto",
+ "base_commit": "1a8f93dce33f1c1c7983a8052ef54de30ff64407",
+ "status": "ok",
+ "co_edited": [
+  "moto/s3/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/core/base_backend.py": [
+   "reset"
+  ],
+  "moto/s3/models.py": [
+   "FakeKey",
+   "bucket",
+   "buckets",
+   "key",
+   "part",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

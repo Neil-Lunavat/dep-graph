@@ -1,0 +1,26 @@
+{
+ "instance_id": "modin-project__modin-7055",
+ "repo_key": "modin-project/modin",
+ "base_commit": "4ab68c6c4b25f987c259754a5399da5df5b3608f",
+ "status": "ok",
+ "co_edited": [
+  "modin/pandas/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/pandas/series.py": [
+   "axis",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

