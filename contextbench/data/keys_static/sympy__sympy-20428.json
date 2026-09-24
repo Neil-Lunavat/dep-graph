@@ -1,0 +1,26 @@
+{
+ "instance_id": "sympy__sympy-20428",
+ "repo_key": "sympy/sympy",
+ "base_commit": "c0e85160406f9bf2bcaa2992138587668a1cd0bc",
+ "status": "ok",
+ "co_edited": [
+  "sympy/polys/domains/expressiondomain.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/polys/domains/expressiondomain.py": [
+   "ex",
+   "f"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.2
+}

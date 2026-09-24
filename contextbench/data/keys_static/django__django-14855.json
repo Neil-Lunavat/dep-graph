@@ -1,0 +1,31 @@
+{
+ "instance_id": "django__django-14855",
+ "repo_key": "django/django",
+ "base_commit": "475cffd1d64c690cdad16ede4d5e81985738ceb4",
+ "status": "ok",
+ "co_edited": [
+  "django/contrib/admin/helpers.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/contrib/admin/helpers.py": [
+   "model_admin",
+   "remote_obj",
+   "self",
+   "url_name"
+  ],
+  "django/contrib/admin/utils.py": [
+   "quote"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

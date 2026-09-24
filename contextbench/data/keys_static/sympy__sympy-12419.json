@@ -1,0 +1,64 @@
+{
+ "instance_id": "sympy__sympy-12419",
+ "repo_key": "sympy/sympy",
+ "base_commit": "479939f8c65c8c2908bbedc959549a257a7c0b0b",
+ "status": "ok",
+ "co_edited": [
+  "sympy/matrices/expressions/matexpr.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/basic.py": [
+   "Basic"
+  ],
+  "sympy/core/containers.py": [
+   "Tuple"
+  ],
+  "sympy/core/expr.py": [
+   "Expr"
+  ],
+  "sympy/core/numbers.py": [
+   "Integer"
+  ],
+  "sympy/core/relational.py": [
+   "Eq"
+  ],
+  "sympy/core/singleton.py": [
+   "S"
+  ],
+  "sympy/core/symbol.py": [
+   "Symbol"
+  ],
+  "sympy/functions/__init__.py": [
+   "functions"
+  ],
+  "sympy/functions/special/__init__.py": [
+   "special"
+  ],
+  "sympy/functions/special/tensor_functions.py": [
+   "KroneckerDelta",
+   "tensor_functions"
+  ],
+  "sympy/matrices/expressions/matexpr.py": [
+   "eq",
+   "i",
+   "j"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 25,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.4
+}

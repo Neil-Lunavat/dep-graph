@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-10908",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "67d06b18c68ee4452768f8a1e868565dd4354abf",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/feature_extraction/text.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

@@ -1,0 +1,42 @@
+{
+ "instance_id": "pydata__xarray-7229",
+ "repo_key": "pydata/xarray",
+ "base_commit": "3aa75c8d00a4a2d4acf10d80f76b937cadb666b7",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/computation.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/computation.py": [
+   "c",
+   "keep_attrs",
+   "result",
+   "v",
+   "x",
+   "y"
+  ],
+  "xarray/core/dataarray.py": [
+   "attrs"
+  ],
+  "xarray/core/dataset.py": [
+   "Dataset",
+   "attrs",
+   "data_vars",
+   "dataset"
+  ],
+  "xarray/core/variable.py": [
+   "attrs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 46,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 33.7
+}

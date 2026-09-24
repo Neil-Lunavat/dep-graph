@@ -1,0 +1,25 @@
+{
+ "instance_id": "sympy__sympy-13757",
+ "repo_key": "sympy/sympy",
+ "base_commit": "a5e6a101869e027e7930e694f8b1cfb082603453",
+ "status": "ok",
+ "co_edited": [
+  "sympy/polys/polytools.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/expr.py": [
+   "_op_priority"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

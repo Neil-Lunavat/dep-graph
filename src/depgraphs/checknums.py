@@ -553,10 +553,10 @@ def c_arms():
 @check("budget: do the leading orderings change if the AUC stops at 8,000 lines?")
 def c_capped_budget():
     from depgraphs.analysis2 import shared_prs
-    from depgraphs.study2 import FUSION_CTL, REDACTED_ALL, RRF_K_VARIANTS
+    from depgraphs.study2 import SCORED_ONLY
     c = pd.read_parquet(OUT / "curves.parquet")
     c = c[c.source.isin(["co_edited", "symbol"]) & (c.budget <= 8000)]
-    ctl = set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS)
+    ctl = set(SCORED_ONLY)
     c = c[~c.method.isin(ctl)]
     pr = (c.groupby(["source", "method", "instance_id", "task_id"]).coverage.mean()
           .groupby(["source", "method", "instance_id"]).mean().reset_index())

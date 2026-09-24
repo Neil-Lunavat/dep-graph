@@ -1,0 +1,31 @@
+{
+ "instance_id": "pylint-dev__pylint-4604",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "1e55ae64624d28c5fe8b63ad7979880ee2e6ef3f",
+ "status": "ok",
+ "co_edited": [
+  "pylint/checkers/variables.py",
+  "pylint/constants.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/checkers/variables.py": [
+   "_store_type_annotation_node",
+   "self",
+   "type_annotation"
+  ],
+  "pylint/constants.py": [
+   "IS_PYPY"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.3
+}

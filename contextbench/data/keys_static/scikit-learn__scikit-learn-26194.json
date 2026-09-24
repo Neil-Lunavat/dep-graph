@@ -1,0 +1,25 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-26194",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "e886ce4e1444c61b865e7839c9cff5464ee20ace",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/metrics/_ranking.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/metrics/_ranking.py": [
+   "thresholds"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

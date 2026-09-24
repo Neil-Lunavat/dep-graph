@@ -1,0 +1,35 @@
+{
+ "instance_id": "sympy__sympy-19495",
+ "repo_key": "sympy/sympy",
+ "base_commit": "25fbcce5b1a4c7e3956e6062930f4a44ce95a632",
+ "status": "ok",
+ "co_edited": [
+  "sympy/sets/conditionset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/basic.py": [
+   "func"
+  ],
+  "sympy/sets/conditionset.py": [
+   "base",
+   "base_set",
+   "cond",
+   "condition",
+   "new",
+   "old",
+   "self",
+   "sym"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

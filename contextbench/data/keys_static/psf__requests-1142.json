@@ -1,0 +1,27 @@
+{
+ "instance_id": "psf__requests-1142",
+ "repo_key": "psf/requests",
+ "base_commit": "22623bd8c265b78b161542663ee980738441c307",
+ "status": "ok",
+ "co_edited": [
+  "requests/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "requests/models.py": [
+   "headers",
+   "method",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

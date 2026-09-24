@@ -1,0 +1,25 @@
+{
+ "instance_id": "pydata__xarray-2905",
+ "repo_key": "pydata/xarray",
+ "base_commit": "7c4e2ac83f7b4306296ff9b7b51aaf016e5ad614",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/variable.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/variable.py": [
+   "data"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 22.9
+}

@@ -1,0 +1,277 @@
+source,method,family,n_pr,auc,ci_lo,ci_hi,rank,rule,population
+co_edited,oracle,reference,702,0.7738253516031294,,,1.0,"lines, stop",shared
+co_edited,rrf_pprpl_issue_path,fusion,702,0.4868572078641523,,,2.0,"lines, stop",shared
+co_edited,rrf_hops_issue_path,fusion,702,0.4796132836642096,,,3.0,"lines, stop",shared
+co_edited,rrf_hops_path,fusion,702,0.45686181959330113,,,4.0,"lines, stop",shared
+co_edited,rrf_ppr_issue_path,fusion,702,0.4453055046805046,,,5.0,"lines, stop",shared
+co_edited,path_issue,lexical,702,0.43484535868795127,,,6.0,"lines, stop",shared
+co_edited,bm25_issue,lexical,702,0.4085275064441732,,,7.0,"lines, stop",shared
+co_edited,rrf_ppr_issue,fusion,702,0.3939600244577097,,,8.0,"lines, stop",shared
+co_edited,bm25_seed,lexical,702,0.39305894722561396,,,9.0,"lines, stop",shared
+co_edited,hops_lines,structure,702,0.38881497874553433,,,10.0,"lines, stop",shared
+co_edited,ppr_und_pl,structure,702,0.37193597940125717,,,11.0,"lines, stop",shared
+co_edited,path_seed,lexical,702,0.370879686157464,,,12.0,"lines, stop",shared
+co_edited,bfs_und,structure,702,0.3617053128627203,,,13.0,"lines, stop",shared
+co_edited,ppr_und,structure,702,0.3577776882753735,,,14.0,"lines, stop",shared
+co_edited,bm25_issue_pl,lexical,702,0.3551531480350925,,,15.0,"lines, stop",shared
+co_edited,same_dir,reference,702,0.3290077998990036,,,16.0,"lines, stop",shared
+co_edited,ppr_out_pl,structure,702,0.3265126141862253,,,17.0,"lines, stop",shared
+co_edited,ppr_out,structure,702,0.31189833186360966,,,18.0,"lines, stop",shared
+co_edited,ppr_in_pl,structure,702,0.31024974468261507,,,19.0,"lines, stop",shared
+co_edited,ppr_in,structure,702,0.30771595516965883,,,20.0,"lines, stop",shared
+co_edited,pagerank,global,702,0.27125286407693816,,,21.0,"lines, stop",shared
+co_edited,indegree,global,702,0.2706251695835029,,,22.0,"lines, stop",shared
+co_edited,random,reference,702,0.24855684439017772,,,23.0,"lines, stop",shared
+symbol,oracle,reference,702,0.7790211680460059,,,1.0,"lines, stop",shared
+symbol,rrf_pprpl_issue_path,fusion,702,0.47021607080736594,,,2.0,"lines, stop",shared
+symbol,rrf_hops_path,fusion,702,0.4556475929307428,,,3.0,"lines, stop",shared
+symbol,rrf_hops_issue_path,fusion,702,0.454267406988005,,,4.0,"lines, stop",shared
+symbol,ppr_und_pl,structure,702,0.4361279357486342,,,5.0,"lines, stop",shared
+symbol,hops_lines,structure,702,0.42453474457142387,,,6.0,"lines, stop",shared
+symbol,rrf_ppr_issue_path,fusion,702,0.4212141364952928,,,7.0,"lines, stop",shared
+symbol,ppr_out_pl,structure,702,0.41660348530895036,,,8.0,"lines, stop",shared
+symbol,path_issue,lexical,702,0.40422188588561886,,,9.0,"lines, stop",shared
+symbol,ppr_und,structure,702,0.39495236537836564,,,10.0,"lines, stop",shared
+symbol,ppr_out,structure,702,0.38726897906797386,,,11.0,"lines, stop",shared
+symbol,rrf_ppr_issue,fusion,702,0.38395038467530396,,,12.0,"lines, stop",shared
+symbol,bfs_und,structure,702,0.37860881908965627,,,13.0,"lines, stop",shared
+symbol,bm25_issue,lexical,702,0.36666381133942183,,,14.0,"lines, stop",shared
+symbol,path_seed,lexical,702,0.3652472986936961,,,15.0,"lines, stop",shared
+symbol,bm25_issue_pl,lexical,702,0.3559164355093525,,,16.0,"lines, stop",shared
+symbol,bm25_seed,lexical,702,0.35281852006743114,,,17.0,"lines, stop",shared
+symbol,pagerank,global,702,0.35245205240068106,,,18.0,"lines, stop",shared
+symbol,indegree,global,702,0.3430780790719782,,,19.0,"lines, stop",shared
+symbol,same_dir,reference,702,0.321329118103078,,,20.0,"lines, stop",shared
+symbol,ppr_in_pl,structure,702,0.29408417404040527,,,21.0,"lines, stop",shared
+symbol,ppr_in,structure,702,0.2855937925198013,,,22.0,"lines, stop",shared
+symbol,random,reference,702,0.2518261106085222,,,23.0,"lines, stop",shared
+co_edited,oracle,reference,708,0.7734787659178549,,,1.0,"lines, stop",all
+co_edited,rrf_pprpl_issue_path,fusion,708,0.48582589285714284,,,2.0,"lines, stop",all
+co_edited,rrf_hops_issue_path,fusion,708,0.47952449145069204,,,3.0,"lines, stop",all
+co_edited,rrf_hops_path,fusion,708,0.45711705134816016,,,4.0,"lines, stop",all
+co_edited,rrf_ppr_issue_path,fusion,708,0.4445339590246017,,,5.0,"lines, stop",all
+co_edited,path_issue,lexical,708,0.4342253964517383,,,6.0,"lines, stop",all
+co_edited,bm25_issue,lexical,708,0.4072061222087705,,,7.0,"lines, stop",all
+co_edited,bm25_seed,lexical,708,0.39307755470361405,,,8.0,"lines, stop",all
+co_edited,rrf_ppr_issue,fusion,708,0.39305144531133235,,,9.0,"lines, stop",all
+co_edited,hops_lines,structure,708,0.3889406639539054,,,10.0,"lines, stop",all
+co_edited,ppr_und_pl,structure,708,0.37141511972020447,,,11.0,"lines, stop",all
+co_edited,path_seed,lexical,708,0.3706677558813858,,,12.0,"lines, stop",all
+co_edited,bfs_und,structure,708,0.36209752301736764,,,13.0,"lines, stop",all
+co_edited,ppr_und,structure,708,0.3573817183810122,,,14.0,"lines, stop",all
+co_edited,bm25_issue_pl,lexical,708,0.35404132757151824,,,15.0,"lines, stop",all
+co_edited,same_dir,reference,708,0.3287003407766119,,,16.0,"lines, stop",all
+co_edited,ppr_out_pl,structure,708,0.32679601324993274,,,17.0,"lines, stop",all
+co_edited,ppr_out,structure,708,0.3124159268227065,,,18.0,"lines, stop",all
+co_edited,ppr_in_pl,structure,708,0.31048868935521473,,,19.0,"lines, stop",all
+co_edited,ppr_in,structure,708,0.30788237415179504,,,20.0,"lines, stop",all
+co_edited,pagerank,global,708,0.27113405841778015,,,21.0,"lines, stop",all
+co_edited,indegree,global,708,0.2706114034989388,,,22.0,"lines, stop",all
+co_edited,random,reference,708,0.2482625577302484,,,23.0,"lines, stop",all
+symbol,oracle,reference,1156,0.7930416975089866,,,1.0,"lines, stop",all
+symbol,ppr_out_pl,structure,1156,0.4906277821205256,,,2.0,"lines, stop",all
+symbol,ppr_und_pl,structure,1156,0.48932899880616615,,,3.0,"lines, stop",all
+symbol,hops_lines,structure,1156,0.47674197454971573,,,4.0,"lines, stop",all
+symbol,rrf_hops_path,fusion,1156,0.47590547495198987,,,5.0,"lines, stop",all
+symbol,rrf_pprpl_issue_path,fusion,1156,0.47350017102079317,,,6.0,"lines, stop",all
+symbol,ppr_out,structure,1156,0.45813890221525977,,,7.0,"lines, stop",all
+symbol,rrf_hops_issue_path,fusion,1156,0.4565513968956745,,,8.0,"lines, stop",all
+symbol,ppr_und,structure,1156,0.44568332568574975,,,9.0,"lines, stop",all
+symbol,bfs_und,structure,1156,0.4201151254017151,,,10.0,"lines, stop",all
+symbol,rrf_ppr_issue_path,fusion,1156,0.4200118632448838,,,11.0,"lines, stop",all
+symbol,pagerank,global,1156,0.40982896318498596,,,12.0,"lines, stop",all
+symbol,indegree,global,1156,0.3980633035230502,,,13.0,"lines, stop",all
+symbol,rrf_ppr_issue,fusion,1156,0.3904138190033678,,,14.0,"lines, stop",all
+symbol,path_issue,lexical,1156,0.38238263552099244,,,15.0,"lines, stop",all
+symbol,path_seed,lexical,1156,0.36485004396282167,,,16.0,"lines, stop",all
+symbol,bm25_issue_pl,lexical,1156,0.3552965126677088,,,17.0,"lines, stop",all
+symbol,bm25_issue,lexical,1156,0.3404272250723622,,,18.0,"lines, stop",all
+symbol,bm25_seed,lexical,1156,0.33602775615587943,,,19.0,"lines, stop",all
+symbol,same_dir,reference,1156,0.3197893621182504,,,20.0,"lines, stop",all
+symbol,ppr_in_pl,structure,1156,0.27672810156960187,,,21.0,"lines, stop",all
+symbol,ppr_in,structure,1156,0.26891172585068185,,,22.0,"lines, stop",all
+symbol,random,reference,1156,0.24847668681438403,,,23.0,"lines, stop",all
+co_edited,oracle,reference,702,0.7738253516031294,,,1.0,"lines, skip",shared
+co_edited,rrf_hops_issue_path,fusion,702,0.5215335012210013,,,2.0,"lines, skip",shared
+co_edited,rrf_pprpl_issue_path,fusion,702,0.5191342008471638,,,3.0,"lines, skip",shared
+co_edited,rrf_ppr_issue_path,fusion,702,0.5049730362230362,,,4.0,"lines, skip",shared
+co_edited,rrf_hops_path,fusion,702,0.4787103928307632,,,5.0,"lines, skip",shared
+co_edited,bm25_issue,lexical,702,0.4598455235608014,,,6.0,"lines, skip",shared
+co_edited,path_issue,lexical,702,0.4562218302959044,,,7.0,"lines, skip",shared
+co_edited,rrf_ppr_issue,fusion,702,0.45438184928925673,,,8.0,"lines, skip",shared
+co_edited,bm25_seed,lexical,702,0.4377600280378058,,,9.0,"lines, skip",shared
+co_edited,hops_lines,structure,702,0.39893628747795407,,,10.0,"lines, skip",shared
+co_edited,ppr_und,structure,702,0.3957310415065044,,,11.0,"lines, skip",shared
+co_edited,path_seed,lexical,702,0.3924190521412743,,,12.0,"lines, skip",shared
+co_edited,bfs_und,structure,702,0.39223104998567965,,,13.0,"lines, skip",shared
+co_edited,ppr_und_pl,structure,702,0.37881965642382304,,,14.0,"lines, skip",shared
+co_edited,bm25_issue_pl,lexical,702,0.3589721685207797,,,15.0,"lines, skip",shared
+co_edited,same_dir,reference,702,0.3515017796846501,,,16.0,"lines, skip",shared
+co_edited,ppr_out_pl,structure,702,0.3413103057778984,,,17.0,"lines, skip",shared
+co_edited,ppr_out,structure,702,0.3389331925790259,,,18.0,"lines, skip",shared
+co_edited,ppr_in,structure,702,0.3326649152459338,,,19.0,"lines, skip",shared
+co_edited,ppr_in_pl,structure,702,0.32540294924554186,,,20.0,"lines, skip",shared
+co_edited,pagerank,global,702,0.2998027885180663,,,21.0,"lines, skip",shared
+co_edited,indegree,global,702,0.29798501823964785,,,22.0,"lines, skip",shared
+co_edited,random,reference,702,0.26607854165724537,,,23.0,"lines, skip",shared
+symbol,oracle,reference,702,0.7790211680460059,,,1.0,"lines, skip",shared
+symbol,rrf_pprpl_issue_path,fusion,702,0.5166881508556478,,,2.0,"lines, skip",shared
+symbol,rrf_hops_issue_path,fusion,702,0.5094320060238223,,,3.0,"lines, skip",shared
+symbol,rrf_ppr_issue_path,fusion,702,0.4959611829785034,,,4.0,"lines, skip",shared
+symbol,rrf_hops_path,fusion,702,0.49193842851801967,,,5.0,"lines, skip",shared
+symbol,rrf_ppr_issue,fusion,702,0.46405651083075516,,,6.0,"lines, skip",shared
+symbol,ppr_und,structure,702,0.45632503688103787,,,7.0,"lines, skip",shared
+symbol,ppr_und_pl,structure,702,0.44799472407324803,,,8.0,"lines, skip",shared
+symbol,hops_lines,structure,702,0.4471032031942012,,,9.0,"lines, skip",shared
+symbol,ppr_out_pl,structure,702,0.4372649634140843,,,10.0,"lines, skip",shared
+symbol,path_issue,lexical,702,0.4351501761456833,,,11.0,"lines, skip",shared
+symbol,ppr_out,structure,702,0.43224724241870505,,,12.0,"lines, skip",shared
+symbol,bfs_und,structure,702,0.42524563808979626,,,13.0,"lines, skip",shared
+symbol,bm25_issue,lexical,702,0.4180336705363505,,,14.0,"lines, skip",shared
+symbol,path_seed,lexical,702,0.40113069758243186,,,15.0,"lines, skip",shared
+symbol,bm25_seed,lexical,702,0.3995134649734424,,,16.0,"lines, skip",shared
+symbol,pagerank,global,702,0.39937930486917206,,,17.0,"lines, skip",shared
+symbol,indegree,global,702,0.3921732498327854,,,18.0,"lines, skip",shared
+symbol,bm25_issue_pl,lexical,702,0.36680331357371465,,,19.0,"lines, skip",shared
+symbol,same_dir,reference,702,0.3535181352899778,,,20.0,"lines, skip",shared
+symbol,ppr_in,structure,702,0.3193492447872746,,,21.0,"lines, skip",shared
+symbol,ppr_in_pl,structure,702,0.31709660053805117,,,22.0,"lines, skip",shared
+symbol,random,reference,702,0.2768809953567884,,,23.0,"lines, skip",shared
+co_edited,oracle,reference,708,0.7734787659178549,,,1.0,"lines, skip",all
+co_edited,rrf_hops_issue_path,fusion,708,0.521145034638149,,,2.0,"lines, skip",all
+co_edited,rrf_pprpl_issue_path,fusion,708,0.5179748453053538,,,3.0,"lines, skip",all
+co_edited,rrf_ppr_issue_path,fusion,708,0.5038486832272143,,,4.0,"lines, skip",all
+co_edited,rrf_hops_path,fusion,708,0.4788107101754701,,,5.0,"lines, skip",all
+co_edited,bm25_issue,lexical,708,0.4581529963680387,,,6.0,"lines, skip",all
+co_edited,path_issue,lexical,708,0.4555531267748782,,,7.0,"lines, skip",all
+co_edited,rrf_ppr_issue,fusion,708,0.4533494753833736,,,8.0,"lines, skip",all
+co_edited,bm25_seed,lexical,708,0.4375714622006995,,,9.0,"lines, skip",all
+co_edited,hops_lines,structure,708,0.39901543303291187,,,10.0,"lines, skip",all
+co_edited,ppr_und,structure,708,0.3951017098615968,,,11.0,"lines, skip",all
+co_edited,bfs_und,structure,708,0.3925468427719487,,,12.0,"lines, skip",all
+co_edited,path_seed,lexical,708,0.3921610870101336,,,13.0,"lines, skip",all
+co_edited,ppr_und_pl,structure,708,0.378343450139001,,,14.0,"lines, skip",all
+co_edited,bm25_issue_pl,lexical,708,0.3578279834768182,,,15.0,"lines, skip",all
+co_edited,same_dir,reference,708,0.35110831801333214,,,16.0,"lines, skip",all
+co_edited,ppr_out_pl,structure,708,0.34148791775027654,,,17.0,"lines, skip",all
+co_edited,ppr_out,structure,708,0.33933692886288225,,,18.0,"lines, skip",all
+co_edited,ppr_in,structure,708,0.3326689450497713,,,19.0,"lines, skip",all
+co_edited,ppr_in_pl,structure,708,0.3255363635174722,,,20.0,"lines, skip",all
+co_edited,pagerank,global,708,0.29950088557080085,,,21.0,"lines, skip",all
+co_edited,indegree,global,708,0.29777371891160737,,,22.0,"lines, skip",all
+co_edited,random,reference,708,0.26573630354527245,,,23.0,"lines, skip",all
+symbol,oracle,reference,1156,0.7930416975089866,,,1.0,"lines, skip",all
+symbol,rrf_pprpl_issue_path,fusion,1156,0.5244220773588921,,,2.0,"lines, skip",all
+symbol,rrf_hops_issue_path,fusion,1156,0.519492541017156,,,3.0,"lines, skip",all
+symbol,rrf_hops_path,fusion,1156,0.5166830593307654,,,4.0,"lines, skip",all
+symbol,ppr_und,structure,1156,0.512873437497951,,,5.0,"lines, skip",all
+symbol,ppr_out_pl,structure,1156,0.5103952843954426,,,6.0,"lines, skip",all
+symbol,ppr_out,structure,1156,0.5071261507191366,,,7.0,"lines, skip",all
+symbol,rrf_ppr_issue_path,fusion,1156,0.5040132114677174,,,8.0,"lines, skip",all
+symbol,ppr_und_pl,structure,1156,0.5010025475160629,,,9.0,"lines, skip",all
+symbol,hops_lines,structure,1156,0.4988905664518819,,,10.0,"lines, skip",all
+symbol,rrf_ppr_issue,fusion,1156,0.48359338188859774,,,11.0,"lines, skip",all
+symbol,bfs_und,structure,1156,0.47341329200734394,,,12.0,"lines, skip",all
+symbol,pagerank,global,1156,0.4603632951282275,,,13.0,"lines, skip",all
+symbol,indegree,global,1156,0.45162550881797764,,,14.0,"lines, skip",all
+symbol,path_issue,lexical,1156,0.41895531180033435,,,15.0,"lines, skip",all
+symbol,path_seed,lexical,1156,0.4044407919540856,,,16.0,"lines, skip",all
+symbol,bm25_issue,lexical,1156,0.39080267204240504,,,17.0,"lines, skip",all
+symbol,bm25_seed,lexical,1156,0.38499902013345283,,,18.0,"lines, skip",all
+symbol,bm25_issue_pl,lexical,1156,0.366328867246641,,,19.0,"lines, skip",all
+symbol,same_dir,reference,1156,0.3534669399835563,,,20.0,"lines, skip",all
+symbol,ppr_in,structure,1156,0.3006135593759918,,,21.0,"lines, skip",all
+symbol,ppr_in_pl,structure,1156,0.2989641228889917,,,22.0,"lines, skip",all
+symbol,random,reference,1156,0.2747573358175709,,,23.0,"lines, skip",all
+co_edited,oracle,reference,702,0.9566254154795822,,,1.0,files,shared
+co_edited,rrf_ppr_issue_path,fusion,702,0.6493922315681575,,,2.0,files,shared
+co_edited,rrf_hops_issue_path,fusion,702,0.631081523500505,,,3.0,files,shared
+co_edited,bm25_issue,lexical,702,0.615407014538959,,,4.0,files,shared
+co_edited,rrf_ppr_issue,fusion,702,0.6144637298572483,,,5.0,files,shared
+co_edited,bm25_seed,lexical,702,0.608771353389409,,,6.0,files,shared
+co_edited,rrf_pprpl_issue_path,fusion,702,0.5947797722681982,,,7.0,files,shared
+co_edited,ppr_und,structure,702,0.4965248100664767,,,8.0,files,shared
+co_edited,path_issue,lexical,702,0.48989623844947916,,,9.0,files,shared
+co_edited,rrf_hops_path,fusion,702,0.4884138666546074,,,10.0,files,shared
+co_edited,bfs_und,structure,702,0.44807341364054326,,,11.0,files,shared
+co_edited,path_seed,lexical,702,0.4198541770301029,,,12.0,files,shared
+co_edited,ppr_in,structure,702,0.39090888749453573,,,13.0,files,shared
+co_edited,ppr_out,structure,702,0.3823814517101555,,,14.0,files,shared
+co_edited,hops_lines,structure,702,0.3813182573599241,,,15.0,files,shared
+co_edited,same_dir,reference,702,0.366585949629931,,,16.0,files,shared
+co_edited,indegree,global,702,0.35141350205007615,,,17.0,files,shared
+co_edited,pagerank,global,702,0.3490441143218921,,,18.0,files,shared
+co_edited,ppr_out_pl,structure,702,0.3164763327379068,,,19.0,files,shared
+co_edited,ppr_in_pl,structure,702,0.2888405811438219,,,20.0,files,shared
+co_edited,ppr_und_pl,structure,702,0.2678928967123412,,,21.0,files,shared
+co_edited,random,reference,702,0.2528223641070863,,,22.0,files,shared
+co_edited,bm25_issue_pl,lexical,702,0.23214024273052056,,,23.0,files,shared
+symbol,oracle,reference,702,0.9051558465820435,,,1.0,files,shared
+symbol,rrf_ppr_issue_path,fusion,702,0.615649661219259,,,2.0,files,shared
+symbol,rrf_hops_issue_path,fusion,702,0.5953999578051763,,,3.0,files,shared
+symbol,rrf_ppr_issue,fusion,702,0.594914275846477,,,4.0,files,shared
+symbol,rrf_pprpl_issue_path,fusion,702,0.5711238897371885,,,5.0,files,shared
+symbol,bm25_issue,lexical,702,0.5526754266834115,,,6.0,files,shared
+symbol,bm25_seed,lexical,702,0.5486318603831436,,,7.0,files,shared
+symbol,ppr_und,structure,702,0.5310818139518713,,,8.0,files,shared
+symbol,rrf_hops_path,fusion,702,0.4833577520639179,,,9.0,files,shared
+symbol,ppr_out,structure,702,0.46444199899244176,,,10.0,files,shared
+symbol,bfs_und,structure,702,0.4632917318546267,,,11.0,files,shared
+symbol,path_issue,lexical,702,0.4517305010983903,,,12.0,files,shared
+symbol,pagerank,global,702,0.4358656837962363,,,13.0,files,shared
+symbol,indegree,global,702,0.43218993004171047,,,14.0,files,shared
+symbol,path_seed,lexical,702,0.41191430900889503,,,15.0,files,shared
+symbol,hops_lines,structure,702,0.41028198620788753,,,16.0,files,shared
+symbol,ppr_out_pl,structure,702,0.38657482550649336,,,17.0,files,shared
+symbol,ppr_in,structure,702,0.3556840024574543,,,18.0,files,shared
+symbol,same_dir,reference,702,0.3554202440109562,,,19.0,files,shared
+symbol,ppr_und_pl,structure,702,0.31906063596890333,,,20.0,files,shared
+symbol,ppr_in_pl,structure,702,0.27113710444672645,,,21.0,files,shared
+symbol,random,reference,702,0.2535152810320786,,,22.0,files,shared
+symbol,bm25_issue_pl,lexical,702,0.2297757684407454,,,23.0,files,shared
+co_edited,oracle,reference,708,0.956529543314501,,,1.0,files,all
+co_edited,rrf_ppr_issue_path,fusion,708,0.6485136329327714,,,2.0,files,all
+co_edited,rrf_hops_issue_path,fusion,708,0.6308370839311871,,,3.0,files,all
+co_edited,bm25_issue,lexical,708,0.6141543499461931,,,4.0,files,all
+co_edited,rrf_ppr_issue,fusion,708,0.6137209293635848,,,5.0,files,all
+co_edited,bm25_seed,lexical,708,0.6087568519639495,,,6.0,files,all
+co_edited,rrf_pprpl_issue_path,fusion,708,0.5935989251711357,,,7.0,files,all
+co_edited,ppr_und,structure,708,0.4963924199623352,,,8.0,files,all
+co_edited,path_issue,lexical,708,0.48887758571727497,,,9.0,files,all
+co_edited,rrf_hops_path,fusion,708,0.4883673782994052,,,10.0,files,all
+co_edited,bfs_und,structure,708,0.4489164368666487,,,11.0,files,all
+co_edited,path_seed,lexical,708,0.41984105965832663,,,12.0,files,all
+co_edited,ppr_in,structure,708,0.3914434990882731,,,13.0,files,all
+co_edited,ppr_out,structure,708,0.3827651854841121,,,14.0,files,all
+co_edited,hops_lines,structure,708,0.3819513104205901,,,15.0,files,all
+co_edited,same_dir,reference,708,0.3665403700714435,,,16.0,files,all
+co_edited,indegree,global,708,0.35155862329238036,,,17.0,files,all
+co_edited,pagerank,global,708,0.3492420102457179,,,18.0,files,all
+co_edited,ppr_out_pl,structure,708,0.3167368911233671,,,19.0,files,all
+co_edited,ppr_in_pl,structure,708,0.2894048179535468,,,20.0,files,all
+co_edited,ppr_und_pl,structure,708,0.26767750650165906,,,21.0,files,all
+co_edited,random,reference,708,0.25252871099004576,,,22.0,files,all
+co_edited,bm25_issue_pl,lexical,708,0.2315461477670164,,,23.0,files,all
+symbol,oracle,reference,1156,0.9212801289655227,,,1.0,files,all
+symbol,rrf_ppr_issue_path,fusion,1156,0.6113848861571463,,,2.0,files,all
+symbol,rrf_ppr_issue,fusion,1156,0.6028527530301148,,,3.0,files,all
+symbol,rrf_hops_issue_path,fusion,1156,0.5959556497556829,,,4.0,files,all
+symbol,ppr_und,structure,1156,0.5832741401186733,,,5.0,files,all
+symbol,rrf_pprpl_issue_path,fusion,1156,0.5697394584513189,,,6.0,files,all
+symbol,ppr_out,structure,1156,0.5437344968741257,,,7.0,files,all
+symbol,bm25_seed,lexical,1156,0.5249018396774893,,,8.0,files,all
+symbol,bm25_issue,lexical,1156,0.5167832647102589,,,9.0,files,all
+symbol,bfs_und,structure,1156,0.507032422600569,,,10.0,files,all
+symbol,rrf_hops_path,fusion,1156,0.5028638775344902,,,11.0,files,all
+symbol,pagerank,global,1156,0.4964682702548169,,,12.0,files,all
+symbol,indegree,global,1156,0.4911418470496757,,,13.0,files,all
+symbol,hops_lines,structure,1156,0.45775979779546616,,,14.0,files,all
+symbol,ppr_out_pl,structure,1156,0.44658054446011264,,,15.0,files,all
+symbol,path_issue,lexical,1156,0.42414405394239585,,,16.0,files,all
+symbol,path_seed,lexical,1156,0.4076022401047482,,,17.0,files,all
+symbol,ppr_und_pl,structure,1156,0.3556977508650118,,,18.0,files,all
+symbol,same_dir,reference,1156,0.3481610585417289,,,19.0,files,all
+symbol,ppr_in,structure,1156,0.3252086447701398,,,20.0,files,all
+symbol,ppr_in_pl,structure,1156,0.25298554363939707,,,21.0,files,all
+symbol,random,reference,1156,0.24765870572362086,,,22.0,files,all
+symbol,bm25_issue_pl,lexical,1156,0.22445489651291017,,,23.0,files,all

@@ -20,7 +20,7 @@ from scipy import stats
 from depgraphs.lexfeat import ROOT
 from depgraphs.study2 import (BUDGETS, FUSION, FUSION_CTL, GLOBAL, LEXICAL, METHODS,
                               REDACTED, REDACTED_ALL, ARM_SUFFIX, RRF_K_VARIANTS, STRUCTURE,
-                              OUT)
+                              OUT, DENSE_ALL, SCORED_ONLY)
 
 SEED = 20260923
 SOURCES = ["co_edited", "symbol", "union_static"]
@@ -29,6 +29,7 @@ FAMILY = ({m: "structure" for m in STRUCTURE} | {m: "global" for m in GLOBAL}
           | {m: "fusion-control" for m in FUSION_CTL}
           | {m: "redacted" for m in REDACTED_ALL}
           | {m: "rrf-k" for m in RRF_K_VARIANTS}
+          | {m: "dense" for m in DENSE_ALL}
           | {"same_dir": "reference", "random": "reference", "oracle": "reference"})
 
 
@@ -99,8 +100,7 @@ def auc_table(rows: pd.DataFrame, sources=None, prs: pd.Index | None = None,
     # oracle included. The fusion controls exist only to answer "is a fusion just more
     # input?" and are not candidate reading orders, so they are scored but not ranked;
     # including them would shift every rank in every table by up to two places.
-    rankable = ~df["method"].isin(list(FUSION_CTL) + list(REDACTED_ALL)
-                                  + list(RRF_K_VARIANTS))
+    rankable = ~df["method"].isin(list(SCORED_ONLY))
     df["rank"] = (df[rankable].groupby("source")["auc"]
                   .rank(ascending=False, method="min").astype(int))
     return df.sort_values(["source", "rank"])
@@ -458,7 +458,7 @@ def rank_agreement(per_source: pd.DataFrame) -> dict:
     """
     out = {}
     # the fusion controls are not candidate reading orders, so they stay out of both scales
-    ctl = set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS)
+    ctl = set(SCORED_ONLY)
     for label, drop in (("all", {"oracle"} | ctl),
                         ("contenders", {"oracle", "random", "same_dir"} | ctl)):
         piv = per_source[~per_source.method.isin(drop)].pivot(
@@ -489,7 +489,7 @@ def by_size(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
         pd.qcut(q, 4, labels=["Q1", "Q2", "Q3", "Q4"])))
     # Rank on the same scale as every other table: all scored orderings, oracle included,
     # less the two fusion controls, which are scored but never ranked.
-    skip = set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS)
+    skip = set(SCORED_ONLY)
     rankable = [m for m in rows["method"].unique() if m not in skip]
     recs = []
     for src in SOURCES:

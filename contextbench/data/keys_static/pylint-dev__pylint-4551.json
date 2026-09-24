@@ -1,0 +1,68 @@
+{
+ "instance_id": "pylint-dev__pylint-4551",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "99589b08de8c5a2c6cc61e13a37420a868c80599",
+ "status": "ok",
+ "co_edited": [
+  "pylint/pyreverse/diagrams.py",
+  "pylint/pyreverse/inspector.py",
+  "pylint/pyreverse/utils.py",
+  "pylint/pyreverse/writer.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/__init__.py": [
+   "pylint"
+  ],
+  "pylint/pyreverse/__init__.py": [
+   "pyreverse"
+  ],
+  "pylint/pyreverse/diagrams.py": [
+   "node"
+  ],
+  "pylint/pyreverse/inspector.py": [
+   "current",
+   "frame",
+   "node",
+   "parent",
+   "self",
+   "visit_classdef",
+   "visit_functiondef",
+   "visit_module"
+  ],
+  "pylint/pyreverse/utils.py": [
+   "_",
+   "ann",
+   "annotations",
+   "default",
+   "get_annotation",
+   "get_annotation_label",
+   "infer_node",
+   "init_method",
+   "is_exception",
+   "label",
+   "node",
+   "utils"
+  ],
+  "pylint/pyreverse/writer.py": [
+   "ann",
+   "annotation_label",
+   "annotations",
+   "arg",
+   "args",
+   "func",
+   "label",
+   "return_type"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 223,
+  "names_resolved_in_repo": 141,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

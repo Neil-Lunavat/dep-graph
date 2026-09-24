@@ -1,0 +1,28 @@
+{
+ "instance_id": "pydata__xarray-4356",
+ "repo_key": "pydata/xarray",
+ "base_commit": "e05fddea852d08fc0845f954b79deb9e9f9ff883",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/nanops.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/nanops.py": [
+   "axis",
+   "mask",
+   "min_count",
+   "null_mask"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

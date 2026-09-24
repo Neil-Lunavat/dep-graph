@@ -1,0 +1,25 @@
+{
+ "instance_id": "pylint-dev__pylint-6903",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "ca80f03a43bc39e4cc2c67dc99817b3c9f13b8a6",
+ "status": "ok",
+ "co_edited": [
+  "pylint/lint/run.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/lint/run.py": [
+   "avail_cpu"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

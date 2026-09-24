@@ -14,7 +14,7 @@ import math
 import pandas as pd
 
 from depgraphs.lexfeat import ROOT
-from depgraphs.study2 import FUSION, FUSION_CTL, OUT, REDACTED_ALL, RRF_K_VARIANTS
+from depgraphs.study2 import FUSION, OUT, REDACTED_ALL, SCORED_ONLY
 
 PAPER = ROOT / "paper"
 BS = chr(92)
@@ -87,7 +87,7 @@ def full_table():
     cm = pd.read_csv(OUT / "ceiling_method.csv")
     cm = cm[cm.budget == 8000]
     # controls are scored but never compared as reading orders, here as everywhere else
-    cm = cm[~cm.method.isin(set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS))]
+    cm = cm[~cm.method.isin(SCORED_ONLY)]
     piv = cm.pivot(index="method", columns="source", values="share_full")
     piv = piv.sort_values("co_edited", ascending=False)
     rows = []

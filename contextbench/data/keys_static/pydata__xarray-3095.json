@@ -1,0 +1,52 @@
+{
+ "instance_id": "pydata__xarray-3095",
+ "repo_key": "pydata/xarray",
+ "base_commit": "1757dffac2fa493d7b9a074b84cf8c830a706688",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/indexing.py",
+  "xarray/core/variable.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/indexing.py": [
+   "NumpyIndexingAdapter",
+   "PandasIndexAdapter",
+   "__array__",
+   "_dtype",
+   "array",
+   "copy",
+   "deep",
+   "dtype",
+   "indexer",
+   "order",
+   "self",
+   "transpose"
+  ],
+  "xarray/core/npcompat.py": [
+   "DTypeLike",
+   "npcompat"
+  ],
+  "xarray/core/utils.py": [
+   "__repr__",
+   "dtype",
+   "shape"
+  ],
+  "xarray/core/variable.py": [
+   "_data",
+   "data",
+   "deep",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 70,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.2
+}

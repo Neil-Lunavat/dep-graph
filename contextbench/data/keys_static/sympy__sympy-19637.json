@@ -1,0 +1,27 @@
+{
+ "instance_id": "sympy__sympy-19637",
+ "repo_key": "sympy/sympy",
+ "base_commit": "63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/sympify.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/sympify.py": [
+   "hit",
+   "kern",
+   "s"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

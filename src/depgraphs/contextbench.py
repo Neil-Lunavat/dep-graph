@@ -10,7 +10,8 @@ scored against a key no part of the pipeline built.
 This module draws those tasks with the main sample's eligibility rule, seed and cap of 20
 pull requests per repository, lays out a separate tree as `external.py` does, and, after the
 `tasks` stage has run there, adds each task's `gold` key: the Python files in the task's gold
-context, minus the seed, restricted to graph nodes like every other key.
+context, minus the seed, restricted to graph nodes like every other key. `gold_readonly` is that key less every file
+the pull request edits: exploratory, added after the pre-registered predictions were scored.
 
 The predictions tested on this set were committed before any of it was scored
 (paper/contextbench_prereg.md).
@@ -139,6 +140,10 @@ def addkey():
             nodes_of[k] = set(load_graph(*k)["nodes"])
         g = [f for f in gold.get(t["instance_id"], []) if f != t["seed"]]
         t["keys"]["gold"] = sorted(set(g) & nodes_of[k])
+        # exploratory, added after G1-G4 were scored (POSTHOC.md): the gold files the fix
+        # reads but does not edit, which is the context a graph walk is claimed to find
+        edited = set(t["keys"].get("co_edited", [])) | {t["seed"]}
+        t["keys"]["gold_readonly"] = sorted(set(t["keys"]["gold"]) - edited)
         dropped = sorted(set(g) - nodes_of[k])
         if dropped:
             t["dropped_not_in_graph"]["gold"] = dropped

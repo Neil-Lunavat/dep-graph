@@ -1,0 +1,35 @@
+{
+ "instance_id": "pydata__xarray-4966",
+ "repo_key": "pydata/xarray",
+ "base_commit": "37522e991a32ee3c0ad1a5ff8afe8e3eb1885550",
+ "status": "ok",
+ "co_edited": [
+  "xarray/coding/variables.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/coding/variables.py": [
+   "attrs",
+   "data",
+   "dtype",
+   "lazy_elemwise_func",
+   "new_fill",
+   "signed_dtype",
+   "transform",
+   "unsigned"
+  ],
+  "xarray/core/indexing.py": [
+   "dtype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 28,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 13.5
+}

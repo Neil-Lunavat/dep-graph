@@ -1,0 +1,30 @@
+{
+ "instance_id": "django__django-11790",
+ "repo_key": "django/django",
+ "base_commit": "b1d6b35e146aea83b171c1b921178bbaae2795ed",
+ "status": "ok",
+ "co_edited": [
+  "django/contrib/auth/forms.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/contrib/auth/forms.py": [
+   "self",
+   "username_field",
+   "username_max_length"
+  ],
+  "django/db/models/fields/__init__.py": [
+   "max_length"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

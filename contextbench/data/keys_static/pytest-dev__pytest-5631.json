@@ -1,0 +1,28 @@
+{
+ "instance_id": "pytest-dev__pytest-5631",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "cb828ebe70b4fa35cd5f9a7ee024272237eab351",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/compat.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/compat.py": [
+   "mock_sentinel",
+   "p",
+   "patchings",
+   "ut_mock_sentinel"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

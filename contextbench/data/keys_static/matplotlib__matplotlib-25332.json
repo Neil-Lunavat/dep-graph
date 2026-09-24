@@ -1,0 +1,31 @@
+{
+ "instance_id": "matplotlib__matplotlib-25332",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "66ba515e671638971bd11a34cff12c107a437e0b",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/cbook.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/cbook.py": [
+   "__setstate__",
+   "_mapping",
+   "k",
+   "self",
+   "state",
+   "v",
+   "vs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

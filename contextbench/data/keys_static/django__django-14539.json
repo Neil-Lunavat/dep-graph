@@ -1,0 +1,29 @@
+{
+ "instance_id": "django__django-14539",
+ "repo_key": "django/django",
+ "base_commit": "6a5ef557f80a8eb6a758ebe99c8bb477ca47459e",
+ "status": "ok",
+ "co_edited": [
+  "django/utils/html.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/utils/html.py": [
+   "middle",
+   "middle_unescaped",
+   "punctuation_count",
+   "stripped",
+   "trail"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

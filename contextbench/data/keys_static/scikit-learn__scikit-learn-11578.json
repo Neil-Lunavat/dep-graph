@@ -1,0 +1,27 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-11578",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "dd69361a0d9c6ccde0d2353b00b86e0e7541a3e3",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/linear_model/logistic.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/linear_model/logistic.py": [
+   "LogisticRegression",
+   "log_reg",
+   "multi_class"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

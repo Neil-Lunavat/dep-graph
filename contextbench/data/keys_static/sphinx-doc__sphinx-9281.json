@@ -1,0 +1,25 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9281",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "8ec06e9a1bd862cd713b9db748e039ccc7b3e15b",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/util/inspect.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/util/inspect.py": [
+   "object"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 15,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.5
+}

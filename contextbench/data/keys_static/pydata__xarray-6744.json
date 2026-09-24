@@ -1,0 +1,49 @@
+{
+ "instance_id": "pydata__xarray-6744",
+ "repo_key": "pydata/xarray",
+ "base_commit": "7cc6cc991e586a6158bb656b8001234ccda25407",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/rolling.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/_reductions.py": [
+   "count",
+   "dim"
+  ],
+  "xarray/core/common.py": [
+   "sizes"
+  ],
+  "xarray/core/dataarray.py": [
+   "DataArray",
+   "isel"
+  ],
+  "xarray/core/rolling.py": [
+   "__iter__",
+   "center",
+   "counts",
+   "dim",
+   "dim0",
+   "obj",
+   "offset",
+   "self",
+   "start",
+   "starts",
+   "stop",
+   "stops",
+   "window",
+   "window0"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.9
+}

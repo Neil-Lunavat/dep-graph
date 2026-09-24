@@ -1,0 +1,32 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25931",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "e3d1f9ac39e4bf0f31430e779acc50fb05fe1b64",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/ensemble/_iforest.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/ensemble/_iforest.py": [
+   "X",
+   "_score_samples",
+   "contamination",
+   "offset_",
+   "self"
+  ],
+  "sklearn/utils/validation.py": [
+   "check_is_fitted"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 27,
+  "names_resolved_in_repo": 16,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

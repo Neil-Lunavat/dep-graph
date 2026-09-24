@@ -1,0 +1,33 @@
+{
+ "instance_id": "django__django-15022",
+ "repo_key": "django/django",
+ "base_commit": "e1d673c373a7d032060872b690a92fc95496612e",
+ "status": "ok",
+ "co_edited": [
+  "django/contrib/admin/options.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/contrib/admin/options.py": [
+   "or_queries",
+   "queryset",
+   "term_queries"
+  ],
+  "django/db/models/__init__.py": [
+   "models"
+  ],
+  "django/db/models/query_utils.py": [
+   "Q"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.5
+}

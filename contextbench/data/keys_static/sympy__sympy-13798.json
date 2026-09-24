@@ -1,0 +1,29 @@
+{
+ "instance_id": "sympy__sympy-13798",
+ "repo_key": "sympy/sympy",
+ "base_commit": "7121bdf1facdd90d05b6994b4c2e5b2865a4638a",
+ "status": "ok",
+ "co_edited": [
+  "sympy/printing/latex.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/printing/latex.py": [
+   "mul_symbol_table",
+   "self"
+  ],
+  "sympy/printing/printer.py": [
+   "_settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 13,
+  "names_resolved_in_repo": 11,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

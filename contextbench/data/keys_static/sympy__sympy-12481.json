@@ -1,0 +1,29 @@
+{
+ "instance_id": "sympy__sympy-12481",
+ "repo_key": "sympy/sympy",
+ "base_commit": "c807dfe7569692cad24f02a08477b70c1679a4dd",
+ "status": "ok",
+ "co_edited": [
+  "sympy/combinatorics/permutations.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/combinatorics/permutations.py": [
+   "is_cycle",
+   "temp"
+  ],
+  "sympy/utilities/iterables.py": [
+   "has_dups"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

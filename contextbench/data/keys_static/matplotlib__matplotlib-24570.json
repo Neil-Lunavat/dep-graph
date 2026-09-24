@@ -1,0 +1,25 @@
+{
+ "instance_id": "matplotlib__matplotlib-24570",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "8f0003ae902952372824c9917975fb372c026a42",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/offsetbox.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/offsetbox.py": [
+   "align"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}
