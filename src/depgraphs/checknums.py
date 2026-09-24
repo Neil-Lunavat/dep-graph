@@ -550,6 +550,50 @@ def c_arms():
     return "\n     ".join(out)
 
 
+@check("budget: do the leading orderings change if the AUC stops at 8,000 lines?")
+def c_capped_budget():
+    from depgraphs.analysis2 import shared_prs
+    from depgraphs.study2 import FUSION_CTL, REDACTED_ALL, RRF_K_VARIANTS
+    c = pd.read_parquet(OUT / "curves.parquet")
+    c = c[c.source.isin(["co_edited", "symbol"]) & (c.budget <= 8000)]
+    ctl = set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS)
+    c = c[~c.method.isin(ctl)]
+    pr = (c.groupby(["source", "method", "instance_id", "task_id"]).coverage.mean()
+          .groupby(["source", "method", "instance_id"]).mean().reset_index())
+    rows = pd.read_parquet(OUT / "rows.parquet", columns=["task_id", "instance_id", "method",
+                                                          "source", "auc"])
+    sh = shared_prs(rows)
+    full = pd.read_csv(OUT / "per_source.csv")
+    shd = pd.read_csv(OUT / "per_source_shared.csv")
+    out = []
+    for pop, g, ref in (("full", pr, full), ("matched", pr[pr.instance_id.isin(sh)], shd)):
+        for src in ("co_edited", "symbol"):
+            capped = (g[g.source == src].groupby("method").coverage.mean()
+                      .drop("oracle").sort_values(ascending=False).index[:3].tolist())
+            r = ref[(ref.source == src) & ref["rank"].notna() & (ref.method != "oracle")]
+            orig = r.sort_values("rank").method.head(3).tolist()
+            out.append("%s/%s top3 %s" % (pop, src, "same" if capped == orig
+                                          else "capped %s vs %s" % (capped, orig)))
+    return " | ".join(out)
+
+
+@check("symbol key: share of its file references that are also co-edited files")
+def c_symbol_overlap():
+    import json
+    from depgraphs.lexfeat import ROOT
+    scored = set(pd.read_parquet(OUT / "rows.parquet", columns=["task_id"]).task_id)
+    tot = both = 0
+    for line in open(ROOT / "data" / "tasks.jsonl", encoding="utf-8"):
+        t = json.loads(line)
+        if t["task_id"] not in scored:
+            continue
+        s, c = set(t["keys"].get("symbol", [])), set(t["keys"].get("co_edited", []))
+        tot += len(s)
+        both += len(s & c)
+    return "%d of %d symbol-key references also co-edited (%.1f%%)" % (both, tot,
+                                                                        100 * both / tot)
+
+
 def main():
     bad = 0
     for name, fn in CHECKS:
