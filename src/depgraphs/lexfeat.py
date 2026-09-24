@@ -13,6 +13,7 @@ from __future__ import annotations
 import collections
 import gzip
 import json
+import os
 import re
 import subprocess
 import sys
@@ -20,7 +21,9 @@ import threading
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+# DEPGRAPHS_ROOT points the whole pipeline at another data/results tree, which is how
+# the external repositories are run without touching the main study's files
+ROOT = Path(os.environ.get("DEPGRAPHS_ROOT") or Path(__file__).resolve().parents[2])
 OUT = ROOT / "data" / "lexfeat"
 _SPLIT = re.compile(r"[A-Z]?[a-z0-9]+|[A-Z]+(?![a-z])")
 _IDENT = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")

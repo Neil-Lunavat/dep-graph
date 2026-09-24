@@ -25,11 +25,11 @@ DATASETS = ["swebench_full", "swebench_live_full", "swerebench_filtered"]   # D1
 OUT = ROOT / "results" / "step2"
 
 
-def eligible_tasks() -> pd.DataFrame:
+def eligible_tasks(datasets: list[str] = DATASETS) -> pd.DataFrame:
     t = pd.read_parquet(OUT / "task_index.parquet")
-    t = t[t.dataset.isin(DATASETS)].copy()
+    t = t[t.dataset.isin(datasets)].copy()
     t["task_key"] = t.repo_key + "#" + t.pr_number.fillna(t.base_commit)
-    t["_o"] = t.dataset.map({d: i for i, d in enumerate(DATASETS)})
+    t["_o"] = t.dataset.map({d: i for i, d in enumerate(datasets)})
     t = t.sort_values(["_o", "instance_id"]).drop_duplicates("task_key").drop(columns="_o")
     env = pd.read_csv(OUT / "env_availability.csv")
     img = env.drop_duplicates("instance_id").set_index("instance_id")

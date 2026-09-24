@@ -23,3 +23,12 @@ paper/paper.blg
 paper/paper.out
 paper/paper.log
 paper/paper.xdv
+
+# external test set: the drawn sample and prediction are committed, the rebuilt inputs are not
+external/data/repos/
+external/data/graphs/
+external/data/lexfeat/
+external/data/issue_bags.json
+external/data/datasets
+external/results/step2
+external/logs/*.log

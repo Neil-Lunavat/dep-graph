@@ -10,11 +10,14 @@ Usage:  python -m depgraphs.verify_keys [name-fragment ...]
 """
 from __future__ import annotations
 
+import os
 import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
+# DEPGRAPHS_ROOT points the whole pipeline at another data/results tree, which is how
+# the external repositories are run without touching the main study's files
+ROOT = pathlib.Path(os.environ.get("DEPGRAPHS_ROOT") or pathlib.Path(__file__).resolve().parents[2])
 PAPERS = ROOT / "papers"
 
 # Phrases that sit next to a ground-truth definition. Deliberately broad: a missed

@@ -1,0 +1,8 @@
+repo_key,name,url,pinned_sha,licence,nontest_py_files,python_share,datasets,eligible_tasks,sampled_tasks
+ansible/ansible,ansible/ansible,https://github.com/ansible/ansible,6198c7377f545207218fe8eb2e3cfa9673ff8f5e,GPL-3.0,572,0.9444,swebench_pro,72,20
+facebookresearch/hydra,facebookresearch/hydra,https://github.com/facebookresearch/hydra,0ede84058e57a40260a93ae4f9abe08a572b23e0,MIT,232,0.9758,swebench_live_full;swegym,61,20
+getmoto/moto,getmoto/moto,https://github.com/getmoto/moto,98ad497eb4de25943ceadabe7c2c5c73cc810e27,Apache-2.0,1203,0.999,swegym,320,20
+modin-project/modin,modin-project/modin,https://github.com/modin-project/modin,35275e1c2d8a420a0fd16e3fca6ae5383fbdbc55,Apache-2.0,289,0.9988,swegym;swerebench_filtered,99,20
+project-monai/monai,Project-MONAI/MONAI,https://github.com/Project-MONAI/MONAI,a052c4435a088a1e87f2d41279822109edbd59fd,Apache-2.0,398,0.878,swegym,344,20
+pydantic/pydantic,pydantic/pydantic,https://github.com/pydantic/pydantic,7bdfac37dae746d6ee81cfec256657351074ff79,MIT,105,0.9982,swegym,78,20
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,https://github.com/qutebrowser/qutebrowser,e158a480f52185c77ee07a52bc022f021d9789fe,GPL-3.0,252,0.9573,swebench_pro,75,20

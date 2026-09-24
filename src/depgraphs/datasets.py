@@ -7,12 +7,15 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
 from huggingface_hub import hf_hub_download
 
-ROOT = Path(__file__).resolve().parents[2]
+# DEPGRAPHS_ROOT points the whole pipeline at another data/results tree, which is how
+# the external repositories are run without touching the main study's files
+ROOT = Path(os.environ.get("DEPGRAPHS_ROOT") or Path(__file__).resolve().parents[2])
 DATA = ROOT / "data" / "datasets"
 
 # (name, hf repo id, pinned revision, files). Revisions recorded 2026-09-22.
