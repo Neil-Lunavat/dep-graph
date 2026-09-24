@@ -1,4 +1,4 @@
-"""Test the predictions of paper/contextbench_prereg.md against ContextBench's human key.
+"""Test the predictions of paper/contextbench_predictions.md against ContextBench's human key.
 
 Each function is one prediction, implemented as that file words it; the criteria were
 committed before any ContextBench result existed. Run with DEPGRAPHS_ROOT pointing at the
@@ -95,7 +95,7 @@ def descriptive(rows):
 
 
 def exploratory(rows, repo):
-    """Not pre-registered (POSTHOC.md). On the gold files the fix reads but does not edit,
+    """Not among the predictions committed before scoring (POSTHOC.md). On the gold files the fix reads but does not edit,
     does a structural walk find them better than the issue does? One Holm family."""
     mat = pr_level(rows, "gold_readonly")
     pairs = [(a, b) for a in ("hops_lines", "ppr_und_pl", "ppr_out_pl")

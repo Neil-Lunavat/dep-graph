@@ -23,7 +23,7 @@ from depgraphs.lexfeat import ROOT
 from depgraphs.study2 import OUT
 
 PAPER = ROOT / "paper" / "paper.tex"
-BACK, FORWARD = 400, 700
+BACK, FORWARD = 400, 1100
 
 ORDINAL = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh",
            "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth",
@@ -171,400 +171,422 @@ def num3(x: float) -> str:
 
 
 # --------------------------------------------------------------------------- the claims
+def big(n: int) -> str:
+    """1886 -> 1{,}886, as the paper writes it."""
+    return "{:,}".format(int(n)).replace(",", "{,}")
+
+
+def _corpus() -> dict:
+    tasks = [json.loads(l) for l in open(ROOT / "data" / "tasks.jsonl", encoding="utf-8")]
+    t = pd.DataFrame(tasks)
+    rows = pd.read_parquet(OUT / "rows.parquet", columns=["task_id", "instance_id", "method",
+                                                          "source", "n_nodes", "key_size"])
+    scored = set(rows.task_id)
+    t["scored"] = t.task_id.isin(scored)
+    single = t[t.file_group == "single"]
+    r = rows[rows.method == "random"]
+    return {
+        "sampled": len(pd.read_csv(ROOT / "data" / "sample_tasks.csv")),
+        "tasks": len(t), "prs": t.instance_id.nunique(), "repos": t.repo_key.nunique(),
+        "unscored": int((~t.scored).sum()),
+        "unscored_single": int((~t.scored & (t.file_group == "single")).sum()),
+        "single_tasks": len(single),
+        "median_nodes": int(r.drop_duplicates("task_id").n_nodes.median()),
+        "co_tasks": int(r[r.source == "co_edited"].task_id.nunique()),
+        "co_prs": int(r[r.source == "co_edited"].instance_id.nunique()),
+        "sym_tasks": int(r[r.source == "symbol"].task_id.nunique()),
+        "sym_prs": int(r[r.source == "symbol"].instance_id.nunique()),
+        "single_prs": int(len(set(r[r.source == "symbol"].instance_id)
+                              - set(r[r.source == "co_edited"].instance_id))),
+    }
+
+
+def _unit_flips() -> dict:
+    pw = csv("pairwise.csv")
+    pw = pw[(pw.stratum == "all") & pw.source.isin(["co_edited", "symbol"])]
+    k = ["source", "population", "a", "b"]
+    m = pw[pw.unit == "pr"].merge(pw[pw.unit == "repo"], on=k, suffixes=("_pr", "_repo"))
+    s1, s2 = m.p_holm_pr < 0.05, m.p_holm_repo < 0.05
+    return {"sig_pr": int(s1.sum()), "lost": int((s1 & ~s2).sum()),
+            "gained": int((~s1 & s2).sum()),
+            "flips": int((m.delta_pr * m.delta_repo < 0)[s1 & s2].sum())}
+
+
+def _mixed() -> dict:
+    mx = csv("mixed.csv")
+    r = mx[(mx.a == "hops_lines") & (mx.b == "path_issue") & (mx.source == "co_edited")
+           & (mx.stratum == "all") & (mx.population == "all")].iloc[0]
+    return {"n": len(mx), "hops_path": -float(r.estimate)}
+
+
+def sysd(what: str, source: str) -> float:
+    t = csv("dense_tests.csv")
+    return float(t[(t.family == "systems") & (t.what == what) & (t.source == source)]
+                 .iloc[0].delta)
+
+
 def claims() -> list[tuple[str, str, str]]:
     """(context phrase that must appear in paper.tex, what is claimed, value to find)."""
     leak = csv("issue_path_leak.csv")
-    n = len(leak)
-    inc_only = int(((leak["full"] == 0) & (leak["explicit"] == 0)
-                    & (leak["stem"] > 0)).sum())
-    ps, joint = csv("per_source.csv"), csv("per_source_joint.csv")
     sh = csv("per_source_shared.csv")
+    co = _corpus()
+    uf = _unit_flips()
+    mx = _mixed()
+    ball = csv("ball.csv")
+    dist = csv("distance_profile.csv")
+    tok = csv("token_calibration.csv").iloc[0]
+    comp = csv("complementarity.csv")
+    cm = csv("ceiling_method.csv")
+    cm = cm[cm.budget == 8000]
+    F, T = "rrf_pprpl_issue_path", "rrf_pprpl_seedpath"
+    W = "issue worth, dense fusion"
+    cb_ro = CB["exploratory_readonly"]
+    cbt = pd.read_csv(ROOT / "contextbench" / "results" / "study2" / "per_source.csv")
+    cbt = cbt[cbt["rank"].notna()].set_index(["source", "method"])
+    dauc = csv("dense_auc.csv")
+    dauc = dauc[dauc.population == "shared"].set_index(["source", "method"])
+    kr = json.loads((ROOT / "results" / "key_rebuild" / "summary.json").read_text())
+
+    def within2(src):
+        d = dist[dist.source == src].set_index("hops").share
+        return pct(d["1"] + d["2"])
+
+    def worth(src, st="all"):
+        return delta(F, T, src, stratum=st)
+
+    dgap = dn(W, "co_edited", "explicit") - dn(W, "co_edited", "no_explicit")
+    dwide = (dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "explicit")
+             - dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "no_explicit"))
+    shr = sh[sh.method.isin(["random", "oracle", F])].set_index(["source", "method"]).auc
+    norm = {s: (shr[(s, F)] - shr[(s, "random")]) / (shr[(s, "oracle")] - shr[(s, "random")])
+            for s in ("co_edited", "symbol")}
+    E1 = EXT["E1"]
+    sysnames = ["sys_aider_repomap", "sys_repograph_k2", "sys_locagent_bfs"]
+    sys_ranks = [int(dauc.loc[(s, m), "rank_if_ranked"]) for s in ("co_edited", "symbol")
+                 for m in sysnames]
 
     C = [
-        # ---- leakage rates
-        ("A mention is \\emph{explicit}", "explicit rate", pct(leak.explicit.mean())),
-        ("The full path of a key file appears verbatim", "full-path rate",
-         pct(leak["full"].mean())),
-        ("The full path of a key file appears verbatim", "stem rate",
-         pct(leak.stem.mean())),
-        ("A further", "incidental-only rate", pct(inc_only / n)),
-        ("issues quoting no full key path", "no-full-path tasks",
-         "{:,}".format(int((leak["full"] == 0).sum())).replace(",", "{,}")),
-        ("issues quoting no full key path", "no-explicit tasks",
-         "{:,}".format(int(((leak["full"] == 0) & (leak["explicit"] == 0)).sum()))
-         .replace(",", "{,}")),
-        ("issues quoting no full key path", "no-stem tasks",
-         "{:,}".format(int(((leak["full"] == 0) & (leak["stem"] == 0)).sum()))
-         .replace(",", "{,}")),
-
-        # ---- the issue ablation, the paper's headline
-        ("Over the corpus the issue is worth", "issue worth, co_edited, all corpus",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited"))),
-        ("Over the corpus the issue is worth", "issue worth, symbol, all corpus",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol"))),
-        ("that becomes", "issue worth where explicit, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="explicit"))),
-        ("that becomes", "issue worth where explicit, symbol",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol",
-                    stratum="explicit"))),
-        ("that becomes", "issue worth where not, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="no_explicit"))),
-        ("that becomes", "issue worth where not, symbol",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "symbol",
-                    stratum="no_explicit"))),
-        ("requiring the stem to be absent as well", "issue worth, no stem, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="no_stem"))),
-        ("The issue-free twins of Section",
-         "issue-free twin over its own walk",
-         num3(delta("rrf_pprpl_seedpath", "ppr_und_pl", "co_edited", population="all"))),
-
-        # ---- the decomposition
-        ("the issue as a whole is worth", "issue worth where explicit, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="explicit"))),
-        ("Of that, the names", "names share of it, co_edited",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited"))),
-        ("the issue as a" + chr(10) + "whole is worth", "issue worth where not, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="no_explicit"))),
-
-        # ---- population matching
-        ("the 702 pull requests that carry both",
-         "matched population size",
-         "{:,}".format(int(sh[sh.source == "symbol"].n_pr.iloc[0])).replace(",", "{,}")),
-        ("Reciprocal-rank fusion of a\nlength-aware walk", "fusion over best lexical, co_ed",
-         num3(delta("rrf_pprpl_issue_path", "path_issue", "co_edited"))),
-        ("Reciprocal-rank fusion of a\nlength-aware walk", "fusion over best lexical, sym",
-         num3(delta("rrf_pprpl_issue_path", "path_issue", "symbol"))),
-        ("Reciprocal-rank fusion of a\nlength-aware walk", "fusion over best structural, co_ed",
-         num3(delta("rrf_pprpl_issue_path", "hops_lines", "co_edited"))),
-        ("Reciprocal-rank fusion of a\nlength-aware walk", "fusion over best structural, sym",
-         num3(delta("rrf_pprpl_issue_path", "ppr_und_pl", "symbol"))),
-
-        # ---- held-out confirmation over repeated splits
-        ("is selected in", "splits selecting the winner", str(split_stat("selected"))),
-        ("and in 195 of those it is the best", "splits confirming it on co_edited", str(split_stat("best", "co_edited"))),
-        ("did not select it,", "splits confirming it on symbol",
-         str(split_stat("best", "symbol"))),
-
-        # ---- redaction: the within-task experiment
-        ("removing just the names costs", "redaction cost, path_issue, co_edited",
-         num3(redact_delta("path_issue", "co_edited"))),
-        ("removing just the names costs", "redaction cost, path_issue, symbol",
-         num3(redact_delta("path_issue", "symbol"))),
-        ("and the best fusion 0.061 and", "redaction cost, fusion, co_edited",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited"))),
-        ("and the best fusion 0.061 and", "redaction cost, fusion, symbol",
-         num3(redact_delta("rrf_pprpl_issue_path", "symbol"))),
-        ("where the names arm found nothing to remove",
-         "redaction is a no-op where nothing was removed",
-         "0.002" if all(abs(redact_delta(m, src, "nothing removed")) <= 0.0025
-                        for m in ("path_issue", "bm25_issue", "rrf_hops_path",
-                                  "rrf_pprpl_issue_path")
-                        for src in ("co_edited", "symbol")) else "CONTROL-ARM-NOT-FLAT"),
-
-        # ---- the leakage strata, jointly controlled
-        ("Under the weak\nfull-path control it barely moves", "path_issue full corpus",
-         num3(auc("per_source.csv", "co_edited", "path_issue"))),
-        ("Under the weak\nfull-path control it barely moves", "path_issue, no full path",
-         num3(auc("per_source_joint.csv", "co_edited", "path_issue",
-                  stratum="no_full_path"))),
-        ("Under the\nprimary control it falls to", "path_issue, no explicit",
-         num3(auc("per_source_joint.csv", "co_edited", "path_issue",
-                  stratum="no_explicit"))),
-        ("under the strictest, to", "path_issue, no stem",
-         num3(auc("per_source_joint.csv", "co_edited", "path_issue", stratum="no_stem"))),
-        ("and \\m{hops\\_lines} lead instead", "ppr_und_pl symbol primary",
-         num3(auc("per_source_joint.csv", "symbol", "ppr_und_pl", stratum="no_explicit"))),
-        ("and \\m{hops\\_lines} lead instead", "hops_lines symbol primary",
-         num3(auc("per_source_joint.csv", "symbol", "hops_lines", stratum="no_explicit"))),
-        ("with the best fusion fourth at", "fusion symbol primary",
-         num3(auc("per_source_joint.csv", "symbol", "rrf_pprpl_issue_path",
-                  stratum="no_explicit"))),
-        ("on co-edited\nfiles is", "hops_lines over path_issue, no full path",
-         num3(abs(delta("hops_lines", "path_issue", "co_edited",
-                        stratum="no_full_path")))),
-        ("under the\nprimary control ($p_{\\text{Holm}}",
-         "hops_lines over path_issue, primary",
-         num3(delta("hops_lines", "path_issue", "co_edited", stratum="no_explicit"))),
-        ("under the\nprimary control ($p_{\\text{Holm}}",
-         "hops_lines over path_issue, primary, p_Holm",
-         "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_explicit")),
-        ("under the\nprimary control ($p_{\\text{Holm}}",
-         "hops_lines over path_issue, strictest, p_Holm",
-         "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_stem")),
-
-        # ---- the rank movements the leakage section states in words
-        (r"On the full corpus \m{path\_issue} is", "path_issue rank, full corpus",
-         str(rank("per_source.csv", "co_edited", "path_issue"))),
-        ("Under the weak", "path_issue rank, no full path",
-         str(rank("per_source_joint.csv", "co_edited", "path_issue",
-                  stratum="no_full_path"))),
-        ("primary control it falls to", "path_issue rank, no explicit",
-         str(rank("per_source_joint.csv", "co_edited", "path_issue",
-                  stratum="no_explicit"))),
-        ("under the strictest, to", "path_issue rank, no stem",
-         str(rank("per_source_joint.csv", "co_edited", "path_issue",
-                  stratum="no_stem"))),
-        ("pure structure, no issue text --- rises from", "hops_lines rank, full corpus",
-         str(rank("per_source.csv", "co_edited", "hops_lines"))),
-        ("pure structure, no issue text --- rises from", "hops_lines rank, no explicit",
-         str(rank("per_source_joint.csv", "co_edited", "hops_lines",
-                  stratum="no_explicit"))),
-
-        # ---- the length-aware ablation
-        ("their worst-case ranks are", "length-aware ablation, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "co_edited"))),
-        ("their worst-case ranks are", "length-aware ablation, symbol",
-         num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "symbol"))),
-        ("their worst-case ranks are", "length-aware ablation, unscaled worst rank",
-         str(int(csv("rank_by_source.csv").set_index("method")
-                 .loc["rrf_ppr_issue_path", "worst_case"]))),
-        ("fusions differing only in that are", "contributions: length-aware pair, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "co_edited"))),
-        ("fusions differing only in that are", "contributions: length-aware pair, symbol",
-         num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "symbol"))),
-
-        # ---- size quartiles, on the same rank scale as everything else
-        # ---- size quartiles, on the same rank scale as everything else
-        ("largest quartile, issue-text path matching is", "path_issue Q4 co_edited rank",
-         str(rank("by_size.csv", "co_edited", "path_issue", size_q="Q4"))),
-        ("largest quartile, issue-text path matching is", "path_issue Q4 symbol rank",
-         str(rank("by_size.csv", "symbol", "path_issue", size_q="Q4"))),
-        ("never falls below", "rrf_hops_path worst size-cell rank",
-         str(int(csv("by_size.csv").pipe(
-             lambda d: d[(d.method == "rrf_hops_path")
-                         & d.source.isin(["co_edited", "symbol"])]["rank"].max())))),
-
-        # ---- direction
-        ("The like-for-like gap is",
-         "direction, matched",
-         num3(delta("ppr_out_pl", "ppr_in_pl", "symbol"))),
-        ("undirected walk leads by",
-         "undirected vs outward walk, matched, p_Holm",
-         "%.2f" % p_holm("ppr_und_pl", "ppr_out_pl", "symbol")),
-        ("Committing to an orientation costs", "orientation cost on co_edited, smallest",
-         num3(min(delta(u, d, "co_edited", population="all")
-                  for u, d in (("ppr_und_pl", "ppr_out_pl"), ("ppr_und_pl", "ppr_in_pl"),
-                               ("ppr_und", "ppr_out"), ("ppr_und", "ppr_in"))))),
-        ("Committing to an orientation costs", "orientation cost on co_edited, largest",
-         num3(max(delta(u, d, "co_edited", population="all")
-                  for u, d in (("ppr_und_pl", "ppr_out_pl"), ("ppr_und_pl", "ppr_in_pl"),
-                               ("ppr_und", "ppr_out"), ("ppr_und", "ppr_in"))))),
-
-        # ---- the priors, the seed-path control, the twin and the size quartiles
-        ("difference is significant but negligible", "pagerank over random, co_edited, p_Holm",
-         "%.3f" % p_holm("pagerank", "random", "co_edited", population="all")),
-        ("path instead of the issue, scores", "path_issue over path_seed, co_edited",
-         num3(delta("path_issue", "path_seed", "co_edited", population="all"))),
-        ("path instead of the issue, scores", "path_issue over path_seed, symbol",
-         num3(delta("path_issue", "path_seed", "symbol", population="all"))),
-        ("path instead of the issue, scores", "path_issue over path_seed, symbol, p_Holm",
-         "%.2f" % p_holm("path_issue", "path_seed", "symbol", population="all")),
-        ("beats its own walk", "seed-path twin over its walk, co_edited",
-         num3(delta("rrf_pprpl_seedpath", "ppr_und_pl", "co_edited", population="all"))),
-        ("beats its own walk", "issue-aware fusion over its twin, co_edited",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    population="all"))),
-        ("between a third and seven tenths of what the issue adds",
-         "issue-aware fusion over its twin, matched, every task",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited"))),
-        ("between a third and seven tenths of what the issue adds",
-         "redaction cost, fusion, co_edited, every task",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks"))),
-        ("between a third and seven tenths of what the issue adds",
-         "redaction cost, fusion, co_edited, every task, paths arm",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks", "paths"))),
-        ("between a third and seven tenths of what the issue adds",
-         "redaction cost, fusion, co_edited, every task, symbols arm",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks", "symbols"))),
-        ("The wider arms cost more, as they must", "path_issue, paths arm",
-         num3(redact_delta("path_issue", "co_edited", arm="paths"))),
-        ("The wider arms cost more, as they must", "path_issue, symbols arm",
-         num3(redact_delta("path_issue", "co_edited", arm="symbols"))),
-        ("The wider arms cost more, as they must", "fusion, paths arm",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="paths"))),
-        ("The wider arms cost more, as they must", "fusion, symbols arm",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="symbols"))),
-        ("The wider arms do find something there", "fusion, paths arm, nothing named",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "nothing removed", "paths"))),
-        ("The wider arms do find something there", "fusion, symbols arm, nothing named",
-         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "nothing removed",
-                           "symbols"))),
-        # the abstract states these in words; the words are checked against the ratios
+        # ---- abstract
+        ("change tasks from", "abstract: scored tasks", big(co["tasks"] - co["unscored"])),
+        ("requests from ContextBench, a key annotated by people", "abstract: ContextBench PRs",
+         str(CB["descriptive"]["n_prs_gold"])),
         ("as it does in two tasks in five: there it is worth", "abstract: 'ten times'",
-         "ten times" if 9 <= (delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                                    stratum="explicit")
-                              / delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath",
-                                      "co_edited", stratum="no_explicit")) <= 11
+         "ten times" if 9 <= worth("co_edited", "explicit") / worth("co_edited",
+                                                                   "no_explicit") <= 11
          else "RATIO-CHANGED"),
         ("as it does in two tasks in five: there it is worth", "abstract: 'about half'",
          "about half" if all(0.4 <= x / gap() <= 0.6 for x in (
-             redact_delta("rrf_pprpl_issue_path", "co_edited"), leak_share("symbols")))
-         else "SHARE-CHANGED"),
-        ("and between 0.061 and 0.078 of that 0.140", "conclusion: leakage share, widest arm",
+             redact_delta(F, "co_edited"), leak_share("symbols"))) else "SHARE-CHANGED"),
+
+        # ---- contributions
+        ("A protocol for measuring what issue text is worth", "contrib: worth where named",
+         num3(worth("co_edited", "explicit"))),
+        ("A protocol for measuring what issue text is worth", "contrib: names arm share",
+         num3(redact_delta(F, "co_edited"))),
+        ("A protocol for measuring what issue text is worth", "contrib: widest arm share",
          num3(leak_share("symbols"))),
-        ("where one of four predictions, about redaction,", "contributions: external E4 failed",
-         "failed" if EXT and EXT["E4"]["pass"] is False else "E4-DID-NOT-FAIL"),
-        ("on the oracle-inclusive scale under both keys", "external: E1 rank",
-         "third" if EXT and EXT["E1"]["co_edited"]["rank"] == 3
-         and EXT["E1"]["symbol"]["rank"] == 3 else "E1-RANK-CHANGED"),
-        ("under the widest arm, taking into account", "decomposition, widest arm, leakage",
-         num3(leak_share("symbols"))),
-        ("under the widest arm, taking into account", "decomposition, widest arm, residual",
-         num3(gap() - leak_share("symbols"))),
-        ("under the widest arm, taking into account", "decomposition, symbol key, widest arm",
+        ("A protocol for measuring what issue text is worth", "contrib: worth elsewhere",
+         num3(worth("co_edited", "no_explicit"))),
+        ("Controls that changed conclusions here", "contrib: lost significance",
+         str(uf["lost"])),
+        ("Controls that changed conclusions here", "contrib: significant by PR",
+         big(uf["sig_pr"])),
+        ("Corrections to common arguments for graph retrieval", "contrib: ball recall",
+         pct(ball.ball_recall.mean())),
+        ("Corrections to common arguments for graph retrieval", "contrib: ball share",
+         "%d" % round(100 * ball.ball_share_of_repo.mean())),
+
+        # ---- related work
+        ("Our rate,", "related: explicit naming rate", pct(leak.explicit.mean())),
+
+        # ---- corpus
+        ("pull requests from SWE-bench, SWE-bench-Live and SWE-rebench", "corpus: sampled PRs", big(co["sampled"])),
+        ("This gives", "corpus: tasks", big(co["tasks"])),
+        ("This gives", "corpus: PRs with a task", big(co["prs"])),
+        ("This gives", "corpus: repositories", str(co["repos"])),
+        ("pull requests edit no graph file", "corpus: PRs without a task",
+         str(co["sampled"] - co["prs"])),
+        ("Of the 711 unscored", "corpus: unscored tasks", str(co["unscored"])),
+        ("Of the 711 unscored", "corpus: unscored single-file", str(co["unscored_single"])),
+        ("Of the 711 unscored", "corpus: share of single-file tasks",
+         pct(co["unscored_single"] / co["single_tasks"])),
+        ("Of the 711 unscored", "corpus: single-file tasks", big(co["single_tasks"])),
+        ("The median task's repository has", "corpus: median nodes", str(co["median_nodes"])),
+        ("Available only when a pull", "corpus: co_edited tasks", big(co["co_tasks"])),
+        ("Available only when a pull", "corpus: co_edited PRs", str(co["co_prs"])),
+        ("change depends on.", "corpus: symbol tasks", big(co["sym_tasks"])),
+        ("change depends on.", "corpus: symbol PRs", big(co["sym_prs"])),
+        ("form the \\emph{matched population}", "corpus: matched PRs",
+         str(int(sh[sh.source == "symbol"].n_pr.iloc[0]))),
+        ("have no co-edited key because they edit a", "corpus: single-file PRs",
+         str(co["single_prs"])),
+        ("the unchanged pipeline, drawn by our sampling rules", "corpus: CB repos",
+         str(CB["descriptive"]["n_repos_gold"])),
+
+        # ---- metric
+        ("Python source runs to", "metric: tokens per line",
+         "%.2f" % tok.aggregate_tokens_per_line),
+        ("Python source runs to", "metric: file versions", big(tok.n_blobs)),
+        ("AUC has no intuitive scale", "metric: random, co",
+         num3(shr[("co_edited", "random")])),
+        ("AUC has no intuitive scale", "metric: oracle, co",
+         num3(shr[("co_edited", "oracle")])),
+        ("AUC has no intuitive scale", "metric: random, sym", num3(shr[("symbol", "random")])),
+        ("AUC has no intuitive scale", "metric: oracle, sym", num3(shr[("symbol", "oracle")])),
+        ("AUC has no intuitive scale", "metric: normalised fusion, co",
+         "%d" % round(100 * norm["co_edited"])),
+        ("AUC has no intuitive scale", "metric: normalised fusion, sym",
+         "%d" % round(100 * norm["symbol"])),
+
+        # ---- statistics
+        ("The unit matters for borderline comparisons", "stats: significant by PR",
+         big(uf["sig_pr"])),
+        ("The unit matters for borderline comparisons", "stats: lost", str(uf["lost"])),
+        ("The unit matters for borderline comparisons", "stats: gained", str(uf["gained"])),
+        ("The unit matters for borderline comparisons", "stats: no sign flips",
+         "no estimate changes sign" if uf["flips"] == 0 else "SIGN-FLIPS"),
+        ("The unit matters for borderline comparisons", "stats: mixed comparisons",
+         str(mx["n"])),
+        ("where the mixed model finds path matching better", "stats: mixed hops vs path",
+         num3(mx["hops_path"])),
+
+        # ---- RQ1
+        ("Table~\\ref{tab:main} is the comparison as it is usually run", "rq1: best structural co",
+         ORDINAL[min(rank("per_source.csv", "co_edited", m) for m in
+                     ("bfs_und", "hops_lines", "ppr_und", "ppr_und_pl", "ppr_out",
+                      "ppr_out_pl", "ppr_in", "ppr_in_pl"))]),
+        ("Table~\\ref{tab:main} is the comparison as it is usually run", "rq1: best lexical sym",
+         ORDINAL[min(rank("per_source.csv", "symbol", m) for m in
+                     ("bm25_seed", "path_seed", "bm25_issue", "bm25_issue_pl", "path_issue"))]),
+        ("The individual reversals are large and significant", "rq1: path over walk, co",
+         num3(delta("path_issue", "ppr_und_pl", "co_edited", population="all"))),
+        ("The individual reversals are large and significant", "rq1: walk over path, sym",
+         num3(delta("ppr_und_pl", "path_issue", "symbol", population="all"))),
+        ("On the 702 pull requests carrying both keys", "rq1: outward walk full",
+         num3(auc("per_source.csv", "symbol", "ppr_out_pl"))),
+        ("On the 702 pull requests carrying both keys", "rq1: outward walk matched",
+         num3(auc("per_source_shared.csv", "symbol", "ppr_out_pl"))),
+        ("On the 702 pull requests carrying both keys", "rq1: outward walk matched rank",
+         ORDINAL[rank("per_source_shared.csv", "symbol", "ppr_out_pl")]),
+        ("On the 702 pull requests carrying both keys", "rq1: path matched rank",
+         ORDINAL[rank("per_source_shared.csv", "symbol", "path_issue")]),
+        ("On the 702 pull requests carrying both keys", "rq1: walk lead full",
+         num3(delta("ppr_out_pl", "path_issue", "symbol", population="all"))),
+        ("On the 702 pull requests carrying both keys", "rq1: walk lead matched",
+         num3(delta("ppr_out_pl", "path_issue", "symbol"))),
+        ("On the 702 pull requests carrying both keys", "rq1: hops lead matched",
+         num3(delta("hops_lines", "path_issue", "symbol"))),
+        ("The lexical half is largely the issue naming", "rq1: full-path rate",
+         pct(leak["full"].mean())),
+        ("The lexical half is largely the issue naming", "rq1: stem rate", pct(leak.stem.mean())),
+        ("The lexical half is largely the issue naming", "rq1: explicit rate",
+         pct(leak.explicit.mean())),
+        ("population control (Table~\\ref{tab:leak})", "rq1: path rank primary",
+         ORDINAL[rank("per_source_joint.csv", "co_edited", "path_issue",
+                      stratum="no_explicit")]),
+        ("population control (Table~\\ref{tab:leak})", "rq1: hops rank primary",
+         ORDINAL[rank("per_source_joint.csv", "co_edited", "hops_lines",
+                      stratum="no_explicit")]),
+        ("population control (Table~\\ref{tab:leak})", "rq1: hops-path full-path control",
+         num3(delta("hops_lines", "path_issue", "co_edited", stratum="no_full_path"))),
+        ("population control (Table~\\ref{tab:leak})", "rq1: hops-path primary",
+         num3(delta("hops_lines", "path_issue", "co_edited", stratum="no_explicit"))),
+        ("population control (Table~\\ref{tab:leak})", "rq1: hops-path primary p",
+         "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_explicit")),
+        ("explanation: its full path appears in", "rq1: seed full-path rate",
+         pct(leak.seed_full.mean())),
+        ("Which proxy to believe", "rq1: tau co", "%.2f" % CB["G4"]["co_edited"]["tau"]),
+        ("Which proxy to believe", "rq1: tau sym", "%.2f" % CB["G4"]["symbol"]["tau"]),
+        ("Which proxy to believe", "rq1: pprpl gold rank",
+         ORDINAL[int(cbt.loc[("gold", "ppr_und_pl"), "rank"])]),
+        ("Which proxy to believe", "rq1: pprout gold rank",
+         ORDINAL[int(cbt.loc[("gold", "ppr_out_pl"), "rank"])]),
+
+        # ---- RQ2
+        ("Across tasks: an issue-free twin", "rq2: worth all co", num3(worth("co_edited"))),
+        ("Across tasks: an issue-free twin", "rq2: worth all sym", num3(worth("symbol"))),
+        ("Across tasks: an issue-free twin", "rq2: worth named co",
+         num3(worth("co_edited", "explicit"))),
+        ("Across tasks: an issue-free twin", "rq2: worth named sym",
+         num3(worth("symbol", "explicit"))),
+        ("Across tasks: an issue-free twin", "rq2: worth rest co",
+         num3(worth("co_edited", "no_explicit"))),
+        ("Across tasks: an issue-free twin", "rq2: worth rest sym",
+         num3(worth("symbol", "no_explicit"))),
+        ("Removing just the names costs", "rq2: names cost path", num3(redact_delta("path_issue",
+                                                                                   "co_edited"))),
+        ("Removing just the names costs", "rq2: names cost fusion",
+         num3(redact_delta(F, "co_edited"))),
+        ("Removing just the names costs", "rq2: paths arm fusion",
+         num3(redact_delta(F, "co_edited", arm="paths"))),
+        ("Removing just the names costs", "rq2: symbols arm fusion",
+         num3(redact_delta(F, "co_edited", arm="symbols"))),
+        ("Removing just the names costs", "rq2: wider arms elsewhere, low",
+         num3(min(redact_delta(F, "co_edited", "nothing removed", a)
+                  for a in ("paths", "symbols")))),
+        ("Removing just the names costs", "rq2: wider arms elsewhere, high",
+         num3(max(redact_delta(F, "co_edited", "nothing removed", a)
+                  for a in ("paths", "symbols")))),
+        ("The decomposition.} Both experiments", "rq2: gap", num3(gap())),
+        ("The decomposition.} Both experiments", "rq2: names share", num3(redact_delta(F, "co_edited"))),
+        ("The decomposition.} Both experiments", "rq2: widest share", num3(leak_share("symbols"))),
+        ("The decomposition.} Both experiments", "rq2: symbol gap", num3(gap("symbol"))),
+        ("The decomposition.} Both experiments", "rq2: symbol names share",
+         num3(redact_delta(F, "symbol"))),
+        ("The decomposition.} Both experiments", "rq2: symbol widest share",
          num3(leak_share("symbols", "symbol"))),
-        ("after the widest\nredaction against", "path_issue named tasks after widest arm",
-         num3(csv("redaction.csv").query("arm == 'symbols' and group == 'names removed' and "
-                                        "source == 'co_edited' and method == 'path_issue'")
-              .auc_redacted.iloc[0])),
-        ("after the widest\nredaction against", "path_issue unnamed tasks after widest arm",
-         num3(csv("redaction.csv").query("arm == 'symbols' and group == 'nothing removed' and "
-                                        "source == 'co_edited' and method == 'path_issue'")
-              .auc_redacted.iloc[0])),
-        # ---- the external test set (numbers from its own tree, predictions fixed in advance)
-        ("Table~\\ref{tab:external} gives the four outcomes", "external: E1 worst shortfall",
-         num3(EXT["E1"]["worst_shortfall"])),
-        ("The fourth fails", "external: names arm, symbol",
-         num3(EXT["E4"]["named"][1]["estimate"])),
-        ("The fourth fails", "external: names arm, co_edited",
+        ("A better reader.", "rq2: dense vs bm25 co", num3(dn("dense_issue vs bm25_issue",
+                                                              "co_edited"))),
+        ("A better reader.", "rq2: dense vs bm25 sym", num3(dn("dense_issue vs bm25_issue",
+                                                               "symbol"))),
+        ("A better reader.", "rq2: dense in fusion",
+         num3(dn("rrf_pprpl_dense_path vs rrf_pprpl_issue_path", "co_edited"))),
+        ("A better reader.", "rq2: dense worth unnamed co", num3(dn(W, "co_edited",
+                                                                    "no_explicit"))),
+        ("A better reader.", "rq2: dense worth unnamed sym", num3(dn(W, "symbol",
+                                                                     "no_explicit"))),
+        ("A better reader.", "rq2: dense worth named", num3(dn(W, "co_edited", "explicit"))),
+        ("A better reader.", "rq2: dense gap", num3(dgap)),
+        ("A better reader.", "rq2: dense share low",
+         "%d" % round(100 * dn("names cost (_rd), rrf_pprpl_dense_path", "co_edited",
+                               "explicit") / dgap)),
+        ("A better reader.", "rq2: dense share high", "%d" % round(100 * dwide / dgap)),
+        ("A better reader.", "rq2: bm25 share low", "%d" % round(100 * redact_delta(
+            F, "co_edited") / gap())),
+        ("A better reader.", "rq2: bm25 share high",
+         "%d" % round(100 * leak_share("symbols") / gap())),
+
+        # ---- RQ3
+        ("quantity to optimise is the worst a method does", "rq3: over lexical co",
+         num3(delta(F, "path_issue", "co_edited"))),
+        ("quantity to optimise is the worst a method does", "rq3: over lexical sym",
+         num3(delta(F, "path_issue", "symbol"))),
+        ("quantity to optimise is the worst a method does", "rq3: over structural co",
+         num3(delta(F, "hops_lines", "co_edited"))),
+        ("quantity to optimise is the worst a method does", "rq3: over structural sym",
+         num3(delta(F, "ppr_und_pl", "symbol"))),
+        ("Held-out repositories.", "rq3: splits selected", str(split_stat("selected"))),
+        ("Held-out repositories.", "rq3: confirmed co", str(split_stat("best", "co_edited"))),
+        ("Held-out repositories.", "rq3: confirmed sym", str(split_stat("best", "symbol"))),
+        ("Seven unseen repositories.", "rq3: E1 rank",
+         "third" if E1["co_edited"]["rank"] == 3 and E1["symbol"]["rank"] == 3
+         else "E1-RANK-CHANGED"),
+        ("Seven unseen repositories.", "rq3: E1 worst shortfall", num3(E1["worst_shortfall"])),
+        ("Seven unseen repositories.", "rq3: E4 co",
          num3(EXT["E4"]["named"][0]["estimate"])),
-        ("The fourth fails", "external: named matched PRs",
-         str(EXT["E4"]["named_matched_prs"])),
-        ("The fourth fails", "external: paths arm, co_edited",
+        ("Seven unseen repositories.", "rq3: E4 co p", "%.2f" % EXT["E4"]["named"][0]["p_holm"]),
+        ("Seven unseen repositories.", "rq3: E4 PRs", str(EXT["E4"]["named_matched_prs"])),
+        ("Seven unseen repositories.", "rq3: E paths arm",
          num3(EXT["descriptive"]["redaction_arms_named_matched"]["co_edited"]["_rdp"])),
-        ("The fourth fails", "external: symbols arm, co_edited",
+        ("Seven unseen repositories.", "rq3: E symbols arm",
          num3(EXT["descriptive"]["redaction_arms_named_matched"]["co_edited"]["_rds"])),
-        ("The share of issues naming a key\nfile as code", "external: explicit naming rate",
-         pct(EXT["descriptive"]["explicit_rate"])),
-        ("Of the 140 pull requests, 139 yield", "external: PRs with a key",
-         str(EXT["descriptive"]["n_prs"])),
-        ("Of the 140 pull requests, 139 yield", "external: matched PRs",
-         str(EXT["descriptive"]["n_prs_matched"])),
-        ("query-independent prior degrades fastest", "random, largest quartile, co_edited",
-         num3(auc("by_size.csv", "co_edited", "random", size_q="Q4"))),
-    ]
-    F = "rrf_pprpl_issue_path"
-    C += [
-        # the cost rules (metric.py)
-        ("Under the skip rule the recommendation stands", "skip: fusion shortfall, co_edited",
-         num3(metric_auc("lines, skip", "co_edited", F)["short"])),
-        ("Under the skip rule the recommendation stands", "skip: shortfall, full corpus",
-         num3(metric_auc("lines, skip", "co_edited", F, "all")["short"])),
-        ("Section~\\ref{sec:fusion} separates by", "skip: length-aware fusion pair, co",
-         "%+.3f" % metric_delta("lines, skip", "co_edited", F, "rrf_ppr_issue_path")),
-        ("Section~\\ref{sec:fusion} separates by", "skip: length-aware fusion pair, sym",
-         "%+.3f" % metric_delta("lines, skip", "symbol", F, "rrf_ppr_issue_path")),
-        ("no longer helps at all", "skip: ppr_und_pl - ppr_und, co_edited",
-         "%.3f" % metric_delta("lines, skip", "co_edited", "ppr_und_pl", "ppr_und")),
-        ("Under the per-file rule length-awareness", "files: fusion rank, co_edited",
-         str(metric_auc("files", "co_edited", F)["rank"])),
-        ("Under the per-file rule length-awareness", "files: fusion rank, symbol",
-         str(metric_auc("files", "symbol", F)["rank"])),
-        ("Under the per-file rule length-awareness", "files: shortfall, co_edited",
-         num3(metric_auc("files", "co_edited", F)["short"])),
-        ("Under the per-file rule length-awareness", "files: shortfall, symbol",
-         num3(metric_auc("files", "symbol", F)["short"])),
-        # ContextBench (contextbench_eval.py)
-        ("Of the resulting tasks, 215 from", "cb: PRs with gold key",
-         str(CB["descriptive"]["n_prs_gold"])),
-        ("Of the resulting tasks, 215 from", "cb: tasks with gold key",
-         str(CB["descriptive"]["n_tasks_gold"])),
-        ("A gold key has a median of", "cb: gold files also co-edited",
-         "%d" % round(100 * CB["descriptive"]["overlap"]["co_edited"]["share_of_gold_in_other"])),
-        ("A gold key has a median of", "cb: gold files also symbol",
-         "%d" % round(100 * CB["descriptive"]["overlap"]["symbol"]["share_of_gold_in_other"])),
-        ("All four predictions hold (Table", "cb: G1 shortfall", num3(CB["G1"]["shortfall"])),
-        ("All four predictions hold (Table", "cb: G2 smallest margin",
-         num3(min(t["estimate"] for t in CB["G2"]["tests"]))),
-        ("All four predictions hold (Table", "cb: G2 largest margin",
-         num3(max(t["estimate"] for t in CB["G2"]["tests"]))),
-        ("All four predictions hold (Table", "cb: G3 estimate", num3(CB["G3"]["estimate"])),
-        ("All four predictions hold (Table", "cb: G4 tau symbol", "%.2f" % CB["G4"]["symbol"]["tau"]),
-        ("All four predictions hold (Table", "cb: G4 tau co_edited",
-         "%.2f" % CB["G4"]["co_edited"]["tau"]),
-        ("reads but does not edit} --- the context", "cb: read-only PRs",
-         str(CB["exploratory_readonly"]["n_prs"])),
-        ("the fusion leads: it beats the issue-only", "cb: read-only fusion - path_issue",
-         num3(next(t for t in CB["exploratory_readonly"]["tests"]
-                   if t["a"] == F and t["b"] == "path_issue")["estimate"])),
-        ("the fusion leads: it beats the issue-only", "cb: read-only fusion - bm25_issue",
-         num3(next(t for t in CB["exploratory_readonly"]["tests"]
-                   if t["a"] == F and t["b"] == "bm25_issue")["estimate"])),
-        ("Three checks added in response to review", "cb: fusion shortfall (discussion)",
+        ("A human-annotated key.} On ContextBench", "rq3: G1 shortfall",
          num3(CB["G1"]["shortfall"])),
-        ("Three checks added in response to review", "seedless: guess correct",
+        ("A human-annotated key.} On ContextBench", "rq3: G2 low",
+         num3(min(t["estimate"] for t in CB["G2"]["tests"]))),
+        ("A human-annotated key.} On ContextBench", "rq3: G2 high",
+         num3(max(t["estimate"] for t in CB["G2"]["tests"]))),
+        ("Other cost rules.", "rq3: skip shortfall co",
+         num3(metric_auc("lines, skip", "co_edited", F)["short"])),
+        ("Other cost rules.", "rq3: skip pair co",
+         "%+.3f" % metric_delta("lines, skip", "co_edited", F, "rrf_ppr_issue_path")),
+        ("Other cost rules.", "rq3: skip pair sym",
+         "%+.3f" % metric_delta("lines, skip", "symbol", F, "rrf_ppr_issue_path")),
+        ("Other cost rules.", "rq3: stop pair co",
+         "%+.3f" % delta(F, "rrf_ppr_issue_path", "co_edited")),
+        ("Other cost rules.", "rq3: stop pair sym",
+         "%+.3f" % delta(F, "rrf_ppr_issue_path", "symbol")),
+        ("Without a free seed.} An agent", "rq3: dense guess correct",
+         "%d" % round(100 * SL["guess_dense_correct"])),
+        ("Without a free seed.} An agent", "rq3: seedless edited",
+         num3(sl_auc("rrf_pprpl_dense_path_ds", "edited"))),
+        ("Without a free seed.} An agent", "rq3: seedless symbol",
+         num3(sl_auc("rrf_pprpl_dense_path_ds", "symbol"))),
+        ("Without a free seed.} An agent", "rq3: over dense edited",
+         num3(sl_delta("dense_issue", "edited", a="rrf_pprpl_dense_path_ds"))),
+        ("Without a free seed.} An agent", "rq3: over dense symbol",
+         num3(sl_delta("dense_issue", "symbol", a="rrf_pprpl_dense_path_ds"))),
+        ("Without a free seed.} An agent", "rq3: unnamed tie",
+         "%+.3f" % sl_delta("dense_issue", "edited", "not named", a="rrf_pprpl_dense_path_ds")),
+        ("Without a free seed.} An agent", "rq3: bm25 guess correct",
          "%d" % round(100 * SL["guess_correct"])),
-        # without a free seed (seedless.py)
-        ("The guess is right in", "seedless: guess correct", "%d" % round(100 * SL["guess_correct"])),
-        ("The guess is right in", "seedless: correct when named",
-         "%d" % round(100 * SL["guess_correct_named"])),
-        ("The guess is right in", "seedless: correct when not named",
-         "%d" % round(100 * SL["guess_correct_not_named"])),
-        ("The guess is right in", "seedless: PRs named", str(SL["n_named"])),
-        ("The guess is right in", "seedless: PRs not named", str(SL["n_not_named"])),
-        ("walking from the guess and fusing is the best non-oracle ordering",
-         "seedless: dense fusion, edited", num3(sl_auc("rrf_pprpl_dense_path", "edited"))),
-        ("walking from the guess and fusing is the best non-oracle ordering",
-         "seedless: dense fusion, symbol", num3(sl_auc("rrf_pprpl_dense_path", "symbol"))),
-        ("On the symbol key it adds", "seedless: dense fusion - dense, symbol",
-         num3(sl_delta("dense_issue", "symbol", a="rrf_pprpl_dense_path"))),
-        ("On the symbol key it adds", "seedless: wrong guess same top",
-         "%d" % round(100 * SL["wrong_guess_same_top"])),
-        ("On the symbol key it adds", "seedless: wrong guess same dir",
-         "%d" % round(100 * SL["wrong_guess_same_dir"])),
-        ("On the edited files it adds nothing measurable", "seedless: dense fusion - dense, edited",
-         "%+.3f" % sl_delta("dense_issue", "edited", a="rrf_pprpl_dense_path")),
-        ("It helps where the issue names", "seedless: named, edited",
-         "%+.3f" % sl_delta("dense_issue", "edited", "named", a="rrf_pprpl_dense_path")),
-        ("It helps where the issue names", "seedless: not named, edited",
-         "%+.3f" % sl_delta("dense_issue", "edited", "not named", a="rrf_pprpl_dense_path")),
-        ("The BM25 fusion of the main study fares", "seedless: BM25 fusion vs dense, not named",
-         num3(-sl_delta("dense_issue", "edited", "not named"))),
+        ("Published systems' selectors.", "rq3: systems best rank", ORDINAL[min(sys_ranks)]),
+        ("Published systems' selectors.", "rq3: systems worst rank", ORDINAL[max(sys_ranks)]),
+        ("Published systems' selectors.", "rq3: systems gap co low",
+         num3(min(sysd("%s vs %s" % (F, m), "co_edited") for m in sysnames))),
+        ("Published systems' selectors.", "rq3: systems gap co high",
+         num3(max(sysd("%s vs %s" % (F, m), "co_edited") for m in sysnames))),
+        ("Published systems' selectors.", "rq3: systems gap sym low",
+         num3(min(sysd("%s vs %s" % (F, m), "symbol") for m in sysnames))),
+        ("Published systems' selectors.", "rq3: systems gap sym high",
+         num3(max(sysd("%s vs %s" % (F, m), "symbol") for m in sysnames))),
+
+        # ---- RQ4
+        ("The two-hop neighbourhood is half the repository", "rq4: within two, sym",
+         within2("symbol")),
+        ("The two-hop neighbourhood is half the repository", "rq4: within two, co",
+         within2("co_edited")),
+        ("The two-hop neighbourhood is half the repository", "rq4: ball files",
+         str(int(ball.ball_files.median()))),
+        ("The two-hop neighbourhood is half the repository", "rq4: ball share median",
+         pct(ball.ball_share_of_repo.median())),
+        ("The two-hop neighbourhood is half the repository", "rq4: ball precision",
+         pct((ball.ball_recall * ball.key_files
+              / ball.ball_files.where(ball.ball_files > 0)).median())),
+        ("The two-hop neighbourhood is half the repository", "rq4: ball lift",
+         "%.2f" % (ball.ball_recall.mean() / ball.ball_share_of_repo.mean())),
+        ("Direction: reversing a walk is costly", "rq4: outward sym",
+         num3(auc("per_source.csv", "symbol", "ppr_out_pl"))),
+        ("Direction: reversing a walk is costly", "rq4: inward sym",
+         num3(auc("per_source.csv", "symbol", "ppr_in_pl"))),
+        ("Direction: reversing a walk is costly", "rq4: inward rank",
+         ORDINAL[rank("per_source.csv", "symbol", "ppr_in_pl")]),
+        ("Direction: reversing a walk is costly", "rq4: gap full",
+         num3(delta("ppr_out_pl", "ppr_in_pl", "symbol", population="all"))),
+        ("Direction: reversing a walk is costly", "rq4: undirected",
+         num3(auc("per_source.csv", "symbol", "ppr_und_pl"))),
+        ("How much is a repository prior", "rq4: prior sym",
+         num3(auc("per_source.csv", "symbol", "pagerank"))),
+        ("How much is a repository prior", "rq4: prior margin share",
+         "%d" % round(100 * (auc("per_source.csv", "symbol", "pagerank")
+                             - auc("per_source.csv", "symbol", "random"))
+                      / (auc("per_source.csv", "symbol", "ppr_out_pl")
+                         - auc("per_source.csv", "symbol", "random")))),
+        ("How much is a repository prior", "rq4: prior co",
+         num3(auc("per_source.csv", "co_edited", "pagerank"))),
+        ("How much is a repository prior", "rq4: random co",
+         num3(auc("per_source.csv", "co_edited", "random"))),
+        ("How much is a repository prior", "rq4: walk over prior co",
+         num3(delta("ppr_und_pl", "pagerank", "co_edited", population="all"))),
+        ("The signals find different files", "rq4: lex only co",
+         pct(comp[(comp.source == "co_edited") & (comp.k == 20)].lex_only.iloc[0])),
+        ("The signals find different files", "rq4: struct only co",
+         pct(comp[(comp.source == "co_edited") & (comp.k == 20)].struct_only.iloc[0])),
+        ("The signals find different files", "rq4: struct only sym",
+         pct(comp[(comp.source == "symbol") & (comp.k == 20)].struct_only.iloc[0])),
+        ("The signals find different files", "rq4: lex only sym",
+         pct(comp[(comp.source == "symbol") & (comp.k == 20)].lex_only.iloc[0])),
+        ("What the human key says about the graph", "rq4: read-only PRs", str(cb_ro["n_prs"])),
+        ("What the human key says about the graph", "rq4: read-only vs path",
+         num3(next(t for t in cb_ro["tests"] if t["a"] == F and t["b"] == "path_issue")
+              ["estimate"])),
+        ("What the human key says about the graph", "rq4: read-only vs bm25",
+         num3(next(t for t in cb_ro["tests"] if t["a"] == F and t["b"] == "bm25_issue")
+              ["estimate"])),
+        ("The budget is rarely the constraint", "rq4: oracle full",
+         pct(cm[(cm.source == "co_edited") & (cm.method == "oracle")].share_full.iloc[0])),
+        ("The budget is rarely the constraint", "rq4: best full co",
+         pct(cm[(cm.source == "co_edited") & (cm.method != "oracle")].share_full.max())),
+        ("The budget is rarely the constraint", "rq4: best full sym",
+         pct(cm[(cm.source == "symbol") & (cm.method != "oracle")].share_full.max())),
+
+        # ---- threats
+        ("rebuilding the keys of all", "threats: rebuilt PRs", big(kr["prs"])),
+        ("rebuilding the keys of all", "threats: symbol keys changed",
+         str(kr["symbol_key_differs"])),
+        ("rebuilding the keys of all", "threats: max AUC change",
+         "0.003" if max(kr["max_abs_auc_change"].values()) <= 0.003 else "BOUND-EXCEEDED"),
     ]
-    if (OUT / "dense_tests.csv").exists():
-        W = "issue worth, dense fusion"
-        dgap = dn(W, "co_edited", "explicit") - dn(W, "co_edited", "no_explicit")
-        wide = (dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "explicit")
-                - dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "no_explicit"))
-        C += [
-            ("The dense retriever is the better issue reader", "dense vs bm25, co",
-             num3(dn("dense_issue vs bm25_issue", "co_edited"))),
-            ("The dense retriever is the better issue reader", "dense vs bm25, sym",
-             num3(dn("dense_issue vs bm25_issue", "symbol"))),
-            ("The dense retriever is the better issue reader", "dense vs path, co",
-             num3(dn("dense_issue vs path_issue", "co_edited"))),
-            ("The dense retriever is the better issue reader", "dense vs path, sym",
-             num3(dn("dense_issue vs path_issue", "symbol"))),
-            ("Put in place of BM25 over contents", "dense in place, co",
-             num3(dn("rrf_pprpl_dense_path vs rrf_pprpl_issue_path", "co_edited"))),
-            ("Put in place of BM25 over contents", "dense as fourth list, co",
-             num3(dn("rrf_pprpl_issue_path_dense vs rrf_pprpl_issue_path", "co_edited"))),
-            ("Put in place of BM25 over contents", "dense as fourth list, sym",
-             num3(dn("rrf_pprpl_issue_path_dense vs rrf_pprpl_issue_path", "symbol"))),
-            ("On issues that\nname no key file the dense fusion gains", "dense worth, not named, co",
-             num3(dn(W, "co_edited", "no_explicit"))),
-            ("On issues that\nname no key file the dense fusion gains", "dense worth, not named, sym",
-             num3(dn(W, "symbol", "no_explicit"))),
-            ("But it is a fifth of what", "dense worth, named, co",
-             num3(dn(W, "co_edited", "explicit"))),
-            ("The\nnames arm costs the dense fusion", "dense names arm",
-             num3(dn("names cost (_rd), rrf_pprpl_dense_path", "co_edited", "explicit"))),
-            ("The\nnames arm costs the dense fusion", "dense widest arm",
-             num3(dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "explicit"))),
-            ("The\nnames arm costs the dense fusion", "dense widest arm, not named",
-             num3(dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "no_explicit"))),
-            ("The\nnames arm costs the dense fusion", "dense stratum gap", num3(dgap)),
-            ("The\nnames arm costs the dense fusion", "dense leakage share low",
-             "%d" % round(100 * dn("names cost (_rd), rrf_pprpl_dense_path", "co_edited",
-                                   "explicit") / dgap)),
-            ("The\nnames arm costs the dense fusion", "dense leakage share high",
-             "%d" % round(100 * wide / dgap)),
-        ]
     return C
 
 
@@ -575,6 +597,11 @@ def main() -> int:
         at = text.find(context)
         if at < 0:
             bad.append("CONTEXT NOT FOUND  %-42s  (looking for %r)" % (what, context[:44]))
+            continue
+        if text.count(context) > 1:
+            # an anchor that occurs twice would silently check the first occurrence
+            bad.append("AMBIGUOUS CONTEXT  %-42s  (%r occurs %d times)"
+                       % (what, context[:44], text.count(context)))
             continue
         window = text[max(0, at - BACK):at + FORWARD]
         if any(v in window for v in spellings(value)):

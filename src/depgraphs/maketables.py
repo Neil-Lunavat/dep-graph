@@ -14,7 +14,7 @@ import math
 import pandas as pd
 
 from depgraphs.lexfeat import ROOT
-from depgraphs.study2 import FUSION, OUT, REDACTED_ALL, SCORED_ONLY
+from depgraphs.study2 import OUT, SCORED_ONLY
 
 PAPER = ROOT / "paper"
 BS = chr(92)
@@ -382,7 +382,7 @@ def mixed_table():
 
 
 def external_table():
-    """The four predictions of paper/external_prereg.md and what the external set showed."""
+    """The four predictions of paper/external_predictions.md and what the external set showed."""
     import json
     f = ROOT / "external" / "results" / "study2" / "predictions.json"
     if not f.exists():
@@ -412,7 +412,7 @@ def external_table():
 
 
 def contextbench_table():
-    """The four predictions of paper/contextbench_prereg.md and what the human key showed."""
+    """The four predictions of paper/contextbench_predictions.md and what the human key showed."""
     import json
     f = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
     if not f.exists():
@@ -484,8 +484,9 @@ def seedless_table():
     if not f.exists():
         return
     d = pd.read_parquet(f)
-    show = ["rrf_pprpl_dense_path", "rrf_pprpl_issue_path", "rrf_hops_path", "localiser",
-            "dense_issue", "path_issue", "bm25_issue", "ppr_und_pl", "hops_lines", "random"]
+    show = ["rrf_pprpl_dense_path_ds", "rrf_pprpl_issue_path_ds", "rrf_pprpl_dense_path",
+            "rrf_pprpl_issue_path", "dense_issue", "localiser", "path_issue", "bm25_issue",
+            "ppr_und_pl_ds", "ppr_und_pl", "random"]
     show = [s for s in show if s in set(d.method)]
     g = d.groupby(["method", "source", "named"]).auc.mean()
     a = d.groupby(["method", "source"]).auc.mean()
@@ -551,6 +552,67 @@ def dense_tables():
     write("dense_decomp", LF.join(out))
 
 
+def robust_table():
+    """The recommended fusion under every check, one row per check: rank and shortfall."""
+    import json
+    F = "rrf_pprpl_issue_path"
+    rows = []
+
+    def fmt(rank, short):
+        return "%s & %s" % (rank, ("%.3f" % short).lstrip("0") if short is not None else "--")
+
+    def from_table(t, src):
+        g = t[(t.source == src) & t["rank"].notna()]
+        best = g[g.method != "oracle"].auc.max()
+        r = g[g.method == F].iloc[0]
+        return int(r["rank"]), float(best - r.auc)
+
+    sh = pd.read_csv(OUT / "per_source_shared.csv")
+    fu = pd.read_csv(OUT / "per_source.csv")
+    for label, t in (("Main sample, matched population", sh),
+                     ("Main sample, full population", fu)):
+        cells = [fmt(*from_table(t, s)) for s in ("co_edited", "symbol")]
+        rows.append("%s & %s & %s %s" % (label, m(F), " & ".join(cells), NL))
+    h = pd.read_csv(OUT / "heldout.csv")
+    sel = h[h.chosen == F]
+    cells = []
+    for s in ("co_edited", "symbol"):
+        best = int((sel["rank_" + s] == 2).sum())
+        cells.append("best in %d/%d & %s" % (best, len(sel), ("%.3f" % (
+            sel["best_" + s] - sel["auc_" + s]).mean()).lstrip("0")))
+    rows.append("Held-out halves, 200 splits & %s & %s %s" % (m(F), " & ".join(cells), NL))
+    mt = pd.read_csv(OUT / "metric_auc.csv")
+    for rule, label in (("lines, skip", "Skip an overflowing file"),
+                        ("files", "Charge per file")):
+        t = mt[(mt.rule == rule) & (mt.population == "shared")]
+        cells = [fmt(*from_table(t, s)) for s in ("co_edited", "symbol")]
+        rows.append("%s & %s & %s %s" % (label, m(F), " & ".join(cells), NL))
+    e = ROOT / "external" / "results" / "study2" / "predictions.json"
+    if e.exists():
+        E1 = json.loads(e.read_text())["E1"]
+        cells = [fmt(E1[s]["rank"], E1[s]["shortfall"]) for s in ("co_edited", "symbol")]
+        rows.append("$" + BS + "dagger$ Seven unseen repositories & %s & %s %s" % (
+            m(F), " & ".join(cells), NL))
+    c = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
+    if c.exists():
+        G1 = json.loads(c.read_text())["G1"]
+        rows.append("$" + BS + "dagger$ Human key (ContextBench) & %s & %s & -- & -- %s"
+                    % (m(F), fmt(G1["rank"], G1["shortfall"]), NL))
+    s = ROOT / "results" / "seedless" / "rows.parquet"
+    if s.exists():
+        d = pd.read_parquet(s)
+        D = "rrf_pprpl_dense_path_ds"
+        if D in set(d.method):
+            cells = []
+            for src in ("edited", "symbol"):
+                a = d[d.source == src].groupby("method").auc.mean()
+                rk = int(a.rank(ascending=False, method="min")[D])
+                cells.append(fmt(rk, a.drop("oracle").max() - a[D]))
+            rows.append("No free seed (dense seed) & %s & %s %s" % (
+                m("rrf_pprpl_dense_path"), " & ".join(cells), NL))
+    write("robust", LF.join(rows))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -590,6 +652,7 @@ def main():
     metric_table()
     seedless_table()
     dense_tables()
+    robust_table()
     figure_data()
 
 

@@ -116,7 +116,7 @@ def rrf(*orders, k=None):
 # ----------------------------------------------------------------- the methods
 
 def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None,
-              wider=None, emb=None, qv=None):
+              wider=None, emb=None, qv=None, feats=None):
     others = [p for p in nodes if p != seed]
     if not others:
         return {}
@@ -289,6 +289,24 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None
             pth = out.get("path_issue" + sfx) or []
             out["rrf_pprpl_dense_path" + sfx] = by_score(
                 rrf(out["ppr_und_pl"], d, pth), rng)
+
+    # --- published systems' context selectors, as reading orders (methods.py, study 1):
+    # Aider's repository map (PageRank over the definition-reference graph, personalised to
+    # the file being edited), RepoGraph's two-hop ego graph and LocAgent's typed BFS. Each
+    # returns what it would select; the rest of the repository follows in random order so
+    # that every ordering covers every file. Scored, never ranked. Appended last.
+    if feats is not None:
+        from depgraphs import methods as M
+
+        ctx = M.Ctx(nodes, [tuple(e) for e in edges], feats)
+        for name, fn in (("sys_aider_repomap", M.aider_repomap),
+                         ("sys_repograph_k2", M.repograph_k2),
+                         ("sys_locagent_bfs", M.locagent_bfs)):
+            head = [p for p in fn(ctx, seed, rng) if p != seed]
+            seen = set(head)
+            tail = sorted(p for p in others if p not in seen)
+            rng.shuffle(tail)
+            out[name] = head + tail
     return out
 
 
@@ -332,8 +350,12 @@ DENSE_REDACTED = {m + sfx: m for sfx in ARM_SUFFIX.values()
                   for m in ("dense_issue", "rrf_pprpl_dense_path")}
 DENSE_ALL = DENSE + list(DENSE_REDACTED)
 METHODS += DENSE_ALL
+# Published systems' selectors as reading orders (added after review). Scored, never ranked.
+SYSTEMS = ["sys_aider_repomap", "sys_repograph_k2", "sys_locagent_bfs"]
+METHODS += SYSTEMS
 # everything scored that is not a candidate reading order in the paper's ranking
-SCORED_ONLY = set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS) | set(DENSE_ALL)
+SCORED_ONLY = (set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS) | set(DENSE_ALL)
+               | set(SYSTEMS))
 
 
 def coverage_curve(order, key, cost):
@@ -424,6 +446,13 @@ def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = N
         return [], [], []
     rows, curves, tops = [], [], []
     blob_vecs = load_embeddings(repo_dir) if qvecs else {}
+    fdir = ROOT / "data" / "features" / repo_dir
+    blob_feats = {}
+    if (fdir / "blobs.jsonl.gz").exists():
+        with gzip.open(fdir / "blobs.jsonl.gz", "rt", encoding="utf-8") as f:
+            for line in f:
+                r = json.loads(line)
+                blob_feats[r.pop("blob")] = r
     for t in tasks:
         sha = t["base_commit"]
         try:
@@ -451,11 +480,18 @@ def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = N
             emb = {p: blob_vecs[mapping[p]] for p in nodes if mapping.get(p) in blob_vecs}
             qv = (qvecs or {}).get(t["task_id"])
 
+        feats = None
+        if blob_feats:
+            fmap_p = fdir / "commits" / (sha + ".json")
+            if fmap_p.exists():
+                fmap = json.loads(fmap_p.read_text())
+                feats = {p: blob_feats[b] for p, b in fmap.items() if b in blob_feats}
+
         per_run = []
         for r in range(RUNS):
             rng = random.Random("%s|%d|20260923" % (t["task_id"], r))
             per_run.append(orderings(nodes, edges, lines, seed, bags, issue_bag, rng,
-                                     issue_bag_rd, wide, emb, qv))
+                                     issue_bag_rd, wide, emb, qv, feats))
         if not per_run[0]:
             continue
 
@@ -465,7 +501,7 @@ def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = N
                 continue
             ideal = sorted(key, key=lambda p: cost[p])
             for m in METHODS + ["oracle"]:
-                if m in DENSE_ALL and m not in per_run[0]:
+                if (m in DENSE_ALL or m in SYSTEMS) and m not in per_run[0]:
                     continue
                 cs, l50, l100, sk, fc = [], [], [], [], []
                 for r, run in enumerate(per_run):
@@ -502,7 +538,8 @@ def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = N
                      "repo_key": repo_key, "seed": seed, "n_nodes": len(nodes),
                      "keys": {s: sorted(v) for s, v in keys.items()},
                      "lists": {m: per_run[0].get(m, [])[:TOPN] for m in METHODS
-                               if m not in DENSE_ALL or m in per_run[0]}})
+                               if (m not in DENSE_ALL and m not in SYSTEMS)
+                               or m in per_run[0]}})
     return rows, curves, tops
 
 

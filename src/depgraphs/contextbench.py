@@ -11,10 +11,10 @@ This module draws those tasks with the main sample's eligibility rule, seed and 
 pull requests per repository, lays out a separate tree as `external.py` does, and, after the
 `tasks` stage has run there, adds each task's `gold` key: the Python files in the task's gold
 context, minus the seed, restricted to graph nodes like every other key. `gold_readonly` is that key less every file
-the pull request edits: exploratory, added after the pre-registered predictions were scored.
+the pull request edits: exploratory, added after the predictions committed before scoring had been scored.
 
 The predictions tested on this set were committed before any of it was scored
-(paper/contextbench_prereg.md).
+(paper/contextbench_predictions.md).
 
 Usage:  python -m depgraphs.contextbench prepare
         DEPGRAPHS_ROOT=contextbench python run.py graphs keys_static tasks

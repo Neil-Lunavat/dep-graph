@@ -16,7 +16,7 @@ two extra sources admitted, and lays out a separate tree for the pipeline to run
 
 Then every later stage runs unchanged with DEPGRAPHS_ROOT=external, and writes only there.
 The predictions tested on this set were committed before any of it was scored
-(paper/external_prereg.md).
+(paper/external_predictions.md).
 
 Usage:  python -m depgraphs.external          (prepare the tree)
         DEPGRAPHS_ROOT=external python run.py graphs keys_static tasks lexfeat issues redact

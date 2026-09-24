@@ -6,6 +6,9 @@
  "guess_correct_named": 0.5300171526586621,
  "guess_correct_not_named": 0.29015544041450775,
  "wrong_guess_same_dir": 0.31532846715328466,
+ "guess_dense_correct": 0.33820998278829606,
+ "guess_dense_correct_named": 0.40823327615780447,
+ "guess_dense_correct_not_named": 0.26770293609671847,
  "wrong_guess_same_top": 0.8700729927007299,
  "n_named": 583,
  "n_not_named": 579,
@@ -14,29 +17,37 @@
    "bm25_issue": 0.4172,
    "dense_issue": 0.4952,
    "hops_lines": 0.404,
+   "hops_lines_ds": 0.4111,
    "localiser": 0.4706,
    "oracle": 0.7577,
    "path_issue": 0.4576,
    "ppr_out_pl": 0.3841,
    "ppr_und_pl": 0.4043,
+   "ppr_und_pl_ds": 0.409,
    "random": 0.237,
    "rrf_hops_path": 0.4543,
    "rrf_pprpl_dense_path": 0.4997,
-   "rrf_pprpl_issue_path": 0.4798
+   "rrf_pprpl_dense_path_ds": 0.5162,
+   "rrf_pprpl_issue_path": 0.4798,
+   "rrf_pprpl_issue_path_ds": 0.507
   },
   "symbol": {
    "bm25_issue": 0.3548,
    "dense_issue": 0.4173,
    "hops_lines": 0.4043,
+   "hops_lines_ds": 0.4158,
    "localiser": 0.3964,
    "oracle": 0.76,
    "path_issue": 0.3971,
    "ppr_out_pl": 0.4223,
    "ppr_und_pl": 0.4293,
+   "ppr_und_pl_ds": 0.4453,
    "random": 0.2396,
    "rrf_hops_path": 0.4242,
    "rrf_pprpl_dense_path": 0.4581,
-   "rrf_pprpl_issue_path": 0.4404
+   "rrf_pprpl_dense_path_ds": 0.4746,
+   "rrf_pprpl_issue_path": 0.4404,
+   "rrf_pprpl_issue_path_ds": 0.4615
   }
  },
  "auc_skip_all": {
@@ -44,29 +55,37 @@
    "bm25_issue": 0.4706,
    "dense_issue": 0.5198,
    "hops_lines": 0.4161,
+   "hops_lines_ds": 0.4208,
    "localiser": 0.5194,
    "oracle": 0.7577,
    "path_issue": 0.481,
    "ppr_out_pl": 0.3986,
    "ppr_und_pl": 0.4142,
+   "ppr_und_pl_ds": 0.4156,
    "random": 0.2518,
    "rrf_hops_path": 0.4794,
    "rrf_pprpl_dense_path": 0.5313,
-   "rrf_pprpl_issue_path": 0.5172
+   "rrf_pprpl_dense_path_ds": 0.5351,
+   "rrf_pprpl_issue_path": 0.5172,
+   "rrf_pprpl_issue_path_ds": 0.5361
   },
   "symbol": {
    "bm25_issue": 0.4068,
    "dense_issue": 0.4512,
    "hops_lines": 0.441,
+   "hops_lines_ds": 0.4444,
    "localiser": 0.4505,
    "oracle": 0.76,
    "path_issue": 0.4324,
    "ppr_out_pl": 0.4617,
    "ppr_und_pl": 0.4616,
+   "ppr_und_pl_ds": 0.4657,
    "random": 0.2633,
    "rrf_hops_path": 0.4689,
    "rrf_pprpl_dense_path": 0.5045,
-   "rrf_pprpl_issue_path": 0.4951
+   "rrf_pprpl_dense_path_ds": 0.509,
+   "rrf_pprpl_issue_path": 0.4951,
+   "rrf_pprpl_issue_path_ds": 0.5079
   }
  }
 }

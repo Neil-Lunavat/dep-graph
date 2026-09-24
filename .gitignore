@@ -44,3 +44,4 @@ contextbench/data/issue_texts_redacted.json
 contextbench/data/datasets
 contextbench/results/step2
 data/contextbench/
+data/features/

@@ -1,4 +1,4 @@
-"""Test the predictions of paper/external_prereg.md on the external repositories.
+"""Test the predictions of paper/external_predictions.md on the external repositories.
 
 Each function below is one prediction, implemented as that file words it; the criteria were
 committed before any external result existed, and nothing here may change them. Run with

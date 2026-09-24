@@ -76,7 +76,7 @@ def run_repo(repo_key, prs, issues, texts, qvecs):
                if blob_vecs else None)
         qv = qvecs.get(pr["instance_id"]) if qvecs else None
 
-        per_run, guess = [], None
+        per_run, guess, guess_d = [], None, None
         for r in range(RUNS):
             rng = random.Random("%s|seedless|%d" % (pr["instance_id"], r))
             docs = {p: bags.get(p, {}) for p in nodes}
@@ -100,6 +100,17 @@ def run_repo(repo_key, prs, issues, texts, qvecs):
             if emb is not None and qv is not None:
                 run["dense_issue"] = by_score(
                     {p: float(np.dot(qv, emb[p])) if p in emb else -2.0 for p in nodes}, rng)
+                # the same walk and fusions from the dense retriever's own top file, so that
+                # the seed is picked by the reader the winning fusion uses (suffix _ds)
+                s2 = run["dense_issue"][0]
+                if r == 0:
+                    guess_d = s2
+                o2 = orderings(nodes, edges, lines, s2, bags, ib, rng, None, None, emb,
+                               {"none": qv})
+                for m in ("hops_lines", "ppr_und_pl", "rrf_pprpl_issue_path",
+                          "rrf_pprpl_dense_path"):
+                    if m in o2:
+                        run[m + "_ds"] = [s2] + o2[m]
             per_run.append(run)
         if not per_run:
             continue
@@ -123,6 +134,8 @@ def run_repo(repo_key, prs, issues, texts, qvecs):
                              "file_group": pr["file_group"], "method": m, "source": src,
                              "key_size": len(key), "named": is_named,
                              "guess_correct": guess in keys["edited"],
+                             "guess_dense_correct": (guess_d in keys["edited"]
+                                                     if guess_d else None),
                              "guess_same_dir": same_dir, "guess_same_top": same_top,
                              "auc": float(np.mean(cs)), "auc_skip": float(np.mean(sk))})
     return rows
@@ -143,7 +156,8 @@ def summarise():
     for label, sub in strata.items():
         for src in ("edited", "symbol"):
             have = set(sub[sub.source == src].method)
-            for a in ("rrf_pprpl_issue_path", "rrf_pprpl_dense_path"):
+            for a in ("rrf_pprpl_issue_path", "rrf_pprpl_dense_path",
+                      "rrf_pprpl_dense_path_ds"):
                 for b in VERSUS:
                     if a not in have or b not in have:
                         continue
@@ -161,6 +175,10 @@ def summarise():
         "guess_correct_named": float(pr[pr.named].guess_correct.mean()),
         "guess_correct_not_named": float(pr[~pr.named].guess_correct.mean()),
         "wrong_guess_same_dir": float(pr[~pr.guess_correct].guess_same_dir.mean()),
+        "guess_dense_correct": float(pr.guess_dense_correct.astype(float).mean()),
+        "guess_dense_correct_named": float(pr[pr.named].guess_dense_correct.astype(float).mean()),
+        "guess_dense_correct_not_named": float(
+            pr[~pr.named].guess_dense_correct.astype(float).mean()),
         "wrong_guess_same_top": float(pr[~pr.guess_correct].guess_same_top.mean()),
         "n_named": int(pr.named.sum()), "n_not_named": int((~pr.named).sum()),
         "auc_all": df.groupby(["source", "method"]).auc.mean().unstack(0).round(4)

@@ -21,7 +21,7 @@ from __future__ import annotations
 import pandas as pd
 
 from depgraphs.analysis2 import auc_table, holm, leak_strata, pairwise, shared_prs
-from depgraphs.study2 import DENSE, OUT, SCORED_ONLY
+from depgraphs.study2 import DENSE, OUT, SCORED_ONLY, SYSTEMS
 
 SHOW = ["rrf_pprpl_issue_path", "rrf_pprpl_issue_path_dense", "rrf_pprpl_dense_path",
         "rrf_pprpl_dense", "rrf_pprpl_seeddense_path", "rrf_pprpl_seedpath", "path_issue",
@@ -69,7 +69,7 @@ def main():
     for pop, prs in (("shared", shared), ("all", None)):
         t = auc_table(rows, ("co_edited", "symbol"), prs=prs, ci=pop == "shared")
         t = rank_if_ranked(t.sort_values(["source", "auc"], ascending=[True, False]))
-        tabs.append(t[t.method.isin(SHOW + list(DENSE))].assign(population=pop))
+        tabs.append(t[t.method.isin(SHOW + list(DENSE) + SYSTEMS)].assign(population=pop))
     auc = pd.concat(tabs, ignore_index=True)
     auc.to_csv(OUT / "dense_auc.csv", index=False)
 
@@ -82,6 +82,17 @@ def main():
     head = pd.concat(head, ignore_index=True)
     head["p_holm"] = holm(head["p"].tolist())
     tests.append(head)
+
+    # published systems' selectors against the recommended fusion and the plain walk
+    sysf = []
+    for src in ("co_edited", "symbol"):
+        for sysm in SYSTEMS:
+            for a in ("rrf_pprpl_issue_path", "ppr_und_pl"):
+                sysf.append(pairwise(rows, src, [a, sysm], unit="repo", population=shared)
+                            .assign(family="systems", what="%s vs %s" % (a, sysm)))
+    sysf = pd.concat(sysf, ignore_index=True)
+    sysf["p_holm"] = holm(sysf["p"].tolist())
+    tests.append(sysf)
 
     st = leak_strata(rows)
     dec = []
