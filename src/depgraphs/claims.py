@@ -77,6 +77,14 @@ def delta(a: str, b: str, source: str, stratum="all", population="shared") -> fl
     return float((1 if r.a == a else -1) * r.delta)
 
 
+def p_holm(a: str, b: str, source: str, stratum="all", population="shared") -> float:
+    pw = csv("pairwise.csv")
+    g = pw[(pw.unit == "repo") & (pw.stratum == stratum) & (pw.population == population)
+           & (pw.source == source)
+           & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
+    return float(g.iloc[0].p_holm)
+
+
 def redact_delta(method: str, source: str, group: str = "names removed") -> float:
     d = csv("redaction.csv")
     r = d[(d.group == group) & (d.method == method) & (d.source == source)].iloc[0]
@@ -218,9 +226,15 @@ def claims() -> list[tuple[str, str, str]]:
         ("on co-edited\nfiles is", "hops_lines over path_issue, no full path",
          num3(abs(delta("hops_lines", "path_issue", "co_edited",
                         stratum="no_full_path")))),
-        ("under the\nprimary control ($p_{\\text{Holm}} = 0.40$)",
+        ("under the\nprimary control ($p_{\\text{Holm}}",
          "hops_lines over path_issue, primary",
          num3(delta("hops_lines", "path_issue", "co_edited", stratum="no_explicit"))),
+        ("under the\nprimary control ($p_{\\text{Holm}}",
+         "hops_lines over path_issue, primary, p_Holm",
+         "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_explicit")),
+        ("under the\nprimary control ($p_{\\text{Holm}}",
+         "hops_lines over path_issue, strictest, p_Holm",
+         "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_stem")),
 
         # ---- the rank movements the leakage section states in words
         ("On the full corpus \m{path\_issue} is", "path_issue rank, full corpus",
@@ -241,10 +255,17 @@ def claims() -> list[tuple[str, str, str]]:
                   stratum="no_explicit"))),
 
         # ---- the length-aware ablation
-        ("their worst-case ranks are 6 and 13", "length-aware ablation, co_edited",
+        ("their worst-case ranks are", "length-aware ablation, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "co_edited"))),
-        ("their worst-case ranks are 6 and 13", "length-aware ablation, symbol",
+        ("their worst-case ranks are", "length-aware ablation, symbol",
          num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "symbol"))),
+        ("their worst-case ranks are", "length-aware ablation, unscaled worst rank",
+         str(int(csv("rank_by_source.csv").set_index("method")
+                 .loc["rrf_ppr_issue_path", "worst_case"]))),
+        ("which differ only in whether the walk's scores are divided by file",
+         "length-aware ablation, unscaled worst rank (contributions)",
+         str(int(csv("rank_by_source.csv").set_index("method")
+                 .loc["rrf_ppr_issue_path", "worst_case"]))),
 
         # ---- size quartiles, on the same rank scale as everything else
         # ---- size quartiles, on the same rank scale as everything else
@@ -264,6 +285,40 @@ def claims() -> list[tuple[str, str, str]]:
         ("following imports outward beats the same walk run inward by",
          "direction, matched",
          num3(delta("ppr_out_pl", "ppr_in_pl", "symbol"))),
+        ("literature is indistinguishable from the outward one",
+         "undirected vs outward walk, matched, p_Holm",
+         "%.2f" % p_holm("ppr_und_pl", "ppr_out_pl", "symbol")),
+        ("Committing to an orientation costs", "orientation cost on co_edited, smallest",
+         num3(min(delta(u, d, "co_edited", population="all")
+                  for u, d in (("ppr_und_pl", "ppr_out_pl"), ("ppr_und_pl", "ppr_in_pl"),
+                               ("ppr_und", "ppr_out"), ("ppr_und", "ppr_in"))))),
+        ("Committing to an orientation costs", "orientation cost on co_edited, largest",
+         num3(max(delta(u, d, "co_edited", population="all")
+                  for u, d in (("ppr_und_pl", "ppr_out_pl"), ("ppr_und_pl", "ppr_in_pl"),
+                               ("ppr_und", "ppr_out"), ("ppr_und", "ppr_in"))))),
+
+        # ---- the priors, the seed-path control, the twin and the size quartiles
+        ("difference is significant but negligible", "pagerank over random, co_edited, p_Holm",
+         "%.3f" % p_holm("pagerank", "random", "co_edited", population="all")),
+        ("path instead of the issue, scores", "path_issue over path_seed, co_edited",
+         num3(delta("path_issue", "path_seed", "co_edited", population="all"))),
+        ("path instead of the issue, scores", "path_issue over path_seed, symbol",
+         num3(delta("path_issue", "path_seed", "symbol", population="all"))),
+        ("path instead of the issue, scores", "path_issue over path_seed, symbol, p_Holm",
+         "%.2f" % p_holm("path_issue", "path_seed", "symbol", population="all")),
+        ("beats its own walk", "seed-path twin over its walk, co_edited",
+         num3(delta("rrf_pprpl_seedpath", "ppr_und_pl", "co_edited", population="all"))),
+        ("beats its own walk", "issue-aware fusion over its twin, co_edited",
+         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
+                    population="all"))),
+        ("about a third of what the issue adds to it is leakage",
+         "issue-aware fusion over its twin, matched, every task",
+         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited"))),
+        ("about a third of what the issue adds to it is leakage",
+         "redaction cost, fusion, co_edited, every task",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks"))),
+        ("query-independent prior degrades fastest", "random, largest quartile, co_edited",
+         num3(auc("by_size.csv", "co_edited", "random", size_q="Q4"))),
     ]
     return C
 

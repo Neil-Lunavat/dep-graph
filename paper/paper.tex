@@ -46,12 +46,14 @@ only those names from the same issue --- same task, same prose, same traceback -
 issue-to-path matching 0.110 AUC and the best fusion 0.061, while changing nothing at all on
 the tasks where there was nothing to delete. Replacing the whole issue with a seed-derived
 query costs 0.156 on those tasks but only 0.016 on the rest. The two together decompose the
-apparent value of issue text: filename leakage is causal and large, and issues that name
-files are also better issues in other ways, each accounting for roughly half. Two further
+apparent value of issue text: of the 0.140 by which an issue that names a key file is worth
+more than one that does not, 0.061 is the names themselves --- filename leakage, causal and
+large --- and 0.079 is that issues which name files are better issues in other ways. Two further
 controls each dissolve one half of the key-dependent reversal our uncontrolled tables appear
 to show: matching the populations the two keys are scored on, and taking the repository
 rather than the pull request as the unit, which moves the smallest $p$-value here from
-$10^{-100}$ to $10^{-20}$ with every effect size intact.
+$10^{-162}$ to $4 \times 10^{-20}$, the floor of the test at 112 repositories, with every
+effect size intact.
 
 What survives is a ranking rather than a mechanism. Fusing a length-aware personalised walk
 with issue matching is never significantly worse than the best pure ordering under any
@@ -68,10 +70,11 @@ software engineering}
 
 An agent is handed a bug report and a file to change. Before it can write anything it must
 decide what else to read, and it cannot simply read everything. In the corpus we study the
-median repository is 286{,}385 tokens --- counting the Python files in the import graph,
-excluding tests and non-Python files --- and 74.8\% of tasks sit in a repository larger
-than a 128{,}000-token window, 60.5\% in one larger than 200{,}000. Meanwhile the files that
-carry the answer are a median 2.98\% of the repository. The reduction available is roughly
+median pull request is made against a repository of 286{,}385 tokens --- counting the
+Python files in the import graph, excluding tests and non-Python files --- and 74.8\% of pull
+requests are made against a repository larger than a 128{,}000-token window, 60.5\% against
+one larger than 200{,}000. Meanwhile the files that carry the answer are a median 2.98\% of
+the repository. The reduction available is roughly
 34$\times$, and every line spent on an irrelevant file is a line not spent on a relevant
 one. Something has to choose, and the choice is the subject of this paper.
 
@@ -155,16 +158,17 @@ All claims are Holm-corrected with the \emph{repository} as the unit, since pull
 cluster within repositories and treating them as independent inflates significance by many
 orders of magnitude.
 \item A quantification of what graph proximity actually contributes: recall over half the
-repository, at a lift of 1.57$\times$, with 4.2\% precision at two hops.
+repository, at a lift of 1.57$\times$, with a median precision of 3.4\% at two hops.
 \item A robustness criterion --- worst-case rank across evidence sources --- under which
-three of our five fusions beat every pure signal, confirmed on held-out repositories: the
-fusion selected by this criterion on 56 of our 112 repositories is the best non-oracle
-ordering on the other 56 under \emph{both} keys. The dividing line between the fusions that
+three of our five fusions beat every pure signal, confirmed on held-out repositories: across
+200 random 56/56 splits of our 112 repositories, the fusion this criterion selects on one half
+is selected in 198 and is the best non-oracle ordering on the other half in 195 of those on
+the co-edited key and in all 198 on the symbol key. The dividing line between the fusions that
 succeed and those that fail is not whether path matching is included, since four of the five
 include it and one of those still fails. It is whether the structural input is
 \emph{length-aware}. The clean ablation is \m{rrf\_pprpl\_issue\_path} against
 \m{rrf\_ppr\_issue\_path}, which differ only in whether the walk's scores are divided by file
-length before fusing: worst-case rank 6 against 13.
+length before fusing: worst-case rank 6 against 11.
 \item A cost accounting in tokens rather than files: a corpus-wide calibration of Python
 source (8.50 tokens per line in aggregate, median 7.88), and a method-independent ceiling
 --- the share of pull requests whose complete answer fits a given budget at all. An oracle
@@ -178,7 +182,7 @@ over the full corpus ($p_{\text{Holm}} < 10^{-16}$) and by 0.123 on the populati
 carry both keys ($p_{\text{Holm}} < 10^{-14}$), repository as the unit --- but
 \emph{discarding} direction costs nothing, because the undirected walk common in this
 literature is indistinguishable from the outward one ($p_{\text{Holm}} = 1$ on the full
-corpus, $0.57$ on the matched one). On the co-edited key direction is not merely
+corpus, $0.85$ on the matched one). On the co-edited key direction is not merely
 unhelpful but harmful: all four directed variants rank seventeenth to twentieth, below a
 same-directory baseline that uses no graph at all, while all four undirected walks rank tenth
 to fourteenth, above it.
@@ -208,7 +212,7 @@ pull request while a symbol key does not: on the matched population the best dir
 falls from second to eighth on the symbol key and is no longer distinguishable from path
 matching. And a \emph{unit} correction: pull requests cluster within repositories, so every
 test in this paper is run with the repository as the unit, which leaves the effect sizes
-unchanged and moves the smallest $p$-value from $10^{-100}$ to $10^{-20}$.
+unchanged and moves the smallest $p$-value from $10^{-162}$ to $4 \times 10^{-20}$.
 \item A replication package with the graphs, tasks, issue-token bags, token counts,
 orderings, generated tables and analysis scripts.
 \end{enumerate}
@@ -379,8 +383,10 @@ single-file tasks, which is a real limitation of the symbol key and not a filter
 of ours. Within the scored set, 1{,}958 tasks (708 pull requests) have a co-edited
 key and 2{,}341 (1{,}156 pull requests) a symbol key.
 
-The median repository contributes 131 graph nodes and the median key is 3 files totalling
-1{,}515 lines, so the task is to find a handful of files among roughly a hundred.
+The median task's repository has 131 graph nodes, and the median key is 2 files under
+either source --- 3 files totalling 1{,}515 lines if the two are pooled, as they are only in
+Table~\ref{tab:distance} --- so the task is to find a handful of files among roughly a
+hundred.
 
 \subsection{Import graphs}
 
@@ -392,6 +398,7 @@ resolving to $b$. Package \m{\_\_init\_\_} files are not inserted as intermediar
 Per-file line counts come from the same pass and are the cost unit throughout.
 
 \subsection{Two evidence sources}
+\label{sec:keys}
 
 \begin{description}
 \item[\m{co\_edited}] The other non-test source files changed by the same pull request. This
@@ -522,8 +529,11 @@ scores are averaged within a repository and the test runs over the 112 repositor
 requests are not independent draws --- they cluster in repositories that differ in size,
 layout convention and issue-writing culture --- and a test that ignores the clustering
 counts the same evidence many times. The difference is not cosmetic. The same comparison
-that yields $p < 10^{-100}$ over 1{,}156 pull requests yields $p < 10^{-20}$ over 112
-repositories. The effect sizes are essentially unchanged, which is the point: the conclusions
+that yields $p = 2 \times 10^{-162}$ over 1{,}156 pull requests yields $p = 4 \times
+10^{-20}$ over 112 repositories --- which is also the smallest value the signed-rank test can
+return with 112 units, reached when every repository favours the same method, so the
+repository-level test is saturated rather than merely smaller. The effect sizes are
+essentially unchanged, which is the point: the conclusions
 survive, and only the arithmetic of the $p$-values was ever overstated. We report the
 pull-request-level tests alongside, in the replication package, so the two can be compared.
 
@@ -540,11 +550,10 @@ over the 702 pull requests that carry both (Section~\ref{sec:shared}).
 88.1\% of co-edited files lie within two undirected hops of the seed
 (Table~\ref{tab:distance}). Taken alone this reads as strong evidence for graph retrieval.
 
-The other half of the statistic undoes it. In the median task the two-hop ball holds 68 of
-the repository's 131 files and 21{,}646 lines, which is 51.9\% of that repository and more
-than five times a 4{,}000-line budget; averaged over tasks rather than read off the median
-task, the ball is 55.6\% of the repository. Its precision is 4.2\%. Against a random sample of
-the same size it lifts recall by a factor of 1.57.
+The other half of the statistic undoes it. The median two-hop ball holds 68 files and
+21{,}646 lines, more than five times a 4{,}000-line budget. Measured task by task against its
+own repository, the ball is a median 58.5\% of it and a mean 55.6\%. Its median precision is
+3.4\%. Against a random sample of the same size it lifts recall by a factor of 1.57.
 
 The two-hop neighbourhood is therefore not a filter. It is a statement that the files you
 need are somewhere in about half the repository --- which is exactly the regime in which the
@@ -552,22 +561,16 @@ need are somewhere in about half the repository --- which is exactly the regime 
 
 \begin{table}
 \caption{Where the key files sit relative to the seed, and how big the two-hop ball is.
-Hop shares are pooled proportions over all key-file references; the ball columns are medians
-over 2{,}412 tasks.}
+Hop shares are pooled proportions over all key-file references. The ball rows are computed
+against the union of the two keys over 2{,}412 tasks: files and lines are medians, the share of
+the repository and the recall are means, and precision is the median per task.}
 \label{tab:distance}
 \small
 \begin{tabular}{lrrrr}
 \toprule
 Key files at hop distance & 1 & 2 & 3+ & unreachable \\
 \midrule
-\m{co\_edited} & 39.0\% & 49.1\% & 9.1\% & 2.8\% \\
-\m{symbol} & 45.3\% & 41.4\% & 9.1\% & 4.2\% \\
-\midrule
-\multicolumn{5}{l}{\emph{The two-hop ball:} 68 files, 21{,}646 lines, 56\% of the
-repository} \\
-\multicolumn{5}{l}{\quad recall 87.5\%, precision 4.2\%, recall lift over a same-sized
-random sample 1.57$\times$} \\
-\multicolumn{5}{l}{\emph{The key:} 3 files, 1{,}515 lines} \\
+\rows{tab_distance}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -579,16 +582,16 @@ of this section revises. Throughout the paper, the AUC in a table is a mean over
 requests, while a difference quoted in the text is the mean of the paired
 per-repository differences, because the repository is the unit every test uses
 (Section~\ref{sec:stats}). The two agree to within a few thousandths and can differ in the
-third decimal. Under the co-edited key the top five orderings
+third decimal. Under the co-edited key the five best non-oracle orderings
 are four fusions and one lexical method; the best purely structural ordering is tenth, and
 the query-independent priors are twenty-first and twenty-second of twenty-three, below
-\m{same\_dir} and barely above random. Under the symbol key the table inverts: the top four
-are three structural orderings and one fusion, and the best lexical ordering is fifteenth.
+\m{same\_dir} and barely above random. Under the symbol key the table inverts: the four best
+non-oracle orderings are three structural orderings and one fusion, and the best lexical ordering is fifteenth.
 
 The individual reversals are large and significant after Holm correction with the repository
 as the unit. Issue-text path matching beats length-aware personalised PageRank by 0.059 AUC
 on co-edited files ($A_{12} = 0.403$ for the walk, $p_{\text{Holm}} < 10^{-4}$) and loses to
-it by 0.100 on symbol files ($A_{12} = 0.671$, $p_{\text{Holm}} < 10^{-8}$).
+it by 0.100 on symbol files ($A_{12} = 0.671$, $p_{\text{Holm}} < 10^{-7}$).
 
 We rest the reversal on those paired tests rather than on a rank correlation. The
 correlation is low --- Spearman $\rho = 0.24$ over the twenty contenders ($p = 0.31$), and
@@ -627,7 +630,7 @@ fifteenth to ninth. The three top places under both keys are then held by the sa
 fusions.
 
 The statistical claim moves with the ranks. On the full corpus a walk along import edges
-beats path matching on the symbol key by 0.101 ($p_{\text{Holm}} < 10^{-8}$, repository as
+beats path matching on the symbol key by 0.101 ($p_{\text{Holm}} < 10^{-7}$, repository as
 the unit). On the matched population the same comparison gives $+0.008$ and
 $p_{\text{Holm}} = 1$; for \m{hops\_lines} against path matching it gives $+0.019$ and
 $p_{\text{Holm}} = 1$. We therefore do not claim that structural proximity beats issue-text
@@ -731,20 +734,21 @@ The result is asymmetric, and the asymmetry is the finding. Running the walk \em
 import edges --- towards what the seed depends on --- places \m{ppr\_out\_pl} second of
 twenty-three on the symbol key at 0.491. Running it \emph{against} them collapses to
 \m{ppr\_in\_pl} at 0.277, twenty-first. The like-for-like gap is 0.123 on the matched
-population and 0.215 on the full one, in both cases the largest separation between two
-structural orderings anywhere in our results ($p_{\text{Holm}} < 10^{-14}$, repository as
-the unit).
+population and 0.215 on the full one ($p_{\text{Holm}} < 10^{-14}$, repository as the
+unit), and on the symbol key the ten largest gaps between any two structural orderings, on
+either population, all have an inward walk on the losing side.
 
 But the undirected walk loses almost nothing. On the symbol key \m{ppr\_und\_pl} scores
-0.489 against \m{ppr\_out\_pl}'s 0.491, a difference of 0.002 that is not significant on the
-full corpus ($p_{\text{Holm}} = 1$) and reverses in sign, slightly, on the matched one. So
+0.489 against \m{ppr\_out\_pl}'s 0.491, a paired difference of 0.001 that is not significant
+on the full corpus ($p_{\text{Holm}} = 1$) and reverses in sign on the matched one, where the
+undirected walk leads by 0.020 ($p_{\text{Holm}} = 0.85$). So
 the practice this literature has settled on --- throw the direction away --- is not the
 mistake it might appear to be from the spread of the table. Walking backwards is the mistake.
 
 On the co-edited key direction is worse than useless. All four directed variants rank
 seventeenth to twentieth, below \m{same\_dir}, a baseline that orders files by directory and
 consults no graph at all; all four undirected walks rank tenth to fourteenth, above it.
-Committing to an orientation costs 0.044 to 0.061 AUC there ($p_{\text{Holm}} < 10^{-3}$).
+Committing to an orientation costs 0.040 to 0.064 AUC there ($p_{\text{Holm}} < 10^{-3}$).
 
 The explanation is the same one that qualifies the symbol key throughout. That key is built
 by resolving names with \texttt{jedi}, which follows imports in exactly one direction, so a
@@ -764,7 +768,7 @@ $p_{\text{Holm}} < 10^{-16}$). On that evidence source, much of what the persona
 delivers is a repository prior.
 
 Under the co-edited key the same prior scores 0.271 against a random floor of 0.248. The
-difference is significant but negligible ($A_{12} = 0.552$, $p_{\text{Holm}} = 0.001$), and
+difference is significant but negligible ($A_{12} = 0.552$, $p_{\text{Holm}} = 0.002$), and
 the personalised walk beats it by 0.101 ($A_{12} = 0.666$). Knowing which file is being changed therefore
 matters a great deal for predicting what else was changed, and rather little for predicting
 what the code calls, where knowing the repository's hubs is nearly as good.
@@ -784,8 +788,8 @@ prior overlap at 0.364 at $k=10$: a seed-conditioned walk resembles the reposito
 more than it resembles a lexical ranking.
 
 Table~\ref{tab:comp} follows individual key files. At $k=20$, 24.4\% of co-edited files are
-found only by the lexical family and 9.6\% only by the structural family; on symbol files the
-asymmetry flips (19.9\% structure-only against 16.5\% words-only). Under either source about
+found only by the lexical family and 9.5\% only by the structural family; on symbol files the
+asymmetry flips (20.0\% structure-only against 16.5\% words-only). Under either source about
 a sixth of key files are found by neither family at $k=20$, which is where the remaining
 headroom to the oracle lives.
 
@@ -798,12 +802,7 @@ headroom to the oracle lives.
 \toprule
 Source & $k$ & both & structure only & words only & neither \\
 \midrule
-\m{co\_edited} & 10 & 32.2\% & 11.4\% & 30.0\% & 26.4\% \\
-\m{co\_edited} & 20 & 50.7\% & 9.6\% & 24.4\% & 15.3\% \\
-\m{co\_edited} & 50 & 76.7\% & 5.9\% & 13.4\% & 4.0\% \\
-\m{symbol} & 10 & 28.5\% & 23.3\% & 20.4\% & 27.8\% \\
-\m{symbol} & 20 & 47.4\% & 19.9\% & 16.5\% & 16.2\% \\
-\m{symbol} & 50 & 72.9\% & 11.5\% & 9.8\% & 5.9\% \\
+\rows{tab_comp}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -832,7 +831,7 @@ they use it at all.
 
 One pair isolates that property exactly. \m{rrf\_pprpl\_issue\_path} and
 \m{rrf\_ppr\_issue\_path} fuse the same three lists and differ only in whether the walk's
-scores are divided by file length first; their worst-case ranks are 6 and 13, and the
+scores are divided by file length first; their worst-case ranks are 6 and 11, and the
 difference is $+0.042$ AUC on co-edited files and $+0.050$ on symbol files on the matched
 population ($p_{\text{Holm}} < 10^{-11}$, repository as the unit). \m{rrf\_ppr\_issue}
 differs from its length-aware counterpart in two ways at once, so we rest the claim on the
@@ -1037,8 +1036,8 @@ over-correcting: it does not depend on discarding incidental vocabulary overlap.
 The direction of that change is clear; its significance is weaker than the ranks suggest, and
 we report the tests rather than the gap. \m{hops\_lines} over \m{path\_issue} on co-edited
 files is $-0.007$ under the full-path control ($p_{\text{Holm}} = 1$), $+0.042$ under the
-primary control ($p_{\text{Holm}} = 0.40$) and $+0.056$ under the strictest
-($p_{\text{Holm}} = 0.02$). Only in the strictest stratum does pure structure beat path
+primary control ($p_{\text{Holm}} = 0.60$) and $+0.056$ under the strictest
+($p_{\text{Holm}} = 0.04$). Only in the strictest stratum does pure structure beat path
 matching outright. The honest statement for the primary stratum is that the two become
 \emph{indistinguishable}, which is already the interesting claim: the ordering that appeared
 to be the best single signal on this key stops being distinguishable from one that never
@@ -1056,8 +1055,8 @@ where it loses.
 \paragraph{The seed is not the explanation.} The \m{path\_seed} control separates ``issue
 text'' from ``path matching'' directly: the same path-BM25 ranking, queried by the seed's own
 path instead of the issue, scores 0.371 on co-edited files against 0.434 for the issue query
-($+0.064$, $p_{\text{Holm}} < 10^{-14}$), and the two are indistinguishable on symbol files
-($+0.018$, $p_{\text{Holm}} = 0.30$). The comparable leakage figures for the seed itself are
+($+0.058$, $p_{\text{Holm}} < 10^{-4}$, repository as the unit), and the two are
+indistinguishable on symbol files ($+0.020$, $p_{\text{Holm}} = 0.81$). The comparable leakage figures for the seed itself are
 10.3\% full path and 35.1\% stem.
 
 \begin{table}
@@ -1218,7 +1217,7 @@ and for \m{hops\_lines} 5, 1, 3, 3, so the right claim is stability, not a trend
 largest quartile, issue-text path matching is sixth on co-edited files and fifteenth on
 symbol files, while length-aware personalised PageRank is twelfth and second respectively. The
 query-independent prior degrades fastest of all: on co-edited files in the largest
-quartile it scores 0.113 against a random floor of 0.089, which is to say that in the
+quartile it scores 0.113 against a random floor of 0.087, which is to say that in the
 repositories where retrieval matters most, knowing only which files are central is worth
 almost nothing. \m{rrf\_hops\_path} never falls below sixth in any of the eight cells,
 and is fourth or better in five of them.
@@ -1261,8 +1260,8 @@ signals; the controlled comparison does not.
 Calling the first of these an artefact would undersell it. Single-file pull requests are
 454 of the 1{,}156 our symbol key covers, and they are real work, not a sampling accident.
 What the matching control shows is that structure's advantage on the symbol key is
-\emph{concentrated} in them: on those 454 the best directed walk scores 0.605 and the six
-best orderings are all structural, against 0.417 for the same walk on the matched population.
+\emph{concentrated} in them: on those 454 the best directed walk scores 0.605 and the five
+best non-oracle orderings are all structural, against 0.417 for the same walk on the matched population.
 That is a finding in its own right, and an intuitive one --- when a change touches one file,
 what it needs is most likely to be what that file imports. It is not evidence that structure
 beats words in general, which is what the unmatched table appears to say.
@@ -1303,7 +1302,10 @@ methods given both the seed and the issue, so ``a fusion just gets more input'' 
 for the whole result. The issue-free twins of Section~\ref{sec:issue} answer it: blending a
 second list does help a little by itself --- \m{rrf\_pprpl\_seedpath} beats its own walk
 \m{ppr\_und\_pl} by 0.049 on co-edited files --- but the issue-aware fusion beats the twin by
-a further 0.069 on the full corpus. Complementarity is real; most of it is the leakage.
+a further 0.065, both on the full corpus with the repository as the unit. Complementarity is
+real, and about a third of what the issue adds to it is leakage: on the matched population the
+issue is worth 0.069 to the fusion over all tasks, and deleting the key files' names from it
+costs 0.023.
 
 \paragraph{The field's default key, restated carefully.} Every graph-based localization
 system we could check (Table~\ref{tab:priorkeys}) is graded against the files the gold patch
@@ -1464,7 +1466,7 @@ import edges, so it is partly circular with the structural methods it favours. C
 work is assembling keys from human annotation and from agent trajectories; scoring even a
 subset of our corpus against such a key would test our two proxies against a third of a
 different kind, and is the single addition we would most want to make. Coverage per line assumes whole files are read, which overstates the cost
-for agents that read selectively. The execution-based source is absent (\S3.3) and would be
+for agents that read selectively. The execution-based source is absent (Section~\ref{sec:keys}) and would be
 the natural third leg.
 
 \paragraph{Internal.} The graph builder resolves imports statically and misses dynamic
@@ -1513,8 +1515,9 @@ bracket the question. Deleting a key file's name from an issue that names it, an
 nothing else, costs issue-to-path matching 0.110 AUC on the affected tasks and costs nothing
 where there was nothing to delete. Replacing the issue entirely with a seed-derived query
 costs 0.156 on those same tasks but only 0.016 on the rest. Filename leakage is therefore
-causal and accounts for about two fifths of the apparent advantage of issue text here; the
-rest is that reports which name their files are better reports. A number that does not
+causal, and accounts for 0.061 of the 0.140 by which an issue that names a key file is worth
+more than one that does not; the other 0.079 is that reports which name their files are
+better reports. A number that does not
 separate the two is reporting their sum.
 
 The practical recommendation still stands, in a narrower form. Reciprocal-rank fusion of a

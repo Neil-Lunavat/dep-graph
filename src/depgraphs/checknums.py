@@ -393,6 +393,74 @@ def c_worst_gap():
                      for x in r.itertuples())
 
 
+@check("smallest p-value by unit, and whether the repository-level test is saturated")
+def c_p_floor():
+    import numpy as np
+    from scipy import stats
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    pw = pw[pw.source.isin(["co_edited", "symbol"])]
+    out = []
+    for u in ("pr", "repo"):
+        r = pw.loc[pw[pw.unit == u].p.idxmin()]
+        out.append("%s: p=%.2g (%s>%s, %s, n=%d)" % (u, r.p, r.a, r.b, r.source, r.n_pr))
+    # normal-approximation signed-rank floor: every unit favours the same method
+    n = 112
+    z = (n * (n + 1) / 4) / np.sqrt(n * (n + 1) * (2 * n + 1) / 24)
+    out.append("floor at n=%d: %.2g" % (n, 2 * stats.norm.sf(z)))
+    return " | ".join(out)
+
+
+@check("two-hop ball: median share of repository and median precision")
+def c_ball():
+    b = pd.read_csv(OUT / "ball.csv")
+    prec = b.ball_recall * b.key_files / b.ball_files.where(b.ball_files > 0)
+    return ("share median %.1f%% mean %.1f%% | precision median %.1f%% mean %.1f%% | "
+            "recall mean %.1f%% | lift %.2f" % (
+                100 * b.ball_share_of_repo.median(), 100 * b.ball_share_of_repo.mean(),
+                100 * prec.median(), 100 * prec.mean(), 100 * b.ball_recall.mean(),
+                b.ball_recall.mean() / b.ball_share_of_repo.mean()))
+
+
+@check("introduction: repository size and key share, per pull request")
+def c_intro_sizes():
+    k = pd.read_csv(OUT / "key_size.csv")
+    t = k.drop_duplicates("task_id").groupby("instance_id").repo_tokens.mean()
+    share = (k.key_tokens / k.repo_tokens).groupby([k.source, k.instance_id]).mean()
+    return ("median repo %d tokens (per PR) | PRs >128k %.1f%%, >200k %.1f%% | "
+            "key share median %.2f%%" % (t.median(), 100 * (t > 128000).mean(),
+                                         100 * (t > 200000).mean(), 100 * share.median()))
+
+
+@check("single-file pull requests on the symbol key: which orderings lead")
+def c_single():
+    r = pd.read_parquet(OUT / "rows.parquet", columns=["instance_id", "method", "source",
+                                                      "auc"])
+    co = set(r[r.source == "co_edited"].instance_id)
+    s = r[(r.source == "symbol") & ~r.instance_id.isin(co)]
+    ps = pd.read_csv(OUT / "per_source.csv")
+    fam = dict(zip(ps.method, ps.family))
+    m = (s.groupby(["method", "instance_id"]).auc.mean().groupby("method").mean()
+         .drop("oracle").sort_values(ascending=False).head(6))
+    return "n=%d: %s" % (s.instance_id.nunique(), ", ".join(
+        "%s(%s,%.3f)" % (k, fam.get(k, "?")[:4], v) for k, v in m.items()))
+
+
+@check("direction: do the largest structural gaps all have an inward walk losing?")
+def c_inward():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    st = {"bfs_und", "hops_lines", "ppr_und", "ppr_und_pl", "ppr_out", "ppr_out_pl",
+          "ppr_in", "ppr_in_pl"}
+    out = []
+    for pop in ("all", "shared"):
+        d = pw[(pw.unit == "repo") & (pw.stratum == "all") & (pw.source == "symbol")
+               & (pw.population == pop) & pw.a.isin(st) & pw.b.isin(st)]
+        d = d.assign(ad=d.delta.abs()).sort_values("ad", ascending=False)
+        losers = [r.b if r.delta > 0 else r.a for r in d.itertuples()]
+        n = next(i for i, x in enumerate(losers) if x not in ("ppr_in", "ppr_in_pl"))
+        out.append("symbol/%s: first %d gaps have an inward loser" % (pop, n))
+    return " | ".join(out)
+
+
 def main():
     bad = 0
     for name, fn in CHECKS:

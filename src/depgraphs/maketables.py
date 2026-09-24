@@ -272,6 +272,45 @@ def redaction_table():
     write("redact", LF.join(rows))
 
 
+def comp_table():
+    """How each key file is reached within the top k of each family (RQ4)."""
+    c = pd.read_csv(OUT / "complementarity.csv")
+    rows = []
+    for src in ("co_edited", "symbol"):
+        for x in c[c.source == src].sort_values("k").itertuples():
+            rows.append("%s & %d & %s %s" % (m(src), x.k, " & ".join(
+                "%.1f\\%%" % (100 * v)
+                for v in (x.both, x.struct_only, x.lex_only, x.neither)), NL))
+    write("comp", LF.join(rows))
+
+
+def distance_table():
+    """Key files by hop distance from the seed, and the size of the two-hop ball (RQ1)."""
+    d = pd.read_csv(OUT / "distance_profile.csv").set_index(["source", "hops"])["share"]
+    b = pd.read_csv(OUT / "ball.csv")
+    hit = b.ball_recall * b.key_files
+    prec = (hit / b.ball_files.where(b.ball_files > 0)).median()
+    lift = b.ball_recall.mean() / b.ball_share_of_repo.mean()
+    med = b[["ball_files", "ball_lines", "key_files", "key_lines"]].median()
+    rows = ["%s & %s %s" % (m(src), " & ".join(
+        "%.1f\\%%" % (100 * d.get((src, h), 0.0))
+        for h in ("1", "2", "3+", "unreachable")), NL)
+        for src in ("co_edited", "symbol")]
+    rows.append(BS + "midrule")
+    rows.append("%s{5}{l}{%s{The two-hop ball:} %d files, %s lines, %.0f\\%% of the "
+                "repository} %s" % (BS + "multicolumn", BS + "emph", med.ball_files,
+                                    "{:,}".format(int(med.ball_lines)).replace(",", "{,}"),
+                                    100 * b.ball_share_of_repo.mean(), NL))
+    rows.append("%s{5}{l}{%squad recall %.1f\\%%, precision %.1f\\%%, recall lift over a "
+                "same-sized random sample %.2f$%stimes$} %s" % (
+                    BS + "multicolumn", BS, 100 * b.ball_recall.mean(), 100 * prec, lift,
+                    BS, NL))
+    rows.append("%s{5}{l}{%s{The union key:} %d files, %s lines} %s" % (
+        BS + "multicolumn", BS + "emph", med.key_files,
+        "{:,}".format(int(med.key_lines)).replace(",", "{,}"), NL))
+    write("distance", LF.join(rows))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -302,6 +341,8 @@ def main():
     issue_table()
     heldout_table()
     redaction_table()
+    comp_table()
+    distance_table()
     figure_data()
 
 
