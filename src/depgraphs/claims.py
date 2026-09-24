@@ -127,6 +127,12 @@ def sl_delta(b: str, source: str, stratum: str = "all") -> float:
     return float(r.delta)
 
 
+def dn(what: str, source: str, stratum: str = "all") -> float:
+    t = csv("dense_tests.csv")
+    return float(t[(t.what == what) & (t.source == source) & (t.stratum == stratum)]
+                 .iloc[0].delta)
+
+
 def cb_test(name: str, b: str) -> dict:
     return next(t for t in CB[name]["tests"] if t["b"] == b)
 
@@ -387,12 +393,17 @@ def claims() -> list[tuple[str, str, str]]:
         ("The wider arms do find something there", "fusion, symbols arm, nothing named",
          num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "nothing removed",
                            "symbols"))),
-        ("accounts for 0.061 to 0.078 of that", "abstract: leakage share, widest arm",
-         num3(leak_share("symbols"))),
-        ("accounts for 0.061 to 0.078 of that", "abstract: the gap", num3(gap())),
-        ("accounts for 0.061 to 0.078 of that", "abstract: issue worth where named",
-         num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
-                    stratum="explicit"))),
+        # the abstract states these in words; the words are checked against the ratios
+        ("as it does in two tasks in five: there it is worth", "abstract: 'ten times'",
+         "ten times" if 9 <= (delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
+                                    stratum="explicit")
+                              / delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath",
+                                      "co_edited", stratum="no_explicit")) <= 11
+         else "RATIO-CHANGED"),
+        ("as it does in two tasks in five: there it is worth", "abstract: 'about half'",
+         "about half" if all(0.4 <= x / gap() <= 0.6 for x in (
+             redact_delta("rrf_pprpl_issue_path", "co_edited"), leak_share("symbols")))
+         else "SHARE-CHANGED"),
         ("and between 0.061 and 0.078 of that 0.140", "conclusion: leakage share, widest arm",
          num3(leak_share("symbols"))),
         ("where one of four predictions, about redaction,", "contributions: external E4 failed",
@@ -506,6 +517,45 @@ def claims() -> list[tuple[str, str, str]]:
         ("The walks on their own, without the issue", "seedless: walk alone, edited",
          num3(sl_auc("ppr_und_pl", "edited"))),
     ]
+    if (OUT / "dense_tests.csv").exists():
+        W = "issue worth, dense fusion"
+        dgap = dn(W, "co_edited", "explicit") - dn(W, "co_edited", "no_explicit")
+        wide = (dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "explicit")
+                - dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "no_explicit"))
+        C += [
+            ("The dense retriever is the better issue reader", "dense vs bm25, co",
+             num3(dn("dense_issue vs bm25_issue", "co_edited"))),
+            ("The dense retriever is the better issue reader", "dense vs bm25, sym",
+             num3(dn("dense_issue vs bm25_issue", "symbol"))),
+            ("The dense retriever is the better issue reader", "dense vs path, co",
+             num3(dn("dense_issue vs path_issue", "co_edited"))),
+            ("The dense retriever is the better issue reader", "dense vs path, sym",
+             num3(dn("dense_issue vs path_issue", "symbol"))),
+            ("Put in place of BM25 over contents", "dense in place, co",
+             num3(dn("rrf_pprpl_dense_path vs rrf_pprpl_issue_path", "co_edited"))),
+            ("Put in place of BM25 over contents", "dense as fourth list, co",
+             num3(dn("rrf_pprpl_issue_path_dense vs rrf_pprpl_issue_path", "co_edited"))),
+            ("Put in place of BM25 over contents", "dense as fourth list, sym",
+             num3(dn("rrf_pprpl_issue_path_dense vs rrf_pprpl_issue_path", "symbol"))),
+            ("On issues that\nname no key file the dense fusion gains", "dense worth, not named, co",
+             num3(dn(W, "co_edited", "no_explicit"))),
+            ("On issues that\nname no key file the dense fusion gains", "dense worth, not named, sym",
+             num3(dn(W, "symbol", "no_explicit"))),
+            ("But it is a fifth of what", "dense worth, named, co",
+             num3(dn(W, "co_edited", "explicit"))),
+            ("The\nnames arm costs the dense fusion", "dense names arm",
+             num3(dn("names cost (_rd), rrf_pprpl_dense_path", "co_edited", "explicit"))),
+            ("The\nnames arm costs the dense fusion", "dense widest arm",
+             num3(dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "explicit"))),
+            ("The\nnames arm costs the dense fusion", "dense widest arm, not named",
+             num3(dn("names cost (_rds), rrf_pprpl_dense_path", "co_edited", "no_explicit"))),
+            ("The\nnames arm costs the dense fusion", "dense stratum gap", num3(dgap)),
+            ("The\nnames arm costs the dense fusion", "dense leakage share low",
+             "%d" % round(100 * dn("names cost (_rd), rrf_pprpl_dense_path", "co_edited",
+                                   "explicit") / dgap)),
+            ("The\nnames arm costs the dense fusion", "dense leakage share high",
+             "%d" % round(100 * wide / dgap)),
+        ]
     return C
 
 

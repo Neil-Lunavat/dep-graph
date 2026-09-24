@@ -505,6 +505,52 @@ def seedless_table():
     write("seedless", LF.join(out))
 
 
+def dense_tables():
+    """The dense retriever against BM25, and the decomposition for each fusion."""
+    fa, ft = OUT / "dense_auc.csv", OUT / "dense_tests.csv"
+    if not (fa.exists() and ft.exists()):
+        return
+    a = pd.read_csv(fa)
+    a = a[a.population == "shared"]
+    show = ["rrf_pprpl_issue_path_dense", "rrf_pprpl_dense_path", "rrf_pprpl_issue_path",
+            "rrf_pprpl_dense", "dense_issue", "path_issue", "bm25_issue", "dense_seed",
+            "bm25_seed"]
+    out = []
+    for name in show:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            r = a[(a.method == name) & (a.source == src)].iloc[0]
+            cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r.rank_if_ranked)))
+        out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
+    write("dense_auc", LF.join(out))
+
+    t = pd.read_csv(ft)
+    t = t[t.family == "decomposition"]
+
+    def cell(what, stratum, src):
+        r = t[(t.what == what) & (t.stratum == stratum) & (t.source == src)].iloc[0]
+        d = r.delta
+        star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
+        return "$%+.3f%s$" % (d, star)
+    rows = [("issue worth, named", "explicit", "issue worth, %s fusion"),
+            ("issue worth, not named", "no_explicit", "issue worth, %s fusion"),
+            ("names arm, named", "explicit", "names cost (_rd), %s"),
+            ("paths arm, named", "explicit", "names cost (_rdp), %s"),
+            ("symbols arm, named", "explicit", "names cost (_rds), %s"),
+            ("symbols arm, not named", "no_explicit", "names cost (_rds), %s")]
+    fus = {"BM25": ("BM25", "rrf_pprpl_issue_path"), "dense": ("dense", "rrf_pprpl_dense_path")}
+    out = []
+    for label, st, pat in rows:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            for kind in ("BM25", "dense"):
+                word, meth = fus[kind]
+                what = pat % (word if "worth" in pat else meth)
+                cells.append(cell(what, st, src))
+        out.append(label + " & " + " & ".join(cells) + " " + NL)
+    write("dense_decomp", LF.join(out))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -543,6 +589,7 @@ def main():
     contextbench_table()
     metric_table()
     seedless_table()
+    dense_tables()
     figure_data()
 
 

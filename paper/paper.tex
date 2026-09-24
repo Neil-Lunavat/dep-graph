@@ -31,28 +31,24 @@
 \email{neillunavat3192@gmail.com}
 
 \begin{abstract}
-An agent editing one file of an unfamiliar repository must choose what else to read: the
-median pull request here is made against 286{,}385 tokens of code, of which the files it needs
-are 2.98\%. Given the file being changed, we compare two signals for that choice --- proximity
-in the import graph and the words of the issue report --- and their fusion, on 2{,}412 change
-tasks from 1{,}162 pull requests in 112 Python repositories. Each ordering is scored by how much
-of an answer key it covers per line read, against two keys we never merge: the files co-edited
-in the pull request, and the files defining symbols the change uses.
+An agent editing one file of an unfamiliar repository must choose what else to read. Given
+that file, we compare two signals for the choice --- proximity in the import graph and the
+words of the issue report --- and their fusion, on 2{,}412 change tasks from 1{,}162 pull
+requests in 112 Python repositories. Each reading order is scored by how much of an answer key
+it covers per line read, under two keys recovered from the pull request and, on a further 108
+pull requests, a key annotated by people.
 
 Two findings survive our controls. First, what the issue is worth depends on whether it names
-a file the change touches. In 40.2\% of tasks it names one as code; there the issue is worth
-0.156 AUC to the best fusion, against 0.016 elsewhere. Deleting from the same issue only what
-points at the files --- their names, then their directories, then the symbols they define ---
-accounts for 0.061 to 0.078 of that 0.140 difference, and the rest survives every redaction;
-on seven repositories outside the sample the names alone mattered less, and not significantly
-on the co-edited key. A benchmark built from issue reports therefore averages an easy regime with a hard one, and a
-gain from issue-aware retrieval that is not reported per regime cannot be interpreted. Second,
-fusing a length-aware personalised walk with issue-to-path matching is the robust choice: on
-the pull requests that carry both keys it is never significantly worse than the best single
-signal under any stratification, and it held on seven repositories outside the sample, scored
-against predictions committed in advance. The exception is single-file changes, where the walk
-alone is better. The two-hop import neighbourhood, the usual argument for graph retrieval,
-holds 87.5\% of the needed files and also half the repository.
+a file the change touches, as it does in two tasks in five: there it is worth ten times as
+much to the best ordering as elsewhere, and deleting from the same issue only what points at
+the files removes about half of that difference. A dense code retriever reads the issue better
+but leaves this structure intact. A benchmark average over the two kinds of issue describes
+neither. Second, fusing a walk from the file with issue-to-path matching is the robust choice:
+it is never significantly worse than the best single signal, it held under predictions
+committed before scoring on seven unseen repositories and on the human-annotated key, and it
+remains best when the file to change must itself be guessed from the issue. The exception is
+single-file changes, where the walk alone is better. The advantage import-graph methods show on
+an import-derived key does not survive the human one.
 \end{abstract}
 
 \keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
@@ -163,7 +159,10 @@ freeze, and which of them were tested against predictions committed in advance.
 gives the issue's total value, and three nested within-task redactions give the part carried by
 what points at the key files. On issues that name a key file as code the issue is worth
 $+0.156$ AUC to the best fusion, of which $0.061$ to $0.078$ is attributable to the names,
-depending on how much beyond the filename is deleted (Section~\ref{sec:issue}).
+depending on how much beyond the filename is deleted (Section~\ref{sec:issue}). A dense code
+retriever reads the issue better --- it gains twice as much where the issue names nothing ---
+but the two-regime structure and the names' share of it are much the same
+(Section~\ref{sec:dense}).
 \item \textbf{A robust recommendation, tested three ways.} Reciprocal-rank fusion of a
 personalised walk with issue-to-path matching is never significantly worse than the best pure
 ordering on the matched population. It held under predictions committed before scoring on seven
@@ -509,6 +508,7 @@ The upper budgets approach the whole repository for the smaller repositories, wh
 compress differences between methods. Restricting the AUC to the six budgets up to 8{,}000
 lines leaves the leading orderings unchanged under both keys and on both populations.
 
+\begin{sloppypar}
 The budget is denominated in lines because the pre-registered design fixed it that way at
 \texttt{freeze-1}, and we do not change a frozen metric after seeing results. Lines are
 nevertheless the wrong unit for a context window, so we measure the conversion rather than
@@ -519,6 +519,7 @@ Absolute counts shift by a small constant factor between tokenizer families; the
 report do not depend on the choice. A budget of 8{,}000 lines is therefore roughly 68{,}000
 tokens, and the eight budgets span roughly 2{,}100 to 272{,}000 tokens --- from a
 fraction of a small context window to more than a large one.
+\end{sloppypar}
 
 \subsection{Statistics}
 \label{sec:stats}
@@ -871,6 +872,7 @@ differs from its length-aware counterpart in two ways at once, so we rest the cl
 clean pair rather than on the three-of-five tally. How much of this margin the cost rule
 itself creates is the subject of Section~\ref{sec:metric}.
 
+\begin{sloppypar}
 The insurance is close to free. Over the full corpus \m{rrf\_hops\_path} gains 0.067 AUC on
 \m{hops\_lines} on co-edited files ($A_{12} = 0.602$, $p_{\text{Holm}} < 10^{-11}$) and is
 indistinguishable from it on symbol files ($+0.003$ as a mean of repository differences,
@@ -878,6 +880,7 @@ $-0.001$ in the pull-request means of Table~\ref{tab:main}; $p_{\text{Holm}} = 1
 ($p_{\text{Holm}} < 10^{-13}$) and loses 0.008 ($p_{\text{Holm}} = 1$). The lexical signal
 adds a large amount where structure is weak and costs nothing where structure is strong.
 Section~\ref{sec:issue} asks what, in that lexical signal, is doing the work.
+\end{sloppypar}
 
 \subsection{How much of the ranking is the cost rule?}
 \label{sec:metric}
@@ -1197,6 +1200,7 @@ Ordering & co\_edited (\%) & symbol (\%) \\
 \end{tabular}
 \end{table}
 
+\begin{sloppypar}
 The reversal of Table~\ref{tab:main} survives this stricter criterion:
 \m{bm25\_issue} loses 14.9 points and \m{path\_issue} 11.5 points moving from the co-edited
 key to the symbol key, while the outward walks gain the most (\m{ppr\_out} 15.2 points,
@@ -1207,6 +1211,7 @@ direction the key was built along, not of using the graph.
 And the fusion orderings again sit at or near the top of both columns, which is the same
 conclusion RQ5 reached by AUC, reached here by a measure that ignores partial credit
 entirely.
+\end{sloppypar}
 
 \subsection{Do the lexical methods just copy paths out of the issue?}
 \label{sec:leak}
@@ -1333,7 +1338,9 @@ Because these are null results we report what they exclude rather than treating 
 zeros. The bootstrap interval on the no-mention stratum is $[0.000, 0.031]$ on the co-edited
 key and $[-0.003, 0.027]$ on the symbol key, so the data are consistent with the issue being
 worth up to about 0.03 AUC there, and inconsistent with its being worth anything close to the
-0.156 it is worth where it names a file. Taken alone this comparison would say that the issue
+0.156 it is worth where it names a file. Both statements are about BM25; a dense retriever
+finds about twice as much there (Section~\ref{sec:dense}), though still a fifth of what it finds
+where the issue names a file. Taken alone this comparison would say that the issue
 is worth almost exactly what it names --- and taken alone it would be overstating, because it
 is confounded with which issues, and which tasks, name their files.
 
@@ -1440,6 +1447,73 @@ directory or a function it defines.}
 Method & AUC & names & paths & symbols & AUC & names & paths & symbols \\
 \midrule
 \rows{tab_redact}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Does a dense retriever get more out of the issue?}
+\label{sec:dense}
+
+Every issue-aware ordering so far is BM25, over identifiers or over paths, so ``what the
+issue is worth'' has meant what BM25 over the issue's tokens is worth. A learned
+representation might extract much more from the prose that remains once the file names are
+gone, and the RQ7 answer would then describe the retriever rather than the issue. We therefore
+scored the dense retriever of Section~\ref{sec:design-freeze}'s design --- a code embedding
+model, fixed in our design before any method ran but not run until review asked for it --- on
+its own, fused with the length-aware walk, with an issue-free twin, and under the three
+redaction arms, on the matched population. It is kept out of the other tables' ranks and
+correction families and tested in two families of its own (Table~\ref{tab:dense}).
+
+The dense retriever is the better issue reader. Alone it beats BM25 over file contents by
+0.059 on co-edited files and 0.054 on symbol files, and path matching by 0.041 and 0.016
+($p_{\text{Holm}} \le 0.04$). Put in place of BM25 over contents in the recommended fusion it
+adds 0.018 on both keys, and added as a fourth list it adds 0.031 and 0.012 ($p_{\text{Holm}}
+\le 0.006$); either of these fusions would be the best non-oracle ordering on both keys. The
+recommendation of Section~\ref{sec:fusion} is therefore a floor: a walk fused with issue
+retrieval, with the issue read as well as one can.
+
+It changes the decomposition of Section~\ref{sec:issue} in degree, not in kind. On issues that
+name no key file the dense fusion gains 0.033 from the issue on co-edited files, twice what the
+BM25 fusion gains and, unlike it, significant; on the symbol key it gains 0.017, not
+significantly. So the bound of RQ7 was partly BM25's: a better reader finds some signal where
+the issue names nothing. But it is a fifth of what the same fusion gains where the issue names
+a key file, 0.178, and the names account for a similar share of the difference as before. The
+names arm costs the dense fusion 0.058 and the widest arm 0.086, of which 0.018 it also costs
+where nothing is named; of the 0.145 stratum gap on co-edited files, 40 to 47 per cent is the
+names, against 44 to 56 per cent for BM25. A dense retriever reads past the names somewhat
+better --- on its own it loses only 0.020 to 0.030 to redaction where BM25 over paths loses
+0.110 --- but it does not remove the two-regime structure of the benchmark.
+
+We did not test a model that reads the issue as a whole, an LLM reranker in particular. It
+could plausibly extract more still from the residual prose; the redaction protocol applies to
+it unchanged, and we would expect its gain on issues that name their files to be exactly the
+kind of number that needs it.
+
+\begin{table}
+\caption{The dense retriever on the matched population. Top: AUC and the oracle-inclusive
+rank each ordering would take if inserted alone into the ranking of Table~\ref{tab:main}.
+Bottom: what the issue is worth to each fusion (fusion minus its issue-free twin) and what each
+redaction arm costs it, on tasks whose issue names a key file as code and on the rest.
+Repository as the unit; starred differences survive Holm correction within the family.}
+\label{tab:dense}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcc}
+\toprule
+Ordering & co\_edited & symbol \\
+\midrule
+\rows{tab_dense_auc}
+\bottomrule
+\end{tabular}
+
+\medskip
+\begin{tabular}{lcccc}
+\toprule
+& \multicolumn{2}{c}{co\_edited} & \multicolumn{2}{c}{symbol} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+& BM25 & dense & BM25 & dense \\
+\midrule
+\rows{tab_dense_decomp}
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1585,9 +1659,10 @@ between the issues that name files and those that do not, which no redaction we 
 removes. Both halves matter here. Ignore
 the first and a lexical baseline looks stronger than it is; ignore the second and the
 stratified comparison looks like proof that issue text does nothing, which our own
-within-task experiment contradicts. We resist the second reading in particular: the null in
-the no-mention stratum bounds the issue's contribution at about 0.03 AUC on 531 pull
-requests. It does not show it is zero.
+within-task experiment contradicts. The second reading is also a statement about BM25: on
+the issues that name nothing, a dense retriever extracts a small but significant 0.033 from
+the issue where BM25 extracts an insignificant 0.016. What issue text is worth depends on the
+reader as well as on the issue, and the redaction protocol measures it for any reader.
 
 \paragraph{Fusion is the safe choice.} Reciprocal-rank fusion of a
 length-aware walk with issue-to-path matching is the best non-oracle ordering under both keys
@@ -1704,8 +1779,8 @@ changes does not cover the same tasks as one that does not.
 structural methods --- on symbol-style keys it reaches 83\% of a personalised walk's absolute
 AUC, or 67\% of the walk's margin over a random ordering, which is the fairer reading.
 (5) Where a graph-based tool orders context by structure alone, add a lexical signal from
-the issue text and make the structural side length-aware before fusing; where one already
-uses both, report them separately as well as combined.
+the issue text before fusing, and make the structural side length-aware if the context is
+charged by size; where one already uses both, report them separately as well as combined.
 (6) Report cost in tokens and report the ceiling alongside the score, so a reader can tell a
 hard task from a poor ordering.
 (7) Cluster paired tests by repository; pull requests within a repository are not
@@ -1716,7 +1791,10 @@ Section~\ref{sec:issue}: delete the answer files' names from the issue and re-sc
 tasks, and compare against the same method with the issue replaced by a seed-derived query.
 Redact more than the filenames: on our corpus deleting the names alone costs the best fusion
 0.061 AUC, and deleting their directories and defined symbols too costs 0.096, so a
-names-only redaction is a lower bound.
+names-only redaction is a lower bound. Run the controls for whatever reads the issue: a dense
+retriever extracts twice as much as BM25 from the issues that name nothing.
+(9) State how reading is charged --- whole files or parts, by size or by count, stopping or
+skipping at the budget --- since the best structural input changes with it.
 
 \section{A Protocol for the Downstream Test, Fixed in Advance}
 \label{sec:protocol}
@@ -1844,25 +1922,30 @@ set: one of the four predictions failed on it.
 
 \section{Conclusion}
 
-Given the file being changed, what else belongs in an agent's context? Import-graph proximity
-and issue-text matching answer differently, and under two defensible definitions of the answer
-they appear to trade places. That reversal is mostly the comparison, not the signals: one half
-is the different pull requests the two keys cover, the other the issues that name their files.
+Given the file being changed, what else should be read? Import-graph proximity and issue-text
+matching answer differently, and under two defensible definitions of the answer they appear
+to trade places. That reversal is mostly the comparison, not the signals: one half is the
+different pull requests the two keys cover, the other the issues that name their files; and a
+key annotated by people sides with the key built from the patch, not the one built from
+imports.
 
 What remains is two findings. Issue-aware retrieval is worth far more when the issue names a
 file the change touches, and between 0.061 and 0.078 of that 0.140 advantage is the naming
-itself; a benchmark average over issues that do and do not name their files describes neither,
-and should be reported per regime. And reciprocal-rank fusion of a length-aware walk with
-issue-to-path matching is the robust choice --- never significantly worse than the best single
-signal on the pull requests carrying both keys, stable across repository splits, and holding
-on seven repositories outside the sample --- except for single-file changes, where the walk
-alone is better. It costs a BM25 index over file paths and contents.
+itself; a dense code retriever reads the rest of the issue better but does not change the
+picture. A benchmark average over issues that do and do not name their files describes
+neither, and should be reported per regime. And fusing a walk from the file with issue
+retrieval is the robust choice: never significantly worse than the best single signal on the
+pull requests carrying both keys, stable across repository splits, holding on seven
+repositories outside the sample and on a human-annotated key under predictions fixed in
+advance, and still best when the file itself must be guessed from the issue --- except for
+single-file changes, where the walk alone is better. Make the walk favour short files when a
+context is charged by size, and not when it is charged by the file.
 
 We recommend that context-retrieval work for code change report per evidence source, report
-and stratify by whether the query names the answer, compare any issue-aware method against
-the same method with a seed-derived query, match populations before comparing across keys,
-cluster its tests by repository, and use a repository prior rather than random order as its
-floor.
+and stratify by whether the query names the answer, run the redaction control for whatever
+reads the issue, compare any issue-aware method against the same method with a seed-derived
+query, match populations before comparing across keys, cluster its tests by repository, and
+state how reading is charged.
 
 \section*{Data Availability}
 

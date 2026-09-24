@@ -38,7 +38,8 @@ DECOMP = [("rrf_pprpl_dense_path", "rrf_pprpl_seeddense_path", "issue worth, den
           ("bm25_issue", "bm25_seed", "issue worth, BM25 alone"),
           ("rrf_pprpl_dense_path", "rrf_pprpl_issue_path", "dense over BM25 fusion")]
 DECOMP += [(m, m + sfx, "names cost (%s), %s" % (sfx, m))
-           for sfx in ("_rd", "_rdp", "_rds") for m in ("rrf_pprpl_dense_path", "dense_issue")]
+           for sfx in ("_rd", "_rdp", "_rds")
+           for m in ("rrf_pprpl_dense_path", "dense_issue", "rrf_pprpl_issue_path")]
 DECOMP += [("rrf_pprpl_dense_path" + sfx, "rrf_pprpl_issue_path" + sfx,
             "dense over BM25 fusion after redaction (%s)" % sfx)
            for sfx in ("_rd", "_rdp", "_rds")]
