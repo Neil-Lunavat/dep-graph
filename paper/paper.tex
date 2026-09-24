@@ -110,7 +110,8 @@ method's score that accounts for, which is what a benchmark average hides.
 
 This paper compares the two, and the comparison needs a definition of which files a change
 needed. We use two that can be recovered without human labelling: the files \emph{co-edited}
-in the same pull request, and the files that \emph{define symbols} the changed code references.
+in the same pull request, and the files that \emph{define symbols} the changed code references;
+and we check both against a third, annotated by people, on a separate set of tasks.
 Graded as they come, the two keys rank the methods differently. Most of that difference is not
 about the signals. A symbol key exists for a single-file change and a co-edited key does not,
 so the two are scored on different pull requests; and in two tasks in five the issue names a
@@ -125,9 +126,11 @@ issues that name their files, and a within-task redaction experiment measures ho
 is the names themselves. We call the names \emph{leakage} only in this benchmark sense. In
 deployment an issue that names \texttt{core.py} is a legitimate input; the problem is that an
 average over issues that do and issues that do not describes neither, and the share of each
-varies by corpus. The second finding is a recommendation: fusing a length-aware walk with
-issue-to-path matching is robust across both keys, every stratum and an external set of
-repositories --- except for single-file changes, where the walk alone is better.
+varies by corpus. The second finding is a recommendation: fusing a walk from the file with
+issue-to-path matching is robust across both keys, every stratum, an external set of
+repositories and a human-annotated key, and it survives the loss of the free seed ---
+except for single-file changes, where the walk alone is better. Whether the walk should
+favour short files depends on how a context is paid for, and we show both cases.
 
 \subsection*{Research questions}
 
