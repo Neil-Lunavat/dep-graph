@@ -45,8 +45,9 @@ the files removes about half of that difference. A dense code retriever reads th
 but leaves this structure intact. A benchmark average over the two kinds of issue describes
 neither. Second, fusing a walk from the file with issue-to-path matching is the robust choice:
 it is never significantly worse than the best single signal, it held under predictions
-committed before scoring on seven unseen repositories and on the human-annotated key, and it
-remains best when the file to change must itself be guessed from the issue. The exception is
+committed before scoring on seven unseen repositories and on the human-annotated key, and,
+with the issue read by a dense retriever, it remains best when the file to change must itself
+be guessed from the issue. The exception is
 single-file changes, where the walk alone is better. The advantage import-graph methods show on
 an import-derived key does not survive the human one.
 \end{abstract}
@@ -124,8 +125,8 @@ deployment an issue that names \texttt{core.py} is a legitimate input; the probl
 average over issues that do and issues that do not describes neither, and the share of each
 varies by corpus. The second finding is a recommendation: fusing a walk from the file with
 issue-to-path matching is robust across both keys, every stratum, an external set of
-repositories and a human-annotated key, and it survives the loss of the free seed ---
-except for single-file changes, where the walk alone is better. Whether the walk should
+repositories and a human-annotated key, and it survives the loss of the free seed if the
+issue is read well --- except for single-file changes, where the walk alone is better. Whether the walk should
 favour short files depends on how a context is paid for, and we show both cases.
 
 \subsection*{Research questions}
@@ -167,8 +168,10 @@ but the two-regime structure and the names' share of it are much the same
 personalised walk with issue-to-path matching is never significantly worse than the best pure
 ordering on the matched population. It held under predictions committed before scoring on seven
 unseen repositories (where one of four predictions, about redaction, failed) and against
-ContextBench's human-annotated key (all four held), and it remains the best ordering when the
-file to change is not given but guessed from the issue (Section~\ref{sec:seedless}). Whether
+ContextBench's human-annotated key (all four held). When the file to change is not given but
+guessed from the issue, the same fusion with a dense issue reader remains the best ordering,
+though there the walk helps with what the change depends on, not with finding the files it
+edits (Section~\ref{sec:seedless}). Whether
 the walk should be length-aware depends on how reading is charged: by lines it should, and two
 fusions differing only in that are $0.042$ and $0.050$ AUC apart; charged per file, it should
 not (Section~\ref{sec:metric}).
@@ -1537,20 +1540,25 @@ The guess is right in 41\% of pull requests: in 53\% of the 583 whose issue name
 file as code, and in 29\% of the 579 whose issue does not. (Half the pull requests, not two
 fifths of the tasks, count as naming here, because the seed's own name now counts.)
 
-Table~\ref{tab:seedless} gives the result. Walking from the guess and fusing with the issue
-remains the best non-oracle ordering under both keys, at 0.480 and 0.440, and in no stratum
-is it significantly worse than any alternative. What the walk adds depends on the key. On the
-symbol key it adds 0.044 to the issue-only fusion that chose its seed ($p_{\text{Holm}} <
-10^{-4}$), and does so whether or not the issue names a file: even a wrong guess is usually in
-the right package, and the walk reaches what the change depends on from there. On the edited
-files it adds 0.009 ($p_{\text{Holm}} = 0.03$) and nothing significant within either stratum:
-when the task is to find the files to change, what the issue retrieves directly is nearly all
-there is. The walks on their own, without the issue, fall well behind on the edited files
-(0.404 against 0.480), because the file they start from is wrong more often than right.
+Table~\ref{tab:seedless} gives the result. With the issue read by the dense retriever of
+Section~\ref{sec:dense}, walking from the guess and fusing is the best non-oracle ordering
+under both keys, at 0.500 and 0.458, and in no stratum is it significantly worse than any
+alternative. What the walk adds depends on the key. On the symbol key it adds 0.041 to the
+dense retriever alone ($p_{\text{Holm}} < 10^{-4}$): even a wrong guess shares the true file's
+top-level package 87\% of the time, though its directory only 32\%, and the walk reaches what
+the change depends on from there. On the edited files it adds nothing measurable overall
+($+0.007$). It helps where the issue names an edited file ($+0.029$, $p_{\text{Holm}} =
+0.009$) and costs where it names none ($-0.024$, $p_{\text{Holm}} = 0.08$), because there the
+guess is right in fewer than a third of pull requests. The BM25 fusion of the main study fares
+worse without its free seed: on the edited files of issues that name nothing, the dense
+retriever alone beats it by 0.048 ($p_{\text{Holm}} = 0.009$). Finding the file to change is
+issue retrieval, and the better reader of the issue wins it; the walk earns its place on what
+that file depends on.
 
 This is the simplest possible localiser, and an agent's is better; the numbers bound what a
-graph adds on top of a weak guess, not a strong one. But the recommendation does not depend on
-the free seed.
+graph adds on top of a weak guess, not a strong one. The recommendation survives the loss of
+the free seed if the issue is read well, and on the files the change depends on rather than
+the files it edits.
 
 \begin{table}
 \caption{Without a free seed: mean AUC per pull request when the seed is the issue's own
@@ -1692,9 +1700,11 @@ remains best or within 0.003 of best, though the part of its margin owed to leng
 shrinks by about sixty per cent, and under a per-file rule the unscaled fusion is the one to
 use (Section~\ref{sec:metric}). It is not an artefact of our keys: against a human-annotated
 key it is second of twenty-two, 0.009 behind a fusion of the same family. And it does not
-depend on being handed the file to change: when the issue's own best guess is used as the
-seed, right in only 41\% of pull requests, walking from the guess and fusing still gives the
-best non-oracle ordering under both keys (Section~\ref{sec:seedless}).
+depend on being handed the file to change, provided the issue is read well: when the issue's
+own best guess is used as the seed, right in only 41\% of pull requests, walking from the
+guess and fusing with a dense issue reader still gives the best non-oracle ordering under both
+keys, although on the edited files the walk adds nothing over the dense reader alone
+(Section~\ref{sec:seedless}).
 
 We were also able to test the obvious alternative explanation. The fusions are the only
 methods given both the seed and the issue, so ``a fusion just gets more input'' is the null
@@ -1719,7 +1729,8 @@ Two further qualifications matter. Our main task hands every structural method a
 file for free, whereas LocAgent, CoSIL and the rest must localize from the issue text alone.
 Section~\ref{sec:seedless} removes the free seed in the simplest way --- the top file of an
 issue-only lexical ranking becomes the seed --- and finds that the walk still adds to what the
-issue alone retrieves, clearly on the symbol key and marginally on the edited files, but a
+issue alone retrieves on the files the change depends on, but not on the files it edits, where
+a good issue reader is all there is to it. A
 learned localiser inside an agent loop is a different component, and its graph may earn its
 place differently. And they are LLM agents that also read the issue, so the graph is one
 component among several. This paper is therefore not evidence about how well their graph
@@ -1937,8 +1948,8 @@ neither, and should be reported per regime. And fusing a walk from the file with
 retrieval is the robust choice: never significantly worse than the best single signal on the
 pull requests carrying both keys, stable across repository splits, holding on seven
 repositories outside the sample and on a human-annotated key under predictions fixed in
-advance, and still best when the file itself must be guessed from the issue --- except for
-single-file changes, where the walk alone is better. Make the walk favour short files when a
+advance, and, with a dense issue reader, still best when the file itself must be guessed from
+the issue --- except for single-file changes, where the walk alone is better. Make the walk favour short files when a
 context is charged by size, and not when it is charged by the file.
 
 We recommend that context-retrieval work for code change report per evidence source, report

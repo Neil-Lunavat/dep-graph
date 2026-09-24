@@ -143,11 +143,12 @@ def summarise():
     for label, sub in strata.items():
         for src in ("edited", "symbol"):
             have = set(sub[sub.source == src].method)
-            for b in VERSUS:
-                if b not in have:
-                    continue
-                tests.append(pairwise(sub, src, ["rrf_pprpl_issue_path", b], unit="repo")
-                             .assign(stratum=label))
+            for a in ("rrf_pprpl_issue_path", "rrf_pprpl_dense_path"):
+                for b in VERSUS:
+                    if a not in have or b not in have:
+                        continue
+                    tests.append(pairwise(sub, src, [a, b], unit="repo")
+                                 .assign(stratum=label))
     tests = pd.concat(tests, ignore_index=True)
     tests["p_holm"] = holm(tests["p"].tolist())
     tests.to_csv(OUT / "tests.csv", index=False)
@@ -171,7 +172,7 @@ def summarise():
     pd.set_option("display.width", 200)
     print(auc.to_string())
     print({k: v for k, v in summary.items() if not k.startswith("auc")})
-    print(tests[["stratum", "source", "b", "n_pr", "delta", "p_holm"]].round(4)
+    print(tests[["stratum", "source", "a", "b", "n_pr", "delta", "p_holm"]].round(4)
           .to_string(index=False))
 
 

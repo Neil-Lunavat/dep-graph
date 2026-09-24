@@ -121,9 +121,10 @@ def sl_auc(method: str, source: str) -> float:
     return float(SL["auc_all"][source][method])
 
 
-def sl_delta(b: str, source: str, stratum: str = "all") -> float:
+def sl_delta(b: str, source: str, stratum: str = "all",
+             a: str = "rrf_pprpl_issue_path") -> float:
     t = pd.read_csv(ROOT / "results" / "seedless" / "tests.csv")
-    r = t[(t.stratum == stratum) & (t.source == source) & (t.b == b)].iloc[0]
+    r = t[(t.stratum == stratum) & (t.source == source) & (t.a == a) & (t.b == b)].iloc[0]
     return float(r.delta)
 
 
@@ -506,16 +507,24 @@ def claims() -> list[tuple[str, str, str]]:
          "%d" % round(100 * SL["guess_correct_not_named"])),
         ("The guess is right in", "seedless: PRs named", str(SL["n_named"])),
         ("The guess is right in", "seedless: PRs not named", str(SL["n_not_named"])),
-        ("remains the best non-oracle ordering under both keys, at", "seedless: fusion, edited",
-         num3(sl_auc("rrf_pprpl_issue_path", "edited"))),
-        ("remains the best non-oracle ordering under both keys, at", "seedless: fusion, symbol",
-         num3(sl_auc("rrf_pprpl_issue_path", "symbol"))),
-        ("symbol key it adds", "seedless: fusion - localiser, symbol",
-         num3(sl_delta("localiser", "symbol"))),
-        ("On the edited\nfiles it adds", "seedless: fusion - localiser, edited",
-         num3(sl_delta("localiser", "edited"))),
-        ("The walks on their own, without the issue", "seedless: walk alone, edited",
-         num3(sl_auc("ppr_und_pl", "edited"))),
+        ("walking from the guess and fusing is the best non-oracle ordering",
+         "seedless: dense fusion, edited", num3(sl_auc("rrf_pprpl_dense_path", "edited"))),
+        ("walking from the guess and fusing is the best non-oracle ordering",
+         "seedless: dense fusion, symbol", num3(sl_auc("rrf_pprpl_dense_path", "symbol"))),
+        ("On the symbol key it adds", "seedless: dense fusion - dense, symbol",
+         num3(sl_delta("dense_issue", "symbol", a="rrf_pprpl_dense_path"))),
+        ("On the symbol key it adds", "seedless: wrong guess same top",
+         "%d" % round(100 * SL["wrong_guess_same_top"])),
+        ("On the symbol key it adds", "seedless: wrong guess same dir",
+         "%d" % round(100 * SL["wrong_guess_same_dir"])),
+        ("On the edited files it adds nothing measurable", "seedless: dense fusion - dense, edited",
+         "%+.3f" % sl_delta("dense_issue", "edited", a="rrf_pprpl_dense_path")),
+        ("It helps where the issue names", "seedless: named, edited",
+         "%+.3f" % sl_delta("dense_issue", "edited", "named", a="rrf_pprpl_dense_path")),
+        ("It helps where the issue names", "seedless: not named, edited",
+         "%+.3f" % sl_delta("dense_issue", "edited", "not named", a="rrf_pprpl_dense_path")),
+        ("The BM25 fusion of the main study fares", "seedless: BM25 fusion vs dense, not named",
+         num3(-sl_delta("dense_issue", "edited", "not named"))),
     ]
     if (OUT / "dense_tests.csv").exists():
         W = "issue worth, dense fusion"

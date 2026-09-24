@@ -484,8 +484,8 @@ def seedless_table():
     if not f.exists():
         return
     d = pd.read_parquet(f)
-    show = ["rrf_pprpl_issue_path", "rrf_hops_path", "localiser", "path_issue", "bm25_issue",
-            "dense_issue", "ppr_und_pl", "hops_lines", "random"]
+    show = ["rrf_pprpl_dense_path", "rrf_pprpl_issue_path", "rrf_hops_path", "localiser",
+            "dense_issue", "path_issue", "bm25_issue", "ppr_und_pl", "hops_lines", "random"]
     show = [s for s in show if s in set(d.method)]
     g = d.groupby(["method", "source", "named"]).auc.mean()
     a = d.groupby(["method", "source"]).auc.mean()

@@ -315,7 +315,9 @@ def heldout(rows: pd.DataFrame, methods: list[str], seed: int = SEED,
             g = con[con.source == src].set_index("method")
             rec["rank_%s" % src] = int(g.loc[chosen, "rank"])
             rec["auc_%s" % src] = float(g.loc[chosen, "auc"])
-            rec["best_%s" % src] = float(g[g.index != "oracle"]["auc"].max())
+            # the dense orderings were added after this analysis and are never candidates
+            rec["best_%s" % src] = float(
+                g[(g.index != "oracle") & ~g.index.isin(DENSE_ALL)]["auc"].max())
         recs.append(rec)
     return pd.DataFrame(recs)
 
