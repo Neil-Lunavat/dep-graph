@@ -9,10 +9,12 @@ Usage:  python -m depgraphs.maketables
 """
 from __future__ import annotations
 
+import math
+
 import pandas as pd
 
 from depgraphs.lexfeat import ROOT
-from depgraphs.study2 import FUSION, OUT
+from depgraphs.study2 import FUSION, FUSION_CTL, OUT, REDACTED_ALL, RRF_K_VARIANTS
 
 PAPER = ROOT / "paper"
 BS = chr(92)
@@ -84,6 +86,8 @@ def worst_table():
 def full_table():
     cm = pd.read_csv(OUT / "ceiling_method.csv")
     cm = cm[cm.budget == 8000]
+    # controls are scored but never compared as reading orders, here as everywhere else
+    cm = cm[~cm.method.isin(set(FUSION_CTL) | set(REDACTED_ALL) | set(RRF_K_VARIANTS))]
     piv = cm.pivot(index="method", columns="source", values="share_full")
     piv = piv.sort_values("co_edited", ascending=False)
     rows = []
@@ -246,27 +250,53 @@ def heldout_table():
     write("heldout", LF.join(rows))
 
 
+def _group_prs() -> dict:
+    from depgraphs.analysis2 import leak_strata, shared_prs
+    rows = pd.read_parquet(OUT / "rows.parquet",
+                           columns=["task_id", "instance_id", "method", "source", "auc"])
+    st = leak_strata(rows)
+    out = {}
+    for group, key in (("names removed", "explicit"), ("nothing removed", "no_explicit")):
+        out[group] = len(shared_prs(rows[rows.task_id.isin(st[key])]))
+    return out
+
+
+PRS: dict = {}
+
+
 def redaction_table():
-    """What deleting the key files' names from the issue costs, within task."""
+    """What deleting the key files' names -- and, in the wider arms, their paths and the
+    symbols they define -- from the issue costs, within task, per arm."""
+    PRS.update(_group_prs())
     d = pd.read_csv(OUT / "redaction.csv")
+    if "arm" not in d:
+        d = d.assign(arm="names")
+    arms = [a for a in ("names", "paths", "symbols") if a in set(d.arm)]
     order = ["path_issue", "bm25_issue", "rrf_hops_path", "rrf_pprpl_issue_path"]
+    ncol = 1 + 2 * (1 + len(arms))
     rows = []
     for group in ("names removed", "nothing removed"):
-        rows.append(BS + "multicolumn{5}{@{}l}{" + BS + "textit{%s}} %s"
-                    % (group + (" (970 tasks)" if group == "names removed"
-                                else " (1{,}442 tasks; the difference must be nil)"), NL))
+        g0 = d[(d.group == group) & (d.arm == "names")]
+        label = ("%s (%d pull requests in %d repositories)"
+                 % ("issue names a key file as code" if group == "names removed"
+                    else "issue names no key file as code",
+                    PRS[group], int(g0.n.max())))
+        rows.append(BS + "multicolumn{%d}{@{}l}{" % ncol + BS + "textit{%s}} %s"
+                    % (label, NL))
         for name in order:
-            g = d[(d.group == group) & (d.method == name)]
-            if not len(g):
-                continue
             cells = [m(name)]
             for src in ("co_edited", "symbol"):
-                r = g[g.source == src].iloc[0]
-                star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
-                # the column is the change caused by redaction, so a loss prints negative
-                cells.append("%s & $%+.3f%s$" % (("%.3f" % r.auc).lstrip("0"),
-                                                 -r.delta, star))
-            rows.append(" & ".join(cells) + " " + NL)
+                base = d[(d.group == group) & (d.method == name) & (d.source == src)]
+                if not len(base):
+                    break
+                cells.append(("%.3f" % base.auc.iloc[0]).lstrip("0"))
+                for arm in arms:
+                    r = base[base.arm == arm].iloc[0]
+                    star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
+                    # the column is the change caused by redaction, so a loss prints negative
+                    cells.append("$%+.3f%s$" % (-r.delta, star))
+            else:
+                rows.append(" & ".join(cells) + " " + NL)
         if group == "names removed":
             rows.append(BS + "midrule")
     write("redact", LF.join(rows))
@@ -311,6 +341,46 @@ def distance_table():
     write("distance", LF.join(rows))
 
 
+def families_table():
+    """Every Holm family in the paper: what is tested together, and how many tests."""
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    rows = []
+    g = pw.groupby(["unit", "population", "stratum"]).agg(
+        fam=("source", "nunique"), n=("p", "size"))
+    per = pw.groupby(["unit", "population", "stratum", "source"]).size()
+    for (unit, pop, st), r in g.iterrows():
+        sizes = sorted(set(per.loc[(unit, pop, st)]))
+        rows.append("paired tests, %s as unit & %s & %s & %d & %s %s" % (
+            "repository" if unit == "repo" else "pull request",
+            "matched" if pop == "shared" else "full",
+            st.replace("_", " "), r.fam, "/".join(map(str, sizes)), NL))
+    rd = pd.read_csv(OUT / "redaction.csv")
+    arms = rd.arm.unique() if "arm" in rd else ["names"]
+    for arm in arms:
+        n = int((rd.arm == arm).sum()) if "arm" in rd else len(rd)
+        rows.append("redaction, %s arm & matched & by group & 1 & %d %s" % (arm, n, NL))
+    mx = OUT / "mixed.csv"
+    if mx.exists():
+        rows.append("mixed model, headline comparisons & both & several & 1 & %d %s"
+                    % (len(pd.read_csv(mx)), NL))
+    write("families", LF.join(rows))
+
+
+def mixed_table():
+    """Headline comparisons re-estimated with a random intercept per repository."""
+    d = pd.read_csv(OUT / "mixed.csv")
+    pops = {"all": "full", "shared": "matched"}
+    rows = []
+    for x in d.itertuples():
+        p = ("$<10^{%d}$" % (math.floor(math.log10(x.p_holm)) + 1)
+             if x.p_holm < 0.001 else "%.3f" % x.p_holm if x.p_holm < 1 else "1")
+        rows.append("%s & %s & %s & %s & %s & %d & %+.3f %s & %s %s" % (
+            m(x.a), m(x.b), m(x.source), x.stratum.replace("_", " "), pops[x.population],
+            x.n_pr, x.estimate, ci(x.ci_lo, x.ci_hi).replace("[.", "[0.").replace(",.", ",0.")
+            .replace("-.", "-0."), p, NL))
+    write("mixed", LF.join(rows))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -343,6 +413,8 @@ def main():
     redaction_table()
     comp_table()
     distance_table()
+    families_table()
+    mixed_table()
     figure_data()
 
 

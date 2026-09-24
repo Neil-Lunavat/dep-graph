@@ -31,34 +31,31 @@
 \email{neillunavat3192@gmail.com}
 
 \begin{abstract}
-An agent asked to change one file in an unfamiliar repository cannot read the repository:
-the median repository here is 286{,}385 tokens and the files carrying the answer are 2.98\%
-of it. Two signals can choose what it reads: the import structure that graph-based context
-tools order by, and the words of the issue report. We compare both and their combination on
-2{,}412 change tasks from 1{,}162 pull requests in 112 Python repositories, scoring each
-ordering by how much of an answer key it covers per line read, against two keys we never
-merge: files \emph{co-edited} in the same pull request, and files \emph{defining symbols the
-change uses}.
+An agent asked to change a file in an unfamiliar repository cannot read the whole repository:
+the median pull request here is made against 286{,}385 tokens of code, and the files carrying
+the answer are 2.98\% of it. Given the file being changed, two signals can choose what else it
+reads: the import structure that graph-based context tools order by, and the words of the
+issue report. We compare both, and their fusion, on 2{,}412 change tasks from 1{,}162 pull
+requests in 112 Python repositories, scoring each ordering by how much of an answer key it
+covers per line read, against two keys we never merge: files \emph{co-edited} in the same pull
+request, and files \emph{defining symbols the change uses}.
 
-In 40.2\% of tasks the issue names a key file \emph{as code}, not merely sharing a word with
-it, and we separate what that is worth from what the rest of the issue is worth. Deleting
-only those names from the same issue --- same task, same prose, same traceback --- costs
-issue-to-path matching 0.110 AUC and the best fusion 0.061, while changing nothing at all on
-the tasks where there was nothing to delete. Replacing the whole issue with a seed-derived
-query costs 0.156 on those tasks but only 0.016 on the rest. The two together decompose the
-apparent value of issue text: of the 0.140 by which an issue that names a key file is worth
-more than one that does not, 0.061 is the names themselves --- filename leakage, causal and
-large --- and 0.079 is that issues which name files are better issues in other ways. Two further
-controls each dissolve one half of the key-dependent reversal our uncontrolled tables appear
-to show: matching the populations the two keys are scored on, and taking the repository
-rather than the pull request as the unit, which moves the smallest $p$-value here from
-$10^{-162}$ to $4 \times 10^{-20}$, the floor of the test at 112 repositories, with every
-effect size intact.
+In 40.2\% of tasks the issue names a key file \emph{as code}. We measure what that is worth in
+two ways. Replacing the whole issue with a query derived from the seed file costs the best
+fusion 0.156 AUC on those tasks and 0.016 on the rest. Deleting from the same issue only what
+points at the key files --- their names; then also their directories; then also the functions
+and classes they define --- costs it 0.061, 0.084 and 0.096. Filename leakage is therefore
+causal, and accounts for between 0.061 and 0.078 of the 0.140 gap between issues that name a
+key file and issues that do not; the remaining 0.062 to 0.079 survives every redaction we can
+define, and is a difference between the issues, and the tasks they describe, rather than
+leakage we can remove. Two further controls each dissolve one half of the key-dependent
+reversal that the uncontrolled comparison appears to show: matching the populations the two
+keys are scored on, and removing the tasks whose issue names a key file.
 
-What survives is a ranking rather than a mechanism. Fusing a length-aware personalised walk
-with issue matching is never significantly worse than the best pure ordering under any
-control, and across 200 random repository splits it is selected on one half in 198 and is
-best on the other half in 195.
+What survives is a ranking rather than a mechanism. On the pull requests that carry both keys,
+fusing a length-aware personalised walk with issue matching is never significantly worse than
+the best pure ordering under any leakage control, and it is the stable choice across 200 random
+repository splits; for single-file changes a length-aware walk alone does better.
 \end{abstract}
 
 \keywords{code search, context retrieval, dependency graphs, software maintenance, empirical
@@ -77,6 +74,14 @@ one larger than 200{,}000. Meanwhile the files that carry the answer are a media
 the repository. The reduction available is roughly
 34$\times$, and every line spent on an irrelevant file is a line not spent on a relevant
 one. Something has to choose, and the choice is the subject of this paper.
+
+The question is narrower than an agent's whole problem, and we want to be exact about how.
+Every task here hands the reader the file being changed; the question is what \emph{else} to
+read. We measure retrieval, not repair --- no agent is run --- and the corpus comes from
+benchmarks that select for reproducible, test-verified fixes. Each of these is stated again
+where it bears on a result, but together they mean this paper answers ``given the right file,
+what else belongs in the context'', not how well an agent that must also find that file will
+do.
 
 A human faces a softer version of the same problem --- attention rather than tokens --- and
 we return to that reading in Section~\ref{sec:discussion}. The budget is what makes the
@@ -112,7 +117,8 @@ as they come they rank the methods differently --- which is how we first read ou
 
 That reading did not survive. Three controls, each of which we added because the comparison
 demanded it rather than because a result invited it, between them removed both halves of the
-key-dependent reversal and most of the measured advantage of issue text. The largest is a
+key-dependent reversal and showed that a large part of the measured advantage of issue text
+is the issue naming the answer. The largest is a
 leakage control. A benchmark built from real issue reports inherits whatever those reports
 happen to say, and what they often say is the name of the file to change; when they do, an
 ordering that matches issue words against file paths is not retrieving the answer so much as
@@ -192,14 +198,15 @@ the answer and the part that is not, by two experiments that bracket the questio
 tasks, each issue-aware fusion is compared against the identical fusion with every
 issue-derived input replaced by its seed-derived counterpart: the issue is worth $+0.156$ AUC
 on the tasks whose issue names a key file as code and $+0.016$, not significant, on the rest.
-Within task, the key files' names are deleted from the same issue and nothing else is
-touched: that alone costs issue-to-path matching $0.110$ AUC and the best fusion $0.061$,
-and costs nothing on the tasks where there was nothing to delete. The two are additive.
-Filename leakage is causal and accounts for $0.061$ of the $0.140$ gap between the strata;
-the remaining $0.079$ is that reports which name files are more informative in other ways as
-well. Neither experiment shows that issue text is useless for code retrieval.
-Together they show that a benchmark of this kind measures both effects at once, and that
-separating them costs a regular expression.
+Within task, three nested redactions delete from the same issue only what points at the key
+files --- their names; their names and directories; and those plus the symbols they define
+--- and cost the best fusion $0.061$, $0.084$ and $0.096$. The two experiments are additive.
+Filename leakage is causal and accounts for between $0.061$ and $0.078$ of the $0.140$ gap
+between the strata; the remaining $0.062$ to $0.079$ survives the widest redaction, and is a
+difference between the issues and tasks rather than leakage we can remove. Neither experiment
+shows that issue text is useless for code retrieval. Together they show that a benchmark of
+this kind measures both effects at once, and that bracketing them costs a few regular
+expressions.
 
 \item Three controls, two of which each dissolve an effect we had previously reported as a
 finding, and all of which we recommend as standard practice. A \emph{leakage} control that
@@ -212,7 +219,9 @@ pull request while a symbol key does not: on the matched population the best dir
 falls from second to eighth on the symbol key and is no longer distinguishable from path
 matching. And a \emph{unit} correction: pull requests cluster within repositories, so every
 test in this paper is run with the repository as the unit, which leaves the effect sizes
-unchanged and moves the smallest $p$-value from $10^{-162}$ to $4 \times 10^{-20}$.
+unchanged and leaves the headline comparisons significant, but turns 102 of the 1{,}076
+comparisons significant at the pull-request level into non-significant ones; a mixed model
+with a random intercept per repository agrees with it on 40 of 41 headline comparisons.
 \item A replication package with the graphs, tasks, issue-token bags, token counts,
 orderings, generated tables and analysis scripts.
 \end{enumerate}
@@ -528,14 +537,31 @@ The paired tests are reported with the \textbf{repository} as the unit: the pull
 scores are averaged within a repository and the test runs over the 112 repositories. Pull
 requests are not independent draws --- they cluster in repositories that differ in size,
 layout convention and issue-writing culture --- and a test that ignores the clustering
-counts the same evidence many times. The difference is not cosmetic. The same comparison
-that yields $p = 2 \times 10^{-162}$ over 1{,}156 pull requests yields $p = 4 \times
-10^{-20}$ over 112 repositories --- which is also the smallest value the signed-rank test can
-return with 112 units, reached when every repository favours the same method, so the
-repository-level test is saturated rather than merely smaller. The effect sizes are
-essentially unchanged, which is the point: the conclusions
-survive, and only the arithmetic of the $p$-values was ever overstated. We report the
-pull-request-level tests alongside, in the replication package, so the two can be compared.
+counts the same evidence many times. The difference is not cosmetic, though it does not
+touch the headline comparisons, which are significant either way. It touches the borderline
+ones: of the 1{,}076 paired comparisons on the two keys that are significant after Holm
+correction with the pull request as the unit, 102 are not with the repository as the unit,
+and 2 move the other way. One of the 102 is a comparison this paper would otherwise have
+leaned on --- \m{hops\_lines} against \m{path\_issue} on co-edited files, $p_{\text{Holm}} <
+10^{-4}$ over pull requests and $0.07$ over repositories. We report the pull-request-level
+tests alongside, in the replication package, so the two can be compared.
+
+Averaging within a repository has a cost of its own: a repository that contributes one pull
+request weighs as much as one that contributes a hundred. So every comparison a claim rests
+on is also re-estimated as a linear mixed model of the per-pull-request paired difference,
+with a random intercept per repository (Table~\ref{tab:mixed}). It keeps every pull request
+as an observation and models the clustering instead of averaging it away. On 40 of those 41
+comparisons it reaches the same verdict, significant or not, as the repository-level Wilcoxon
+test. The exception is the borderline comparison above: weighting repositories by their pull
+requests, the mixed model finds path matching better than \m{hops\_lines} on co-edited files
+by 0.044 ($p_{\text{Holm}} < 10^{-3}$), where the repository-level test does not. We report
+it, and no claim in this paper rests on that comparison being null.
+
+Holm correction is applied within families that are fixed by the design rather than chosen
+per claim. Table~\ref{tab:families} lists them: each set of paired tests among the
+twenty-six scored orderings, for one key, one unit, one population and one leakage stratum,
+is one family of 325 tests; each redaction arm is one family; and the mixed-model
+re-estimates are one family.
 
 Because a co-edited key requires a pull request that touches more than one graph file while
 a symbol key does not, the two keys do not cover the same pull requests. Wherever we compare
@@ -762,7 +788,8 @@ A query-independent PageRank prior --- a ranking that never looks at the seed or
 and simply says which files matter in this repository --- reaches 0.410 on symbol files
 against 0.491 for the best length-aware personalised walk, which does look at the seed. That
 is 83\% of the personalised score in absolute terms, or 67\% of its margin over a random
-ordering, which is the fairer of the two readings and the one recommendation (4) quotes. It
+ordering, which is the fairer of the two readings and the one the fourth recommendation in
+Section~\ref{sec:discussion} quotes. It
 is far above random (0.248; $A_{12} = 0.758$,
 $p_{\text{Holm}} < 10^{-16}$). On that evidence source, much of what the personalised walk
 delivers is a repository prior.
@@ -852,7 +879,11 @@ seen the full results. That makes the recommendation exploratory however large i
 we split the corpus. A random 56 of the 112 repositories form a selection half; the
 remaining 56 are set aside. We apply the criterion mechanically to the selection half ---
 among the fusions, take the one whose worst rank across the two keys is best --- and then
-report that ordering, unexamined, on the other half. Splitting by repository rather than by
+report that ordering, unexamined, on the other half. Both halves are scored on the matched
+population of Section~\ref{sec:shared}, the pull requests carrying both keys, because that is
+the population on which a comparison across keys means anything; this is why the criterion
+picks \m{rrf\_pprpl\_issue\_path} here although on the unmatched Table~\ref{tab:worst} the
+same criterion prefers \m{rrf\_hops\_path}. Splitting by repository rather than by
 pull request keeps every task of a repository on one side, which is what the clustering in
 Section~\ref{sec:stats} requires.
 
@@ -866,9 +897,12 @@ ordering is 0.002 AUC on co-edited files and 0.000 on symbol files. The two spli
 select \m{rrf\_hops\_issue\_path} instead do not confirm it.
 \end{sloppypar}
 
-This does not make the fusion family a discovery --- it was chosen by us, from five
-candidates, on these data --- but the specific recommendation within that family no longer
-rests on the repositories that produced it.
+What this establishes should not be overstated. The 200 splits are resamples of the same 112
+repositories, and the selected fusion is already the best overall on the matched population,
+so agreement across them is largely expected: they show that the choice is \emph{stable} ---
+no small group of repositories is carrying it --- not that it generalises to repositories we
+did not sample. That would need an external set, which we do not have. Nor does it make the
+fusion family a discovery; it was chosen by us, from five candidates, on these data.
 
 \begin{table}
 \caption{200 random 56/56 splits of the repositories. ``Selected'' counts the splits in
@@ -1056,8 +1090,10 @@ where it loses.
 text'' from ``path matching'' directly: the same path-BM25 ranking, queried by the seed's own
 path instead of the issue, scores 0.371 on co-edited files against 0.434 for the issue query
 ($+0.058$, $p_{\text{Holm}} < 10^{-4}$, repository as the unit), and the two are
-indistinguishable on symbol files ($+0.020$, $p_{\text{Holm}} = 0.81$). The comparable leakage figures for the seed itself are
-10.3\% full path and 35.1\% stem.
+indistinguishable on symbol files ($+0.020$, $p_{\text{Holm}} = 0.81$). For comparison, the issue names the
+seed file --- the file every structural method is handed for free --- less often than it names
+a key file: its full path appears in 10.3\% of tasks and its stem in 35.1\%, against 12.6\%
+and 48.5\% for the key files.
 
 \begin{table}
 \caption{Both controls at once: AUC and rank (in brackets) under the three nested leakage
@@ -1113,26 +1149,40 @@ key and $[-0.003, 0.027]$ on the symbol key, so the data are consistent with the
 worth up to about 0.03 AUC there, and inconsistent with its being worth anything close to the
 0.156 it is worth where it names a file. Taken alone this comparison would say that the issue
 is worth almost exactly what it names --- and taken alone it would be overstating, because it
-is confounded with issue quality.
+is confounded with which issues, and which tasks, name their files.
 
 \paragraph{Within task: redaction.} So we did the other experiment. For every task we take
 the \emph{same} issue and delete only the occurrences of its key files' names that our
 classifier calls explicit, leaving the prose, the traceback, the surrounding directory names
 and the length untouched. Scoring the same task on both versions isolates the names
-themselves: the issue, the writer, the project and the difficulty are all held fixed. Only
-the stem and any immediately following \texttt{.py} are removed, not the whole path, so that
-deleting \texttt{astroquery/simbad/core.py} does not also delete the directory names the
-report is entitled to mention. The residual directory signal is a weaker channel that
-survives this control, and we state it as a limitation rather than claim otherwise.
+themselves: the issue, the writer, the project and the difficulty are all held fixed.
 
-The result is in Table~\ref{tab:redact}. On the 970 tasks whose issues name a key file,
-removing just the names costs \m{path\_issue} 0.110 AUC on the co-edited key and 0.092 on the
-symbol key; it costs the best fusion 0.061 and 0.050. Every one of these survives Holm
+\begin{sloppypar}
+What counts as ``the names'' is a choice, so we make it three times. The \emph{names} arm
+removes only the stem and any immediately following \texttt{.py}: \texttt{astroquery/simbad/core.py}
+becomes \texttt{astroquery/simbad/}. That leaves a channel open, since path BM25 tokenises
+paths and the surviving directory names still point at the file, so the \emph{paths} arm also
+deletes every component of each key file's path wherever it is written as code. Neither
+touches a traceback's \texttt{in query\_object} or a backticked \texttt{Simbad.query\_object},
+which a content ranking can match against the file that defines it, so the \emph{symbols} arm
+also deletes every function, class and method name defined in a key file, again only where
+written as code. The names arm is a lower bound on leakage. The wider arms over-remove ---
+a directory called \texttt{models} or a method the user calls by name is also ordinary
+vocabulary --- so the three bracket the effect rather than measure it.
+\end{sloppypar}
+
+The result is in Table~\ref{tab:redact}. Of the 970 tasks whose issues name a key file, the
+848 in the matched population --- 378 pull requests in 105 repositories --- are scored; on
+them, removing just the names costs \m{path\_issue} 0.110 AUC on the co-edited key and 0.092
+on the symbol key, and the best fusion 0.061 and 0.050. Every one of these survives Holm
 correction with the repository as the unit, and the bootstrap intervals are narrow: for
 \m{path\_issue} on co-edited files it is $[0.090, 0.131]$, and the widest of the eight spans
-0.041. On the 1{,}442 tasks where the redactor found nothing to remove, the difference is at
-most 0.002 in every one of the eight cells and significant in none, which is the sanity check
-the design demands --- the pipeline does nothing when there is nothing to delete.
+0.041. The wider arms cost more, as they must: 0.148 and 0.157 for \m{path\_issue} on
+co-edited files, 0.084 and 0.096 for the fusion. On the 1{,}072 matched tasks (531 pull
+requests) among the 1{,}442 where the names arm found nothing to remove, it changes nothing
+--- at most 0.002 in every cell, significant in none, which is the sanity check the design
+demands. The wider arms do find something there, and cost the fusion 0.016 to 0.018: an issue
+that never names a key file can still quote its directory or a function it defines.
 
 \paragraph{The decomposition.} Both experiments run on the same matched population with the
 repository as the unit, so their answers add up, and together they say something neither says
@@ -1143,18 +1193,25 @@ term significant under Holm correction. On the tasks whose issue names nothing, 
 whole is worth $+0.016$ and $+0.012$, and neither is significant.
 
 So both effects are real and neither subsumes the other. Filename leakage is causal and large:
-path matching loses a fifth of its score on the affected tasks when the names go, and the
-fusion loses 0.061. But issues that name files are \emph{also} better issues in other ways ---
-the non-name part of such an issue is worth $+0.095$, against $+0.016$ for an entire issue
-that names nothing. A reader of the stratified table alone would put the whole $+0.140$
-stratum difference down to leakage. The redaction says $+0.061$ of it is leakage and the
-remaining $+0.079$ is a property of which issues get written that way.
+path matching loses a fifth of its score on the affected tasks when only the names go, and
+nearly three tenths under the widest arm. A reader of the stratified table alone would put
+the whole $+0.140$ stratum difference down to leakage. Under the names arm $+0.061$ of it is
+leakage and $+0.079$ is not; under the widest arm, taking into account that it also removes
+something from issues that name nothing, the split is $+0.078$ and $+0.062$ (on the symbol key,
+$+0.050$ to $+0.065$ of a $+0.109$ gap). What remains after every redaction we can define is
+not leakage we can find, and we do not claim it is issue \emph{quality} either: it is a
+difference between the issues that name files and the ones that do not, and between the
+tasks they describe, that the redaction cannot reach. Even \m{path\_issue}, which reads
+nothing but file paths, still scores 0.393 on the named-file tasks after the widest
+redaction against 0.333 on the others after the same treatment, so some of that difference
+is in what the issues say or in which files the tasks need, not in how the issues are
+written.
 
 \paragraph{What this licenses.} It does not show that issue text is useless for code
 retrieval; developers plainly use it, and an ordering that exploits a real report naming a
 real file exploits something that exists. What it shows is that a benchmark assembled from
-issue reports of this kind measures two things at once, and that the two can be separated for
-the cost of a regular expression. Any evaluation on SWE-bench-derived data that reports a gain
+issue reports of this kind measures two things at once, and that the two can be bracketed for
+the cost of a few regular expressions. Any evaluation on SWE-bench-derived data that reports a gain
 from issue-aware retrieval and does not stratify is reporting their sum. That, rather than
 the ranking of our own methods, is the finding we would most like the field to take up.
 
@@ -1179,18 +1236,22 @@ Issue stratum & repos & co\_edited & symbol & co\_edited & symbol \\
 \end{table}
 
 \begin{table}
-\caption{Redaction, within task: AUC on the issue as written, and the change when the key
-files' names are deleted from that same issue. Repository as the unit on the matched
-population, as elsewhere; Holm-corrected, and a star marks $p < 0.05$. The lower block is the
-control --- where the redactor removed nothing, it must change nothing, and it does not.}
+\caption{Redaction, within task: AUC on the issue as written, and the change when the same
+issue is redacted by each of three arms --- the key files' names only; the names and every
+component of their paths; and those plus every function, class and method name defined in a
+key file, each deleted only where written as code. The pull requests are those of the matched
+population inside each leakage stratum, with the repository as the unit; Holm-corrected within
+each arm, and a star marks $p < 0.05$. The names arm must change nothing in the lower block,
+and does not; the wider arms can, because an issue that names no key file can still quote its
+directory or a function it defines.}
 \label{tab:redact}
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lcccc}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc@{\hskip 1em}cccc}
 \toprule
-& \multicolumn{2}{c}{\m{co\_edited}} & \multicolumn{2}{c}{\m{symbol}} \\
-\cmidrule(lr){2-3}\cmidrule(l){4-5}
-Method & AUC & redacted & AUC & redacted \\
+& \multicolumn{4}{c}{\m{co\_edited}} & \multicolumn{4}{c}{\m{symbol}} \\
+\cmidrule(lr){2-5}\cmidrule(l){6-9}
+Method & AUC & names & paths & symbols & AUC & names & paths & symbols \\
 \midrule
 \rows{tab_redact}
 \bottomrule
@@ -1251,8 +1312,9 @@ On the symbol key, structural methods win on the full corpus and are indistingui
 issue-to-path matching once the population is matched to the co-edited key
 (Section~\ref{sec:shared}). That key is also built by following imports, so we would have
 discounted a win there in any case. On the co-edited key, issue-to-path matching wins on the
-full corpus and loses to pure structure once tasks whose issues name a key file in code are
-removed (Section~\ref{sec:leak}). Each half of the reversal, in other words, has an
+full corpus and becomes indistinguishable from pure structure once tasks whose issues name a
+key file in code are removed, losing to it only in the strictest stratum
+(Section~\ref{sec:leak}). Each half of the reversal, in other words, has an
 explanation that is not about the signals at all --- one is a population effect, the other a
 leakage effect. The uncontrolled comparison reports both halves as findings about the
 signals; the controlled comparison does not.
@@ -1273,8 +1335,9 @@ interesting result is elsewhere.
 
 \paragraph{Two effects, not one.} The result we would most like carried forward is
 Section~\ref{sec:issue}, and its interest is that it separates two things the literature
-reports as one number: filename leakage, which is causal and large, and the fact that reports
-naming their files are better reports in other ways as well. Both halves matter here. Ignore
+reports as one number: filename leakage, which is causal and large, and a residual difference
+between the issues that name files and those that do not, which no redaction we could define
+removes. Both halves matter here. Ignore
 the first and a lexical baseline looks stronger than it is; ignore the second and the
 stratified comparison looks like proof that issue text does nothing, which our own
 within-task experiment contradicts. We resist the second reading in particular: the null in
@@ -1287,15 +1350,20 @@ on the matched population, where it beats the best pure lexical ordering by 0.05
 and the best pure structural one by 0.097 and 0.039 at the repository level. Across 200
 random repository splits a mechanical criterion selects it on the choosing half in 198, and
 in 195 of those it is the best non-oracle ordering on the half that did not choose it
-(Section~\ref{sec:heldout}), so the recommendation no longer rests only on the data that
-produced it.
+(Section~\ref{sec:heldout}): the choice is stable across the repositories we have, which is
+not the same as having been confirmed on repositories we do not.
 
 The honest form of the claim is robustness rather than dominance. Under the joint control of
 Table~\ref{tab:leak} the fusion leads on co-edited files in every stratum but sits behind two
 length-aware walks on symbol files, by margins that do not survive correction
-($p_{\text{Holm}} = 1$). Across every population and stratum we examined, on either key, the
-fusion is never significantly worse than the best pure ordering and is often significantly
-better. That is what we would recommend on, and it is a weaker claim than ``fusion wins''.
+($p_{\text{Holm}} = 1$). On the matched population, in every leakage stratum and on either
+key, the fusion is never significantly worse than the best pure ordering and is often
+significantly better. On the full symbol-key population it is not: once the tasks whose issue
+names a key file are removed, the length-aware walks beat it by 0.049 to 0.062
+($p_{\text{Holm}} < 10^{-4}$), because that population keeps the 454 single-file pull
+requests in which structure's advantage is concentrated. For a change that touches one file,
+the walk alone is the better choice. That is what we would recommend on, and it is a weaker
+claim than ``fusion wins''.
 
 We were also able to test the obvious alternative explanation. The fusions are the only
 methods given both the seed and the issue, so ``a fusion just gets more input'' is the null
@@ -1303,9 +1371,9 @@ for the whole result. The issue-free twins of Section~\ref{sec:issue} answer it:
 second list does help a little by itself --- \m{rrf\_pprpl\_seedpath} beats its own walk
 \m{ppr\_und\_pl} by 0.049 on co-edited files --- but the issue-aware fusion beats the twin by
 a further 0.065, both on the full corpus with the repository as the unit. Complementarity is
-real, and about a third of what the issue adds to it is leakage: on the matched population the
-issue is worth 0.069 to the fusion over all tasks, and deleting the key files' names from it
-costs 0.023.
+real, and between a third and seven tenths of what the issue adds to it is leakage: on the
+matched population the issue is worth 0.069 to the fusion over all tasks, and the three
+redaction arms cost 0.023, 0.043 and 0.048 of it.
 
 \paragraph{The field's default key, restated carefully.} Every graph-based localization
 system we could check (Table~\ref{tab:priorkeys}) is graded against the files the gold patch
@@ -1385,9 +1453,9 @@ independent, and ignoring that inflates significance by many orders of magnitude
 (8) Before attributing a gain to issue text, run the two controls of
 Section~\ref{sec:issue}: delete the answer files' names from the issue and re-score the same
 tasks, and compare against the same method with the issue replaced by a seed-derived query.
-On our corpus the first costs the best fusion 0.061 AUC and a path-matching baseline 0.110;
-the second shows that even after redaction, an issue that named files is worth $+0.095$
-against $+0.016$ for one that named none.
+Redact more than the filenames: on our corpus deleting the names alone costs the best fusion
+0.061 AUC, and deleting their directories and defined symbols too costs 0.096, so a
+names-only redaction is a lower bound.
 
 \section{A Protocol for the Downstream Test, Fixed in Advance}
 \label{sec:protocol}
@@ -1406,7 +1474,7 @@ execution rather than by patch similarity. We note that only 15 of them overlap 
 re-run of an existing leaderboard.
 
 \begin{sloppypar}
-\paragraph{Conditions.} Seven contexts per task, each truncated to the same token budget. A
+\paragraph{Conditions.} Eight contexts per task, each truncated to the same token budget. A
 repair experiment has no evidence key --- the model gets one context and either the tests pass
 or they do not --- so every condition names one concrete ordering:
 (i) the seed file alone, a floor;
@@ -1419,7 +1487,9 @@ the two criteria select different fusions and we will not choose between them af
 (vi) seed plus \m{rrf\_pprpl\_seedpath}, the issue-free twin of (iv), so that the downstream
 test inherits the control of Section~\ref{sec:issue};
 (vii) the repository truncated to the budget in a fixed canonical order, which is what a
-system with no retrieval step does. Budgets of 16{,}000 and 64{,}000 tokens, chosen
+system with no retrieval step does;
+(viii) seed plus the key files themselves, cheapest first --- the \m{oracle} ordering, an upper
+reference used to calibrate the budget, not a contender. Budgets of 16{,}000 and 64{,}000 tokens, chosen
 from Table~\ref{tab:ceiling} to sit either side of the point where most answers begin to
 fit.
 \end{sloppypar}
@@ -1445,7 +1515,7 @@ pull-request-level convention we abandoned there. We do not require the models t
 component common to all conditions.
 
 \paragraph{Pilot and stopping rule.} A 150-task pilot on the weaker model precedes the full
-run. If the oracle condition resolves under 10\% or over 90\% of pilot tasks, the budget is
+run. If the oracle condition (viii) resolves under 10\% or over 90\% of pilot tasks, the budget is
 outside the informative range and is adjusted before the main run --- and that adjustment is
 reported.
 
@@ -1476,7 +1546,11 @@ measured and does substantially drive the co-edited result: it is reported in
 Section~\ref{sec:leak} as a finding rather than a reassurance, and the corresponding claim
 is stated conditionally throughout. Our leakage classifier is a regular expression over
 issue text and will mislabel some mentions in either direction; we report three nested
-strata rather than one so that the conclusion does not rest on a single cut.
+strata, and three nested redaction arms, rather than one of each, so that the conclusion does
+not rest on a single cut. Leakage we have not thought to redact --- a paraphrase of a function's
+behaviour, a quoted error message defined in a key file --- would sit in the residual that
+Section~\ref{sec:issue} does not attribute to leakage, so the leakage share is bounded below
+more firmly than above.
 
 \paragraph{External.} Python only, file granularity only, and pull requests drawn from
 benchmark suites that select for reproducible test-verified fixes --- a population plausibly
@@ -1492,9 +1566,10 @@ correction within comparison families and bootstrapping over repositories guard 
 main inflation risks. Effect sizes accompany every test because several differences are
 significant and small. The fusion family, the worst-rank criterion and the directed walks
 were all added after the design freeze, so they are exploratory in origin;
-Section~\ref{sec:heldout} confirms the selection on repositories that played no part in it,
-which addresses the selection but not the fact that the family was chosen after seeing
-results.
+Section~\ref{sec:heldout} shows the selection is stable across resamples of our
+repositories, which addresses the selection within the family but neither the fact that the
+family was chosen after seeing results nor generalisation to repositories outside the
+sample.
 
 \section{Conclusion}
 
@@ -1512,18 +1587,21 @@ Each control dissolves one half, and neither family dominates once both are appl
 
 Pressing on that second control gives the paper's main result, in two experiments that
 bracket the question. Deleting a key file's name from an issue that names it, and changing
-nothing else, costs issue-to-path matching 0.110 AUC on the affected tasks and costs nothing
-where there was nothing to delete. Replacing the issue entirely with a seed-derived query
+nothing else, costs issue-to-path matching 0.110 AUC on the affected tasks, 0.157 if its
+directories and defined symbols go too, and the names alone cost nothing where there was
+nothing to delete. Replacing the issue entirely with a seed-derived query
 costs 0.156 on those same tasks but only 0.016 on the rest. Filename leakage is therefore
-causal, and accounts for 0.061 of the 0.140 by which an issue that names a key file is worth
-more than one that does not; the other 0.079 is that reports which name their files are
-better reports. A number that does not
+causal, and accounts for between 0.061 and 0.078 of the 0.140 by which an issue that names a
+key file is worth more than one that does not, depending on how much beyond the filename we
+delete; the other 0.062 to 0.079 survives every redaction and is a difference between the
+issues and tasks, not leakage we can remove. A number that does not
 separate the two is reporting their sum.
 
 The practical recommendation still stands, in a narrower form. Reciprocal-rank fusion of a
 length-aware walk with issue-text-to-path matching is the best non-oracle ordering under both
-keys on the matched population, is selected on one half and best on the other in 195 of 200 random repository splits, and is
-never significantly worse than the best pure ordering under any control we apply. It costs a BM25 index over file paths and contents. The graph's two-hop neighbourhood,
+keys on the matched population, is stably selected across 200 random repository splits, and
+on that population is never significantly worse than the best pure ordering under any leakage
+control; for single-file changes a length-aware walk alone does better. It costs a BM25 index over file paths and contents. The graph's two-hop neighbourhood,
 the standard justification for structural retrieval, turns out to be half the repository, and
 an oracle fits the complete answer in 8{,}000 lines for 97.5\% of pull requests where our best
 method reaches 58.5\%.
@@ -1557,5 +1635,44 @@ the replication package.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
+
+\appendix
+
+\section{Correction Families and Mixed-Model Estimates}
+\label{sec:appendix-stats}
+
+\begin{table}[h]
+\caption{Every Holm family in the paper. A family is fixed by the design --- one key, one unit,
+one population, one leakage stratum --- rather than chosen per claim. Paired families hold all
+325 tests among the twenty-six scored orderings; ``keys'' is how many such families exist in
+that row, one per key source (the union key is scored only on the full, unstratified
+corpus).}
+\label{tab:families}
+\small
+\begin{tabular}{llllr}
+\toprule
+Tests & Population & Stratum & Keys & Tests per family \\
+\midrule
+\rows{tab_families}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table*}
+\caption{The comparisons claims rest on, re-estimated as a linear mixed model of the
+per-pull-request paired difference $a - b$ with a random intercept per repository. Positive
+means $a$ is better; for a redacted twin, the difference is what the deleted names are worth.
+Holm-corrected as one family.}
+\label{tab:mixed}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llllrrlc}
+\toprule
+$a$ & $b$ & Key & Stratum & Pop. & PRs & Estimate [95\% CI] & $p_{\text{Holm}}$ \\
+\midrule
+\rows{tab_mixed}
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \end{document}

@@ -125,7 +125,7 @@ symbol,Q3,path_issue,0.32400696313965605,13
 symbol,Q4,path_issue,0.25653459583173743,15
 symbol,Q1,bm25_seed,0.47094887955182074,19
 symbol,Q2,bm25_seed,0.36312921260837927,19
-symbol,Q3,bm25_seed,0.2718631360805011,19
+symbol,Q3,bm25_seed,0.27186313608050106,19
 symbol,Q4,bm25_seed,0.22584479359756662,18
 symbol,Q1,path_seed,0.49834928415810764,17
 symbol,Q2,path_seed,0.39111228277894944,13
@@ -218,7 +218,7 @@ union_static,Q4,rrf_ppr_issue,0.2800359126222271,12
 union_static,Q1,rrf_ppr_issue_path,0.5222519949337759,9
 union_static,Q2,rrf_ppr_issue_path,0.4208426517460131,8
 union_static,Q3,rrf_ppr_issue_path,0.3405220580857268,11
-union_static,Q4,rrf_ppr_issue_path,0.31082578064691213,10
+union_static,Q4,rrf_ppr_issue_path,0.3108257806469121,10
 union_static,Q1,rrf_hops_path,0.5574159988069302,5
 union_static,Q2,rrf_hops_path,0.4693209165950762,3
 union_static,Q3,rrf_hops_path,0.4060534025303211,3

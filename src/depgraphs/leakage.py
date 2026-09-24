@@ -84,6 +84,7 @@ def main():
         spans = code_spans(text)
         keys = sorted(set(t["keys"]["co_edited"]) | set(t["keys"]["symbol"]))
         kinds = [classify(text, spans, p.rsplit("/", 1)[-1][:-3]) for p in keys]
+        seed_kind = classify(text, spans, t["seed"].rsplit("/", 1)[-1][:-3])
         recs.append({
             "task_id": t["task_id"],
             "instance_id": t["instance_id"],
@@ -94,6 +95,10 @@ def main():
             "incidental": int(any(k == "incidental" for k in kinds)),
             "seed_full": t["seed"] in text,
             "any_full": any(p in text for p in keys),
+            # the same classification for the seed file itself, for comparison: how often
+            # the issue names the file the structural methods are handed for free
+            "seed_stem": int(seed_kind != "none"),
+            "seed_explicit": int(seed_kind == "explicit"),
         })
 
     df = pd.DataFrame(recs)

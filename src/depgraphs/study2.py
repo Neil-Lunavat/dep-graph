@@ -107,7 +107,8 @@ def rrf(*orders, k=None):
 
 # ----------------------------------------------------------------- the methods
 
-def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None):
+def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None,
+              wider=None):
     others = [p for p in nodes if p != seed]
     if not others:
         return {}
@@ -229,6 +230,26 @@ def orderings(nodes, edges, lines, seed, bags, issue_bag, rng, issue_bag_rd=None
     else:
         for k in (10, 200):
             out["rrf_pprpl_issue_path_k%d" % k] = out["ppr_und_pl"]
+
+    # --- wider redaction arms (redact.py): names plus every path component ("_rdp"),
+    # and that plus the names of functions and classes defined in the key files
+    # ("_rds"). The names-only arm above is a lower bound on leakage; these over-remove,
+    # so the three bracket it. Appended last, as every addition to this function is.
+    for suffix, bag in (wider or {}).items():
+        if bag is None:
+            continue
+        b = bm25(bag, docs)
+        out["bm25_issue" + suffix] = by_score(b, rng) if b else []
+        out["path_issue" + suffix] = by_score(bm25(bag, pdocs), rng) if bag else []
+        if out["bm25_issue" + suffix]:
+            out["rrf_hops_path" + suffix] = by_score(
+                rrf(out["hops_lines"], out["path_issue" + suffix]), rng)
+            out["rrf_pprpl_issue_path" + suffix] = by_score(
+                rrf(out["ppr_und_pl"], out["bm25_issue" + suffix],
+                    out["path_issue" + suffix]), rng)
+        else:
+            out["rrf_hops_path" + suffix] = out["hops_lines"]
+            out["rrf_pprpl_issue_path" + suffix] = out["ppr_und_pl"]
     return out
 
 
@@ -240,7 +261,10 @@ METHODS = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
            "rrf_hops_pathseed", "rrf_pprpl_seedpath",
            "bm25_issue_rd", "path_issue_rd", "rrf_hops_path_rd",
            "rrf_pprpl_issue_path_rd",
-           "rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path_k200", "same_dir", "random"]
+           "rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path_k200",
+           "bm25_issue_rdp", "path_issue_rdp", "rrf_hops_path_rdp", "rrf_pprpl_issue_path_rdp",
+           "bm25_issue_rds", "path_issue_rds", "rrf_hops_path_rds", "rrf_pprpl_issue_path_rds",
+           "same_dir", "random"]
 STRUCTURE = ["bfs_und", "hops_lines", "ppr_und", "ppr_und_pl",
              "ppr_out", "ppr_out_pl", "ppr_in", "ppr_in_pl"]
 GLOBAL = ["pagerank", "indegree"]
@@ -254,6 +278,11 @@ FUSION_CTL = ["rrf_hops_pathseed", "rrf_pprpl_seedpath"]
 REDACTED = {"bm25_issue_rd": "bm25_issue", "path_issue_rd": "path_issue",
             "rrf_hops_path_rd": "rrf_hops_path",
             "rrf_pprpl_issue_path_rd": "rrf_pprpl_issue_path"}
+# The wider arms, by suffix. Controls too, paired with the unredacted method.
+ARM_SUFFIX = {"names": "_rd", "paths": "_rdp", "symbols": "_rds"}
+REDACTED_ALL = {m + sfx: m for sfx in ARM_SUFFIX.values()
+                for m in ("bm25_issue", "path_issue", "rrf_hops_path",
+                          "rrf_pprpl_issue_path")}
 # Sensitivity of the headline fusion to RRF's k. Scored, never ranked.
 RRF_K_VARIANTS = ["rrf_pprpl_issue_path_k10", "rrf_pprpl_issue_path_k200"]
 
@@ -296,7 +325,8 @@ def lines_to_reach(order, key, cost, fracs=(0.5, 1.0)):
 
 # ----------------------------------------------------------------- per repo
 
-def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = None):
+def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = None,
+             wider: dict | None = None):
     repo_dir = repo_key.replace("/", "__")
     try:
         commits, blobs = load_repo(repo_dir)
@@ -323,13 +353,14 @@ def run_repo(repo_key: str, tasks: list, issues: dict, redacted: dict | None = N
         issue_bag = issues.get(t["instance_id"], {})
         # keyed by task, because which names count as the answer depends on the seed
         issue_bag_rd = (redacted or {}).get(t["task_id"])
+        wide = {sfx: arm.get(t["task_id"]) for sfx, arm in (wider or {}).items()}
         cost = {p: max(lines.get(p, 0), 1) for p in nodes}
 
         per_run = []
         for r in range(RUNS):
             rng = random.Random("%s|%d|20260923" % (t["task_id"], r))
             per_run.append(orderings(nodes, edges, lines, seed, bags, issue_bag, rng,
-                                     issue_bag_rd))
+                                     issue_bag_rd, wide))
         if not per_run[0]:
             continue
 
@@ -375,6 +406,12 @@ def main(workers: int = 8):
                 if rd_path.exists() else {})
     if not redacted:
         print("no redacted issue bags; run `python -m depgraphs.redact` first", flush=True)
+    wider = {}
+    for sfx, fname in (("_rdp", "issue_bags_redacted_paths.json"),
+                       ("_rds", "issue_bags_redacted_symbols.json")):
+        wp = ROOT / "data" / fname
+        if wp.exists():
+            wider[sfx] = {k: v["bag"] for k, v in json.loads(wp.read_text()).items()}
     by = collections.defaultdict(list)
     for t in tasks:
         by[t["repo_key"]].append(t)
@@ -383,7 +420,8 @@ def main(workers: int = 8):
     done = 0
     with gzip.open(OUT / "top.jsonl.gz", "wt", encoding="utf-8") as tf, \
             ProcessPoolExecutor(workers) as ex:
-        futs = {ex.submit(run_repo, k, v, issues, redacted): k for k, v in by.items()}
+        futs = {ex.submit(run_repo, k, v, issues, redacted, wider): k
+                for k, v in by.items()}
         for f in as_completed(futs):
             r, c, tops = f.result()
             rows += r

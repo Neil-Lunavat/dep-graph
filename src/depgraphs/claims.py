@@ -85,10 +85,27 @@ def p_holm(a: str, b: str, source: str, stratum="all", population="shared") -> f
     return float(g.iloc[0].p_holm)
 
 
-def redact_delta(method: str, source: str, group: str = "names removed") -> float:
+def redact_delta(method: str, source: str, group: str = "names removed",
+                 arm: str = "names") -> float:
     d = csv("redaction.csv")
+    if "arm" in d:
+        d = d[d.arm == arm]
     r = d[(d.group == group) & (d.method == method) & (d.source == source)].iloc[0]
     return float(r.delta)
+
+
+def gap(source: str = "co_edited") -> float:
+    """What the issue is worth to the fusion where it names a key file, minus where not."""
+    return (delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", source, stratum="explicit")
+            - delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", source,
+                    stratum="no_explicit"))
+
+
+def leak_share(arm: str, source: str = "co_edited") -> float:
+    """The part of that gap an arm removes: its cost where the issue names a key file,
+    less its cost where the issue names none."""
+    return (redact_delta("rrf_pprpl_issue_path", source, arm=arm)
+            - redact_delta("rrf_pprpl_issue_path", source, "nothing removed", arm))
 
 
 def split_stat(what: str, source: str = "co_edited") -> int:
@@ -194,11 +211,11 @@ def claims() -> list[tuple[str, str, str]]:
          num3(redact_delta("path_issue", "co_edited"))),
         ("removing just the names costs", "redaction cost, path_issue, symbol",
          num3(redact_delta("path_issue", "symbol"))),
-        ("it costs the best fusion", "redaction cost, fusion, co_edited",
+        ("and the best fusion 0.061 and", "redaction cost, fusion, co_edited",
          num3(redact_delta("rrf_pprpl_issue_path", "co_edited"))),
-        ("it costs the best fusion", "redaction cost, fusion, symbol",
+        ("and the best fusion 0.061 and", "redaction cost, fusion, symbol",
          num3(redact_delta("rrf_pprpl_issue_path", "symbol"))),
-        ("where the redactor found nothing to remove",
+        ("where the names arm found nothing to remove",
          "redaction is a no-op where nothing was removed",
          "0.002" if all(abs(redact_delta(m, src, "nothing removed")) <= 0.0025
                         for m in ("path_issue", "bm25_issue", "rrf_hops_path",
@@ -237,7 +254,7 @@ def claims() -> list[tuple[str, str, str]]:
          "%.2f" % p_holm("hops_lines", "path_issue", "co_edited", stratum="no_stem")),
 
         # ---- the rank movements the leakage section states in words
-        ("On the full corpus \m{path\_issue} is", "path_issue rank, full corpus",
+        (r"On the full corpus \m{path\_issue} is", "path_issue rank, full corpus",
          str(rank("per_source.csv", "co_edited", "path_issue"))),
         ("Under the weak", "path_issue rank, no full path",
          str(rank("per_source_joint.csv", "co_edited", "path_issue",
@@ -311,12 +328,58 @@ def claims() -> list[tuple[str, str, str]]:
         ("beats its own walk", "issue-aware fusion over its twin, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited",
                     population="all"))),
-        ("about a third of what the issue adds to it is leakage",
+        ("between a third and seven tenths of what the issue adds",
          "issue-aware fusion over its twin, matched, every task",
          num3(delta("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", "co_edited"))),
-        ("about a third of what the issue adds to it is leakage",
+        ("between a third and seven tenths of what the issue adds",
          "redaction cost, fusion, co_edited, every task",
          num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks"))),
+        ("between a third and seven tenths of what the issue adds",
+         "redaction cost, fusion, co_edited, every task, paths arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks", "paths"))),
+        ("between a third and seven tenths of what the issue adds",
+         "redaction cost, fusion, co_edited, every task, symbols arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "all tasks", "symbols"))),
+        ("The wider arms cost more, as they must", "path_issue, paths arm",
+         num3(redact_delta("path_issue", "co_edited", arm="paths"))),
+        ("The wider arms cost more, as they must", "path_issue, symbols arm",
+         num3(redact_delta("path_issue", "co_edited", arm="symbols"))),
+        ("The wider arms cost more, as they must", "fusion, paths arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="paths"))),
+        ("The wider arms cost more, as they must", "fusion, symbols arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="symbols"))),
+        ("The wider arms do find something there", "fusion, paths arm, nothing named",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "nothing removed", "paths"))),
+        ("The wider arms do find something there", "fusion, symbols arm, nothing named",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", "nothing removed",
+                           "symbols"))),
+        ("Deleting from the same issue only what", "abstract: fusion cost, paths arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="paths"))),
+        ("Deleting from the same issue only what", "abstract: fusion cost, symbols arm",
+         num3(redact_delta("rrf_pprpl_issue_path", "co_edited", arm="symbols"))),
+        ("Filename leakage is therefore\ncausal, and accounts for between",
+         "abstract: leakage share of the gap, widest arm", num3(leak_share("symbols"))),
+        ("Filename leakage is therefore\ncausal, and accounts for between",
+         "abstract: residual after the widest arm", num3(gap() - leak_share("symbols"))),
+        ("Filename leakage is therefore\ncausal, and accounts for between",
+         "abstract: residual after the names arm",
+         # the difference of the two quoted figures, so that the three numbers the reader
+         # sees add up: 0.140 - 0.061 = 0.079 (unrounded it is 0.0795)
+         num3(round(gap(), 3) - round(redact_delta("rrf_pprpl_issue_path", "co_edited"), 3))),
+        ("under the widest arm, taking into account", "decomposition, widest arm, leakage",
+         num3(leak_share("symbols"))),
+        ("under the widest arm, taking into account", "decomposition, widest arm, residual",
+         num3(gap() - leak_share("symbols"))),
+        ("under the widest arm, taking into account", "decomposition, symbol key, widest arm",
+         num3(leak_share("symbols", "symbol"))),
+        ("after the widest\nredaction against", "path_issue named tasks after widest arm",
+         num3(csv("redaction.csv").query("arm == 'symbols' and group == 'names removed' and "
+                                        "source == 'co_edited' and method == 'path_issue'")
+              .auc_redacted.iloc[0])),
+        ("after the widest\nredaction against", "path_issue unnamed tasks after widest arm",
+         num3(csv("redaction.csv").query("arm == 'symbols' and group == 'nothing removed' and "
+                                        "source == 'co_edited' and method == 'path_issue'")
+              .auc_redacted.iloc[0])),
         ("query-independent prior degrades fastest", "random, largest quartile, co_edited",
          num3(auc("by_size.csv", "co_edited", "random", size_q="Q4"))),
     ]
