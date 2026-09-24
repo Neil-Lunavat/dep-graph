@@ -1,0 +1,204 @@
+repo,repo_key,dataset,instance_id,pr_number,base_commit,created_at,image,n_src_py_files_study,file_group,src_changed_lines_study,n_new_src_py_study,n_f2p,draw_rank
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-83909bfa22573777e3db5688773bda59721962ad-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,b6360dc5e068288dcdf9513dba732f1d823d1dfe,,,3,multi,184,0,1.0,1
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-415e08c2970757472314e515cb63a51ad825c45e-v7eee2454f617569fd6889f2211f75bc02a35f9f8,,f05bcf569367904985c0e5796a4c14ce0b7d4be9,,,2,multi,70,1,9.0,2
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-5640093f1ca63fd6af231cc8a7fb7d40e1907b8c-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,a5a13246ce02fd4c4ce997627b4f42152e59d288,,,4,multi,29,0,4.0,3
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-29aea9ff3466e4cd2ed00524b9e56738d568ce8b-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,270f109bb3af5c2498725b384f77ddc26da2fb73,,,2,multi,59,0,4.0,4
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-0fd88717c953b92ed8a50495d55e630eb5d59166-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,016b7f71b10539c90ddbb3246f19f9cbf0e65428,,,2,multi,108,0,4.0,5
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-a7d2a4e03209cff1e97e59fd54bb2b05fdbdbec6-v0f01c69f1e2528b935359cfe578530722bca2c59,,38067860e271ce2f68d6d5d743d70286e5209623,,,3,multi,35,0,2.0,6
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-6cc97447aac5816745278f3735af128afb255c81-v0f01c69f1e2528b935359cfe578530722bca2c59,,e094d48b1bdd93cbc189f416543e810c19b2e561,,,7,multi,83,0,8.0,7
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-9142be2f6cabbe6597c9254c5bb9186d17036d55-v0f01c69f1e2528b935359cfe578530722bca2c59,,7fff4086523678f3c6533da4c500f86f6fb47efa,,,1,single,79,0,2.0,8
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-3b823d908e8a5d17674f8c26d337d3114b7493b1-v0f01c69f1e2528b935359cfe578530722bca2c59,,92df66480613d0f3c1f11ab27146e3162d2a5bd5,,,6,multi,43,0,1.0,9
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-f8ef34672b961a95ec7282643679492862c688ec-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,e889b1063f60f6b99f5d031f7e903f7be5f58900,,,6,multi,49,0,1.0,10
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-489156378c8e97374a75a544c7c9c2c0dd8146d1-v390e508d27db7a51eece36bb6d9698b63a5b638a,,5ee81338fcf7adbc1a8eda26dd8105a07825cb08,,,2,multi,88,0,3.0,11
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-3db08adbb1cc6aa9941be5e0fc810132c6e1fa4b-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,709484969c8a4ffd74b839a673431a8c5caa6457,,,1,single,32,0,2.0,12
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-f86c58e2d235d8b96029d102c71ee2dfafd57997-v0f01c69f1e2528b935359cfe578530722bca2c59,,3398c102b5c41d48d0cbc2d81f9c004f07ac3fcb,,,2,multi,84,0,15.0,13
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-77658704217d5f166404fc67997203c25381cb6e-v390e508d27db7a51eece36bb6d9698b63a5b638a,,db2d5b09eff918e981c9e10787a5f2c500d1784f,,,1,single,148,0,33.0,14
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-1a4644ff15355fd696ac5b9d074a566a80fe7ca3-v30a923fb5c164d6cd18280c02422f75e611e8fb2,,1503805b703787aba06111f67e7dc564e3420cad,,,1,single,113,0,11.0,15
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-b2a289dcbb702003377221e25f62c8a3608f0e89-v173091e2e36d38c978002990795f66cfc0af30ad,,6382ea168a93d80a64aab1fbd8c4f02dc5ada5bf,,,5,multi,101,0,2.0,16
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-d6d2251929c84c3aa883bad7db0f19cc9ff0339e-v30a923fb5c164d6cd18280c02422f75e611e8fb2,,02e00aba3fd7b646a4f6d6af72159c2b366536bf,,,3,multi,34,0,4.0,17
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-e9e6001263f51103e96e58ad382660df0f3d0e39-v30a923fb5c164d6cd18280c02422f75e611e8fb2,,bddb9a7490b5e9475d0d01a8d906332e81789cde,,,1,single,91,0,8.0,18
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-fb144c44144f8bd3542e71f5db62b6d322c7bd85-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5,,662d34b9a7a1b3ab1d4847eeaef201a005826aef,,,2,multi,44,0,5.0,19
+ansible/ansible,ansible/ansible,swebench_pro,instance_ansible__ansible-34db57a47f875d11c4068567b9ec7ace174ec4cf-v1055803c3a812189a1133297f7f5468579283f86,,d63a71e3f83fc23defb97393367859634881b8da,,,1,single,21,0,3.0,20
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-13236,13236,6ed769d58d89380ebaa1ef52b300691eefda8928,2022-05-09 14:16:30+00:00,,1,single,7,0,2.0,1
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14096,14096,1a4462d72eb03f30dc83a879b1dd57aac8b2c18b,2022-12-04 17:06:07+00:00,,1,single,6,0,1.0,2
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-13977,13977,5250b2442501e6c671c6b380536f1edb352602d1,2022-11-01 22:24:58+00:00,,1,single,95,0,20.0,3
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14365,14365,7269fa3e33e8d02485a647da91a5a2a60a06af61,2023-02-06 19:20:34+00:00,,1,single,4,0,1.0,4
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-12907,12907,d16bfe05a744909de4b27f5875fe0d4ed41ce607,2022-03-03 15:14:54+00:00,,1,single,2,0,2.0,5
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14598,14598,80c3854a5f4f4a6ab86c03d9db7854767fcd83c1,2023-03-29 10:34:49+00:00,,1,single,4,0,1.0,6
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-13453,13453,19cc80471739bcb67b7e8099246b391c355023ee,2022-07-14 10:04:40+00:00,,1,single,2,0,1.0,7
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-7336,7336,732d89c2940156bdc0e200bb36dc38b5e424bcba,2018-03-28 15:31:32+00:00,,1,single,2,0,1.0,8
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-7671,7671,a7141cd90019b62688d507ae056298507678c058,2018-07-20 19:37:49+00:00,,1,single,9,0,1.0,9
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14309,14309,cdb66059a2feb44ee49021874605ba90801f9986,2023-01-23 22:34:01+00:00,,1,single,5,0,1.0,10
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-7166,7166,26d147868f8a891a6009a25cd6a8576d2e1bd747,2018-02-07 15:05:31+00:00,,1,single,10,0,1.0,11
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14539,14539,c0a24c1dc957a3b565294213f435fefb2ec99714,2023-03-16 18:45:19+00:00,,1,single,2,0,2.0,12
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-14995,14995,b16c7d12ccbc7b2d20364b89fb44285bcbfede54,2023-06-27 19:48:18+00:00,,1,single,4,0,1.0,13
+astropy/astropy,astropy/astropy,swebench_full,astropy__astropy-13579,13579,0df94ff7097961e92fd7812036a24b145bc13ca8,2022-08-26 15:06:53+00:00,,1,single,4,0,1.0,14
+django/django,django/django,swebench_full,django__django-14089,14089,d01709aae21de9cd2565b9c52f32732ea28a2d98,2021-03-06 20:51:08+00:00,,1,single,3,0,1.0,1
+django/django,django/django,swebench_full,django__django-14034,14034,db1fc5cd3c5d36cdb5d0fe4404efd6623dd3e8fb,2021-02-22 19:32:50+00:00,,1,single,14,0,1.0,2
+django/django,django/django,swebench_full,django__django-11179,11179,19fc6376ce67d01ca37a91ef2f55ef769f50513a,2019-04-05 15:54:39+00:00,,1,single,1,0,1.0,3
+django/django,django/django,swebench_full,django__django-16667,16667,02c356f2f3945b8075735d485c3cf48cad991011,2023-03-20 21:32:53+00:00,,1,single,2,0,2.0,4
+django/django,django/django,swebench_full,django__django-13212,13212,f4e93919e4608cfc50849a1f764fd856e0917401,2020-07-21 02:53:58+00:00,,2,multi,44,0,5.0,5
+django/django,django/django,swebench_full,django__django-14539,14539,6a5ef557f80a8eb6a758ebe99c8bb477ca47459e,2021-06-19 11:31:16+00:00,,1,single,5,0,2.0,6
+django/django,django/django,swebench_full,django__django-15098,15098,2c7846d992ca512d36a73f518205015c88ed088c,2021-11-17 21:30:07+00:00,,1,single,2,0,2.0,7
+django/django,django/django,swebench_full,django__django-15382,15382,770d3e6a4ce8e0a91a9e27156036c1985e74d4a3,2022-02-01 18:29:41+00:00,,1,single,19,0,1.0,8
+django/django,django/django,swebench_full,django__django-11790,11790,b1d6b35e146aea83b171c1b921178bbaae2795ed,2019-09-17 14:33:44+00:00,,1,single,4,0,2.0,9
+django/django,django/django,swebench_full,django__django-15022,15022,e1d673c373a7d032060872b690a92fc95496612e,2021-10-24 17:48:28+00:00,,1,single,4,0,3.0,10
+django/django,django/django,swebench_full,django__django-14155,14155,2f13c476abe4ba787b6cb71131818341911f43cc,2021-03-19 15:44:25+00:00,,1,single,13,0,3.0,11
+django/django,django/django,swebench_full,django__django-14855,14855,475cffd1d64c690cdad16ede4d5e81985738ceb4,2021-09-14 01:27:01+00:00,,1,single,6,0,1.0,12
+django/django,django/django,swebench_full,django__django-14765,14765,4e8121e8e42a24acc3565851c9ef50ca8322b15c,2021-08-12 05:59:11+00:00,,1,single,7,0,1.0,13
+django/django,django/django,swebench_full,django__django-13195,13195,156a2138db20abc89933121e4ff2ee2ce56a173a,2020-07-15 11:00:07+00:00,,3,multi,22,0,5.0,14
+django/django,django/django,swebench_full,django__django-15103,15103,dd528cb2cefc0db8b91a7ff0a2bc87305b976597,2021-11-19 15:57:54+00:00,,2,multi,17,0,2.0,15
+django/django,django/django,swebench_full,django__django-15467,15467,e0442a628eb480eac6a7888aed5a86f83499e299,2022-02-27 03:00:31+00:00,,1,single,4,0,1.0,16
+django/django,django/django,swebench_full,django__django-11964,11964,fc2b1cc926e34041953738e58fa6ad3053059b22,2019-10-23 14:16:45+00:00,,1,single,8,0,2.0,17
+django/django,django/django,swebench_full,django__django-12193,12193,3fb7c12158a2402f0f80824f6778112071235803,2019-12-08 01:38:25+00:00,,1,single,4,0,1.0,18
+django/django,django/django,swebench_full,django__django-14915,14915,903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4,2021-09-29 22:00:15+00:00,,1,single,3,0,1.0,19
+django/django,django/django,swebench_full,django__django-7530,7530,f8fab6f90233c7114d642dfe01a4e6d4cb14ee7d,2016-11-08 17:27:19+00:00,,1,single,2,0,1.0,20
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-53d376b148897466bb86d5accb51912bbbe9a8ed-v08d8e8889ec945ab821fb156c04c7d2e2810debb,,0d13e6b4bf80bced6c0946b969b9a1b6963f6bce,,,4,multi,59,0,4.0,1
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59,,c9795319b19c60e884f34df3eaf7e3e7f2bfd58c,,,5,multi,143,0,2.0,2
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-7bf3238533070f2d24bafbb26eedf675d51941f6-v08d8e8889ec945ab821fb156c04c7d2e2810debb,,0c5d154db9a199adc4be35be84390368693b2144,,,6,multi,103,0,43.0,3
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-0a90f9f0256e4f933523e9842799e39f95ae29ce-v76304ecdb3a5954fcf13feb710e8c40fcf24b73c,,5c6c22f3d2edf2f1b10f5dc335e32cb6a5f40341,,,3,multi,170,0,16.0,4
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-09865f5fb549694d969f0a8e49b9d204ef1853ca-ve8c8d62a2b60610a3c4631f5f23ed866bada9818,,50350d0432e2edf3429552bd9b50e78e662df8eb,,,1,single,59,0,2.0,5
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-5de7de19211e71b29b2f2ba3b1dff2fe065d660f-v08d8e8889ec945ab821fb156c04c7d2e2810debb,,5f7d8d190e2f0d837545e582fd5db99aae51a979,,,3,multi,88,0,16.0,6
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-60725705782832a2cb22e17c49697948a42a9d03-v298a7a812ceed28c4c18355a091f1b268fe56d86,,73e4b70aa3adafbbf44e7942b5bf9efabce70447,,,2,multi,21,0,1.0,7
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-6a117fab6c963b74dc1ba907d838e74f76d34a4b-v13642507b4fc1f8d234172bf8129942da2c2ca26,,f1f4efd659429d868ba8c4efc1405763d7864a70,,,3,multi,26,0,1.0,8
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-e1e502986a3b003899a8347ac8a7ff7b08cbfc39-v08d8e8889ec945ab821fb156c04c7d2e2810debb,,77c16d530b4d5c0f33d68bead2c6b329aee9b996,,,1,single,59,0,2.0,9
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818,,34099a36bcd3e9f33e169beb06f64dfab81c2cde,,,4,multi,90,0,6.0,10
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-77c16d530b4d5c0f33d68bead2c6b329aee9b996-ve8c8d62a2b60610a3c4631f5f23ed866bada9818,,80f511d3344a1f9743ff6efb0a2bdf0051529e3a,,,5,multi,198,0,12.0,11
+internetarchive/openlibrary,internetarchive/openlibrary,swebench_pro,instance_internetarchive__openlibrary-1be7de788a444f6255e89c10ef6aa608550604a8-v29f82c9cf21d57b242f8d8b0e541525d259e2d63,,8b933806b52d3785f98d2c397032c8b97a88feb2,,,4,multi,148,0,6.0,12
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-24177,24177,493d608e39d32a67173c23a7bbc47d6bfedcef61,2022-10-15 10:52:31+00:00,,1,single,2,0,1.0,1
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-24627,24627,9d22ab09d52d279b125d8770967569de070913b2,2022-12-05 00:05:54+00:00,,1,single,4,0,1.0,2
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-26208,26208,f0f133943d3e4f1e2e665291fe1c8f658a84cc09,2023-06-28 21:31:50+00:00,,1,single,2,0,2.0,3
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-26466,26466,3dd06a46750d174f821df5377996f493f1af4ebb,2023-08-07 19:30:22+00:00,,1,single,20,0,1.0,4
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-25960,25960,1d0d255b79e84dfc9f2123c5eb85a842d342f72b,2023-05-23 21:58:53+00:00,,1,single,18,0,1.0,5
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-26342,26342,2aee6ccd7c7e1f8d282c1e7579f4ee546b838542,2023-07-18 10:06:19+00:00,,1,single,7,0,1.0,6
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-25332,25332,66ba515e671638971bd11a34cff12c107a437e0b,2023-02-26 11:18:40+00:00,,1,single,13,0,1.0,7
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-24870,24870,6091437be9776139d3672cde28a19cbe6c09dcd5,2023-01-02 20:37:49+00:00,,2,multi,33,0,1.0,8
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-23412,23412,f06c2c3abdaf4b90285ce5ca7fedbb8ace715911,2022-07-11 01:41:11+00:00,,1,single,5,0,1.0,9
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-24570,24570,8f0003ae902952372824c9917975fb372c026a42,2022-11-30 15:50:17+00:00,,1,single,4,0,2.0,10
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-25479,25479,7fdf772201e4c9bafbc16dfac23b5472d6a53fa2,2023-03-16 17:59:41+00:00,,2,multi,7,0,2.0,11
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-21568,21568,f0632c0fc7339f68e992ed63ae4cfac76cd41aad,2021-11-08 18:41:08+00:00,,1,single,7,0,4.0,12
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-25122,25122,5ec2bd279729ff534719b8bf238dbbca907b93c5,2023-02-01 03:41:00+00:00,,1,single,8,0,12.0,13
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-14623,14623,d65c9ca20ddf81ef91199e6d819f9d3506ef477c,2019-06-25 14:01:17+00:00,,3,multi,19,0,1.0,14
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-24026,24026,14c96b510ebeba40f573e512299b1976f35b620e,2022-09-28 02:45:01+00:00,,1,single,13,0,2.0,15
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-22871,22871,a7b7260bf06c20d408215d95ce20a1a01c12e5b1,2022-04-21 13:10:50+00:00,,1,single,6,0,1.0,16
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-23314,23314,97fc1154992f64cfb2f86321155a7404efeb2d8a,2022-06-21 02:41:34+00:00,,1,single,2,0,1.0,17
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-25311,25311,430fb1db88843300fb4baae3edc499bbfe073b0c,2023-02-23 21:04:12+00:00,,1,single,4,0,1.0,18
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-23299,23299,3eadeacc06c9f2ddcdac6ae39819faa9fbee9e39,2022-06-18 01:34:39+00:00,,1,single,5,0,1.0,19
+matplotlib/matplotlib,matplotlib/matplotlib,swebench_full,matplotlib__matplotlib-20676,20676,6786f437df54ca7780a047203cbcfaa1db8dc542,2021-07-19 10:10:07+00:00,,1,single,7,0,2.0,20
+mwaskom/seaborn,mwaskom/seaborn,swebench_full,mwaskom__seaborn-3069,3069,54cab15bdacfaa05a88fbc5502a5b322d99f148e,2022-10-09 23:31:20+00:00,,1,single,15,0,2.0,1
+pallets/flask,pallets/flask,swebench_full,pallets__flask-5014,5014,7ee9ceb71e868944a46e1ff00b506772a53a4f1d,2023-03-04 18:36:21+00:00,,1,single,3,0,1.0,1
+psf/requests,psf/requests,swebench_full,psf__requests-5414,5414,39d0fdd9096f7dceccbc8f82e1eda7dd64717a8e,2020-04-05 16:52:04+00:00,,1,single,2,0,1.0,1
+psf/requests,psf/requests,swebench_full,psf__requests-1142,1142,22623bd8c265b78b161542663ee980738441c307,2013-01-25 05:19:16+00:00,,1,single,3,0,1.0,2
+psf/requests,psf/requests,swebench_full,psf__requests-6028,6028,0192aac24123735b3eaf9b08df46429bb770c283,2022-01-04 15:32:52+00:00,,1,single,4,0,2.0,3
+psf/requests,psf/requests,swebench_full,psf__requests-2931,2931,5f7a3a74aab1625c2bb65f643197ee885e3da576,2015-12-16 14:57:00+00:00,,1,single,5,0,1.0,4
+psf/requests,psf/requests,swebench_full,psf__requests-1766,1766,847735553aeda6e6633f2b32e14ba14ba86887a4,2013-11-29 08:38:09+00:00,,1,single,4,0,6.0,5
+psf/requests,psf/requests,swebench_full,psf__requests-2317,2317,091991be0da19de9108dbe5e3752917fea3d7fdc,2014-11-01 02:20:16+00:00,,1,single,4,0,8.0,6
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-6744,6744,7cc6cc991e586a6158bb656b8001234ccda25407,2022-07-02 16:36:00+00:00,,1,single,17,0,3.0,1
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-2905,2905,7c4e2ac83f7b4306296ff9b7b51aaf016e5ad614,2019-04-17 21:52:37+00:00,,1,single,3,0,1.0,2
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-3095,3095,1757dffac2fa493d7b9a074b84cf8c830a706688,2019-07-11 13:16:16+00:00,,2,multi,49,0,1.0,3
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4629,4629,a41edc7bf5302f2ea327943c0c48c532b12009bc,2020-11-30 23:06:17+00:00,,1,single,2,0,1.0,4
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4695,4695,51ef2a66c4e0896eab7d2b03e3dfb3963e338e3c,2020-12-15 00:30:04+00:00,,1,single,2,0,1.0,5
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-3993,3993,8cc34cb412ba89ebca12fc84f76a9e452628f1bc,2020-04-21 20:30:35+00:00,,2,multi,49,0,2.0,6
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-7233,7233,51d37d1be95547059251076b3fadaa317750aab3,2022-10-27 23:46:49+00:00,,1,single,5,0,1.0,7
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-6599,6599,6bb2b855498b5c68d7cca8cceb710365d58e6048,2022-05-12 15:12:41+00:00,,1,single,6,0,1.0,8
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-7229,7229,3aa75c8d00a4a2d4acf10d80f76b937cadb666b7,2022-10-26 21:45:01+00:00,,1,single,29,0,1.0,9
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4966,4966,37522e991a32ee3c0ad1a5ff8afe8e3eb1885550,2021-02-26 12:05:51+00:00,,1,single,8,0,4.0,10
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-6992,6992,45c0a114e2b7b27b83c9618bc05b36afac82183c,2022-09-05 15:07:43+00:00,,2,multi,123,0,12.0,11
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-6721,6721,cc183652bf6e1273e985e1c4b3cba79c896c1193,2022-06-24 18:45:45+00:00,,1,single,2,0,1.0,12
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-6461,6461,851dadeb0338403e5021c3fbe80cbc9127ee672d,2022-04-09 03:02:40+00:00,,1,single,3,0,1.0,13
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4075,4075,19b088636eb7d3f65ab7a1046ac672e0689371d8,2020-05-18 18:42:05+00:00,,1,single,9,0,2.0,14
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4356,4356,e05fddea852d08fc0845f954b79deb9e9f9ff883,2020-08-19 23:48:49+00:00,,1,single,6,0,8.0,15
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-4687,4687,d3b6aa6d8b997df115a53c001d00222a0f92f63a,2020-12-13 20:42:40+00:00,,1,single,13,0,1.0,16
+pydata/xarray,pydata/xarray,swebench_full,pydata__xarray-7393,7393,41fef6f1352be994cd90056d47440fe9aa4c068f,2022-12-20 04:34:24+00:00,,1,single,6,0,2.0,17
+pylint-dev/pylint,pylint-dev/pylint,swebench_full,pylint-dev__pylint-6903,6903,ca80f03a43bc39e4cc2c67dc99817b3c9f13b8a6,2022-06-09 19:43:36+00:00,,1,single,7,0,1.0,1
+pylint-dev/pylint,pylint-dev/pylint,swebench_full,pylint-dev__pylint-4970,4970,40cc2ffd7887959157aaf469e09585ec2be7f528,2021-09-05 19:44:07+00:00,,1,single,2,0,1.0,2
+pylint-dev/pylint,pylint-dev/pylint,swebench_full,pylint-dev__pylint-4551,4551,99589b08de8c5a2c6cc61e13a37420a868c80599,2021-06-07 15:14:31+00:00,,4,multi,126,0,10.0,3
+pylint-dev/pylint,pylint-dev/pylint,swebench_full,pylint-dev__pylint-4604,4604,1e55ae64624d28c5fe8b63ad7979880ee2e6ef3f,2021-06-22 10:44:14+00:00,,2,multi,6,0,21.0,4
+pylint-dev/pylint,pylint-dev/pylint,swebench_full,pylint-dev__pylint-8898,8898,1f8c4d9eb185c16a2c1d881c054f015e1c2eb334,2023-07-29 21:53:59+00:00,,3,multi,32,0,1.0,5
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-10081,10081,da9a2b584eb7a6c7e924b2621ed0ddaeca0a7bea,2022-06-26 13:53:24+00:00,,1,single,5,0,1.0,1
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-5809,5809,8aba863a634f40560e25055d179220f0eefabe9a,2019-09-01 04:40:09+00:00,,1,single,6,0,1.0,2
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-10051,10051,aa55975c7d3f6c9f6d7f68accc41bb7cadf0eb9a,2022-06-15 17:39:53+00:00,,1,single,7,0,1.0,3
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-5631,5631,cb828ebe70b4fa35cd5f9a7ee024272237eab351,2019-07-19 20:13:12+00:00,,1,single,19,0,1.0,4
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-10356,10356,3c1534944cbd34e8a41bc9e76818018fadefc9a1,2022-10-08 06:20:42+00:00,,1,single,37,0,1.0,5
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-7571,7571,422685d0bdc110547535036c1ff398b5e1c44145,2020-07-29 12:00:47+00:00,,1,single,4,0,1.0,6
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-7490,7490,7f7a36478abe7dd1fa993b115d22606aa0e35e88,2020-07-13 22:20:10+00:00,,1,single,21,0,2.0,7
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-7205,7205,5e7f1ab4bf58e473e5d7f878eb2b499d7deabd29,2020-05-09 11:25:58+00:00,,1,single,3,0,10.0,8
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-7324,7324,19ad5889353c7f5f2b65cc2acd346b7a9e95dfcd,2020-06-05 13:00:07+00:00,,1,single,10,0,3.0,9
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-7432,7432,e6e300e729dd33956e5448d8be9a0b1540b4e53a,2020-06-29 21:51:15+00:00,,1,single,3,0,1.0,10
+pytest-dev/pytest,pytest-dev/pytest,swebench_full,pytest-dev__pytest-5262,5262,58e6a09db49f34886ff13f3b7520dd0bcd7063cd,2019-05-14 21:54:55+00:00,,1,single,4,0,1.0,11
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,487f90443cd1bf66bf2368b7a5c004f4e1b27777,,,2,multi,46,0,6.0,1
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-16de05407111ddd82fa12e54389d532362489da9-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d,,744cd94469de77f52905bebb123597c040ac07b6,,,1,single,69,0,364.0,2
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-ec2dcfce9eee9f808efc17a1b99e227fc4421dea-v5149fcda2a9a6fe1d35dfed1bade1444a11ef271,,b9920503db6482f0d3af7e95b3cf3c71fbbd7d4f,,,1,single,43,0,7.0,3
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-473a15f7908f2bb6d670b0e908ab34a28d8cf7e2-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d,,8e08f046aeffb38445cc659050f7a083b4a9649c,,,1,single,69,0,364.0,4
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-85b867fe8d4378c8e371f055c70452f546055854-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,c97257cac01d9f7d67fb42d0344cb4332c7a0833,,,2,multi,93,0,5.0,5
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-0fc6d1109d041c69a68a896db87cf1b8c194cef7-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,21b20116f5872490bfbba4cf9cbdc8410a8a1d7d,,,2,multi,91,1,4.0,6
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-3fd8e12949b8feda401930574facf09dd4180bba,,a19634474246739027f826968ea34e720c0ec987,,,5,multi,50,0,1.0,7
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-233cb1cc48635130e5602549856a6fa4ab4c087f-v35616345bb8052ea303186706cec663146f0f184,,08604f5a871e7bf2332f24552895a11b7295cee9,,,3,multi,34,0,8.0,8
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-ff1c025ad3210506fc76e1f604d8c8c27637d88e-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d,,e545faaf7b18d451c082f697675f0ab0e7599ed1,,,2,multi,55,0,785.0,9
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-2e961080a85d660148937ee8f0f6b3445a8f2c01-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d,,10cb81e81a3782b56ced3d00d7f5b912841b80a2,,,1,single,49,0,6.0,10
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-2dd8966fdcf11972062c540b7a787e4d0de8d372-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d,,6c653125d95a26db53471dba1bc331aee3b0477e,,,4,multi,46,0,3.0,11
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,a0710124a1790237aa4f2a17e2f7011a074143b4,,,2,multi,41,0,4.0,12
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,0e624e64695e8f566c7391f65f737311aeb6b2eb,,,4,multi,164,0,17.0,13
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-f8e7fea0becae25ae20606f1422068137189fe9e,,a6171337f956048daa8e72745b755a40b607a4f4,,,1,single,39,0,88.0,14
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-8cd06741bb56cdca49f5cdc0542da97681154315-v5149fcda2a9a6fe1d35dfed1bade1444a11ef271,,2a10461ca473838cbc3bf6b92501324470d4f521,,,1,single,42,0,25.0,15
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,swebench_pro,instance_qutebrowser__qutebrowser-46e6839e21d9ff72abb6c5d49d5abaa5a8da8a81-v2ef375ac784985212b1805e1d0431dc8f1b3c171,,e46adf32bdf880385319cb701d926fec6899046d,,,5,multi,50,0,4.0,16
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-15100,15100,af8a6e592a1a15d92d77011856d5aa0ec4db4c6c,2019-09-26 19:21:38+00:00,,1,single,9,0,1.0,1
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-25747,25747,2c867b8f822eb7a684f0d5c4359e4426e1c9cfe0,2023-03-02 20:38:47+00:00,,1,single,4,0,1.0,2
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-14629,14629,4aded39b5663d943f6a4809abacfa9cae3d7fb6a,2019-08-12 09:31:54+00:00,,1,single,24,0,1.0,3
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-13779,13779,b34751b7ed02b2cfcc36037fb729d4360480a299,2019-05-03 13:24:57+00:00,,1,single,2,0,2.0,4
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-14894,14894,fdbaa58acbead5a254f2e6d597dc1ab3b947f4c6,2019-09-05 17:41:11+00:00,,1,single,13,0,1.0,5
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-13124,13124,9f0b959a8c9195d1b6e203f08b698e052b426ca9,2019-02-09 02:15:23+00:00,,1,single,5,0,1.0,6
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-11578,11578,dd69361a0d9c6ccde0d2353b00b86e0e7541a3e3,2018-07-16 23:21:56+00:00,,1,single,2,0,1.0,7
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-9288,9288,3eacf948e0f95ef957862568d87ce082f378e186,2017-07-06 11:03:14+00:00,,1,single,7,0,1.0,8
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-25973,25973,10dbc142bd17ccf7bd38eec2ac04b52ce0d1009e,2023-03-25 13:27:07+00:00,,1,single,12,0,1.0,9
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-13142,13142,1c8668b0a021832386470ddf740d834e02c66f69,2019-02-12 14:32:37+00:00,,1,single,10,0,2.0,10
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-14087,14087,a5743ed36fbd3fbc8e351bdab16561fbfca7dfa1,2019-06-13 20:09:22+00:00,,1,single,9,0,3.0,11
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-10908,10908,67d06b18c68ee4452768f8a1e868565dd4354abf,2018-04-03 03:50:46+00:00,,1,single,3,0,1.0,12
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-14141,14141,3d997697fdd166eff428ea9fd35734b6a8ba113e,2019-06-21 20:53:37+00:00,,1,single,1,0,1.0,13
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-25232,25232,f7eea978097085a6781a0e92fc14ba7712a52d75,2022-12-24 15:32:44+00:00,,1,single,13,0,1.0,14
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-26194,26194,e886ce4e1444c61b865e7839c9cff5464ee20ace,2023-04-17 16:33:08+00:00,,1,single,13,0,2.0,15
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-25931,25931,e3d1f9ac39e4bf0f31430e779acc50fb05fe1b64,2023-03-22 00:34:47+00:00,,1,single,24,0,1.0,16
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-14983,14983,06632c0d185128a53c57ccc73b25b6408e90bb89,2019-09-14 15:31:18+00:00,,1,single,5,0,2.0,17
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-10844,10844,97523985b39ecde369d83352d7c3baf403b60a22,2018-03-21 00:16:18+00:00,,1,single,5,0,1.0,18
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-12973,12973,a7b8b9e9e16d4e15fabda5ae615086c2e1c47d8a,2019-01-13 16:19:52+00:00,,1,single,10,0,1.0,19
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,swebench_full,scikit-learn__scikit-learn-13439,13439,a62775e99f2a5ea3d51db7160fad783f6cd8a4c5,2019-03-12 20:32:50+00:00,,1,single,6,0,1.0,20
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9591,9591,9ed054279aeffd5b1d0642e2d24a8800389de29f,2021-08-29 15:26:24+00:00,,1,single,3,0,1.0,1
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9320,9320,e05cef574b8f23ab1b57f57e7da6dee509a4e230,2021-06-11 13:29:04+00:00,,1,single,8,0,1.0,2
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9658,9658,232dbe41c5250eb7d559d40438c4743483e95f15,2021-09-20 17:04:23+00:00,,1,single,4,0,1.0,3
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-10614,10614,ac2b7599d212af7d04649959ce6926c63c3133fa,2022-06-29 14:29:04+00:00,,1,single,11,0,1.0,4
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-11445,11445,71db08c05197545944949d5aa76cd340e7143627,2023-05-28 19:15:07+00:00,,1,single,14,0,2.0,5
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-8595,8595,b19bce971e82f2497d67fdacdeca8db08ae0ba56,2020-12-27 03:07:50+00:00,,1,single,2,0,1.0,6
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-10673,10673,f35d2a6cc726f97d0e859ca7a0e1729f7da8a6c8,2022-07-16 19:29:29+00:00,,3,multi,26,0,1.0,7
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-8120,8120,795747bdb6b8fb7d717d5bbfc2c3316869e66a73,2020-08-14 07:23:34+00:00,,2,multi,9,0,1.0,8
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-8721,8721,82ef497a8c88f0f6e50d84520e7276bfbf65025d,2021-01-21 15:36:24+00:00,,1,single,4,0,1.0,9
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9281,9281,8ec06e9a1bd862cd713b9db748e039ccc7b3e15b,2021-05-29 17:16:30+00:00,,1,single,7,0,1.0,10
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-8548,8548,dd1615c59dc6fff633e27dbb3861f2d27e1fb976,2020-12-17 13:46:32+00:00,,2,multi,50,0,1.0,11
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9698,9698,f050a7775dfc9000f55d023d36d925a8d02ccfa8,2021-10-03 04:04:04+00:00,,1,single,2,0,1.0,12
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-11510,11510,6cb783c0024a873722952a67ebb9f41771c8eb6d,2023-07-24 22:46:12+00:00,,1,single,36,0,2.0,13
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-7910,7910,27ac10de04697e2372d31db5548e56a7c6d9265d,2020-07-04 01:08:20+00:00,,1,single,3,0,1.0,14
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9711,9711,81a4fd973d4cfcb25d01a7b0be62cdb28f82406d,2021-10-06 15:08:03+00:00,,1,single,15,0,1.0,15
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-8638,8638,4b452338f914d4f6b54704222d70ae8a746e3db5,2021-01-01 13:54:38+00:00,,1,single,2,0,1.0,16
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-7454,7454,aca3f825f2e4a8817190f3c885a242a285aa0dba,2020-04-09 17:08:30+00:00,,1,single,7,0,1.0,17
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-7462,7462,b3e26a6c851133b82b50f4b68b53692076574d13,2020-04-12 04:10:05+00:00,,2,multi,20,0,2.0,18
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-9602,9602,6c38f68dae221e8cfc70c137974b8b88bd3baaab,2021-09-01 17:26:58+00:00,,1,single,12,0,1.0,19
+sphinx-doc/sphinx,sphinx-doc/sphinx,swebench_full,sphinx-doc__sphinx-7748,7748,9988d5ce267bf0df4791770b469431b1fb00dcdd,2020-05-30 06:41:07+00:00,,1,single,90,0,2.0,20
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-19637,19637,63f8f465d48559fecb4e4bf3c48b75bf15a3e0ef,2020-06-24 13:08:57+00:00,,1,single,4,0,1.0,1
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-13372,13372,30379ea6e225e37833a764ac2da7b7fadf5fe374,2017-09-30 16:05:48+00:00,,1,single,4,0,1.0,2
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-22456,22456,a3475b3f9ac662cd425157dd3bdb93ad7111c090,2021-11-10 12:24:42+00:00,,1,single,12,0,1.0,3
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-13798,13798,7121bdf1facdd90d05b6994b4c2e5b2865a4638a,2017-12-26 18:12:43+00:00,,1,single,23,0,1.0,4
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-12096,12096,d7c3045115693e887bcd03599b7ca4650ac5f2cb,2017-01-25 13:40:24+00:00,,1,single,2,0,1.0,5
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-19495,19495,25fbcce5b1a4c7e3956e6062930f4a44ce95a632,2020-06-05 11:53:09+00:00,,1,single,19,0,1.0,6
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-13031,13031,2dfa7457f20ee187fbb09b5b6a1631da4458388c,2017-07-23 15:48:13+00:00,,1,single,12,0,1.0,7
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-22080,22080,3f8c8c2377cb8e0daaf8073e8d03ac7d87580813,2021-09-12 07:11:33+00:00,,2,multi,12,0,3.0,8
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-12419,12419,479939f8c65c8c2908bbedc959549a257a7c0b0b,2017-03-25 15:02:26+00:00,,1,single,10,0,1.0,9
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-21612,21612,b4777fdcef467b7132c055f8ac2c9a5059e6a145,2021-06-14 04:31:24+00:00,,1,single,2,0,1.0,10
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-20428,20428,c0e85160406f9bf2bcaa2992138587668a1cd0bc,2020-11-14 05:56:31+00:00,,1,single,2,0,1.0,11
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-20438,20438,33b47e4bd60e2302e42616141e76285038b724d6,2020-11-17 08:24:33+00:00,,3,multi,20,0,2.0,12
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-13757,13757,a5e6a101869e027e7930e694f8b1cfb082603453,2017-12-17 11:08:44+00:00,,1,single,1,0,1.0,13
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-15809,15809,28d913d3cead6c5646307ffa6540b21d65059dfd,2019-01-20 06:08:26+00:00,,1,single,2,0,2.0,14
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-12481,12481,c807dfe7569692cad24f02a08477b70c1679a4dd,2017-04-03 01:52:33+00:00,,1,single,8,0,1.0,15
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-18763,18763,70381f282f2d9d039da860e391fe51649df2779d,2020-03-03 03:40:06+00:00,,1,single,2,0,1.0,16
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-24539,24539,193e3825645d93c73e31cdceb6d742cc6919624d,2023-01-17 17:26:42+00:00,,1,single,9,0,1.0,17
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-17139,17139,1d3327b8e90a186df6972991963a5ae87053259d,2019-07-01 19:17:18+00:00,,1,single,2,0,2.0,18
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-14711,14711,c6753448b5c34f95e250105d76709fe4d349ca1f,2018-05-12 17:00:20+00:00,,1,single,2,0,1.0,19
+sympy/sympy,sympy/sympy,swebench_full,sympy__sympy-14976,14976,9cbea134220b0b951587e11b63e2c832c7246cbc,2018-07-25 17:38:07+00:00,,1,single,7,0,1.0,20

@@ -1,0 +1,16 @@
+repo_key,name,url,pinned_sha,sampled_tasks
+ansible/ansible,ansible/ansible,https://github.com/ansible/ansible,6198c7377f545207218fe8eb2e3cfa9673ff8f5e,20
+astropy/astropy,astropy/astropy,https://github.com/astropy/astropy,92b38aebbba6422890f1023031558f6df738e2a5,14
+django/django,django/django,https://github.com/django/django,4a72da71001f154ea60906a2f74898d32b7322a7,20
+internetarchive/openlibrary,internetarchive/openlibrary,https://github.com/internetarchive/openlibrary,8b933806b52d3785f98d2c397032c8b97a88feb2,12
+matplotlib/matplotlib,matplotlib/matplotlib,https://github.com/matplotlib/matplotlib,d3491dc8151d87d46b0b29b859eee0d972292bb0,20
+mwaskom/seaborn,mwaskom/seaborn,https://github.com/mwaskom/seaborn,515286e02be3e4c0ff2ef4addb34a53c4a676ee4,1
+pallets/flask,pallets/flask,https://github.com/pallets/flask,7ee9ceb71e868944a46e1ff00b506772a53a4f1d,1
+psf/requests,psf/requests,https://github.com/psf/requests,0192aac24123735b3eaf9b08df46429bb770c283,6
+pydata/xarray,pydata/xarray,https://github.com/pydata/xarray,d008e331ba11f6cb648ff447756e14e3252b368d,17
+pylint-dev/pylint,pylint-dev/pylint,https://github.com/pylint-dev/pylint,ed5963235706741560b095bd7e5a8865e3be1009,5
+pytest-dev/pytest,pytest-dev/pytest,https://github.com/pytest-dev/pytest,bf451d47a1b3be80a7f89b3076e4816c47390037,11
+qutebrowser/qutebrowser,qutebrowser/qutebrowser,https://github.com/qutebrowser/qutebrowser,e158a480f52185c77ee07a52bc022f021d9789fe,16
+scikit-learn/scikit-learn,scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,33a1f1690e7a7007633f59b6bee32017f4229864,20
+sphinx-doc/sphinx,sphinx-doc/sphinx,https://github.com/sphinx-doc/sphinx,8ef07089eeb3082f23338f18519d8cc96fd38b43,20
+sympy/sympy,sympy/sympy,https://github.com/sympy/sympy,1b067d20fdb512f337a8b838eb0c74498720a472,20

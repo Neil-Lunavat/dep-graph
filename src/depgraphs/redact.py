@@ -39,6 +39,8 @@ Writes data/issue_bags_redacted.json          names arm
        data/issue_bags_redacted_paths.json    paths arm
        data/issue_bags_redacted_symbols.json  symbols arm
 each {task_id: {"bag": {token: count}, "removed": n}}
+and    data/issue_texts_redacted.json         the redacted texts themselves, {task_id: {arm:
+                                              text}}, arm "none" being the unredacted issue; the dense orderings embed these
 
 Usage:  python -m depgraphs.redact
 """
@@ -161,6 +163,7 @@ def main():
     # on study2's output without making the pipeline circular
     tasks = [json.loads(l) for l in open(ROOT / "data" / "tasks.jsonl", encoding="utf-8")]
     text_of = load_statements()
+    texts: dict[str, dict[str, str]] = {}
 
     for mode, fname in ARMS.items():
         out, n_changed, n_cuts, n_nosrc = {}, 0, 0, 0
@@ -173,6 +176,7 @@ def main():
                 n_nosrc += not syms
             clean, k = redact(text, keys, mode, syms)
             out[t["task_id"]] = {"bag": bag_of(clean), "removed": k}
+            texts.setdefault(t["task_id"], {"none": text})[mode] = clean
             n_changed += k > 0
             n_cuts += k
 
@@ -185,6 +189,7 @@ def main():
         print("  mentions removed in total: %d" % n_cuts)
         if mode == "symbols":
             print("  tasks whose key files yielded no definitions: %d" % n_nosrc)
+    (ROOT / "data" / "issue_texts_redacted.json").write_text(json.dumps(texts))
 
 
 if __name__ == "__main__":

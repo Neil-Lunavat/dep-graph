@@ -33,3 +33,9 @@ external/data/datasets
 external/results/step2
 external/logs/*.log
 external/logs/progress.json
+data/issue_texts_redacted.json
+data/embeddings/
+contextbench/data/repos/
+contextbench/data/graphs/
+contextbench/data/lexfeat/
+contextbench/logs/progress.json
