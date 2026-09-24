@@ -411,6 +411,100 @@ def external_table():
     write("external", LF.join(rows))
 
 
+def contextbench_table():
+    """The four predictions of paper/contextbench_prereg.md and what the human key showed."""
+    import json
+    f = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
+    if not f.exists():
+        return
+    r = json.loads(f.read_text())
+    ok = {True: "pass", False: BS + "textbf{fail}"}
+    g1, g2, g3, g4 = r["G1"], r["G2"], r["G3"], r["G4"]
+    worst2 = min(g2["tests"], key=lambda t: t["estimate"])
+    rows = [
+        "G1 & fusion in the top three non-oracle orderings on the human key, shortfall "
+        "$" + BS + "le 0.030$ & rank %d (oracle included); shortfall %.3f & %s %s" % (
+            g1["rank"], g1["shortfall"], ok[g1["pass"]], NL),
+        "G2 & fusion never significantly worse than four pure orderings & smallest "
+        "difference %+.3f ($p_{%s{Holm}} %s$) & %s %s" % (
+            worst2["estimate"], BS + "text", ("< 0.001" if worst2["p_holm"] < 0.001
+                                              else "= %.3f" % worst2["p_holm"]),
+            ok[g2["pass"]], NL),
+        "G3 & outward walk beats inward & %+.3f ($p = %.3f$) & %s %s" % (
+            g3["estimate"], g3["p"], ok[g3["pass"]], NL),
+        "G4 & Kendall $" + BS + "tau " + BS + "ge 0.5$ between the human key's ranking and "
+        "each proxy's & symbol %.2f, co-edited %.2f & %s %s" % (
+            g4["symbol"]["tau"], g4["co_edited"]["tau"], ok[g4["pass"]], NL),
+    ]
+    write("cb_pred", LF.join(rows))
+
+    t = pd.read_csv(f.parent / "per_source.csv")
+    t = t[t["rank"].notna()]
+    au = t.pivot(index="method", columns="source", values="auc")
+    rk = t.pivot(index="method", columns="source", values="rank").astype(int)
+    keys = ["gold", "gold_readonly", "co_edited", "symbol"]
+    show = ["rrf_hops_issue_path", "rrf_pprpl_issue_path", "rrf_hops_path", "bm25_issue",
+            "path_issue", "hops_lines", "ppr_und_pl", "ppr_out_pl", "pagerank", "random"]
+    out = []
+    for name in show:
+        out.append(m(name) + " & " + " & ".join(
+            "%s (%d)" % (("%.3f" % au.loc[name, k]).lstrip("0"), rk.loc[name, k])
+            for k in keys) + " " + NL)
+    out.append(BS + "midrule")
+    out.append("oracle & " + " & ".join(("%.3f" % au.loc["oracle", k]).lstrip("0")
+                                          for k in keys) + " " + NL)
+    write("cb_auc", LF.join(out))
+
+
+def metric_table():
+    """Ranks of the leading orderings under the three cost rules, matched population."""
+    f = OUT / "metric_auc.csv"
+    if not f.exists():
+        return
+    t = pd.read_csv(f)
+    t = t[t.population == "shared"]
+    rules = ["lines, stop", "lines, skip", "files"]
+    show = ["rrf_pprpl_issue_path", "rrf_ppr_issue_path", "rrf_hops_issue_path",
+            "rrf_hops_path", "hops_lines", "ppr_und_pl", "ppr_und", "path_issue",
+            "bm25_issue"]
+    out = []
+    for name in show:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            for rule in rules:
+                g = t[(t.method == name) & (t.source == src) & (t.rule == rule)].iloc[0]
+                cells.append("%s (%d)" % (("%.3f" % g.auc).lstrip("0"), int(g["rank"])))
+        out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
+    write("metric", LF.join(out))
+
+
+def seedless_table():
+    """Without a free seed: AUC by key and by whether the issue names an edited file."""
+    f = ROOT / "results" / "seedless" / "rows.parquet"
+    if not f.exists():
+        return
+    d = pd.read_parquet(f)
+    show = ["rrf_pprpl_issue_path", "rrf_hops_path", "localiser", "path_issue", "bm25_issue",
+            "dense_issue", "ppr_und_pl", "hops_lines", "random"]
+    show = [s for s in show if s in set(d.method)]
+    g = d.groupby(["method", "source", "named"]).auc.mean()
+    a = d.groupby(["method", "source"]).auc.mean()
+    label = {"localiser": BS + "textit{issue-only fusion (picks the seed)}"}
+    out = []
+    for name in show:
+        cells = []
+        for src in ("edited", "symbol"):
+            cells += [a[(name, src)], g[(name, src, True)], g[(name, src, False)]]
+        out.append(label.get(name, m(name)) + " & " + " & ".join(
+            ("%.3f" % c).lstrip("0") for c in cells) + " " + NL)
+    out.append(BS + "midrule")
+    cells = []
+    for src in ("edited", "symbol"):
+        cells += [a[("oracle", src)], g[("oracle", src, True)], g[("oracle", src, False)]]
+    out.append("oracle & " + " & ".join(("%.3f" % c).lstrip("0") for c in cells) + " " + NL)
+    write("seedless", LF.join(out))
+
+
 def figure_data():
     """Coverage curves for the two-panel figure, one file per key source."""
     cur = pd.read_csv(OUT / "curves_mean.csv")
@@ -446,6 +540,9 @@ def main():
     families_table()
     mixed_table()
     external_table()
+    contextbench_table()
+    metric_table()
+    seedless_table()
     figure_data()
 
 

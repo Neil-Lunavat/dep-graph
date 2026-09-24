@@ -8,9 +8,10 @@ Model and window are D23's, fixed before any run: jinaai/jina-embeddings-v2-base
 pinned revision, the first 512 tokens of each file, L2-normalised. Inference is in bfloat16,
 which D23 did not specify; on the machine used it is 3x faster than float32, and on a 256-file
 check its vectors have cosine >= 0.997 to float32's and a median Spearman correlation of
-0.9996 between the two similarity rankings (POSTHOC.md). Issues are embedded with a
-2,048-token window, so that deleting names from an issue (redact.py) cannot pull text into
-the window that the unredacted issue had cut off.
+0.9996 between the two similarity rankings (POSTHOC.md). Issues are embedded whole: split
+into consecutive 512-token chunks, each embedded, and the chunk vectors averaged with weights
+proportional to their length and re-normalised. Nothing is truncated, so deleting names from
+an issue (redact.py) cannot pull text into a window that the unredacted issue had cut off.
 
 Files are done in two passes: first those in graphs of pull requests carrying both keys (the
 matched population every controlled comparison uses), then the rest, so that an interrupted
@@ -35,7 +36,7 @@ import numpy as np
 MODEL = "jinaai/jina-embeddings-v2-base-code"
 REVISION = "516f4baf13dec4ddddda8631e019b5737c8bc250"
 MAX_TOKENS = 512
-ISSUE_TOKENS = 2048
+CHUNK = 510   # 512 less the two special tokens
 
 
 def read_blobs(repo_dir: Path, ids: list[str]) -> list[str]:
@@ -99,11 +100,25 @@ def main():
     if not dest.exists():
         texts = json.loads((root / "data" / "issue_texts_redacted.json").read_text())
         ids = sorted("%s|%s" % (t, arm) for t, v in texts.items() for arm in v)
-        model.max_seq_length = ISSUE_TOKENS
+        model.max_seq_length = MAX_TOKENS
+        tok = model.tokenizer
         t0 = time.time()
-        vecs = encode([texts[i.rsplit("|", 1)[0]][i.rsplit("|", 1)[1]] or " " for i in ids])
-        np.savez_compressed(dest, ids=np.array(ids), vecs=vecs)
-        print("issues: %d texts in %.0fs" % (len(ids), time.time() - t0), flush=True)
+        chunks, owner, weight = [], [], []
+        for j, i in enumerate(ids):
+            task, arm = i.rsplit("|", 1)
+            toks = tok(texts[task][arm] or " ", add_special_tokens=False)["input_ids"] or [0]
+            for k in range(0, len(toks), CHUNK):
+                piece = toks[k:k + CHUNK]
+                chunks.append(tok.decode(piece))
+                owner.append(j)
+                weight.append(len(piece))
+        cv = encode(chunks).astype(np.float32) * np.array(weight, dtype=np.float32)[:, None]
+        vecs = np.zeros((len(ids), cv.shape[1]), dtype=np.float32)
+        np.add.at(vecs, np.array(owner), cv)
+        vecs /= np.linalg.norm(vecs, axis=1, keepdims=True)
+        np.savez_compressed(dest, ids=np.array(ids), vecs=vecs.astype(np.float16))
+        print("issues: %d texts, %d chunks in %.0fs" % (len(ids), len(chunks),
+                                                        time.time() - t0), flush=True)
 
     model.max_seq_length = MAX_TOKENS
     need = needed_blobs(root)

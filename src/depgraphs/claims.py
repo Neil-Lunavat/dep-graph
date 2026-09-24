@@ -97,6 +97,38 @@ def redact_delta(method: str, source: str, group: str = "names removed",
 
 _ext = ROOT / "external" / "results" / "study2" / "predictions.json"
 EXT = json.loads(_ext.read_text()) if _ext.exists() else {}
+_cb = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
+CB = json.loads(_cb.read_text()) if _cb.exists() else {}
+_sl = ROOT / "results" / "seedless" / "summary.json"
+SL = json.loads(_sl.read_text()) if _sl.exists() else {}
+
+
+def metric_delta(rule: str, source: str, a: str, b: str) -> float:
+    p = csv("metric_pairs.csv")
+    r = p[(p.rule == rule) & (p.source == source) & (p.a == a) & (p.b == b)].iloc[0]
+    return float(r.delta)
+
+
+def metric_auc(rule: str, source: str, method: str, population: str = "shared") -> dict:
+    t = csv("metric_auc.csv")
+    g = t[(t.rule == rule) & (t.source == source) & (t.population == population)]
+    best = g[g.method != "oracle"].auc.max()
+    r = g[g.method == method].iloc[0]
+    return {"auc": float(r.auc), "rank": int(r["rank"]), "short": float(best - r.auc)}
+
+
+def sl_auc(method: str, source: str) -> float:
+    return float(SL["auc_all"][source][method])
+
+
+def sl_delta(b: str, source: str, stratum: str = "all") -> float:
+    t = pd.read_csv(ROOT / "results" / "seedless" / "tests.csv")
+    r = t[(t.stratum == stratum) & (t.source == source) & (t.b == b)].iloc[0]
+    return float(r.delta)
+
+
+def cb_test(name: str, b: str) -> dict:
+    return next(t for t in CB[name]["tests"] if t["b"] == b)
 
 
 def gap(source: str = "co_edited") -> float:
@@ -284,9 +316,9 @@ def claims() -> list[tuple[str, str, str]]:
         ("their worst-case ranks are", "length-aware ablation, unscaled worst rank",
          str(int(csv("rank_by_source.csv").set_index("method")
                  .loc["rrf_ppr_issue_path", "worst_case"]))),
-        ("two fusions differing only in it are", "contributions: length-aware pair, co_edited",
+        ("fusions differing only in that are", "contributions: length-aware pair, co_edited",
          num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "co_edited"))),
-        ("two fusions differing only in it are", "contributions: length-aware pair, symbol",
+        ("fusions differing only in that are", "contributions: length-aware pair, symbol",
          num3(delta("rrf_pprpl_issue_path", "rrf_ppr_issue_path", "symbol"))),
 
         # ---- size quartiles, on the same rank scale as everything else
@@ -301,9 +333,6 @@ def claims() -> list[tuple[str, str, str]]:
                          & d.source.isin(["co_edited", "symbol"])]["rank"].max())))),
 
         # ---- direction
-        ("walking against import edges costs",
-         "direction, full corpus",
-         num3(delta("ppr_out_pl", "ppr_in_pl", "symbol", population="all"))),
         ("The like-for-like gap is",
          "direction, matched",
          num3(delta("ppr_out_pl", "ppr_in_pl", "symbol"))),
@@ -366,10 +395,10 @@ def claims() -> list[tuple[str, str, str]]:
                     stratum="explicit"))),
         ("and between 0.061 and 0.078 of that 0.140", "conclusion: leakage share, widest arm",
          num3(leak_share("symbols"))),
-        ("it is second only to another fusion of the same", "contributions: external E4 failed",
+        ("where one of four predictions, about redaction,", "contributions: external E4 failed",
          "failed" if EXT and EXT["E4"]["pass"] is False else "E4-DID-NOT-FAIL"),
-        ("it is second only to another fusion of the same", "contributions: external E1 rank",
-         "second" if EXT and EXT["E1"]["co_edited"]["rank"] == 3
+        ("on the oracle-inclusive scale under both keys", "external: E1 rank",
+         "third" if EXT and EXT["E1"]["co_edited"]["rank"] == 3
          and EXT["E1"]["symbol"]["rank"] == 3 else "E1-RANK-CHANGED"),
         ("under the widest arm, taking into account", "decomposition, widest arm, leakage",
          num3(leak_share("symbols"))),
@@ -406,6 +435,76 @@ def claims() -> list[tuple[str, str, str]]:
          str(EXT["descriptive"]["n_prs_matched"])),
         ("query-independent prior degrades fastest", "random, largest quartile, co_edited",
          num3(auc("by_size.csv", "co_edited", "random", size_q="Q4"))),
+    ]
+    F = "rrf_pprpl_issue_path"
+    C += [
+        # the cost rules (metric.py)
+        ("Under the skip rule the recommendation stands", "skip: fusion shortfall, co_edited",
+         num3(metric_auc("lines, skip", "co_edited", F)["short"])),
+        ("Under the skip rule the recommendation stands", "skip: shortfall, full corpus",
+         num3(metric_auc("lines, skip", "co_edited", F, "all")["short"])),
+        ("Section~\\ref{sec:fusion} separates by", "skip: length-aware fusion pair, co",
+         "%+.3f" % metric_delta("lines, skip", "co_edited", F, "rrf_ppr_issue_path")),
+        ("Section~\\ref{sec:fusion} separates by", "skip: length-aware fusion pair, sym",
+         "%+.3f" % metric_delta("lines, skip", "symbol", F, "rrf_ppr_issue_path")),
+        ("no longer helps at all", "skip: ppr_und_pl - ppr_und, co_edited",
+         "%.3f" % metric_delta("lines, skip", "co_edited", "ppr_und_pl", "ppr_und")),
+        ("Under the per-file rule length-awareness", "files: fusion rank, co_edited",
+         str(metric_auc("files", "co_edited", F)["rank"])),
+        ("Under the per-file rule length-awareness", "files: fusion rank, symbol",
+         str(metric_auc("files", "symbol", F)["rank"])),
+        ("Under the per-file rule length-awareness", "files: shortfall, co_edited",
+         num3(metric_auc("files", "co_edited", F)["short"])),
+        ("Under the per-file rule length-awareness", "files: shortfall, symbol",
+         num3(metric_auc("files", "symbol", F)["short"])),
+        # ContextBench (contextbench_eval.py)
+        ("Of the resulting tasks, 215 from", "cb: PRs with gold key",
+         str(CB["descriptive"]["n_prs_gold"])),
+        ("Of the resulting tasks, 215 from", "cb: tasks with gold key",
+         str(CB["descriptive"]["n_tasks_gold"])),
+        ("A gold key has a median of", "cb: gold files also co-edited",
+         "%d" % round(100 * CB["descriptive"]["overlap"]["co_edited"]["share_of_gold_in_other"])),
+        ("A gold key has a median of", "cb: gold files also symbol",
+         "%d" % round(100 * CB["descriptive"]["overlap"]["symbol"]["share_of_gold_in_other"])),
+        ("All four predictions hold (Table", "cb: G1 shortfall", num3(CB["G1"]["shortfall"])),
+        ("All four predictions hold (Table", "cb: G2 smallest margin",
+         num3(min(t["estimate"] for t in CB["G2"]["tests"]))),
+        ("All four predictions hold (Table", "cb: G2 largest margin",
+         num3(max(t["estimate"] for t in CB["G2"]["tests"]))),
+        ("All four predictions hold (Table", "cb: G3 estimate", num3(CB["G3"]["estimate"])),
+        ("All four predictions hold (Table", "cb: G4 tau symbol", "%.2f" % CB["G4"]["symbol"]["tau"]),
+        ("All four predictions hold (Table", "cb: G4 tau co_edited",
+         "%.2f" % CB["G4"]["co_edited"]["tau"]),
+        ("reads but does not edit} --- the context", "cb: read-only PRs",
+         str(CB["exploratory_readonly"]["n_prs"])),
+        ("the fusion leads: it beats the issue-only", "cb: read-only fusion - path_issue",
+         num3(next(t for t in CB["exploratory_readonly"]["tests"]
+                   if t["a"] == F and t["b"] == "path_issue")["estimate"])),
+        ("the fusion leads: it beats the issue-only", "cb: read-only fusion - bm25_issue",
+         num3(next(t for t in CB["exploratory_readonly"]["tests"]
+                   if t["a"] == F and t["b"] == "bm25_issue")["estimate"])),
+        ("Three checks added in response to review", "cb: fusion shortfall (discussion)",
+         num3(CB["G1"]["shortfall"])),
+        ("Three checks added in response to review", "seedless: guess correct",
+         "%d" % round(100 * SL["guess_correct"])),
+        # without a free seed (seedless.py)
+        ("The guess is right in", "seedless: guess correct", "%d" % round(100 * SL["guess_correct"])),
+        ("The guess is right in", "seedless: correct when named",
+         "%d" % round(100 * SL["guess_correct_named"])),
+        ("The guess is right in", "seedless: correct when not named",
+         "%d" % round(100 * SL["guess_correct_not_named"])),
+        ("The guess is right in", "seedless: PRs named", str(SL["n_named"])),
+        ("The guess is right in", "seedless: PRs not named", str(SL["n_not_named"])),
+        ("remains the best non-oracle ordering under both keys, at", "seedless: fusion, edited",
+         num3(sl_auc("rrf_pprpl_issue_path", "edited"))),
+        ("remains the best non-oracle ordering under both keys, at", "seedless: fusion, symbol",
+         num3(sl_auc("rrf_pprpl_issue_path", "symbol"))),
+        ("symbol key it adds", "seedless: fusion - localiser, symbol",
+         num3(sl_delta("localiser", "symbol"))),
+        ("On the edited\nfiles it adds", "seedless: fusion - localiser, edited",
+         num3(sl_delta("localiser", "edited"))),
+        ("The walks on their own, without the issue", "seedless: walk alone, edited",
+         num3(sl_auc("ppr_und_pl", "edited"))),
     ]
     return C
 

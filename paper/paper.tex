@@ -145,12 +145,13 @@ how far is the best ordering we test from one that cannot be improved on?
 \item[RQ7] How much of what issue text contributes is the issue naming the answer? When an
 issue names a key file as code, and when it does not, what does an ordering gain from reading
 the issue at all?
+\item[RQ8] Do the answers survive a different cost rule, a human-annotated key, a dense
+retriever, and the loss of the free seed?
 \end{description}
 
-RQ7 was not in the design freeze; it grew out of the leakage control, which was. Its
-answer is the reason the rest of this paper is written the way it is, so we flag its
-post-hoc status here rather than in a footnote, and Section~\ref{sec:design-freeze} lists every
-other analysis added after the freeze.
+RQ7 and RQ8 were not in the design freeze; RQ7 grew out of the leakage control, which was,
+and RQ8 out of review. Section~\ref{sec:design-freeze} lists every analysis added after the
+freeze, and which of them were tested against predictions committed in advance.
 
 \subsection*{Contributions}
 
@@ -160,23 +161,28 @@ gives the issue's total value, and three nested within-task redactions give the 
 what points at the key files. On issues that name a key file as code the issue is worth
 $+0.156$ AUC to the best fusion, of which $0.061$ to $0.078$ is attributable to the names,
 depending on how much beyond the filename is deleted (Section~\ref{sec:issue}).
-\item \textbf{A robust recommendation, tested out of sample.} Reciprocal-rank fusion of a
-length-aware personalised walk with issue-to-path matching is never significantly worse than
-the best pure ordering on the matched population, and on seven unseen repositories, scored
-against predictions committed in advance, it is second only to another fusion of the same
-family under both keys (one of the four predictions, about redaction, failed there). Length-awareness is what separates the fusions that work from
-those that do not: two fusions differing only in it are $0.042$ and $0.050$ AUC apart
-($p_{\text{Holm}} < 10^{-11}$).
+\item \textbf{A robust recommendation, tested three ways.} Reciprocal-rank fusion of a
+personalised walk with issue-to-path matching is never significantly worse than the best pure
+ordering on the matched population. It held under predictions committed before scoring on seven
+unseen repositories (where one of four predictions, about redaction, failed) and against
+ContextBench's human-annotated key (all four held), and it remains the best ordering when the
+file to change is not given but guessed from the issue (Section~\ref{sec:seedless}). Whether
+the walk should be length-aware depends on how reading is charged: by lines it should, and two
+fusions differing only in that are $0.042$ and $0.050$ AUC apart; charged per file, it should
+not (Section~\ref{sec:metric}).
 \item \textbf{Three controls for this kind of comparison}, each of which changed a conclusion
 here: stratifying by whether the issue names a key file as code (40.2\% of tasks do); matching
 the populations two keys are scored on (a co-edited key needs a multi-file change); and taking
 the repository as the unit, which leaves the headline comparisons significant but changes the
 significance verdict on 104 of 1{,}300: 102 of the 1{,}076 comparisons significant with the pull
 request as the unit lose significance, 2 gain it, and none changes sign.
-\item \textbf{Two corrections to common arguments for graph retrieval.} The two-hop
+\item \textbf{Three corrections to common arguments for graph retrieval.} The two-hop
 neighbourhood holds 87.5\% of the needed files and 56\% of the repository, at a median precision
-of 3.4\%. And direction matters in one way only: walking against import edges costs $0.215$
-AUC on the symbol key, while discarding direction altogether costs nothing measurable.
+of 3.4\%. Direction matters in one way only: walking against import edges is costly, while
+discarding direction costs nothing measurable. And the advantage structure shows on a key
+derived from imports is not corroborated by a human-annotated one: on the context a fix reads
+but does not edit, which is what a walk is claimed to find, walks and issue text are
+indistinguishable (Section~\ref{sec:contextbench}).
 \item \textbf{A cost accounting and a replication package.} Python source runs to 8.50 tokens
 per line; an oracle fits the whole key within 8{,}000 lines for 97.5\% of pull requests. Given its answer keys, the package rebuilds the study from a clean checkout and reproduces
 every committed score exactly; rebuilding the symbol keys themselves on another machine changes
@@ -326,8 +332,13 @@ have retracted, are recorded in the replication package rather than silently abs
 The freeze covers the corpus, the graphs, the task definition and the metric. It does not
 cover the method families: the fusion orderings, the directed walks and the lexical methods
 queried by issue text were all added afterwards, in response to what the first results
-showed. Fusion is the paper's main recommendation and it is an \emph{exploratory} result, not
-a confirmatory one.
+showed. Fusion is the paper's main recommendation and it was an \emph{exploratory} result when
+we first found it. We then tested it twice under predictions committed before any data were
+scored: on seven repositories outside the sample (Section~\ref{sec:external}) and against a
+human-annotated key (Section~\ref{sec:contextbench}). Three later additions, made in response
+to review, were not fixed in advance and are reported as exploratory: the two alternative
+cost rules (Section~\ref{sec:metric}), a dense retriever (Section~\ref{sec:dense}) and a
+condition without a free seed (Section~\ref{sec:seedless}).
 
 We also use ``design freeze'' rather than ``pre-registration'' throughout, and mean the
 weaker thing. The freeze is a signed tag in our own version control, not a record lodged
@@ -420,6 +431,17 @@ underscores and camel-case boundaries and lower-casing; the issue text is tokeni
 identically, so text is matched against code over one vocabulary. BM25 is used with the
 standard $k_1 = 1.5$, $b = 0.75$ and differs between methods only in the query. Fusion is
 reciprocal-rank fusion with $k = 60$.
+
+Every issue-aware ordering in Table~\ref{tab:methods} is lexical. To test whether a learned
+representation extracts more from an issue than BM25 does, we also score a dense retriever,
+added after the main results (Section~\ref{sec:dense}). It uses the embedding model fixed in
+our design before any method ran, \texttt{jina-embeddings-v2-base-code}, on the first 512
+tokens of each file; an issue is embedded whole, as the length-weighted mean of its 512-token
+chunks, so that nothing in it is truncated. Files are ranked by cosine similarity to the issue
+(\m{dense\_issue}) or to the seed file (\m{dense\_seed}), and the dense ranking is fused with
+the length-aware walk in place of BM25 over contents or beside it. These orderings are scored
+but kept out of the ranks and correction families of the other tables, so that adding them
+moves nothing reported elsewhere.
 
 Two asymmetries matter. The structural methods are \emph{given} a correct
 answer for free --- the seed is one of the files the pull request changed. The issue-text
@@ -815,6 +837,7 @@ Source & $k$ & both & structure only & words only & neither \\
 \end{table}
 
 \subsection{RQ5: fusion is the only ordering that survives both sources}
+\label{sec:fusion}
 
 If the evidence source is not known in advance --- and for a tool shipped to users it is not
 --- the quantity to optimise is the worst a method does across sources. We report that two
@@ -842,7 +865,8 @@ scores are divided by file length first; their worst-case ranks are 6 and 11, an
 difference is $+0.042$ AUC on co-edited files and $+0.050$ on symbol files on the matched
 population ($p_{\text{Holm}} < 10^{-11}$, repository as the unit). \m{rrf\_ppr\_issue}
 differs from its length-aware counterpart in two ways at once, so we rest the claim on the
-clean pair rather than on the three-of-five tally.
+clean pair rather than on the three-of-five tally. How much of this margin the cost rule
+itself creates is the subject of Section~\ref{sec:metric}.
 
 The insurance is close to free. Over the full corpus \m{rrf\_hops\_path} gains 0.067 AUC on
 \m{hops\_lines} on co-edited files ($A_{12} = 0.602$, $p_{\text{Holm}} < 10^{-11}$) and is
@@ -851,6 +875,57 @@ $-0.001$ in the pull-request means of Table~\ref{tab:main}; $p_{\text{Holm}} = 1
 ($p_{\text{Holm}} < 10^{-13}$) and loses 0.008 ($p_{\text{Holm}} = 1$). The lexical signal
 adds a large amount where structure is weak and costs nothing where structure is strong.
 Section~\ref{sec:issue} asks what, in that lexical signal, is doing the work.
+
+\subsection{How much of the ranking is the cost rule?}
+\label{sec:metric}
+
+The frozen metric charges whole files by their lines and stops at the first file that would
+overflow the budget. Under that rule, dividing a score by file length is close to a knapsack
+heuristic for the metric itself, and a long file placed early costs twice: its own lines, and
+every later file that no longer fits. The length-awareness result could therefore belong to
+the rule rather than to the signals. We rescored every ordering under two other rules, neither
+fixed in advance. Under \emph{skip}, a file that does not fit is passed over and reading
+continues, so an early long file costs only its own lines. Under \emph{files}, every file
+costs one unit whatever its length, at budgets of 1 to 128 files --- the accounting of an
+agent whose cost is the number of files it opens rather than their size.
+Table~\ref{tab:metric} gives the leading orderings under all three rules.
+
+Under the skip rule the recommendation stands. The fusion is the best non-oracle ordering on
+the symbol key and 0.002 behind \m{rrf\_hops\_issue\_path} on the co-edited key; over the
+full corpus it is 0.003 behind on the co-edited key and leads on the symbol key, where under
+the frozen rule the walks lead. But the margin that
+length-awareness buys shrinks by about sixty per cent: the clean pair of
+Section~\ref{sec:fusion} separates by $+0.015$ and $+0.021$ instead of $+0.042$ and $+0.050$,
+still significant ($p_{\text{Holm}} < 10^{-4}$), and for the walks alone dividing by length
+no longer helps at all (\m{ppr\_und\_pl} minus \m{ppr\_und} is $-0.018$ on co-edited files).
+Under the per-file rule length-awareness is a cost everywhere, as it must be when a short
+file buys nothing: the length-aware fusion falls to seventh and fifth, 0.055 and 0.045 behind
+its unscaled twin \m{rrf\_ppr\_issue\_path}, which becomes the best ordering under both keys.
+
+What survives every rule is the fusion of structure with issue text: on the matched
+population, under each rule and on each key, a fusion is the best non-oracle ordering, and
+under two of the three rules a length-aware fusion is. Which structural input to fuse depends on how reading is paid for. Where a context
+is charged by size, as a token window is, make the walk length-aware; where it is charged by
+the number of files opened, do not. We state contribution~2 accordingly.
+
+\begin{table*}
+\caption{AUC (and oracle-inclusive rank) of the leading orderings under three cost rules, on
+the matched population. \emph{Stop} is the frozen rule: whole files by lines, reading stops at
+the first file that would overflow. \emph{Skip} passes over such a file and continues.
+\emph{Files} charges one unit per file, at budgets of 1 to 128 files.}
+\label{tab:metric}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{co\_edited} & \multicolumn{3}{c}{symbol} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Ordering & stop & skip & files & stop & skip & files \\
+\midrule
+\rows{tab_metric}
+\bottomrule
+\end{tabular}
+\end{table*}
 
 \subsection{The fusion holds on repositories it was not chosen on}
 \label{sec:heldout}
@@ -979,6 +1054,80 @@ except E3, mixed model with a random intercept per repository, Holm within each 
 \bottomrule
 \end{tabular}
 \end{table*}
+
+\subsection{A human-annotated key}
+\label{sec:contextbench}
+
+Both of our keys are proxies, and the symbol key is built along the same import edges the
+structural orderings walk. ContextBench~\cite{li2026contextbench} annotates by hand the code
+an agent must see to reconstruct a passing fix. Its 409 Python tasks from SWE-bench Verified
+and SWE-bench Pro come from datasets we already hold, so we ran them through the unchanged
+pipeline with a third key, \m{gold}: the Python files in a task's annotated context, less the
+seed, restricted to graph nodes like the others. We drew the tasks by the main sample's
+eligibility rule, seed and cap --- 203 pull requests in 15 repositories, ten of which are in
+the main sample, as are 24 of the pull requests --- and committed four predictions before
+building any graph or score (\texttt{paper/contextbench\_prereg.md}). This is a test of the
+keys, not of generalisation to new code. Of the resulting tasks, 215 from 108 pull requests in
+14 repositories have a non-empty gold key. A gold key has a median of 3 files; 59\% of its
+files are also co-edited files and 63\% are also symbol files.
+
+All four predictions hold (Table~\ref{tab:cbpred}). The fusion is the second-best non-oracle
+ordering on the human key, 0.009 behind \m{rrf\_hops\_issue\_path}; it beats each of the four
+pure orderings we named by 0.086 to 0.128 ($p_{\text{Holm}} \le 0.008$); walking outward
+beats walking inward by 0.083; and the ranking of all twenty-two orderings under each proxy key
+agrees with the ranking under the human key (Kendall $\tau = 0.59$ for the symbol key, 0.97 for
+the co-edited key).
+
+The more informative result is one we did not predict: \emph{the human key sides with the
+co-edited key} (Table~\ref{tab:cbauc}). Under it the lexical and fused orderings rank as they
+do under the co-edited key, while the length-aware walks, second and fifth under the symbol
+key on these same tasks, fall to eleventh and fifteenth. The symbol key's preference for
+structure is not corroborated by people's judgement of what had to be read. That is what the
+circularity of its construction predicts, and it means the structural wins on the symbol key
+in this paper are statements about that key. An objection is that the gold key contains the
+edited files and agrees with the co-edited key by construction. So we also scored, as an
+exploratory analysis added after the predictions were tested, the gold files that the fix
+\emph{reads but does not edit} --- the context a graph walk is supposed to be best at
+finding --- on the 85 pull requests that have any. There the walks and the issue-only
+retrievers are indistinguishable (differences of 0.006 to 0.012, $p_{\text{Holm}} = 1$), and
+the fusion leads: it beats the issue-only orderings by 0.082 and 0.084 ($p_{\text{Holm}} \le
+0.008$) and the walks by 0.074 to 0.090, which at this size does not survive correction
+($p_{\text{Holm}} \ge 0.12$).
+
+The set is small --- 108 pull requests in 14 repositories --- and its annotators saw the fix,
+so their notion of necessary context is itself a reconstruction. It is nonetheless the only
+key in this paper that no part of our pipeline built, and the recommendation holds on it.
+
+\begin{table*}
+\caption{The four predictions committed before the ContextBench tasks were scored, and what
+the human-annotated key showed. G1--G3 on the pull requests with a non-empty gold key, mixed
+model with a random intercept per repository, Holm within each prediction.}
+\label{tab:cbpred}
+\footnotesize
+\begin{tabular}{lp{5.2cm}p{5.9cm}l}
+\toprule
+& Prediction & Observed & Outcome \\
+\midrule
+\rows{tab_cb_pred}
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\begin{table}
+\caption{AUC (and oracle-inclusive rank among 23) on the ContextBench tasks under the human
+key, its read-only part (gold files the fix does not edit; exploratory), and the two proxy
+keys.}
+\label{tab:cbauc}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccc}
+\toprule
+Ordering & gold & read-only & co\_edited & symbol \\
+\midrule
+\rows{tab_cb_auc}
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{RQ6: what a budget rules out, and what it does not}
 \label{sec:ceiling}
@@ -1292,6 +1441,58 @@ Method & AUC & names & paths & symbols & AUC & names & paths & symbols \\
 \end{tabular}
 \end{table}
 
+\subsection{Without a free seed}
+\label{sec:seedless}
+
+Every task so far hands the orderings the file being changed. An agent is not handed it: it
+must find that file from the issue, and localisation is where agents are known to struggle. To
+see whether the recommendation depends on the free seed, we removed it. For each of the
+1{,}162 pull requests the issue alone picks a starting file --- the top of the reciprocal-rank
+fusion of BM25 over contents and BM25 over paths, the two issue-only rankings used throughout
+--- and every seed-conditioned ordering walks from that guess and reads it first. Issue-only
+orderings need no seed and run unchanged over the whole repository. The unit is the pull
+request, and the two keys become every existing source file it edits, the true seeds
+included, so that finding the file to change is part of what is scored; and every file
+defining a name the change uses. This analysis was added in response to review and is
+exploratory.
+
+The guess is right in 41\% of pull requests: in 53\% of the 583 whose issue names an edited
+file as code, and in 29\% of the 579 whose issue does not. (Half the pull requests, not two
+fifths of the tasks, count as naming here, because the seed's own name now counts.)
+
+Table~\ref{tab:seedless} gives the result. Walking from the guess and fusing with the issue
+remains the best non-oracle ordering under both keys, at 0.480 and 0.440, and in no stratum
+is it significantly worse than any alternative. What the walk adds depends on the key. On the
+symbol key it adds 0.044 to the issue-only fusion that chose its seed ($p_{\text{Holm}} <
+10^{-4}$), and does so whether or not the issue names a file: even a wrong guess is usually in
+the right package, and the walk reaches what the change depends on from there. On the edited
+files it adds 0.009 ($p_{\text{Holm}} = 0.03$) and nothing significant within either stratum:
+when the task is to find the files to change, what the issue retrieves directly is nearly all
+there is. The walks on their own, without the issue, fall well behind on the edited files
+(0.404 against 0.480), because the file they start from is wrong more often than right.
+
+This is the simplest possible localiser, and an agent's is better; the numbers bound what a
+graph adds on top of a weak guess, not a strong one. But the recommendation does not depend on
+the free seed.
+
+\begin{table}
+\caption{Without a free seed: mean AUC per pull request when the seed is the issue's own
+best guess. \emph{Edited}: every edited source file, the true seeds included. Each key is
+split by whether the issue names an edited file as code.}
+\label{tab:seedless}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lcccccc}
+\toprule
+& \multicolumn{3}{c}{edited} & \multicolumn{3}{c}{symbol} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Ordering & all & named & not & all & named & not \\
+\midrule
+\rows{tab_seedless}
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Sensitivity: does the uncontrolled ranking survive in large repositories?}
 \label{sec:size}
 
@@ -1362,6 +1563,13 @@ That is a finding in its own right, and an intuitive one --- when a change touch
 what it needs is most likely to be what that file imports. It is not evidence that structure
 beats words in general, which is what the unmatched table appears to say.
 
+A human-annotated key lets us say which proxy to believe where they disagree, and it sides
+with the co-edited key (Section~\ref{sec:contextbench}). On ContextBench's tasks the length-aware
+walks drop from second and fifth under the symbol key to eleventh and fifteenth under the
+human one, and on the context a fix reads without editing --- the files a graph walk is meant
+to surface --- walks and issue text are indistinguishable. The symbol key's preference for
+structure is, on this evidence, largely a property of how that key is built.
+
 What remains is weaker but real. The two keys still induce different rankings, and a method
 tuned on one is not thereby good on the other. But the summary of the single-signal
 comparison is that neither family dominates once both confounds are controlled, and the
@@ -1400,6 +1608,16 @@ requests in which structure's advantage is concentrated. For a change that touch
 the walk alone is the better choice. That is what we would recommend on, and it is a weaker
 claim than ``fusion wins''.
 
+Three checks added in response to review bear on how far it travels. It is not an artefact of
+the cost rule: under a rule that skips an oversized file instead of stopping, the fusion
+remains best or within 0.003 of best, though the part of its margin owed to length-awareness
+shrinks by about sixty per cent, and under a per-file rule the unscaled fusion is the one to
+use (Section~\ref{sec:metric}). It is not an artefact of our keys: against a human-annotated
+key it is second of twenty-two, 0.009 behind a fusion of the same family. And it does not
+depend on being handed the file to change: when the issue's own best guess is used as the
+seed, right in only 41\% of pull requests, walking from the guess and fusing still gives the
+best non-oracle ordering under both keys (Section~\ref{sec:seedless}).
+
 We were also able to test the obvious alternative explanation. The fusions are the only
 methods given both the seed and the issue, so ``a fusion just gets more input'' is the null
 for the whole result. The issue-free twins of Section~\ref{sec:issue} answer it: blending a
@@ -1419,15 +1637,18 @@ mixed model); once the issues naming a key file are removed the two are indistin
 What matters for those evaluations is that the comparison depends on a property of the issue
 corpus that none of them reports for its own evaluation.
 
-Two further qualifications matter. Our task hands every structural method a correct seed file
-for free, whereas LocAgent, CoSIL and the rest must localize from the issue text alone; their
-task is harder, and a component that underperforms given a free seed might still earn its
-place without one. And they are LLM agents that also read the issue, so the graph is one
-component among several. We do not claim their advertised component fails to do its work.
-So this paper is not evidence about how well their graph components perform in their own
-setting. The narrower claim we will defend is that, given a correct seed, graph proximity is
-not obviously the strongest available signal on the key those systems adopt, and that the
-answer depends on how often the issues name the files being scored.
+Two further qualifications matter. Our main task hands every structural method a correct seed
+file for free, whereas LocAgent, CoSIL and the rest must localize from the issue text alone.
+Section~\ref{sec:seedless} removes the free seed in the simplest way --- the top file of an
+issue-only lexical ranking becomes the seed --- and finds that the walk still adds to what the
+issue alone retrieves, clearly on the symbol key and marginally on the edited files, but a
+learned localiser inside an agent loop is a different component, and its graph may earn its
+place differently. And they are LLM agents that also read the issue, so the graph is one
+component among several. This paper is therefore not evidence about how well their graph
+components perform in their own setting. What it shows is that, given a correct seed or the
+issue's own guess at one, graph proximity is not the strongest single signal on the key those
+systems adopt, and that the comparison depends on how often the issues name the files being
+scored.
 
 \paragraph{Naming the answer deserves to be a standard stratum.} Two tasks in five in this
 corpus have an issue that names a key file as code. That is not a benchmark defect --- real
@@ -1451,8 +1672,7 @@ well-chosen context could be some 34$\times$ smaller than the whole; and an orac
 fits the complete answer inside 8{,}000 lines for 97.5\% of pull requests where our best
 method manages 58.5\%.
 
-We are deliberately not claiming that better selection raises repair rates. We did not run an
-agent, and a retrieval improvement need not survive contact with one. What the ceiling
+We do not show that better selection raises repair rates. We did not run an agent, and a retrieval improvement need not survive contact with one. What the ceiling
 licenses is the weaker statement: a file absent from the context cannot be used, so the share
 of tasks whose answer fits the budget bounds any system operating under it. It does not
 license the claim that the remaining gap is reachable from the signals we have, only that it
@@ -1572,11 +1792,13 @@ report them.
 to read; they are recoverable proxies with opposite biases, which is why we report both and
 never merge them. The co-edited key in particular conflates files that were \emph{changed}
 with files that had to be \emph{read}, and the symbol key is built by a resolver that follows
-import edges, so it is partly circular with the structural methods it favours. Concurrent
-work is assembling keys from human annotation and from agent trajectories; scoring even a
-subset of our corpus against such a key would test our two proxies against a third of a
-different kind, and is the single addition we would most want to make. Coverage per line assumes whole files are read, which overstates the cost
-for agents that read selectively. The execution-based source is absent (Section~\ref{sec:keys}) and would be
+import edges, so it is partly circular with the structural methods it favours; the
+human-annotated key of Section~\ref{sec:contextbench} confirms that its preference for
+structure does not carry over. That key has limits of its own: it covers 108 pull requests,
+most from SWE-bench Verified repositories that are heavily studied, and its annotators worked
+from the fix, so it records what the fix needed rather than what a developer consulted. Coverage per line assumes whole files are read, which overstates the cost
+for agents that read selectively; Section~\ref{sec:metric} shows which conclusions depend on
+that accounting. The execution-based source is absent (Section~\ref{sec:keys}) and would be
 the natural third leg.
 
 \paragraph{Internal.} The graph builder resolves imports statically and misses dynamic
@@ -1604,8 +1826,7 @@ better documented than average, which may flatter the issue-text methods. The me
 repository here has 131 graph files and very large repositories are under-represented. The
 size split in Section~\ref{sec:size} runs on the uncontrolled corpus, so it shows only
 that the pattern of Table~\ref{tab:main} is stable across size quartiles rather than
-widening with size. We cannot argue that the bias runs in a harmless direction; we can only
-say that it does not appear to be a size effect.
+widening with size; it is not a size effect, but we cannot show the bias is harmless.
 
 \paragraph{Conclusion.} Pull-request-level aggregation, repository-level paired tests, Holm
 correction within comparison families and bootstrapping over repositories guard against the
@@ -1645,7 +1866,11 @@ floor.
 The replication package contains the import graphs at every base commit, the task
 definitions and evidence keys, the issue-token bags, the per-task orderings and coverage
 curves, the per-file token counts, and the analysis scripts that produce every number and
-figure in this paper. It is available to reviewers at submission, and will be archived at a
+figure in this paper; the external and ContextBench trees with their pre-registrations, which
+the version history shows were committed before the data they concern were scored; and the
+script that computes the dense embeddings, which are regenerated rather than shipped. A
+checker recomputes every number quoted in the text from the result files and fails if any
+sentence disagrees with them. It is available to reviewers at submission, and will be archived at a
 permanent identifier on acceptance.
 
 \section*{Use of AI Tools}

@@ -18,8 +18,9 @@ keys, restricted to graph nodes as usual:
 Added after review and exploratory: nothing in it was fixed in advance (POSTHOC.md). It
 changes no result of study2 and uses its methods unchanged.
 
-Writes results/seedless/rows.parquet, results/seedless/summary.json
-Usage:  python -m depgraphs.seedless [workers]
+Writes results/seedless/rows.parquet, results/seedless/tests.csv, results/seedless/summary.json
+Usage:  python -m depgraphs.seedless [workers]      score, then summarise
+        python -m depgraphs.seedless summarise      summarise only
 """
 from __future__ import annotations
 
@@ -92,17 +93,22 @@ def run_repo(repo_key, prs, issues, texts, qvecs):
                           {"none": qv} if qv is not None else None)
             run = {m: [s] + o[m] for m in FROM_SEED if m in o}
             run["bm25_issue"], run["path_issue"], run["localiser"] = b, pth, loc
-            if emb is not None and qv is not None:
-                run["dense_issue"] = by_score(
-                    {p: float(np.dot(qv, emb[p])) if p in emb else -2.0 for p in nodes}, rng)
             sh = sorted(nodes)
             rng.shuffle(sh)
             run["random"] = sh
+            # last, so that adding embeddings leaves every other draw unchanged
+            if emb is not None and qv is not None:
+                run["dense_issue"] = by_score(
+                    {p: float(np.dot(qv, emb[p])) if p in emb else -2.0 for p in nodes}, rng)
             per_run.append(run)
         if not per_run:
             continue
         text = texts.get(pr["instance_id"], "")
         is_named = named(text, sorted(keys["edited"]))
+        gdir = guess.rsplit("/", 1)[0] if "/" in guess else ""
+        top = guess.split("/", 1)[0]
+        same_dir = any((f.rsplit("/", 1)[0] if "/" in f else "") == gdir for f in keys["edited"])
+        same_top = any(f.split("/", 1)[0] == top for f in keys["edited"])
         for src, key in keys.items():
             if not key:
                 continue
@@ -117,8 +123,56 @@ def run_repo(repo_key, prs, issues, texts, qvecs):
                              "file_group": pr["file_group"], "method": m, "source": src,
                              "key_size": len(key), "named": is_named,
                              "guess_correct": guess in keys["edited"],
+                             "guess_same_dir": same_dir, "guess_same_top": same_top,
                              "auc": float(np.mean(cs)), "auc_skip": float(np.mean(sk))})
     return rows
+
+
+# does walking from the guessed file add anything to what the issue alone retrieves? Every
+# comparison is the fusion against an ordering that is not given the guess's neighbourhood,
+# or the fusion's own structural input
+VERSUS = ["localiser", "path_issue", "bm25_issue", "dense_issue", "ppr_und_pl", "hops_lines"]
+
+
+def summarise():
+    from depgraphs.analysis2 import holm, pairwise
+
+    df = pd.read_parquet(OUT / "rows.parquet")
+    strata = {"all": df, "named": df[df.named], "not named": df[~df.named]}
+    tests = []
+    for label, sub in strata.items():
+        for src in ("edited", "symbol"):
+            have = set(sub[sub.source == src].method)
+            for b in VERSUS:
+                if b not in have:
+                    continue
+                tests.append(pairwise(sub, src, ["rrf_pprpl_issue_path", b], unit="repo")
+                             .assign(stratum=label))
+    tests = pd.concat(tests, ignore_index=True)
+    tests["p_holm"] = holm(tests["p"].tolist())
+    tests.to_csv(OUT / "tests.csv", index=False)
+    pr = df.drop_duplicates("instance_id")
+    auc = (df.groupby(["source", "named", "method"]).auc.mean().unstack([0, 1]).round(4))
+    summary = {
+        "n_prs": int(pr.instance_id.nunique()), "n_repos": int(pr.repo_key.nunique()),
+        "named_share": float(pr.named.mean()),
+        "guess_correct": float(pr.guess_correct.mean()),
+        "guess_correct_named": float(pr[pr.named].guess_correct.mean()),
+        "guess_correct_not_named": float(pr[~pr.named].guess_correct.mean()),
+        "wrong_guess_same_dir": float(pr[~pr.guess_correct].guess_same_dir.mean()),
+        "wrong_guess_same_top": float(pr[~pr.guess_correct].guess_same_top.mean()),
+        "n_named": int(pr.named.sum()), "n_not_named": int((~pr.named).sum()),
+        "auc_all": df.groupby(["source", "method"]).auc.mean().unstack(0).round(4)
+        .to_dict(),
+        "auc_skip_all": df.groupby(["source", "method"]).auc_skip.mean().unstack(0).round(4)
+        .to_dict(),
+    }
+    (OUT / "summary.json").write_text(json.dumps(summary, indent=1))
+    pd.set_option("display.width", 200)
+    print(auc.to_string())
+    print({k: v for k, v in summary.items() if not k.startswith("auc")})
+    print(tests[["stratum", "source", "b", "n_pr", "delta", "p_holm"]].round(4)
+          .to_string(index=False))
 
 
 def main(workers: int = 4):
@@ -157,8 +211,11 @@ def main(workers: int = 4):
     OUT.mkdir(parents=True, exist_ok=True)
     df = pd.DataFrame(rows)
     df.to_parquet(OUT / "rows.parquet", index=False)
-    print(df.groupby(["source", "method"]).auc.mean().unstack(0).round(3))
+    summarise()
 
 
 if __name__ == "__main__":
-    main(int(sys.argv[1]) if len(sys.argv) > 1 else 4)
+    if sys.argv[1:] == ["summarise"]:
+        summarise()
+    else:
+        main(int(sys.argv[1]) if len(sys.argv) > 1 else 4)

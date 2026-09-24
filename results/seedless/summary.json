@@ -1,0 +1,62 @@
+{
+ "n_prs": 1162,
+ "n_repos": 112,
+ "named_share": 0.5017211703958692,
+ "guess_correct": 0.41049913941480204,
+ "guess_correct_named": 0.5300171526586621,
+ "guess_correct_not_named": 0.29015544041450775,
+ "n_named": 583,
+ "n_not_named": 579,
+ "auc_all": {
+  "edited": {
+   "bm25_issue": 0.4172,
+   "hops_lines": 0.404,
+   "localiser": 0.4706,
+   "oracle": 0.7577,
+   "path_issue": 0.4576,
+   "ppr_out_pl": 0.3841,
+   "ppr_und_pl": 0.4043,
+   "random": 0.2412,
+   "rrf_hops_path": 0.4543,
+   "rrf_pprpl_issue_path": 0.4798
+  },
+  "symbol": {
+   "bm25_issue": 0.3548,
+   "hops_lines": 0.4043,
+   "localiser": 0.3964,
+   "oracle": 0.76,
+   "path_issue": 0.3971,
+   "ppr_out_pl": 0.4223,
+   "ppr_und_pl": 0.4293,
+   "random": 0.2421,
+   "rrf_hops_path": 0.4242,
+   "rrf_pprpl_issue_path": 0.4404
+  }
+ },
+ "auc_skip_all": {
+  "edited": {
+   "bm25_issue": 0.4706,
+   "hops_lines": 0.4161,
+   "localiser": 0.5194,
+   "oracle": 0.7577,
+   "path_issue": 0.481,
+   "ppr_out_pl": 0.3986,
+   "ppr_und_pl": 0.4142,
+   "random": 0.2576,
+   "rrf_hops_path": 0.4794,
+   "rrf_pprpl_issue_path": 0.5172
+  },
+  "symbol": {
+   "bm25_issue": 0.4068,
+   "hops_lines": 0.441,
+   "localiser": 0.4505,
+   "oracle": 0.76,
+   "path_issue": 0.4324,
+   "ppr_out_pl": 0.4617,
+   "ppr_und_pl": 0.4616,
+   "random": 0.2671,
+   "rrf_hops_path": 0.4689,
+   "rrf_pprpl_issue_path": 0.4951
+  }
+ }
+}
