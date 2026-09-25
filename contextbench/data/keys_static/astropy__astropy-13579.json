@@ -1,0 +1,30 @@
+{
+ "instance_id": "astropy__astropy-13579",
+ "repo_key": "astropy/astropy",
+ "base_commit": "0df94ff7097961e92fd7812036a24b145bc13ca8",
+ "status": "ok",
+ "co_edited": [
+  "astropy/wcs/wcsapi/wrappers/sliced_wcs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/wcs/wcsapi/wrappers/sliced_wcs.py": [
+   "_pixel_keep",
+   "_pixel_to_world_values_all",
+   "iworld",
+   "self",
+   "sliced_out_world_coords",
+   "world_arrays_new"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.4
+}

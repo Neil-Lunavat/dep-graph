@@ -1,0 +1,71 @@
+{
+ "instance_id": "pydata__xarray-6992",
+ "repo_key": "pydata/xarray",
+ "base_commit": "45c0a114e2b7b27b83c9618bc05b36afac82183c",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/dataset.py",
+  "xarray/core/indexes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/dataset.py": [
+   "_coord_names",
+   "_indexes",
+   "_variables",
+   "all_index_coord_names",
+   "all_var_names",
+   "base_vars",
+   "coord_names",
+   "dim",
+   "dims_or_levels",
+   "drop",
+   "drop_indexes",
+   "drop_or_convert",
+   "drop_variables",
+   "idx",
+   "idx_var_names",
+   "idx_vars",
+   "index",
+   "index_coord_names",
+   "indexes",
+   "k",
+   "keep_level_vars",
+   "level_names",
+   "name",
+   "new_indexes",
+   "new_variables",
+   "seen",
+   "self",
+   "v",
+   "var_names",
+   "variables",
+   "xindexes"
+  ],
+  "xarray/core/indexes.py": [
+   "Index",
+   "PandasMultiIndex",
+   "coord_dtype",
+   "dim",
+   "errors",
+   "get_all_coords",
+   "index",
+   "level_coords_dtype",
+   "self"
+  ],
+  "xarray/core/variable.py": [
+   "Variable",
+   "to_base_variable"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 200,
+  "names_resolved_in_repo": 160,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.8
+}

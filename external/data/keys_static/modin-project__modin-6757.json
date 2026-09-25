@@ -1,0 +1,60 @@
+{
+ "instance_id": "modin-project__modin-6757",
+ "repo_key": "modin-project/modin",
+ "base_commit": "0ba2a46218ecbc6f4b7d0d9e54c25e437e5e0b23",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/dataframe/pandas/dataframe/dataframe.py",
+  "modin/core/storage_formats/pandas/query_compiler.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/__init__.py": [
+   "modin"
+  ],
+  "modin/core/__init__.py": [
+   "core"
+  ],
+  "modin/core/dataframe/__init__.py": [
+   "dataframe"
+  ],
+  "modin/core/dataframe/pandas/__init__.py": [
+   "pandas"
+  ],
+  "modin/core/dataframe/pandas/dataframe/dataframe.py": [
+   "new_columns",
+   "new_dtypes",
+   "new_index",
+   "new_partitions"
+  ],
+  "modin/core/dataframe/pandas/metadata/__init__.py": [
+   "metadata"
+  ],
+  "modin/core/dataframe/pandas/metadata/dtypes.py": [
+   "DtypesDescriptor",
+   "ModinDtypes",
+   "cols_with_unknown_dtypes"
+  ],
+  "modin/core/storage_formats/pandas/query_compiler.py": [
+   "_modin_frame",
+   "column",
+   "columns",
+   "loc",
+   "new_columns",
+   "new_dtypes",
+   "self",
+   "value",
+   "value_dtype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 80,
+  "names_resolved_in_repo": 36,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.3
+}

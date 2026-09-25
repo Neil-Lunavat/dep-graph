@@ -1,0 +1,33 @@
+{
+ "instance_id": "sympy__sympy-12096",
+ "repo_key": "sympy/sympy",
+ "base_commit": "d7c3045115693e887bcd03599b7ca4650ac5f2cb",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/function.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/basic.py": [
+   "args"
+  ],
+  "sympy/core/function.py": [
+   "i",
+   "prec",
+   "self"
+  ],
+  "sympy/core/numbers.py": [
+   "Float"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 10,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.5
+}

@@ -46,6 +46,15 @@ def patches_by_instance(ids: set[str]) -> dict[str, str]:
         df = load(name)
         df = df[df.instance_id.isin(ids)]
         out.update(dict(zip(df.instance_id, df.patch)))
+    # the external test set's sources, consulted only for ids the D11 sources lack, so the
+    # main sample's patches are exactly what they were
+    for name in ("swegym", "swebench_pro"):
+        missing = ids - set(out)
+        if not missing:
+            break
+        df = load(name)
+        df = df[df.instance_id.isin(missing)]
+        out.update(dict(zip(df.instance_id, df.patch)))
     return out
 
 

@@ -1,0 +1,42 @@
+{
+ "instance_id": "matplotlib__matplotlib-14623",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "d65c9ca20ddf81ef91199e6d819f9d3506ef477c",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/axes/_base.py",
+  "lib/matplotlib/ticker.py",
+  "lib/mpl_toolkits/mplot3d/axes3d.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/axes/_base.py": [
+   "bottom",
+   "left",
+   "right",
+   "swapped",
+   "top"
+  ],
+  "lib/matplotlib/ticker.py": [
+   "v0",
+   "v1"
+  ],
+  "lib/mpl_toolkits/mplot3d/axes3d.py": [
+   "bottom",
+   "left",
+   "right",
+   "swapped",
+   "top"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 34,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.0
+}

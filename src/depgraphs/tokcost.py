@@ -1,6 +1,6 @@
 """Token counts for every graph node at every task base commit.
 
-The frozen cost metric counts lines, because that is what the pre-registered design fixed
+The frozen cost metric counts lines, because that is what the frozen design fixed
 at freeze-1. Lines are a poor proxy for what a file costs to put in a model's context: a
 line of Python is not a constant number of tokens. This module measures the conversion
 rather than assuming it, so the paper can report a budget in both units and state the

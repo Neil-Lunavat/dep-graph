@@ -1,0 +1,57 @@
+{
+ "instance_id": "modin-project__modin-6275",
+ "repo_key": "modin-project/modin",
+ "base_commit": "c9f7f6506a5b7503bcd9ec9b9a08d6a008747a52",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/dataframe/algebra/default2pandas/default.py",
+  "modin/core/storage_formats/pandas/query_compiler.py",
+  "modin/pandas/base.py",
+  "modin/pandas/series.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/dataframe/algebra/default2pandas/default.py": [
+   "func"
+  ],
+  "modin/core/dataframe/algebra/reduce.py": [
+   "Reduce",
+   "register"
+  ],
+  "modin/core/storage_formats/base/query_compiler.py": [
+   "default_to_pandas",
+   "kurt",
+   "median",
+   "skew"
+  ],
+  "modin/core/storage_formats/pandas/query_compiler.py": [
+   "axis",
+   "kwargs",
+   "self"
+  ],
+  "modin/pandas/base.py": [
+   "_get_axis_number",
+   "_query_compiler",
+   "_stat_operation",
+   "axis",
+   "bool",
+   "data",
+   "kwargs",
+   "numeric_only",
+   "orig_axis",
+   "result_qc",
+   "self",
+   "skipna"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 165,
+  "names_resolved_in_repo": 99,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 2,
+  "truncated": false
+ },
+ "seconds": 13.7
+}

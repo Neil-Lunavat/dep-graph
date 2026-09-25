@@ -1,0 +1,55 @@
+{
+ "instance_id": "Project-MONAI__MONAI-648",
+ "repo_key": "project-monai/monai",
+ "base_commit": "cd1e7f3fb4a77a9958d71de7b326323c2f33336b",
+ "status": "ok",
+ "co_edited": [
+  "monai/transforms/spatial/array.py",
+  "monai/transforms/spatial/dictionary.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/__init__.py": [
+   "monai"
+  ],
+  "monai/transforms/__init__.py": [
+   "transforms"
+  ],
+  "monai/transforms/croppad/__init__.py": [
+   "croppad"
+  ],
+  "monai/transforms/spatial/array.py": [
+   "deform_grid",
+   "grid",
+   "kwargs",
+   "self",
+   "sp_size",
+   "spacing",
+   "spatial_size"
+  ],
+  "monai/transforms/spatial/dictionary.py": [
+   "grid",
+   "rand_2d_elastic",
+   "self",
+   "sp_size"
+  ],
+  "monai/utils/enums.py": [
+   "BICUBIC",
+   "InterpolateMode",
+   "value"
+  ],
+  "monai/utils/misc.py": [
+   "fall_back_tuple"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 58,
+  "names_resolved_in_repo": 35,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

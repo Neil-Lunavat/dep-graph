@@ -1,0 +1,44 @@
+{
+ "instance_id": "sympy__sympy-22456",
+ "repo_key": "sympy/sympy",
+ "base_commit": "a3475b3f9ac662cd425157dd3bdb93ad7111c090",
+ "status": "ok",
+ "co_edited": [
+  "sympy/codegen/ast.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/codegen/ast.py": [
+   "String",
+   "Token",
+   "apply",
+   "exclude",
+   "kwargs",
+   "self"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/basic.py": [
+   "Atom",
+   "func"
+  ],
+  "sympy/core/expr.py": [
+   "Expr",
+   "expr"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.6
+}

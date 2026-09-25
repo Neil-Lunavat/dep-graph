@@ -1,0 +1,31 @@
+{
+ "instance_id": "Project-MONAI__MONAI-6910",
+ "repo_key": "project-monai/monai",
+ "base_commit": "a4e4894dca25f5e87b9306abfc472805f92b69da",
+ "status": "ok",
+ "co_edited": [
+  "monai/bundle/workflows.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/bundle/workflows.py": [
+   "_bundle_root_path",
+   "_config_file",
+   "_config_files",
+   "config_root_path",
+   "logging_file",
+   "meta_file",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 70,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

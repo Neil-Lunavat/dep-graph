@@ -1,0 +1,38 @@
+{
+ "instance_id": "pydata__xarray-3993",
+ "repo_key": "pydata/xarray",
+ "base_commit": "8cc34cb412ba89ebca12fc84f76a9e452628f1bc",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/dataarray.py",
+  "xarray/core/dataset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/dataarray.py": [
+   "_to_temp_dataset",
+   "coord",
+   "datetime_unit",
+   "dim",
+   "ds",
+   "msg",
+   "self"
+  ],
+  "xarray/core/dataset.py": [
+   "coord",
+   "datetime_unit",
+   "integrate",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 75,
+  "names_resolved_in_repo": 21,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.1
+}

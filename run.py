@@ -83,6 +83,12 @@ def keys_static():
 
 
 @stage
+def tasks():
+    from depgraphs import tasks as t
+    t.main()
+
+
+@stage
 def exec_bundle():
     from depgraphs import exec_bundle as e
     e.main()

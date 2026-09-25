@@ -1,0 +1,29 @@
+{
+ "instance_id": "getmoto__moto-6716",
+ "repo_key": "getmoto/moto",
+ "base_commit": "a853fd714d133c9a9ca0479cb99537d9a39d85bf",
+ "status": "ok",
+ "co_edited": [
+  "moto/iam/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/iam/models.py": [
+   "arn",
+   "aws_managed_policies",
+   "other",
+   "p",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 25,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.6
+}

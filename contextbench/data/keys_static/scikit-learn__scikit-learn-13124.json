@@ -1,0 +1,30 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-13124",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "9f0b959a8c9195d1b6e203f08b698e052b426ca9",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/model_selection/_split.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/model_selection/_split.py": [
+   "random_state",
+   "rng",
+   "self"
+  ],
+  "sklearn/utils/validation.py": [
+   "check_random_state"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 5.8
+}

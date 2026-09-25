@@ -1,0 +1,50 @@
+{
+ "instance_id": "facebookresearch__hydra-1404",
+ "repo_key": "facebookresearch/hydra",
+ "base_commit": "5198be6ab1fa7496dfbe879b7e41237e18c10a06",
+ "status": "ok",
+ "co_edited": [
+  "hydra/plugins/completion_plugin.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hydra/__init__.py": [
+   "hydra"
+  ],
+  "hydra/core/config_loader.py": [
+   "config_name",
+   "overrides",
+   "run_mode"
+  ],
+  "hydra/errors.py": [
+   "ConfigCompositionException",
+   "errors"
+  ],
+  "hydra/plugins/completion_plugin.py": [
+   "CompletionPlugin",
+   "_get_matches",
+   "config",
+   "config_matches",
+   "config_name",
+   "parsed_args",
+   "run_mode",
+   "word",
+   "words"
+  ],
+  "hydra/types.py": [
+   "MULTIRUN",
+   "RUN",
+   "RunMode"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 24,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

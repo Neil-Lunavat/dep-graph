@@ -1,0 +1,46 @@
+{
+ "instance_id": "pydantic__pydantic-5196",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "84d0acf6882958993a6e0d984969030e31f16dc0",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/_internal/_model_construction.py",
+  "pydantic/fields.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/_internal/_model_construction.py": [
+   "alias",
+   "alias_generator",
+   "apply_alias_generator",
+   "cls",
+   "config",
+   "field_info",
+   "fields",
+   "name"
+  ],
+  "pydantic/config.py": [
+   "ConfigDict"
+  ],
+  "pydantic/fields.py": [
+   "FieldInfo",
+   "alias",
+   "alias_priority",
+   "kwargs",
+   "self"
+  ],
+  "pydantic/main.py": [
+   "model_config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 47,
+  "names_resolved_in_repo": 37,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

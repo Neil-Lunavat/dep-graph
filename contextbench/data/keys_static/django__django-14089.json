@@ -1,0 +1,27 @@
+{
+ "instance_id": "django__django-14089",
+ "repo_key": "django/django",
+ "base_commit": "d01709aae21de9cd2565b9c52f32732ea28a2d98",
+ "status": "ok",
+ "co_edited": [
+  "django/utils/datastructures.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/utils/datastructures.py": [
+   "__reversed__",
+   "dict",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 4,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.1
+}

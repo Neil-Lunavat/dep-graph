@@ -1,0 +1,26 @@
+{
+ "instance_id": "sympy__sympy-24539",
+ "repo_key": "sympy/sympy",
+ "base_commit": "193e3825645d93c73e31cdceb6d742cc6919624d",
+ "status": "ok",
+ "co_edited": [
+  "sympy/polys/rings.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/polys/rings.py": [
+   "self",
+   "symbols"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 5,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

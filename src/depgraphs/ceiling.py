@@ -13,7 +13,7 @@ Two questions the coverage curves do not answer.
    This module measures the conversion across the corpus instead of assuming it.
 
 Nothing here re-runs or revises the frozen metric; the line-based results stand as
-pre-registered and these are reported alongside them.
+fixed in the design freeze and these are reported alongside them.
 
 Writes results/study2/ceiling_key.csv      share of tasks whose whole key fits a budget
        results/study2/ceiling_method.csv   share of tasks a method takes to full coverage

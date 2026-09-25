@@ -1,0 +1,59 @@
+{
+ "instance_id": "Project-MONAI__MONAI-1765",
+ "repo_key": "project-monai/monai",
+ "base_commit": "55885283d5055f673fdca5f83156044649e5560c",
+ "status": "ok",
+ "co_edited": [
+  "monai/losses/dice.py",
+  "monai/losses/focal_loss.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/__init__.py": [
+   "monai"
+  ],
+  "monai/losses/dice.py": [
+   "input",
+   "target"
+  ],
+  "monai/losses/focal_loss.py": [
+   "FocalLoss",
+   "at",
+   "class_weight",
+   "forward",
+   "i",
+   "include_background",
+   "input",
+   "logpt",
+   "loss",
+   "n_pred_ch",
+   "pt",
+   "reduction",
+   "self",
+   "t",
+   "target",
+   "to_onehot_y",
+   "weight"
+  ],
+  "monai/networks/__init__.py": [
+   "networks"
+  ],
+  "monai/networks/utils.py": [
+   "num_classes",
+   "one_hot"
+  ],
+  "monai/utils/enums.py": [
+   "LossReduction"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 302,
+  "names_resolved_in_repo": 101,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

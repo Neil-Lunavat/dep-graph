@@ -1,0 +1,71 @@
+{
+ "instance_id": "facebookresearch__hydra-2085",
+ "repo_key": "facebookresearch/hydra",
+ "base_commit": "00a9536a2b390f396d042dced697d499f5476cde",
+ "status": "ok",
+ "co_edited": [
+  "hydra/_internal/config_loader_impl.py",
+  "hydra/_internal/hydra.py",
+  "hydra/_internal/utils.py",
+  "hydra/conf/__init__.py",
+  "hydra/core/config_loader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hydra/__init__.py": [
+   "hydra"
+  ],
+  "hydra/_internal/config_loader_impl.py": [
+   "from_shell",
+   "overrides",
+   "parsed_overrides",
+   "run_mode",
+   "validate_sweep_overrides"
+  ],
+  "hydra/_internal/hydra.py": [
+   "cfg",
+   "config_name",
+   "get_mode",
+   "overrides",
+   "run_mode",
+   "self",
+   "task_function",
+   "validate_sweep_overrides",
+   "with_log_configuration"
+  ],
+  "hydra/_internal/utils.py": [
+   "args",
+   "config_name",
+   "hydra",
+   "mode",
+   "multirun",
+   "overrides",
+   "run",
+   "run_mode",
+   "task_function"
+  ],
+  "hydra/conf/__init__.py": [
+   "mode"
+  ],
+  "hydra/core/config_loader.py": [
+   "validate_sweep_overrides"
+  ],
+  "hydra/types.py": [
+   "MULTIRUN",
+   "RUN",
+   "RunMode",
+   "TaskFunction",
+   "types"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 150,
+  "names_resolved_in_repo": 114,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

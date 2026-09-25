@@ -1,0 +1,32 @@
+{
+ "instance_id": "pydantic__pydantic-8511",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "e4fa099d5adde70acc80238ff810c87a5cec7ebf",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/dataclasses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/dataclasses.py": [
+   "cls",
+   "field_args",
+   "field_name",
+   "field_value",
+   "make_pydantic_fields_compatible"
+  ],
+  "pydantic/fields.py": [
+   "FieldInfo"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 54,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

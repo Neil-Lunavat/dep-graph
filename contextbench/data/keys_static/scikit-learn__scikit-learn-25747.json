@@ -1,0 +1,21 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-25747",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "2c867b8f822eb7a684f0d5c4359e4426e1c9cfe0",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/utils/_set_output.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 8,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

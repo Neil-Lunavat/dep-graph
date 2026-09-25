@@ -1,0 +1,31 @@
+{
+ "instance_id": "sympy__sympy-21612",
+ "repo_key": "sympy/sympy",
+ "base_commit": "b4777fdcef467b7132c055f8ac2c9a5059e6a145",
+ "status": "ok",
+ "co_edited": [
+  "sympy/printing/str.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/core/mul.py": [
+   "Mul"
+  ],
+  "sympy/core/power.py": [
+   "Pow"
+  ],
+  "sympy/printing/str.py": [
+   "item"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 5,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 4.4
+}

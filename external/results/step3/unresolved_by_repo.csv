@@ -1,0 +1,8 @@
+repo_key,graphs,unresolved,internal_statements,parse_failures,median_build_s,unresolved_share
+ansible/ansible,21,130,660,0,2.146,0.197
+facebookresearch/hydra,21,276,7261,0,0.356,0.038
+getmoto/moto,21,0,48436,0,3.148,0.0
+modin-project/modin,21,0,18553,0,1.439,0.0
+project-monai/monai,21,18,21590,0,1.477,0.0008
+pydantic/pydantic,20,4,7823,0,0.64,0.0005
+qutebrowser/qutebrowser,20,0,13083,0,1.0665,0.0

@@ -1,0 +1,28 @@
+{
+ "instance_id": "sphinx-doc__sphinx-9602",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "6c38f68dae221e8cfc70c137974b8b88bd3baaab",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/domains/python.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/domains/python.py": [
+   "i",
+   "node",
+   "result",
+   "subnode"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 33,
+  "names_resolved_in_repo": 15,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}

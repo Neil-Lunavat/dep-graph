@@ -1,0 +1,61 @@
+{
+ "instance_id": "Project-MONAI__MONAI-5473",
+ "repo_key": "project-monai/monai",
+ "base_commit": "27362e482761985daac8d5ef732eb57b50c741f1",
+ "status": "ok",
+ "co_edited": [
+  "monai/losses/image_dissimilarity.py",
+  "monai/networks/blocks/warp.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/losses/image_dissimilarity.py": [
+   "cross",
+   "kernel",
+   "kernels",
+   "ncc",
+   "ndim",
+   "p2",
+   "p2_sum",
+   "p_avg",
+   "p_sum",
+   "p_var",
+   "pred",
+   "self",
+   "smooth_dr",
+   "smooth_nr",
+   "t2",
+   "t2_sum",
+   "t_avg",
+   "t_sum",
+   "t_var",
+   "target",
+   "tp",
+   "tp_sum"
+  ],
+  "monai/networks/blocks/warp.py": [
+   "ddf",
+   "ddf_shape",
+   "get_reference_grid",
+   "grid",
+   "image",
+   "ref_grid",
+   "self",
+   "spatial_dims"
+  ],
+  "monai/networks/layers/simplelayers.py": [
+   "kernels",
+   "separable_filtering"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 117,
+  "names_resolved_in_repo": 97,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

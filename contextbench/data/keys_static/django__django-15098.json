@@ -1,0 +1,28 @@
+{
+ "instance_id": "django__django-15098",
+ "repo_key": "django/django",
+ "base_commit": "2c7846d992ca512d36a73f518205015c88ed088c",
+ "status": "ok",
+ "co_edited": [
+  "django/utils/translation/trans_real.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/utils/regex_helper.py": [
+   "_lazy_re_compile"
+  ],
+  "django/utils/translation/trans_real.py": [
+   "language_code_prefix_re"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

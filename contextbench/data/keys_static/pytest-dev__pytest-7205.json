@@ -1,0 +1,26 @@
+{
+ "instance_id": "pytest-dev__pytest-7205",
+ "repo_key": "pytest-dev/pytest",
+ "base_commit": "5e7f1ab4bf58e473e5d7f878eb2b499d7deabd29",
+ "status": "ok",
+ "co_edited": [
+  "src/_pytest/setuponly.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "src/_pytest/setuponly.py": [
+   "fixturedef",
+   "tw"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 11,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.9
+}

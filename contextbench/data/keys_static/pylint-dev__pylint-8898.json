@@ -1,0 +1,39 @@
+{
+ "instance_id": "pylint-dev__pylint-8898",
+ "repo_key": "pylint-dev/pylint",
+ "base_commit": "1f8c4d9eb185c16a2c1d881c054f015e1c2eb334",
+ "status": "ok",
+ "co_edited": [
+  "pylint/config/argument.py",
+  "pylint/utils/__init__.py",
+  "pylint/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pylint/config/argument.py": [
+   "pattern",
+   "value"
+  ],
+  "pylint/utils/__init__.py": [
+   "pylint_utils"
+  ],
+  "pylint/utils/utils.py": [
+   "_check_regexp_csv",
+   "char",
+   "open_braces",
+   "regexp",
+   "regexps",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 58,
+  "names_resolved_in_repo": 32,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.3
+}

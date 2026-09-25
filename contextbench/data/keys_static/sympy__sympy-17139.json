@@ -1,0 +1,25 @@
+{
+ "instance_id": "sympy__sympy-17139",
+ "repo_key": "sympy/sympy",
+ "base_commit": "1d3327b8e90a186df6972991963a5ae87053259d",
+ "status": "ok",
+ "co_edited": [
+  "sympy/simplify/fu.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/simplify/fu.py": [
+   "rv"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 4,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

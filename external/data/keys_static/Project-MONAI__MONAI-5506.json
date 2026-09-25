@@ -1,0 +1,59 @@
+{
+ "instance_id": "Project-MONAI__MONAI-5506",
+ "repo_key": "project-monai/monai",
+ "base_commit": "614c2ca8a75a26fd1454810446ec05682d119766",
+ "status": "ok",
+ "co_edited": [
+  "monai/data/image_reader.py",
+  "monai/data/image_writer.py",
+  "monai/transforms/io/array.py",
+  "monai/transforms/io/dictionary.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/config/type_definitions.py": [
+   "DtypeLike"
+  ],
+  "monai/data/image_reader.py": [
+   "dtype",
+   "img",
+   "self"
+  ],
+  "monai/data/image_writer.py": [
+   "data",
+   "data_array",
+   "data_obj",
+   "dtype",
+   "output_dtype",
+   "self"
+  ],
+  "monai/transforms/io/array.py": [
+   "_output_dtype",
+   "dtype",
+   "output_dtype",
+   "output_ext",
+   "self"
+  ],
+  "monai/transforms/io/dictionary.py": [
+   "output_dtype"
+  ],
+  "monai/utils/deprecate_utils.py": [
+   "deprecated_arg",
+   "msg_suffix",
+   "since"
+  ],
+  "monai/utils/type_conversion.py": [
+   "get_equivalent_dtype"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 153,
+  "names_resolved_in_repo": 74,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 7.3
+}

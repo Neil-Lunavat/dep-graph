@@ -1,0 +1,59 @@
+{
+ "instance_id": "getmoto__moto-6919",
+ "repo_key": "getmoto/moto",
+ "base_commit": "368fa07ec35aa6806c839a1f4883426159179127",
+ "status": "ok",
+ "co_edited": [
+  "moto/ec2/models/key_pairs.py",
+  "moto/ec2/responses/key_pairs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/ec2/models/core.py": [
+   "TaggedEC2Resource",
+   "add_tags",
+   "core",
+   "get_filter_value"
+  ],
+  "moto/ec2/models/key_pairs.py": [
+   "KeyPair",
+   "ec2_backend",
+   "filter_name",
+   "fingerprint",
+   "key_name",
+   "key_type",
+   "material",
+   "method_name",
+   "name",
+   "public_key_material",
+   "self",
+   "tags"
+  ],
+  "moto/ec2/responses/_base_response.py": [
+   "_parse_tag_specification",
+   "ec2_backend"
+  ],
+  "moto/ec2/responses/key_pairs.py": [
+   "key_type",
+   "keypair",
+   "material",
+   "name",
+   "self",
+   "tags"
+  ],
+  "moto/ec2/utils.py": [
+   "random_ed25519_key_pair",
+   "random_rsa_key_pair"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 160,
+  "names_resolved_in_repo": 70,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

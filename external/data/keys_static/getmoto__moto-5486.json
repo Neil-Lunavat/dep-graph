@@ -1,0 +1,39 @@
+{
+ "instance_id": "getmoto__moto-5486",
+ "repo_key": "getmoto/moto",
+ "base_commit": "b0e78140f5b5f74b0cb3da43e5becc48bbc29cff",
+ "status": "ok",
+ "co_edited": [
+  "moto/ec2/models/instances.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/ec2/exceptions.py": [
+   "InvalidSecurityGroupNotFoundError"
+  ],
+  "moto/ec2/models/instances.py": [
+   "new_reservation",
+   "security_groups",
+   "self",
+   "sg",
+   "sg_id"
+  ],
+  "moto/ec2/utils.py": [
+   "random_reservation_id"
+  ],
+  "moto/packages/boto/ec2/instance.py": [
+   "Reservation",
+   "id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 16,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

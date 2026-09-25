@@ -1,0 +1,25 @@
+{
+ "instance_id": "pydantic__pydantic-9082",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "e58134b876a340863ea417f6c7967c9ed14ec03b",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/main.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/main.py": [
+   "pydantic_extra"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 1,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.2
+}

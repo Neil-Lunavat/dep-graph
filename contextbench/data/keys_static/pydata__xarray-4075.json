@@ -1,0 +1,31 @@
+{
+ "instance_id": "pydata__xarray-4075",
+ "repo_key": "pydata/xarray",
+ "base_commit": "19b088636eb7d3f65ab7a1046ac672e0689371d8",
+ "status": "ok",
+ "co_edited": [
+  "xarray/core/weighted.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "xarray/core/weighted.py": [
+   "_reduce",
+   "dim",
+   "mask",
+   "self",
+   "skipna",
+   "sum_of_weights",
+   "weights"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 21,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

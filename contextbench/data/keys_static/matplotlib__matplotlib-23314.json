@@ -1,0 +1,25 @@
+{
+ "instance_id": "matplotlib__matplotlib-23314",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "97fc1154992f64cfb2f86321155a7404efeb2d8a",
+ "status": "ok",
+ "co_edited": [
+  "lib/mpl_toolkits/mplot3d/axes3d.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/mpl_toolkits/mplot3d/axes3d.py": [
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 2,
+  "names_resolved_in_repo": 1,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

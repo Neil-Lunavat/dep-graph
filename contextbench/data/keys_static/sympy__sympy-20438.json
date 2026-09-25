@@ -1,0 +1,70 @@
+{
+ "instance_id": "sympy__sympy-20438",
+ "repo_key": "sympy/sympy",
+ "base_commit": "33b47e4bd60e2302e42616141e76285038b724d6",
+ "status": "ok",
+ "co_edited": [
+  "sympy/core/relational.py",
+  "sympy/sets/handlers/comparison.py",
+  "sympy/sets/handlers/issubset.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/core/__init__.py": [
+   "core"
+  ],
+  "sympy/core/expr.py": [
+   "Expr",
+   "expr"
+  ],
+  "sympy/core/logic.py": [
+   "fuzzy_and"
+  ],
+  "sympy/core/relational.py": [
+   "e",
+   "lhs",
+   "r",
+   "rhs"
+  ],
+  "sympy/multipledispatch/core.py": [
+   "dispatch"
+  ],
+  "sympy/sets/__init__.py": [
+   "sets"
+  ],
+  "sympy/sets/handlers/comparison.py": [
+   "a",
+   "b",
+   "lhs",
+   "rhs"
+  ],
+  "sympy/sets/handlers/issubset.py": [
+   "a_ps",
+   "b_fs",
+   "is_subset_sets",
+   "x"
+  ],
+  "sympy/sets/sets.py": [
+   "FiniteSet",
+   "Interval",
+   "ProductSet",
+   "Set",
+   "Union",
+   "sets",
+   "tfn"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 57,
+  "names_resolved_in_repo": 49,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 10.4
+}

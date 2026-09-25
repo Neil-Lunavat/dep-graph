@@ -1,0 +1,25 @@
+{
+ "instance_id": "django__django-11964",
+ "repo_key": "django/django",
+ "base_commit": "fc2b1cc926e34041953738e58fa6ad3053059b22",
+ "status": "ok",
+ "co_edited": [
+  "django/db/models/enums.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/db/models/enums.py": [
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 24,
+  "names_resolved_in_repo": 2,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.1
+}

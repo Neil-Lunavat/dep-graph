@@ -1,0 +1,29 @@
+{
+ "instance_id": "getmoto__moto-7580",
+ "repo_key": "getmoto/moto",
+ "base_commit": "74a59a665a3ffcd6c5c3ff15a6e9759b29a86547",
+ "status": "ok",
+ "co_edited": [
+  "moto/dynamodb/models/table.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/dynamodb/models/table.py": [
+   "GlobalSecondaryIndex",
+   "hash_key_attr",
+   "index",
+   "index_range_key",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 7,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.4
+}

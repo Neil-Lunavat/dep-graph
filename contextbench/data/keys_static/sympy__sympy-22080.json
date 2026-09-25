@@ -1,0 +1,44 @@
+{
+ "instance_id": "sympy__sympy-22080",
+ "repo_key": "sympy/sympy",
+ "base_commit": "3f8c8c2377cb8e0daaf8073e8d03ac7d87580813",
+ "status": "ok",
+ "co_edited": [
+  "sympy/printing/codeprinter.py",
+  "sympy/printing/precedence.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sympy/__init__.py": [
+   "sympy"
+  ],
+  "sympy/printing/__init__.py": [
+   "printing"
+  ],
+  "sympy/printing/codeprinter.py": [
+   "a",
+   "a_str",
+   "prec",
+   "self",
+   "sign",
+   "x"
+  ],
+  "sympy/printing/precedence.py": [
+   "PRECEDENCE",
+   "precedence"
+  ],
+  "sympy/printing/str.py": [
+   "parenthesize"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 22,
+  "names_resolved_in_repo": 22,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.1
+}

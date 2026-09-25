@@ -1,0 +1,87 @@
+{
+ "instance_id": "facebookresearch__hydra-1450",
+ "repo_key": "facebookresearch/hydra",
+ "base_commit": "de03d15a259999f2dc53d506a7de825f93cb5d78",
+ "status": "ok",
+ "co_edited": [
+  "hydra/_internal/config_loader_impl.py",
+  "hydra/_internal/config_repository.py",
+  "hydra/_internal/config_search_path_impl.py",
+  "hydra/conf/__init__.py",
+  "hydra/core/config_search_path.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "hydra/_internal/config_loader_impl.py": [
+   "_embed_result_config",
+   "_err",
+   "_process_config_searchpath",
+   "caching_repo",
+   "config_name",
+   "config_path",
+   "config_search_path",
+   "default",
+   "is_searchpath_override",
+   "loaded",
+   "new_csp",
+   "override",
+   "parsed_overrides",
+   "primary_config",
+   "provider",
+   "repo",
+   "res",
+   "ret",
+   "schema",
+   "searchpath",
+   "self",
+   "sp",
+   "v"
+  ],
+  "hydra/_internal/config_repository.py": [
+   "CachingConfigRepository",
+   "config_path",
+   "config_search_path",
+   "delegate",
+   "initialize_sources",
+   "load_config",
+   "self"
+  ],
+  "hydra/_internal/config_search_path_impl.py": [
+   "self"
+  ],
+  "hydra/conf/__init__.py": [
+   "searchpath"
+  ],
+  "hydra/core/config_search_path.py": [
+   "ConfigSearchPath",
+   "SearchPathElement",
+   "append",
+   "get_path",
+   "path",
+   "provider",
+   "self"
+  ],
+  "hydra/core/default_element.py": [
+   "package",
+   "primary"
+  ],
+  "hydra/core/override_parser/types.py": [
+   "Override",
+   "get_key_element",
+   "value"
+  ],
+  "hydra/plugins/config_source.py": [
+   "config"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 160,
+  "names_resolved_in_repo": 124,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.0
+}

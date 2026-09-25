@@ -321,6 +321,8 @@ def c_leak_tested():
 @check("redaction: what deleting the key files' names from the same issue costs")
 def c_redaction():
     d = pd.read_csv(OUT / "redaction.csv")
+    if "arm" in d:
+        d = d[d.arm == "names"]
     out = []
     for grp in ("names removed", "nothing removed"):
         g = d[d.group == grp]
@@ -391,6 +393,205 @@ def c_worst_gap():
     r = r[r.method != "oracle"].sort_values("worst_gap").head(4)
     return "; ".join("%s gap %.3f (worst rank %d)" % (x.method, x.worst_gap, int(x.worst_case))
                      for x in r.itertuples())
+
+
+@check("smallest p-value by unit, and whether the repository-level test is saturated")
+def c_p_floor():
+    import numpy as np
+    from scipy import stats
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    pw = pw[pw.source.isin(["co_edited", "symbol"])]
+    out = []
+    for u in ("pr", "repo"):
+        r = pw.loc[pw[pw.unit == u].p.idxmin()]
+        out.append("%s: p=%.2g (%s>%s, %s, n=%d)" % (u, r.p, r.a, r.b, r.source, r.n_pr))
+    # normal-approximation signed-rank floor: every unit favours the same method
+    n = 112
+    z = (n * (n + 1) / 4) / np.sqrt(n * (n + 1) * (2 * n + 1) / 24)
+    out.append("floor at n=%d: %.2g" % (n, 2 * stats.norm.sf(z)))
+    return " | ".join(out)
+
+
+@check("two-hop ball: median share of repository and median precision")
+def c_ball():
+    b = pd.read_csv(OUT / "ball.csv")
+    prec = b.ball_recall * b.key_files / b.ball_files.where(b.ball_files > 0)
+    return ("share median %.1f%% mean %.1f%% | precision median %.1f%% mean %.1f%% | "
+            "recall mean %.1f%% | lift %.2f" % (
+                100 * b.ball_share_of_repo.median(), 100 * b.ball_share_of_repo.mean(),
+                100 * prec.median(), 100 * prec.mean(), 100 * b.ball_recall.mean(),
+                b.ball_recall.mean() / b.ball_share_of_repo.mean()))
+
+
+@check("introduction: repository size and key share, per pull request")
+def c_intro_sizes():
+    k = pd.read_csv(OUT / "key_size.csv")
+    t = k.drop_duplicates("task_id").groupby("instance_id").repo_tokens.mean()
+    share = (k.key_tokens / k.repo_tokens).groupby([k.source, k.instance_id]).mean()
+    return ("median repo %d tokens (per PR) | PRs >128k %.1f%%, >200k %.1f%% | "
+            "key share median %.2f%%" % (t.median(), 100 * (t > 128000).mean(),
+                                         100 * (t > 200000).mean(), 100 * share.median()))
+
+
+@check("single-file pull requests on the symbol key: which orderings lead")
+def c_single():
+    r = pd.read_parquet(OUT / "rows.parquet", columns=["instance_id", "method", "source",
+                                                      "auc"])
+    co = set(r[r.source == "co_edited"].instance_id)
+    s = r[(r.source == "symbol") & ~r.instance_id.isin(co)]
+    ps = pd.read_csv(OUT / "per_source.csv")
+    fam = dict(zip(ps.method, ps.family))
+    m = (s.groupby(["method", "instance_id"]).auc.mean().groupby("method").mean()
+         .drop("oracle").sort_values(ascending=False).head(6))
+    return "n=%d: %s" % (s.instance_id.nunique(), ", ".join(
+        "%s(%s,%.3f)" % (k, fam.get(k, "?")[:4], v) for k, v in m.items()))
+
+
+@check("direction: do the largest structural gaps all have an inward walk losing?")
+def c_inward():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    st = {"bfs_und", "hops_lines", "ppr_und", "ppr_und_pl", "ppr_out", "ppr_out_pl",
+          "ppr_in", "ppr_in_pl"}
+    out = []
+    for pop in ("all", "shared"):
+        d = pw[(pw.unit == "repo") & (pw.stratum == "all") & (pw.source == "symbol")
+               & (pw.population == pop) & pw.a.isin(st) & pw.b.isin(st)]
+        d = d.assign(ad=d.delta.abs()).sort_values("ad", ascending=False)
+        losers = [r.b if r.delta > 0 else r.a for r in d.itertuples()]
+        n = next(i for i, x in enumerate(losers) if x not in ("ppr_in", "ppr_in_pl"))
+        out.append("symbol/%s: first %d gaps have an inward loser" % (pop, n))
+    return " | ".join(out)
+
+
+@check("unit: which Holm verdicts change between pull request and repository as the unit")
+def c_unit_flips():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    pw = pw[(pw.stratum == "all") & pw.source.isin(["co_edited", "symbol"])]
+    k = ["source", "population", "a", "b"]
+    m = pw[pw.unit == "pr"].merge(pw[pw.unit == "repo"], on=k, suffixes=("_pr", "_repo"))
+    sig_pr, sig_repo = m.p_holm_pr < 0.05, m.p_holm_repo < 0.05
+    return "%d comparisons; significant by PR %d; lost at repo %d; gained at repo %d" % (
+        len(m), sig_pr.sum(), (sig_pr & ~sig_repo).sum(), (~sig_pr & sig_repo).sum())
+
+
+@check("mixed model: same verdict as the repository-level Wilcoxon test?")
+def c_mixed():
+    mx = pd.read_csv(OUT / "mixed.csv")
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    pw = pw[pw.unit == "repo"]
+    rd = pd.read_csv(OUT / "redaction.csv")
+    rd = rd[rd.arm == "names"] if "arm" in rd else rd
+    grp = {"explicit": "names removed", "no_explicit": "nothing removed"}
+    agree, differ = 0, []
+    for r in mx.itertuples():
+        if r.b.endswith("_rd"):
+            w = rd[(rd.group == grp[r.stratum]) & (rd.source == r.source)
+                   & (rd.method == r.a)].iloc[0]
+        else:
+            w = pw[(pw.source == r.source) & (pw.stratum == r.stratum)
+                   & (pw.population == r.population)
+                   & (((pw.a == r.a) & (pw.b == r.b)) | ((pw.a == r.b) & (pw.b == r.a)))].iloc[0]
+        if (r.p_holm < 0.05) == (w.p_holm < 0.05):
+            agree += 1
+        else:
+            differ.append("%s-%s %s/%s/%s mixed %+.3f p=%.2g, wilcoxon p=%.2g" % (
+                r.a, r.b, r.source, r.stratum, r.population, r.estimate, r.p_holm, w.p_holm))
+    return "agree %d of %d | differ: %s" % (agree, len(mx), "; ".join(differ) or "none")
+
+
+@check("is the headline fusion ever significantly worse than a pure ordering?")
+def c_fusion_never_worse():
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    f = "rrf_pprpl_issue_path"
+    pure = {"bfs_und", "hops_lines", "ppr_und", "ppr_und_pl", "ppr_out", "ppr_out_pl",
+            "ppr_in", "ppr_in_pl", "pagerank", "bm25_seed", "path_seed", "bm25_issue",
+            "bm25_issue_pl", "path_issue", "same_dir"}
+    d = pw[(pw.unit == "repo") & pw.source.isin(["co_edited", "symbol"])
+           & (((pw.a == f) & pw.b.isin(pure)) | ((pw.b == f) & pw.a.isin(pure)))].copy()
+    d["other"] = [r.b if r.a == f else r.a for r in d.itertuples()]
+    d["fmo"] = [r.delta if r.a == f else -r.delta for r in d.itertuples()]
+    worse = d[(d.fmo < 0) & (d.p_holm < 0.05)]
+    out = []
+    for pop in ("shared", "all"):
+        w = worse[worse.population == pop]
+        out.append("%s: %s" % (pop, ", ".join(
+            "%s/%s<%s %.3f" % (r.source, r.stratum, r.other, r.fmo) for r in w.itertuples())
+            or "never"))
+    return " | ".join(out)
+
+
+@check("redaction arms: what each arm removes, and the decomposition under each")
+def c_arms():
+    rd = pd.read_csv(OUT / "redaction.csv")
+    if "arm" not in rd:
+        return "redaction.csv has no arm column - rerun analysis2"
+    pw = pd.read_csv(OUT / "pairwise.csv")
+
+    def twin(src, st):
+        g = pw[(pw.unit == "repo") & (pw.population == "shared") & (pw.stratum == st)
+               & (pw.source == src) & (pw.a == "rrf_pprpl_issue_path")
+               & (pw.b == "rrf_pprpl_seedpath")]
+        return float(g.delta.iloc[0])
+    out = []
+    for arm in rd.arm.unique():
+        cells = []
+        for src in ("co_edited", "symbol"):
+            g = rd[(rd.arm == arm) & (rd.source == src)].set_index(["group", "method"])
+            named = g.loc[("names removed", "rrf_pprpl_issue_path"), "delta"]
+            unnamed = g.loc[("nothing removed", "rrf_pprpl_issue_path"), "delta"]
+            gap = twin(src, "explicit") - twin(src, "no_explicit")
+            cells.append("%s fusion named %.3f unnamed %.3f path_issue named %.3f "
+                         "bm25_issue named %.3f | gap %.3f = leakage %.3f + rest %.3f" % (
+                             src[:3], named, unnamed,
+                             g.loc[("names removed", "path_issue"), "delta"],
+                             g.loc[("names removed", "bm25_issue"), "delta"],
+                             gap, named - unnamed, gap - (named - unnamed)))
+        out.append("%s: %s" % (arm, " || ".join(cells)))
+    return "\n     ".join(out)
+
+
+@check("budget: do the leading orderings change if the AUC stops at 8,000 lines?")
+def c_capped_budget():
+    from depgraphs.analysis2 import shared_prs
+    from depgraphs.study2 import SCORED_ONLY
+    c = pd.read_parquet(OUT / "curves.parquet")
+    c = c[c.source.isin(["co_edited", "symbol"]) & (c.budget <= 8000)]
+    ctl = set(SCORED_ONLY)
+    c = c[~c.method.isin(ctl)]
+    pr = (c.groupby(["source", "method", "instance_id", "task_id"]).coverage.mean()
+          .groupby(["source", "method", "instance_id"]).mean().reset_index())
+    rows = pd.read_parquet(OUT / "rows.parquet", columns=["task_id", "instance_id", "method",
+                                                          "source", "auc"])
+    sh = shared_prs(rows)
+    full = pd.read_csv(OUT / "per_source.csv")
+    shd = pd.read_csv(OUT / "per_source_shared.csv")
+    out = []
+    for pop, g, ref in (("full", pr, full), ("matched", pr[pr.instance_id.isin(sh)], shd)):
+        for src in ("co_edited", "symbol"):
+            capped = (g[g.source == src].groupby("method").coverage.mean()
+                      .drop("oracle").sort_values(ascending=False).index[:3].tolist())
+            r = ref[(ref.source == src) & ref["rank"].notna() & (ref.method != "oracle")]
+            orig = r.sort_values("rank").method.head(3).tolist()
+            out.append("%s/%s top3 %s" % (pop, src, "same" if capped == orig
+                                          else "capped %s vs %s" % (capped, orig)))
+    return " | ".join(out)
+
+
+@check("symbol key: share of its file references that are also co-edited files")
+def c_symbol_overlap():
+    import json
+    from depgraphs.lexfeat import ROOT
+    scored = set(pd.read_parquet(OUT / "rows.parquet", columns=["task_id"]).task_id)
+    tot = both = 0
+    for line in open(ROOT / "data" / "tasks.jsonl", encoding="utf-8"):
+        t = json.loads(line)
+        if t["task_id"] not in scored:
+            continue
+        s, c = set(t["keys"].get("symbol", [])), set(t["keys"].get("co_edited", []))
+        tot += len(s)
+        both += len(s & c)
+    return "%d of %d symbol-key references also co-edited (%.1f%%)" % (both, tot,
+                                                                        100 * both / tot)
 
 
 def main():

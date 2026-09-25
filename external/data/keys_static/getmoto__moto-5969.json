@@ -1,0 +1,27 @@
+{
+ "instance_id": "getmoto__moto-5969",
+ "repo_key": "getmoto/moto",
+ "base_commit": "3a7f10fece9df37a72adc4c642f26cf208256322",
+ "status": "ok",
+ "co_edited": [
+  "moto/kms/responses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/kms/responses.py": [
+   "_validate_key_id",
+   "destination_key_id",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 3,
+  "names_resolved_in_repo": 3,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.5
+}

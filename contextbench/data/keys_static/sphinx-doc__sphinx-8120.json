@@ -1,0 +1,33 @@
+{
+ "instance_id": "sphinx-doc__sphinx-8120",
+ "repo_key": "sphinx-doc/sphinx",
+ "base_commit": "795747bdb6b8fb7d717d5bbfc2c3316869e66a73",
+ "status": "ok",
+ "co_edited": [
+  "sphinx/application.py",
+  "sphinx/locale/__init__.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sphinx/__init__.py": [
+   "package_dir"
+  ],
+  "sphinx/application.py": [
+   "locale_dirs",
+   "repo"
+  ],
+  "sphinx/util/i18n.py": [
+   "locale_dirs"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 18,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

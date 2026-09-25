@@ -1,0 +1,29 @@
+{
+ "instance_id": "matplotlib__matplotlib-24026",
+ "repo_key": "matplotlib/matplotlib",
+ "base_commit": "14c96b510ebeba40f573e512299b1976f35b620e",
+ "status": "ok",
+ "co_edited": [
+  "lib/matplotlib/stackplot.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/matplotlib/stackplot.py": [
+   "_",
+   "axes",
+   "colors",
+   "labels",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 23,
+  "names_resolved_in_repo": 10,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

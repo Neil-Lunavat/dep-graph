@@ -1,0 +1,34 @@
+{
+ "instance_id": "modin-project__modin-7160",
+ "repo_key": "modin-project/modin",
+ "base_commit": "d2390100802c808b7ca0f612359b365916d6fec1",
+ "status": "ok",
+ "co_edited": [
+  "modin/core/storage_formats/pandas/query_compiler.py",
+  "modin/pandas/base.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "modin/core/storage_formats/pandas/query_compiler.py": [
+   "q"
+  ],
+  "modin/pandas/base.py": [
+   "_get_axis_number",
+   "axis",
+   "i",
+   "numeric_only_df",
+   "q",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 37,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.3
+}

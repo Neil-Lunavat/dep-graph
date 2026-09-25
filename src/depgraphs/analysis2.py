@@ -19,15 +19,17 @@ from scipy import stats
 
 from depgraphs.lexfeat import ROOT
 from depgraphs.study2 import (BUDGETS, FUSION, FUSION_CTL, GLOBAL, LEXICAL, METHODS,
-                              REDACTED, RRF_K_VARIANTS, STRUCTURE, OUT)
+                              REDACTED, REDACTED_ALL, ARM_SUFFIX, RRF_K_VARIANTS, STRUCTURE,
+                              OUT, DENSE_ALL, SCORED_ONLY)
 
 SEED = 20260923
 SOURCES = ["co_edited", "symbol", "union_static"]
 FAMILY = ({m: "structure" for m in STRUCTURE} | {m: "global" for m in GLOBAL}
           | {m: "lexical" for m in LEXICAL} | {m: "fusion" for m in FUSION}
           | {m: "fusion-control" for m in FUSION_CTL}
-          | {m: "redacted" for m in REDACTED}
+          | {m: "redacted" for m in REDACTED_ALL}
           | {m: "rrf-k" for m in RRF_K_VARIANTS}
+          | {m: "dense" for m in DENSE_ALL}
           | {"same_dir": "reference", "random": "reference", "oracle": "reference"})
 
 
@@ -98,8 +100,7 @@ def auc_table(rows: pd.DataFrame, sources=None, prs: pd.Index | None = None,
     # oracle included. The fusion controls exist only to answer "is a fusion just more
     # input?" and are not candidate reading orders, so they are scored but not ranked;
     # including them would shift every rank in every table by up to two places.
-    rankable = ~df["method"].isin(list(FUSION_CTL) + list(REDACTED)
-                                  + list(RRF_K_VARIANTS))
+    rankable = ~df["method"].isin(list(SCORED_ONLY))
     df["rank"] = (df[rankable].groupby("source")["auc"]
                   .rank(ascending=False, method="min").astype(int))
     return df.sort_values(["source", "rank"])
@@ -314,7 +315,9 @@ def heldout(rows: pd.DataFrame, methods: list[str], seed: int = SEED,
             g = con[con.source == src].set_index("method")
             rec["rank_%s" % src] = int(g.loc[chosen, "rank"])
             rec["auc_%s" % src] = float(g.loc[chosen, "auc"])
-            rec["best_%s" % src] = float(g[g.index != "oracle"]["auc"].max())
+            # the dense orderings were added after this analysis and are never candidates
+            rec["best_%s" % src] = float(
+                g[(g.index != "oracle") & ~g.index.isin(DENSE_ALL)]["auc"].max())
         recs.append(rec)
     return pd.DataFrame(recs)
 
@@ -350,7 +353,7 @@ def redaction(rows: pd.DataFrame, unit: str = "repo") -> pd.DataFrame:
         keep = shared_prs(sub)
         for src in ("co_edited", "symbol"):
             mat = pr_level(sub, src).loc[lambda m: m.index.intersection(keep)]
-            for rd, plain in REDACTED.items():
+            for rd, plain in REDACTED_ALL.items():
                 if rd not in mat or plain not in mat:
                     continue
                 pair = mat[[plain, rd]].dropna()
@@ -365,10 +368,83 @@ def redaction(rows: pd.DataFrame, unit: str = "repo") -> pd.DataFrame:
                     p = 1.0
                 d = x - y
                 lo, hi = boot_ci(d, np.arange(len(d)))
-                recs.append({"group": label, "source": src, "method": plain,
+                arm = next(k for k, v in ARM_SUFFIX.items() if rd == plain + v)
+                recs.append({"arm": arm, "group": label, "source": src, "method": plain,
                              "n": len(x), "auc": float(x.mean()),
                              "auc_redacted": float(y.mean()), "delta": float(d.mean()),
                              "ci_lo": lo, "ci_hi": hi, "a12": a12(x, y), "p": p})
+    df = pd.DataFrame(recs)
+    # Holm within each arm: each arm is its own question, and correcting the names arm
+    # for tests added afterwards would change a result for a reason unrelated to it
+    df["p_holm"] = 1.0
+    for arm, g in df.groupby("arm"):
+        df.loc[g.index, "p_holm"] = holm(g["p"].tolist())
+    return df
+
+
+# The comparisons the paper rests a claim on, re-estimated with a mixed model. Each entry is
+# (a, b, source, stratum, population); "b" may be a redacted twin, in which case a - b is
+# what the names (or the wider arm) are worth.
+HEADLINE = [
+    ("rrf_pprpl_issue_path", "path_issue", s, "all", pop)
+    for s in ("co_edited", "symbol") for pop in ("all", "shared")
+] + [
+    (a, "path_issue", s, "all", pop)
+    for a in ("ppr_out_pl", "ppr_und_pl", "hops_lines")
+    for s in ("co_edited", "symbol") for pop in ("all", "shared")
+] + [
+    ("rrf_pprpl_issue_path", b, "symbol", st, pop)
+    for b in ("ppr_out_pl", "ppr_und_pl", "hops_lines")
+    for st in ("all", "no_explicit") for pop in ("all", "shared")
+] + [
+    ("hops_lines", "path_issue", "co_edited", st, "shared")
+    for st in ("no_full_path", "no_explicit", "no_stem")
+] + [
+    ("ppr_out_pl", "ppr_in_pl", "symbol", "all", pop) for pop in ("all", "shared")
+] + [
+    ("rrf_pprpl_issue_path", "rrf_pprpl_issue_path_rd", s, st, "shared")
+    for s in ("co_edited", "symbol") for st in ("explicit", "no_explicit")
+] + [
+    ("rrf_pprpl_issue_path", "rrf_pprpl_seedpath", s, st, "shared")
+    for s in ("co_edited", "symbol") for st in ("explicit", "no_explicit")
+]
+
+
+def mixed_effects(rows: pd.DataFrame) -> pd.DataFrame:
+    """The headline paired comparisons as a random-intercept model, pull request as the row.
+
+    The repository-level Wilcoxon test averages within a repository first, so a repository
+    contributing one pull request weighs as much as one contributing a hundred. The mixed
+    model keeps every pull request as an observation of its paired difference a - b and
+    gives each repository a random intercept, so clustering is modelled rather than
+    averaged away. Reported beside the Wilcoxon tests, not instead of them.
+    """
+    import warnings
+
+    import statsmodels.formula.api as smf
+
+    strata = leak_strata(rows)
+    repo = rows.groupby("instance_id")["repo_key"].first()
+    recs = []
+    for a, b, src, st, pop in HEADLINE:
+        sub = rows[rows["task_id"].isin(strata[st])]
+        mat = pr_level(sub, src)
+        if pop == "shared":
+            mat = mat.loc[mat.index.intersection(shared_prs(sub))]
+        if a not in mat or b not in mat:
+            continue
+        d = (mat[a] - mat[b]).dropna().rename("d").to_frame()
+        d["repo"] = repo.reindex(d.index).to_numpy()
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            fit = smf.mixedlm("d ~ 1", d, groups=d["repo"]).fit(reml=True)
+        lo, hi = fit.conf_int().loc["Intercept"]
+        recs.append({"a": a, "b": b, "source": src, "stratum": st, "population": pop,
+                     "n_pr": len(d), "n_repo": d["repo"].nunique(),
+                     "estimate": float(fit.params["Intercept"]), "ci_lo": float(lo),
+                     "ci_hi": float(hi), "p": float(fit.pvalues["Intercept"]),
+                     "repo_var": float(fit.cov_re.iloc[0, 0]),
+                     "resid_var": float(fit.scale)})
     df = pd.DataFrame(recs)
     df["p_holm"] = holm(df["p"].tolist())
     return df
@@ -384,7 +460,7 @@ def rank_agreement(per_source: pd.DataFrame) -> dict:
     """
     out = {}
     # the fusion controls are not candidate reading orders, so they stay out of both scales
-    ctl = set(FUSION_CTL) | set(REDACTED) | set(RRF_K_VARIANTS)
+    ctl = set(SCORED_ONLY)
     for label, drop in (("all", {"oracle"} | ctl),
                         ("contenders", {"oracle", "random", "same_dir"} | ctl)):
         piv = per_source[~per_source.method.isin(drop)].pivot(
@@ -415,7 +491,7 @@ def by_size(rows: pd.DataFrame, methods: list[str]) -> pd.DataFrame:
         pd.qcut(q, 4, labels=["Q1", "Q2", "Q3", "Q4"])))
     # Rank on the same scale as every other table: all scored orderings, oracle included,
     # less the two fusion controls, which are scored but never ranked.
-    skip = set(FUSION_CTL) | set(REDACTED) | set(RRF_K_VARIANTS)
+    skip = set(SCORED_ONLY)
     rankable = [m for m in rows["method"].unique() if m not in skip]
     recs = []
     for src in SOURCES:
@@ -486,6 +562,7 @@ def main():
     table_joint(rows).to_csv(OUT / "per_source_joint.csv", index=False)
     heldout(rows, contenders).to_csv(OUT / "heldout.csv", index=False)
     redaction(rows).to_csv(OUT / "redaction.csv", index=False)
+    mixed_effects(rows).to_csv(OUT / "mixed.csv", index=False)
 
     cur = (curves.groupby(["source", "method", "budget"])["coverage"].mean()
            .reset_index())

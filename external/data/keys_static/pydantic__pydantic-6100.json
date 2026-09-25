@@ -1,0 +1,39 @@
+{
+ "instance_id": "pydantic__pydantic-6100",
+ "repo_key": "pydantic/pydantic",
+ "base_commit": "13aefcf109adeba4d3d1e023d42f0e3d8e053f77",
+ "status": "ok",
+ "co_edited": [
+  "pydantic/_internal/_generate_schema.py",
+  "pydantic/_internal/_std_types_schema.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "pydantic/_internal/_generate_schema.py": [
+   "_apply_annotations",
+   "annotations",
+   "obj",
+   "res",
+   "self",
+   "source_type",
+   "x"
+  ],
+  "pydantic/_internal/_std_types_schema.py": [
+   "_std_types_schema",
+   "enum_prepare_pydantic_annotations"
+  ],
+  "pydantic/config.py": [
+   "ConfigDict"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 26,
+  "names_resolved_in_repo": 27,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.0
+}

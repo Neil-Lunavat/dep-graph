@@ -1,0 +1,30 @@
+{
+ "instance_id": "getmoto__moto-6755",
+ "repo_key": "getmoto/moto",
+ "base_commit": "c59fee5d352e429309ddce7f8350ef70f2003593",
+ "status": "ok",
+ "co_edited": [
+  "moto/ses/models.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/ses/models.py": [
+   "_is_verified_address",
+   "address",
+   "host",
+   "identity",
+   "mail_from_domain",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 12,
+  "names_resolved_in_repo": 8,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

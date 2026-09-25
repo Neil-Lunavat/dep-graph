@@ -1,0 +1,32 @@
+{
+ "instance_id": "Project-MONAI__MONAI-5067",
+ "repo_key": "project-monai/monai",
+ "base_commit": "f9e8e10fab3a0c0b87708222db96571236c9e764",
+ "status": "ok",
+ "co_edited": [
+  "monai/data/dataloader.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/data/dataloader.py": [
+   "_g",
+   "_seed",
+   "init_seed",
+   "kwargs"
+  ],
+  "monai/data/utils.py": [
+   "list_data_collate",
+   "worker_init_fn"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 14,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.2
+}

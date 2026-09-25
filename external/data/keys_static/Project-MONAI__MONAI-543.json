@@ -1,0 +1,41 @@
+{
+ "instance_id": "Project-MONAI__MONAI-543",
+ "repo_key": "project-monai/monai",
+ "base_commit": "d42f15dd02e88fe0077163db5bb5efeb407c8f35",
+ "status": "ok",
+ "co_edited": [
+  "monai/data/png_saver.py",
+  "monai/data/png_writer.py",
+  "monai/handlers/segmentation_saver.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/data/png_saver.py": [
+   "scale"
+  ],
+  "monai/data/png_writer.py": [
+   "align_corners",
+   "data",
+   "file_name",
+   "img",
+   "interp_order",
+   "output_shape",
+   "scale",
+   "write_png",
+   "xform"
+  ],
+  "monai/handlers/segmentation_saver.py": [
+   "scale"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 139,
+  "names_resolved_in_repo": 50,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.7
+}

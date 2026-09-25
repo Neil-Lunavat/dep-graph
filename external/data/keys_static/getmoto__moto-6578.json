@@ -1,0 +1,47 @@
+{
+ "instance_id": "getmoto__moto-6578",
+ "repo_key": "getmoto/moto",
+ "base_commit": "38b7ffade2b2a72a70386e3cd2878f26414b52a8",
+ "status": "ok",
+ "co_edited": [
+  "moto/ec2/models/vpc_service_configuration.py",
+  "moto/ec2/models/vpcs.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/ec2/models/vpc_service_configuration.py": [
+   "acceptance_required",
+   "availability_zones",
+   "ec2_backend",
+   "endpoint_dns_name",
+   "id",
+   "manages_vpc_endpoints",
+   "private_dns_name",
+   "self",
+   "service_name",
+   "service_type",
+   "to_dict"
+  ],
+  "moto/ec2/models/vpcs.py": [
+   "_filter_endpoint_services",
+   "all_services",
+   "custom_services",
+   "default_services",
+   "filters",
+   "self",
+   "service_name",
+   "service_names",
+   "x"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 45,
+  "names_resolved_in_repo": 39,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.3
+}

@@ -1,0 +1,72 @@
+{
+ "instance_id": "getmoto__moto-6709",
+ "repo_key": "getmoto/moto",
+ "base_commit": "78c518ddc832a30e1cf20015bc5c3b1850a1c797",
+ "status": "ok",
+ "co_edited": [
+  "moto/dynamodb/models/__init__.py",
+  "moto/dynamodb/models/dynamo_type.py",
+  "moto/dynamodb/models/table.py",
+  "moto/dynamodb/responses.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "moto/dynamodb/models/__init__.py": [
+   "get_item",
+   "hash_key",
+   "projection_expression",
+   "projection_expressions",
+   "range_key",
+   "table"
+  ],
+  "moto/dynamodb/models/dynamo_type.py": [
+   "expr",
+   "project",
+   "projection_expressions",
+   "self",
+   "to_regular_json",
+   "x"
+  ],
+  "moto/dynamodb/models/table.py": [
+   "allowed_attributes",
+   "attr",
+   "get_item",
+   "item",
+   "key_attributes",
+   "projection",
+   "projection_expression",
+   "projection_expressions",
+   "r",
+   "results",
+   "self"
+  ],
+  "moto/dynamodb/models/utilities.py": [
+   "find_nested_key"
+  ],
+  "moto/dynamodb/responses.py": [
+   "_adjust",
+   "dynamodb_backend",
+   "expr",
+   "expr_attr_names",
+   "expression",
+   "expressions",
+   "item",
+   "key",
+   "name",
+   "nested_expr",
+   "projection_expressions",
+   "self",
+   "table_name"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 101,
+  "names_resolved_in_repo": 67,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 0.9
+}

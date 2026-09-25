@@ -1,0 +1,32 @@
+{
+ "instance_id": "scikit-learn__scikit-learn-14629",
+ "repo_key": "scikit-learn/scikit-learn",
+ "base_commit": "4aded39b5663d943f6a4809abacfa9cae3d7fb6a",
+ "status": "ok",
+ "co_edited": [
+  "sklearn/multioutput.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "sklearn/multioutput.py": [
+   "X",
+   "Y",
+   "classes_",
+   "estimator",
+   "estimators_",
+   "fit",
+   "sample_weight",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 67,
+  "names_resolved_in_repo": 17,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.7
+}

@@ -9,10 +9,12 @@ Usage:  python -m depgraphs.maketables
 """
 from __future__ import annotations
 
+import math
+
 import pandas as pd
 
 from depgraphs.lexfeat import ROOT
-from depgraphs.study2 import FUSION, OUT
+from depgraphs.study2 import OUT, SCORED_ONLY
 
 PAPER = ROOT / "paper"
 BS = chr(92)
@@ -60,7 +62,8 @@ def main_table():
         for df in (left, right):
             if i < len(df):
                 r = df.loc[i]
-                cells += ["%d" % r["rank"], m(r.method), FAM.get(r.family, r.family),
+                # ranks are displayed without the oracle: best non-oracle = 1
+                cells += ["--" if r.method == "oracle" else "%d" % (r["rank"] - 1), m(r.method), FAM.get(r.family, r.family),
                           "%.3f %s" % (r.auc, ci(r.ci_lo, r.ci_hi))]
             else:
                 cells += ["", "", "", ""]
@@ -84,6 +87,8 @@ def worst_table():
 def full_table():
     cm = pd.read_csv(OUT / "ceiling_method.csv")
     cm = cm[cm.budget == 8000]
+    # controls are scored but never compared as reading orders, here as everywhere else
+    cm = cm[~cm.method.isin(SCORED_ONLY)]
     piv = cm.pivot(index="method", columns="source", values="share_full")
     piv = piv.sort_values("co_edited", ascending=False)
     rows = []
@@ -118,7 +123,7 @@ def size_table():
         for src in ("co_edited", "symbol"):
             for q in ("Q1", "Q2", "Q3", "Q4"):
                 a = piv.loc[name, ("auc", src, q)]
-                k = int(piv.loc[name, ("rank", src, q)])
+                k = int(piv.loc[name, ("rank", src, q)]) - 1
                 cells.append("%s (%d)" % (("%.3f" % a).lstrip("0"), k))
         rows.append(" & ".join(cells) + " " + NL)
     write("size", "\n".join(rows))
@@ -144,7 +149,7 @@ def leak_table():
             for src in ("co_edited", "symbol"):
                 g = d[(d.stratum == st) & (d.source == src) & (d.method == name)]
                 cells.append("%s (%d)" % (("%.3f" % g.auc.iloc[0]).lstrip("0"),
-                                          int(g["rank"].iloc[0])) if len(g) else "--")
+                                          int(g["rank"].iloc[0]) - 1) if len(g) else "--")
         rows.append(" & ".join(cells) + " " + NL)
     n = [int(d[(d.stratum == st) & (d.source == "co_edited")].n_pr.iloc[0])
          for st in ("no_full_path", "no_explicit", "no_stem")]
@@ -204,7 +209,7 @@ def shared_table():
             d = int(s.loc[name, "rank"]) - int(f.loc[name, "rank"])
             rows.append("%s & %s & %s & %d & %s %s" % (
                 m(name), FAM.get(s.loc[name, "family"], "?"),
-                ("%.3f" % s.loc[name, "auc"]).lstrip("0"), int(s.loc[name, "rank"]),
+                ("%.3f" % s.loc[name, "auc"]).lstrip("0"), int(s.loc[name, "rank"]) - 1,
                 "$+%d$" % d if d > 0 else ("$%d$" % d if d < 0 else "--"), NL))
     write("shared", "\n".join(rows))
 
@@ -246,30 +251,367 @@ def heldout_table():
     write("heldout", LF.join(rows))
 
 
+def _group_prs() -> dict:
+    from depgraphs.analysis2 import leak_strata, shared_prs
+    rows = pd.read_parquet(OUT / "rows.parquet",
+                           columns=["task_id", "instance_id", "method", "source", "auc"])
+    st = leak_strata(rows)
+    out = {}
+    for group, key in (("names removed", "explicit"), ("nothing removed", "no_explicit")):
+        out[group] = len(shared_prs(rows[rows.task_id.isin(st[key])]))
+    return out
+
+
+PRS: dict = {}
+
+
 def redaction_table():
-    """What deleting the key files' names from the issue costs, within task."""
+    """What deleting the key files' names -- and, in the wider arms, their paths and the
+    symbols they define -- from the issue costs, within task, per arm."""
+    PRS.update(_group_prs())
     d = pd.read_csv(OUT / "redaction.csv")
+    if "arm" not in d:
+        d = d.assign(arm="names")
+    arms = [a for a in ("names", "paths", "symbols") if a in set(d.arm)]
     order = ["path_issue", "bm25_issue", "rrf_hops_path", "rrf_pprpl_issue_path"]
+    ncol = 1 + 2 * (1 + len(arms))
     rows = []
     for group in ("names removed", "nothing removed"):
-        rows.append(BS + "multicolumn{5}{@{}l}{" + BS + "textit{%s}} %s"
-                    % (group + (" (970 tasks)" if group == "names removed"
-                                else " (1{,}442 tasks; the difference must be nil)"), NL))
+        g0 = d[(d.group == group) & (d.arm == "names")]
+        label = ("%s (%d pull requests in %d repositories)"
+                 % ("issue names a key file as code" if group == "names removed"
+                    else "issue names no key file as code",
+                    PRS[group], int(g0.n.max())))
+        rows.append(BS + "multicolumn{%d}{@{}l}{" % ncol + BS + "textit{%s}} %s"
+                    % (label, NL))
         for name in order:
-            g = d[(d.group == group) & (d.method == name)]
-            if not len(g):
-                continue
             cells = [m(name)]
             for src in ("co_edited", "symbol"):
-                r = g[g.source == src].iloc[0]
-                star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
-                # the column is the change caused by redaction, so a loss prints negative
-                cells.append("%s & $%+.3f%s$" % (("%.3f" % r.auc).lstrip("0"),
-                                                 -r.delta, star))
-            rows.append(" & ".join(cells) + " " + NL)
+                base = d[(d.group == group) & (d.method == name) & (d.source == src)]
+                if not len(base):
+                    break
+                cells.append(("%.3f" % base.auc.iloc[0]).lstrip("0"))
+                for arm in arms:
+                    r = base[base.arm == arm].iloc[0]
+                    star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
+                    # the column is the change caused by redaction, so a loss prints negative
+                    cells.append("$%+.3f%s$" % (-r.delta, star))
+            else:
+                rows.append(" & ".join(cells) + " " + NL)
         if group == "names removed":
             rows.append(BS + "midrule")
     write("redact", LF.join(rows))
+
+
+def comp_table():
+    """How each key file is reached within the top k of each family (RQ4)."""
+    c = pd.read_csv(OUT / "complementarity.csv")
+    rows = []
+    for src in ("co_edited", "symbol"):
+        for x in c[c.source == src].sort_values("k").itertuples():
+            rows.append("%s & %d & %s %s" % (m(src), x.k, " & ".join(
+                "%.1f\\%%" % (100 * v)
+                for v in (x.both, x.struct_only, x.lex_only, x.neither)), NL))
+    write("comp", LF.join(rows))
+
+
+def distance_table():
+    """Key files by hop distance from the seed, and the size of the two-hop ball (RQ1)."""
+    d = pd.read_csv(OUT / "distance_profile.csv").set_index(["source", "hops"])["share"]
+    b = pd.read_csv(OUT / "ball.csv")
+    hit = b.ball_recall * b.key_files
+    prec = (hit / b.ball_files.where(b.ball_files > 0)).median()
+    lift = b.ball_recall.mean() / b.ball_share_of_repo.mean()
+    med = b[["ball_files", "ball_lines", "key_files", "key_lines"]].median()
+    rows = ["%s & %s %s" % (m(src), " & ".join(
+        "%.1f\\%%" % (100 * d.get((src, h), 0.0))
+        for h in ("1", "2", "3+", "unreachable")), NL)
+        for src in ("co_edited", "symbol")]
+    rows.append(BS + "midrule")
+    rows.append("%s{5}{l}{%s{The two-hop ball:} %d files, %s lines, %.0f\\%% of the "
+                "repository} %s" % (BS + "multicolumn", BS + "emph", med.ball_files,
+                                    "{:,}".format(int(med.ball_lines)).replace(",", "{,}"),
+                                    100 * b.ball_share_of_repo.mean(), NL))
+    rows.append("%s{5}{l}{%squad recall %.1f\\%%, precision %.1f\\%%, recall lift over a "
+                "same-sized random sample %.2f$%stimes$} %s" % (
+                    BS + "multicolumn", BS, 100 * b.ball_recall.mean(), 100 * prec, lift,
+                    BS, NL))
+    rows.append("%s{5}{l}{%s{The union key:} %d files, %s lines} %s" % (
+        BS + "multicolumn", BS + "emph", med.key_files,
+        "{:,}".format(int(med.key_lines)).replace(",", "{,}"), NL))
+    write("distance", LF.join(rows))
+
+
+def families_table():
+    """Every Holm family in the paper: what is tested together, and how many tests."""
+    pw = pd.read_csv(OUT / "pairwise.csv")
+    rows = []
+    g = pw.groupby(["unit", "population", "stratum"]).agg(
+        fam=("source", "nunique"), n=("p", "size"))
+    per = pw.groupby(["unit", "population", "stratum", "source"]).size()
+    for (unit, pop, st), r in g.iterrows():
+        sizes = sorted(set(per.loc[(unit, pop, st)]))
+        rows.append("paired tests, %s as unit & %s & %s & %d & %s %s" % (
+            "repository" if unit == "repo" else "pull request",
+            "matched" if pop == "shared" else "full",
+            st.replace("_", " "), r.fam, "/".join(map(str, sizes)), NL))
+    rd = pd.read_csv(OUT / "redaction.csv")
+    arms = rd.arm.unique() if "arm" in rd else ["names"]
+    for arm in arms:
+        n = int((rd.arm == arm).sum()) if "arm" in rd else len(rd)
+        rows.append("redaction, %s arm & matched & by group & 1 & %d %s" % (arm, n, NL))
+    mx = OUT / "mixed.csv"
+    if mx.exists():
+        rows.append("mixed model, headline comparisons & both & several & 1 & %d %s"
+                    % (len(pd.read_csv(mx)), NL))
+    write("families", LF.join(rows))
+
+
+def mixed_table():
+    """Headline comparisons re-estimated with a random intercept per repository."""
+    d = pd.read_csv(OUT / "mixed.csv")
+    pops = {"all": "full", "shared": "matched"}
+    rows = []
+    for x in d.itertuples():
+        p = ("$<10^{%d}$" % (math.floor(math.log10(x.p_holm)) + 1)
+             if x.p_holm < 0.001 else "%.3f" % x.p_holm if x.p_holm < 1 else "1")
+        rows.append("%s & %s & %s & %s & %s & %d & %+.3f %s & %s %s" % (
+            m(x.a), m(x.b), m(x.source), x.stratum.replace("_", " "), pops[x.population],
+            x.n_pr, x.estimate, ci(x.ci_lo, x.ci_hi).replace("[.", "[0.").replace(",.", ",0.")
+            .replace("-.", "-0."), p, NL))
+    write("mixed", LF.join(rows))
+
+
+def external_table():
+    """The four predictions of paper/external_predictions.md and what the external set showed."""
+    import json
+    f = ROOT / "external" / "results" / "study2" / "predictions.json"
+    if not f.exists():
+        return
+    r = json.loads(f.read_text())
+    ok = {True: "pass", False: BS + "textbf{fail}", None: "not testable"}
+
+    def est(t):
+        return "%+.3f ($p_{%s{Holm}} = %.3f$)" % (t["estimate"], BS + "text", t["p_holm"])
+    e1, e2, e3, e4 = r["E1"], r["E2"], r["E3"], r["E4"]
+    worst2 = min(e2["tests"], key=lambda t: t["estimate"])
+    rows = [
+        "E1 & fusion in the top three non-oracle orderings under both keys, worst shortfall "
+        "$" + BS + "le 0.030$ & rank %d and %d; shortfall %.3f & %s %s" % (
+            e1["co_edited"]["rank"] - 1, e1["symbol"]["rank"] - 1, e1["worst_shortfall"],
+            ok[e1["pass"]], NL),
+        "E2 & fusion never significantly worse than four pure orderings, either key & "
+        "smallest difference %s & %s %s" % (est(worst2), ok[e2["pass"]], NL),
+        "E3 & outward walk beats inward on the symbol key & %+.3f ($p = %.3f$) & %s %s" % (
+            e3["estimate"], e3["p"], ok[e3["pass"]], NL),
+        "E4 & names redaction costs the fusion under both keys; nothing where nothing is named "
+        "& %s and %s; control $" % tuple(est(t) for t in e4["named"])
+        + BS + "le %.3f$ & %s %s" % (max(abs(v) for v in e4["unnamed_mean_move"].values()),
+                                    ok[e4["pass"]], NL),
+    ]
+    write("external", LF.join(rows))
+
+
+def contextbench_table():
+    """The four predictions of paper/contextbench_predictions.md and what the human key showed."""
+    import json
+    f = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
+    if not f.exists():
+        return
+    r = json.loads(f.read_text())
+    ok = {True: "pass", False: BS + "textbf{fail}"}
+    g1, g2, g3, g4 = r["G1"], r["G2"], r["G3"], r["G4"]
+    worst2 = min(g2["tests"], key=lambda t: t["estimate"])
+    rows = [
+        "G1 & fusion in the top three non-oracle orderings on the human key, shortfall "
+        "$" + BS + "le 0.030$ & rank %d; shortfall %.3f & %s %s" % (
+            g1["rank"] - 1, g1["shortfall"], ok[g1["pass"]], NL),
+        "G2 & fusion never significantly worse than four pure orderings & smallest "
+        "difference %+.3f ($p_{%s{Holm}} %s$) & %s %s" % (
+            worst2["estimate"], BS + "text", ("< 0.001" if worst2["p_holm"] < 0.001
+                                              else "= %.3f" % worst2["p_holm"]),
+            ok[g2["pass"]], NL),
+        "G3 & outward walk beats inward & %+.3f ($p = %.3f$) & %s %s" % (
+            g3["estimate"], g3["p"], ok[g3["pass"]], NL),
+        "G4 & Kendall $" + BS + "tau " + BS + "ge 0.5$ between the human key's ranking and "
+        "each proxy's & symbol %.2f, co-edited %.2f & %s %s" % (
+            g4["symbol"]["tau"], g4["co_edited"]["tau"], ok[g4["pass"]], NL),
+    ]
+    write("cb_pred", LF.join(rows))
+
+    t = pd.read_csv(f.parent / "per_source.csv")
+    t = t[t["rank"].notna()]
+    au = t.pivot(index="method", columns="source", values="auc")
+    rk = t.pivot(index="method", columns="source", values="rank").astype(int)
+    keys = ["gold", "gold_readonly", "co_edited", "symbol"]
+    show = ["rrf_hops_issue_path", "rrf_pprpl_issue_path", "rrf_hops_path", "bm25_issue",
+            "path_issue", "hops_lines", "ppr_und_pl", "ppr_out_pl", "pagerank", "random"]
+    out = []
+    for name in show:
+        out.append(m(name) + " & " + " & ".join(
+            "%s (%d)" % (("%.3f" % au.loc[name, k]).lstrip("0"), rk.loc[name, k] - 1)
+            for k in keys) + " " + NL)
+    out.append(BS + "midrule")
+    out.append("oracle & " + " & ".join(("%.3f" % au.loc["oracle", k]).lstrip("0")
+                                          for k in keys) + " " + NL)
+    write("cb_auc", LF.join(out))
+
+
+def metric_table():
+    """Ranks of the leading orderings under the three cost rules, matched population."""
+    f = OUT / "metric_auc.csv"
+    if not f.exists():
+        return
+    t = pd.read_csv(f)
+    t = t[t.population == "shared"]
+    rules = ["lines, stop", "lines, skip", "files"]
+    show = ["rrf_pprpl_issue_path", "rrf_ppr_issue_path", "rrf_hops_issue_path",
+            "rrf_hops_path", "hops_lines", "ppr_und_pl", "ppr_und", "path_issue",
+            "bm25_issue"]
+    out = []
+    for name in show:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            for rule in rules:
+                g = t[(t.method == name) & (t.source == src) & (t.rule == rule)].iloc[0]
+                cells.append("%s (%d)" % (("%.3f" % g.auc).lstrip("0"), int(g["rank"]) - 1))
+        out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
+    write("metric", LF.join(out))
+
+
+def seedless_table():
+    """Without a free seed: AUC by key and by whether the issue names an edited file."""
+    f = ROOT / "results" / "seedless" / "rows.parquet"
+    if not f.exists():
+        return
+    d = pd.read_parquet(f)
+    show = ["rrf_pprpl_dense_path_ds", "rrf_pprpl_issue_path_ds", "rrf_pprpl_dense_path",
+            "rrf_pprpl_issue_path", "dense_issue", "localiser", "path_issue", "bm25_issue",
+            "ppr_und_pl_ds", "ppr_und_pl", "random"]
+    show = [s for s in show if s in set(d.method)]
+    g = d.groupby(["method", "source", "named"]).auc.mean()
+    a = d.groupby(["method", "source"]).auc.mean()
+    label = {"localiser": BS + "textit{issue-only fusion (picks the seed)}"}
+    out = []
+    for name in show:
+        cells = []
+        for src in ("edited", "symbol"):
+            cells += [a[(name, src)], g[(name, src, True)], g[(name, src, False)]]
+        out.append(label.get(name, m(name)) + " & " + " & ".join(
+            ("%.3f" % c).lstrip("0") for c in cells) + " " + NL)
+    out.append(BS + "midrule")
+    cells = []
+    for src in ("edited", "symbol"):
+        cells += [a[("oracle", src)], g[("oracle", src, True)], g[("oracle", src, False)]]
+    out.append("oracle & " + " & ".join(("%.3f" % c).lstrip("0") for c in cells) + " " + NL)
+    write("seedless", LF.join(out))
+
+
+def dense_tables():
+    """The dense retriever against BM25, and the decomposition for each fusion."""
+    fa, ft = OUT / "dense_auc.csv", OUT / "dense_tests.csv"
+    if not (fa.exists() and ft.exists()):
+        return
+    a = pd.read_csv(fa)
+    a = a[a.population == "shared"]
+    show = ["rrf_pprpl_issue_path_dense", "rrf_pprpl_dense_path", "rrf_pprpl_issue_path",
+            "rrf_pprpl_dense", "dense_issue", "path_issue", "bm25_issue", "dense_seed",
+            "bm25_seed"]
+    out = []
+    for name in show:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            r = a[(a.method == name) & (a.source == src)].iloc[0]
+            cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r.rank_if_ranked) - 1))
+        out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
+    write("dense_auc", LF.join(out))
+
+    t = pd.read_csv(ft)
+    t = t[t.family == "decomposition"]
+
+    def cell(what, stratum, src):
+        r = t[(t.what == what) & (t.stratum == stratum) & (t.source == src)].iloc[0]
+        d = r.delta
+        star = "^{" + BS + "ast}" if r.p_holm < 0.05 else ""
+        return "$%+.3f%s$" % (d, star)
+    rows = [("issue worth, named", "explicit", "issue worth, %s fusion"),
+            ("issue worth, not named", "no_explicit", "issue worth, %s fusion"),
+            ("names arm, named", "explicit", "names cost (_rd), %s"),
+            ("paths arm, named", "explicit", "names cost (_rdp), %s"),
+            ("symbols arm, named", "explicit", "names cost (_rds), %s"),
+            ("symbols arm, not named", "no_explicit", "names cost (_rds), %s")]
+    fus = {"BM25": ("BM25", "rrf_pprpl_issue_path"), "dense": ("dense", "rrf_pprpl_dense_path")}
+    out = []
+    for label, st, pat in rows:
+        cells = []
+        for src in ("co_edited", "symbol"):
+            for kind in ("BM25", "dense"):
+                word, meth = fus[kind]
+                what = pat % (word if "worth" in pat else meth)
+                cells.append(cell(what, st, src))
+        out.append(label + " & " + " & ".join(cells) + " " + NL)
+    write("dense_decomp", LF.join(out))
+
+
+def robust_table():
+    """The recommended fusion under every check, one row per check: rank and shortfall."""
+    import json
+    F = "rrf_pprpl_issue_path"
+    rows = []
+
+    def fmt(rank, short):
+        return "%s & %s" % (rank, ("%.3f" % short).lstrip("0") if short is not None else "--")
+
+    def from_table(t, src):
+        g = t[(t.source == src) & t["rank"].notna()]
+        best = g[g.method != "oracle"].auc.max()
+        r = g[g.method == F].iloc[0]
+        return int(r["rank"]) - 1, float(best - r.auc)
+
+    sh = pd.read_csv(OUT / "per_source_shared.csv")
+    fu = pd.read_csv(OUT / "per_source.csv")
+    for label, t in (("Main sample, matched population", sh),
+                     ("Main sample, full population", fu)):
+        cells = [fmt(*from_table(t, s)) for s in ("co_edited", "symbol")]
+        rows.append("%s & %s & %s %s" % (label, m(F), " & ".join(cells), NL))
+    h = pd.read_csv(OUT / "heldout.csv")
+    sel = h[h.chosen == F]
+    cells = []
+    for s in ("co_edited", "symbol"):
+        best = int((sel["rank_" + s] == 2).sum())
+        cells.append("best in %d/%d & %s" % (best, len(sel), ("%.3f" % (
+            sel["best_" + s] - sel["auc_" + s]).mean()).lstrip("0")))
+    rows.append("Held-out halves, 200 splits & %s & %s %s" % (m(F), " & ".join(cells), NL))
+    mt = pd.read_csv(OUT / "metric_auc.csv")
+    for rule, label in (("lines, skip", "Skip an overflowing file"),
+                        ("files", "Charge per file")):
+        t = mt[(mt.rule == rule) & (mt.population == "shared")]
+        cells = [fmt(*from_table(t, s)) for s in ("co_edited", "symbol")]
+        rows.append("%s & %s & %s %s" % (label, m(F), " & ".join(cells), NL))
+    e = ROOT / "external" / "results" / "study2" / "predictions.json"
+    if e.exists():
+        E1 = json.loads(e.read_text())["E1"]
+        cells = [fmt(E1[s]["rank"] - 1, E1[s]["shortfall"]) for s in ("co_edited", "symbol")]
+        rows.append("$" + BS + "dagger$ Seven unseen repositories & %s & %s %s" % (
+            m(F), " & ".join(cells), NL))
+    c = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
+    if c.exists():
+        G1 = json.loads(c.read_text())["G1"]
+        rows.append("$" + BS + "dagger$ Human key (ContextBench) & %s & %s & -- & -- %s"
+                    % (m(F), fmt(G1["rank"] - 1, G1["shortfall"]), NL))
+    s = ROOT / "results" / "seedless" / "rows.parquet"
+    if s.exists():
+        d = pd.read_parquet(s)
+        D = "rrf_pprpl_dense_path_ds"
+        if D in set(d.method):
+            cells = []
+            for src in ("edited", "symbol"):
+                a = d[d.source == src].groupby("method").auc.mean()
+                rk = int(a.drop("oracle").rank(ascending=False, method="min")[D])
+                cells.append(fmt(rk, a.drop("oracle").max() - a[D]))
+            rows.append("No free seed (dense seed) & %s & %s %s" % (
+                m("rrf_pprpl_dense_path"), " & ".join(cells), NL))
+    write("robust", LF.join(rows))
 
 
 def figure_data():
@@ -302,6 +644,16 @@ def main():
     issue_table()
     heldout_table()
     redaction_table()
+    comp_table()
+    distance_table()
+    families_table()
+    mixed_table()
+    external_table()
+    contextbench_table()
+    metric_table()
+    seedless_table()
+    dense_tables()
+    robust_table()
     figure_data()
 
 

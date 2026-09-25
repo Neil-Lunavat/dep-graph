@@ -1,0 +1,30 @@
+{
+ "instance_id": "astropy__astropy-13453",
+ "repo_key": "astropy/astropy",
+ "base_commit": "19cc80471739bcb67b7e8099246b391c355023ee",
+ "status": "ok",
+ "co_edited": [
+  "astropy/io/ascii/html.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "astropy/io/ascii/core.py": [
+   "_set_col_formats",
+   "data"
+  ],
+  "astropy/io/ascii/html.py": [
+   "cols",
+   "self"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 7,
+  "names_resolved_in_repo": 6,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.8
+}

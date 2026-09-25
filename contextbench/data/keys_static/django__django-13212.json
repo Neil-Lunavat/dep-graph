@@ -1,0 +1,39 @@
+{
+ "instance_id": "django__django-13212",
+ "repo_key": "django/django",
+ "base_commit": "f4e93919e4608cfc50849a1f764fd856e0917401",
+ "status": "ok",
+ "co_edited": [
+  "django/core/validators.py",
+  "django/forms/fields.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "django/core/exceptions.py": [
+   "ValidationError"
+  ],
+  "django/core/validators.py": [
+   "allowed_extensions",
+   "code",
+   "decimal_places",
+   "max_digits",
+   "message",
+   "messages",
+   "self",
+   "value"
+  ],
+  "django/utils/translation/__init__.py": [
+   "_"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 119,
+  "names_resolved_in_repo": 87,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 2.5
+}

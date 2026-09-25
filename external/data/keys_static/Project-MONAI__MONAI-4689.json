@@ -1,0 +1,100 @@
+{
+ "instance_id": "Project-MONAI__MONAI-4689",
+ "repo_key": "project-monai/monai",
+ "base_commit": "1b73fef49b5df53db984d95ae535cdcc1faf6236",
+ "status": "ok",
+ "co_edited": [
+  "monai/data/meta_obj.py",
+  "monai/data/meta_tensor.py",
+  "monai/transforms/meta_utility/dictionary.py",
+  "monai/visualize/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/__init__.py": [
+   "monai"
+  ],
+  "monai/config/__init__.py": [
+   "config"
+  ],
+  "monai/config/type_definitions.py": [
+   "KeysCollection",
+   "NdarrayOrTensor",
+   "type_definitions"
+  ],
+  "monai/data/meta_tensor.py": [
+   "MetaTensor",
+   "_args",
+   "_kwargs",
+   "applied_operations",
+   "array",
+   "as_dict",
+   "as_tensor",
+   "astype",
+   "clone",
+   "device",
+   "dtype",
+   "get_array",
+   "key",
+   "meta",
+   "new_inst",
+   "non_blocking",
+   "output_type",
+   "self",
+   "set_array",
+   "src"
+  ],
+  "monai/transforms/meta_utility/dictionary.py": [
+   "allow_missing_keys",
+   "as_tensor_output",
+   "d",
+   "data_type",
+   "im",
+   "key",
+   "keys",
+   "self",
+   "t"
+  ],
+  "monai/transforms/transform.py": [
+   "__init__",
+   "key_iterator",
+   "keys"
+  ],
+  "monai/utils/__init__.py": [
+   "utils"
+  ],
+  "monai/utils/enums.py": [
+   "PostFix",
+   "meta",
+   "transforms"
+  ],
+  "monai/utils/misc.py": [
+   "ensure_tuple_rep",
+   "misc"
+  ],
+  "monai/utils/type_conversion.py": [
+   "convert_data_type",
+   "convert_to_tensor",
+   "dtype",
+   "output_type",
+   "track_meta",
+   "wrap_sequence"
+  ],
+  "monai/visualize/utils.py": [
+   "alpha",
+   "image",
+   "label",
+   "w_label"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 578,
+  "names_resolved_in_repo": 128,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.3
+}

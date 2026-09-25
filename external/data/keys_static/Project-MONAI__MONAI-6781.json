@@ -1,0 +1,46 @@
+{
+ "instance_id": "Project-MONAI__MONAI-6781",
+ "repo_key": "project-monai/monai",
+ "base_commit": "c62fac1eeb9cbf59ba3e499c3f612a348b2571da",
+ "status": "ok",
+ "co_edited": [
+  "monai/data/meta_tensor.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "monai/data/meta_obj.py": [
+   "MetaObj"
+  ],
+  "monai/data/meta_tensor.py": [
+   "MetaTensor",
+   "_handle_batched",
+   "args",
+   "batch_idx",
+   "cls",
+   "dec_batch",
+   "dim",
+   "e",
+   "func",
+   "idx",
+   "kwargs",
+   "metas",
+   "ret",
+   "ret_meta"
+  ],
+  "monai/data/utils.py": [
+   "decollate_batch",
+   "detach",
+   "list_data_collate"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 105,
+  "names_resolved_in_repo": 76,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 3.4
+}

