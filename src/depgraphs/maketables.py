@@ -62,7 +62,8 @@ def main_table():
         for df in (left, right):
             if i < len(df):
                 r = df.loc[i]
-                cells += ["%d" % r["rank"], m(r.method), FAM.get(r.family, r.family),
+                # ranks are displayed without the oracle: best non-oracle = 1
+                cells += ["--" if r.method == "oracle" else "%d" % (r["rank"] - 1), m(r.method), FAM.get(r.family, r.family),
                           "%.3f %s" % (r.auc, ci(r.ci_lo, r.ci_hi))]
             else:
                 cells += ["", "", "", ""]
@@ -122,7 +123,7 @@ def size_table():
         for src in ("co_edited", "symbol"):
             for q in ("Q1", "Q2", "Q3", "Q4"):
                 a = piv.loc[name, ("auc", src, q)]
-                k = int(piv.loc[name, ("rank", src, q)])
+                k = int(piv.loc[name, ("rank", src, q)]) - 1
                 cells.append("%s (%d)" % (("%.3f" % a).lstrip("0"), k))
         rows.append(" & ".join(cells) + " " + NL)
     write("size", "\n".join(rows))
@@ -148,7 +149,7 @@ def leak_table():
             for src in ("co_edited", "symbol"):
                 g = d[(d.stratum == st) & (d.source == src) & (d.method == name)]
                 cells.append("%s (%d)" % (("%.3f" % g.auc.iloc[0]).lstrip("0"),
-                                          int(g["rank"].iloc[0])) if len(g) else "--")
+                                          int(g["rank"].iloc[0]) - 1) if len(g) else "--")
         rows.append(" & ".join(cells) + " " + NL)
     n = [int(d[(d.stratum == st) & (d.source == "co_edited")].n_pr.iloc[0])
          for st in ("no_full_path", "no_explicit", "no_stem")]
@@ -208,7 +209,7 @@ def shared_table():
             d = int(s.loc[name, "rank"]) - int(f.loc[name, "rank"])
             rows.append("%s & %s & %s & %d & %s %s" % (
                 m(name), FAM.get(s.loc[name, "family"], "?"),
-                ("%.3f" % s.loc[name, "auc"]).lstrip("0"), int(s.loc[name, "rank"]),
+                ("%.3f" % s.loc[name, "auc"]).lstrip("0"), int(s.loc[name, "rank"]) - 1,
                 "$+%d$" % d if d > 0 else ("$%d$" % d if d < 0 else "--"), NL))
     write("shared", "\n".join(rows))
 
@@ -396,8 +397,8 @@ def external_table():
     worst2 = min(e2["tests"], key=lambda t: t["estimate"])
     rows = [
         "E1 & fusion in the top three non-oracle orderings under both keys, worst shortfall "
-        "$" + BS + "le 0.030$ & rank %d and %d (oracle included); shortfall %.3f & %s %s" % (
-            e1["co_edited"]["rank"], e1["symbol"]["rank"], e1["worst_shortfall"],
+        "$" + BS + "le 0.030$ & rank %d and %d; shortfall %.3f & %s %s" % (
+            e1["co_edited"]["rank"] - 1, e1["symbol"]["rank"] - 1, e1["worst_shortfall"],
             ok[e1["pass"]], NL),
         "E2 & fusion never significantly worse than four pure orderings, either key & "
         "smallest difference %s & %s %s" % (est(worst2), ok[e2["pass"]], NL),
@@ -423,8 +424,8 @@ def contextbench_table():
     worst2 = min(g2["tests"], key=lambda t: t["estimate"])
     rows = [
         "G1 & fusion in the top three non-oracle orderings on the human key, shortfall "
-        "$" + BS + "le 0.030$ & rank %d (oracle included); shortfall %.3f & %s %s" % (
-            g1["rank"], g1["shortfall"], ok[g1["pass"]], NL),
+        "$" + BS + "le 0.030$ & rank %d; shortfall %.3f & %s %s" % (
+            g1["rank"] - 1, g1["shortfall"], ok[g1["pass"]], NL),
         "G2 & fusion never significantly worse than four pure orderings & smallest "
         "difference %+.3f ($p_{%s{Holm}} %s$) & %s %s" % (
             worst2["estimate"], BS + "text", ("< 0.001" if worst2["p_holm"] < 0.001
@@ -448,7 +449,7 @@ def contextbench_table():
     out = []
     for name in show:
         out.append(m(name) + " & " + " & ".join(
-            "%s (%d)" % (("%.3f" % au.loc[name, k]).lstrip("0"), rk.loc[name, k])
+            "%s (%d)" % (("%.3f" % au.loc[name, k]).lstrip("0"), rk.loc[name, k] - 1)
             for k in keys) + " " + NL)
     out.append(BS + "midrule")
     out.append("oracle & " + " & ".join(("%.3f" % au.loc["oracle", k]).lstrip("0")
@@ -473,7 +474,7 @@ def metric_table():
         for src in ("co_edited", "symbol"):
             for rule in rules:
                 g = t[(t.method == name) & (t.source == src) & (t.rule == rule)].iloc[0]
-                cells.append("%s (%d)" % (("%.3f" % g.auc).lstrip("0"), int(g["rank"])))
+                cells.append("%s (%d)" % (("%.3f" % g.auc).lstrip("0"), int(g["rank"]) - 1))
         out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
     write("metric", LF.join(out))
 
@@ -521,7 +522,7 @@ def dense_tables():
         cells = []
         for src in ("co_edited", "symbol"):
             r = a[(a.method == name) & (a.source == src)].iloc[0]
-            cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r.rank_if_ranked)))
+            cells.append("%s (%d)" % (("%.3f" % r.auc).lstrip("0"), int(r.rank_if_ranked) - 1))
         out.append(m(name) + " & " + " & ".join(cells) + " " + NL)
     write("dense_auc", LF.join(out))
 
@@ -565,7 +566,7 @@ def robust_table():
         g = t[(t.source == src) & t["rank"].notna()]
         best = g[g.method != "oracle"].auc.max()
         r = g[g.method == F].iloc[0]
-        return int(r["rank"]), float(best - r.auc)
+        return int(r["rank"]) - 1, float(best - r.auc)
 
     sh = pd.read_csv(OUT / "per_source_shared.csv")
     fu = pd.read_csv(OUT / "per_source.csv")
@@ -590,14 +591,14 @@ def robust_table():
     e = ROOT / "external" / "results" / "study2" / "predictions.json"
     if e.exists():
         E1 = json.loads(e.read_text())["E1"]
-        cells = [fmt(E1[s]["rank"], E1[s]["shortfall"]) for s in ("co_edited", "symbol")]
+        cells = [fmt(E1[s]["rank"] - 1, E1[s]["shortfall"]) for s in ("co_edited", "symbol")]
         rows.append("$" + BS + "dagger$ Seven unseen repositories & %s & %s %s" % (
             m(F), " & ".join(cells), NL))
     c = ROOT / "contextbench" / "results" / "study2" / "predictions.json"
     if c.exists():
         G1 = json.loads(c.read_text())["G1"]
         rows.append("$" + BS + "dagger$ Human key (ContextBench) & %s & %s & -- & -- %s"
-                    % (m(F), fmt(G1["rank"], G1["shortfall"]), NL))
+                    % (m(F), fmt(G1["rank"] - 1, G1["shortfall"]), NL))
     s = ROOT / "results" / "seedless" / "rows.parquet"
     if s.exists():
         d = pd.read_parquet(s)
@@ -606,7 +607,7 @@ def robust_table():
             cells = []
             for src in ("edited", "symbol"):
                 a = d[d.source == src].groupby("method").auc.mean()
-                rk = int(a.rank(ascending=False, method="min")[D])
+                rk = int(a.drop("oracle").rank(ascending=False, method="min")[D])
                 cells.append(fmt(rk, a.drop("oracle").max() - a[D]))
             rows.append("No free seed (dense seed) & %s & %s %s" % (
                 m("rrf_pprpl_dense_path"), " & ".join(cells), NL))

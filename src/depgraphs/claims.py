@@ -66,7 +66,8 @@ def rank(table: str, source: str, method: str, **where) -> int:
         d = d[d[k] == v]
     d = d[(d.source == source) & (d.method == method)]
     col = "rank" if "rank" in d.columns else "rank_no_leak"
-    return int(d[col].iloc[0])
+    # the paper ranks without the oracle; the result files include it at rank 1
+    return int(d[col].iloc[0]) - 1
 
 
 def delta(a: str, b: str, source: str, stratum="all", population="shared") -> float:
@@ -262,21 +263,28 @@ def claims() -> list[tuple[str, str, str]]:
             for s in ("co_edited", "symbol")}
     E1 = EXT["E1"]
     sysnames = ["sys_aider_repomap", "sys_repograph_k2", "sys_locagent_bfs"]
-    sys_ranks = [int(dauc.loc[(s, m), "rank_if_ranked"]) for s in ("co_edited", "symbol")
+    sys_ranks = [int(dauc.loc[(s, m), "rank_if_ranked"]) - 1 for s in ("co_edited", "symbol")
                  for m in sysnames]
 
     C = [
         # ---- abstract
         ("change tasks from", "abstract: scored tasks", big(co["tasks"] - co["unscored"])),
-        ("requests from ContextBench, a key annotated by people", "abstract: ContextBench PRs",
+        ("the unchanged pipeline, drawn by our sampling rules", "corpus: ContextBench PRs",
          str(CB["descriptive"]["n_prs_gold"])),
-        ("as it does in two tasks in five: there it is worth", "abstract: 'ten times'",
-         "ten times" if 9 <= worth("co_edited", "explicit") / worth("co_edited",
-                                                                   "no_explicit") <= 11
-         else "RATIO-CHANGED"),
-        ("as it does in two tasks in five: there it is worth", "abstract: 'about half'",
+        ("Our main contribution is a measurement protocol", "abstract: worth where named",
+         num3(worth("co_edited", "explicit"))),
+        ("Our main contribution is a measurement protocol", "abstract: worth elsewhere",
+         num3(worth("co_edited", "no_explicit"))),
+        ("Our main contribution is a measurement protocol", "abstract: elsewhere not significant",
+         "non-significant" if p_holm(F, T, "co_edited", stratum="no_explicit") >= 0.05
+         else "NOW-SIGNIFICANT"),
+        ("Our main contribution is a measurement protocol", "abstract: 'about half'",
          "about half" if all(0.4 <= x / gap() <= 0.6 for x in (
              redact_delta(F, "co_edited"), leak_share("symbols"))) else "SHARE-CHANGED"),
+        ("What survives is a protocol and a recommendation", "conclusion: worth where named",
+         num3(worth("co_edited", "explicit"))),
+        ("What survives is a protocol and a recommendation", "conclusion: worth elsewhere",
+         num3(worth("co_edited", "no_explicit"))),
 
         # ---- contributions
         ("A protocol for measuring what issue text is worth", "contrib: worth where named",
@@ -398,9 +406,9 @@ def claims() -> list[tuple[str, str, str]]:
         ("Which proxy to believe", "rq1: tau co", "%.2f" % CB["G4"]["co_edited"]["tau"]),
         ("Which proxy to believe", "rq1: tau sym", "%.2f" % CB["G4"]["symbol"]["tau"]),
         ("Which proxy to believe", "rq1: pprpl gold rank",
-         ORDINAL[int(cbt.loc[("gold", "ppr_und_pl"), "rank"])]),
+         ORDINAL[int(cbt.loc[("gold", "ppr_und_pl"), "rank"]) - 1]),
         ("Which proxy to believe", "rq1: pprout gold rank",
-         ORDINAL[int(cbt.loc[("gold", "ppr_out_pl"), "rank"])]),
+         ORDINAL[int(cbt.loc[("gold", "ppr_out_pl"), "rank"]) - 1]),
 
         # ---- RQ2
         ("Across tasks: an issue-free twin", "rq2: worth all co", num3(worth("co_edited"))),
@@ -469,7 +477,7 @@ def claims() -> list[tuple[str, str, str]]:
         ("Held-out repositories.", "rq3: confirmed co", str(split_stat("best", "co_edited"))),
         ("Held-out repositories.", "rq3: confirmed sym", str(split_stat("best", "symbol"))),
         ("Seven unseen repositories.", "rq3: E1 rank",
-         "third" if E1["co_edited"]["rank"] == 3 and E1["symbol"]["rank"] == 3
+         "second" if E1["co_edited"]["rank"] == 3 and E1["symbol"]["rank"] == 3
          else "E1-RANK-CHANGED"),
         ("Seven unseen repositories.", "rq3: E1 worst shortfall", num3(E1["worst_shortfall"])),
         ("Seven unseen repositories.", "rq3: E4 co",
