@@ -24,13 +24,6 @@ NL = BS + BS
 FAM = {"structure": "str", "lexical": "lex", "fusion": "fus", "global": "glo",
        "fusion-control": "f--", "reference": "ref"}
 
-STRATA = ["explicit", "all", "no_full_path", "no_explicit", "no_stem"]
-STRATUM_LABEL = {"explicit": "names a key file as code",
-                 "all": "every task",
-                 "no_full_path": "no full path quoted",
-                 "no_explicit": "no explicit mention",
-                 "no_stem": "no stem at all"}
-
 
 def m(name: str) -> str:
     return BS + "m{" + name.replace("_", BS + "_") + "}"
@@ -71,19 +64,6 @@ def main_table():
     write("main", "\n".join(rows))
 
 
-def worst_table():
-    r = pd.read_csv(OUT / "rank_by_source.csv").dropna(subset=["co_edited", "symbol"])
-    r["worst"] = r[["co_edited", "symbol"]].max(axis=1)
-    ps = pd.read_csv(OUT / "per_source.csv")
-    fam = dict(zip(ps.method, ps.family))
-    r = r[r.method != "oracle"].sort_values(["worst_gap", "method"])
-    rows = ["%s & %s & %d & %d & %d & %s %s" % (
-        m(x.method), FAM.get(fam.get(x.method, ""), "?"),
-        x.co_edited, x.symbol, x.worst,
-        ("%.3f" % x.worst_gap).lstrip("0"), NL) for x in r.itertuples()]
-    write("worst", LF.join(rows))
-
-
 def full_table():
     cm = pd.read_csv(OUT / "ceiling_method.csv")
     cm = cm[cm.budget == 8000]
@@ -98,16 +78,6 @@ def full_table():
         if name == "oracle":
             rows.append(BS + "midrule")
     write("full", "\n".join(rows))
-
-
-def ceiling_table():
-    ck = pd.read_csv(OUT / "ceiling_key.csv")
-    t = ck[ck.unit == "tokens"].pivot(index="budget", columns="source",
-                                      values="share_fits")
-    rows = ["%s & %.1f & %.1f %s" % (
-        "{:,}".format(int(b)).replace(",", "{,}"),
-        100 * r.co_edited, 100 * r.symbol, NL) for b, r in t.iterrows()]
-    write("ceiling", "\n".join(rows))
 
 
 def size_table():
@@ -158,40 +128,6 @@ def leak_table():
         r"%s" % ("{:,}".format(x).replace(",", "{,}")) for x in n
         for _ in (0, 1)) + " " + NL)
     write("leak", LF.join(rows))
-
-
-def issue_table():
-    """What the issue text adds to a fusion, by how explicitly the issue names the answer.
-
-    Each pair is one fusion against the identical fusion with every issue-derived input
-    replaced by its seed-derived counterpart: same walk, same number of lists, same BM25,
-    no issue. The difference is therefore what the issue contributes, and it is read off
-    within each leakage stratum rather than over the corpus as a whole.
-    """
-    pw = pd.read_csv(OUT / "pairwise.csv")
-    pairs = [("rrf_pprpl_issue_path", "rrf_pprpl_seedpath"),
-             ("rrf_hops_path", "rrf_hops_pathseed")]
-    rows = []
-    for st in STRATA:
-        cells = [STRATUM_LABEL[st]]
-        n = None
-        for a, b in pairs:
-            for src in ("co_edited", "symbol"):
-                g = pw[(pw.unit == "repo") & (pw.stratum == st)
-                       & (pw.population == "shared") & (pw.source == src)
-                       & (((pw.a == a) & (pw.b == b)) | ((pw.a == b) & (pw.b == a)))]
-                if not len(g):
-                    cells.append("--")
-                    continue
-                r = g.iloc[0]
-                d = (1 if r.a == a else -1) * r.delta
-                n = int(r.n_pr)
-                star = ("^{" + BS + "ast}" if r.p_holm < 0.05 else "")
-                cells.append("$%+.3f%s$" % (d, star))
-        rows.append(("%s & %d & " % (cells[0], n)) + " & ".join(cells[1:]) + " " + NL)
-        if st == "all":
-            rows.append(BS + "midrule")
-    write("issue", LF.join(rows))
 
 
 def shared_table():
@@ -614,34 +550,13 @@ def robust_table():
     write("robust", LF.join(rows))
 
 
-def figure_data():
-    """Coverage curves for the two-panel figure, one file per key source."""
-    cur = pd.read_csv(OUT / "curves_mean.csv")
-    cols = ["oracle", "rrf_hops_path", "ppr_und_pl", "ppr_out_pl", "path_issue",
-            "pagerank", "random"]
-    for src in ("co_edited", "symbol"):
-        g = cur[cur.source == src].pivot(index="budget", columns="method",
-                                         values="coverage")
-        have = [c for c in cols if c in g.columns]
-        out = ["budget " + " ".join(have)]
-        for b, r in g.iterrows():
-            out.append("%d %s" % (b, " ".join("%.4f" % r[c] for c in have)))
-        p = PAPER / ("fig_%s.dat" % src)
-        with open(p, "w", encoding="utf-8", newline="") as f:
-            f.write("\n".join(out) + "\n")
-        print("wrote", p.name, "columns:", have)
-
-
 def main():
     main_table()
     shared_table()
-    worst_table()
     lines_table()
     full_table()
-    ceiling_table()
     size_table()
     leak_table()
-    issue_table()
     heldout_table()
     redaction_table()
     comp_table()
@@ -654,7 +569,6 @@ def main():
     seedless_table()
     dense_tables()
     robust_table()
-    figure_data()
 
 
 if __name__ == "__main__":

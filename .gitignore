@@ -1,22 +1,23 @@
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# rebuilt by the pipeline, not shipped
 data/repos/
 data/datasets/**/*.parquet
 data/datasets/**/.cache/
 data/dockerhub/
 data/candidates_measure.jsonl
-logs/*.log
-
-# Pre-existing files unrelated to this project (left untouched)
-AI Poster*.html
-logs/progress.json
-data/graphs/
 data/lexfeat/
-data/issue_bags.json
+data/features/
+data/embeddings/
+data/issue_texts_redacted.json
+data/contextbench/
+logs/*.log
+logs/progress.json
 
-papers/
-claude-web/*.pdf
+# LaTeX build files
 paper/paper.aux
 paper/paper.bbl
 paper/paper.blg
@@ -24,7 +25,8 @@ paper/paper.out
 paper/paper.log
 paper/paper.xdv
 
-# external test set: the drawn sample and prediction are committed, the rebuilt inputs are not
+# external test set: the drawn sample, keys, scores and predictions are committed,
+# the rebuilt inputs are not
 external/data/repos/
 external/data/graphs/
 external/data/lexfeat/
@@ -33,15 +35,13 @@ external/data/datasets
 external/results/step2
 external/logs/*.log
 external/logs/progress.json
-data/issue_texts_redacted.json
-data/embeddings/
+
+# ContextBench tree: the same
 contextbench/data/repos/
 contextbench/data/graphs/
 contextbench/data/lexfeat/
-contextbench/logs/progress.json
 contextbench/data/issue_bags.json
 contextbench/data/issue_texts_redacted.json
 contextbench/data/datasets
 contextbench/results/step2
-data/contextbench/
-data/features/
+contextbench/logs/progress.json

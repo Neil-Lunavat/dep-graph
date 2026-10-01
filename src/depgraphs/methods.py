@@ -1,4 +1,4 @@
-"""Step 6: every method in paper/methods.md. method(ctx, seed, rng) -> ordered list of files.
+"""Step 6: every method in docs/methods.md. method(ctx, seed, rng) -> ordered list of files.
 
 `Ctx` holds only base-commit information (graph, per-file features, prior history,
 embeddings). Nothing here reads the answer key except the `oracle` reference, which is

@@ -1,4 +1,4 @@
-"""Per-file features at every task base commit, for the methods in paper/methods.md.
+"""Per-file features at every task base commit, for the methods in docs/methods.md.
 
 Reads file contents from git objects (no checkout). Each unique file version (git blob) is
 processed once per repo:

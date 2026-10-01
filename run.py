@@ -1,6 +1,9 @@
-"""Single entry point. `python run.py all` regenerates every result from scratch.
+"""Single entry point for the main pipeline: `python run.py <stage> ...`, or `all` in order.
 
-Stages are added as steps are completed. Each stage is idempotent and cached.
+Each stage is idempotent and cached. Two things run outside it: the dense embeddings
+(`src/depgraphs/embed.py`, its own environment, before `study2`) and the external and
+ContextBench trees, which run these same stages under DEPGRAPHS_ROOT. README.md gives the
+full sequence.
 """
 from __future__ import annotations
 
@@ -71,12 +74,6 @@ def graphs():
 
 
 @stage
-def table1():
-    from depgraphs import table1 as t
-    t.main()
-
-
-@stage
 def keys_static():
     from depgraphs import keys_static as k
     k.main()
@@ -86,12 +83,6 @@ def keys_static():
 def tasks():
     from depgraphs import tasks as t
     t.main()
-
-
-@stage
-def exec_bundle():
-    from depgraphs import exec_bundle as e
-    e.main()
 
 
 @stage
@@ -110,6 +101,12 @@ def issues():
 def redact():
     from depgraphs import redact as r
     r.main()
+
+
+@stage
+def features():
+    from depgraphs import features as f
+    f.main()
 
 
 @stage
@@ -146,6 +143,24 @@ def ball():
 def analysis2():
     from depgraphs import analysis2 as a
     a.main()
+
+
+@stage
+def metric():
+    from depgraphs import metric as m
+    m.main()
+
+
+@stage
+def dense():
+    from depgraphs import dense as d
+    d.main()
+
+
+@stage
+def seedless():
+    from depgraphs import seedless as s
+    s.main()
 
 
 @stage

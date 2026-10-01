@@ -6,7 +6,8 @@ each file in turn is the seed, the rest of the evidence is the key (ROADMAP 5e).
 Key sources (N4 — always kept separate):
   co_edited : other existing source files modified by the PR
   symbol    : files defining names used on the PR's added lines (minus the seed)
-  execution : filled in later from the Docker runs (keys_exec.py), per D20 rule
+  execution : an optional third source, read from data/keys_exec when present; the paper
+              does not use it and the committed tasks carry only the two above
 Every key file must exist at the base commit and be a graph node; files that are not
 (new files, non-importable paths) are counted per task, never silently dropped.
 
