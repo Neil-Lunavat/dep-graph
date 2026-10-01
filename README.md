@@ -19,12 +19,14 @@ prose is recomputed from them by a checker that fails if a sentence disagrees.
 | `results/` | Scores and statistics of the main study (`study2/`, `seedless/`), sampling tables (`step2/`), graph and task summaries (`step3/`, `step5/`), the builder comparison (`step3_prep/`) and the key-rebuild comparison (`key_rebuild/`) |
 | `external/` | The seven unseen repositories: sample, keys, tasks, scores, prediction outcomes |
 | `contextbench/` | The ContextBench tasks with the human-annotated key: same contents |
+| `logs/` | Failures recorded by the `candidates` and `graphs` stages |
 | `docs/` | Design record and change log (see below) |
 
 ## Check the paper against the results
 
 Needs Python 3.12 and [uv](https://docs.astral.sh/uv/). Nothing is downloaded beyond the
-locked dependencies.
+locked dependencies. On Windows, clone with `git clone -c core.longpaths=true`: some task
+identifiers make long file names.
 
 ```
 uv sync
@@ -38,14 +40,17 @@ The statistics can be recomputed from the committed scores (`results/study2/rows
 `curves.parquet`, `top.jsonl.gz`) without rebuilding anything:
 
 ```
-uv run python run.py leakage ball analysis2 metric dense
+uv run python run.py ball analysis2 metric dense
 uv run python -m depgraphs.seedless summarise
 DEPGRAPHS_ROOT=external uv run python -m depgraphs.external_eval
 DEPGRAPHS_ROOT=contextbench uv run python -m depgraphs.contextbench_eval
 ```
 
-On a second machine this reproduces every result file; the only difference is the last
-floating-point digit of some p-values in `results/study2/pairwise.csv`.
+On a fresh clone this reproduces every result file; the only difference is the last
+floating-point digit of some p-values in `results/study2/pairwise.csv`. The `leakage` stage is
+not in this list because it reads the issue texts from the dataset files: run
+`python run.py datasets` before it, or it will overwrite `issue_path_leak.csv` with empty
+strata.
 
 ## Rebuild from scratch
 
@@ -154,6 +159,7 @@ path is given.
 | `paper/external_predictions.md`, `paper/contextbench_predictions.md` | Predictions committed before the data they concern were scored |
 
 These documents were written while the work was in progress and name files by the paths they
-had then. The study began as a broader comparison of thirty orderings on a union key; its code
-and results are not part of this package but remain in the history at tag `pre-cleanup`, and
-`docs/POSTHOC.md` records the reframing.
+had then. The study began as a broader comparison of thirty orderings on a union key. Its
+driver, scorer and results are not part of this package; they remain in the history at tag
+`pre-cleanup`, and `docs/POSTHOC.md` records the reframing. `methods.py` still holds that
+inventory, because the paper's three published-system selectors come from it.
