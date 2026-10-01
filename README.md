@@ -11,7 +11,7 @@ prose is recomputed from them by a checker that fails if a sentence disagrees.
 
 | Path | What it holds |
 |---|---|
-| `paper/` | Manuscript (`paper.tex`, `paper.pdf`), bibliography, generated table rows (`tab_*.tex`), and the two prediction files committed before their data were scored |
+| `paper/` | Manuscript (`paper.tex`, `paper.pdf`), bibliography, generated table rows (`tab_*.tex`) and figures (`fig_*.pdf`), and the two prediction files committed before their data were scored |
 | `src/depgraphs/` | The pipeline, one module per stage |
 | `run.py` | Entry point: `python run.py <stage> ...` |
 | `tests/` | Unit tests for the graph builder, patch parser, sampling, methods and redaction |
@@ -34,6 +34,7 @@ uv run --group dev pytest -q          # unit tests
 uv run python run.py claims           # every number in the prose, against the result files
 uv run python run.py checknums        # every qualitative claim, recomputed
 uv run python run.py maketables       # regenerates paper/tab_*.tex; `git diff` should be empty
+uv run python run.py figures          # regenerates paper/fig_*.pdf
 ```
 
 The statistics can be recomputed from the committed scores (`results/study2/rows.parquet`,
@@ -64,7 +65,7 @@ strata.
 | `lexfeat issues redact features` | Identifier bags per file, issue bags, the three redaction arms, per-file definitions and references |
 | `study2` | Every reading order on every task, scored |
 | `tokcost leakage ceiling ball analysis2 metric dense seedless` | Token calibration, issue-naming strata, ceilings, the two-hop ball, statistics, cost rules, the dense retriever's tests, the condition without a free seed |
-| `maketables checknums claims` | Table rows for the paper, and the two checkers |
+| `maketables figures checknums claims` | Table rows and figures for the paper, and the two checkers |
 | `builders_prep` | The comparison of graph builders behind the choice of builder |
 
 Two things run outside `run.py`:
@@ -142,6 +143,21 @@ path is given.
 | 19 | `tab_size` | `by_size.csv` |
 | 20 | `tab_families` | `pairwise.csv`, `mixed.csv`, `redaction.csv` |
 | 21 | `tab_mixed` | `mixed.csv` |
+
+## Where each figure comes from
+
+Figures 2 to 4 are drawn by `src/depgraphs/figures.py` from files under `results/study2/`.
+
+| Figure | File | Source |
+|---|---|---|
+| 1 | `fig_overview.png` | drawn by hand; the only figure not generated |
+| 2 | `fig_curves.pdf` | `curves_mean.csv` |
+| 3 | `fig_worth.pdf` | `dense_tests.csv`, the same rows as Table 4 |
+| 4 | `fig_distance.pdf` | `distance_profile.csv`, the same rows as Table 15 |
+
+The paper is set in Linux Libertine. To letter the figures in it, point `DEPGRAPHS_FONTS` at
+a directory holding `LinLibertine_*.otf` (any TeX distribution has them); without it another
+serif is used, and the committed PDFs will differ from a regenerated one only in the lettering.
 
 ## Design record and change log
 

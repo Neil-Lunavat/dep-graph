@@ -170,6 +170,12 @@ def maketables():
 
 
 @stage
+def figures():
+    from depgraphs import figures as f
+    f.main()
+
+
+@stage
 def checknums():
     from depgraphs import checknums as c
     c.main()
